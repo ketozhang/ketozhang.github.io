@@ -5,21 +5,19 @@
   <div class="container mt-5">
     <!-- Main Showcase  -->
     <h1 class="title">Projects</h1>
-    <hr class="title-hr">
-    <div id="showcase" class="row d-flex align-items-stretch justify-content-around text-center">
+    <div id="showcase" class="row d-flex align-items-stretch justify-content-lg-around text-lg-center justify-content-start text-left">
       {% for project in projects %}
       <div class="col-md-4 d-flex flex-column flex-fill">
         <h2 class="title">{{project['header']}}</h2>
         <!-- TODO: Find a better way for equal height -->
         <p>{{project['description']}}</p>
-        <p class="mt-auto mx-auto"><a class="btn btn-warning" href="{{project['view_details']}}" role="button">View details »</a></p>
+        <p class="mt-auto mx-lg-auto"><a class="btn btn-warning" href="{{project['view_details']}}" role="button">View details »</a></p>
       </div>
       {% endfor %}
     </div>
 
     <!-- Blogpost Cards -->
     <h1 class="title">Featured Posts</h1>
-    <hr class="title-hr">
     {% for post_url, post in posts.items() %}
     <div class="card mb-3 box-shadow">
       <div class="row no-gutter">
