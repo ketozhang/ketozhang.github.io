@@ -1,8 +1,8 @@
 # The full url to be hosted (e.g., http://example.com/notes)
-site_url: 'https://ketozhang.github.io/StaticPy'
-site_brand: 'StaticPy'
-site_title: 'StaticPy'
-author: 'StaticPy'
+site_url: 'https://ketozhang.github.io/ketozhang.github.io'
+site_brand: 'Keto'
+site_title: 'Keto'
+author: 'Keto'
 # # All paths are relative to project path
 # # Absolute path: `/dir`
 # # Relative path: `dir` or `dir/`
@@ -29,10 +29,6 @@ contexts:
     source_path: 'posts'
     url: '/posts'
     template: 'post.html'
-  docs:
-    source_path: 'documentations'
-    url: '/docs'
-    template: 'note.html'
 
 navbar:
   notes:
@@ -41,9 +37,6 @@ navbar:
   posts:
     text: 'Posts'
     url: 'posts'
-  docs:
-    text: 'Docs'
-    url: 'docs'
 
 social_links:
   cv: 'static/CV.html'

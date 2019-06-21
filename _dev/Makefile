@@ -7,6 +7,8 @@ build:
 .PHONY: static
 static:
 	pipenv run python freeze.py
+	find ../ -maxdepth 1 ! \( -name ".*" -o -name "_*" \) -exec rm -r {} \;
+	cp -r docs/* ../
 
 freeze:
 	make static
