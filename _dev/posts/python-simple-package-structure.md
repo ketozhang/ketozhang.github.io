@@ -1,7 +1,7 @@
 ---
 title: Python Simple Package Structure
 description: Let me show you a simple workflow for structuring your package.
-image: https://via.placeholder.com/320x240
+image: static/images/background-pencil-box.jpg
 # toc: true
 ---
 
