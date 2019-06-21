@@ -207,10 +207,6 @@ footer {
   background: linear-gradient(transparent 150px, white);
 }
 
-.project-description {
-  overflow: hidden;
-}
-
 .no-list-style {
   list-style-type: none;
 }
@@ -255,8 +251,4 @@ footer {
 #onthispage-list {
   padding-top: 0.5em;
   padding-left: 0.5em;
-}
-
-#showcase {
-  height: 50%
 }
