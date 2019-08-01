@@ -10,6 +10,9 @@ projects:
     description:
       "A multi-messenger astronomy collaboration to detect electromagnetic counterpart following up the third observation run of LIGO-Virgo."
     view_details: "https://github.com/xiaocong213/pygcn"
+  - header: "SURF Fellowship"
+    description: "Developed numerical simulations to determine if the shape of Type Ia supernovae velocity distribution is an effect of line of sight due to anisotropic ejecta."
+    view_details: "https://surf.berkeley.edu/surf-fellows/detail/3883"
   # - header: "Project 3"
   #   description:
   #     "Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo,

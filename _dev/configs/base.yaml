@@ -41,7 +41,7 @@ navbar:
 social_links:
   cv:
     text: "CV"
-    url: "static/CV.html"
+    url: "/static/CV.html"
     icon: "/static/images/icons8-applicant-24.png"
   linkedin:
     text: "LinkedIn"
