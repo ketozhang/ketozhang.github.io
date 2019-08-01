@@ -28,15 +28,44 @@
 <body>
     
 <div class="container-fluid" id="note">
+    <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
     <h1 class="title text-center pt-3">Maximal Margin Classifier</h1>
     <hr>
     <div class="row">
-        <div class="col-lg-2 d-none d-lg-block"></div>
-        <div class="col-lg-7 col-md-10">
-            <p>Because there may exist infinitely many hyperplane that can classify the input data, we need to determine which hyperplane is the best fit. Naturally, points that are closer to the hyperplane are considered more ambiguous and error-prone than those further away from the hyperplane. Given this metric, we consider the best hyperplane to be one that is furthest away from its immediate neighboring data points. This method is coined the name <strong>maximal margin classifier (MMC)</strong></p>
+        <!-- Notebook Sidenav -->
+        <div class="col-lg-2 col-3 d-none d-md-block bg-light">
+            <div class="sidenav sticky-top vh-80">
+                <div class="sidenav-title row no-gutters">
+                    <div class="col-9">
+                        <strong>Maximal Margin Classifier</strong>
+                    </div>
+                    <div class="col-2 offset-1">
+                        <a class="go-up" href="https://ketozhang.github.io/ketozhang.github.io/notes/Data_Science/Statistical_Modeling/Classification/" role="button">
+                            <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+                        </a>
+                    </div>
+                </div>
+                <div class="sidenav-body no-gutters">
+                    <ul class="no-list-style pl-3">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="col-lg-8 col-9">
+            <div class="markdown-content">
+                
+                <p>Because there may exist infinitely many hyperplane that can classify the input data, we need to determine which hyperplane is the best fit. Naturally, points that are closer to the hyperplane are considered more ambiguous and error-prone than those further away from the hyperplane. Given this metric, we consider the best hyperplane to be one that is furthest away from its immediate neighboring data points. This method is coined the name <strong>maximal margin classifier (MMC)</strong></p>
 <dl>
 <dt>Support Vectors</dt>
-<dd>The &quot;immediate neighboring data points&quot; that are used to determine the best hyperplane.
+<dd>The “immediate neighboring data points” that are used to determine the best hyperplane.
 </dd>
 <dt>Margin <span class="math inline">\((M)\)</span></dt>
 <dd>The length of the support vector(s). Alternatively, the distance between the hyperplane and the nearest point(s).
@@ -61,7 +90,7 @@
 <p>We simplify the constraint by transforming the marign to unity,</p>
 <p><span class="math display">\[ y_i(\theta^T X_i + \theta_0) \ge 1 \]</span></p>
 <ul>
-<li>This transformation is invariant because all we're doing is rescaling <span class="math inline">\(\theta \rightarrow \frac{\theta}{M}\)</span>.</li>
+<li>This transformation is invariant because all we’re doing is rescaling <span class="math inline">\(\theta \rightarrow \frac{\theta}{M}\)</span>.</li>
 </ul>
 <p>Now the optimizing problem is over the parameter space which is called the <strong>quadratic program</strong>. As the name suggest, we optimize of <span class="math inline">\(\lvert{\theta}\rvert\)</span> to allow differentiation.</p>
 <p><span class="math display">\[
@@ -72,13 +101,23 @@
 <p><span class="math display">\[
 \frac{\theta^T X_i + \theta_0}{\lvert \theta \rvert^2}
 \]</span></p>
+                
+            </div>
         </div>
-        <div class="col-md-2 d-none d-md-block">
-            <div class="sticky-top onthispage">
-                <ul id="onthispage-list" class="no-list-style">On This Page</ul>
+
+        <!-- On This Page -->
+        <div class="col-lg-2 d-none d-lg-block bg-light">
+            <div class="onthispage sidenav sticky-top vh-80">
+                <strong class="sidenav-title">On This Page</strong>
+                <div class="sidenav-body">
+                    <ul id="onthispage-list" class="no-list-style"></ul>
+                </div>
             </div>
         </div>
     </div>
+    <div id="commento"></div>
+    <script src="https://cdn.commento.io/js/commento.js"></script>
+</div>
 </div>
 
     <footer class="py-2 bg-white">
@@ -96,6 +135,7 @@
         crossorigin="anonymous"></script>
 
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/datetime.js"></script>
+    <script src="https://ketozhang.github.io/ketozhang.github.io/static/sidenav.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/codeHighlight.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/prism.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>

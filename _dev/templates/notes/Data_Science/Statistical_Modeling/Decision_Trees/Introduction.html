@@ -5,7 +5,7 @@
 </ul>
 <h2 id="tree-algorithm">Tree Algorithm</h2>
 <p>The tree algorithm goes as follows:</p>
-<ol style="list-style-type: decimal">
+<ol type="1">
 <li>Import all sample points at the top level calling the set of indices <span class="math inline">\(S\)</span></li>
 <li>Case:
 <ul>
@@ -36,7 +36,7 @@ d = \mathop{\arg\min}_{d} \frac{|S_L|\mathcal L_j(S_L) + |S_R|\mathcal L_j(S_R)}
 <li>Limit tree size</li>
 <li>Prevent overfit</li>
 </ul>
-<p>The following are examples of stopping conditions * Next split doesn't reduce entropy/error enough * Most of the node points are in the same class * Nodes contains few sample points * Cell's edges are all tiny * Depth is too great * Validation performance does not improve. * Pruning * Remove splits that the removal will improve cross-validation.</p>
+<p>The following are examples of stopping conditions * Next split doesn’t reduce entropy/error enough * Most of the node points are in the same class * Nodes contains few sample points * Cell’s edges are all tiny * Depth is too great * Validation performance does not improve. * Pruning * Remove splits that the removal will improve cross-validation.</p>
 <p>When a stopping condition is made the leaves may not be pure thus we need a decision rule for the unpure leaves:</p>
 <ul>
 <li>Return the majority (classification).</li>

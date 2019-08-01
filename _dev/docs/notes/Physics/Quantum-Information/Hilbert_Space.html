@@ -28,12 +28,41 @@
 <body>
     
 <div class="container-fluid" id="note">
+    <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
     <h1 class="title text-center pt-3">Hilbert Space</h1>
     <hr>
     <div class="row">
-        <div class="col-lg-2 d-none d-lg-block"></div>
-        <div class="col-lg-7 col-md-10">
-            <dl>
+        <!-- Notebook Sidenav -->
+        <div class="col-lg-2 col-3 d-none d-md-block bg-light">
+            <div class="sidenav sticky-top vh-80">
+                <div class="sidenav-title row no-gutters">
+                    <div class="col-9">
+                        <strong>Hilbert Space</strong>
+                    </div>
+                    <div class="col-2 offset-1">
+                        <a class="go-up" href="https://ketozhang.github.io/ketozhang.github.io/notes/Physics/Quantum-Information/" role="button">
+                            <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+                        </a>
+                    </div>
+                </div>
+                <div class="sidenav-body no-gutters">
+                    <ul class="no-list-style pl-3">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="col-lg-8 col-9">
+            <div class="markdown-content">
+                
+                <dl>
 <dt>Axiom 1</dt>
 <dd>A state is a ray in the Hilbert space. A ray is a general case of a vector that need not to have an origin and need not to be represented by basis vectors.
 </dd>
@@ -52,7 +81,7 @@
 <p>then we are sure that <span class="math inline">\(a\)</span> is real and <span class="math inline">\(\ket{\psi}\)</span> is a vector that can from the complete basis of the Hilbert space.</p>
 </dd>
 <dt>Property: Spectral Representatoin</dt>
-<dd><p>Given <span class="math inline">\(N\)</span> eigenstates denoted by the ket vector <span class="math inline">\(\ket{n}\)</span>, we may write the operator as a linear combination of each <span class="math inline">\(n\)</span>th eigenstate's projection vector. This is called the <strong>spectral representation</strong> of the operator.</p>
+<dd><p>Given <span class="math inline">\(N\)</span> eigenstates denoted by the ket vector <span class="math inline">\(\ket{n}\)</span>, we may write the operator as a linear combination of each <span class="math inline">\(n\)</span>th eigenstate’s projection vector. This is called the <strong>spectral representation</strong> of the operator.</p>
 <p>The projection vector is defined as,</p>
 <p><span class="math display">\[ P_n \equiv \ket{n}\bra{n} \]</span></p>
 <p>We form the spectral representation,</p>
@@ -79,13 +108,23 @@ U(t-t_0) = \exp\left[-i\int{H\d t}\right]
 <p><span class="math display">\[ \bra{u\varphi}\ket{u\psi} = \bra{\varphi}\ket{\psi} \]</span></p>
 </dd>
 </dl>
+                
+            </div>
         </div>
-        <div class="col-md-2 d-none d-md-block">
-            <div class="sticky-top onthispage">
-                <ul id="onthispage-list" class="no-list-style">On This Page</ul>
+
+        <!-- On This Page -->
+        <div class="col-lg-2 d-none d-lg-block bg-light">
+            <div class="onthispage sidenav sticky-top vh-80">
+                <strong class="sidenav-title">On This Page</strong>
+                <div class="sidenav-body">
+                    <ul id="onthispage-list" class="no-list-style"></ul>
+                </div>
             </div>
         </div>
     </div>
+    <div id="commento"></div>
+    <script src="https://cdn.commento.io/js/commento.js"></script>
+</div>
 </div>
 
     <footer class="py-2 bg-white">
@@ -103,6 +142,7 @@ U(t-t_0) = \exp\left[-i\int{H\d t}\right]
         crossorigin="anonymous"></script>
 
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/datetime.js"></script>
+    <script src="https://ketozhang.github.io/ketozhang.github.io/static/sidenav.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/codeHighlight.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/prism.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>

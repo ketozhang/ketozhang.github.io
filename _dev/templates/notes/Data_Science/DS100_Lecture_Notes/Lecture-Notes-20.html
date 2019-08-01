@@ -12,13 +12,13 @@
     \boxed{\hat\theta = (\Phi^T\Phi)^{-1} - \Phi^TY}
 \]</span></p>
 <h2 id="bias-variance-tradeoff">Bias-Variance Tradeoff</h2>
-<p>Let's get ack to the bias-variance tradeoff. We need some terms:</p>
+<p>Let’s get ack to the bias-variance tradeoff. We need some terms:</p>
 <dl>
 <dt>Training data</dt>
 <dd>The data used by the model
 </dd>
 <dt>Test data</dt>
-<dd>The data used to test the model. We'd use test data to see if model is a good fit for the general case
+<dd>The data used to test the model. We’d use test data to see if model is a good fit for the general case
 </dd>
 </dl>
 <p>The bias-variance tradeoff explains that the more your model matches your training data (decreasing bias, increasing complexity) the less likely your model will match your test data (increasing variance) vice versa.</p>
@@ -33,7 +33,7 @@
 <li>Larger test set <span class="math inline">\(\rightarrow\)</span> better estimate of generalization error</li>
 </ul>
 <h2 id="generalization-and-testing-model">Generalization and Testing Model</h2>
-<ol style="list-style-type: decimal">
+<ol type="1">
 <li>Split data into training and test sets</li>
 <li>Use only the trianing data when designing, trianing, and tuning the model
 <ul>
@@ -57,7 +57,7 @@
 </ul>
 <p>For the regularization parameter <span class="math inline">\(\lambda\)</span> we wish to have,</p>
 <p><span class="math display">\[ \text{Complexity}(f_\theta) \le \lambda \]</span></p>
-<p>Unfortunately complexity isn't easy to computer. We may take this definition that complexity is the sum of the set of our model that contributes something <span class="math inline">\(\Bbb{I[\theta_j \ne \theta]}\)</span>. The quantity that we sum accross is also confusing.</p>
+<p>Unfortunately complexity isn’t easy to computer. We may take this definition that complexity is the sum of the set of our model that contributes something <span class="math inline">\(\Bbb{I[\theta_j \ne \theta]}\)</span>. The quantity that we sum accross is also confusing.</p>
 <p><span class="math display">\[
 \text{Complexity} f(\theta) \equiv \sum_{j=1}^{d}{\Bbb{I[\theta_j \ne \theta]}}
 \]</span></p>

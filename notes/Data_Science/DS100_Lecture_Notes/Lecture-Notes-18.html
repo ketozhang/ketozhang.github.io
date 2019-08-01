@@ -28,21 +28,50 @@
 <body>
     
 <div class="container-fluid" id="note">
+    <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
     <h1 class="title text-center pt-3">Lecture Notes18</h1>
     <hr>
     <div class="row">
-        <div class="col-lg-2 d-none d-lg-block"></div>
-        <div class="col-lg-7 col-md-10">
-            <h1 id="lecture-18---the-bias-variane-tradeoff-and-regularization">Lecture 18 - The Bias Variane Tradeoff and Regularization</h1>
+        <!-- Notebook Sidenav -->
+        <div class="col-lg-2 col-3 d-none d-md-block bg-light">
+            <div class="sidenav sticky-top vh-80">
+                <div class="sidenav-title row no-gutters">
+                    <div class="col-9">
+                        <strong>Lecture Notes18</strong>
+                    </div>
+                    <div class="col-2 offset-1">
+                        <a class="go-up" href="https://ketozhang.github.io/ketozhang.github.io/notes/Data_Science/DS100_Lecture_Notes/" role="button">
+                            <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+                        </a>
+                    </div>
+                </div>
+                <div class="sidenav-body no-gutters">
+                    <ul class="no-list-style pl-3">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="col-lg-8 col-9">
+            <div class="markdown-content">
+                
+                <h1 id="lecture-18---the-bias-variane-tradeoff-and-regularization">Lecture 18 - The Bias Variane Tradeoff and Regularization</h1>
 <h2 id="linear-model-for-non-linear-data">Linear Model for Non-Linear Data</h2>
 <p>Say we wish to model a general function <span class="math inline">\(f(x)\)</span> which is not always linear, a linear fit to <span class="math inline">\(f(x)\)</span> can be generally approximated like so:</p>
 <p><span class="math display">\[ f_\theta(\phi(x)) = \phi(x)^T \theta = \sum_{j=1}^{k}{\phi(x)_j \theta_j}  \]</span></p>
 <ul>
 <li><span class="math inline">\(\phi(x)\)</span> : A vector of functions.
 <ul>
-<li>If you're familiar with linear algebra, this is similar to a set of basis vectors but not the same.</li>
+<li>If you’re familiar with linear algebra, this is similar to a set of basis vectors but not the same.</li>
 </ul></li>
-<li><span class="math inline">\(\theta\)</span> : The model's parameter that weighs each vector hence it's common to call this the weight coefficient.</li>
+<li><span class="math inline">\(\theta\)</span> : The model’s parameter that weighs each vector hence it’s common to call this the weight coefficient.</li>
 </ul>
 <dl>
 <dt>Bias</dt>
@@ -71,7 +100,7 @@
 </dd>
 </dl>
 <h2 id="example-analysis-of-squared-error">Example: Analysis of Squared Error</h2>
-<p>Let's say we wish to model our data <span class="math inline">\(y\)</span> that has some noise. We will absorb this noise into an error value <span class="math inline">\(\epsilon\)</span> such that the true function that describe the system is denoted as <span class="math inline">\(h(x)\)</span> therefore the data is,</p>
+<p>Let’s say we wish to model our data <span class="math inline">\(y\)</span> that has some noise. We will absorb this noise into an error value <span class="math inline">\(\epsilon\)</span> such that the true function that describe the system is denoted as <span class="math inline">\(h(x)\)</span> therefore the data is,</p>
 <p><span class="math display">\[ y =h(x) + \epsilon \]</span></p>
 <dl>
 <dt>Expected Loss</dt>
@@ -90,13 +119,23 @@
 <p><span class="math display">\[\hat \theta \equiv \arg \min \frac{1}{n}\sum_i^n{\ell(y_i,f_\theta(x_i))} + \lambda \mathbf{R}(\theta)\]</span></p>
 <p>Example of regularization include the same exact function as the loss functions <span class="math inline">\(\Bbb{L^1}\)</span> (Ridge regularization) and <span class="math inline">\(\Bbb{L^2}\)</span> (LASSO regularization).</p>
 <p>The point is to simply introduce another function that further optimizes the model parameter.</p>
+                
+            </div>
         </div>
-        <div class="col-md-2 d-none d-md-block">
-            <div class="sticky-top onthispage">
-                <ul id="onthispage-list" class="no-list-style">On This Page</ul>
+
+        <!-- On This Page -->
+        <div class="col-lg-2 d-none d-lg-block bg-light">
+            <div class="onthispage sidenav sticky-top vh-80">
+                <strong class="sidenav-title">On This Page</strong>
+                <div class="sidenav-body">
+                    <ul id="onthispage-list" class="no-list-style"></ul>
+                </div>
             </div>
         </div>
     </div>
+    <div id="commento"></div>
+    <script src="https://cdn.commento.io/js/commento.js"></script>
+</div>
 </div>
 
     <footer class="py-2 bg-white">
@@ -114,6 +153,7 @@
         crossorigin="anonymous"></script>
 
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/datetime.js"></script>
+    <script src="https://ketozhang.github.io/ketozhang.github.io/static/sidenav.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/codeHighlight.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/prism.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>

@@ -28,12 +28,41 @@
 <body>
     
 <div class="container-fluid" id="note">
+    <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
     <h1 class="title text-center pt-3">Fine Structure Hydrogen</h1>
     <hr>
     <div class="row">
-        <div class="col-lg-2 d-none d-lg-block"></div>
-        <div class="col-lg-7 col-md-10">
-            <p>We wish to use perturbation theory to add some parts missing in the original hydrogen equation. We consider these perturbation to be very small compared to the unperturbed eigenvalues. Recall the hamiltonian for the unperturbed hydrogen which is basically the <strong>Bohr model</strong>,</p>
+        <!-- Notebook Sidenav -->
+        <div class="col-lg-2 col-3 d-none d-md-block bg-light">
+            <div class="sidenav sticky-top vh-80">
+                <div class="sidenav-title row no-gutters">
+                    <div class="col-9">
+                        <strong>Fine Structure Hydrogen</strong>
+                    </div>
+                    <div class="col-2 offset-1">
+                        <a class="go-up" href="https://ketozhang.github.io/ketozhang.github.io/notes/Physics/Quantum-Mechanics/Hydrogen/" role="button">
+                            <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+                        </a>
+                    </div>
+                </div>
+                <div class="sidenav-body no-gutters">
+                    <ul class="no-list-style pl-3">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="col-lg-8 col-9">
+            <div class="markdown-content">
+                
+                <p>We wish to use perturbation theory to add some parts missing in the original hydrogen equation. We consider these perturbation to be very small compared to the unperturbed eigenvalues. Recall the hamiltonian for the unperturbed hydrogen which is basically the <strong>Bohr model</strong>,</p>
 <p><span class="math display">\[
 \begin{align}
     H^0 &amp;= -\frac{\hbar^2}{2m}\nabla^2 - \frac{e^2}{4\pi\varepsilon_0}\frac{1}{r}\\
@@ -121,7 +150,7 @@
     \boxed{V&#39;_\text{SO} = \left(\frac{e^2}{8\pi\epsilon_0}\right)\frac{1}{m^2c^2}\frac{1}{r^3} S \cdot L}
 \end{align}
 \]</span></p>
-<p>Unfortunately <span class="math inline">\(S \cdot L\)</span> does not commute with <span class="math inline">\(H\)</span> but it does commute with <span class="math inline">\(L^2, S^2, J^2\)</span>. Let's write <span class="math inline">\(S \cdot L\)</span> in terms of those 3 operators,</p>
+<p>Unfortunately <span class="math inline">\(S \cdot L\)</span> does not commute with <span class="math inline">\(H\)</span> but it does commute with <span class="math inline">\(L^2, S^2, J^2\)</span>. Let’s write <span class="math inline">\(S \cdot L\)</span> in terms of those 3 operators,</p>
 <p><span class="math display">\[
 \begin{align*}
     J^2 &amp;= (L+S)\cdot(L+S) = L^2 + S^2 + 2L\cdot S\\
@@ -157,7 +186,7 @@
     V&#39; = \frac{\pi\hbar^2}{2m^2c^2}\left(\frac{e^2}{4\pi\varepsilon_0}\right)\delta(\vec{r})
 \end{align}
 \]</span></p>
-<p>Since <span class="math inline">\(\delta(r)\)</span> only acts on <span class="math inline">\(r=0\)</span>, we don't care for <span class="math inline">\(n\)</span> so set all to zero such that,</p>
+<p>Since <span class="math inline">\(\delta(r)\)</span> only acts on <span class="math inline">\(r=0\)</span>, we don’t care for <span class="math inline">\(n\)</span> so set all to zero such that,</p>
 <p><span class="math display">\[
 \begin{align}
     \bra{\psi_{nlm}} \delta(\vec{r})\ket{\psi_{nlm}} &amp;= \abs{\psi_{n00}(0)}^2 = \frac{m^3c^3\alpha^3}{\hbar^3}\frac{1}{\pi n^3}\\
@@ -181,13 +210,23 @@
     J_z = L_z^{(1)} + L_z^{(2)} + S_z^{(1)} + S_z^{(2)}\\
 \end{gather}
 \]</span></p>
+                
+            </div>
         </div>
-        <div class="col-md-2 d-none d-md-block">
-            <div class="sticky-top onthispage">
-                <ul id="onthispage-list" class="no-list-style">On This Page</ul>
+
+        <!-- On This Page -->
+        <div class="col-lg-2 d-none d-lg-block bg-light">
+            <div class="onthispage sidenav sticky-top vh-80">
+                <strong class="sidenav-title">On This Page</strong>
+                <div class="sidenav-body">
+                    <ul id="onthispage-list" class="no-list-style"></ul>
+                </div>
             </div>
         </div>
     </div>
+    <div id="commento"></div>
+    <script src="https://cdn.commento.io/js/commento.js"></script>
+</div>
 </div>
 
     <footer class="py-2 bg-white">
@@ -205,6 +244,7 @@
         crossorigin="anonymous"></script>
 
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/datetime.js"></script>
+    <script src="https://ketozhang.github.io/ketozhang.github.io/static/sidenav.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/codeHighlight.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/prism.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>

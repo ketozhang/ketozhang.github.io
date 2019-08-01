@@ -24,12 +24,12 @@
 </dl></li>
 </ul>
 <h2 id="coupon-collection-problem">Coupon Collection Problem</h2>
-<p>Let's say there are <span class="math inline">\(n\)</span> types of coupons and you need all <span class="math inline">\(n\)</span> to win a prize. To get a coupon you must buy some product.</p>
-<ol style="list-style-type: decimal">
+<p>Let’s say there are <span class="math inline">\(n\)</span> types of coupons and you need all <span class="math inline">\(n\)</span> to win a prize. To get a coupon you must buy some product.</p>
+<ol type="1">
 <li><p>What is the expected number of buys to get all <span class="math inline">\(n\)</span> coupons given uniform probability of getting any coupon.</p>
 <p>Let <span class="math inline">\(X_i\)</span> be the random variable of the number of buys to get a unique coupon. You need <span class="math inline">\(n\)</span> unique coupons so the number of buys to win a prize is the sum of <span class="math inline">\(X_i\)</span>.</p>
 <p><span class="math display">\[
-\mathbb E[X_i] = \frac{1}{p_i} = \frac{n}{n-(i-1)}\\
-\mathbb E\left [\sum{X_i} \right] = n \sum_{k=1}^n \frac{1}{k}
-\]</span></p></li>
+ \mathbb E[X_i] = \frac{1}{p_i} = \frac{n}{n-(i-1)}\\
+ \mathbb E\left [\sum{X_i} \right] = n \sum_{k=1}^n \frac{1}{k}
+ \]</span></p></li>
 </ol>

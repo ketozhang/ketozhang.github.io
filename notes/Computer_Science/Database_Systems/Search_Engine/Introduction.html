@@ -28,12 +28,41 @@
 <body>
     
 <div class="container-fluid" id="note">
+    <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
     <h1 class="title text-center pt-3">Introduction</h1>
     <hr>
     <div class="row">
-        <div class="col-lg-2 d-none d-lg-block"></div>
-        <div class="col-lg-7 col-md-10">
-            <p>Text search is done with a search engine (aka informational retrieval system).</p>
+        <!-- Notebook Sidenav -->
+        <div class="col-lg-2 col-3 d-none d-md-block bg-light">
+            <div class="sidenav sticky-top vh-80">
+                <div class="sidenav-title row no-gutters">
+                    <div class="col-9">
+                        <strong>Introduction</strong>
+                    </div>
+                    <div class="col-2 offset-1">
+                        <a class="go-up" href="https://ketozhang.github.io/ketozhang.github.io/notes/Computer_Science/Database_Systems/Search_Engine/" role="button">
+                            <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+                        </a>
+                    </div>
+                </div>
+                <div class="sidenav-body no-gutters">
+                    <ul class="no-list-style pl-3">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="col-lg-8 col-9">
+            <div class="markdown-content">
+                
+                <p>Text search is done with a search engine (aka informational retrieval system).</p>
 <dl>
 <dt>Document</dt>
 <dd>A file, website, or generally a collection of unstructured data that can be text searched.
@@ -46,13 +75,10 @@
 <li>Ranks top result with no need to finish finding all that satisfy the query</li>
 <li>A crawler used to import data as it updates</li>
 </ul>
-<div class="figure">
-<img src="2018-10-28-15-17-24.png" />
-
-</div>
+<p><img src="2018-10-28-15-17-24.png" /></p>
 <h2 id="bag-of-words-model">Bag of Words Model</h2>
 <p>The bag of words model treats a document collection of searchable terms by its words. The bag of words model would implement the following methods:</p>
-<ol style="list-style-type: decimal">
+<ol type="1">
 <li><strong>Ignore Stop Words</strong>: Filter useless non-informative words.
 <ul>
 <li>Common english articles (e.g., the, a, an)</li>
@@ -65,9 +91,9 @@
 </ol>
 <h2 id="boolean-text-search">Boolean Text Search</h2>
 <p>A simple search algorithm that made up of simple boolean statements.</p>
-<p>For example, <em>find a document with &quot;California&quot; and &quot;school&quot;</em>.</p>
+<p>For example, <em>find a document with “California” and “school”</em>.</p>
 <h2 id="postings-list">Postings List</h2>
-<p>For each documents, its words will be extracted and placed into the file system as a postings list. A postings list is a schema of <code>(text term, text docID)</code>. We will call this &quot;table&quot; the <code>InvertedFile</code></p>
+<p>For each documents, its words will be extracted and placed into the file system as a postings list. A postings list is a schema of <code>(text term, text docID)</code>. We will call this “table” the <code>InvertedFile</code></p>
 <h2 id="search-index">Search Index</h2>
 <p>The search engine will have a search index of the <code>InvertedFile</code> ordered by <code>docID</code>.</p>
 <p><strong>Important:</strong> From here on, queries we made must use a single table per keyword.</p>
@@ -77,19 +103,29 @@
 <h2 id="boolean-text-search-1">Boolean Text Search</h2>
 <p>A simple text operation using boolean that slices the document to match the boolean query.</p>
 <p>For example this query is equivalent of an intersection between the three keywords <code>Berkeley, Database, Research</code>,</p>
-<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> IB.docID
-<span class="kw">FROM</span> InvertedFile IB, InvertedFile <span class="kw">ID</span>, InvertedFile IR
-<span class="kw">WHERE</span> IB.term = <span class="ot">&quot;Berkeley&quot;</span>
-<span class="kw">AND</span> ID.term = <span class="ot">&quot;Database&quot;</span>
-<span class="kw">AND</span> IR.term = <span class="ot">&quot;Research&quot;</span>
-<span class="kw">AND</span> IB.docID = ID.docID <span class="kw">AND</span> ID.docID = IR.docID</code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">SELECT</span> IB.docID</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw">FROM</span> InvertedFile IB, InvertedFile <span class="kw">ID</span>, InvertedFile IR</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="kw">WHERE</span> IB.term = <span class="ot">&quot;Berkeley&quot;</span></a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="kw">AND</span> ID.term = <span class="ot">&quot;Database&quot;</span></a>
+<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="kw">AND</span> IR.term = <span class="ot">&quot;Research&quot;</span></a>
+<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="kw">AND</span> IB.docID = ID.docID <span class="kw">AND</span> ID.docID = IR.docID</a></code></pre></div>
+                
+            </div>
         </div>
-        <div class="col-md-2 d-none d-md-block">
-            <div class="sticky-top onthispage">
-                <ul id="onthispage-list" class="no-list-style">On This Page</ul>
+
+        <!-- On This Page -->
+        <div class="col-lg-2 d-none d-lg-block bg-light">
+            <div class="onthispage sidenav sticky-top vh-80">
+                <strong class="sidenav-title">On This Page</strong>
+                <div class="sidenav-body">
+                    <ul id="onthispage-list" class="no-list-style"></ul>
+                </div>
             </div>
         </div>
     </div>
+    <div id="commento"></div>
+    <script src="https://cdn.commento.io/js/commento.js"></script>
+</div>
 </div>
 
     <footer class="py-2 bg-white">
@@ -107,6 +143,7 @@
         crossorigin="anonymous"></script>
 
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/datetime.js"></script>
+    <script src="https://ketozhang.github.io/ketozhang.github.io/static/sidenav.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/codeHighlight.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/prism.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>

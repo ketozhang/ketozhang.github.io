@@ -28,15 +28,44 @@
 <body>
     
 <div class="container-fluid" id="note">
+    <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
     <h1 class="title text-center pt-3">Selection Rules</h1>
     <hr>
     <div class="row">
-        <div class="col-lg-2 d-none d-lg-block"></div>
-        <div class="col-lg-7 col-md-10">
-            <p>Recall that every emission rate requires the calculation of the matrix element <span class="math inline">\(\bra{\psi_b}\mathbf{r}\ket{\psi_a}\)</span></p>
+        <!-- Notebook Sidenav -->
+        <div class="col-lg-2 col-3 d-none d-md-block bg-light">
+            <div class="sidenav sticky-top vh-80">
+                <div class="sidenav-title row no-gutters">
+                    <div class="col-9">
+                        <strong>Selection Rules</strong>
+                    </div>
+                    <div class="col-2 offset-1">
+                        <a class="go-up" href="https://ketozhang.github.io/ketozhang.github.io/notes/Physics/Quantum-Mechanics/Time-Dependent_Perturbation_Theory/" role="button">
+                            <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+                        </a>
+                    </div>
+                </div>
+                <div class="sidenav-body no-gutters">
+                    <ul class="no-list-style pl-3">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="col-lg-8 col-9">
+            <div class="markdown-content">
+                
+                <p>Recall that every emission rate requires the calculation of the matrix element <span class="math inline">\(\bra{\psi_b}\mathbf{r}\ket{\psi_a}\)</span></p>
 <p>The <strong>selection</strong> rule is defined for the Hydrogen wavefunction where certain combinations of <span class="math inline">\(n,l,m\)</span> will result the matrix element to zero. Not only is this convenient for math but it means there are certain transitions that are not allowed.</p>
 <p><span class="math display">\[ \bra{n&#39;l&#39;m&#39;}\mathbf{r}\ket{nlm} \]</span></p>
-<ol style="list-style-type: decimal">
+<ol type="1">
 <li>No transition occurs unless <span class="math inline">\(\Delta m = \pm 1\)</span> or <span class="math inline">\(0\)</span></li>
 <li>No transition occur unless <span class="math inline">\(\Delta l = \pm 1\)</span></li>
 </ol>
@@ -59,13 +88,23 @@
 \boxed{\abs{\bra{n&#39;l&#39;m\pm 1}\mathbf{r}\ket{nlm}}^2 = 2\bigabs{\bra{n&#39;l&#39;m\pm 1}x\ket{nlm}}^2}
 \]</span></p>
 <!-- TODO: # Proof -->
+                
+            </div>
         </div>
-        <div class="col-md-2 d-none d-md-block">
-            <div class="sticky-top onthispage">
-                <ul id="onthispage-list" class="no-list-style">On This Page</ul>
+
+        <!-- On This Page -->
+        <div class="col-lg-2 d-none d-lg-block bg-light">
+            <div class="onthispage sidenav sticky-top vh-80">
+                <strong class="sidenav-title">On This Page</strong>
+                <div class="sidenav-body">
+                    <ul id="onthispage-list" class="no-list-style"></ul>
+                </div>
             </div>
         </div>
     </div>
+    <div id="commento"></div>
+    <script src="https://cdn.commento.io/js/commento.js"></script>
+</div>
 </div>
 
     <footer class="py-2 bg-white">
@@ -83,6 +122,7 @@
         crossorigin="anonymous"></script>
 
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/datetime.js"></script>
+    <script src="https://ketozhang.github.io/ketozhang.github.io/static/sidenav.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/codeHighlight.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/prism.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>

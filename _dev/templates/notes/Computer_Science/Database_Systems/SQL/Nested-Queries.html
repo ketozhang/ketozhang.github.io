@@ -5,11 +5,11 @@
 <dd>Return the column entires that intersects with the column output of subquery
 </dd>
 </dl>
-<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">WHERE</span> &lt;col&gt; &lt;keyword&gt;
-    (&lt;subquery&gt;)</code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">WHERE</span> &lt;col&gt; &lt;keyword&gt;</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">    (&lt;subquery&gt;)</a></code></pre></div>
 <dl>
 <dt><code>NOT IN</code></dt>
-<dd>Return the column entires that doesn't intersect with the column output of subquery
+<dd>Return the column entires that doesn’t intersect with the column output of subquery
 </dd>
 <dt><code>EXISTS</code></dt>
 <dd><center>
@@ -17,11 +17,11 @@
 </center>
 <p>For each row in the table, plug it into the subquery. If the subquery returns true, return that row.</p>
 <p>The format of <code>EXISTS</code> does not need require a column, however must have a correlation (i.e., outer table is referenced inside inner table) in the subquery where predicate:</p>
-<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">WHERE</span> <span class="kw">EXISTS</span>
-    (
-        ...
-        <span class="kw">WHERE</span> &lt;correlation-prediate&gt;
-    )</code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">WHERE</span> <span class="kw">EXISTS</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">    (</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">        ...</a>
+<a class="sourceLine" id="cb2-4" data-line-number="4">        <span class="kw">WHERE</span> &lt;correlation-prediate&gt;</a>
+<a class="sourceLine" id="cb2-5" data-line-number="5">    )</a></code></pre></div>
 </dd>
 </dl>
 <ul>
@@ -31,8 +31,8 @@
 <strong>Return if predicate satisfies any subquery</strong>
 </center></li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">WHERE</span> &lt;col&gt; &lt;condition&gt; &lt;ANY|ALL&gt;
-    (&lt;subquery&gt;)</code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">WHERE</span> &lt;col&gt; &lt;condition&gt; &lt;ANY|ALL&gt;</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2">    (&lt;subquery&gt;)</a></code></pre></div>
 <ul>
 <li><code>ALL</code>
 <center>

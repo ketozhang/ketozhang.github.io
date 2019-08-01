@@ -1,12 +1,20 @@
 /* Global */
 
-.container-fluid {
-  width: 90%;
+html {
+  overflow-y: scroll;
 }
 
-@media (min-width: 992px) {
-  .container-fluid {
-    width: 80%;
+.container {
+  max-width: 80%;
+}
+
+.container-fluid {
+  max-width: 90%;
+}
+
+@media (min-width: 992px)  {
+  .container {
+    max-width: 60%;
   }
 }
 
@@ -19,6 +27,11 @@ html {
 
 header .nav-item {
   font-weight: bold;
+}
+
+.header-icon {
+  width: 24px;
+  height: 24px;
 }
 
 p .navbar-light .navbar-nav .nav-link.active::after {
@@ -60,8 +73,18 @@ body {
   padding-bottom: 80px;
 }
 
-p {
-  font-family: 'Open Sans', sans-serif;
+body h1, body h2, body h3, body h4, body h5, body h6 {
+  color: black;
+  line-height: 2;
+}
+
+pre {
+  background: #2d2d2d;
+  padding: 1em;
+  overflow: auto;
+  color: white;
+  margin-top: 0 !important;
+  margin-bottom: 1rem !important;
 }
 
 pre, code {
@@ -100,20 +123,11 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
   color: black;
   white-space: nowrap;
   text-decoration: none;
-  margin-bottom: 0.5em;
-}
-
-.title:not(:first-child) {
-  margin-top: 1.5em;
-}
-
-.title-hr {
-  margin-top: -0.5em;
 }
 
 .metadata {
-  margin-top: -0.5em;
-  margin-bottom: 0.5em;
+  margin-top: -1.5em;
+  margin-bottom: 1.5em;
 }
 
 .card-title {
@@ -140,15 +154,12 @@ hr.gradient {
   opacity: 0.7;
 }
 
-.sourceCode {
-  margin-top: 2em;
-  margin-bottom: 2em;
-}
-
-blockquote.blockquote {
-  background: #f9f9f9;
-  border-left: 3px solid #ccc;
-  padding: 0.5em 10px
+blockquote {
+  border-left: .25em solid #dfe2e5;
+  color: #6a737d;
+  padding: 0 1em;
+  margin-bottom: 16px;
+  margin-top: 0;
 }
 
 footer {
@@ -194,10 +205,6 @@ footer {
   object-fit: cover;
 }
 
-/* Context */
-
-/* .note {} */
-
 /* Icon */
 
 .icon {
@@ -224,22 +231,6 @@ footer {
   list-style-type: none;
 }
 
-.onthispage {
-  top: 1em;
-  overflow-y: scroll;
-  height: 500px;
-  border-left: 1px solid rgba(97, 97, 97, .2);
-}
-
-.onthispage ul {
-  padding-left: 1.5em;
-}
-
-.onthispage li {
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-}
-
 .sticky-top {
   z-index: auto;
 }
@@ -261,7 +252,127 @@ footer {
   object-fit: cover;
 }
 
-#onthispage-list {
+/* Sidenav */
+
+.sidenav {
+  overflow: hidden;
+}
+
+.sidenav:hover {
+  /* overflow-y: scroll; */
+  /* overflow-x: auto; */
+  overflow: auto;
+}
+
+.sidenav .sidenav-body {
+  padding-right: 3px;
+}
+
+.sidenav:hover .sidenav-body {
+  padding-right: 0px;
+}
+
+.sidenav::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+
+.sidenav::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, .2);
+  border-radius: 20px;
+}
+
+.sidenav::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 20px;
+}
+
+.sidenav-title {
+  padding: 1em
+}
+
+/* On This Page */
+
+.onthispage {
+  padding-top: 1em;
+  direction: rtl;
+}
+
+.onthispage .sidenav-body, .onthispage .sidenav {
+  height: inherit;
+  direction: ltr;
+}
+
+.onthispage .sidenav-body {
+  padding-left: 3px;
+  padding-right: 0px;
+}
+
+.onthispage:hover .sidenav-body {
+  padding-left: 0px;
+}
+
+.onthispage ul {
   padding-top: 0.5em;
-  padding-left: 0.5em;
+  padding-left: 1.5em;
+}
+
+.onthispage li {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+/* Context */
+
+/* .sidenav.active {
+  margin-left: -250px;
+} */
+
+/* Markdown Styles */
+
+.markdown-content {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.markdown-content h1, .markdown-content h2, .markdown-content h3, .markdown-content h4, .markdown-content h5, .markdown-content h6 {
+  font-family: 'Quicksand', 'Open Sans', sans-serif;
+}
+
+.markdown-content table .markdown-content dl {
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+.markdown-content th {
+  border: 1px solid #dfe2e5;
+  border-bottom: 2px solid #dfe2e5;
+  padding: 6px 13px;
+}
+
+.markdown-content td {
+  border: 1px solid #dfe2e5;
+  padding: 6px 13px;
+}
+
+.markdown-content table tr.even {
+  background-color: #f6f8fa;
+}
+
+.markdown-content dd {
+  padding-left: 16px;
+}
+
+.markdown-content dt {
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 600;
+  margin-top: 16px;
+}
+
+.markdown-content .sourceCode {
+  font-size: 0.95em;
+}
+
+#note .markdown-content, #post .markdown-content {
+  height: 100%;
 }

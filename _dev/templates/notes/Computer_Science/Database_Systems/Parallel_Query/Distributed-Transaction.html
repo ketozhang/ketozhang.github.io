@@ -16,22 +16,22 @@
 </ul>
 <h2 id="phase-commit">2 Phase Commit</h2>
 <p>A policy for commit voting to insure synchronized commits. The master node acts as the coordinator.</p>
-<ol style="list-style-type: decimal">
+<ol type="1">
 <li>Phase 1
-<ol style="list-style-type: decimal">
+<ol type="1">
 <li>Coordinator sends a prepare message (nodes log the prepare)</li>
 <li>Each node respond with yes/no (coordinator log the result)</li>
 <li>Coordinator determines the result (commit or not)</li>
 </ol></li>
 <li>Phase 2
-<ol style="list-style-type: decimal">
+<ol type="1">
 <li>If commit then coordinator sends a commit message to each node otherwise abort.</li>
 <li>Each node upon receiving the message responds with an acknowledgement (log the acknowledgement)</li>
 <li>Coordinator receive the acknowledge deem the transaction commited. (coordinator log the end)</li>
 </ol></li>
 </ol>
 <ul>
-<li>Logging provides recovery however we didn't log all the information needed.
+<li>Logging provides recovery however we didn’t log all the information needed.
 <ul>
 <li>Logs are always flushed before the actions made.</li>
 <li>If any participant node crashes without writing a log, it should be an abort.</li>

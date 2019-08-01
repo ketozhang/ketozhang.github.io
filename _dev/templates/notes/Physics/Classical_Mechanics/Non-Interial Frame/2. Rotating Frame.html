@@ -1,5 +1,5 @@
 <h2 id="notation-and-review">Notation and Review</h2>
-<p>Because rotational frame are difficult and often not remembered let's have some quick review:</p>
+<p>Because rotational frame are difficult and often not remembered let’s have some quick review:</p>
 <dl>
 <dt>Angular momentum vector</dt>
 <dd><p>The angular momentun vector <span class="math inline">\(\boldsymbol{\omega}\)</span> points towards the direction of rotation (clockwise or counter: CW or CCW). You may also use the direction by right hand rule (direction is towards the thumb as the right hand wraps around the vector either CW or CCW),</p>
@@ -31,14 +31,14 @@
 \dot{\mathbf Q}_0=  \dot{\mathbf Q} + \sum{Q_i (\mathbf\Omega \times \mathbf e_i)}\\
 \boxed{\dot{\mathbf Q}_0=  \dot{\mathbf Q} + \mathbf\Omega \times \mathbf Q}
 \]</span></p>
-<h2 id="newtons-second-law-in-rotating-frame">Newton's Second Law in Rotating Frame</h2>
-<p>To form Newton's second law we need to define acceleration <span class="math inline">\(\ddot{\mathbf r}_0\)</span> in the rest frame <span class="math inline">\(S_0\)</span>. Let's apply the time derivative using the relation of <span class="math inline">\(\dot{\mathbf Q_0}\)</span> above,</p>
+<h2 id="newtons-second-law-in-rotating-frame">Newton’s Second Law in Rotating Frame</h2>
+<p>To form Newton’s second law we need to define acceleration <span class="math inline">\(\ddot{\mathbf r}_0\)</span> in the rest frame <span class="math inline">\(S_0\)</span>. Let’s apply the time derivative using the relation of <span class="math inline">\(\dot{\mathbf Q_0}\)</span> above,</p>
 <p><span class="math display">\[ \ddot{\mathbf r}_0 = \overbrace{\frac{d}{dt}\underbrace{\left(\dot{\mathbf r} + \mathbf\Omega \times \mathbf r\right)}_{\mathbf Q&#39;}}^{\dot{\mathbf Q}_0&#39;}\]</span></p>
 <p>Notice that the terms inside the parenthesis is just another vector where we want to take the time derivative with respect to <span class="math inline">\(S_0\)</span>. We once again apply the relation and take the derivative where <span class="math inline">\(\dot {\mathbf \Omega}_0 = \dot {\mathbf \Omega} = 0\)</span> (constant rotation in both reference frames),</p>
 <p><span class="math display">\[
 \ddot{\mathbf r}_0 = \ddot {\mathbf r} + 2\mathbf\Omega \times \dot {\mathbf r} + \mathbf\Omega \times \left(\mathbf\Omega \times \mathbf r \right)
 \]</span></p>
-<p>We may write Newton's second law in either <span class="math inline">\(S_0\)</span> frame (<span class="math inline">\(\mathbf F_0 = m\ddot{\mathbf r_0}\)</span>) or <span class="math inline">\(S\)</span> frame (<span class="math inline">\(\mathbf F = m\ddot{\mathbf r}\)</span>). Let's choose the <span class="math inline">\(S\)</span> frame because it will result into a force familiar to Earthlings in the rotating Earth.</p>
+<p>We may write Newton’s second law in either <span class="math inline">\(S_0\)</span> frame (<span class="math inline">\(\mathbf F_0 = m\ddot{\mathbf r_0}\)</span>) or <span class="math inline">\(S\)</span> frame (<span class="math inline">\(\mathbf F = m\ddot{\mathbf r}\)</span>). Let’s choose the <span class="math inline">\(S\)</span> frame because it will result into a force familiar to Earthlings in the rotating Earth.</p>
 <p><span class="math display">\[ \underbrace{m\ddot{\mathbf r}_0}_{\mathbf F_0} = 2m\mathbf\Omega \times \dot {\mathbf r} + \underbrace{m\ddot {\mathbf r}}_{\mathbf F} +  m\mathbf\Omega \times \left(\mathbf\Omega \times \mathbf r \right)\]</span></p>
 <p>Isolating <span class="math inline">\(\mathbf F\)</span> gives,</p>
 <hr />
@@ -48,6 +48,6 @@
 \]</span></p>
 <ul>
 <li><span class="math inline">\(\mathbf F_\text{cor}\)</span> : The <strong>coriolis force</strong></li>
-<li><span class="math inline">\(\mathbf F_\text{cf}\)</span> : The <strong>centrifugal force</strong> notice that we may deduce the equation's magntiude as something very familiar, the centripetal velocity <span class="math inline">\(v_\text{cf}\)</span> as <span class="math inline">\(F_\text{cf} = -mv_\text{cf}\Omega\)</span>. This is centrifugal because of the negative sign on the centripetal velocity you're familiar with.</li>
+<li><span class="math inline">\(\mathbf F_\text{cf}\)</span> : The <strong>centrifugal force</strong> notice that we may deduce the equation’s magntiude as something very familiar, the centripetal velocity <span class="math inline">\(v_\text{cf}\)</span> as <span class="math inline">\(F_\text{cf} = -mv_\text{cf}\Omega\)</span>. This is centrifugal because of the negative sign on the centripetal velocity you’re familiar with.</li>
 <li><h2 id="mathbf-f-the-force-apprent-to-observers-in-the-rotating-frame-s-notice-that-it-is-no-longer-simply-mathbf-f-m-mathbf-a-but-the-extra-terms-which-most-people-call-ficticious-force"><span class="math inline">\(\mathbf F\)</span> : The force apprent to observers in the rotating frame <span class="math inline">\(S\)</span>, notice that it is no longer simply <span class="math inline">\(\mathbf F = m \mathbf a\)</span> but the extra terms which most people call <strong>ficticious force</strong></h2></li>
 </ul>

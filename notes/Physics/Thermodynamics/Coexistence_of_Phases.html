@@ -28,19 +28,48 @@
 <body>
     
 <div class="container-fluid" id="note">
+    <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
     <h1 class="title text-center pt-3">Coexistence of Phases</h1>
     <hr>
     <div class="row">
-        <div class="col-lg-2 d-none d-lg-block"></div>
-        <div class="col-lg-7 col-md-10">
-            <h1 id="coexistence-of-phases">Coexistence of Phases</h1>
+        <!-- Notebook Sidenav -->
+        <div class="col-lg-2 col-3 d-none d-md-block bg-light">
+            <div class="sidenav sticky-top vh-80">
+                <div class="sidenav-title row no-gutters">
+                    <div class="col-9">
+                        <strong>Coexistence of Phases</strong>
+                    </div>
+                    <div class="col-2 offset-1">
+                        <a class="go-up" href="https://ketozhang.github.io/ketozhang.github.io/notes/Physics/Thermodynamics/" role="button">
+                            <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+                        </a>
+                    </div>
+                </div>
+                <div class="sidenav-body no-gutters">
+                    <ul class="no-list-style pl-3">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="col-lg-8 col-9">
+            <div class="markdown-content">
+                
+                <h1 id="coexistence-of-phases">Coexistence of Phases</h1>
 <p>Consider a substance in isothermal such that we are able to vary its volume and pressure. We may graph this in a curve called the <strong>isotherm</strong>.</p>
-<p>Let's focus on liquid and gas phase (all of this applies between solid-gas and solid-liquid as well). At a certain isotherm the two liquid and gas phase may coexist if:</p>
+<p>Let’s focus on liquid and gas phase (all of this applies between solid-gas and solid-liquid as well). At a certain isotherm the two liquid and gas phase may coexist if:</p>
 <ul>
 <li>the isotherm lies below a <strong>critical temperature</strong> <span class="math inline">\(\tau_c\)</span> such that</li>
 <li><p>the two phases are in thermal, diffusive, and pressure equilibrium</p>
 <p><span class="math display">\[\tau_l=\tau_g, \quad \mu_l=\mu_g, \quad P_l = P_g\]</span></p></li>
-<li>note that the the substance will in a certain phase if that phase's chemical potential is the lowest:
+<li>note that the the substance will in a certain phase if that phase’s chemical potential is the lowest:
 <ul>
 <li>Gas: <span class="math inline">\(\mu_g &lt; \mu_l\)</span></li>
 <li>Liquid: <span class="math inline">\(\mu_l &lt; \mu_g\)</span> and <span class="math inline">\(\mu_l &lt; \mu_s\)</span></li>
@@ -66,7 +95,7 @@
     \boxed{\frac{dP}{d\tau} = \frac{s_g-s_l}{\nu_g-\nu_l} = \frac{\Delta s}{\Delta\nu}}
 \end{gathered}
 \]</span></p>
-<p>While confusing we'll use:</p>
+<p>While confusing we’ll use:</p>
 <ul>
 <li><span class="math inline">\(\nu\)</span> which relates to the volume per particle. <span class="math inline">\(\Delta\nu\)</span> is the change in volume if we were to transfer one particle from one phase to another</li>
 <li><span class="math inline">\(s\)</span> the entropy per particle. This changes the differential equation to a state equation. <span class="math inline">\(\Delta s\)</span> is the change in entropy if we were to transfer one particle from one phase to another</li>
@@ -99,13 +128,23 @@
 <h1 id="latent-heat-of-vaporization">Latent Heat of Vaporization</h1>
 <p>The amount of heat transfered a single particle of liquid to gas is called the <strong>latnet heat of vaporization</strong>.</p>
 <p><span class="math display">\[L \equiv \frac{dQ}{N}\]</span></p>
+                
+            </div>
         </div>
-        <div class="col-md-2 d-none d-md-block">
-            <div class="sticky-top onthispage">
-                <ul id="onthispage-list" class="no-list-style">On This Page</ul>
+
+        <!-- On This Page -->
+        <div class="col-lg-2 d-none d-lg-block bg-light">
+            <div class="onthispage sidenav sticky-top vh-80">
+                <strong class="sidenav-title">On This Page</strong>
+                <div class="sidenav-body">
+                    <ul id="onthispage-list" class="no-list-style"></ul>
+                </div>
             </div>
         </div>
     </div>
+    <div id="commento"></div>
+    <script src="https://cdn.commento.io/js/commento.js"></script>
+</div>
 </div>
 
     <footer class="py-2 bg-white">
@@ -123,6 +162,7 @@
         crossorigin="anonymous"></script>
 
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/datetime.js"></script>
+    <script src="https://ketozhang.github.io/ketozhang.github.io/static/sidenav.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/codeHighlight.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/prism.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>

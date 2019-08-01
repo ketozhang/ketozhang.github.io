@@ -17,6 +17,7 @@ pyyaml = "*"
 # e1839a8 = {editable = true,path = "."}
 pyscss = "*"
 flask-assets = "*"
+staticpy = "*"
 
 [requires]
 python_version = "3.7"

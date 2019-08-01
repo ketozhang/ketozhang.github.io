@@ -4,15 +4,15 @@
 <li><a href="#unrolling">Unrolling</a></li>
 <li><a href="#cache-blocking">Cache Blocking</a></li>
 </ul>
-<p>There are many ways to speedup a program. We'll use matrix operations as the classical example. This section will not cover parallel processing.</p>
+<p>There are many ways to speedup a program. We’ll use matrix operations as the classical example. This section will not cover parallel processing.</p>
 <h1 id="unrolling">Unrolling</h1>
 <p>Optimize the use of independent instruction to accumulate as much binary size (registers) as possible.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">result <span class="op">=</span> <span class="dv">0</span>
-<span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(arr), <span class="dv">4</span>):
-    result <span class="op">+=</span> arr[i]  
-    result <span class="op">+=</span> arr[i<span class="op">+</span><span class="dv">1</span>]
-    result <span class="op">+=</span> arr[i<span class="op">+</span><span class="dv">2</span>]
-    result <span class="op">+=</span> arr[i<span class="op">+</span><span class="dv">3</span>]</code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" data-line-number="1">result <span class="op">=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(arr), <span class="dv">4</span>):</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">    result <span class="op">+=</span> arr[i]  </a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">    result <span class="op">+=</span> arr[i<span class="op">+</span><span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">    result <span class="op">+=</span> arr[i<span class="op">+</span><span class="dv">2</span>]</a>
+<a class="sourceLine" id="cb1-6" data-line-number="6">    result <span class="op">+=</span> arr[i<span class="op">+</span><span class="dv">3</span>]</a></code></pre></div>
 <h1 id="cache-blocking">Cache Blocking</h1>
 <p>Optimize temporal locality of cache by changing the way we access data.</p>
 <ul>

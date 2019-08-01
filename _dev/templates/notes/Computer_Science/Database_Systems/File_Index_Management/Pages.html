@@ -31,11 +31,11 @@
 <li>May be used for fixed length records but its costly</li>
 <li><p><strong>Size</strong> is computed knowing the number of records <span class="math inline">\(n\)</span>, the footer size (with pointer size, size to store offset, and a free space pointer), and the record size (with size of a single record)</p>
 <p><span class="math display">\[
-\begin{gather*}
-    P = F + R\\
-    F = (\texttt{pointer} + \texttt{offset}) \cdot (n + 1)\\
-    R = \texttt{record_size} \cdot n
-\end{gather*}
-\]</span></p></li>
+  \begin{gather*}
+      P = F + R\\
+      F = (\texttt{pointer} + \texttt{offset}) \cdot (n + 1)\\
+      R = \texttt{record_size} \cdot n
+  \end{gather*}
+  \]</span></p></li>
 </ul></li>
 </ul>

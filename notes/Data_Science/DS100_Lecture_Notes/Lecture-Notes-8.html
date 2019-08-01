@@ -28,32 +28,61 @@
 <body>
     
 <div class="container-fluid" id="note">
+    <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
     <h1 class="title text-center pt-3">Lecture Notes8</h1>
     <hr>
     <div class="row">
-        <div class="col-lg-2 d-none d-lg-block"></div>
-        <div class="col-lg-7 col-md-10">
-            <h1 id="lecture-notes-8">Lecture Notes 8</h1>
+        <!-- Notebook Sidenav -->
+        <div class="col-lg-2 col-3 d-none d-md-block bg-light">
+            <div class="sidenav sticky-top vh-80">
+                <div class="sidenav-title row no-gutters">
+                    <div class="col-9">
+                        <strong>Lecture Notes8</strong>
+                    </div>
+                    <div class="col-2 offset-1">
+                        <a class="go-up" href="https://ketozhang.github.io/ketozhang.github.io/notes/Data_Science/DS100_Lecture_Notes/" role="button">
+                            <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+                        </a>
+                    </div>
+                </div>
+                <div class="sidenav-body no-gutters">
+                    <ul class="no-list-style pl-3">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="col-lg-8 col-9">
+            <div class="markdown-content">
+                
+                <h1 id="lecture-notes-8">Lecture Notes 8</h1>
 <h2 id="multiple-plots-in-matplotlib">Multiple Plots in Matplotlib</h2>
 <p>We will be using a different convention in using Matplotlib. Matplotlib was a object-orientated program based on a single class invoked by <code>plt.plot()</code> which plots things into a figure object called <code>matplotlib.pyplot.figure</code> (see <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.figure.html">docs</a>). However plotting more than one plot in the same figure or even different figure can be very confusing if you were to use <code>plt.plot</code> like you were taught at the beginning.</p>
 <p>Instead we will splits the plot into two objects the figure and axes object,</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">fig2, ax1 <span class="op">=</span> plt.subplots()
-ax1.plot(x1, y1) <span class="co"># for some x1 and y1</span>
-ax1.plot(x2,y2) <span class="co"># for some other x2 and y2 on the same figure</span>
-ax1.legend()
-ax1.set_title(`Title`)
-ax1.set_ylabel(`Title`)
-ax1.set_xlabel(`Title`)
-
-
-<span class="co"># Second figure (plotted on second figure)</span>
-fig2, ax2 <span class="op">=</span> plt.subplots()</code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" data-line-number="1">fig2, ax1 <span class="op">=</span> plt.subplots()</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">ax1.plot(x1, y1) <span class="co"># for some x1 and y1</span></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">ax1.plot(x2,y2) <span class="co"># for some other x2 and y2 on the same figure</span></a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">ax1.legend()</a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">ax1.set_title(`Title`)</a>
+<a class="sourceLine" id="cb1-6" data-line-number="6">ax1.set_ylabel(`Title`)</a>
+<a class="sourceLine" id="cb1-7" data-line-number="7">ax1.set_xlabel(`Title`)</a>
+<a class="sourceLine" id="cb1-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb1-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb1-10" data-line-number="10"><span class="co"># Second figure (plotted on second figure)</span></a>
+<a class="sourceLine" id="cb1-11" data-line-number="11">fig2, ax2 <span class="op">=</span> plt.subplots()</a></code></pre></div>
 <center>
 <img src="2018-02-08-22-45-46.png" width='400'>
 </center>
 <hr />
 <h2 id="guidelines-of-a-good-plot">Guidelines of a Good Plot</h2>
-<ol style="list-style-type: decimal">
+<ol type="1">
 <li>Scale
 <ul>
 <li>Numerical spacing of data</li>
@@ -79,13 +108,23 @@ fig2, ax2 <span class="op">=</span> plt.subplots()</code></pre></div>
 <li>Smoothing</li>
 <li>Philosophy</li>
 </ol>
+                
+            </div>
         </div>
-        <div class="col-md-2 d-none d-md-block">
-            <div class="sticky-top onthispage">
-                <ul id="onthispage-list" class="no-list-style">On This Page</ul>
+
+        <!-- On This Page -->
+        <div class="col-lg-2 d-none d-lg-block bg-light">
+            <div class="onthispage sidenav sticky-top vh-80">
+                <strong class="sidenav-title">On This Page</strong>
+                <div class="sidenav-body">
+                    <ul id="onthispage-list" class="no-list-style"></ul>
+                </div>
             </div>
         </div>
     </div>
+    <div id="commento"></div>
+    <script src="https://cdn.commento.io/js/commento.js"></script>
+</div>
 </div>
 
     <footer class="py-2 bg-white">
@@ -103,6 +142,7 @@ fig2, ax2 <span class="op">=</span> plt.subplots()</code></pre></div>
         crossorigin="anonymous"></script>
 
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/datetime.js"></script>
+    <script src="https://ketozhang.github.io/ketozhang.github.io/static/sidenav.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/codeHighlight.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/prism.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>

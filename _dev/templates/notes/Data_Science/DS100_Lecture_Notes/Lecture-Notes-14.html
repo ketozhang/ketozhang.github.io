@@ -7,7 +7,7 @@
 <p>If <span class="math inline">\(\theta\)</span> is a vector (if you loss function has multiple parameters) then we must use the gradient to optimize rather than the derivative of a single coordinate.</p>
 <p><span class="math display">\[ \nabla \ell(\boldsymbol\theta) =  \frac{\partial \ell}{\partial \theta_1} + \frac{\partial \ell}{\partial \theta_2} + \ldots \frac{\partial \ell}{\partial \theta_n}\]</span></p>
 <p>In numerical analysis, the <strong>gradient descent</strong> method is:</p>
-<ol style="list-style-type: decimal">
+<ol type="1">
 <li>Take the gradient at some point along your curve <span class="math inline">\(\ell(\theta)\)</span>. This point is denoted as <span class="math inline">\(\theta^{(0)}\)</span></li>
 <li>The new point is taken to be the current point <span class="math inline">\(\theta^{(0)}\)</span> minus a constant factor of <span class="math inline">\(\nabla \ell(\theta^{(t)})\)</span></li>
 </ol>

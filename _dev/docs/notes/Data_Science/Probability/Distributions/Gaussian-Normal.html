@@ -28,12 +28,41 @@
 <body>
     
 <div class="container-fluid" id="note">
+    <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
     <h1 class="title text-center pt-3">Gaussian Distribution</h1>
     <hr>
     <div class="row">
-        <div class="col-lg-2 d-none d-lg-block"></div>
-        <div class="col-lg-7 col-md-10">
-            <p>The most prevalent distribution appearing in countless fields is the Gaussian or normal distribution.</p>
+        <!-- Notebook Sidenav -->
+        <div class="col-lg-2 col-3 d-none d-md-block bg-light">
+            <div class="sidenav sticky-top vh-80">
+                <div class="sidenav-title row no-gutters">
+                    <div class="col-9">
+                        <strong>Gaussian Distribution</strong>
+                    </div>
+                    <div class="col-2 offset-1">
+                        <a class="go-up" href="https://ketozhang.github.io/ketozhang.github.io/notes/Data_Science/Probability/Distributions/" role="button">
+                            <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+                        </a>
+                    </div>
+                </div>
+                <div class="sidenav-body no-gutters">
+                    <ul class="no-list-style pl-3">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="col-lg-8 col-9">
+            <div class="markdown-content">
+                
+                <p>The most prevalent distribution appearing in countless fields is the Gaussian or normal distribution.</p>
 <p><span class="math display">\[X \sim N(\mu, \sigma)\]</span> <span class="math display">\[P(X=x) = \frac{1}{\sqrt{2\pi \sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}\]</span></p>
 <ul>
 <li><strong>Properties</strong>
@@ -42,26 +71,26 @@
 <p>The standard normal distribution is <span class="math inline">\(N(0,1)\)</span> which plays an important role in motivating why we standardize random variables. Say for a Gaussian random variable <span class="math inline">\(X\)</span>,</p>
 <p><span class="math display">\[ Y = \frac{X-\mu_X}{\sigma_X} \iff Y \sim N(0,1)\]</span></p></li>
 <li><p><strong>Independent Joint Probability (Rotational Invariant)</strong></p>
-<p>Due to the distribution's property of rotational invariance, the joint property of two iid Gaussian is a Gaussian however you rotate the random variable axes. Even better the Gaussian has the mean and variance of the sums of the two Gaussians.</p>
+<p>Due to the distribution’s property of rotational invariance, the joint property of two iid Gaussian is a Gaussian however you rotate the random variable axes. Even better the Gaussian has the mean and variance of the sums of the two Gaussians.</p>
 <p><span class="math display">\[
-P(X,Y) = \text{N}(\mu_X + \mu_Y, \sigma_X^2 + \sigma_Y^2)
-\]</span></p></li>
+  P(X,Y) = \text{N}(\mu_X + \mu_Y, \sigma_X^2 + \sigma_Y^2)
+  \]</span></p></li>
 <li><p><strong>Sum:</strong></p>
 <p><span class="math display">\[
-P(X+Y) =
-\]</span></p></li>
+  P(X+Y) =
+  \]</span></p></li>
 <li><p><strong>Characteristics Function</strong>:</p>
 <p><span class="math display">\[\tilde p(x) = \exp{\left[-ik\mu -\frac{k^2\sigma^2}{2}\right]} \]</span></p></li>
 <li><p><strong>Cumulants and Moments</strong>: <span class="math display">\[
-    \avg{x}_c = \mu ,\quad \avg{x^2}_c = \sigma^2,\quad \avg{x^n}_c = 0, \quad \ldots,\quad  \avg{x^n}_c = 0\\
-    \avg{x} = \mu ,\quad \avg{x^2} = \sigma^2 + \mu^2,\quad \avg{x^n} = 3\sigma^2\mu + \mu^3, \quad \ldots
-\]</span></p></li>
+      \avg{x}_c = \mu ,\quad \avg{x^2}_c = \sigma^2,\quad \avg{x^n}_c = 0, \quad \ldots,\quad  \avg{x^n}_c = 0\\
+      \avg{x} = \mu ,\quad \avg{x^2} = \sigma^2 + \mu^2,\quad \avg{x^n} = 3\sigma^2\mu + \mu^3, \quad \ldots
+  \]</span></p></li>
 </ul></li>
 </ul>
 <h2 id="central-limit-theorem">Central Limit Theorem</h2>
 <p>For iid random variables $X_1, X_2, $ each with the same mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>. Let <span class="math inline">\(\bar X\)</span> be the sample mean,</p>
 <p><span class="math display">\[ \bar X = \frac{1}{n}\sum_i^n{X_i} \]</span> <span class="math display">\[ \text{Var}[\bar X] = \frac{\sigma^2}{n}\]</span></p>
-<p>Let's define the random variable <span class="math inline">\(Z\)</span> to be the standardized sample mean,</p>
+<p>Let’s define the random variable <span class="math inline">\(Z\)</span> to be the standardized sample mean,</p>
 <p><span class="math display">\[ Z = \frac{\bar X - \mu}{\frac{\sigma}{\sqrt{n}}} \]</span></p>
 <p>As <span class="math inline">\(n \rightarrow \infty\)</span>, this <span class="math inline">\(Z\)</span> tends towards a <span class="math inline">\(N(0,1)\)</span></p>
 <p><span class="math display">\[ P(Z \le c) \rightarrow \frac{1}{\sqrt{2\pi}} \int_{-\infty}^c e^{-x^2/2}~\mathrm dx \]</span></p>
@@ -86,13 +115,23 @@ P(\boldsymbol\Delta) = (2 \pi \det \Sigma)^{-1/2}\exp\left[-\frac{1}{2}\left\lve
 <p><span class="math display">\[ P(\boldsymbol{x}) = \prod{P(X_i)} \]</span></p>
 </dd>
 </dl>
+                
+            </div>
         </div>
-        <div class="col-md-2 d-none d-md-block">
-            <div class="sticky-top onthispage">
-                <ul id="onthispage-list" class="no-list-style">On This Page</ul>
+
+        <!-- On This Page -->
+        <div class="col-lg-2 d-none d-lg-block bg-light">
+            <div class="onthispage sidenav sticky-top vh-80">
+                <strong class="sidenav-title">On This Page</strong>
+                <div class="sidenav-body">
+                    <ul id="onthispage-list" class="no-list-style"></ul>
+                </div>
             </div>
         </div>
     </div>
+    <div id="commento"></div>
+    <script src="https://cdn.commento.io/js/commento.js"></script>
+</div>
 </div>
 
     <footer class="py-2 bg-white">
@@ -110,6 +149,7 @@ P(\boldsymbol\Delta) = (2 \pi \det \Sigma)^{-1/2}\exp\left[-\frac{1}{2}\left\lve
         crossorigin="anonymous"></script>
 
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/datetime.js"></script>
+    <script src="https://ketozhang.github.io/ketozhang.github.io/static/sidenav.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/codeHighlight.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/prism.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>

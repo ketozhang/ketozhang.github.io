@@ -28,15 +28,44 @@
 <body>
     
 <div class="container-fluid" id="note">
+    <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
     <h1 class="title text-center pt-3">Floating Point</h1>
     <hr>
     <div class="row">
-        <div class="col-lg-2 d-none d-lg-block"></div>
-        <div class="col-lg-7 col-md-10">
-            <h1 id="floating-point">Floating Point</h1>
+        <!-- Notebook Sidenav -->
+        <div class="col-lg-2 col-3 d-none d-md-block bg-light">
+            <div class="sidenav sticky-top vh-80">
+                <div class="sidenav-title row no-gutters">
+                    <div class="col-9">
+                        <strong>Floating Point</strong>
+                    </div>
+                    <div class="col-2 offset-1">
+                        <a class="go-up" href="https://ketozhang.github.io/ketozhang.github.io/notes/Computer_Science/Computer_Architecture/" role="button">
+                            <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+                        </a>
+                    </div>
+                </div>
+                <div class="sidenav-body no-gutters">
+                    <ul class="no-list-style pl-3">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="col-lg-8 col-9">
+            <div class="markdown-content">
+                
+                <h1 id="floating-point">Floating Point</h1>
 <p>A floating point is a binary representation to include non-integer numbers along with <span class="math inline">\(\pm \infty\)</span> and <code>NaN</code>.</p>
 <p>The format of the floating point in binary is always,</p>
-<div style="white-space: pre-line;">Sign | Exponent | Manitssa |</div>
+<div class="line-block">Sign | Exponent | Manitssa |</div>
 <h2 id="floating-point-single-precision">Floating Point Single Precision</h2>
 <p>The single precision floating point is a 32-bit representation of the floating point.</p>
 <p>Where we have,</p>
@@ -44,28 +73,28 @@
 <thead>
 <tr class="header">
 <th></th>
-<th align="center">Symbol</th>
-<th align="center">Size (bits)</th>
+<th style="text-align: center;">Symbol</th>
+<th style="text-align: center;">Size (bits)</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><strong>Sign</strong></td>
-<td align="center"><span class="math inline">\(S\)</span></td>
-<td align="center">1</td>
+<td style="text-align: center;"><span class="math inline">\(S\)</span></td>
+<td style="text-align: center;">1</td>
 <td>the sign where <code>0</code> is positive and <code>1</code> is negative</td>
 </tr>
 <tr class="even">
 <td><strong>Exponent</strong></td>
-<td align="center"><span class="math inline">\(E\)</span></td>
-<td align="center">8</td>
+<td style="text-align: center;"><span class="math inline">\(E\)</span></td>
+<td style="text-align: center;">8</td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><strong>Mantissa</strong></td>
-<td align="center"><span class="math inline">\(M\)</span></td>
-<td align="center">23</td>
+<td style="text-align: center;"><span class="math inline">\(M\)</span></td>
+<td style="text-align: center;">23</td>
 <td></td>
 </tr>
 </tbody>
@@ -100,13 +129,23 @@
 <li>The first line is redundant math; just take the sign of <span class="math inline">\(D\)</span> and consider what <span class="math inline">\(S\)</span> is</li>
 <li><span class="math inline">\(\lfloor x \rfloor\)</span> is the floor (round down) of <span class="math inline">\(x\)</span></li>
 </ul>
+                
+            </div>
         </div>
-        <div class="col-md-2 d-none d-md-block">
-            <div class="sticky-top onthispage">
-                <ul id="onthispage-list" class="no-list-style">On This Page</ul>
+
+        <!-- On This Page -->
+        <div class="col-lg-2 d-none d-lg-block bg-light">
+            <div class="onthispage sidenav sticky-top vh-80">
+                <strong class="sidenav-title">On This Page</strong>
+                <div class="sidenav-body">
+                    <ul id="onthispage-list" class="no-list-style"></ul>
+                </div>
             </div>
         </div>
     </div>
+    <div id="commento"></div>
+    <script src="https://cdn.commento.io/js/commento.js"></script>
+</div>
 </div>
 
     <footer class="py-2 bg-white">
@@ -124,6 +163,7 @@
         crossorigin="anonymous"></script>
 
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/datetime.js"></script>
+    <script src="https://ketozhang.github.io/ketozhang.github.io/static/sidenav.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/codeHighlight.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/prism.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>

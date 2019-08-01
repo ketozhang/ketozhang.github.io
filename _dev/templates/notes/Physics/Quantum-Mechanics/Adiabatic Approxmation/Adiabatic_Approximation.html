@@ -36,7 +36,7 @@
 \boxed{\dot c_m(t) = - c_m\braket{\psi_m}{\dot \psi_m} - \sum_{n\ne m}c_n \frac{\bra{\psi_m}\dot H\ket{\psi_n}}{E_n - E_m}\exp\left[\frac{-i}{\hbar}\int_0^t{E_n(t&#39;) - E_m(t&#39;)\d t&#39;}\right]}
 \]</span></p>
 <p>This is the exact solution to the Time Dependent Hamiltonian problem (not an estimate like the TD Perturbation Theory).</p>
-<p>Now let's apply the adibatic approximation. <span class="math inline">\(\dot H\)</span> is very small because the Hamiltonian changes slowly thus the whole second term droped in <span class="math inline">\(\dot c_m(t)\)</span></p>
+<p>Now let’s apply the adibatic approximation. <span class="math inline">\(\dot H\)</span> is very small because the Hamiltonian changes slowly thus the whole second term droped in <span class="math inline">\(\dot c_m(t)\)</span></p>
 <p><span class="math display">\[ 
     \dot c_m(t) = - c_m\braket{\psi_m}{\dot \psi_m}
 \]</span></p>
@@ -51,10 +51,10 @@
 </ul>
 </dd>
 </dl>
-<h2 id="berrys-phase">Berry's Phase</h2>
-<p>Previously we've seen the time dependent Hamiltonian that changes over time has the geometric phase:</p>
+<h2 id="berrys-phase">Berry’s Phase</h2>
+<p>Previously we’ve seen the time dependent Hamiltonian that changes over time has the geometric phase:</p>
 <p><span class="math display">\[ \gamma_n(t) \equiv i\int_0^t{\braket{\psi_n(t&#39;)}{\dot\psi_n(t&#39;)}\d t&#39;} \]</span></p>
-<p>Now let's consider some parameter that changes over time which changes the Hamiltonian (like the size of the width in the infinite square well). Let's denote this parameter as <span class="math inline">\(R(t)\)</span> therefore the Hamiltonian is <span class="math inline">\(H(R(t))\)</span>. We can write the geometric phase as an integrate along <span class="math inline">\(R\)</span>,</p>
+<p>Now let’s consider some parameter that changes over time which changes the Hamiltonian (like the size of the width in the infinite square well). Let’s denote this parameter as <span class="math inline">\(R(t)\)</span> therefore the Hamiltonian is <span class="math inline">\(H(R(t))\)</span>. We can write the geometric phase as an integrate along <span class="math inline">\(R\)</span>,</p>
 <p><span class="math display">\[
 \frac{\partial \psi}{\partial t} = \frac{\partial \psi_n}{\partial R}\frac{dR}{dt}\\
 \gamma_n(R) = i\int_{R_i}^{R_f}{\braket{\psi_n(R)}{\psi_n&#39;(R)}\d R}
@@ -64,16 +64,16 @@
 <p><span class="math display">\[
 \boxed{\gamma_n(R) = i\int_{\mathbf R_i}^{\mathbf R_f}{\braket{\psi_n}{\nabla_{\mathbf R}\psi_n}\d \mathbf R}}
 \]</span></p>
-<p>Say after some time <span class="math inline">\(T\)</span> the Hamiltonian return to it's original form therefore travel around the closed loop around <span class="math inline">\(\mathbf R\)</span>,</p>
+<p>Say after some time <span class="math inline">\(T\)</span> the Hamiltonian return to it’s original form therefore travel around the closed loop around <span class="math inline">\(\mathbf R\)</span>,</p>
 <p><span class="math display">\[ 
 \boxed{\gamma_n(T) = i \oint{\braket{\psi_n}{\nabla_{\mathbf R}\psi_n}\d \mathbf R}}
 \]</span></p>
-<p>From Stoke's theorem we may write this as a surface integral,</p>
+<p>From Stoke’s theorem we may write this as a surface integral,</p>
 <p><span class="math display">\[ 
 \boxed{\gamma_n(T) = i \int{\nabla_{\mathbf R} \times \braket{\psi_n}{\nabla_{\mathbf R}\psi_n}\d \mathbf a}}
 \]</span></p>
 <h3 id="aharonov-bohm-effect">Aharonov-Bohm Effect</h3>
-<p>Consider an electron splitting dodging the solenoid magnetic field. Let's center the coordinate system at the solenoid such that,</p>
+<p>Consider an electron splitting dodging the solenoid magnetic field. Let’s center the coordinate system at the solenoid such that,</p>
 <p><span class="math display">\[ 
 \mathbf B(r) = \begin{cases}
     B_0 \hat z &amp; r &lt; a\\

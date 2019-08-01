@@ -28,45 +28,74 @@
 <body>
     
 <div class="container-fluid" id="note">
+    <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
     <h1 class="title text-center pt-3">Lecture Notes12</h1>
     <hr>
     <div class="row">
-        <div class="col-lg-2 d-none d-lg-block"></div>
-        <div class="col-lg-7 col-md-10">
-            <h1 id="lecture-notes-12">Lecture Notes 12</h1>
+        <!-- Notebook Sidenav -->
+        <div class="col-lg-2 col-3 d-none d-md-block bg-light">
+            <div class="sidenav sticky-top vh-80">
+                <div class="sidenav-title row no-gutters">
+                    <div class="col-9">
+                        <strong>Lecture Notes12</strong>
+                    </div>
+                    <div class="col-2 offset-1">
+                        <a class="go-up" href="https://ketozhang.github.io/ketozhang.github.io/notes/Data_Science/DS100_Lecture_Notes/" role="button">
+                            <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+                        </a>
+                    </div>
+                </div>
+                <div class="sidenav-body no-gutters">
+                    <ul class="no-list-style pl-3">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="col-lg-8 col-9">
+            <div class="markdown-content">
+                
+                <h1 id="lecture-notes-12">Lecture Notes 12</h1>
 <h2 id="joins">Joins</h2>
 <p>The query to join two table:</p>
-<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> [<span class="kw">DISTINCT</span>] &lt;columns&gt;
-    <span class="kw">FROM</span> &lt;tables&gt;
-    ...;</code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">SELECT</span> [<span class="kw">DISTINCT</span>] &lt;columns&gt;</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">    <span class="kw">FROM</span> &lt;tables&gt;</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">    ...;</a></code></pre></div>
 <p>Where <code>&lt;tables&gt;</code> can look like <code>table1 as t1, table2 as t2</code>. The <code>as</code> statement assigns <code>table1</code> to have an <strong>alias</strong> <code>t1</code>.</p>
 <p>There are multiple types of joins:</p>
 <dl>
 <dt>Inner</dt>
 <dd><p>The <strong>inner join</strong> (aka <strong>full inner join</strong> or <strong>natural join</strong>) joins the intersection of the two table by looking at the shared column. This is done by default on the <code>FROM</code> clause.</p>
 <p>One may do an inner join even if there exist no shared column by specifying which column and how to compare (conditional statement). The format of this is:</p>
-<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> [<span class="kw">DISTINCT</span>] &lt;columns&gt;
-    <span class="kw">FROM</span> &lt;table1&gt; <span class="kw">INNER</span> <span class="kw">JOIN</span> &lt;table2&gt;
-    <span class="kw">ON</span> &lt;condition&gt;;</code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">SELECT</span> [<span class="kw">DISTINCT</span>] &lt;columns&gt;</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">    <span class="kw">FROM</span> &lt;table1&gt; <span class="kw">INNER</span> <span class="kw">JOIN</span> &lt;table2&gt;</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">    <span class="kw">ON</span> &lt;condition&gt;;</a></code></pre></div>
 <p>A join by looking at the primary key is,</p>
-<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> [<span class="kw">DISTINCT</span>] &lt;columns&gt;
-    <span class="kw">FROM</span> &lt;table1&gt; <span class="kw">NATURAL</span> <span class="kw">JOIN</span> &lt;table2&gt;
-    <span class="kw">ON</span> &lt;condition&gt;;</code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">SELECT</span> [<span class="kw">DISTINCT</span>] &lt;columns&gt;</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2">    <span class="kw">FROM</span> &lt;table1&gt; <span class="kw">NATURAL</span> <span class="kw">JOIN</span> &lt;table2&gt;</a>
+<a class="sourceLine" id="cb3-3" data-line-number="3">    <span class="kw">ON</span> &lt;condition&gt;;</a></code></pre></div>
 </dd>
 <dt>Left and Right:</dt>
 <dd><p><strong>Left join</strong> and <strong>right join</strong> (aka <strong>left outer join</strong>, <strong>right outer join</strong>) does an inner join but includes unmatched entries from either the left table or right table.</p>
-<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> [<span class="kw">DISTINCT</span>] &lt;columns&gt;
-    <span class="kw">FROM</span> &lt;left_table&gt; &lt;LEFT|RIGHT&gt; <span class="kw">JOIN</span> &lt;right_table&gt;
-    <span class="kw">ON</span> &lt;condition&gt;;</code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">SELECT</span> [<span class="kw">DISTINCT</span>] &lt;columns&gt;</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">    <span class="kw">FROM</span> &lt;left_table&gt; &lt;LEFT|RIGHT&gt; <span class="kw">JOIN</span> &lt;right_table&gt;</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3">    <span class="kw">ON</span> &lt;condition&gt;;</a></code></pre></div>
 </dd>
 </dl>
-<p>Note that a left join's unmatched entries will take the left index and pair it with a <code>NULL</code> index. Similar idea for right joins.</p>
+<p>Note that a left join’s unmatched entries will take the left index and pair it with a <code>NULL</code> index. Similar idea for right joins.</p>
 <dl>
 <dt>Full:</dt>
 <dd><p>The <strong>full join</strong> (aka <strong>full outer join</strong>) includes all entries and pairs any missing entries as <code>NULL</code>.</p>
-<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> [<span class="kw">DISTINCT</span>] &lt;columns&gt;
-    <span class="kw">FROM</span> &lt;left_table&gt; <span class="kw">FULL</span> <span class="kw">JOIN</span> &lt;right_table&gt;
-    <span class="kw">ON</span> &lt;condition&gt;;</code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">SELECT</span> [<span class="kw">DISTINCT</span>] &lt;columns&gt;</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2">    <span class="kw">FROM</span> &lt;left_table&gt; <span class="kw">FULL</span> <span class="kw">JOIN</span> &lt;right_table&gt;</a>
+<a class="sourceLine" id="cb5-3" data-line-number="3">    <span class="kw">ON</span> &lt;condition&gt;;</a></code></pre></div>
 </dd>
 </dl>
 <h2 id="null">NULL</h2>
@@ -77,41 +106,51 @@
 </dd>
 <dt>Finding <code>NULL</code></dt>
 <dd><p>To check if an entry <code>NULL</code> use:</p>
-<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> &lt;columns&gt; 
-    <span class="kw">FROM</span> &lt;table&gt; 
-    <span class="kw">WHERE</span> &lt;column&gt; <span class="kw">IS</span> <span class="kw">NULL</span>;</code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">SELECT</span> &lt;columns&gt; </a>
+<a class="sourceLine" id="cb6-2" data-line-number="2">    <span class="kw">FROM</span> &lt;table&gt; </a>
+<a class="sourceLine" id="cb6-3" data-line-number="3">    <span class="kw">WHERE</span> &lt;column&gt; <span class="kw">IS</span> <span class="kw">NULL</span>;</a></code></pre></div>
 </dd>
 <dt><code>NULL</code> has special booleans</dt>
 <dd><p><code>NULL</code> is has special rules when special boolean operators are applied on <code>NULL</code> data. These special boolean operators are:</p>
-<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql">...
-<span class="kw">WHERE</span> &lt;column&gt; &lt;NOT|AND|OR&gt; <span class="kw">null</span>;</code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb7-1" data-line-number="1">...</a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="kw">WHERE</span> &lt;column&gt; &lt;NOT|AND|OR&gt; <span class="kw">null</span>;</a></code></pre></div>
 <p>Few great examples are (in psuedo-code):</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">NOT NULL     <span class="op">==</span>   NULL
-T <span class="op">&amp;</span> NULL     <span class="op">==</span>   NULL  <span class="co"># as if NULL is falsy</span>
-F <span class="op">&amp;</span> NULL     <span class="op">==</span>   F
-NULL <span class="op">&amp;</span> F     <span class="op">==</span>   F     <span class="co"># F is more false than NULL</span>
-NULL <span class="op">&amp;</span> NULL  <span class="op">==</span>   F
-
-NULL <span class="kw">or</span> T    <span class="op">==</span>  T
-NULL <span class="kw">or</span> F    <span class="op">==</span>  NULL   <span class="co"># NULL is more true than F</span>
-NULL <span class="kw">or</span> NULL <span class="op">==</span>  NULL</code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb8-1" data-line-number="1">NOT NULL     <span class="op">==</span>   NULL</a>
+<a class="sourceLine" id="cb8-2" data-line-number="2">T <span class="op">&amp;</span> NULL     <span class="op">==</span>   NULL  <span class="co"># as if NULL is falsy</span></a>
+<a class="sourceLine" id="cb8-3" data-line-number="3">F <span class="op">&amp;</span> NULL     <span class="op">==</span>   F</a>
+<a class="sourceLine" id="cb8-4" data-line-number="4">NULL <span class="op">&amp;</span> F     <span class="op">==</span>   F     <span class="co"># F is more false than NULL</span></a>
+<a class="sourceLine" id="cb8-5" data-line-number="5">NULL <span class="op">&amp;</span> NULL  <span class="op">==</span>   F</a>
+<a class="sourceLine" id="cb8-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb8-7" data-line-number="7">NULL <span class="kw">or</span> T    <span class="op">==</span>  T</a>
+<a class="sourceLine" id="cb8-8" data-line-number="8">NULL <span class="kw">or</span> F    <span class="op">==</span>  NULL   <span class="co"># NULL is more true than F</span></a>
+<a class="sourceLine" id="cb8-9" data-line-number="9">NULL <span class="kw">or</span> NULL <span class="op">==</span>  NULL</a></code></pre></div>
 <p>Boolean operations on <code>NULL</code> is symmetric such the reverse of any boolean operation is the same (e.g., <code>NULL or T == T or NULL</code>).</p>
 <h2 id="sql-simple-random-sample">SQL Simple Random Sample</h2>
 <p>To do a simple random sample in SQL:</p>
-<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">CREATE</span> <span class="kw">TABLE</span> &lt;sample_name&gt; <span class="kw">AS</span>
-<span class="kw">SELECT</span> *, <span class="kw">RANDOM</span>() <span class="kw">as</span> u
-<span class="kw">FROM</span> &lt;table <span class="kw">of</span> data&gt;
-<span class="kw">ORDER</span> <span class="kw">BY</span> u
-<span class="kw">LIMIT</span> &lt;integer&gt;</code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw">CREATE</span> <span class="kw">TABLE</span> &lt;sample_name&gt; <span class="kw">AS</span></a>
+<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="kw">SELECT</span> *, <span class="kw">RANDOM</span>() <span class="kw">as</span> u</a>
+<a class="sourceLine" id="cb9-3" data-line-number="3"><span class="kw">FROM</span> &lt;table <span class="kw">of</span> data&gt;</a>
+<a class="sourceLine" id="cb9-4" data-line-number="4"><span class="kw">ORDER</span> <span class="kw">BY</span> u</a>
+<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="kw">LIMIT</span> &lt;integer&gt;</a></code></pre></div>
 </dd>
 </dl>
+                
+            </div>
         </div>
-        <div class="col-md-2 d-none d-md-block">
-            <div class="sticky-top onthispage">
-                <ul id="onthispage-list" class="no-list-style">On This Page</ul>
+
+        <!-- On This Page -->
+        <div class="col-lg-2 d-none d-lg-block bg-light">
+            <div class="onthispage sidenav sticky-top vh-80">
+                <strong class="sidenav-title">On This Page</strong>
+                <div class="sidenav-body">
+                    <ul id="onthispage-list" class="no-list-style"></ul>
+                </div>
             </div>
         </div>
     </div>
+    <div id="commento"></div>
+    <script src="https://cdn.commento.io/js/commento.js"></script>
+</div>
 </div>
 
     <footer class="py-2 bg-white">
@@ -129,6 +168,7 @@ NULL <span class="kw">or</span> NULL <span class="op">==</span>  NULL</code></pr
         crossorigin="anonymous"></script>
 
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/datetime.js"></script>
+    <script src="https://ketozhang.github.io/ketozhang.github.io/static/sidenav.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/codeHighlight.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/prism.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>

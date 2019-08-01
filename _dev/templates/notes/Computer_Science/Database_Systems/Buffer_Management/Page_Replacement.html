@@ -3,7 +3,7 @@
 <li><strong>Pinned Page</strong>: A pinned page signify that the page is still being used.</li>
 <li><strong>Dirty Page</strong>: If a dirty page was selected to be replaced that must mean the page must be written back to the disk before replacement.</li>
 </ul>
-<ol style="list-style-type: decimal">
+<ol type="1">
 <li>Scan for unpinned page</li>
 <li>Check dirty bit. If dirty write to disk.</li>
 <li>Replace page and pin.</li>
@@ -25,15 +25,15 @@
 <h2 id="clock-policy">Clock Policy</h2>
 <p>Imagine the pages gathered in a circle.</p>
 <ul>
-<li><strong>Clock hand</strong>: A pointer at the center pointing at the page it's currently scanning.</li>
-<li><strong>Reference bit</strong>: Every page gets a reference bit that's either filled or empty.</li>
-<li>A page is replace if the clock hand points to the page and its reference bit is unfilled. All given that the page isn't pinned.</li>
+<li><strong>Clock hand</strong>: A pointer at the center pointing at the page it’s currently scanning.</li>
+<li><strong>Reference bit</strong>: Every page gets a reference bit that’s either filled or empty.</li>
+<li>A page is replace if the clock hand points to the page and its reference bit is unfilled. All given that the page isn’t pinned.</li>
 <li>Once a new page is appended, we pin the page and the reference bit is filled.</li>
-<li>Because we don't need a comparator, the clock policy runs faster than LRU.</li>
+<li>Because we don’t need a comparator, the clock policy runs faster than LRU.</li>
 </ul>
 <p>The clock policy is considered a second chance policy due to the reference bit.</p>
 <p>The full algorithm would go as so:</p>
-<ol style="list-style-type: decimal">
+<ol type="1">
 <li>Ignore the clock policy until the buffer is full.</li>
 <li>Once full, place the clock hand at the first page inserted.</li>
 <li>Insert a file:

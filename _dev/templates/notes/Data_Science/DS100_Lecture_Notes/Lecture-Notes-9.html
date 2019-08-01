@@ -8,7 +8,7 @@
 <p>Data mining is the process to collect data from formatted source (e.g., webpage, PDF, etc).</p>
 <h3 id="pandas-html-parsing">Pandas HTML Parsing</h3>
 <p>Pandas is able to parse data from HTML using well formatted table tags (<code>&lt;table&gt;&lt;/table&gt;</code>). This function is called <code>Pandas.read_html</code>. The function returns a <code>list</code> of <code>Pandas.DataFrame</code> and is used like so:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">tables <span class="op">=</span> pd.read_html(<span class="st">&quot;[URL | HTML FILE]&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" data-line-number="1">tables <span class="op">=</span> pd.read_html(<span class="st">&quot;[URL | HTML FILE]&quot;</span>)</a></code></pre></div>
 <h3 id="hypertext-transfer-protocol-http">Hypertext Transfer Protocol (HTTP)</h3>
 <p>Hypertext Transfer Protocol (HTTP) is a protocol that governs how servers and client request and update information to one another often used in some browser-based environment (i.e., language of communication is HTML, JavaScript, PHP, etc). Do not confuse this with TDP and UDP which is protocol that governs server-server or server-client traffic (handling packages) and communication (request) in general.</p>
 <p>For data scraping, the header is important which is the actual message that the server and clients send to each other. There are two types:</p>

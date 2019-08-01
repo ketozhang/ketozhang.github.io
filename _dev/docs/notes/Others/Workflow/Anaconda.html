@@ -28,17 +28,46 @@
 <body>
     
 <div class="container-fluid" id="note">
+    <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
     <h1 class="title text-center pt-3">Anaconda</h1>
     <hr>
     <div class="row">
-        <div class="col-lg-2 d-none d-lg-block"></div>
-        <div class="col-lg-7 col-md-10">
-            <p>The following are instruction on how I install the latest version of Anaconda to build my Python 3 Environment.</p>
+        <!-- Notebook Sidenav -->
+        <div class="col-lg-2 col-3 d-none d-md-block bg-light">
+            <div class="sidenav sticky-top vh-80">
+                <div class="sidenav-title row no-gutters">
+                    <div class="col-9">
+                        <strong>Anaconda</strong>
+                    </div>
+                    <div class="col-2 offset-1">
+                        <a class="go-up" href="https://ketozhang.github.io/ketozhang.github.io/notes/Others/Workflow/" role="button">
+                            <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+                        </a>
+                    </div>
+                </div>
+                <div class="sidenav-body no-gutters">
+                    <ul class="no-list-style pl-3">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="col-lg-8 col-9">
+            <div class="markdown-content">
+                
+                <p>The following are instruction on how I install the latest version of Anaconda to build my Python 3 Environment.</p>
 <h2 id="download-the-anaconda-installer">Download the Anaconda Installer</h2>
 <p>We first download the install file (Anaconda uses a shell script installer). You may either:</p>
 <ul>
 <li>Visit the official <a href="https://www.anaconda.com/download/#linux">Anaconda website</a> and copy the download link for the appropriate version for your system.</li>
-<li>Visit Anaconda's official <a href="https://repo.continuum.io/archive/">installer archives</a> and copy the link to the version you want corresponding compatible to your computer.</li>
+<li>Visit Anaconda’s official <a href="https://repo.continuum.io/archive/">installer archives</a> and copy the link to the version you want corresponding compatible to your computer.</li>
 </ul>
 <blockquote>
 <p><strong>Note:</strong> Most commonly your computer is probably an x86 64-bit version. You may always check by running <code>$ uname -m</code>.</p>
@@ -47,29 +76,39 @@
 <p><strong>Note:</strong> You may wish to install the lite version of Anaconda called Miniconda. The following links is the <a href="https://conda.io/miniconda.html">official website</a> and <a href="https://repo.continuum.io/miniconda/">installation archives</a>. All instructions below are the exact same for Miniconda</p>
 </blockquote>
 <p>Make sure you have the link copied, now we will do some downloading magic (no browsers needed) by,</p>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash">$ <span class="fu">wget</span> [paste_Anaconda_download_URL_here]</code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1">$ <span class="fu">wget</span> [paste_Anaconda_download_URL_here]</a></code></pre></div>
 <blockquote>
 <p>Note: Once again you may need <code>sudo</code> permission. From now on all commands may need sudo permission.</p>
 </blockquote>
 <p>You can now check using <code>ls</code> to see if you have the shell file on your current directory (file name is similar to <code>Anacondax-x.x.x-Linux-x86_64.sh</code>).</p>
 <h2 id="install-anaconda">Install Anaconda</h2>
 <p>We will now run the shell script installer. You may run either of the following commands (there is no difference),</p>
-<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash">$ <span class="ex">./Anacondax-x.x.x-Linux-x86_64.sh</span>
-$ <span class="fu">sh</span> Anacondax-x.x.x-Linux-x86_64.sh
-$ <span class="fu">bash</span> Anacondax-x.x.x-Linux-x86_64.sh</code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" data-line-number="1">$ <span class="ex">./Anacondax-x.x.x-Linux-x86_64.sh</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">$ <span class="fu">sh</span> Anacondax-x.x.x-Linux-x86_64.sh</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">$ <span class="fu">bash</span> Anacondax-x.x.x-Linux-x86_64.sh</a></code></pre></div>
 <p>Please follow the prompt that requires you to:</p>
-<ol style="list-style-type: decimal">
+<ol type="1">
 <li>Agree to the agreement</li>
 <li>Choose an program destination (<code>~/anaconda</code> or <code>~/anaconda3</code> is sufficient or wherever you wish, some like )</li>
 <li>Choose whether you would like to update PATH (I recommend yes).</li>
 </ol>
+                
+            </div>
         </div>
-        <div class="col-md-2 d-none d-md-block">
-            <div class="sticky-top onthispage">
-                <ul id="onthispage-list" class="no-list-style">On This Page</ul>
+
+        <!-- On This Page -->
+        <div class="col-lg-2 d-none d-lg-block bg-light">
+            <div class="onthispage sidenav sticky-top vh-80">
+                <strong class="sidenav-title">On This Page</strong>
+                <div class="sidenav-body">
+                    <ul id="onthispage-list" class="no-list-style"></ul>
+                </div>
             </div>
         </div>
     </div>
+    <div id="commento"></div>
+    <script src="https://cdn.commento.io/js/commento.js"></script>
+</div>
 </div>
 
     <footer class="py-2 bg-white">
@@ -87,6 +126,7 @@ $ <span class="fu">bash</span> Anacondax-x.x.x-Linux-x86_64.sh</code></pre></div
         crossorigin="anonymous"></script>
 
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/datetime.js"></script>
+    <script src="https://ketozhang.github.io/ketozhang.github.io/static/sidenav.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/codeHighlight.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/prism.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>

@@ -28,12 +28,41 @@
 <body>
     
 <div class="container-fluid" id="note">
+    <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
     <h1 class="title text-center pt-3">Least Squares Regression</h1>
     <hr>
     <div class="row">
-        <div class="col-lg-2 d-none d-lg-block"></div>
-        <div class="col-lg-7 col-md-10">
-            <p>The <strong>linear least squares</strong> is a linear model with <span class="math inline">\(L_2\)</span> lost function and mean error cost function <span class="math inline">\(\mathcal L = \langle L_2(X) \rangle\)</span>. The linear model is given by,</p>
+        <!-- Notebook Sidenav -->
+        <div class="col-lg-2 col-3 d-none d-md-block bg-light">
+            <div class="sidenav sticky-top vh-80">
+                <div class="sidenav-title row no-gutters">
+                    <div class="col-9">
+                        <strong>Least Squares Regression</strong>
+                    </div>
+                    <div class="col-2 offset-1">
+                        <a class="go-up" href="https://ketozhang.github.io/ketozhang.github.io/notes/Data_Science/Statistical_Modeling/Regression/" role="button">
+                            <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+                        </a>
+                    </div>
+                </div>
+                <div class="sidenav-body no-gutters">
+                    <ul class="no-list-style pl-3">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="col-lg-8 col-9">
+            <div class="markdown-content">
+                
+                <p>The <strong>linear least squares</strong> is a linear model with <span class="math inline">\(L_2\)</span> lost function and mean error cost function <span class="math inline">\(\mathcal L = \langle L_2(X) \rangle\)</span>. The linear model is given by,</p>
 <p><span class="math display">\[
 \hat y(X) = X \theta
 \]</span></p>
@@ -73,26 +102,36 @@ X^\top (\hat y - y) = 0
 <p>This is then the <strong>normal equation</strong>.</p>
 <h2 id="polynomial-least-squares">Polynomial Least Squares</h2>
 <p>Let the design matrix be denoted as <span class="math inline">\(\Phi(X)\)</span> that transform add polynomials features to the feature matrix.</p>
-<p>For example, we can do a degree <span class="math inline">\(k\)</span> polynomial transformation with no cross terms. It's easier to write this consider every row of <span class="math inline">\(X\)</span> as <span class="math inline">\(X_i\)</span>.</p>
+<p>For example, we can do a degree <span class="math inline">\(k\)</span> polynomial transformation with no cross terms. It’s easier to write this consider every row of <span class="math inline">\(X\)</span> as <span class="math inline">\(X_i\)</span>.</p>
 <p><span class="math display">\[
 \Phi(X_i^\top) = \begin{bmatrix}
     X_{i1} &amp; X_{i1}^2 &amp; \ldots &amp; X_{i1}^k &amp; \ldots &amp; X_{id} &amp; X_{id}^2 &amp; \ldots &amp; X_{id}^k
 \end{bmatrix}
 \]</span></p>
 <h2 id="weighted-least-squares">Weighted Least Squares</h2>
-<p>Sometimes you may want to weigh your data by some sort of importance or confidence metric (e.g., inverse of the data's error).</p>
+<p>Sometimes you may want to weigh your data by some sort of importance or confidence metric (e.g., inverse of the data’s error).</p>
 <p>For simplicity we are only going to weigh each row. In this case, the weight can be represented as a diagonal weight matrix <span class="math inline">\(\Omega\)</span> such that <span class="math inline">\(\omega_i\)</span> is the weight the row <span class="math inline">\(X_i\)</span>.</p>
 <p>The optimization becomes,</p>
 <p><span class="math display">\[
 \mathop{\arg\min}_{\theta} \sum_{i=1}^n \omega_i(X_i^\top \theta - y_i)^2 = \mathop{\arg\min}_{\theta} (X\theta - y)^\top \Omega (X\theta - y)
 \]</span></p>
+                
+            </div>
         </div>
-        <div class="col-md-2 d-none d-md-block">
-            <div class="sticky-top onthispage">
-                <ul id="onthispage-list" class="no-list-style">On This Page</ul>
+
+        <!-- On This Page -->
+        <div class="col-lg-2 d-none d-lg-block bg-light">
+            <div class="onthispage sidenav sticky-top vh-80">
+                <strong class="sidenav-title">On This Page</strong>
+                <div class="sidenav-body">
+                    <ul id="onthispage-list" class="no-list-style"></ul>
+                </div>
             </div>
         </div>
     </div>
+    <div id="commento"></div>
+    <script src="https://cdn.commento.io/js/commento.js"></script>
+</div>
 </div>
 
     <footer class="py-2 bg-white">
@@ -110,6 +149,7 @@ X^\top (\hat y - y) = 0
         crossorigin="anonymous"></script>
 
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/datetime.js"></script>
+    <script src="https://ketozhang.github.io/ketozhang.github.io/static/sidenav.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/codeHighlight.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/prism.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>

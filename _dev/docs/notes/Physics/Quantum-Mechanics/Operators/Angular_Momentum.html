@@ -28,12 +28,41 @@
 <body>
     
 <div class="container-fluid" id="note">
+    <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
     <h1 class="title text-center pt-3">Angular Momentum</h1>
     <hr>
     <div class="row">
-        <div class="col-lg-2 d-none d-lg-block"></div>
-        <div class="col-lg-7 col-md-10">
-            <p>The angular momentum in quantum mechanics can be seen as an operator defined as,</p>
+        <!-- Notebook Sidenav -->
+        <div class="col-lg-2 col-3 d-none d-md-block bg-light">
+            <div class="sidenav sticky-top vh-80">
+                <div class="sidenav-title row no-gutters">
+                    <div class="col-9">
+                        <strong>Angular Momentum</strong>
+                    </div>
+                    <div class="col-2 offset-1">
+                        <a class="go-up" href="https://ketozhang.github.io/ketozhang.github.io/notes/Physics/Quantum-Mechanics/Operators/" role="button">
+                            <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+                        </a>
+                    </div>
+                </div>
+                <div class="sidenav-body no-gutters">
+                    <ul class="no-list-style pl-3">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="col-lg-8 col-9">
+            <div class="markdown-content">
+                
+                <p>The angular momentum in quantum mechanics can be seen as an operator defined as,</p>
 <p><span class="math display">\[\begin{equation}
     \hat{L} \equiv \hat r \times \hat p
 \end{equation}\]</span> <span class="math display">\[
@@ -72,22 +101,22 @@ From here-on out, there is no need to write the hat notation so <span class="mat
 </blockquote>
 <h2 id="commutation">Commutation</h2>
 <p>The commutation relation between each component of <span class="math inline">\(L\)</span> and <span class="math inline">\(L^2\)</span>,</p>
-<ol style="list-style-type: decimal">
+<ol type="1">
 <li><p>The component of <span class="math inline">\(L\)</span> does not commute with eachother</p>
 <p><span class="math display">\[
-\begin{gather}
-    [L_x,L_y] = i\hbar L_z\\
-    [L_y,L_z] = i\hbar L_x\\
-    [L_z,L_x] = i\hbar L_y\\
-\end{gather}
-\]</span></p></li>
+ \begin{gather}
+     [L_x,L_y] = i\hbar L_z\\
+     [L_y,L_z] = i\hbar L_x\\
+     [L_z,L_x] = i\hbar L_y\\
+ \end{gather}
+ \]</span></p></li>
 <li><p><span class="math inline">\(L\)</span> and all of its components commute with <span class="math inline">\(L^2\)</span></p>
 <p><span class="math display">\[
-\begin{gather}
-    [L^2,L] = 0\\
-    [L^2,L_j] = 0
-\end{gather}
-\]</span></p>
+ \begin{gather}
+     [L^2,L] = 0\\
+     [L^2,L_j] = 0
+ \end{gather}
+ \]</span></p>
 <ul>
 <li><span class="math inline">\(j = \{x,y,z\}\)</span></li>
 </ul></li>
@@ -100,7 +129,7 @@ From here-on out, there is no need to write the hat notation so <span class="mat
 \end{equation}
 \]</span></p>
 <h2 id="eigenvalue">Eigenvalue</h2>
-<p>From the commutation rules, we know that it's futile to find an eigenvalue or eigenstate of any two <span class="math inline">\(L_j\)</span> component of <span class="math inline">\(L\)</span>. Instead we choose one to be our favorite; by convention, that is <span class="math inline">\(L_z\)</span> (for no good reason, maybe because <span class="math inline">\(z\)</span> needs more love since <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> always steals the spotlight).</p>
+<p>From the commutation rules, we know that it’s futile to find an eigenvalue or eigenstate of any two <span class="math inline">\(L_j\)</span> component of <span class="math inline">\(L\)</span>. Instead we choose one to be our favorite; by convention, that is <span class="math inline">\(L_z\)</span> (for no good reason, maybe because <span class="math inline">\(z\)</span> needs more love since <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> always steals the spotlight).</p>
 <p>If we choose <span class="math inline">\(L_z\)</span> we are limited to the eigenstate of <span class="math inline">\(L_z\)</span> which luckily must also be an eigenstate of <span class="math inline">\(L^2\)</span> by commutation <strong>but not</strong> eigenstates of <span class="math inline">\(L_x\)</span> or <span class="math inline">\(L_y\)</span> as we discussed before.</p>
 <p>For the eigenstate of <span class="math inline">\(L_z\)</span> and <span class="math inline">\(L^2\)</span> we denote as <span class="math inline">\(\psi = \ket{\ell, m}\)</span> (will be explained), we found the eigenvalues to be:</p>
 <p><span class="math display">\[
@@ -135,13 +164,23 @@ From here-on out, there is no need to write the hat notation so <span class="mat
 \]</span></p>
 <p>Each of these eigenstates are associated with (not all unique) eigenvalues depending on <span class="math inline">\(\ell\)</span> and <span class="math inline">\(m_\ell\)</span> quantum numbers.</p>
 <h3 id="proof">Proof</h3>
+                
+            </div>
         </div>
-        <div class="col-md-2 d-none d-md-block">
-            <div class="sticky-top onthispage">
-                <ul id="onthispage-list" class="no-list-style">On This Page</ul>
+
+        <!-- On This Page -->
+        <div class="col-lg-2 d-none d-lg-block bg-light">
+            <div class="onthispage sidenav sticky-top vh-80">
+                <strong class="sidenav-title">On This Page</strong>
+                <div class="sidenav-body">
+                    <ul id="onthispage-list" class="no-list-style"></ul>
+                </div>
             </div>
         </div>
     </div>
+    <div id="commento"></div>
+    <script src="https://cdn.commento.io/js/commento.js"></script>
+</div>
 </div>
 
     <footer class="py-2 bg-white">
@@ -159,6 +198,7 @@ From here-on out, there is no need to write the hat notation so <span class="mat
         crossorigin="anonymous"></script>
 
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/datetime.js"></script>
+    <script src="https://ketozhang.github.io/ketozhang.github.io/static/sidenav.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/codeHighlight.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/prism.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>

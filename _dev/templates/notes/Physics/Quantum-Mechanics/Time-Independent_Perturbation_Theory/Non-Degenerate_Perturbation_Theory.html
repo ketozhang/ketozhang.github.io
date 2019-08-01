@@ -9,7 +9,7 @@
 <p><span class="math display">\[ H = H^0 + \lambda H&#39; \tag{Perturbed Hamiltonian} \]</span></p>
 <ul>
 <li><span class="math inline">\(H&#39;\)</span> : perturbation that contributes to the Hamiltonian</li>
-<li><span class="math inline">\(\lambda\)</span> : strength of the perturbation, it's arbitrary and assume to be very small.</li>
+<li><span class="math inline">\(\lambda\)</span> : strength of the perturbation, it’s arbitrary and assume to be very small.</li>
 </ul>
 <p><strong>Perturbation theory</strong> states that the solution to the perturbed hamiltonian is in the form of a geometric series,</p>
 <p><span class="math display">\[ 
@@ -70,7 +70,7 @@
 \end{align}
 \]</span></p>
 <h3 id="correction-to-eigenfunction">Correction to Eigenfunction</h3>
-<p>We wish to find the first order correction to the wavefunction <span class="math inline">\(\psi_n^1\)</span>. To do so let's rewrite Equation  as an inhomogeneous differential equation,</p>
+<p>We wish to find the first order correction to the wavefunction <span class="math inline">\(\psi_n^1\)</span>. To do so let’s rewrite Equation  as an inhomogeneous differential equation,</p>
 <p><span class="math display">\[
 \begin{align}
     (H^0 - E^0_n)\psi_n^1 = -(H&#39;-E_n^1)\psi_n^0
@@ -80,7 +80,7 @@
 <p>Recall that the <span class="math inline">\(\psi_n^1\)</span> is a wavefunction that can definitely be built by a linear combination of the complete set of the unperturbed wavefunctions <span class="math inline">\(\psi_n^0\)</span>. We will use the subscript <span class="math inline">\(m\)</span> to preventing you from assuming <span class="math inline">\(n=m\)</span>,</p>
 <p><span class="math display">\[ \psi_n^1 = \sum_{m}{c_m^{(n)}\psi_m^0} \]</span></p>
 <p>The solution to finding <span class="math inline">\(\psi_n^1\)</span> is to find what each weight <span class="math inline">\(c_m^{(n)}\)</span> corresponds to,</p>
-<p>Let's plug this back into Equation ,</p>
+<p>Let’s plug this back into Equation ,</p>
 <p><span class="math display">\[
 \begin{equation}
     (H^0 - E^0_n)\sum_{m}{c_m^{(n)}\psi_m^0} = -(H&#39;-E_n^1)\psi_n^0
@@ -92,7 +92,7 @@
     \sum_{m\neq n}{c_m^{(n)}(E_m^0 - E^0_n)\psi_m^0} = -(H&#39;-E_n^1)\psi_n^0
 \end{equation}
 \]</span></p>
-<p>You're able to isolate <span class="math inline">\(c_m^{(n)}\)</span> if we were to apply <span class="math inline">\(\langle \psi_l^0 |\)</span> where <span class="math inline">\(l\neq n\)</span>, and notice that <span class="math inline">\(\langle \psi_l^0 | \psi_m^0\rangle\)</span> only exist if <span class="math inline">\(m=l\)</span></p>
+<p>You’re able to isolate <span class="math inline">\(c_m^{(n)}\)</span> if we were to apply <span class="math inline">\(\langle \psi_l^0 |\)</span> where <span class="math inline">\(l\neq n\)</span>, and notice that <span class="math inline">\(\langle \psi_l^0 | \psi_m^0\rangle\)</span> only exist if <span class="math inline">\(m=l\)</span></p>
 <p><span class="math display">\[
 \begin{align*}
     \sum_{m\neq n}{c_m^{(n)}(E_m^0 - E^0_n)\langle \psi_l^0 |\psi_m^0}\rangle &amp;= -\langle \psi_m^0 |(H&#39;-E_n^1)|\psi_n^0\rangle\\
@@ -100,7 +100,7 @@
 \end{align*}
 \]</span></p>
 <p><span class="math display">\[c_l^{(n)} = \frac{\langle \psi_l^0 |H&#39;|\psi_n^0\rangle}{E^0_n - E_l^0}\]</span></p>
-<p>Let's switch the index <span class="math inline">\(l\)</span> back to <span class="math inline">\(m\)</span> since we won't be needing anymore confusion,</p>
+<p>Let’s switch the index <span class="math inline">\(l\)</span> back to <span class="math inline">\(m\)</span> since we won’t be needing anymore confusion,</p>
 <p><span class="math display">\[
 \begin{equation}
     c_m^{(n)} = \frac{\langle \psi_m^0 |H&#39;|\psi_n^0\rangle}{E^0_n - E_m^0}

@@ -28,12 +28,41 @@
 <body>
     
 <div class="container-fluid" id="note">
+    <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
     <h1 class="title text-center pt-3">Join Operators</h1>
     <hr>
     <div class="row">
-        <div class="col-lg-2 d-none d-lg-block"></div>
-        <div class="col-lg-7 col-md-10">
-            <p>A single I/O in the operator model includes:</p>
+        <!-- Notebook Sidenav -->
+        <div class="col-lg-2 col-3 d-none d-md-block bg-light">
+            <div class="sidenav sticky-top vh-80">
+                <div class="sidenav-title row no-gutters">
+                    <div class="col-9">
+                        <strong>Join Operators</strong>
+                    </div>
+                    <div class="col-2 offset-1">
+                        <a class="go-up" href="https://ketozhang.github.io/ketozhang.github.io/notes/Computer_Science/Database_Systems/Relational_Operators/" role="button">
+                            <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+                        </a>
+                    </div>
+                </div>
+                <div class="sidenav-body no-gutters">
+                    <ul class="no-list-style pl-3">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="col-lg-8 col-9">
+            <div class="markdown-content">
+                
+                <p>A single I/O in the operator model includes:</p>
 <ul>
 <li>Accessing the page or record (whichever highest)</li>
 </ul>
@@ -51,20 +80,20 @@
 <h2 id="theta-join">Theta Join</h2>
 <ul>
 <li><p><strong>Simple Nested Loops Join</strong></p>
-<div class="sourceCode"><pre class="sourceCode py"><code class="sourceCode python"><span class="cf">for</span> r <span class="kw">in</span> R.records:
-    <span class="cf">for</span> s <span class="kw">in</span> S.records:
-        <span class="op">&lt;</span>pred<span class="op">&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="cf">for</span> r <span class="kw">in</span> R.records:</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">    <span class="cf">for</span> s <span class="kw">in</span> S.records:</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">        <span class="op">&lt;</span>pred<span class="op">&gt;</span></a></code></pre></div>
 <p>Consider joining two table with records labeled <span class="math inline">\(R\)</span> and <span class="math inline">\(S\)</span> respectively with an on clause. The cost is,</p>
 <p><span class="math display">\[ [L] + |R|[R] \]</span></p></li>
 <li><p><strong>Order of Join</strong></p>
 <p>Take note of the order you join. It may be cheaper doing <span class="math inline">\(S\)</span> join <span class="math inline">\(R\)</span> than <span class="math inline">\(R\)</span> join <span class="math inline">\(S\)</span>.</p></li>
 <li><p><strong>Page Nested Loop Join</strong></p>
-<div class="sourceCode"><pre class="sourceCode py"><code class="sourceCode python"><span class="cf">for</span> r <span class="kw">in</span> R.pages:
-    <span class="cf">for</span> s <span class="kw">in</span> S.pages:
-        <span class="cf">for</span> records_r <span class="kw">in</span> r:
-            <span class="cf">for</span> records_s <span class="kw">in</span> s:
-                <span class="op">&lt;</span>pred<span class="op">&gt;</span>
-        <span class="op">&lt;</span>pred<span class="op">&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="cf">for</span> r <span class="kw">in</span> R.pages:</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">    <span class="cf">for</span> s <span class="kw">in</span> S.pages:</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">        <span class="cf">for</span> records_r <span class="kw">in</span> r:</a>
+<a class="sourceLine" id="cb2-4" data-line-number="4">            <span class="cf">for</span> records_s <span class="kw">in</span> s:</a>
+<a class="sourceLine" id="cb2-5" data-line-number="5">                <span class="op">&lt;</span>pred<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb2-6" data-line-number="6">        <span class="op">&lt;</span>pred<span class="op">&gt;</span></a></code></pre></div>
 <p>Instead of scanning each record of <span class="math inline">\(R\)</span> to a page of <span class="math inline">\(S\)</span> we yse page of <span class="math inline">\(R\)</span></p>
 <p><span class="math display">\[ [L] + [L][R] \]</span></p></li>
 <li><p><strong>Chunk Nested Loop Join</strong></p>
@@ -78,18 +107,18 @@
 </ul>
 <h2 id="sort-merge-join">Sort-Merge Join</h2>
 <p>A sort-merge join is a join using lexographical ranges which has an equality join with less cost than purely doing a cartesian join.</p>
-<div class="sourceCode"><pre class="sourceCode py"><code class="sourceCode python"><span class="cf">if</span> (<span class="kw">not</span> mark):
-    <span class="cf">while</span> (r<span class="op">&lt;</span>s): r<span class="op">++</span>
-    <span class="cf">while</span> (r<span class="op">&gt;</span>s): s<span class="op">++</span>
-    mark <span class="op">=</span> s
-<span class="cf">if</span> (r<span class="op">==</span>s):
-    result <span class="op">=</span> (r,s)
-    s<span class="op">++</span>
-    <span class="cf">return</span> result
-<span class="cf">else</span>:
-    s <span class="op">=</span> mark
-    r<span class="op">++</span>
-    mark <span class="op">=</span> NULL</code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode py"><code class="sourceCode python"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="cf">if</span> (<span class="kw">not</span> mark):</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2">    <span class="cf">while</span> (r<span class="op">&lt;</span>s): r<span class="op">++</span></a>
+<a class="sourceLine" id="cb3-3" data-line-number="3">    <span class="cf">while</span> (r<span class="op">&gt;</span>s): s<span class="op">++</span></a>
+<a class="sourceLine" id="cb3-4" data-line-number="4">    mark <span class="op">=</span> s</a>
+<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="cf">if</span> (r<span class="op">==</span>s):</a>
+<a class="sourceLine" id="cb3-6" data-line-number="6">    result <span class="op">=</span> (r,s)</a>
+<a class="sourceLine" id="cb3-7" data-line-number="7">    s<span class="op">++</span></a>
+<a class="sourceLine" id="cb3-8" data-line-number="8">    <span class="cf">return</span> result</a>
+<a class="sourceLine" id="cb3-9" data-line-number="9"><span class="cf">else</span>:</a>
+<a class="sourceLine" id="cb3-10" data-line-number="10">    s <span class="op">=</span> mark</a>
+<a class="sourceLine" id="cb3-11" data-line-number="11">    r<span class="op">++</span></a>
+<a class="sourceLine" id="cb3-12" data-line-number="12">    mark <span class="op">=</span> NULL</a></code></pre></div>
 <p>The cost using <span class="math inline">\(B = \sqrt{\max{[L],[R]}}\)</span> is,</p>
 <p><span class="math display">\[\texttt{Sort}(R) + \texttt{Sort}(S) + ([L] +[R])\]</span></p>
 <h3 id="improvement">Improvement</h3>
@@ -107,7 +136,7 @@
 <h3 id="grace-hash-join">Grace Hash Join</h3>
 <p>Using external hashing, for every pass we can take the partition and do <strong>Build &amp; Probe</strong> which is a pass that uses naive hash join on the partition</p>
 <p>For each partiton:</p>
-<ol style="list-style-type: decimal">
+<ol type="1">
 <li>Load pages of <span class="math inline">\(R\)</span> into the input buffer</li>
 <li>Store input buffer to hash table</li>
 <li>Repeat steps 1-2 until no more <span class="math inline">\(R\)</span> pages</li>
@@ -119,13 +148,23 @@
 <li><strong>Cost</strong>: <span class="math display">\[ 3([L] + [R])\]</span></li>
 <li><strong>Buffer (2-Pass)</strong> <span class="math display">\[ [L] = (B-1)(B-2) \]</span></li>
 </ul>
+                
+            </div>
         </div>
-        <div class="col-md-2 d-none d-md-block">
-            <div class="sticky-top onthispage">
-                <ul id="onthispage-list" class="no-list-style">On This Page</ul>
+
+        <!-- On This Page -->
+        <div class="col-lg-2 d-none d-lg-block bg-light">
+            <div class="onthispage sidenav sticky-top vh-80">
+                <strong class="sidenav-title">On This Page</strong>
+                <div class="sidenav-body">
+                    <ul id="onthispage-list" class="no-list-style"></ul>
+                </div>
             </div>
         </div>
     </div>
+    <div id="commento"></div>
+    <script src="https://cdn.commento.io/js/commento.js"></script>
+</div>
 </div>
 
     <footer class="py-2 bg-white">
@@ -143,6 +182,7 @@
         crossorigin="anonymous"></script>
 
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/datetime.js"></script>
+    <script src="https://ketozhang.github.io/ketozhang.github.io/static/sidenav.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/codeHighlight.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/prism.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>

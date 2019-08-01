@@ -6,13 +6,13 @@
 </ul>
 <p>For simplicity, here one out we will ignore the bias term.</p>
 <p>There are very strong properties of ridge regression that makes this regularization favorable:</p>
-<ol style="list-style-type: decimal">
+<ol type="1">
 <li>Guarantees a unique solution because <span class="math inline">\(\mathcal L(\theta)\)</span> is always convex even if <span class="math inline">\(L(\theta)\)</span> is not (for least-square it is).</li>
 <li>Reduces overfitting by penalizing large parameters.</li>
 </ol>
 <h2 id="positive-definite-normal-equation">Positive Definite Normal Equation</h2>
 <p>The addition of the <span class="math inline">\(L_2\)</span> regularization guarantees that <span class="math inline">\(\mathcal L(\theta)\)</span> is convex simply because the matrices in the normal equation are guaranteed to be positive definite.</p>
-<p>Let's take for example the least-squares loss, <span class="math display">\[
+<p>Let’s take for example the least-squares loss, <span class="math display">\[
 \mathcal L(\theta) = \sum_{i=1}^n{|y - X\theta|^2  +\lambda|\theta|^2}
 \]</span> The normal equation is given by, <span class="math display">\[
 \begin{gather}

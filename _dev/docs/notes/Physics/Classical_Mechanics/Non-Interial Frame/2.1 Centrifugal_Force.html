@@ -28,14 +28,43 @@
 <body>
     
 <div class="container-fluid" id="note">
+    <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
     <h1 class="title text-center pt-3">Centrifugal Force</h1>
     <hr>
     <div class="row">
-        <div class="col-lg-2 d-none d-lg-block"></div>
-        <div class="col-lg-7 col-md-10">
-            <!-- TOC -->
+        <!-- Notebook Sidenav -->
+        <div class="col-lg-2 col-3 d-none d-md-block bg-light">
+            <div class="sidenav sticky-top vh-80">
+                <div class="sidenav-title row no-gutters">
+                    <div class="col-9">
+                        <strong>Centrifugal Force</strong>
+                    </div>
+                    <div class="col-2 offset-1">
+                        <a class="go-up" href="https://ketozhang.github.io/ketozhang.github.io/notes/Physics/Classical_Mechanics/Non-Interial Frame/" role="button">
+                            <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+                        </a>
+                    </div>
+                </div>
+                <div class="sidenav-body no-gutters">
+                    <ul class="no-list-style pl-3">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="col-lg-8 col-9">
+            <div class="markdown-content">
+                
+                <!-- TOC -->
 <ul>
-<li><a href="#example---earths-gravitational-acceleration">Example - Earth's Gravitational Acceleration</a></li>
+<li><a href="#example---earths-gravitational-acceleration">Example - Earth’s Gravitational Acceleration</a></li>
 </ul>
 <!-- /TOC -->
 <p>The centrifugal force is the force perpendicular to the direction of motion and points radially outwards along the direction of the rotating arm (perpendicular to the axis of rotation). The <strong>centrifugal force</strong> is defined as,</p>
@@ -45,7 +74,7 @@
 <li><span class="math inline">\(\mathbf r\)</span> : radial vector away from the origin of the rotating frame</li>
 <li><span class="math inline">\(\mathbf \Omega\)</span> : Angular frequency of the rotating frame</li>
 </ul>
-<p>We may simplify this with cylindrical coordinates for any single-axis rotating frame. Let's <span class="math inline">\(\boldsymbol \rho\)</span> be the projection of the <span class="math inline">\(\mathbf r\)</span> vector onto the axis of rotation <span class="math inline">\(\hat \Omega\)</span></p>
+<p>We may simplify this with cylindrical coordinates for any single-axis rotating frame. Let’s <span class="math inline">\(\boldsymbol \rho\)</span> be the projection of the <span class="math inline">\(\mathbf r\)</span> vector onto the axis of rotation <span class="math inline">\(\hat \Omega\)</span></p>
 <p><span class="math display">\[ \boldsymbol \rho = \rho \hat\rho \\
 \rho \equiv \mathbf r \cdot \hat \Omega = r\sin\theta\]</span></p>
 <ul>
@@ -53,8 +82,8 @@
 </ul>
 <p>By the cross product,</p>
 <p><span class="math display">\[\boxed{ F_\text{cf} = m\Omega^2 \rho \hat \rho }\]</span></p>
-<h2 id="example---earths-gravitational-acceleration">Example - Earth's Gravitational Acceleration</h2>
-<p>The gravitational acceleration of Earth is affected by the centrifugal force such that the angle away from the radial gravitational force (perpendicular to Earth's surface) is observable (however not the actual magnitude). Recall that the effective gravitational acceleration is,</p>
+<h2 id="example---earths-gravitational-acceleration">Example - Earth’s Gravitational Acceleration</h2>
+<p>The gravitational acceleration of Earth is affected by the centrifugal force such that the angle away from the radial gravitational force (perpendicular to Earth’s surface) is observable (however not the actual magnitude). Recall that the effective gravitational acceleration is,</p>
 <p><span class="math display">\[ \mathbf g = \frac{\mathbf F_g}{m} + \frac{ m\Omega^2 \rho \hat \rho}{m} \\
 = \mathbf g_0 +  \Omega^2 \rho \hat \rho \\
 = \mathbf g_0 +  \Omega^2 R\sin\theta \hat \rho 
@@ -69,13 +98,23 @@ g_\perp = \Omega^2 R \sin \theta \cos\theta\\
 g_r = \Omega^2 R \sin^2 \theta
 \]</span></p>
 <p>The maximum angle occurs at <span class="math inline">\(\theta = 45^\circ\)</span> where <span class="math inline">\(\alpha \approx 0.1^\circ\)</span></p>
+                
+            </div>
         </div>
-        <div class="col-md-2 d-none d-md-block">
-            <div class="sticky-top onthispage">
-                <ul id="onthispage-list" class="no-list-style">On This Page</ul>
+
+        <!-- On This Page -->
+        <div class="col-lg-2 d-none d-lg-block bg-light">
+            <div class="onthispage sidenav sticky-top vh-80">
+                <strong class="sidenav-title">On This Page</strong>
+                <div class="sidenav-body">
+                    <ul id="onthispage-list" class="no-list-style"></ul>
+                </div>
             </div>
         </div>
     </div>
+    <div id="commento"></div>
+    <script src="https://cdn.commento.io/js/commento.js"></script>
+</div>
 </div>
 
     <footer class="py-2 bg-white">
@@ -93,6 +132,7 @@ g_r = \Omega^2 R \sin^2 \theta
         crossorigin="anonymous"></script>
 
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/datetime.js"></script>
+    <script src="https://ketozhang.github.io/ketozhang.github.io/static/sidenav.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/codeHighlight.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/prism.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>

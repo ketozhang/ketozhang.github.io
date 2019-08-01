@@ -28,27 +28,56 @@
 <body>
     
 <div class="container-fluid" id="note">
+    <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
     <h1 class="title text-center pt-3">The Lagrangian</h1>
     <hr>
     <div class="row">
-        <div class="col-lg-2 d-none d-lg-block"></div>
-        <div class="col-lg-7 col-md-10">
-            <p>Lagrange found that there exist a principle of variation for all of physics that follows Newton's second law called the <strong>principle of least action</strong>. The principle states that the universe likes to take the last action <span class="math inline">\(S\)</span> along some path dependent on time described by the <strong>Lagrangian</strong> <span class="math inline">\(\mathcal{L}\)</span>.</p>
+        <!-- Notebook Sidenav -->
+        <div class="col-lg-2 col-3 d-none d-md-block bg-light">
+            <div class="sidenav sticky-top vh-80">
+                <div class="sidenav-title row no-gutters">
+                    <div class="col-9">
+                        <strong>The Lagrangian</strong>
+                    </div>
+                    <div class="col-2 offset-1">
+                        <a class="go-up" href="https://ketozhang.github.io/ketozhang.github.io/notes/Physics/Classical_Mechanics/Lagrangian/" role="button">
+                            <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+                        </a>
+                    </div>
+                </div>
+                <div class="sidenav-body no-gutters">
+                    <ul class="no-list-style pl-3">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="col-lg-8 col-9">
+            <div class="markdown-content">
+                
+                <p>Lagrange found that there exist a principle of variation for all of physics that follows Newton’s second law called the <strong>principle of least action</strong>. The principle states that the universe likes to take the last action <span class="math inline">\(S\)</span> along some path dependent on time described by the <strong>Lagrangian</strong> <span class="math inline">\(\mathcal{L}\)</span>.</p>
 <p>This description sets up the shortest path (action) problem where,</p>
 <p><span class="math display">\[
 \begin{align}
     S = \int_{t_1}^{t_2}{\mathcal{L}\; dt}
 \end{align}
 \]</span></p>
-<p>We define the Lagrangian as the difference between kinetic <span class="math inline">\(K\)</span> and potential energy <span class="math inline">\(U\)</span> (for reason and it's difficult to interpret),</p>
+<p>We define the Lagrangian as the difference between kinetic <span class="math inline">\(K\)</span> and potential energy <span class="math inline">\(U\)</span> (for reason and it’s difficult to interpret),</p>
 <p><span class="math display">\[
 \begin{gather}
     \boxed{\mathcal{L} \equiv K - U}\\
     \mathcal{L} \equiv \frac{1}{2}m\boldsymbol{\dot r}^2 - U(\boldsymbol{r}) \nonumber
 \end{gather}
 \]</span></p>
-<p>The Lagrangian is define to follow the Lagrange equation you will soon realize it's because the Lagrange equation is a direct relationship to Newton's laws.</p>
-<p>We take a specific case where the Lagrangian is made up of conservative non-constraint forces (like gravity) and any constraint force (forces normal to the particle's motion), Recall that the Lagrange equation for states that if <span class="math inline">\(\mathcal{L}\)</span> is a function of <span class="math inline">\(r\)</span> we may write,</p>
+<p>The Lagrangian is define to follow the Lagrange equation you will soon realize it’s because the Lagrange equation is a direct relationship to Newton’s laws.</p>
+<p>We take a specific case where the Lagrangian is made up of conservative non-constraint forces (like gravity) and any constraint force (forces normal to the particle’s motion), Recall that the Lagrange equation for states that if <span class="math inline">\(\mathcal{L}\)</span> is a function of <span class="math inline">\(r\)</span> we may write,</p>
 <p><span class="math display">\[
     \frac{\partial \mathcal{L}}{\partial r} - \frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot r} = 0
 \]</span></p>
@@ -94,13 +123,23 @@
 <dd><p>We see that there is a relationship between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span></p>
 </dd>
 </dl>
+                
+            </div>
         </div>
-        <div class="col-md-2 d-none d-md-block">
-            <div class="sticky-top onthispage">
-                <ul id="onthispage-list" class="no-list-style">On This Page</ul>
+
+        <!-- On This Page -->
+        <div class="col-lg-2 d-none d-lg-block bg-light">
+            <div class="onthispage sidenav sticky-top vh-80">
+                <strong class="sidenav-title">On This Page</strong>
+                <div class="sidenav-body">
+                    <ul id="onthispage-list" class="no-list-style"></ul>
+                </div>
             </div>
         </div>
     </div>
+    <div id="commento"></div>
+    <script src="https://cdn.commento.io/js/commento.js"></script>
+</div>
 </div>
 
     <footer class="py-2 bg-white">
@@ -118,6 +157,7 @@
         crossorigin="anonymous"></script>
 
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/datetime.js"></script>
+    <script src="https://ketozhang.github.io/ketozhang.github.io/static/sidenav.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/codeHighlight.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/prism.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>

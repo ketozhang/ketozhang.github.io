@@ -28,12 +28,41 @@
 <body>
     
 <div class="container-fluid" id="note">
+    <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
     <h1 class="title text-center pt-3">Naive Bayes</h1>
     <hr>
     <div class="row">
-        <div class="col-lg-2 d-none d-lg-block"></div>
-        <div class="col-lg-7 col-md-10">
-            <p>The Naive Bayes is an algorithm for classification. Let's first define Naive Bayes it for two categories. <span class="math inline">\(Y\)</span> is either in category <span class="math inline">\(A\)</span> or category <span class="math inline">\(B\)</span> where <span class="math inline">\(Y\)</span> has features notated as the random variable <span class="math inline">\(\Phi=\set{\phi_1,\phi_2,\ldots,\phi_n}\)</span></p>
+        <!-- Notebook Sidenav -->
+        <div class="col-lg-2 col-3 d-none d-md-block bg-light">
+            <div class="sidenav sticky-top vh-80">
+                <div class="sidenav-title row no-gutters">
+                    <div class="col-9">
+                        <strong>Naive Bayes</strong>
+                    </div>
+                    <div class="col-2 offset-1">
+                        <a class="go-up" href="https://ketozhang.github.io/ketozhang.github.io/notes/Data_Science/" role="button">
+                            <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+                        </a>
+                    </div>
+                </div>
+                <div class="sidenav-body no-gutters">
+                    <ul class="no-list-style pl-3">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="col-lg-8 col-9">
+            <div class="markdown-content">
+                
+                <p>The Naive Bayes is an algorithm for classification. Let’s first define Naive Bayes it for two categories. <span class="math inline">\(Y\)</span> is either in category <span class="math inline">\(A\)</span> or category <span class="math inline">\(B\)</span> where <span class="math inline">\(Y\)</span> has features notated as the random variable <span class="math inline">\(\Phi=\set{\phi_1,\phi_2,\ldots,\phi_n}\)</span></p>
 <p><span class="math display">\[ O = \frac{P(A|\Phi)}{P(B|\Phi)} = \frac{\prod{P(A|\phi_i)}}{\prod{P(B|\phi_i)}} \]</span></p>
 <ul>
 <li>This formula is interpreted as the odds that <span class="math inline">\(Y\)</span> is either <span class="math inline">\(A\)</span> vs <span class="math inline">\(B\)</span> given <span class="math inline">\(\Phi\)</span></li>
@@ -41,17 +70,27 @@
 </ul>
 <h2 id="python---sklearn">Python - sklearn</h2>
 <p>Naive bayes package: <code>sklearn.naive_bayes</code></p>
-<div class="sourceCode"><pre class="sourceCode py"><code class="sourceCode python"><span class="im">from</span> sklearn.naive_bayes <span class="im">import</span> __NB
-clf <span class="op">=</span> __NB()
-clf.fit(X_train, Y_train)
-Y_pred <span class="op">=</span> clf.predict(X_test)</code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="im">from</span> sklearn.naive_bayes <span class="im">import</span> __NB</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">clf <span class="op">=</span> __NB()</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">clf.fit(X_train, Y_train)</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">Y_pred <span class="op">=</span> clf.predict(X_test)</a></code></pre></div>
+                
+            </div>
         </div>
-        <div class="col-md-2 d-none d-md-block">
-            <div class="sticky-top onthispage">
-                <ul id="onthispage-list" class="no-list-style">On This Page</ul>
+
+        <!-- On This Page -->
+        <div class="col-lg-2 d-none d-lg-block bg-light">
+            <div class="onthispage sidenav sticky-top vh-80">
+                <strong class="sidenav-title">On This Page</strong>
+                <div class="sidenav-body">
+                    <ul id="onthispage-list" class="no-list-style"></ul>
+                </div>
             </div>
         </div>
     </div>
+    <div id="commento"></div>
+    <script src="https://cdn.commento.io/js/commento.js"></script>
+</div>
 </div>
 
     <footer class="py-2 bg-white">
@@ -69,6 +108,7 @@ Y_pred <span class="op">=</span> clf.predict(X_test)</code></pre></div>
         crossorigin="anonymous"></script>
 
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/datetime.js"></script>
+    <script src="https://ketozhang.github.io/ketozhang.github.io/static/sidenav.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/codeHighlight.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/prism.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>

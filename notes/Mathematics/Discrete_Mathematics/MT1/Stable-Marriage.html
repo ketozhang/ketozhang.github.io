@@ -28,12 +28,41 @@
 <body>
     
 <div class="container-fluid" id="note">
+    <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
     <h1 class="title text-center pt-3">Stable Marriage</h1>
     <hr>
     <div class="row">
-        <div class="col-lg-2 d-none d-lg-block"></div>
-        <div class="col-lg-7 col-md-10">
-            <p>The stable marriage problem is a matching problem where there are <span class="math inline">\(n\)</span> men and <span class="math inline">\(n\)</span> women who have a preference list that ranks every men and every women.</p>
+        <!-- Notebook Sidenav -->
+        <div class="col-lg-2 col-3 d-none d-md-block bg-light">
+            <div class="sidenav sticky-top vh-80">
+                <div class="sidenav-title row no-gutters">
+                    <div class="col-9">
+                        <strong>Stable Marriage</strong>
+                    </div>
+                    <div class="col-2 offset-1">
+                        <a class="go-up" href="https://ketozhang.github.io/ketozhang.github.io/notes/Mathematics/Discrete_Mathematics/MT1/" role="button">
+                            <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+                        </a>
+                    </div>
+                </div>
+                <div class="sidenav-body no-gutters">
+                    <ul class="no-list-style pl-3">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="col-lg-8 col-9">
+            <div class="markdown-content">
+                
+                <p>The stable marriage problem is a matching problem where there are <span class="math inline">\(n\)</span> men and <span class="math inline">\(n\)</span> women who have a preference list that ranks every men and every women.</p>
 <ul>
 <li><strong>Goal:</strong> Create a set of pairs such that there exists no rogue couple.</li>
 <li><p><strong>Rogue Couple </strong> A pair that prefer to be together rather than their designated partner. For instance:</p>
@@ -44,8 +73,8 @@
 <h2 id="the-gale-shapley-algorithm">The Gale-Shapley Algorithm</h2>
 <p>The Gale-Shapley or propose-and-reject algorithm (usually called the SMA) is a solution to the marriage problem.</p>
 <p>The algorithm follows as so:</p>
-<ol style="list-style-type: decimal">
-<li>At the start of the day, every men propose to the women that's top of their list</li>
+<ol type="1">
+<li>At the start of the day, every men propose to the women that’s top of their list</li>
 <li>Of the women proposed, each women choose the top man and puts him on hold and rejects the rest.</li>
 <li>Repeat step 1. given the rejected men can no longer propose to the women that rejected him.</li>
 </ol>
@@ -72,98 +101,108 @@
 <p><span class="math display">\[ \max(\text{rejection}) = (n-1)^2 \]</span></p></li>
 <li><p>The maximum days of SMA one more than the maximum number of rejections,</p>
 <p><span class="math display">\[ d_\text{max} = 1 + \max(\text{rejection}) = n^2 - 2n + 2 \]</span></p></li>
-<li><p>All men get their top preferences if all their top preferences are unique. This is true regardless of the women's preferences.</p>
+<li><p>All men get their top preferences if all their top preferences are unique. This is true regardless of the women’s preferences.</p>
 <table>
 <thead>
 <tr class="header">
-<th align="center">Men</th>
-<th align="center"></th>
+<th style="text-align: center;">Men</th>
+<th style="text-align: center;"></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center"><span class="math inline">\(M_1\)</span></td>
-<td align="center"><span class="math inline">\(W_1 &gt; \ldots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(M_1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(W_1 &gt; \ldots\)</span></td>
 </tr>
 <tr class="even">
-<td align="center"><span class="math inline">\(M_2\)</span></td>
-<td align="center"><span class="math inline">\(W_2 &gt; \ldots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(M_2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(W_2 &gt; \ldots\)</span></td>
 </tr>
 <tr class="odd">
-<td align="center"><span class="math inline">\(\vdots\)</span></td>
-<td align="center"><span class="math inline">\(W_3 &gt; \ldots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\vdots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(W_3 &gt; \ldots\)</span></td>
 </tr>
 <tr class="even">
-<td align="center"><span class="math inline">\(M_n\)</span></td>
-<td align="center"><span class="math inline">\(W_n &gt; \ldots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(M_n\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(W_n &gt; \ldots\)</span></td>
 </tr>
 </tbody>
 </table>
 <p><span class="math display">\[ \set{(M_1,W_1), (M_2,W_2), \ldots, (M_n,W_n)}  \]</span></p>
 <ul>
-<li>If the women's preference also prefers the respective men's first choice as their first choice then this result is both male and female optimal.</li>
+<li>If the women’s preference also prefers the respective men’s first choice as their first choice then this result is both male and female optimal.</li>
 <li>This table always finish on day <span class="math inline">\(d=1\)</span></li>
 </ul></li>
-<li><p>If all men has the same preference say <span class="math inline">\(W_1 &gt; W_2 &gt; \ldots &gt; W_n\)</span>, then <span class="math inline">\(W_1\)</span> gets her first choice, <span class="math inline">\(W_2\)</span> her best choice that isn't chosen by <span class="math inline">\(W_1\)</span>, <span class="math inline">\(W_3\)</span> her best choice that isn't chosen by previous two, and so on.</p>
+<li><p>If all men has the same preference say <span class="math inline">\(W_1 &gt; W_2 &gt; \ldots &gt; W_n\)</span>, then <span class="math inline">\(W_1\)</span> gets her first choice, <span class="math inline">\(W_2\)</span> her best choice that isn’t chosen by <span class="math inline">\(W_1\)</span>, <span class="math inline">\(W_3\)</span> her best choice that isn’t chosen by previous two, and so on.</p>
 <table>
 <thead>
 <tr class="header">
-<th align="center">Men</th>
-<th align="center"></th>
+<th style="text-align: center;">Men</th>
+<th style="text-align: center;"></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center"><span class="math inline">\(M_1\)</span></td>
-<td align="center"><span class="math inline">\(P: W_1 &gt; \ldots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(M_1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(P: W_1 &gt; \ldots\)</span></td>
 </tr>
 <tr class="even">
-<td align="center"><span class="math inline">\(M_2\)</span></td>
-<td align="center"><span class="math inline">\(P\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(M_2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(P\)</span></td>
 </tr>
 <tr class="odd">
-<td align="center"><span class="math inline">\(\vdots\)</span></td>
-<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\vdots\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\vdots\)</span></td>
 </tr>
 <tr class="even">
-<td align="center"><span class="math inline">\(M_n\)</span></td>
-<td align="center"><span class="math inline">\(P\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(M_n\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(P\)</span></td>
 </tr>
 </tbody>
 </table></li>
 </ul>
-<h2 id="the-roommates-problem">The Roommates' Problem</h2>
+<h2 id="the-roommates-problem">The Roommates’ Problem</h2>
 <p>If we remove gender from the stable marriage problem, then we have the roommates problem. For <span class="math inline">\(n\)</span> even number of people each person has a preference list of size <span class="math inline">\(n-1\)</span>.</p>
 <ul>
 <li><p>Unfortunately this problem does not always have a stable pairing. For example,</p>
 <table>
 <tbody>
 <tr class="odd">
-<td align="center"><span class="math inline">\(A\)</span></td>
-<td align="center"><span class="math inline">\(B&gt;C&gt;D\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(A\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(B&gt;C&gt;D\)</span></td>
 </tr>
 <tr class="even">
-<td align="center"><span class="math inline">\(B\)</span></td>
-<td align="center"><span class="math inline">\(C&gt;A&gt;D\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(B\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(C&gt;A&gt;D\)</span></td>
 </tr>
 <tr class="odd">
-<td align="center"><span class="math inline">\(C\)</span></td>
-<td align="center"><span class="math inline">\(A&gt;B&gt;D\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(C\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(A&gt;B&gt;D\)</span></td>
 </tr>
 <tr class="even">
-<td align="center"><span class="math inline">\(D\)</span></td>
-<td align="center">Any</td>
+<td style="text-align: center;"><span class="math inline">\(D\)</span></td>
+<td style="text-align: center;">Any</td>
 </tr>
 </tbody>
 </table></li>
 </ul>
+                
+            </div>
         </div>
-        <div class="col-md-2 d-none d-md-block">
-            <div class="sticky-top onthispage">
-                <ul id="onthispage-list" class="no-list-style">On This Page</ul>
+
+        <!-- On This Page -->
+        <div class="col-lg-2 d-none d-lg-block bg-light">
+            <div class="onthispage sidenav sticky-top vh-80">
+                <strong class="sidenav-title">On This Page</strong>
+                <div class="sidenav-body">
+                    <ul id="onthispage-list" class="no-list-style"></ul>
+                </div>
             </div>
         </div>
     </div>
+    <div id="commento"></div>
+    <script src="https://cdn.commento.io/js/commento.js"></script>
+</div>
 </div>
 
     <footer class="py-2 bg-white">
@@ -181,6 +220,7 @@
         crossorigin="anonymous"></script>
 
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/datetime.js"></script>
+    <script src="https://ketozhang.github.io/ketozhang.github.io/static/sidenav.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/codeHighlight.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/prism.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>

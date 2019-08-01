@@ -28,14 +28,43 @@
 <body>
     
 <div class="container-fluid" id="note">
+    <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
     <h1 class="title text-center pt-3">Support Vector Classifier</h1>
     <hr>
     <div class="row">
-        <div class="col-lg-2 d-none d-lg-block"></div>
-        <div class="col-lg-7 col-md-10">
-            <p>Given that not all data can be fitted by a <strong>maximal margin classifier</strong> (MMC), the <strong>Support Vector Classifier</strong> attempts to generalize this classifier.</p>
+        <!-- Notebook Sidenav -->
+        <div class="col-lg-2 col-3 d-none d-md-block bg-light">
+            <div class="sidenav sticky-top vh-80">
+                <div class="sidenav-title row no-gutters">
+                    <div class="col-9">
+                        <strong>Support Vector Classifier</strong>
+                    </div>
+                    <div class="col-2 offset-1">
+                        <a class="go-up" href="https://ketozhang.github.io/ketozhang.github.io/notes/Data_Science/Statistical_Modeling/Classification/" role="button">
+                            <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+                        </a>
+                    </div>
+                </div>
+                <div class="sidenav-body no-gutters">
+                    <ul class="no-list-style pl-3">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="col-lg-8 col-9">
+            <div class="markdown-content">
+                
+                <p>Given that not all data can be fitted by a <strong>maximal margin classifier</strong> (MMC), the <strong>Support Vector Classifier</strong> attempts to generalize this classifier.</p>
 <h2 id="hard-margin-svc">Hard Margin SVC</h2>
-<p>This term is equivalent to the MMC which perfectly separates a linearly separable dataset in the feature space. As usually it's easier to talk about binary classes. The goal of hard margin SVC is to separate one class of points away from the other class by a hyperplane decision boundary in the feature space given by, <span class="math display">\[
+<p>This term is equivalent to the MMC which perfectly separates a linearly separable dataset in the feature space. As usually it’s easier to talk about binary classes. The goal of hard margin SVC is to separate one class of points away from the other class by a hyperplane decision boundary in the feature space given by, <span class="math display">\[
 X^\top \theta + \theta_0 = 0
 \]</span> The minimum distance between all points to the hyperplane is called the <strong>margin</strong> <span class="math inline">\(M\)</span>. We motivate that the larger the <span class="math inline">\(M​\)</span> the more confident the SVC successfully separate the two classes. Hence, the optimization problem for the SVC is to maximize the margin given, <span class="math display">\[
 \begin{gather}
@@ -43,7 +72,7 @@ X^\top \theta + \theta_0 = 0
 y_i(X_i^\top\theta + \theta_0) \ge  M~; \qquad i \in [1,n]
 \end{gather}
 \]</span> <img src="D:\Google%20Drive\Documents\Notes_Data_Science\Statistical_Modeling\Classification\SVC.png" alt="SVC" /></p>
-<p>We can remove the constraint of <span class="math inline">\(|\theta|=1\)</span> by noting that when <span class="math inline">\(\theta\)</span> isn't normalized, <span class="math inline">\(M \propto 1/|\theta|\)</span>. This justify that it is equivalent to let the optimization problem be in terms purely of <span class="math inline">\(|\theta|\)</span> (i.e., <span class="math inline">\(M:= 1/|\theta|\)</span>), <span class="math display">\[
+<p>We can remove the constraint of <span class="math inline">\(|\theta|=1\)</span> by noting that when <span class="math inline">\(\theta\)</span> isn’t normalized, <span class="math inline">\(M \propto 1/|\theta|\)</span>. This justify that it is equivalent to let the optimization problem be in terms purely of <span class="math inline">\(|\theta|\)</span> (i.e., <span class="math inline">\(M:= 1/|\theta|\)</span>), <span class="math display">\[
 \begin{gather}
 \min_{\theta, \theta_0} |\theta|~\\
 y_i(X^\top\theta + \theta_0) \ge 1~; \qquad i \in [1,n]
@@ -109,13 +138,23 @@ y_i(X^\top\theta + \theta_0) \ge 1~; \qquad i \in [1,n]
 <dd><span class="math inline">\(\Phi(X)\)</span> are linearly separable iff <span class="math inline">\(X\)</span> is separable by a hypersphere.
 </dd>
 </dl>
+                
+            </div>
         </div>
-        <div class="col-md-2 d-none d-md-block">
-            <div class="sticky-top onthispage">
-                <ul id="onthispage-list" class="no-list-style">On This Page</ul>
+
+        <!-- On This Page -->
+        <div class="col-lg-2 d-none d-lg-block bg-light">
+            <div class="onthispage sidenav sticky-top vh-80">
+                <strong class="sidenav-title">On This Page</strong>
+                <div class="sidenav-body">
+                    <ul id="onthispage-list" class="no-list-style"></ul>
+                </div>
             </div>
         </div>
     </div>
+    <div id="commento"></div>
+    <script src="https://cdn.commento.io/js/commento.js"></script>
+</div>
 </div>
 
     <footer class="py-2 bg-white">
@@ -133,6 +172,7 @@ y_i(X^\top\theta + \theta_0) \ge 1~; \qquad i \in [1,n]
         crossorigin="anonymous"></script>
 
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/datetime.js"></script>
+    <script src="https://ketozhang.github.io/ketozhang.github.io/static/sidenav.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/codeHighlight.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/prism.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>

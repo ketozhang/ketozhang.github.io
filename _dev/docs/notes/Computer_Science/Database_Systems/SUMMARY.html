@@ -28,14 +28,43 @@
 <body>
     
 <div class="container-fluid" id="note">
-    <h1 class="title text-center pt-3"></h1>
+    <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
+    <h1 class="title text-center pt-3">Summary</h1>
     <hr>
     <div class="row">
-        <div class="col-lg-2 d-none d-lg-block"></div>
-        <div class="col-lg-7 col-md-10">
-            <ol style="list-style-type: decimal">
+        <!-- Notebook Sidenav -->
+        <div class="col-lg-2 col-3 d-none d-md-block bg-light">
+            <div class="sidenav sticky-top vh-80">
+                <div class="sidenav-title row no-gutters">
+                    <div class="col-9">
+                        <strong>Summary</strong>
+                    </div>
+                    <div class="col-2 offset-1">
+                        <a class="go-up" href="https://ketozhang.github.io/ketozhang.github.io/notes/Computer_Science/Database_Systems/" role="button">
+                            <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+                        </a>
+                    </div>
+                </div>
+                <div class="sidenav-body no-gutters">
+                    <ul class="no-list-style pl-3">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="col-lg-8 col-9">
+            <div class="markdown-content">
+                
+                <ol type="1">
 <li>SQL
-<ol style="list-style-type: decimal">
+<ol type="1">
 <li>Introduction</li>
 <li>Queries</li>
 <li>Column-Expressions</li>
@@ -48,7 +77,7 @@
 </ol></li>
 <li>Disk Space Management</li>
 <li>File Index Management
-<ol style="list-style-type: decimal">
+<ol type="1">
 <li><a href="File_Index_Management/Index.md">Index</a></li>
 <li><a href="File_Index_Management/Pages.md">Pages</a></li>
 <li><a href="File_Index_Management/Records.md">Records</a></li>
@@ -58,41 +87,51 @@
 </ol></li>
 <li>Buffer Management</li>
 <li>Relational Operator
-<ol style="list-style-type: decimal">
+<ol type="1">
 <li>Relational Algebra</li>
 <li>Iterators</li>
 <li>Joins</li>
 </ol></li>
 <li>Parallel Query
-<ol style="list-style-type: decimal">
+<ol type="1">
 <li>Introduction</li>
 <li>Inter-Operator Prallelism</li>
 <li>Parallel Hashing and Sorting</li>
 <li>Shuffling</li>
 </ol></li>
 <li>Query Optimization
-<ol style="list-style-type: decimal">
+<ol type="1">
 <li>Introduction</li>
 <li>Planning</li>
 <li>Cost-Estimation</li>
 <li>Search-Algorithm</li>
 </ol></li>
 <li>Text Search
-<ol style="list-style-type: decimal">
+<ol type="1">
 <li>Introduction</li>
 </ol></li>
 <li>Database Design
-<ol style="list-style-type: decimal">
+<ol type="1">
 <li>Entity Relationship</li>
 </ol></li>
 </ol>
+                
+            </div>
         </div>
-        <div class="col-md-2 d-none d-md-block">
-            <div class="sticky-top onthispage">
-                <ul id="onthispage-list" class="no-list-style">On This Page</ul>
+
+        <!-- On This Page -->
+        <div class="col-lg-2 d-none d-lg-block bg-light">
+            <div class="onthispage sidenav sticky-top vh-80">
+                <strong class="sidenav-title">On This Page</strong>
+                <div class="sidenav-body">
+                    <ul id="onthispage-list" class="no-list-style"></ul>
+                </div>
             </div>
         </div>
     </div>
+    <div id="commento"></div>
+    <script src="https://cdn.commento.io/js/commento.js"></script>
+</div>
 </div>
 
     <footer class="py-2 bg-white">
@@ -110,6 +149,7 @@
         crossorigin="anonymous"></script>
 
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/datetime.js"></script>
+    <script src="https://ketozhang.github.io/ketozhang.github.io/static/sidenav.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/codeHighlight.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/prism.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>

@@ -28,12 +28,41 @@
 <body>
     
 <div class="container-fluid" id="note">
+    <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
     <h1 class="title text-center pt-3">Lecture Notes9</h1>
     <hr>
     <div class="row">
-        <div class="col-lg-2 d-none d-lg-block"></div>
-        <div class="col-lg-7 col-md-10">
-            <h1 id="lecture-notes-9">Lecture Notes 9</h1>
+        <!-- Notebook Sidenav -->
+        <div class="col-lg-2 col-3 d-none d-md-block bg-light">
+            <div class="sidenav sticky-top vh-80">
+                <div class="sidenav-title row no-gutters">
+                    <div class="col-9">
+                        <strong>Lecture Notes9</strong>
+                    </div>
+                    <div class="col-2 offset-1">
+                        <a class="go-up" href="https://ketozhang.github.io/ketozhang.github.io/notes/Data_Science/DS100_Lecture_Notes/" role="button">
+                            <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+                        </a>
+                    </div>
+                </div>
+                <div class="sidenav-body no-gutters">
+                    <ul class="no-list-style pl-3">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="col-lg-8 col-9">
+            <div class="markdown-content">
+                
+                <h1 id="lecture-notes-9">Lecture Notes 9</h1>
 <h2 id="kernel-density-estimator">Kernel Density Estimator</h2>
 <p>A <strong>kernel density estimator</strong> is an attempt to convert discrete data point to some continuous function by estimating the missing values. This is done by converting a point to some kernel function <span class="math inline">\(K\)</span>. What one gets out of a KDE is a estimated density distribution (hence its name) <span class="math inline">\(p(x)\)</span> which is given by,</p>
 <p><span class="math display">\[ p(x) = \frac{1}{n} \sum_{i=1}^{n}{K}(x-x_i)\]</span></p>
@@ -43,7 +72,7 @@
 <p>Data mining is the process to collect data from formatted source (e.g., webpage, PDF, etc).</p>
 <h3 id="pandas-html-parsing">Pandas HTML Parsing</h3>
 <p>Pandas is able to parse data from HTML using well formatted table tags (<code>&lt;table&gt;&lt;/table&gt;</code>). This function is called <code>Pandas.read_html</code>. The function returns a <code>list</code> of <code>Pandas.DataFrame</code> and is used like so:</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">tables <span class="op">=</span> pd.read_html(<span class="st">&quot;[URL | HTML FILE]&quot;</span>)</code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" data-line-number="1">tables <span class="op">=</span> pd.read_html(<span class="st">&quot;[URL | HTML FILE]&quot;</span>)</a></code></pre></div>
 <h3 id="hypertext-transfer-protocol-http">Hypertext Transfer Protocol (HTTP)</h3>
 <p>Hypertext Transfer Protocol (HTTP) is a protocol that governs how servers and client request and update information to one another often used in some browser-based environment (i.e., language of communication is HTML, JavaScript, PHP, etc). Do not confuse this with TDP and UDP which is protocol that governs server-server or server-client traffic (handling packages) and communication (request) in general.</p>
 <p>For data scraping, the header is important which is the actual message that the server and clients send to each other. There are two types:</p>
@@ -90,13 +119,23 @@
 <li>Used heavily in HTML to separate the <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code>.</li>
 </ul></li>
 </ul>
+                
+            </div>
         </div>
-        <div class="col-md-2 d-none d-md-block">
-            <div class="sticky-top onthispage">
-                <ul id="onthispage-list" class="no-list-style">On This Page</ul>
+
+        <!-- On This Page -->
+        <div class="col-lg-2 d-none d-lg-block bg-light">
+            <div class="onthispage sidenav sticky-top vh-80">
+                <strong class="sidenav-title">On This Page</strong>
+                <div class="sidenav-body">
+                    <ul id="onthispage-list" class="no-list-style"></ul>
+                </div>
             </div>
         </div>
     </div>
+    <div id="commento"></div>
+    <script src="https://cdn.commento.io/js/commento.js"></script>
+</div>
 </div>
 
     <footer class="py-2 bg-white">
@@ -114,6 +153,7 @@
         crossorigin="anonymous"></script>
 
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/datetime.js"></script>
+    <script src="https://ketozhang.github.io/ketozhang.github.io/static/sidenav.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/codeHighlight.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/prism.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>

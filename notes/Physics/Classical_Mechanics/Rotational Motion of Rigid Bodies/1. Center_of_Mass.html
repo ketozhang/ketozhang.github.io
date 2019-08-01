@@ -28,12 +28,41 @@
 <body>
     
 <div class="container-fluid" id="note">
+    <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
     <h1 class="title text-center pt-3">Center of Mass</h1>
     <hr>
     <div class="row">
-        <div class="col-lg-2 d-none d-lg-block"></div>
-        <div class="col-lg-7 col-md-10">
-            <!-- TOC -->
+        <!-- Notebook Sidenav -->
+        <div class="col-lg-2 col-3 d-none d-md-block bg-light">
+            <div class="sidenav sticky-top vh-80">
+                <div class="sidenav-title row no-gutters">
+                    <div class="col-9">
+                        <strong>Center of Mass</strong>
+                    </div>
+                    <div class="col-2 offset-1">
+                        <a class="go-up" href="https://ketozhang.github.io/ketozhang.github.io/notes/Physics/Classical_Mechanics/Rotational Motion of Rigid Bodies/" role="button">
+                            <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+                        </a>
+                    </div>
+                </div>
+                <div class="sidenav-body no-gutters">
+                    <ul class="no-list-style pl-3">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="col-lg-8 col-9">
+            <div class="markdown-content">
+                
+                <!-- TOC -->
 <ul>
 <li><a href="#external-force---point-particle-property">External Force - Point Particle Property</a></li>
 <li><a href="#total-angular-momentum">Total Angular Momentum</a>
@@ -57,7 +86,7 @@
 <p><span class="math display">\[ \mathbf{P} = \sum_\alpha{m_\alpha \dot{\mathbf r}} = M\mathbf{\dot R} \\
 \boxed{\mathbf F_\text{ext} = \dot{\mathbf P} = M\ddot{\mathbf{R}}}
 \]</span></p>
-<p>Of course we're assuming the mass does not change over time (part of rigid body definition).</p>
+<p>Of course we’re assuming the mass does not change over time (part of rigid body definition).</p>
 <h2 id="total-angular-momentum">Total Angular Momentum</h2>
 <p>The total angular momentum <span class="math inline">\(\mathbf J\)</span> is composed of the angular momentun of the CM (orbital angular momentum <span class="math inline">\(\mathbf L\)</span>) and the angular momentum of each rigid body particle relative to the CM (spin angular momentum <span class="math inline">\(\mathbf S\)</span>).</p>
 <p><span class="math display">\[
@@ -77,13 +106,13 @@
 <p>Doing so and crossing out zeroes gives,</p>
 <p><span class="math display">\[ \mathbf J = \underbrace{\vphantom{\sum}\mathbf R \times \mathbf P}_{\mathbf L} + \underbrace{\sum\mathbf {r}&#39;_\alpha \times m_\alpha \dot{\mathbf r}_\alpha&#39;}_{\mathbf S} \]</span></p>
 <h3 id="relationship-with-torque">Relationship with Torque</h3>
-<p>Let's define the total torque applied to the system about the origin as <span class="math inline">\(\boldsymbol \tau\)</span>,</p>
+<p>Let’s define the total torque applied to the system about the origin as <span class="math inline">\(\boldsymbol \tau\)</span>,</p>
 <p><span class="math display">\[ \boldsymbol\tau = \dot {\mathbf J}  \]</span></p>
-<p>As you've guessed it, the total torque is composed of the torque acted upon the CM <span class="math inline">\(\boldsymbol{\tau}_{CM}\)</span> and the torque acted upon each particle relative to the CM <span class="math inline">\(\boldsymbol{\tau}_\text{rot}\)</span>,</p>
+<p>As you’ve guessed it, the total torque is composed of the torque acted upon the CM <span class="math inline">\(\boldsymbol{\tau}_{CM}\)</span> and the torque acted upon each particle relative to the CM <span class="math inline">\(\boldsymbol{\tau}_\text{rot}\)</span>,</p>
 <p><span class="math display">\[\boxed{ \boldsymbol{\tau} = \dot{\mathbf L} + \dot{\mathbf S} = \underbrace{\vphantom{\sum}\boldsymbol{R} \times \mathbf{F}_\text{ext}}_{\boldsymbol{\tau}_{CM}} + \underbrace{\sum{\mathbf{r}&#39;_\alpha \times \mathbf F_\alpha^\text{ext}}}_{\boldsymbol\tau_\text{rot}} }\]</span></p>
 <h3 id="proof-1">Proof</h3>
 <h2 id="total-kinetic-energy">Total Kinetic Energy</h2>
-<p>Similar to the angular momentum, the total kinetic energy is made up of the CM's kinetic energy and the kinetic energy (only rotational) of each rigid body relative to the CM,</p>
+<p>Similar to the angular momentum, the total kinetic energy is made up of the CM’s kinetic energy and the kinetic energy (only rotational) of each rigid body relative to the CM,</p>
 <p><span class="math display">\[ \boxed{K \equiv \underbrace{\frac{1}{2}M\dot{\mathbf R}^2}_{K_\text{CM}} + \underbrace{\frac{1}{2}\sum m_\alpha {\dot{\mathbf{r}}_\alpha&#39;}^2}_{K_\text{rot}}}
 \]</span></p>
 <ul>
@@ -94,13 +123,23 @@
 <h2 id="total-potential-energy">Total Potential Energy</h2>
 <p>The total potential energy is just the external potential energy of the CM. We can do so because we consider the internal potential as a zeropoint (there should be no differential potential energy for a system of rigid bodies).</p>
 <p><span class="math display">\[\boxed{ U = U_\text{ext} }\]</span></p>
+                
+            </div>
         </div>
-        <div class="col-md-2 d-none d-md-block">
-            <div class="sticky-top onthispage">
-                <ul id="onthispage-list" class="no-list-style">On This Page</ul>
+
+        <!-- On This Page -->
+        <div class="col-lg-2 d-none d-lg-block bg-light">
+            <div class="onthispage sidenav sticky-top vh-80">
+                <strong class="sidenav-title">On This Page</strong>
+                <div class="sidenav-body">
+                    <ul id="onthispage-list" class="no-list-style"></ul>
+                </div>
             </div>
         </div>
     </div>
+    <div id="commento"></div>
+    <script src="https://cdn.commento.io/js/commento.js"></script>
+</div>
 </div>
 
     <footer class="py-2 bg-white">
@@ -118,6 +157,7 @@
         crossorigin="anonymous"></script>
 
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/datetime.js"></script>
+    <script src="https://ketozhang.github.io/ketozhang.github.io/static/sidenav.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/codeHighlight.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/prism.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>

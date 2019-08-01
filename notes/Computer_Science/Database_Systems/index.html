@@ -28,12 +28,65 @@
 <body>
     
 <div class="container-fluid" id="note">
+    <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
     <h1 class="title text-center pt-3">Database Systems</h1>
     <hr>
     <div class="row">
-        <div class="col-lg-2 d-none d-lg-block"></div>
-        <div class="col-lg-7 col-md-10">
-            <ul>
+        <!-- Notebook Sidenav -->
+        <div class="col-lg-2 col-3 d-none d-md-block bg-light">
+            <div class="sidenav sticky-top vh-80">
+                <div class="sidenav-title row no-gutters">
+                    <div class="col-9">
+                        <strong>Database Systems</strong>
+                    </div>
+                    <div class="col-2 offset-1">
+                        <a class="go-up" href="https://ketozhang.github.io/ketozhang.github.io/notes/Computer_Science/" role="button">
+                            <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+                        </a>
+                    </div>
+                </div>
+                <div class="sidenav-body no-gutters">
+                    <ul class="no-list-style pl-3">
+                        
+                        <li class='pb-3'><a href="https://ketozhang.github.io/ketozhang.github.io/notes/Computer_Science/Database_Systems/Buffer_Management/">Buffer Management</a></li>
+                        
+                        <li class='pb-3'><a href="https://ketozhang.github.io/ketozhang.github.io/notes/Computer_Science/Database_Systems/Concurrency/">Concurrency</a></li>
+                        
+                        <li class='pb-3'><a href="https://ketozhang.github.io/ketozhang.github.io/notes/Computer_Science/Database_Systems/Database_Design/">Database Design</a></li>
+                        
+                        <li class='pb-3'><a href="https://ketozhang.github.io/ketozhang.github.io/notes/Computer_Science/Database_Systems/Disk_Space_Management/">Disk Space Management</a></li>
+                        
+                        <li class='pb-3'><a href="https://ketozhang.github.io/ketozhang.github.io/notes/Computer_Science/Database_Systems/File_Index_Management/">File Index Management</a></li>
+                        
+                        <li class='pb-3'><a href="https://ketozhang.github.io/ketozhang.github.io/notes/Computer_Science/Database_Systems/Parallel_Query/">Parallel Query</a></li>
+                        
+                        <li class='pb-3'><a href="https://ketozhang.github.io/ketozhang.github.io/notes/Computer_Science/Database_Systems/Query_Optimization/">Query Optimization</a></li>
+                        
+                        <li class='pb-3'><a href="https://ketozhang.github.io/ketozhang.github.io/notes/Computer_Science/Database_Systems/Recovery/">Recovery</a></li>
+                        
+                        <li class='pb-3'><a href="https://ketozhang.github.io/ketozhang.github.io/notes/Computer_Science/Database_Systems/Relational_Operators/">Relational Operators</a></li>
+                        
+                        <li class='pb-3'><a href="https://ketozhang.github.io/ketozhang.github.io/notes/Computer_Science/Database_Systems/SQL/">Sql</a></li>
+                        
+                        <li class='pb-3'><a href="https://ketozhang.github.io/ketozhang.github.io/notes/Computer_Science/Database_Systems/SUMMARY">Summary</a></li>
+                        
+                        <li class='pb-3'><a href="https://ketozhang.github.io/ketozhang.github.io/notes/Computer_Science/Database_Systems/Search_Engine/">Search Engine</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="col-lg-8 col-9">
+            <div class="markdown-content">
+                
+                <ul>
 <li>SQL</li>
 <li>File Management</li>
 <li>Index Management</li>
@@ -68,7 +121,7 @@
 <li>Search Engine</li>
 </ul>
 <h2 id="cs-186-instructions">CS 186 Instructions</h2>
-<ol style="list-style-type: decimal">
+<ol type="1">
 <li>Watch <a href="https://edge.edx.org/courses/course-v1:BerkeleyX+CS186+2018_SP/course/">lecture webcast</a>
 <ul>
 <li>Take notes on main contents</li>
@@ -96,13 +149,23 @@
 <li>If no content map, then cheatsheet is a must.</li>
 </ul></li>
 </ol>
+                
+            </div>
         </div>
-        <div class="col-md-2 d-none d-md-block">
-            <div class="sticky-top onthispage">
-                <ul id="onthispage-list" class="no-list-style">On This Page</ul>
+
+        <!-- On This Page -->
+        <div class="col-lg-2 d-none d-lg-block bg-light">
+            <div class="onthispage sidenav sticky-top vh-80">
+                <strong class="sidenav-title">On This Page</strong>
+                <div class="sidenav-body">
+                    <ul id="onthispage-list" class="no-list-style"></ul>
+                </div>
             </div>
         </div>
     </div>
+    <div id="commento"></div>
+    <script src="https://cdn.commento.io/js/commento.js"></script>
+</div>
 </div>
 
     <footer class="py-2 bg-white">
@@ -120,6 +183,7 @@
         crossorigin="anonymous"></script>
 
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/datetime.js"></script>
+    <script src="https://ketozhang.github.io/ketozhang.github.io/static/sidenav.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/codeHighlight.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/prism.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>

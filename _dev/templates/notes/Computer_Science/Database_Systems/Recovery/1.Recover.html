@@ -2,7 +2,7 @@
 <p>A naive policy implements the following:</p>
 <ul>
 <li><p><strong>No Steal Policy</strong></p>
-<p>Don't allow buffer-pool frames with uncommited updates to be replace (pin those pages)</p>
+<p>Don’t allow buffer-pool frames with uncommited updates to be replace (pin those pages)</p>
 <ul>
 <li>No need for UNDO logging</li>
 <li>Cause bad performance taking up buffer</li>
@@ -62,7 +62,7 @@ Force all updates onto the disk before commit.
 </ul>
 <h3 id="aries-recovery-phases">ARIES Recovery Phases</h3>
 <p>During a crash the following is ran</p>
-<ol style="list-style-type: decimal">
+<ol type="1">
 <li><p><strong>Analysis (Checkpoint)</strong></p>
 <p>If checkpoint exists, figure out which transaction was commited since checkpoint and which failed.</p>
 <ul>
@@ -86,7 +86,7 @@ Force all updates onto the disk before commit.
 <li>Start at the smallest <code>recLSN</code> (oldest update log that dirtied the page).</li>
 <li>For each CLR, REDO the aciton unless either
 <ul>
-<li>Affected page isn't in the dirty page table</li>
+<li>Affected page isn’t in the dirty page table</li>
 <li>Affected page is in the dirty page table but has <code>recLSN &gt; LSN</code></li>
 <li><code>pageLSN &gt;= LSN</code></li>
 </ul></li>
@@ -102,7 +102,7 @@ Force all updates onto the disk before commit.
 <ul>
 <li>If the <code>lastLSN</code> log is a CLR
 <ul>
-<li>Add the <code>nextLSN</code> to the undo list if it isn't null.</li>
+<li>Add the <code>nextLSN</code> to the undo list if it isn’t null.</li>
 <li>Otherwise write an end record.</li>
 </ul></li>
 <li>Otherwise the record is an update
@@ -117,7 +117,7 @@ Force all updates onto the disk before commit.
 <h2 id="sql-commands">SQL Commands</h2>
 <ul>
 <li><p><code>BEGIN</code></p>
-<p>Start a transaction that won't commit until the <code>COMMIT</code> is ran.</p></li>
+<p>Start a transaction that won’t commit until the <code>COMMIT</code> is ran.</p></li>
 <li><p><code>COMMIT</code></p>
 Commit the transaction if all transactions above (until the <code>BEGIN</code>) suceeded.</li>
 <li><p><code>ROLLBACK</code></p>
@@ -131,7 +131,7 @@ Commit the transaction if all transactions above (until the <code>BEGIN</code>) 
 </ul>
 <h2 id="why-database-crash">Why Database Crash?</h2>
 <p>From the most common to least:</p>
-<ol style="list-style-type: decimal">
+<ol type="1">
 <li><p><strong>Operation Error</strong></p>
 <p>The user caused the error.</p></li>
 <li><p><strong>Configuration Error</strong></p>

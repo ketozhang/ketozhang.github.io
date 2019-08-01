@@ -28,38 +28,77 @@
 <body>
     
 <div class="container-fluid" id="note">
-    <h1 class="title text-center pt-3"></h1>
+    <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
+    <h1 class="title text-center pt-3">Speedup</h1>
     <hr>
     <div class="row">
-        <div class="col-lg-2 d-none d-lg-block"></div>
-        <div class="col-lg-7 col-md-10">
-            <h1 id="speedup">Speedup</h1>
+        <!-- Notebook Sidenav -->
+        <div class="col-lg-2 col-3 d-none d-md-block bg-light">
+            <div class="sidenav sticky-top vh-80">
+                <div class="sidenav-title row no-gutters">
+                    <div class="col-9">
+                        <strong>Speedup</strong>
+                    </div>
+                    <div class="col-2 offset-1">
+                        <a class="go-up" href="https://ketozhang.github.io/ketozhang.github.io/notes/Computer_Science/Computer_Architecture/" role="button">
+                            <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+                        </a>
+                    </div>
+                </div>
+                <div class="sidenav-body no-gutters">
+                    <ul class="no-list-style pl-3">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="col-lg-8 col-9">
+            <div class="markdown-content">
+                
+                <h1 id="speedup">Speedup</h1>
 <ul>
 <li><a href="#speedup">Speedup</a></li>
 <li><a href="#unrolling">Unrolling</a></li>
 <li><a href="#cache-blocking">Cache Blocking</a></li>
 </ul>
-<p>There are many ways to speedup a program. We'll use matrix operations as the classical example. This section will not cover parallel processing.</p>
+<p>There are many ways to speedup a program. We’ll use matrix operations as the classical example. This section will not cover parallel processing.</p>
 <h1 id="unrolling">Unrolling</h1>
 <p>Optimize the use of independent instruction to accumulate as much binary size (registers) as possible.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">result <span class="op">=</span> <span class="dv">0</span>
-<span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(arr), <span class="dv">4</span>):
-    result <span class="op">+=</span> arr[i]  
-    result <span class="op">+=</span> arr[i<span class="op">+</span><span class="dv">1</span>]
-    result <span class="op">+=</span> arr[i<span class="op">+</span><span class="dv">2</span>]
-    result <span class="op">+=</span> arr[i<span class="op">+</span><span class="dv">3</span>]</code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" data-line-number="1">result <span class="op">=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(arr), <span class="dv">4</span>):</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">    result <span class="op">+=</span> arr[i]  </a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">    result <span class="op">+=</span> arr[i<span class="op">+</span><span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">    result <span class="op">+=</span> arr[i<span class="op">+</span><span class="dv">2</span>]</a>
+<a class="sourceLine" id="cb1-6" data-line-number="6">    result <span class="op">+=</span> arr[i<span class="op">+</span><span class="dv">3</span>]</a></code></pre></div>
 <h1 id="cache-blocking">Cache Blocking</h1>
 <p>Optimize temporal locality of cache by changing the way we access data.</p>
 <ul>
 <li>For NxN matrix operations one method is to split the matrices into sub-matrix</li>
 </ul>
+                
+            </div>
         </div>
-        <div class="col-md-2 d-none d-md-block">
-            <div class="sticky-top onthispage">
-                <ul id="onthispage-list" class="no-list-style">On This Page</ul>
+
+        <!-- On This Page -->
+        <div class="col-lg-2 d-none d-lg-block bg-light">
+            <div class="onthispage sidenav sticky-top vh-80">
+                <strong class="sidenav-title">On This Page</strong>
+                <div class="sidenav-body">
+                    <ul id="onthispage-list" class="no-list-style"></ul>
+                </div>
             </div>
         </div>
     </div>
+    <div id="commento"></div>
+    <script src="https://cdn.commento.io/js/commento.js"></script>
+</div>
 </div>
 
     <footer class="py-2 bg-white">
@@ -77,6 +116,7 @@
         crossorigin="anonymous"></script>
 
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/datetime.js"></script>
+    <script src="https://ketozhang.github.io/ketozhang.github.io/static/sidenav.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/codeHighlight.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/prism.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>

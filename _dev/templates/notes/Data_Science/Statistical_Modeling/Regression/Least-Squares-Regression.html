@@ -38,14 +38,14 @@ X^\top (\hat y - y) = 0
 <p>This is then the <strong>normal equation</strong>.</p>
 <h2 id="polynomial-least-squares">Polynomial Least Squares</h2>
 <p>Let the design matrix be denoted as <span class="math inline">\(\Phi(X)\)</span> that transform add polynomials features to the feature matrix.</p>
-<p>For example, we can do a degree <span class="math inline">\(k\)</span> polynomial transformation with no cross terms. It's easier to write this consider every row of <span class="math inline">\(X\)</span> as <span class="math inline">\(X_i\)</span>.</p>
+<p>For example, we can do a degree <span class="math inline">\(k\)</span> polynomial transformation with no cross terms. It’s easier to write this consider every row of <span class="math inline">\(X\)</span> as <span class="math inline">\(X_i\)</span>.</p>
 <p><span class="math display">\[
 \Phi(X_i^\top) = \begin{bmatrix}
     X_{i1} &amp; X_{i1}^2 &amp; \ldots &amp; X_{i1}^k &amp; \ldots &amp; X_{id} &amp; X_{id}^2 &amp; \ldots &amp; X_{id}^k
 \end{bmatrix}
 \]</span></p>
 <h2 id="weighted-least-squares">Weighted Least Squares</h2>
-<p>Sometimes you may want to weigh your data by some sort of importance or confidence metric (e.g., inverse of the data's error).</p>
+<p>Sometimes you may want to weigh your data by some sort of importance or confidence metric (e.g., inverse of the data’s error).</p>
 <p>For simplicity we are only going to weigh each row. In this case, the weight can be represented as a diagonal weight matrix <span class="math inline">\(\Omega\)</span> such that <span class="math inline">\(\omega_i\)</span> is the weight the row <span class="math inline">\(X_i\)</span>.</p>
 <p>The optimization becomes,</p>
 <p><span class="math display">\[

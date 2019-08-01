@@ -9,16 +9,16 @@
 </ul>
 <h2 id="regular-expression">Regular Expression</h2>
 <p>Learning regular expression is not easy. I do not recommend reading these notes as no lecture notes can really help. Please see the webcast, live demonstration makes a lot of sense.</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> re</code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="im">import</span> re</a></code></pre></div>
 <p>A typical <strong>regular expression (regex)</strong> use in python is the <code>re.findall</code> method which takes in a regular expression <code>regex</code> to match with some string <code>string</code>,</p>
-<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python">re.findall(regex, string)</code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" data-line-number="1">re.findall(regex, string)</a></code></pre></div>
 <p>Here are a list of some regex operators:</p>
 <ul>
 <li><code>.</code>: Wildcard, match any character</li>
 <li><code>+</code>: Match 1 or more</li>
 <li><code>()</code>: Match and extract pattern inside parenthesis to list</li>
 <li><code>?</code> : Immediate character before is optional</li>
-<li><code>^</code> : Don't match the immediate character after</li>
+<li><code>^</code> : Don’t match the immediate character after</li>
 <li><code>$</code> : Match end of line</li>
 <li><code>\</code>: The immediate character after this is to be treated as a literal string not an operator</li>
 <li><code>[AB]</code>: Match <code>A</code> or <code>B</code> (however not both)</li>

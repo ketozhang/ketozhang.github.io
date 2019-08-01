@@ -1,29 +1,26 @@
-<div class="figure">
-<img src="2018-03-05-15-22-03.png" />
-
-</div>
-<p>Consider a moon of mass <span class="math inline">\(M\)</span> and Earth of mass <span class="math inline">\(M_\oplus\)</span>. We would like to understand how tidal forces are a contribution to an acceleration unbeknownst to the observer on Earth. On Earth let's have a test mass <span class="math inline">\(m\)</span> say a droplet of water on the ocean. The forces in some convenient reference frame <span class="math inline">\(S_0\)</span> (e.g., the background star) are the Earth's gravitational force, moon's gravitational force, and non-gravitational force (e.g., boyancy)</p>
+<p><img src="2018-03-05-15-22-03.png" /></p>
+<p>Consider a moon of mass <span class="math inline">\(M\)</span> and Earth of mass <span class="math inline">\(M_\oplus\)</span>. We would like to understand how tidal forces are a contribution to an acceleration unbeknownst to the observer on Earth. On Earth let’s have a test mass <span class="math inline">\(m\)</span> say a droplet of water on the ocean. The forces in some convenient reference frame <span class="math inline">\(S_0\)</span> (e.g., the background star) are the Earth’s gravitational force, moon’s gravitational force, and non-gravitational force (e.g., boyancy)</p>
 <p><span class="math display">\[
  m\ddot{\mathbf{r}} = \mathbf{F} - m\mathbf{A} \\
 \mathbf{F} = \mathbf{F}_g + \mathbf{F}_{ng}\\
 \mathbf{F}_g = m\mathbf{g} - \frac{GM_\oplus m}{d^2}\hat{d}
 \]</span></p>
 <ul>
-<li><span class="math inline">\(\mathbf{F}_g\)</span> : Gravitational forces on the particle which include Earth and Moon's gravitational force</li>
+<li><span class="math inline">\(\mathbf{F}_g\)</span> : Gravitational forces on the particle which include Earth and Moon’s gravitational force</li>
 <li><span class="math inline">\(\mathbf{F}_{ng}\)</span> : Non-gravitational forces</li>
 </ul>
-<p>We define <span class="math inline">\(\mathbf{A}\)</span> in some convenient reference frame like the background stars. In this frame we see the Moon and Earth orbitting each other. Since <span class="math inline">\(A\)</span> is the force non-aparrent to the mass <span class="math inline">\(m\)</span>, it must be the forces between Earth and the Moon. So <span class="math inline">\(\mathbf{A}\)</span> is the force on the <span class="math inline">\(S\)</span> frame (Earth) thus moon's gravitational pull at distance <span class="math inline">\(\mathbf{d_0}\)</span></p>
+<p>We define <span class="math inline">\(\mathbf{A}\)</span> in some convenient reference frame like the background stars. In this frame we see the Moon and Earth orbitting each other. Since <span class="math inline">\(A\)</span> is the force non-aparrent to the mass <span class="math inline">\(m\)</span>, it must be the forces between Earth and the Moon. So <span class="math inline">\(\mathbf{A}\)</span> is the force on the <span class="math inline">\(S\)</span> frame (Earth) thus moon’s gravitational pull at distance <span class="math inline">\(\mathbf{d_0}\)</span></p>
 <p><span class="math display">\[
 \mathbf{A} = -\frac{GM}{d_0^2}\hat{d_0}
 \]</span></p>
-<p>Together Newton's second law becomes,</p>
+<p>Together Newton’s second law becomes,</p>
 <p><span class="math display">\[
 m\ddot{\mathbf{r}} = m\mathbf{g} - \frac{GM_\oplus m}{d^2}\hat{d} + \mathbf{F}_{ng} + \frac{GMm}{d_0^2}\hat{d_0}\\
 \]</span></p>
 <h2 id="tidal-height">Tidal Height</h2>
 <p>We will now derive an important magntiude of tidal forces which is the <strong>tidal height</strong> defined as the difference in low and high tides.</p>
 <h3 id="proof">Proof</h3>
-<p>The tidal height exist at the equipotential surfaces. Consider the Earth's gravitational force and tidal force in terms of potential. Because the forces are conservative we can write it as the gradient of a potential energy,</p>
+<p>The tidal height exist at the equipotential surfaces. Consider the Earth’s gravitational force and tidal force in terms of potential. Because the forces are conservative we can write it as the gradient of a potential energy,</p>
 <p><span class="math display">\[
 m\mathbf{g} = -\nabla U_\oplus \qquad \mathbf{F}_t = -\nabla U_t\\
 U_\oplus = mg(R+h) \qquad U_t = -GMm\left(\frac{1}{d} + \frac{x}{d_0^2}\right)
@@ -61,7 +58,7 @@ U_\oplus(h) + U_t(h) = U_\oplus(0) + U_t(0)\\
 <li><span class="math inline">\(x_\text{low}\)</span> : <span class="math inline">\(x\)</span> position at low tide which is <span class="math inline">\(x = 0\)</span></li>
 </ul>
 <p><span class="math display">\[ \Delta U_t = -GMm\left(\frac{1}{d_0 - (h + R_\oplus)} - \frac{h + R_\oplus}{d_0^2} - \frac{1}{\sqrt{d_0^2 + (R_\oplus + h)^2}}\right)\]</span></p>
-<p>Let's take the approximation that <span class="math inline">\(R_\oplus + h = R_\oplus\)</span> since <span class="math inline">\(R_\oplus \gg h\)</span> and <span class="math inline">\(R_\oplus \ll d_0\)</span> but this time take it as a binomial expansion for <span class="math inline">\(1 + R_\oplus/d_0\)</span></p>
+<p>Let’s take the approximation that <span class="math inline">\(R_\oplus + h = R_\oplus\)</span> since <span class="math inline">\(R_\oplus \gg h\)</span> and <span class="math inline">\(R_\oplus \ll d_0\)</span> but this time take it as a binomial expansion for <span class="math inline">\(1 + R_\oplus/d_0\)</span></p>
 <p><span class="math display">\[
 \begin{gather*}
 \frac{1}{\sqrt{d_0^2 + R_\oplus^2}} \approx \frac{1}{d_0}\left(1 - \frac{R_\oplus^2}{2d_0^2}\right) \tag{First Order Binomial}\\

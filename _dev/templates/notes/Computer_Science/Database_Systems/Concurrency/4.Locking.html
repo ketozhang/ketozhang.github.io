@@ -1,5 +1,5 @@
 <p>The locking scheme we will be using is called the <strong>Two Phase Lock (2PL)</strong> to guarantee conflict serializable schedule. The two phases refer to the phases of individual transactions. Those are:</p>
-<ol style="list-style-type: decimal">
+<ol type="1">
 <li><p><strong>Aquisition Phase</strong></p>
 <p>Transaction begins by attempting to gather all the locks it can will need. Afterso, we have entered the <strong>lockpoint</strong></p></li>
 <li><p><strong>Release Phase</strong></p>
@@ -21,7 +21,7 @@
 <h2 id="stirct-2pl-and-cascade-abort">Stirct 2PL and Cascade Abort</h2>
 <ul>
 <li><p><strong>Cascade abort</strong></p>
-<p>When transaction abort causes other transaction to abort and undo. This occurs because when a transaction release its lock to another transaction, that transaction will continue its actions regarldess if there's an abort ahead.</p></li>
+<p>When transaction abort causes other transaction to abort and undo. This occurs because when a transaction release its lock to another transaction, that transaction will continue its actions regarldess if there’s an abort ahead.</p></li>
 </ul>
 <p>The fix for cascade abort is to make sure all transaction:</p>
 <pre><code>1. Release all locks together.
@@ -38,7 +38,7 @@
 <h2 id="deadlock">Deadlock</h2>
 <p>A deadlock occurs when the wait-for diagram is cyclic. A <strong>waits-for</strong> diagram is the directed graph representing the lock manager. The nodes are transactions and the edges are the relations where a transaction waits for (points to) another transaction to release.</p>
 <h3 id="deadline-avoidance">Deadline Avoidance</h3>
-<p><strong>Deadlock avoidance</strong> determines the action if some transaction wants a lock that's taken from another.</p>
+<p><strong>Deadlock avoidance</strong> determines the action if some transaction wants a lock that’s taken from another.</p>
 <ul>
 <li><strong>Wait-Die</strong>
 <ul>
@@ -63,7 +63,4 @@
 </ul>
 <h3 id="lock-compatibility">Lock Compatibility</h3>
 <p>The following tables reperesents combination of locks that do not conflict given two different transactions on the locking the same object.</p>
-<div class="figure">
-<img src="2018-11-13-18-58-46.png" style="width:50.0%" />
-
-</div>
+<p><img src="2018-11-13-18-58-46.png" style="width:50.0%" /></p>

@@ -1,7 +1,7 @@
 <p>Because there may exist infinitely many hyperplane that can classify the input data, we need to determine which hyperplane is the best fit. Naturally, points that are closer to the hyperplane are considered more ambiguous and error-prone than those further away from the hyperplane. Given this metric, we consider the best hyperplane to be one that is furthest away from its immediate neighboring data points. This method is coined the name <strong>maximal margin classifier (MMC)</strong></p>
 <dl>
 <dt>Support Vectors</dt>
-<dd>The &quot;immediate neighboring data points&quot; that are used to determine the best hyperplane.
+<dd>The “immediate neighboring data points” that are used to determine the best hyperplane.
 </dd>
 <dt>Margin <span class="math inline">\((M)\)</span></dt>
 <dd>The length of the support vector(s). Alternatively, the distance between the hyperplane and the nearest point(s).
@@ -26,7 +26,7 @@
 <p>We simplify the constraint by transforming the marign to unity,</p>
 <p><span class="math display">\[ y_i(\theta^T X_i + \theta_0) \ge 1 \]</span></p>
 <ul>
-<li>This transformation is invariant because all we're doing is rescaling <span class="math inline">\(\theta \rightarrow \frac{\theta}{M}\)</span>.</li>
+<li>This transformation is invariant because all we’re doing is rescaling <span class="math inline">\(\theta \rightarrow \frac{\theta}{M}\)</span>.</li>
 </ul>
 <p>Now the optimizing problem is over the parameter space which is called the <strong>quadratic program</strong>. As the name suggest, we optimize of <span class="math inline">\(\lvert{\theta}\rvert\)</span> to allow differentiation.</p>
 <p><span class="math display">\[

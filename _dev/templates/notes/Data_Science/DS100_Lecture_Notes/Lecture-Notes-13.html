@@ -10,7 +10,7 @@
 </dd>
 </dl>
 <h4 id="square-loss">Square Loss</h4>
-<p>A very popular loss function is the <span class="math inline">\({L^2}\)</span> ('el two') loss which is a quadratic loss function.</p>
+<p>A very popular loss function is the <span class="math inline">\({L^2}\)</span> (‘el two’) loss which is a quadratic loss function.</p>
 <p><span class="math display">\[ L(\theta,y) = (y-\theta)^2 \]</span></p>
 <ul>
 <li><span class="math inline">\(y\)</span> : data</li>
@@ -26,7 +26,7 @@
 <li>Cons: If bad fit, some loss</li>
 </ul>
 <h4 id="huber-loss">Huber Loss</h4>
-<p>The Huber's Loss function smooths out the non-differentiable part of the absolute loss as a tradeoff between the pros and cons square and absolute loss.</p>
+<p>The Huber’s Loss function smooths out the non-differentiable part of the absolute loss as a tradeoff between the pros and cons square and absolute loss.</p>
 <p><span class="math display">\[ L_\alpha(\theta,y) = \begin{cases} \frac{1}{2}(y-\theta)^2 \\ \alpha\left(\lvert{y-\theta}\rvert - \alpha/2\right) \end{cases} \]</span></p>
 <ul>
 <li><span class="math inline">\(\alpha\)</span>: Sensitivity parameters for outliers.</li>

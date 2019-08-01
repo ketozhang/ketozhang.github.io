@@ -3,14 +3,14 @@
 <p>Being in zero curvature region causes gradient descent to get stuck since the step size becomes too small. Hence appropriately named the <strong>vanishing gradient problem</strong>.</p>
 <h2 id="solutions">Solutions</h2>
 <p>Solutions for mitigating this effect includes:</p>
-<ol style="list-style-type: decimal">
+<ol type="1">
 <li><p>Initialization: Set weights of edges to random with,</p>
 <span class="math display">\[
-\begin{gather}
-\mu = 0\\
-\sigma = \frac{1}{\sqrt{n}}
-\end{gather}
-\]</span></li>
+ \begin{gather}
+ \mu = 0\\
+ \sigma = \frac{1}{\sqrt{n}}
+ \end{gather}
+ \]</span></li>
 <li>Set the target output values to values with high curvature.</li>
 <li>Change the gradient by some amount such that the parameter are no longer moving towards steepest descent.</li>
 <li>Use different loss function like cross-entropy.</li>

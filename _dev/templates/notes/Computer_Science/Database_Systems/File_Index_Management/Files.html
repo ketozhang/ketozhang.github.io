@@ -12,10 +12,7 @@
 <li>Index files</li>
 </ul>
 <h2 id="unordered-heap-files">Unordered Heap Files</h2>
-<div class="figure">
-<img src="2018-09-11-13-54-37.png" />
-
-</div>
+<p><img src="2018-09-11-13-54-37.png" /></p>
 <p>Collection of records in no particular order. Not the same as min heap structure.</p>
 <ul>
 <li>As file size changes, the pages are (de)allocated</li>
@@ -31,44 +28,41 @@
 <li>Header page is likely cached.</li>
 </ul>
 <h2 id="sorted-files-ordered-heap-files">Sorted Files (Ordered Heap Files)</h2>
-<div class="figure">
-<img src="2018-09-11-13-59-40.png" />
-
-</div>
-<p>Let's take a look at the performance between a sorted file and heap file:</p>
+<p><img src="2018-09-11-13-59-40.png" /></p>
+<p>Let’s take a look at the performance between a sorted file and heap file:</p>
 <table>
 <thead>
 <tr class="header">
 <th></th>
-<th align="center">Heap File</th>
-<th align="center">Sorted File</th>
+<th style="text-align: center;">Heap File</th>
+<th style="text-align: center;">Sorted File</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Scan all Records</td>
-<td align="center">B*D</td>
-<td align="center">B*D</td>
+<td style="text-align: center;">B*D</td>
+<td style="text-align: center;">B*D</td>
 </tr>
 <tr class="even">
 <td>Equality Search</td>
-<td align="center">B*D/2</td>
-<td align="center">(lg B)*D</td>
+<td style="text-align: center;">B*D/2</td>
+<td style="text-align: center;">(lg B)*D</td>
 </tr>
 <tr class="odd">
 <td>Range Search</td>
-<td align="center">B*D</td>
-<td align="center">(lg B + matches)*D</td>
+<td style="text-align: center;">B*D</td>
+<td style="text-align: center;">(lg B + matches)*D</td>
 </tr>
 <tr class="even">
 <td>Insert</td>
-<td align="center">2*D</td>
-<td align="center">(lg B + B)*D</td>
+<td style="text-align: center;">2*D</td>
+<td style="text-align: center;">(lg B + B)*D</td>
 </tr>
 <tr class="odd">
 <td>Delete</td>
-<td align="center">(B/2+1)*D</td>
-<td align="center">(lg B + B)*D</td>
+<td style="text-align: center;">(B/2+1)*D</td>
+<td style="text-align: center;">(lg B + B)*D</td>
 </tr>
 </tbody>
 </table>
@@ -84,11 +78,8 @@
 <p><span class="math display">\[P(i) = \frac{1}{B} \]</span></p>
 <p>The number of pages the search looked at is also <span class="math inline">\(i\)</span>. We are interested in the expected value,</p>
 <p><span class="math display">\[\Expected{i} = \sum_{i=1}^B i P(i) = \frac{B+1}{2} \approx \frac{B}{2}\]</span></p>
-<p>Now for the sorted file. You can see that it's best to start searching from the center then search halfway either to the left or right. Then repeat this process until found. This is binary search:</p>
-<div class="figure">
-<img src="2018-09-11-14-30-25.png" />
-
-</div>
+<p>Now for the sorted file. You can see that it’s best to start searching from the center then search halfway either to the left or right. Then repeat this process until found. This is binary search:</p>
+<p><img src="2018-09-11-14-30-25.png" /></p>
 <p><span class="math display">\[ \Expected{i} = \sum_{i=1}^{\log_2{B}} i \frac{2^{i-1}}{B} = \log_2 B - \frac{B-1}{B}  \approx \log_2{B}\]</span></p>
 <p>From this binary tree, we see that from the center to the next midpoint cost two IO (i.e., edges traversed) and the sub-midpoints cost an extra IO each.</p>
 <h3 id="range-search-search-for-all-matches-within-a-range.">Range Search: Search for all matches within a range.</h3>

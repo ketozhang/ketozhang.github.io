@@ -28,12 +28,41 @@
 <body>
     
 <div class="container-fluid" id="note">
-    <h1 class="title text-center pt-3"></h1>
+    <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
+    <h1 class="title text-center pt-3">Statistical-Quantities</h1>
     <hr>
     <div class="row">
-        <div class="col-lg-2 d-none d-lg-block"></div>
-        <div class="col-lg-7 col-md-10">
-            <h2 id="expected-value">Expected Value</h2>
+        <!-- Notebook Sidenav -->
+        <div class="col-lg-2 col-3 d-none d-md-block bg-light">
+            <div class="sidenav sticky-top vh-80">
+                <div class="sidenav-title row no-gutters">
+                    <div class="col-9">
+                        <strong>Statistical-Quantities</strong>
+                    </div>
+                    <div class="col-2 offset-1">
+                        <a class="go-up" href="https://ketozhang.github.io/ketozhang.github.io/notes/Data_Science/Probability/" role="button">
+                            <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+                        </a>
+                    </div>
+                </div>
+                <div class="sidenav-body no-gutters">
+                    <ul class="no-list-style pl-3">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="col-lg-8 col-9">
+            <div class="markdown-content">
+                
+                <h2 id="expected-value">Expected Value</h2>
 <p>The expected value or expectation value of <span class="math inline">\(X\)</span> is the mean of <span class="math inline">\(X\)</span>. For the discrete case, the epected value is given by,</p>
 <p><span class="math display">\[\boxed{ \Expected{X} = \sum_{x}{x P(x)}}\]</span></p>
 <p>The expected value has the following properties:</p>
@@ -46,7 +75,7 @@
 </ul>
 <p><span class="math display">\[ \Expected{aX+Y+b} = a\Expected{X} + \Expected{Y} + b \]</span></p>
 <h2 id="variance">Variance</h2>
-<p>The variance is defined as the average of the data's squared deviation from the mean, here deviation means <span class="math inline">\(\Delta X = X - \Expected{X}\)</span></p>
+<p>The variance is defined as the average of the data’s squared deviation from the mean, here deviation means <span class="math inline">\(\Delta X = X - \Expected{X}\)</span></p>
 <p><span class="math display">\[
 \Var{X} \equiv \Expected{(\Delta X)^2}\\
 \boxed{\Var{X} \equiv \Expected{(X - \Expected{X}^2)^2}}
@@ -86,12 +115,12 @@
 <p>Like variance, there is another version of covariance that is used more called <strong>correlation</strong>,</p>
 <p><span class="math display">\[\boxed{ \Corr{X,Y} = \frac{\Cov{X,Y}}{\SD{X}\SD{Y}} }\]</span></p>
 <h2 id="two-value-example">Two Value Example</h2>
-<p>Let's do an example of a system of two values with probability <span class="math inline">\(p\)</span> and <span class="math inline">\(1-p\)</span>,</p>
+<p>Let’s do an example of a system of two values with probability <span class="math inline">\(p\)</span> and <span class="math inline">\(1-p\)</span>,</p>
 <p><span class="math display">\[ \Expected{X} = p \\
 \Var{X} = p(1-p)
 \]</span></p>
 <h2 id="statistics-with-multiple-samples">Statistics with Multiple Samples</h2>
-<p>This part will be a bit confusing, consider that we take multiple samples labeled <span class="math inline">\(X_i\)</span> indexed with <span class="math inline">\(i\)</span>'s. A useful quantity to get from these samples is the average value (<strong>not expected value</strong>) which is also called the <strong>sample mean</strong>,</p>
+<p>This part will be a bit confusing, consider that we take multiple samples labeled <span class="math inline">\(X_i\)</span> indexed with <span class="math inline">\(i\)</span>’s. A useful quantity to get from these samples is the average value (<strong>not expected value</strong>) which is also called the <strong>sample mean</strong>,</p>
 <p><span class="math display">\[
 \boxed{\bar{X} \equiv \frac{1}{n}\sum_{i=1}^{n}{X_i}}
 \]</span></p>
@@ -117,13 +146,23 @@
 <h2 id="risk-and-expected-loss">Risk and Expected Loss</h2>
 <p>Risk is the expected value of the loss function,</p>
 <p><span class="math display">\[ R(\theta) =  \Expected{\ell(Y,f_\theta(X))}\]</span></p>
+                
+            </div>
         </div>
-        <div class="col-md-2 d-none d-md-block">
-            <div class="sticky-top onthispage">
-                <ul id="onthispage-list" class="no-list-style">On This Page</ul>
+
+        <!-- On This Page -->
+        <div class="col-lg-2 d-none d-lg-block bg-light">
+            <div class="onthispage sidenav sticky-top vh-80">
+                <strong class="sidenav-title">On This Page</strong>
+                <div class="sidenav-body">
+                    <ul id="onthispage-list" class="no-list-style"></ul>
+                </div>
             </div>
         </div>
     </div>
+    <div id="commento"></div>
+    <script src="https://cdn.commento.io/js/commento.js"></script>
+</div>
 </div>
 
     <footer class="py-2 bg-white">
@@ -141,6 +180,7 @@
         crossorigin="anonymous"></script>
 
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/datetime.js"></script>
+    <script src="https://ketozhang.github.io/ketozhang.github.io/static/sidenav.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/codeHighlight.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/prism.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>

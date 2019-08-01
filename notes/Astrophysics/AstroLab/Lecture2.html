@@ -28,12 +28,41 @@
 <body>
     
 <div class="container-fluid" id="note">
+    <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
     <h1 class="title text-center pt-3">Lecture 2</h1>
     <hr>
     <div class="row">
-        <div class="col-lg-2 d-none d-lg-block"></div>
-        <div class="col-lg-7 col-md-10">
-            <h2 id="likelihood-function">Likelihood Function</h2>
+        <!-- Notebook Sidenav -->
+        <div class="col-lg-2 col-3 d-none d-md-block bg-light">
+            <div class="sidenav sticky-top vh-80">
+                <div class="sidenav-title row no-gutters">
+                    <div class="col-9">
+                        <strong>Lecture 2</strong>
+                    </div>
+                    <div class="col-2 offset-1">
+                        <a class="go-up" href="https://ketozhang.github.io/ketozhang.github.io/notes/Astrophysics/AstroLab/" role="button">
+                            <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+                        </a>
+                    </div>
+                </div>
+                <div class="sidenav-body no-gutters">
+                    <ul class="no-list-style pl-3">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="col-lg-8 col-9">
+            <div class="markdown-content">
+                
+                <h2 id="likelihood-function">Likelihood Function</h2>
 <p>Assuming a gaussian error distribution for the data,</p>
 <p><span class="math display">\[
 P(D \mid \theta) = \prod_{i=1}^n{\frac{1}{\sqrt{2\pi\sigma_i^2}}\exp\left(\frac{-(y_i - \hat y_i)^2}{2\sigma_i^2}\right)}
@@ -41,20 +70,20 @@ P(D \mid \theta) = \prod_{i=1}^n{\frac{1}{\sqrt{2\pi\sigma_i^2}}\exp\left(\frac{
 <h2 id="markov-chain-monte-carlo-mcmc">Markov Chain Monte Carlo (MCMC)</h2>
 <p>A method to sample the posterior <span class="math inline">\(P(\theta | D)\)</span>.</p>
 <h3 id="mcmc-hasting">MCMC Hasting</h3>
-<ol style="list-style-type: decimal">
+<ol type="1">
 <li>Begin with starting point <span class="math inline">\(\theta_0\)</span></li>
 <li>Propose <span class="math inline">\(\theta_{t+1}\)</span> based on sampling a random proposal distribution <span class="math inline">\(J(\theta_{t+1} \mid \theta_t)\)</span>.</li>
 <li><p>Keep it with a probability proportional to if it improves the posterior ratio else try again:</p>
 <p><span class="math display">\[\frac{P(\theta_{t+1} | D)}{P(\theta_{t} | D)}\]</span></p></li>
 </ol>
 <h3 id="affine-invariant-mcmc">Affine Invariant MCMC</h3>
-<p>Adding multiple samplers (aka <strong>walkers</strong>) we group each walk as a pairs. The next step step for a walker is towards its partner's line of sight. A new partner is assigned at every step.</p>
+<p>Adding multiple samplers (aka <strong>walkers</strong>) we group each walk as a pairs. The next step step for a walker is towards its partner’s line of sight. A new partner is assigned at every step.</p>
 <h2 id="goodness-of-fit">Goodness of Fit</h2>
 <ul>
 <li><p>Geweke Score:</p>
 Take the end and begining of the chain and computer the score as, <span class="math display">\[
-\frac{\bar \theta_e - \bar \theta_b}{\sqrt{\text{Var}[\theta_e]\text{Var}[\theta_b]}}
-\]</span></li>
+  \frac{\bar \theta_e - \bar \theta_b}{\sqrt{\text{Var}[\theta_e]\text{Var}[\theta_b]}}
+  \]</span></li>
 <li>G-R Statistics</li>
 <li>Acceptance Fraction</li>
 <li>Autocorrelation Function
@@ -82,13 +111,23 @@ Take the end and begining of the chain and computer the score as, <span class="m
 <p><span class="math display">\[
 \hat y = y_0 + A_f \sin\left(2\pi f\left[t - \phi_f\right]\right)
 \]</span></p>
+                
+            </div>
         </div>
-        <div class="col-md-2 d-none d-md-block">
-            <div class="sticky-top onthispage">
-                <ul id="onthispage-list" class="no-list-style">On This Page</ul>
+
+        <!-- On This Page -->
+        <div class="col-lg-2 d-none d-lg-block bg-light">
+            <div class="onthispage sidenav sticky-top vh-80">
+                <strong class="sidenav-title">On This Page</strong>
+                <div class="sidenav-body">
+                    <ul id="onthispage-list" class="no-list-style"></ul>
+                </div>
             </div>
         </div>
     </div>
+    <div id="commento"></div>
+    <script src="https://cdn.commento.io/js/commento.js"></script>
+</div>
 </div>
 
     <footer class="py-2 bg-white">
@@ -106,6 +145,7 @@ Take the end and begining of the chain and computer the score as, <span class="m
         crossorigin="anonymous"></script>
 
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/datetime.js"></script>
+    <script src="https://ketozhang.github.io/ketozhang.github.io/static/sidenav.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/codeHighlight.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/prism.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>

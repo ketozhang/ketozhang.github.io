@@ -28,12 +28,41 @@
 <body>
     
 <div class="container-fluid" id="note">
+    <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
     <h1 class="title text-center pt-3">Files</h1>
     <hr>
     <div class="row">
-        <div class="col-lg-2 d-none d-lg-block"></div>
-        <div class="col-lg-7 col-md-10">
-            <p>The memory architecture for storing data uses a file hierarchy.</p>
+        <!-- Notebook Sidenav -->
+        <div class="col-lg-2 col-3 d-none d-md-block bg-light">
+            <div class="sidenav sticky-top vh-80">
+                <div class="sidenav-title row no-gutters">
+                    <div class="col-9">
+                        <strong>Files</strong>
+                    </div>
+                    <div class="col-2 offset-1">
+                        <a class="go-up" href="https://ketozhang.github.io/ketozhang.github.io/notes/Computer_Science/Database_Systems/File_Index_Management/" role="button">
+                            <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+                        </a>
+                    </div>
+                </div>
+                <div class="sidenav-body no-gutters">
+                    <ul class="no-list-style pl-3">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="col-lg-8 col-9">
+            <div class="markdown-content">
+                
+                <p>The memory architecture for storing data uses a file hierarchy.</p>
 <ul>
 <li><strong>Files</strong>: Stores a table</li>
 <li><strong>Pages</strong>: A collection of records</li>
@@ -47,10 +76,7 @@
 <li>Index files</li>
 </ul>
 <h2 id="unordered-heap-files">Unordered Heap Files</h2>
-<div class="figure">
-<img src="2018-09-11-13-54-37.png" />
-
-</div>
+<p><img src="2018-09-11-13-54-37.png" /></p>
 <p>Collection of records in no particular order. Not the same as min heap structure.</p>
 <ul>
 <li>As file size changes, the pages are (de)allocated</li>
@@ -66,44 +92,41 @@
 <li>Header page is likely cached.</li>
 </ul>
 <h2 id="sorted-files-ordered-heap-files">Sorted Files (Ordered Heap Files)</h2>
-<div class="figure">
-<img src="2018-09-11-13-59-40.png" />
-
-</div>
-<p>Let's take a look at the performance between a sorted file and heap file:</p>
+<p><img src="2018-09-11-13-59-40.png" /></p>
+<p>Let’s take a look at the performance between a sorted file and heap file:</p>
 <table>
 <thead>
 <tr class="header">
 <th></th>
-<th align="center">Heap File</th>
-<th align="center">Sorted File</th>
+<th style="text-align: center;">Heap File</th>
+<th style="text-align: center;">Sorted File</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>Scan all Records</td>
-<td align="center">B*D</td>
-<td align="center">B*D</td>
+<td style="text-align: center;">B*D</td>
+<td style="text-align: center;">B*D</td>
 </tr>
 <tr class="even">
 <td>Equality Search</td>
-<td align="center">B*D/2</td>
-<td align="center">(lg B)*D</td>
+<td style="text-align: center;">B*D/2</td>
+<td style="text-align: center;">(lg B)*D</td>
 </tr>
 <tr class="odd">
 <td>Range Search</td>
-<td align="center">B*D</td>
-<td align="center">(lg B + matches)*D</td>
+<td style="text-align: center;">B*D</td>
+<td style="text-align: center;">(lg B + matches)*D</td>
 </tr>
 <tr class="even">
 <td>Insert</td>
-<td align="center">2*D</td>
-<td align="center">(lg B + B)*D</td>
+<td style="text-align: center;">2*D</td>
+<td style="text-align: center;">(lg B + B)*D</td>
 </tr>
 <tr class="odd">
 <td>Delete</td>
-<td align="center">(B/2+1)*D</td>
-<td align="center">(lg B + B)*D</td>
+<td style="text-align: center;">(B/2+1)*D</td>
+<td style="text-align: center;">(lg B + B)*D</td>
 </tr>
 </tbody>
 </table>
@@ -119,11 +142,8 @@
 <p><span class="math display">\[P(i) = \frac{1}{B} \]</span></p>
 <p>The number of pages the search looked at is also <span class="math inline">\(i\)</span>. We are interested in the expected value,</p>
 <p><span class="math display">\[\Expected{i} = \sum_{i=1}^B i P(i) = \frac{B+1}{2} \approx \frac{B}{2}\]</span></p>
-<p>Now for the sorted file. You can see that it's best to start searching from the center then search halfway either to the left or right. Then repeat this process until found. This is binary search:</p>
-<div class="figure">
-<img src="2018-09-11-14-30-25.png" />
-
-</div>
+<p>Now for the sorted file. You can see that it’s best to start searching from the center then search halfway either to the left or right. Then repeat this process until found. This is binary search:</p>
+<p><img src="2018-09-11-14-30-25.png" /></p>
 <p><span class="math display">\[ \Expected{i} = \sum_{i=1}^{\log_2{B}} i \frac{2^{i-1}}{B} = \log_2 B - \frac{B-1}{B}  \approx \log_2{B}\]</span></p>
 <p>From this binary tree, we see that from the center to the next midpoint cost two IO (i.e., edges traversed) and the sub-midpoints cost an extra IO each.</p>
 <h3 id="range-search-search-for-all-matches-within-a-range.">Range Search: Search for all matches within a range.</h3>
@@ -141,13 +161,23 @@
 <p><span class="math display">\[ \frac{B}{2} + 1\]</span></p>
 <p>For the sorted file, we first do a search then repack the whole heap by shifting left.</p>
 <p><span class="math display">\[ \log_2{B} + B \]</span></p>
+                
+            </div>
         </div>
-        <div class="col-md-2 d-none d-md-block">
-            <div class="sticky-top onthispage">
-                <ul id="onthispage-list" class="no-list-style">On This Page</ul>
+
+        <!-- On This Page -->
+        <div class="col-lg-2 d-none d-lg-block bg-light">
+            <div class="onthispage sidenav sticky-top vh-80">
+                <strong class="sidenav-title">On This Page</strong>
+                <div class="sidenav-body">
+                    <ul id="onthispage-list" class="no-list-style"></ul>
+                </div>
             </div>
         </div>
     </div>
+    <div id="commento"></div>
+    <script src="https://cdn.commento.io/js/commento.js"></script>
+</div>
 </div>
 
     <footer class="py-2 bg-white">
@@ -165,6 +195,7 @@
         crossorigin="anonymous"></script>
 
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/datetime.js"></script>
+    <script src="https://ketozhang.github.io/ketozhang.github.io/static/sidenav.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/codeHighlight.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/prism.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>

@@ -7,26 +7,26 @@
 <p>The standard normal distribution is <span class="math inline">\(N(0,1)\)</span> which plays an important role in motivating why we standardize random variables. Say for a Gaussian random variable <span class="math inline">\(X\)</span>,</p>
 <p><span class="math display">\[ Y = \frac{X-\mu_X}{\sigma_X} \iff Y \sim N(0,1)\]</span></p></li>
 <li><p><strong>Independent Joint Probability (Rotational Invariant)</strong></p>
-<p>Due to the distribution's property of rotational invariance, the joint property of two iid Gaussian is a Gaussian however you rotate the random variable axes. Even better the Gaussian has the mean and variance of the sums of the two Gaussians.</p>
+<p>Due to the distribution’s property of rotational invariance, the joint property of two iid Gaussian is a Gaussian however you rotate the random variable axes. Even better the Gaussian has the mean and variance of the sums of the two Gaussians.</p>
 <p><span class="math display">\[
-P(X,Y) = \text{N}(\mu_X + \mu_Y, \sigma_X^2 + \sigma_Y^2)
-\]</span></p></li>
+  P(X,Y) = \text{N}(\mu_X + \mu_Y, \sigma_X^2 + \sigma_Y^2)
+  \]</span></p></li>
 <li><p><strong>Sum:</strong></p>
 <p><span class="math display">\[
-P(X+Y) =
-\]</span></p></li>
+  P(X+Y) =
+  \]</span></p></li>
 <li><p><strong>Characteristics Function</strong>:</p>
 <p><span class="math display">\[\tilde p(x) = \exp{\left[-ik\mu -\frac{k^2\sigma^2}{2}\right]} \]</span></p></li>
 <li><p><strong>Cumulants and Moments</strong>: <span class="math display">\[
-    \avg{x}_c = \mu ,\quad \avg{x^2}_c = \sigma^2,\quad \avg{x^n}_c = 0, \quad \ldots,\quad  \avg{x^n}_c = 0\\
-    \avg{x} = \mu ,\quad \avg{x^2} = \sigma^2 + \mu^2,\quad \avg{x^n} = 3\sigma^2\mu + \mu^3, \quad \ldots
-\]</span></p></li>
+      \avg{x}_c = \mu ,\quad \avg{x^2}_c = \sigma^2,\quad \avg{x^n}_c = 0, \quad \ldots,\quad  \avg{x^n}_c = 0\\
+      \avg{x} = \mu ,\quad \avg{x^2} = \sigma^2 + \mu^2,\quad \avg{x^n} = 3\sigma^2\mu + \mu^3, \quad \ldots
+  \]</span></p></li>
 </ul></li>
 </ul>
 <h2 id="central-limit-theorem">Central Limit Theorem</h2>
 <p>For iid random variables $X_1, X_2, $ each with the same mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>. Let <span class="math inline">\(\bar X\)</span> be the sample mean,</p>
 <p><span class="math display">\[ \bar X = \frac{1}{n}\sum_i^n{X_i} \]</span> <span class="math display">\[ \text{Var}[\bar X] = \frac{\sigma^2}{n}\]</span></p>
-<p>Let's define the random variable <span class="math inline">\(Z\)</span> to be the standardized sample mean,</p>
+<p>Let’s define the random variable <span class="math inline">\(Z\)</span> to be the standardized sample mean,</p>
 <p><span class="math display">\[ Z = \frac{\bar X - \mu}{\frac{\sigma}{\sqrt{n}}} \]</span></p>
 <p>As <span class="math inline">\(n \rightarrow \infty\)</span>, this <span class="math inline">\(Z\)</span> tends towards a <span class="math inline">\(N(0,1)\)</span></p>
 <p><span class="math display">\[ P(Z \le c) \rightarrow \frac{1}{\sqrt{2\pi}} \int_{-\infty}^c e^{-x^2/2}~\mathrm dx \]</span></p>

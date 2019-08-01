@@ -28,12 +28,41 @@
 <body>
     
 <div class="container-fluid" id="note">
+    <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
     <h1 class="title text-center pt-3">Dipole</h1>
     <hr>
     <div class="row">
-        <div class="col-lg-2 d-none d-lg-block"></div>
-        <div class="col-lg-7 col-md-10">
-            <p>The dipole is the second term (<span class="math inline">\(n=1\)</span>) of the multipole expansion. This is useful when at large <span class="math inline">\(r\)</span> when the total charge at large distance is zero.</p>
+        <!-- Notebook Sidenav -->
+        <div class="col-lg-2 col-3 d-none d-md-block bg-light">
+            <div class="sidenav sticky-top vh-80">
+                <div class="sidenav-title row no-gutters">
+                    <div class="col-9">
+                        <strong>Dipole</strong>
+                    </div>
+                    <div class="col-2 offset-1">
+                        <a class="go-up" href="https://ketozhang.github.io/ketozhang.github.io/notes/Physics/Electrodynamics/Polarity/" role="button">
+                            <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+                        </a>
+                    </div>
+                </div>
+                <div class="sidenav-body no-gutters">
+                    <ul class="no-list-style pl-3">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="col-lg-8 col-9">
+            <div class="markdown-content">
+                
+                <p>The dipole is the second term (<span class="math inline">\(n=1\)</span>) of the multipole expansion. This is useful when at large <span class="math inline">\(r\)</span> when the total charge at large distance is zero.</p>
 <p><span class="math display">\[
 V(\boldsymbol{r}) = \frac{1}{4\pi\epsilon_0}\frac{1}{r^2}\cdot\int{(r&#39;\cos\alpha)\rho(\boldsymbol{r&#39;}) d\mathcal V}\\
 V(\boldsymbol{r}) = \frac{1}{4\pi\epsilon_0}\frac{\boldsymbol{\hat r}}{r^2}\cdot\int{\boldsymbol{r&#39;}\rho(\boldsymbol{r&#39;}) d\mathcal V}
@@ -68,7 +97,7 @@ V(\boldsymbol{r}) = \frac{1}{4\pi\epsilon_0}\frac{\boldsymbol{\hat r}}{r^2}\cdot
 \boldsymbol P = \boldsymbol r \frac{\mathrm d q}{\mathrm d \mathcal V} = \frac{\mathrm d q}{d \boldsymbol \sigma}
 \]</span></p>
 <h2 id="bound-charges">Bound Charges</h2>
-<p>For a distriubtion of dipole we may integrate the potential of the dipole along the infinitestimal geometry. Let's use a 3D object with a 2D surface with infinitestimal <span class="math inline">\(\mathrm d \mathcal V\)</span> and <span class="math inline">\(\mathrm d A\)</span> respectively. Let the object be centered at the origin and the potential point be at distance <span class="math inline">\(d\)</span> away from the origin such that <span class="math inline">\(d \gg r&#39;\)</span> for every point on the distribution. The integral form of the dipole potential is,</p>
+<p>For a distriubtion of dipole we may integrate the potential of the dipole along the infinitestimal geometry. Let’s use a 3D object with a 2D surface with infinitestimal <span class="math inline">\(\mathrm d \mathcal V\)</span> and <span class="math inline">\(\mathrm d A\)</span> respectively. Let the object be centered at the origin and the potential point be at distance <span class="math inline">\(d\)</span> away from the origin such that <span class="math inline">\(d \gg r&#39;\)</span> for every point on the distribution. The integral form of the dipole potential is,</p>
 <p><span class="math display">\[
 \mathrm dV(\boldsymbol{r}) = \frac{1}{4\pi\epsilon_0} \frac{\boldsymbol{\hat r} \cdot \mathrm d \boldsymbol{p}}{d^2} \\
 V(\boldsymbol{r}) = \frac{1}{4\pi\epsilon_0} \int \frac{\boldsymbol{\hat r} \cdot \boldsymbol{P}(\boldsymbol r&#39;)}{d^2} \mathrm d \mathcal V
@@ -83,13 +112,23 @@ V(\boldsymbol{r}) = \frac{1}{4\pi\epsilon_0}\Bigg[\oint_{S} \frac{\sigma_b}{d}\m
 <li><span class="math inline">\(\sigma_b\)</span> : Charge density of the surface</li>
 <li><span class="math inline">\(\rho_b\)</span> : Charge density of the volume</li>
 </ul>
+                
+            </div>
         </div>
-        <div class="col-md-2 d-none d-md-block">
-            <div class="sticky-top onthispage">
-                <ul id="onthispage-list" class="no-list-style">On This Page</ul>
+
+        <!-- On This Page -->
+        <div class="col-lg-2 d-none d-lg-block bg-light">
+            <div class="onthispage sidenav sticky-top vh-80">
+                <strong class="sidenav-title">On This Page</strong>
+                <div class="sidenav-body">
+                    <ul id="onthispage-list" class="no-list-style"></ul>
+                </div>
             </div>
         </div>
     </div>
+    <div id="commento"></div>
+    <script src="https://cdn.commento.io/js/commento.js"></script>
+</div>
 </div>
 
     <footer class="py-2 bg-white">
@@ -107,6 +146,7 @@ V(\boldsymbol{r}) = \frac{1}{4\pi\epsilon_0}\Bigg[\oint_{S} \frac{\sigma_b}{d}\m
         crossorigin="anonymous"></script>
 
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/datetime.js"></script>
+    <script src="https://ketozhang.github.io/ketozhang.github.io/static/sidenav.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/codeHighlight.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/prism.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>

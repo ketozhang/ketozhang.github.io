@@ -28,12 +28,41 @@
 <body>
     
 <div class="container-fluid" id="note">
+    <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
     <h1 class="title text-center pt-3">N-Body Problem</h1>
     <hr>
     <div class="row">
-        <div class="col-lg-2 d-none d-lg-block"></div>
-        <div class="col-lg-7 col-md-10">
-            <h2 id="two-body-problem">Two Body Problem</h2>
+        <!-- Notebook Sidenav -->
+        <div class="col-lg-2 col-3 d-none d-md-block bg-light">
+            <div class="sidenav sticky-top vh-80">
+                <div class="sidenav-title row no-gutters">
+                    <div class="col-9">
+                        <strong>N-Body Problem</strong>
+                    </div>
+                    <div class="col-2 offset-1">
+                        <a class="go-up" href="https://ketozhang.github.io/ketozhang.github.io/notes/Physics/Classical_Mechanics/N-Body/" role="button">
+                            <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+                        </a>
+                    </div>
+                </div>
+                <div class="sidenav-body no-gutters">
+                    <ul class="no-list-style pl-3">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="col-lg-8 col-9">
+            <div class="markdown-content">
+                
+                <h2 id="two-body-problem">Two Body Problem</h2>
 <p>The two body problem is one at which two particles interacting at vector position <span class="math inline">\(\boldsymbol{r_1}\)</span> and <span class="math inline">\(\boldsymbol{r_2}\)</span> away from some arbitrary origin. The insignificance of this origin is what makes this problem difficult. The interaction of the two particle is some potential energy (e.g., gravitational potential, electrical potential) that has a distance dependent. The distance between the two particle is <span class="math inline">\(r = \abs{\boldsymbol{r_1}-\boldsymbol{r_2}}\)</span> thus their Lagrangian is,</p>
 <p><span class="math display">\[
 \begin{align}
@@ -51,9 +80,9 @@
 \]</span></p>
 <ul>
 <li><span class="math inline">\(M\)</span> : Total mass <span class="math inline">\(M \equiv m_1 + m_2\)</span></li>
-<li><span class="math inline">\(\boldsymbol{r}\)</span> : Particle's distance vector of length <span class="math inline">\(r\)</span> as discussed before.</li>
+<li><span class="math inline">\(\boldsymbol{r}\)</span> : Particle’s distance vector of length <span class="math inline">\(r\)</span> as discussed before.</li>
 </ul>
-<p>Why we do so is because if the system is isolated then <span class="math inline">\(\dot R\)</span> is constant, then CM does not accelerate thus it's a rest frame. Let's rewrite the Lagrangian with these generalized coordinate,</p>
+<p>Why we do so is because if the system is isolated then <span class="math inline">\(\dot R\)</span> is constant, then CM does not accelerate thus it’s a rest frame. Let’s rewrite the Lagrangian with these generalized coordinate,</p>
 <p><span class="math display">\[
 \begin{gather}
     T = \frac{1}{2}M\dot R^2 + \frac{1}{2}\mu\dot r^2\\
@@ -85,7 +114,7 @@
 \]</span></p>
 <p>The last line infers what we expect <span class="math inline">\(F_r = -\nabla U(\boldsymbol{r})\)</span></p>
 <h3 id="center-of-mass---rest-frame">Center of Mass - Rest Frame</h3>
-<p>We never actually used the center of mass as a frame yet since we didn't set <span class="math inline">\(\dot R = 0\)</span>, doing so and rewriting everything relative to the CM frame. In this frame, we imagine two masses <span class="math inline">\(m_1\)</span> and <span class="math inline">\(m_2\)</span> orbitting a central rest mass <span class="math inline">\(\mu\)</span> from their respective distances <span class="math inline">\(\boldsymbol{r_1}\)</span> and <span class="math inline">\(\boldsymbol{r}_2\)</span>.</p>
+<p>We never actually used the center of mass as a frame yet since we didn’t set <span class="math inline">\(\dot R = 0\)</span>, doing so and rewriting everything relative to the CM frame. In this frame, we imagine two masses <span class="math inline">\(m_1\)</span> and <span class="math inline">\(m_2\)</span> orbitting a central rest mass <span class="math inline">\(\mu\)</span> from their respective distances <span class="math inline">\(\boldsymbol{r_1}\)</span> and <span class="math inline">\(\boldsymbol{r}_2\)</span>.</p>
 <p><span class="math display">\[
 \begin{gather}
     \boldsymbol{r_1} = \frac{m_2}{M}\boldsymbol{r} = \frac{\mu}{m_1}\boldsymbol{r} \\ \boldsymbol{r_2} = -\frac{m_1}{M}\boldsymbol{r} = -\frac{\mu}{m_2}\boldsymbol{r}\\
@@ -110,7 +139,7 @@
 \]</span></p>
 <ul>
 <li><span class="math inline">\(L_z\)</span> : A constant angular momentum along <span class="math inline">\(z\)</span> which is equivalent to the angular momentum along <span class="math inline">\(\phi\)</span></li>
-<li>It's important to notice that <span class="math inline">\(\phi\)</span> is dependent on <span class="math inline">\(r\)</span> not only <span class="math inline">\(t\)</span>. We definitely wish to find <span class="math inline">\(\phi(t)\)</span> or <span class="math inline">\(\phi(r)\)</span> but first we need the radial equation.</li>
+<li>It’s important to notice that <span class="math inline">\(\phi\)</span> is dependent on <span class="math inline">\(r\)</span> not only <span class="math inline">\(t\)</span>. We definitely wish to find <span class="math inline">\(\phi(t)\)</span> or <span class="math inline">\(\phi(r)\)</span> but first we need the radial equation.</li>
 </ul>
 <p>The <span class="math inline">\(r\)</span> equation (<strong>radial equation</strong>) is then,</p>
 <p><span class="math display">\[
@@ -141,13 +170,23 @@
 \end{gather}
 \]</span></p>
 <p>This is what we meant by the problem can be simplified to a single dimension of a single parameter <span class="math inline">\(r\)</span> (distance away from CM). Initially the only potential was gravitational potential (for the orbital problem) but because we are in the rotating frame, there exist a fictitious force <span class="math inline">\(F_\text{cf}\)</span> which the subscript really means the <strong>centrifugal force</strong>.</p>
+                
+            </div>
         </div>
-        <div class="col-md-2 d-none d-md-block">
-            <div class="sticky-top onthispage">
-                <ul id="onthispage-list" class="no-list-style">On This Page</ul>
+
+        <!-- On This Page -->
+        <div class="col-lg-2 d-none d-lg-block bg-light">
+            <div class="onthispage sidenav sticky-top vh-80">
+                <strong class="sidenav-title">On This Page</strong>
+                <div class="sidenav-body">
+                    <ul id="onthispage-list" class="no-list-style"></ul>
+                </div>
             </div>
         </div>
     </div>
+    <div id="commento"></div>
+    <script src="https://cdn.commento.io/js/commento.js"></script>
+</div>
 </div>
 
     <footer class="py-2 bg-white">
@@ -165,6 +204,7 @@
         crossorigin="anonymous"></script>
 
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/datetime.js"></script>
+    <script src="https://ketozhang.github.io/ketozhang.github.io/static/sidenav.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/codeHighlight.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/prism.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>

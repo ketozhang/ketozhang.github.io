@@ -3,9 +3,9 @@
 <p>A naive solution is the <strong>serial schedule</strong>. Here each transaction runs right after another. This issue with this transactions is inefficiency (e.g., the user who called for the last transaction has to wait for the other users before him/her).</p>
 <ul>
 <li><strong>Equivalence</strong>: Any two schedule are equivalent if:
-<ol style="list-style-type: decimal">
+<ol type="1">
 <li>Involves the same transactions</li>
-<li>Each individual transaction's actions are ordered the same.</li>
+<li>Each individual transaction’s actions are ordered the same.</li>
 <li>Both schedule leave the DB in the same final state.</li>
 </ol></li>
 </ul>
@@ -38,7 +38,7 @@ A schedule is conflict serializable if all below satisfies:
 <li>The schedule is conflict equivalent to some serial schedule</li>
 </ul></li>
 <li><p><strong>Dependency Graphs</strong></p>
-<p>A dependency graph is a directed graph with transactions as nodes and dependency as edges. The edges point are &quot;dependent by&quot; relations. The edge may be labeled with the object names.</p>
+<p>A dependency graph is a directed graph with transactions as nodes and dependency as edges. The edges point are “dependent by” relations. The edge may be labeled with the object names.</p>
 <p><strong>Theorem:</strong> Schedule is conflict serializable if and only if its dependency graph is acyclic.</p>
 <ul>
 <li>Topological sorting (order of least from edges) the graph will give a equivalent serial schedule.</li>

@@ -2,31 +2,31 @@
 {% block content %}
 {% include "header.html" %}
 <main>
-  <div class="container mt-5">
+  <div class="container">
+
     <!-- Main Showcase  -->
-    <h1 class="title">Projects</h1>
-    <div id="showcase" class="row d-flex align-items-stretch justify-content-lg-around text-lg-center justify-content-start text-left">
+    <div id="showcase" class="row d-flex align-items-stretch">
       {% for project in projects %}
-      <div class="col-md-4 d-flex flex-column flex-fill">
+      <div class="col-md-4 d-flex flex-column">
         <h2 class="title">{{project['header']}}</h2>
         <!-- TODO: Find a better way for equal height -->
         <p>{{project['description']}}</p>
-        <p class="mt-auto mx-lg-auto"><a class="btn btn-warning" href="{{project['view_details']}}" role="button">View details »</a></p>
+        <p class="mt-auto"><a class="btn btn-warning" href="{{parse_url(project['view_details'])}}" role="button">View details »</a></p>
       </div>
       {% endfor %}
     </div>
+    <hr>
 
     <!-- Blogpost Cards -->
-    <h1 class="title">Featured Posts</h1>
     {% for post_url, post in posts.items() %}
     <div class="card mb-3 box-shadow">
       <div class="row no-gutter">
         <div class="col-md-5 col-lg-4">
-          <a href={{site_url}}{{post_url}}><img class="card-img" src={{parse_url(post['image'])}}></a>
+          <a href={{parse_url(post_url)}}><img class="card-img" src={{parse_url(post['image'])}}></a>
         </div>
         <div class="col-md-7 col-lg-8">
           <div class="card-body">
-            <h4 class="card-title mb-0"><a href={{site_url}}{{post_url}}>{{post['title']}}</a></h4>
+            <h4 class="card-title mb-0"><a href={{parse_url(post_url)}}>{{post['title']}}</a></h4>
             <p class="card-text"><small class="text-muted">Last updated <time datetime="{{post['last_updated']}}"></time></small></p>
             <p class="mt-2 card-text">{{post['description']}}</p>
           </div>

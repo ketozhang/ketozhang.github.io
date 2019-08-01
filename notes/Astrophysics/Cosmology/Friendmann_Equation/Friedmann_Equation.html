@@ -28,14 +28,43 @@
 <body>
     
 <div class="container-fluid" id="note">
+    <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
     <h1 class="title text-center pt-3">Friedmann Equation</h1>
     <hr>
     <div class="row">
-        <div class="col-lg-2 d-none d-lg-block"></div>
-        <div class="col-lg-7 col-md-10">
-            <!-- TOC -->
+        <!-- Notebook Sidenav -->
+        <div class="col-lg-2 col-3 d-none d-md-block bg-light">
+            <div class="sidenav sticky-top vh-80">
+                <div class="sidenav-title row no-gutters">
+                    <div class="col-9">
+                        <strong>Friedmann Equation</strong>
+                    </div>
+                    <div class="col-2 offset-1">
+                        <a class="go-up" href="https://ketozhang.github.io/ketozhang.github.io/notes/Astrophysics/Cosmology/Friendmann_Equation/" role="button">
+                            <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+                        </a>
+                    </div>
+                </div>
+                <div class="sidenav-body no-gutters">
+                    <ul class="no-list-style pl-3">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="col-lg-8 col-9">
+            <div class="markdown-content">
+                
+                <!-- TOC -->
 <ul>
-<li><a href="#hubbles-constant">Hubble's Constant</a></li>
+<li><a href="#hubbles-constant">Hubble’s Constant</a></li>
 <li><a href="#non-relativistic-form">Non-Relativistic Form</a>
 <ul>
 <li><a href="#proof">Proof</a></li>
@@ -53,10 +82,10 @@
 <!-- /TOC -->
 <p>The Friedmann equation applies the Friedmann metric,</p>
 <p><span class="math display">\[ ds^2 = -dt^2 + a(t)^2\left[dr^2 + S_k(r)^2d\Omega^2\right] \]</span></p>
-<p>to Einstein's field equation,</p>
+<p>to Einstein’s field equation,</p>
 <p><span class="math display">\[ G_{\mu\nu} = \frac{8\pi G}{c^4}T_{\mu\nu} \]</span></p>
 <p>The resultant is an equation that describes how the Hubble parameter varies over time <span class="math inline">\(H^2(t)\)</span>. You may interpret this as how the universe expands over time. The Friedmann equation is an implicit function of time more explicitly it depends on the energy density <span class="math inline">\(\rho\)</span> of the universe.</p>
-<p>Often times, we use the definition of the Hubble's parameter,</p>
+<p>Often times, we use the definition of the Hubble’s parameter,</p>
 <p><span class="math display">\[ H(t) \equiv \frac{\dot a}{a} \]</span></p>
 <dl>
 <dt>Mass Density Form</dt>
@@ -88,9 +117,9 @@
 <li><span class="math inline">\(\mu\)</span> : Energy density of the universe</li>
 <li><span class="math inline">\(k\)</span> : Curvature constant where <span class="math inline">\(k\equiv \kappa/R_0^2\)</span></li>
 </ul>
-<p>We will be using the natural unit form since it's natural.</p>
-<h2 id="hubbles-constant">Hubble's Constant</h2>
-<p>Immediately one can infer the Hubble's constant from the Friedmann equation setting <span class="math inline">\(t = t_0\)</span> which is today.</p>
+<p>We will be using the natural unit form since it’s natural.</p>
+<h2 id="hubbles-constant">Hubble’s Constant</h2>
+<p>Immediately one can infer the Hubble’s constant from the Friedmann equation setting <span class="math inline">\(t = t_0\)</span> which is today.</p>
 <p><span class="math display">\[
 \begin{gather}
     \left(\frac{\dot a_0}{a_0}\right)^2 = H_0^2\\
@@ -154,7 +183,7 @@
 <p><span class="math display">\[
 P = \sum_i w_i\mu_i
 \]</span></p>
-<p>Now let's apply each type of energy density to the fluid equation:</p>
+<p>Now let’s apply each type of energy density to the fluid equation:</p>
 <p><span class="math display">\[ 
 \begin{gather*}
     \dot \mu_i + 3 \frac{\dot a}{a}\left(\mu_i + P_i\right) = 0\\
@@ -173,7 +202,7 @@ P = \sum_i w_i\mu_i
 \mu_\Lambda = \mu_{\Lambda,0}
 \]</span></p>
 <h2 id="cosmological-constant---incorrect-version">Cosmological Constant - Incorrect Version</h2>
-<p>The cosmological constant <span class="math inline">\(\Lambda\)</span> started out as a correction to Einstein's field equation for a universe full of matter and radiation. In Einstein's years, scientist did not believe that the universe was either expanding or contracting thus conclude that a universe of matter and radiation must be a stable universe. Unfortunately, Einstein equation does not agree so Einstein added the cosmological constant such that the Friedmann equation changes to:</p>
+<p>The cosmological constant <span class="math inline">\(\Lambda\)</span> started out as a correction to Einstein’s field equation for a universe full of matter and radiation. In Einstein’s years, scientist did not believe that the universe was either expanding or contracting thus conclude that a universe of matter and radiation must be a stable universe. Unfortunately, Einstein equation does not agree so Einstein added the cosmological constant such that the Friedmann equation changes to:</p>
 <p><span class="math display">\[
 \begin{equation}
     \left(\frac{\dot a}{a}\right)^2 = \frac{8\pi G}{3}\mu - \frac{k}{a^2} + \frac{\lambda}{3}
@@ -195,7 +224,7 @@ P = \sum_i w_i\mu_i
 <ul>
 <li><span class="math inline">\(\mu_\Lambda\)</span> : Cosmological constant component of energy density (note: <span class="math inline">\(\mu \ne \mu_\Lambda\)</span>), independent of time.</li>
 </ul>
-<p>Let's plug in <span class="math inline">\(\Lambda\)</span> into the Friedmann equation for a static universe <span class="math inline">\(\dot a = 0\)</span> and <span class="math inline">\(a = 1\)</span>,</p>
+<p>Let’s plug in <span class="math inline">\(\Lambda\)</span> into the Friedmann equation for a static universe <span class="math inline">\(\dot a = 0\)</span> and <span class="math inline">\(a = 1\)</span>,</p>
 <p><span class="math display">\[
 \begin{gather}
     \frac{2\Lambda}{3} - \frac{k}{a^2} + \frac{\Lambda}{3}\\
@@ -209,17 +238,27 @@ P = \sum_i w_i\mu_i
 </dd>
 </dl>
 <h2 id="cosmological-constant---vacuum-energy">Cosmological Constant - Vacuum Energy</h2>
-<p>The most accepted &quot;correct&quot; way to interpret the cosmological constant is as vacuum energy. Yes, vacuum has energy which many may first have been introduced as the Heinsenberg uncertainty principle,</p>
+<p>The most accepted “correct” way to interpret the cosmological constant is as vacuum energy. Yes, vacuum has energy which many may first have been introduced as the Heinsenberg uncertainty principle,</p>
 <p><span class="math display">\[ \begin{equation}
     \Delta E \Delta t \le h
 \end{equation} \]</span></p>
+                
+            </div>
         </div>
-        <div class="col-md-2 d-none d-md-block">
-            <div class="sticky-top onthispage">
-                <ul id="onthispage-list" class="no-list-style">On This Page</ul>
+
+        <!-- On This Page -->
+        <div class="col-lg-2 d-none d-lg-block bg-light">
+            <div class="onthispage sidenav sticky-top vh-80">
+                <strong class="sidenav-title">On This Page</strong>
+                <div class="sidenav-body">
+                    <ul id="onthispage-list" class="no-list-style"></ul>
+                </div>
             </div>
         </div>
     </div>
+    <div id="commento"></div>
+    <script src="https://cdn.commento.io/js/commento.js"></script>
+</div>
 </div>
 
     <footer class="py-2 bg-white">
@@ -237,6 +276,7 @@ P = \sum_i w_i\mu_i
         crossorigin="anonymous"></script>
 
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/datetime.js"></script>
+    <script src="https://ketozhang.github.io/ketozhang.github.io/static/sidenav.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/codeHighlight.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/prism.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>

@@ -28,13 +28,42 @@
 <body>
     
 <div class="container-fluid" id="note">
+    <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
     <h1 class="title text-center pt-3">Electrostatics</h1>
     <hr>
     <div class="row">
-        <div class="col-lg-2 d-none d-lg-block"></div>
-        <div class="col-lg-7 col-md-10">
-            <h2 id="coulombs-law">Coulomb's Law</h2>
-<p>The force that a charge <span class="math inline">\(q_1\)</span> feel from another charge <span class="math inline">\(q_2\)</span> is governed by <strong>Coulomb's law</strong>,</p>
+        <!-- Notebook Sidenav -->
+        <div class="col-lg-2 col-3 d-none d-md-block bg-light">
+            <div class="sidenav sticky-top vh-80">
+                <div class="sidenav-title row no-gutters">
+                    <div class="col-9">
+                        <strong>Electrostatics</strong>
+                    </div>
+                    <div class="col-2 offset-1">
+                        <a class="go-up" href="https://ketozhang.github.io/ketozhang.github.io/notes/Physics/Electrodynamics/Electrostatics/" role="button">
+                            <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+                        </a>
+                    </div>
+                </div>
+                <div class="sidenav-body no-gutters">
+                    <ul class="no-list-style pl-3">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="col-lg-8 col-9">
+            <div class="markdown-content">
+                
+                <h2 id="coulombs-law">Coulomb’s Law</h2>
+<p>The force that a charge <span class="math inline">\(q_1\)</span> feel from another charge <span class="math inline">\(q_2\)</span> is governed by <strong>Coulomb’s law</strong>,</p>
 <p><span class="math display">\[
 \boldsymbol{F} = \frac{1}{4\pi\epsilon_0}\frac{q_1q_2}{d^2}\boldsymbol{\hat r}
 \]</span></p>
@@ -44,12 +73,12 @@
 <p><span class="math display">\[
 \boldsymbol{E} = \frac{1}{4\pi\epsilon_0} \frac{q}{d^2}\boldsymbol{\hat r}
 \]</span></p>
-<p>A test charge of charge <span class="math inline">\(q_0\)</span> would feel an electric force if placed on the electric field equal to a scalar factor of its electric charge. That scalar factor is determined by the test charge's position on the electric field thus,</p>
+<p>A test charge of charge <span class="math inline">\(q_0\)</span> would feel an electric force if placed on the electric field equal to a scalar factor of its electric charge. That scalar factor is determined by the test charge’s position on the electric field thus,</p>
 <p><span class="math display">\[
 \boldsymbol{F} = q_0 \boldsymbol{E}
 \]</span></p>
 <h3 id="continuous-form">Continuous Form</h3>
-<p>Often, Coulomb's law is used to calculate the force of a test particle felt by a continuous collection of charges (e.g., a charged sphere). It is much easier to use the continuous form of the electric field for some continuous shape with the characteristic geometry <span class="math inline">\(\mathrm{d}V\)</span> and characteristic charge density <span class="math inline">\(\mathrm{d}\rho\)</span>.</p>
+<p>Often, Coulomb’s law is used to calculate the force of a test particle felt by a continuous collection of charges (e.g., a charged sphere). It is much easier to use the continuous form of the electric field for some continuous shape with the characteristic geometry <span class="math inline">\(\mathrm{d}V\)</span> and characteristic charge density <span class="math inline">\(\mathrm{d}\rho\)</span>.</p>
 <p>Letting the origin be the center of the continuous charge,</p>
 <p><span class="math display">\[
 \boldsymbol{E} = \frac{1}{4\pi\epsilon_0} \int{\frac{\rho(\boldsymbol r&#39;)}{d^2}\boldsymbol{\hat d} \ \mathrm dV} \tag{continuous charge origin}\\
@@ -69,14 +98,14 @@
 <li>The negative sign is needed to correct for changing origins.</li>
 </ul>
 <h2 id="flux">Flux</h2>
-<p>Rather than the electric field, what is also useful to solve for the electric force comes directly from interpretting Coulomb's law with Gauss' law. That is, the flux of the electric field which is the magnitude of the electric field line penetrating perpendicularly through some surface <span class="math inline">\(S\)</span>.</p>
+<p>Rather than the electric field, what is also useful to solve for the electric force comes directly from interpretting Coulomb’s law with Gauss’ law. That is, the flux of the electric field which is the magnitude of the electric field line penetrating perpendicularly through some surface <span class="math inline">\(S\)</span>.</p>
 <p><span class="math display">\[ \Phi_E \equiv \int_{S} \boldsymbol{E} \cdot \mathrm d \boldsymbol a \]</span></p>
-<h3 id="gauss-law-integral-form">Gauss' Law Integral Form</h3>
-<p>For a electric field source that can be fully contained by a closed surface that closed surface is penetrated by every electric field line produced by the charge enclosed by the surface. Thus the flux can equivalently describe the amount of charge enclosed by the surface. This is <strong>Gauss' Law</strong>,</p>
+<h3 id="gauss-law-integral-form">Gauss’ Law Integral Form</h3>
+<p>For a electric field source that can be fully contained by a closed surface that closed surface is penetrated by every electric field line produced by the charge enclosed by the surface. Thus the flux can equivalently describe the amount of charge enclosed by the surface. This is <strong>Gauss’ Law</strong>,</p>
 <p><span class="math display">\[
 \oint_{S} \boldsymbol{E} \cdot \mathrm d \boldsymbol a = \frac{Q_\mathrm{enc}}{\epsilon_0}
 \]</span></p>
-<h3 id="gauss-law-differential-form">Gauss' Law Differential Form</h3>
+<h3 id="gauss-law-differential-form">Gauss’ Law Differential Form</h3>
 <p>By the divergence theorem we may transform the surface integral to a volume integral,</p>
 <p><span class="math display">\[\oint_{S} \boldsymbol{E} \cdot \mathrm d \boldsymbol a = \int_{V} (\nabla \cdot \boldsymbol E) \ \mathrm dV\]</span></p>
 <p>The enclosed charge can also be written as a volume integral with density <span class="math inline">\(\rho\)</span>,</p>
@@ -88,23 +117,33 @@
 \nabla \cdot \boldsymbol{E} = \frac{\rho}{\epsilon_0}
 \]</span></p>
 <h2 id="curl">Curl</h2>
-<p>The vector problem of the electric field can always be transformed into a much simpler scalar problem. This is proven because the curl of the electric field is always zero. We may use Stoke's theorem to prove this.</p>
+<p>The vector problem of the electric field can always be transformed into a much simpler scalar problem. This is proven because the curl of the electric field is always zero. We may use Stoke’s theorem to prove this.</p>
 <p>The line integral for a line enclosing the charge is always zero due to the nature of a electric field that follows the inverse square law,</p>
 <p><span class="math display">\[
 \oint \boldsymbol E \cdot \mathrm d \boldsymbol l
 \]</span></p>
-<p>Thus by Stoke's theorem</p>
+<p>Thus by Stoke’s theorem</p>
 <p><span class="math display">\[
 \nabla \times \boldsymbol{E} = 0
 \]</span></p>
 <p>All of this is another way to say that the electric field is a conservative vector field thus the electric fieild is scalar in nature.</p>
+                
+            </div>
         </div>
-        <div class="col-md-2 d-none d-md-block">
-            <div class="sticky-top onthispage">
-                <ul id="onthispage-list" class="no-list-style">On This Page</ul>
+
+        <!-- On This Page -->
+        <div class="col-lg-2 d-none d-lg-block bg-light">
+            <div class="onthispage sidenav sticky-top vh-80">
+                <strong class="sidenav-title">On This Page</strong>
+                <div class="sidenav-body">
+                    <ul id="onthispage-list" class="no-list-style"></ul>
+                </div>
             </div>
         </div>
     </div>
+    <div id="commento"></div>
+    <script src="https://cdn.commento.io/js/commento.js"></script>
+</div>
 </div>
 
     <footer class="py-2 bg-white">
@@ -122,6 +161,7 @@
         crossorigin="anonymous"></script>
 
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/datetime.js"></script>
+    <script src="https://ketozhang.github.io/ketozhang.github.io/static/sidenav.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/codeHighlight.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/prism.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>

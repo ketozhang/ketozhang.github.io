@@ -28,12 +28,41 @@
 <body>
     
 <div class="container-fluid" id="note">
+    <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
     <h1 class="title text-center pt-3">Einstein&#39;s Field Equation</h1>
     <hr>
     <div class="row">
-        <div class="col-lg-2 d-none d-lg-block"></div>
-        <div class="col-lg-7 col-md-10">
-            <p>Einstein's general relativity proposed the idea that the energy density and pressure of the universe is directly related to spacetime curvature.</p>
+        <!-- Notebook Sidenav -->
+        <div class="col-lg-2 col-3 d-none d-md-block bg-light">
+            <div class="sidenav sticky-top vh-80">
+                <div class="sidenav-title row no-gutters">
+                    <div class="col-9">
+                        <strong>Einstein&#39;s Field Equation</strong>
+                    </div>
+                    <div class="col-2 offset-1">
+                        <a class="go-up" href="https://ketozhang.github.io/ketozhang.github.io/notes/Astrophysics/Cosmology/Relativity/" role="button">
+                            <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+                        </a>
+                    </div>
+                </div>
+                <div class="sidenav-body no-gutters">
+                    <ul class="no-list-style pl-3">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="col-lg-8 col-9">
+            <div class="markdown-content">
+                
+                <p>Einstein’s general relativity proposed the idea that the energy density and pressure of the universe is directly related to spacetime curvature.</p>
 <p>If the universe was purely made of up mass thus only gravity matters, the field equation (equation for how a free particle moves in some space) for the universe will be the Poisson equation:</p>
 <p><span class="math display">\[ \begin{equation}
     \nabla^2 \Phi = 4\pi G\rho
@@ -42,7 +71,7 @@
 <li><span class="math inline">\(\Phi\)</span> : Gravitational potential</li>
 <li><span class="math inline">\(\rho\)</span>: mass density</li>
 </ul>
-<p>However general relativity tells us that not only mass in general contribute to the spacetime curvature but also radiation, dark energy, universe's curvature, and any types of energy energy. Thus we need a field equation that describe all of these which is called the <strong>Einstein's Field Equation</strong>:</p>
+<p>However general relativity tells us that not only mass in general contribute to the spacetime curvature but also radiation, dark energy, universe’s curvature, and any types of energy energy. Thus we need a field equation that describe all of these which is called the <strong>Einstein’s Field Equation</strong>:</p>
 <p><span class="math display">\[ \begin{equation}
     \boxed{G_{\mu\nu} = \frac{8\pi G}{c^4}T_{\mu\nu}}
 \end{equation} \]</span></p>
@@ -50,20 +79,30 @@
 <li><span class="math inline">\(G_{\mu\nu}\)</span> : The <strong>Einstein tensor</strong>, a <span class="math inline">\(4\times 4\)</span> symmetric matrix that describes the curvature of space at every location <span class="math inline">\(t,x,y,z\)</span>.</li>
 <li><span class="math inline">\(T_{\mu\nu}\)</span>: The <strong>stress-energy tensor</strong> (or <strong>stress tensor</strong>), another symmetric <span class="math inline">\(4\times 4\)</span> matrix. The RHS is a matrix that depends on <span class="math inline">\(P\)</span> and <span class="math inline">\(\rho\)</span> which of course has the parameters <span class="math inline">\(x,y,z,t\)</span>.</li>
 </ul>
-<p>A <span class="math inline">\(4\times 4\)</span> symmetric matrix has 4 diagonals and 3+2+1 = 6 independent entries. Therefore there is 10 independent differential equation to solve for. While there does exist a very complicated solution, most of the time Einstein's field equation is used within special cases. The following sections list some special cases</p>
+<p>A <span class="math inline">\(4\times 4\)</span> symmetric matrix has 4 diagonals and 3+2+1 = 6 independent entries. Therefore there is 10 independent differential equation to solve for. While there does exist a very complicated solution, most of the time Einstein’s field equation is used within special cases. The following sections list some special cases</p>
 <dl>
 <dt>Friedmann equation</dt>
-<dd><p>In a a homogenous and isotropic system then there is dependence of <span class="math inline">\(\rho\)</span> and <span class="math inline">\(P\)</span> along <span class="math inline">\(x,y,z\)</span> therefore the Einstein's field equation is only time dependent.</p>
+<dd><p>In a a homogenous and isotropic system then there is dependence of <span class="math inline">\(\rho\)</span> and <span class="math inline">\(P\)</span> along <span class="math inline">\(x,y,z\)</span> therefore the Einstein’s field equation is only time dependent.</p>
 <p>See <a href="Friedmann_Equation.md">Friedmann equation</a></p>
 </dd>
 </dl>
+                
+            </div>
         </div>
-        <div class="col-md-2 d-none d-md-block">
-            <div class="sticky-top onthispage">
-                <ul id="onthispage-list" class="no-list-style">On This Page</ul>
+
+        <!-- On This Page -->
+        <div class="col-lg-2 d-none d-lg-block bg-light">
+            <div class="onthispage sidenav sticky-top vh-80">
+                <strong class="sidenav-title">On This Page</strong>
+                <div class="sidenav-body">
+                    <ul id="onthispage-list" class="no-list-style"></ul>
+                </div>
             </div>
         </div>
     </div>
+    <div id="commento"></div>
+    <script src="https://cdn.commento.io/js/commento.js"></script>
+</div>
 </div>
 
     <footer class="py-2 bg-white">
@@ -81,6 +120,7 @@
         crossorigin="anonymous"></script>
 
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/datetime.js"></script>
+    <script src="https://ketozhang.github.io/ketozhang.github.io/static/sidenav.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/codeHighlight.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/prism.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>

@@ -28,12 +28,41 @@
 <body>
     
 <div class="container-fluid" id="note">
+    <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
     <h1 class="title text-center pt-3">Logistics Regression</h1>
     <hr>
     <div class="row">
-        <div class="col-lg-2 d-none d-lg-block"></div>
-        <div class="col-lg-7 col-md-10">
-            <p>The <strong>logistic regression</strong> transforms the linear regression problem with the <strong>logistic</strong> or <strong>sigmoid function</strong> <span class="math inline">\(s(z)\)</span> used for posterior distribution estimation and classification<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>.</p>
+        <!-- Notebook Sidenav -->
+        <div class="col-lg-2 col-3 d-none d-md-block bg-light">
+            <div class="sidenav sticky-top vh-80">
+                <div class="sidenav-title row no-gutters">
+                    <div class="col-9">
+                        <strong>Logistics Regression</strong>
+                    </div>
+                    <div class="col-2 offset-1">
+                        <a class="go-up" href="https://ketozhang.github.io/ketozhang.github.io/notes/Data_Science/Statistical_Modeling/Regression/" role="button">
+                            <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+                        </a>
+                    </div>
+                </div>
+                <div class="sidenav-body no-gutters">
+                    <ul class="no-list-style pl-3">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="col-lg-8 col-9">
+            <div class="markdown-content">
+                
+                <p>The <strong>logistic regression</strong> transforms the linear regression problem with the <strong>logistic</strong> or <strong>sigmoid function</strong> <span class="math inline">\(s(z)\)</span> used for posterior distribution estimation and classification<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</p>
 <p>We will motivate this with a binary problem where <span class="math inline">\(Y: \{0,1\}\)</span> notice that the logistic function transforms the linear regression to the interval <span class="math inline">\([0,1]\)</span>. <span class="math display">\[
 \begin{gather}
 P(X \mid Y=\hat y) = s(\hat y); \qquad \hat y  = X\theta \\
@@ -41,11 +70,11 @@ s(z) = \frac{e^z}{1+e^{z}} = \frac{1}{1+e^{-z}}; \qquad s(z) \in [0,1]
 \end{gather}
 \]</span> * <span class="math inline">\(\hat y\)</span> : Model</p>
 <p>This is purposely done so that we can interpret the logistic regression as a probability of classification given the data <span class="math inline">\(P(X \mid Y)\)</span>. From here on out we will choose to classify if <span class="math inline">\(Y=1\)</span>.</p>
-<p>A more insight into what we're modeling with <span class="math inline">\(\hat y\)</span> is to notice the following identity <span class="math display">\[
+<p>A more insight into what we’re modeling with <span class="math inline">\(\hat y\)</span> is to notice the following identity <span class="math display">\[
 \begin{equation}
 \log \left[\frac{P(X \mid Y=1)}{1 - P(X\mid Y=1)}\right] = \hat y
 \end{equation}
-\]</span> This identity is called <strong>log-odds</strong> or <strong>logit</strong> hence we're fitting some model to the log ratio of probabilities that <span class="math inline">\(Y=1\)</span> compared to <span class="math inline">\(Y=0\)</span>.</p>
+\]</span> This identity is called <strong>log-odds</strong> or <strong>logit</strong> hence we’re fitting some model to the log ratio of probabilities that <span class="math inline">\(Y=1\)</span> compared to <span class="math inline">\(Y=0\)</span>.</p>
 <p>The objective function to solve for <span class="math inline">\(\theta\)</span> is chosen to be the maximum likelihood (we will discuss why this is equivalent to minimum loss later). The likelihood function is naturally the binomial distribution. We will disregard the leading coefficient because it will be irrelevant in maximization. The decision rule will be discussion later in the <a href="#Decision_Rule">Decision Rule</a> section. <span class="math display">\[
 \begin{align*}
 \log P(X \mid Y=1) &amp;= \sum_{i: y_i = 1} \log P(X_i \mid Y=1~;~\theta) + \sum_{i : y_i = 0} \log \left[1 - P(X_i \mid Y=1~;~\theta)\right]\\
@@ -58,19 +87,19 @@ s(z) = \frac{e^z}{1+e^{z}} = \frac{1}{1+e^{-z}}; \qquad s(z) \in [0,1]
 \]</span></p>
 <p>The solution to this is discussion in the <a href="#solution">Solution</a> section.</p>
 <h2 id="solutions">Solutions</h2>
-<p>The gradient for the objective function <span class="math inline">\(\eqref{eq:objective}\)</span> (let's denote it as <span class="math inline">\(\log P\)</span> for brevity is, <span class="math display">\[
+<p>The gradient for the objective function <span class="math inline">\(\eqref{eq:objective}\)</span> (let’s denote it as <span class="math inline">\(\log P\)</span> for brevity is, <span class="math display">\[
 \nabla_\theta \log P = -X^\top(y-s) = 0
 \]</span> * <span class="math inline">\(y\)</span> : Vector of labels * <span class="math inline">\(s\)</span>: Vector of the sigmoid for each data point <span class="math inline">\(s = [s_1 \quad s_2 \quad \ldots \quad s_n]^\top\)</span></p>
 <p>Hence, the normal equation is, <span class="math display">\[
 X^\top y = X^\top s
 \]</span> Unfortunately there is no analytical solution that solves for <span class="math inline">\(\theta^*\)</span>. Numerical solutions can be estimated with the methods below:</p>
-<ol style="list-style-type: decimal">
-<li>Newton's Method</li>
+<ol type="1">
+<li>Newton’s Method</li>
 <li>Gradient Descent</li>
 </ol>
-<p>The Newton's method is well behaved since the Hessian is easily calculated: <span class="math display">\[
+<p>The Newton’s method is well behaved since the Hessian is easily calculated: <span class="math display">\[
 H_\theta(\log P) = X^\top \Omega X
-\]</span> Where <span class="math inline">\(\Omega \in \mathbb R^{d \times d}\)</span> is a diagonal matrix with entries <span class="math inline">\(\omega_i = s_i(1-s_i)\)</span>. Using the gradient and the Hessian, Newton's method approximates the next step <span class="math inline">\(\theta(t+1)\)</span> given the current step <span class="math inline">\(\theta(t)\)</span> as, <span class="math display">\[
+\]</span> Where <span class="math inline">\(\Omega \in \mathbb R^{d \times d}\)</span> is a diagonal matrix with entries <span class="math inline">\(\omega_i = s_i(1-s_i)\)</span>. Using the gradient and the Hessian, Newton’s method approximates the next step <span class="math inline">\(\theta(t+1)\)</span> given the current step <span class="math inline">\(\theta(t)\)</span> as, <span class="math display">\[
 \begin{gather*}
 \theta(t+1) = \theta(t) + \Delta \theta\\
 [X^\top \Omega X]\Delta \theta = -X^\top(y-s)
@@ -84,7 +113,7 @@ H_\theta(\log P) = X^\top \Omega X
 \end{cases}
 \]</span></p>
 <h2 id="regularization">Regularization</h2>
-<p>The most practical regularization is to add the <span class="math inline">\(L_2\)</span> (Ridge) regularization which guarantees that Newton's method is solvable by inversion because the Hessian is positive definite. <span class="math display">\[
+<p>The most practical regularization is to add the <span class="math inline">\(L_2\)</span> (Ridge) regularization which guarantees that Newton’s method is solvable by inversion because the Hessian is positive definite. <span class="math display">\[
 \begin{gather*}
 H_\theta(\log P) = X^\top \Omega X + 2\lambda I\\
 \Delta \theta = -X^\top(y-s)[X^\top \Omega X + 2\lambda I]^{-1}
@@ -104,7 +133,7 @@ P(X \mid \hat y) = \sum_{i=1}^n  \bigg[ \log P(y_i \mid X_i) + \log\Big(1-P(y_i 
 <li><p><span class="math inline">\(s_i\)</span> : The logistic function for row <span class="math inline">\(i\)</span>,</p>
 <p><span class="math display">\[s_i(X_i^\top \theta) = \frac{1}{1+e^{-X_i^T \theta}}\]</span></p>
 <p>Notice its derivative is,</p>
-<p>$$s_i' = s_i(1-s_i)​</p></li>
+<p>$$s_i’ = s_i(1-s_i)​</p></li>
 </ul>
 <h2 id="properties">Properties</h2>
 <ul>
@@ -113,19 +142,29 @@ P(X \mid \hat y) = \sum_{i=1}^n  \bigg[ \log P(y_i \mid X_i) + \log\Big(1-P(y_i 
 <li>Robust on non-Gaussians. (LDA is better if data is near Gaussian)</li>
 <li>Unstable to new points for well separated classes.</li>
 </ul>
-<div class="footnotes">
+<section class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>It's unfortunate that it's called logistics regression, but the fact that logistic regression does estimate a posterior distribution is why it's justifiable.<a href="#fnref1">↩</a></p></li>
+<li id="fn1"><p>It’s unfortunate that it’s called logistics regression, but the fact that logistic regression does estimate a posterior distribution is why it’s justifiable.<a href="#fnref1" class="footnote-back">↩</a></p></li>
 </ol>
-</div>
+</section>
+                
+            </div>
         </div>
-        <div class="col-md-2 d-none d-md-block">
-            <div class="sticky-top onthispage">
-                <ul id="onthispage-list" class="no-list-style">On This Page</ul>
+
+        <!-- On This Page -->
+        <div class="col-lg-2 d-none d-lg-block bg-light">
+            <div class="onthispage sidenav sticky-top vh-80">
+                <strong class="sidenav-title">On This Page</strong>
+                <div class="sidenav-body">
+                    <ul id="onthispage-list" class="no-list-style"></ul>
+                </div>
             </div>
         </div>
     </div>
+    <div id="commento"></div>
+    <script src="https://cdn.commento.io/js/commento.js"></script>
+</div>
 </div>
 
     <footer class="py-2 bg-white">
@@ -143,6 +182,7 @@ P(X \mid \hat y) = \sum_{i=1}^n  \bigg[ \log P(y_i \mid X_i) + \log\Big(1-P(y_i 
         crossorigin="anonymous"></script>
 
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/datetime.js"></script>
+    <script src="https://ketozhang.github.io/ketozhang.github.io/static/sidenav.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/codeHighlight.js"></script>
     <script src="https://ketozhang.github.io/ketozhang.github.io/static/prism.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>

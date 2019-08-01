@@ -67,13 +67,13 @@
 </ul></li>
 <li><strong>Deletion</strong>
 <ul>
-<li>Occupancy invariants don't need to be followed for deletion so there is no need for deletion unless a page becomes full.</li>
+<li>Occupancy invariants don’t need to be followed for deletion so there is no need for deletion unless a page becomes full.</li>
 </ul></li>
 <li><strong>Bulk Loading</strong>
 <ul>
 <li>Multiple insertion is quite slow.</li>
 </ul>
-<ol style="list-style-type: decimal">
+<ol type="1">
 <li>Sort the input records by key</li>
 <li>Once page is filled with <span class="math inline">\(d + 1\)</span> (or occupancy of a node is equal to the fill factor), create the parent node.</li>
 <li>Continue until parent node is full where you need to split.</li>
@@ -89,7 +89,7 @@
 <p><span class="math display">\[ C = \frac{BD}{f} \]</span></p></li>
 </ul>
 <h3 id="problems">Problems</h3>
-<ol style="list-style-type: decimal">
+<ol type="1">
 <li><p><strong>Maximum Number of Children</strong></p>
 <p>The number of children of any node is given by the fanout <span class="math inline">\(F\)</span>,</p>
 <p><span class="math display">\[N_\text{chidren} = F = 2d + 1\]</span></p></li>
@@ -99,9 +99,9 @@
 <li><p><strong>Maximum Occupancy For Given Height</strong></p>
 <p>The maximum occupancy (sum of the number of elements in the leaf node) is,</p>
 <p><span class="math display">\[
-\begin{align*}
-    N &amp;= N_\text{leaf} \cdot (F - 1) \\
-    &amp;= (F-1)F^h
-\end{align*}
-\]</span></p></li>
+ \begin{align*}
+     N &amp;= N_\text{leaf} \cdot (F - 1) \\
+     &amp;= (F-1)F^h
+ \end{align*}
+ \]</span></p></li>
 </ol>
