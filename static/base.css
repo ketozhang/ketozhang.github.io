@@ -372,7 +372,3 @@ footer {
 .markdown-content .sourceCode {
   font-size: 0.95em;
 }
-
-#note .markdown-content, #post .markdown-content {
-  height: 100%;
-}
