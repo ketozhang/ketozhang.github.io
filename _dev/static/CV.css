@@ -19,23 +19,16 @@
   }
 }
 
-@media (min-width: 576px) {
-  .container {
-    max-width: 90%;
-  }
+.container-fluid {
+  max-width: 80%;
 }
 
-@media (min-width: 768px) {
-  .container {
-    max-width: 90%;
-  }
-}
-
-@media (min-width: 992px) {
-  .container {
+@media (min-width: 1200px)  {
+  .container-fluid {
     max-width: 60%;
   }
 }
+
 
 body {
   color: #616161;

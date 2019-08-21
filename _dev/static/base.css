@@ -16,6 +16,9 @@ html {
   .container {
     max-width: 60%;
   }
+  .container-fluid {
+    max-width: 75%;
+  }
 }
 
 html {
@@ -121,8 +124,8 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
 
 .title {
   color: black;
-  white-space: nowrap;
   text-decoration: none;
+  line-height: 1;
 }
 
 .metadata {
@@ -294,7 +297,6 @@ footer {
 /* On This Page */
 
 .onthispage {
-  padding-top: 1em;
   direction: rtl;
 }
 

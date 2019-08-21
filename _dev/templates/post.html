@@ -2,11 +2,11 @@
 {% block content %}
 {% include 'header.html' %}
 <div class="container-fluid" id="post">
-    <div class="row justify-content-center">
+    <div class="row">
         <!-- Content -->
-        <div class="col-lg-7 col-12 h-100">
+        <div class="col-xl-9 col-lg-8 col-12 h-100">
             <div class="title-header">
-                <h1 class="title">{{page['title']}}</h1>
+                <h1 class="title mb-3">{{page['title']}}</h1>
                 <div class="metadata">
                     <p class="m-0">By {{author}} <span class="mx-1 align-middle" style="font-size: 30px">&#183</span>
                         Last
@@ -25,11 +25,9 @@
                 {% include page['content_path'] %}
                 {% endif %}
             </div>
-            <div id="commento" class="mt-4"></div>
-            <script src="https://cdn.commento.io/js/commento.js"></script>
         </div>
         <!-- On This Page -->
-        <div class="col-lg-3 d-lg-block d-none onthispage">
+        <div class="col-xl-3 col-lg-4 d-lg-block d-none onthispage">
             <div class="sticky-top vh-80 sidenav onthispage">
                 <strong>On This Page</strong>
                 <div class="sidenav-body">
@@ -38,6 +36,7 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 <!-- </div> -->
 {% endblock %}
