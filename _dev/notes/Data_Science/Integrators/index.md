@@ -1,4 +1,3 @@
 ---
 title: Integrators
-layout: topic
 ---

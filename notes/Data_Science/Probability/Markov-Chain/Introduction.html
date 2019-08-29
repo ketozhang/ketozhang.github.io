@@ -69,8 +69,8 @@
 
         <!-- Content -->
         <div class="col-xl-8 col-lg-6 col-9 h-100">
+            
             <div class="markdown-content">
-                
                 <p>Let the chain be a set of random variables with element <span class="math inline">\(X_t\)</span> for the <span class="math inline">\(ith\)</span> step (or link) of the chain.</p>
 <h2 id="two-state-markov-chain">Two-State Markov Chain</h2>
 <p>Consider the initial state be the random variable that can take in the binary value <span class="math inline">\(X_0(\set{a,b}) = \set{0,1}\)</span> with probability <span class="math inline">\(P_a(0), P_b(0)\)</span>. Any subsequent steps the probability now depends on the current state. You can imagine a finite state diagram (aka state transition diagram) with transition probability <span class="math inline">\(P_{ij}(t)\)</span> from the current state <span class="math inline">\(i\)</span> to the next state <span class="math inline">\(j\)</span> at iteration <span class="math inline">\(t\)</span>. We can form this into a matrix where the column represent all the possible state from to and the row represent all the possible state to transition to.</p>
@@ -117,29 +117,9 @@ P_i(t) = P_i(t)P
 <p><span class="math display">\[
 \vec P(t) = \vec P(t_0) \qquad t \ge t_0\\
 \]</span></p>
-                
+
             </div>
-
-            <!-- Disqus Comments -->
-            <div id="disqus_thread"></div>
-            <script>
-
-                /**
-                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-                var disqus_config = function () {
-                this.page.url = "";  // Replace PAGE_URL with your page's canonical URL variable
-                this.page.identifier = "/notes/Data_Science/Probability/Markov-Chain/Introduction.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                };
-                (function () { // DON'T EDIT BELOW THIS LINE
-                    var d = document, s = d.createElement('script');
-                    s.src = 'https://ketozhang.disqus.com/embed.js';
-                    s.setAttribute('data-timestamp', +new Date());
-                    (d.head || d.body).appendChild(s);
-                })();
-            </script>
-            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
-                    by Disqus.</a></noscript>
+            
         </div>
 
         <!-- On This Page -->
@@ -150,6 +130,33 @@ P_i(t) = P_i(t)P
                     <ul id="onthispage-list" class="no-list-style"></ul>
                 </div>
             </div>
+        </div>
+
+    <!-- Disqus Comments -->
+    </div>
+    
+    <div class="row  mt-5">
+        <div class="col-xl-8 col-lg-6 col-9 offset-xl-2 offset-lg-2">
+            <div id="disqus_thread"></div>
+            <script>
+
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                var disqus_config = function () {
+                    this.page.url = "";  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = "/notes/Data_Science/Probability/Markov-Chain/Introduction.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://ketozhang.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
+                    by Disqus.</a></noscript>
+            
         </div>
     </div>
 </div>

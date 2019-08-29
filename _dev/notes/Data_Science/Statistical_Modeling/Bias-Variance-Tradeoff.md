@@ -5,8 +5,9 @@ title: Bias Variance Tradeoff
 Bias
 : Error due in the hypothesis or model to fit the data.
 
-Varaince
+Variance
 : Error due to fitting random noise in the data.
+  How the model varies with different training set.
 
 ## Bias Variance Decomposition
 

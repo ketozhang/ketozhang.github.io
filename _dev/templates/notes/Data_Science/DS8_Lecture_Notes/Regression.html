@@ -1,6 +1,17 @@
 <p><span class="math display">\[
 \begin{gather}
-m = \text{Corr}[X&#39;, Y&#39;]\\
-b = \mathbb E[Y&#39;] - m \cdot \mathbb E[X&#39;]
+r = \text{Corr}[x&#39;, y&#39;] = \mathbb E[x&#39;y&#39;]\\
+m = r \cdot \frac{\text{SD}[y]}{\text{SD}[x]}\\
+b = \mathbb E[y&#39;] - m \cdot \mathbb E[x&#39;]
 \end{gather}
+\]</span></p>
+<h2 id="residuals">Residuals</h2>
+<p>Residuals from a linear regression always have: * Zero mean * Zero correlation with <span class="math inline">\(x&#39;\)</span> * Zero correlation with <span class="math inline">\(\hat y&#39;\)</span></p>
+<p>Fitted values <span class="math inline">\(\hat y\)</span> from a linear regression always have: * 1 correlation with <span class="math inline">\(\hat y\)</span> * Related to the correlation and variance of <span class="math inline">\(y\)</span> by:</p>
+<pre><code>$$
+\text{Var}[\hat y] = r^2 \cdot \text{Var}[y]
+$$</code></pre>
+<h3 id="variance-decomposition">Variance Decomposition</h3>
+<p><span class="math display">\[
+\text{Var}[y] = \text{Var}[\hat y] + \text{Var}[\epsilon]
 \]</span></p>

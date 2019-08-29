@@ -1,4 +1,3 @@
 ---
 title: Cosmology
-layout: topic
 ---

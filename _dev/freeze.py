@@ -90,11 +90,13 @@ def get_root_page():
 
 def freeze(skip_build=False):
     if not skip_build:
+        print(f"{' BUILDING ':=^90}")
         build_time = build_all()
     else:
         build_time = 0
-    print(f"{'Template build time:':<30} {build_time:>6.2f} secs")
+    print(f"\n{'Template build time:':<30} {build_time:>6.2f} secs")
 
+    print("\n" + f"{' FREEZING ':=^90}")
     start = time.time()
     build_path = PROJECT_PATH / BASE_CONFIG["build_path"]
     backup = PROJECT_PATH / (build_path.name + ".bak")

@@ -1,6 +1,5 @@
 ---
 title: Probability
-layout: topic
 ---
 
 * Combinatorics

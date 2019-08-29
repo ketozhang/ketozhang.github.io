@@ -69,8 +69,8 @@
 
         <!-- Content -->
         <div class="col-xl-8 col-lg-6 col-9 h-100">
+            
             <div class="markdown-content">
-                
                 <p>The cross entropy is a loss function for data that are naturally in the probability space. To explain <strong>entropy</strong>, we need the quantity called <strong>surprise</strong> which is the quanitty that can be interpreted as the surprise one feels if an event occurs if that even has probability <span class="math inline">\(P(Y=c)\)</span>:</p>
 <p><span class="math display">\[
 -\log_2 P(Y=c)\\
@@ -87,29 +87,9 @@ H(S) = - \sum_{c \in C} P(Y=c) \log_2 P(Y=c)
 <li>All <span class="math inline">\(n\)</span> points are different classes: <span class="math inline">\(H(S) = \log_2 n\)</span></li>
 </ul>
 <p>Hence the entropy can be interpreted as the bitsize needed to represent the possible classes.</p>
-                
+
             </div>
-
-            <!-- Disqus Comments -->
-            <div id="disqus_thread"></div>
-            <script>
-
-                /**
-                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-                var disqus_config = function () {
-                this.page.url = "";  // Replace PAGE_URL with your page's canonical URL variable
-                this.page.identifier = "/notes/Data_Science/Optimization/Cross-Entropy.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                };
-                (function () { // DON'T EDIT BELOW THIS LINE
-                    var d = document, s = d.createElement('script');
-                    s.src = 'https://ketozhang.disqus.com/embed.js';
-                    s.setAttribute('data-timestamp', +new Date());
-                    (d.head || d.body).appendChild(s);
-                })();
-            </script>
-            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
-                    by Disqus.</a></noscript>
+            
         </div>
 
         <!-- On This Page -->
@@ -120,6 +100,33 @@ H(S) = - \sum_{c \in C} P(Y=c) \log_2 P(Y=c)
                     <ul id="onthispage-list" class="no-list-style"></ul>
                 </div>
             </div>
+        </div>
+
+    <!-- Disqus Comments -->
+    </div>
+    
+    <div class="row  mt-5">
+        <div class="col-xl-8 col-lg-6 col-9 offset-xl-2 offset-lg-2">
+            <div id="disqus_thread"></div>
+            <script>
+
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                var disqus_config = function () {
+                    this.page.url = "";  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = "/notes/Data_Science/Optimization/Cross-Entropy.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://ketozhang.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
+                    by Disqus.</a></noscript>
+            
         </div>
     </div>
 </div>

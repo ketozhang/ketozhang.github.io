@@ -1,0 +1,23 @@
+<h2 id="convolution">Convolution</h2>
+<p>The input data <span class="math inline">\(I\)</span> of one dimension is convolved with some mask function <span class="math inline">\(G\)</span> (a matrix) which can be written as</p>
+<p><span class="math display">\[
+(I*G)[t] = \sum_{k=-\infty}^\infty I[k]G[t-k]
+\]</span></p>
+<p>In three dimension, for instance, let’s take <span class="math inline">\(I\)</span> an RGB image; the convolution may be written as,</p>
+<p><span class="math display">\[
+(I*G)[x,y] = \sum_{a=0}^{\lfloor (w-1) / s \rfloor}\sum_{b=0}^{\lfloor (h-1) / s \rfloor}\sum_{c\in\{\text{r,g,b}\}} I_c[x+s\cdot a,y+ s\cdot b] G_c[a,b]
+\]</span></p>
+<p><span class="math display">\[
+(I*G) \in \mathbb R^{\lfloor {1+(W-w)/s \rfloor} \times \lfloor{1+(H-h)/s \rfloor} \times c}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(W, H\)</span> : Width and height of the input data.</li>
+<li><span class="math inline">\(w, h\)</span> : Width and height of the mask matrix.</li>
+<li><span class="math inline">\(s\)</span> : Stride of the convolution, <span class="math inline">\(s\ge1\)</span>.</li>
+</ul>
+<h2 id="architecture">Architecture</h2>
+<p>I’ll see if I wanna stand in the rain tomorrow. Given some data <span class="math inline">\(I\)</span> of size <span class="math inline">\((W, H, C)\)</span> a convolution layer of mask function <span class="math inline">\(G\)</span> of size <span class="math inline">\((w,h,c)\)</span>:</p>
+<ul>
+<li>Trains <span class="math inline">\(w \cdot h \cdot c\)</span> parameters</li>
+<li>Outputs an array of size <span class="math inline">\((\lfloor {1+(W-w)/s \rfloor}, \lfloor{1+(H-h)/s \rfloor}, c)\)</span></li>
+</ul>

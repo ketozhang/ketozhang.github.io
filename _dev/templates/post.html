@@ -22,7 +22,7 @@
 
             <div class="markdown-content">
                 {% if page['has_content'] %}
-                {% include page['content_path'] %}
+                {{ include_raw(page['content_path']) }}
                 {% endif %}
             </div>
         </div>

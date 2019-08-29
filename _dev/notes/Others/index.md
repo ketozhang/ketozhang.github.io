@@ -1,4 +1,3 @@
 ---
 title: Others
-layout: book
 ---

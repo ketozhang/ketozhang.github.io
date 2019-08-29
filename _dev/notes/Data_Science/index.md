@@ -1,3 +1,3 @@
 ---
-layout: book
+title: Data Science
 ---
