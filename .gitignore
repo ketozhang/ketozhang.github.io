@@ -2,5 +2,6 @@ node_modules/
 *__pycache__/
 *.egg-info/
 *.vscode/
+_dev/docs/
 
 *.code-workspace
