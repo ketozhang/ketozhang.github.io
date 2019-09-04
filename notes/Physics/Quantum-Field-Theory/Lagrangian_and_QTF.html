@@ -43,7 +43,7 @@
             <span>Toggle Sidebar</span>
         </button>
     </nav> -->
-    <h1 class="title text-center pt-3">Lagrangian</h1>
+    <h1 class="title text-center pt-3">Lagrangian and QTF</h1>
     <hr>
     <div class="row">
         <!-- Notebook Sidenav -->
@@ -51,22 +51,16 @@
             <div class="sidenav sticky-top vh-80">
                 <div class="sidenav-title row no-gutters">
                     <div class="col-9">
-                        <strong>Lagrangian</strong>
+                        <strong>Lagrangian and QTF</strong>
                     </div>
                     <div class="col-2 offset-1">
-                        <a class="go-up" href="https://ketozhang.github.io/notes/Physics/Classical_Mechanics/" role="button">
+                        <a class="go-up" href="https://ketozhang.github.io/notes/Physics/Quantum-Field-Theory/" role="button">
                             <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
                         </a>
                     </div>
                 </div>
                 <div class="sidenav-body no-gutters">
                     <ul class="no-list-style pl-3">
-                        
-                        <li class='pb-3'><a href="https://ketozhang.github.io/notes/Physics/Classical_Mechanics/Lagrangian/Euler-Lagrange_Equation">Euler-Lagrange Equation</a></li>
-                        
-                        <li class='pb-3'><a href="https://ketozhang.github.io/notes/Physics/Classical_Mechanics/Lagrangian/Generalized_Coordinates">Generalized Coordinates</a></li>
-                        
-                        <li class='pb-3'><a href="https://ketozhang.github.io/notes/Physics/Classical_Mechanics/Lagrangian/The_Lagrangian_and_Calculus_of_Variations">The Lagrangian and Calculus of Uariations</a></li>
                         
                     </ul>
                 </div>
@@ -75,6 +69,21 @@
 
         <!-- Content -->
         <div class="col-xl-8 col-lg-6 col-9 h-100">
+            
+            <div class="markdown-content">
+                <h2 id="phase">Phase</h2>
+<p>Recall the time solution of the Schrodinger equation is given by,</p>
+<p><span class="math display">\[
+\phi(x,t) \sim \exp\left[-\frac{i}{\hbar}Et\right]
+\]</span></p>
+<p>We call the <span class="math inline">\(E\)</span> (energy of the photon), the phase factor. In classical particles the phase factor is <span class="math inline">\(S\)</span>:</p>
+<p><span class="math display">\[
+\phi(x,t) \sim \exp\left[ i S / \hbar\right]
+\]</span></p>
+<p>where we note that the principle of least action <span class="math inline">\(\delta S / \delta x(t) = 0\)</span> causes <span class="math inline">\(\partial \phi / \partial t = 0\)</span>.</p>
+<p>Intuitively, the classical particle considers all trajectory that cost some total action <span class="math inline">\(S\)</span>. The observed trajectory is the one that gives a stationary action <span class="math inline">\(\delta S / \delta x(t) = 0\)</span>.</p>
+
+            </div>
             
         </div>
 
@@ -91,6 +100,28 @@
     <!-- Disqus Comments -->
     </div>
     
+    <div class="row  mt-5">
+        <div class="col-xl-8 col-lg-6 col-9 offset-xl-2 offset-lg-3">
+            <div id="disqus_thread"></div>
+            <script>
+
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                var disqus_config = function () {
+                    this.page.url = "";  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = "/notes/Physics/Quantum-Field-Theory/Lagrangian_and_QTF.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://ketozhang.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
+                    by Disqus.</a></noscript>
+            
         </div>
     </div>
 </div>

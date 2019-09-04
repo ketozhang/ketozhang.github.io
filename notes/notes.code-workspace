@@ -1,7 +1,15 @@
 {
 	"folders": [
 		{
+			"name": "Notes",
 			"path": "."
+		},
+		{
+			"name": "Quantum Field Theory",
+			"path": "Physics/Quantum-Field-Theory"
+		},
+		{
+			"path": "Data_Science/Probability"
 		}
 	],
 	"settings": {}
