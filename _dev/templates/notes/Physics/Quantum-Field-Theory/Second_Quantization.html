@@ -1,0 +1,36 @@
+<p>Let the set of annihilation and creator operators in both position and momentum be related by,</p>
+<p><span class="math display">\[
+\hat a_x = \frac{1}{\sqrt{V}} \sum_{p}\hat a(p) e^{i p \cdot x}\\
+\hat a^\dagger_x = \frac{1}{\sqrt{V}} \sum_{p}\hat a(p)^\dagger e^{i p \cdot x}
+\]</span></p>
+<p>The number operator for the corresponding number of particles in some position and momentum be,</p>
+<p><span class="math display">\[
+\hat n_x = a^\dagger_xa_x\\
+\hat n(p) = a^\dagger(p)a(p)
+\]</span></p>
+<p>The basic usage of these operators are simply by the examples below:</p>
+<ul>
+<li><p>Create a particle at position <span class="math inline">\(x\)</span> starting at a field with no particles <span class="math inline">\(\ket 0\)</span>,</p>
+<p><span class="math display">\[
+  \ket 1 = a_x^\dagger \ket 0\\
+  \]</span></p></li>
+<li><p>Find the number of particles at position <span class="math inline">\(x\)</span> for a field with two particles</p>
+<p><span class="math display">\[
+  \ket 2 = (a_x^\dagger)^2 \ket 0 \\
+  n_x \ket 2 = 2 \ket 2
+  \]</span></p></li>
+<li><p>Find the position of a particle at position <span class="math inline">\(x\)</span> by determining the position PDF with some general position state <span class="math inline">\(\ket{x&#39;}\)</span>,</p>
+<p><span class="math display">\[
+  \ket 1 = a^\dagger\\
+  \braket{x&#39;}{1} = \delta(x-x&#39;)
+  \]</span></p>
+<p>Thus the particle only exist at position <span class="math inline">\(x&#39;\)</span>.</p></li>
+</ul>
+<h2 id="second-quantization-of-an-operator">Second Quantization of an Operator</h2>
+<p>Similarly to how an single-particle operator in Hilbert space modifies the states of a single particle, in QFT we implore a set of Hilbert spaces called the <strong>Fock space</strong> which can describe our system of <span class="math inline">\(N\)</span> particles as the space <span class="math inline">\(\mathcal F_N\)</span>. An operator that operates on the Fock space, thus operating on many particle is not surprisingly a matrix acted upon a single coordinate of the Fock space at <span class="math inline">\((\alpha, \beta)\)</span>. It can be compactly represented as</p>
+<p><span class="math display">\[
+\hat A = \sum_{\alpha \beta} A_{\alpha, \beta}a_\alpha^\dagger a_\beta
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\hat A_{\alpha, \beta}\)</span> : Matrix element, <span class="math inline">\(\bra{\alpha}\hat A\ket{\beta}\)</span></li>
+</ul>

@@ -127,14 +127,9 @@
     <script src="https://ketozhang.github.io/static/onThisPage.js"></script>
 
     <!-- MathJax -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
-    
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            TeX: { equationNumbers: { autoNumber: "AMS" } }
-        });
-    </script>
-    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://ketozhang.github.io/static/mathjax_config.js" defer></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
 
     <!-- Bootstrap JS -->
     <!-- TODO: trim JS if not needed -->
