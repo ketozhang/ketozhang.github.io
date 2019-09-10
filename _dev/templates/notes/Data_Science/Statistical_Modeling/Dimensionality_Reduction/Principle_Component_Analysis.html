@@ -1,0 +1,46 @@
+<p><strong>Principle Component Analysis (PCA)</strong> reduces the dimension by projecting onto another subspace that captures as much variation of the data as possible.</p>
+<h2 id="gaussian-components">Gaussian Components</h2>
+<p>Given cenetered data <span class="math inline">\(X\)</span>, the covariance matrix is given by</p>
+<p><span class="math display">\[
+\hat \Sigma = \frac{1}{n}X^\top X
+\]</span></p>
+<p>Project <span class="math inline">\(X\)</span> onto the principle coordinates of dimension <span class="math inline">\(k\)</span> which are the eigenvectors <span class="math inline">\(v_1 \ldots v_k\)</span> associated with a set of the largest eigenvalues <span class="math inline">\(\lambda_1 \ldots \lambda_k\)</span></p>
+<h2 id="variability-accounted">Variability Accounted</h2>
+<p>The percentage of variability accounted for is given by the proportion of the sum of the eigenvalues accounted for.</p>
+<p><span class="math display">\[
+\frac{\sum_i^k \lambda_i}{\sum_i^d \lambda_i}
+\]</span></p>
+<h2 id="general-pca">General PCA</h2>
+<p>In general, a gaussian fit to the data is not needed. The goal of PCA once again is to find the direction of projection that maximizes variance. This can be written as a maximization problem:</p>
+<p><span class="math display">\[
+\begin{align}
+\text{Var}(X_1&#39;, \ldots X_n&#39;) &amp;= \frac{1}{n}\sum_{i=1}^n \left(X_i \frac{w}{|w|}\right)^2\\
+&amp;= \underbrace{\frac{1}{n}\frac{w^\top X^\top X w}{w^\top w}}_\text{Rayleigh Quotient}
+\end{align}
+\]</span></p>
+<p>The identity is the Raleigh quotient of <span class="math inline">\(X^\top X\)</span> and <span class="math inline">\(w\)</span>. Therefore if <span class="math inline">\(w\)</span> is an eigenvector <span class="math inline">\(v_i\)</span> then the Rayleigh quotient is <span class="math inline">\(\lambda_i\)</span>.</p>
+<p>Restricting <span class="math inline">\(w\)</span> to be an eigenvector <span class="math inline">\(v_d\)</span> maximizes the variance to <span class="math inline">\(\lambda_d / n\)</span></p>
+<p>Not restricting <span class="math inline">\(w\)</span> to be an eigenvector, because <span class="math inline">\(w\)</span> is a linear combination of the eigenvectors <span class="math inline">\(v\)</span>, the Raleyigh quotient is a linear combination of the eigenvalues.</p>
+<h2 id="deriving-pca-using-projection-error">Deriving PCA Using Projection Error</h2>
+<p>The sum of squared error is the projection error of PCA. We want to minimize the projection error.</p>
+<p><span class="math display">\[
+\min \sum_{i=1}^n \left | X_i - X_i&#39; \right |^2 = \sum|X_i|^2 - \underbrace{\sum\left(X_i \cdot \frac{w}{|w|}\right)^2}_\text{Variance}
+\]</span></p>
+<h2 id="eigenfaces">Eigenfaces</h2>
+<p>Given <span class="math inline">\(X\)</span> containing <span class="math inline">\(n\)</span> faces of <span class="math inline">\(d\)</span> grayscale pixels each, find the nearest neighbor to the training set. This is a slow process of <span class="math inline">\(\Theta(nd)\)</span>. PCA can reduce this dimension by projection <span class="math inline">\(d\)</span> to <span class="math inline">\(d&#39;\)</span>.</p>
+<h2 id="random-projections">Random Projections</h2>
+<p>An alternative to PCA as a preprocess. Choosing a small <span class="math inline">\(\epsilon\)</span> and <span class="math inline">\(\delta\)</span> create a random subspace <span class="math inline">\(S \in \mathbb R^d\)</span> of dimension <span class="math inline">\(k\)</span> where</p>
+<p><span class="math display">\[
+k = \frac{2 \log \delta}{\epsilon^3 / 3 - \epsilon^2 / 2}
+\]</span></p>
+<p>For any point <span class="math inline">\(q\)</span>, let <span class="math inline">\(\hat q\)</span> be the orthogonal projection of <span class="math inline">\(q\)</span> onto <span class="math inline">\(S\)</span> multiplied by <span class="math inline">\(\sqrt{d/k}\)</span>.</p>
+<p>For any two points <span class="math inline">\(q\)</span>, <span class="math inline">\(w \in \mathbb R^{d}\)</span></p>
+<p><span class="math display">\[
+(1-\epsilon)|qw|^2 \le |\overline{\hat q \hat w}|^2 \le (1+\epsilon)|\overline{qw}|^2
+\]</span></p>
+<p>with probability <span class="math inline">\(\mathbb P \ge 1 - 2\delta\)</span></p>
+<p>The typical hyperparameters are:</p>
+<p><span class="math display">\[
+\varepsilon \in [0.02, 0.5]\\
+\delta \in [1/n^3, 0.05]
+\]</span></p>

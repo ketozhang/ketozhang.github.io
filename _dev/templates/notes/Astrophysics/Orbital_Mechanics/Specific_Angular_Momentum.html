@@ -1,0 +1,45 @@
+<p>The angular momentum <span class="math inline">\(\vec L = I\vec\omega\)</span> in this system is purely the oribtal angular momentum of two point masses with <span class="math inline">\(I=r^2m\)</span>. Thus,</p>
+<p><span class="math display">\[
+\vec L = (r^2 m)\left(\frac{\vec r \times \dot{\vec r}}{r^2}\right) = \vec r \times \vec p = \vec r \times m \vec v
+\]</span></p>
+<ul>
+<li>Note that <span class="math inline">\(m\)</span> here is the reduced mass given by the relation <span class="math inline">\(m^{-1} = m_1^{-1} + m_2^{-1}\)</span></li>
+</ul>
+<p>A more useful vector in orbital mechanics is the <strong>specific angular momentum</strong> vector , <span class="math inline">\(\vec h\)</span>, which is the angular momentum vector divided by the reduced mass.</p>
+<p><span class="math display">\[
+\vec h = \vec r \times \vec v
+\]</span></p>
+<dl>
+<dt>Constant Specific Angular Momentum for the Two Body Problem</dt>
+<dd><p><span class="math inline">\(\vec h\)</span> is constant in the two body problem. This is simple fact from its derivative and plugging in the acceleration with the two body equation.</p>
+<p><span class="math display">\[
+\dot{\vec h} = \underbrace{\dot{\vec r} \times \dot{\vec r}}_0 + \dot{\vec r} \times \ddot{\vec r}
+\]</span></p>
+<p><span class="math display">\[
+\dot{\vec r} \times \ddot{\vec r} = -\frac{\mu}{r^2} (\vec r \times \hat r) = 0
+\]</span></p>
+<p><span class="math display">\[
+\dot{\vec h} = \vec 0 \implies \vec h = \text{constant}
+\]</span></p>
+</dd>
+</dl>
+<p>To determine the magnitude of <span class="math inline">\(\vec h\)</span> we rely on the flight path angle <span class="math inline">\(\phi_\text{fpa}\)</span></p>
+<ol type="1">
+<li><p>Definition of cross product magnitude</p>
+<p><span class="math display">\[
+ h = rv \sin(\theta_{rv}) = rv \cos(\phi_\text{fpa})
+ \]</span></p></li>
+<li><p>Extremities of flight path angle are at its periapsis and apoapsis</p>
+<p><span class="math display">\[
+ h = r_a v_a\\
+ h = r_p v_p
+ \]</span></p></li>
+<li><p>Trigonometry of the true anomaly <span class="math inline">\(\nu\)</span> <span class="math display">\[
+ \cos(\phi_\text{fpa}) = \frac{r \dot \nu}{v}\\
+ h = r^2 \dot \nu
+ \]</span></p></li>
+<li><p>Using the trajectory equation in terms of the semiparameter <span class="math inline">\(p\)</span></p>
+<p><span class="math display">\[
+ h = \sqrt{\mu p}
+ \]</span></p></li>
+</ol>

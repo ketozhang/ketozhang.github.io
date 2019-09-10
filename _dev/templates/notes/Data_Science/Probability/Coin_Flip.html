@@ -1,0 +1,45 @@
+<p>To get started, consider a fair coin where the probability flipping a head is equal to the probability of flipping a tail.</p>
+<h2 id="consecutive-heads">Consecutive Heads</h2>
+<p>The probability of getting <span class="math inline">\(k\)</span> heads consecutively can be solved by noting multiplication rule on independent flips</p>
+<p><span class="math display">\[
+P(H \land H) = P(H_1)P(H_2 \mid H_1) = P(H_1)P(H_2) = P(H)^2\\
+\boxed{P(\text{k heads}) = P(H)^k =  \left( \frac{1}{2} \right)^k}
+\]</span></p>
+<h2 id="k-heads-from-n-flips"><span class="math inline">\(k\)</span> Heads from <span class="math inline">\(n\)</span> Flips</h2>
+<p>The probability of getting <span class="math inline">\(k\)</span> heads with <span class="math inline">\(n\)</span> flips immediately becomes more difficult than consecutive heads.</p>
+<p>We implore the strategy of counting all possible outcomes of a given event (size of the outcome space). The size of <span class="math inline">\(k\)</span> heads is the combination <span class="math inline">\(C(n,k)\)</span></p>
+<p><span class="math display">\[
+|\text{k heads}| = C(n,k) = \frac{n!}{k!(n-k)!}
+\]</span></p>
+<p>The size of the outcome of all possible flips is given by the binary representation,</p>
+<p><span class="math display">\[
+|\text{all flips}| = 2^n
+\]</span></p>
+<p>Thus, the probability of <span class="math inline">\(k\)</span> heads from <span class="math inline">\(n\)</span> flips is,</p>
+<p><span class="math display">\[
+\boxed{P(\text{k heads}) = \frac{|\text{k heads}|}{|\text{all flips}|} = \frac{n!}{k!(n-k)! 2^n}}
+\]</span></p>
+<h3 id="half-heads-case">Half Heads Case</h3>
+<p>Consider the case where <span class="math inline">\(k = n/2\)</span>. To make the math easier let <span class="math inline">\(n\)</span> be the number of heads and <span class="math inline">\(2n\)</span> be the number of flips:</p>
+<p><span class="math display">\[
+\begin{align}
+k &amp;\rightarrow n\\
+n &amp;\rightarrow 2n
+\end{align}
+\]</span></p>
+<p>The probabilty function is then,</p>
+<p><span class="math display">\[
+P(\text{k heads}) = \frac{(2n)!}{n!n! 2^n}
+\]</span></p>
+<p>Still, the probability function is non-intuitive. This event is very intersting when you apply the <strong>Stirling’s approximation</strong> which states,</p>
+<p><span class="math display">\[
+n! \sim \sqrt{2 \pi n} (n/e)^n
+\]</span></p>
+<p>Therefore,</p>
+<p><span class="math display">\[
+P(\text{k heads}) = \frac{\sqrt{4\pi n}(2n/e)^{2n}}{\sqrt{4\pi^2n^2}(n/e)^n 2^n} = \frac{1}{\sqrt{\pi n}}
+\]</span></p>
+<p>We can now see that <span class="math inline">\(n \rightarrow \infty\)</span> (large <span class="math inline">\(n\)</span> is where Stirling’s approximation gets more accurate),</p>
+<p><span class="math display">\[
+P(\text{k heads}) \rightarrow 0
+\]</span></p>
