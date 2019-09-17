@@ -18,10 +18,10 @@ The probability of getting $k$ heads with $n$ flips immediately becomes more dif
 We implore the strategy of counting all possible outcomes of a given event (size of the outcome space). The size of $k$ heads is the combination $C(n,k)$
 
 $$
-|\text{k heads}| = C(n,k) = \frac{n!}{k!(n-k)!}
+|\text{k heads}| = {n \choose k}
 $$
 
-The size of the outcome of all possible flips is given by the binary representation,
+The number of possible sequences can be thought of as coutning unordered without replacement where each of the $n$ flips have 2 choices,
 
 $$
 |\text{all flips}| = 2^n
@@ -30,7 +30,38 @@ $$
 Thus, the probability of $k$ heads from $n$ flips is,
 
 $$
-\boxed{P(\text{k heads}) = \frac{|\text{k heads}|}{|\text{all flips}|} = \frac{n!}{k!(n-k)! 2^n}}
+\boxed{P(\text{k heads}) = \frac{|\text{k heads}|}{|\text{all flips}|} = {n \choose k} / 2^n}
+$$
+
+### Probabilistic Proof
+
+An alternative proof is to use probability instead of combinatorics. We rely on the fact that of the $n$ tosses, any $k$ set of tosses have an equally likely chance to land all heads thus we can apply the additive rule.
+
+1. The $k$ slots that the head can land on is,
+
+    $$
+    |\text{$k$ slots}| = {n \choose k}
+    $$
+
+2. Among the $k$ slots, the probability of having $k$ heads is,
+
+    $$
+    P(\text{$k$ heads in $k$ slots}) = 2^{-k}
+    $$
+
+3. The remaining tosses must be tail,
+
+    $$
+    P(\text{$n-k$ tails}) = 2^{-(n-k)}
+    $$
+
+Thus,
+
+$$
+\begin{align}
+P(\text{$k$ heads}) &= |\text{$k$ slots}| \cdot P(\text{$k$ heads in $k$ slots}) \cdot P(\text{$n-k$ tails})\\
+&= {n \choose k} / 2^n
+\end{align}
 $$
 
 ### Half Heads Case

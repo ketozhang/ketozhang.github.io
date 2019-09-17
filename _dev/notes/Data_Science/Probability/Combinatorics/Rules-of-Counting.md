@@ -9,10 +9,15 @@ Combinatorics is the study of counting a systems that can be represented as a fi
 A system without replacement can be counted either with permutation or combination,
 
 1. **First Rule of Counting (Ordered Counting)**
-    $$ C(n,k) = \frac{n!}{(n-k)!} $$
+    This counting can be thought of as fixing the position of $k$ slots where the first slot picks out of $n$, the next slots now have $n-1$ to choose from, and so on; this gives,
+
+    $$ |\text{ordered k out of n possible choices}| = (n)(n-1)\cdots(n-1+k)$$
+
+    More commonly, this expression is called **permutation**
+    $$ P(n,k) = \frac{n!}{(n-k)!} $$
 
 2. **Second Rule of Counting (Unordered Counting)**
-    $$ P(n,k) = {n\choose k} = \frac{C(n,k)}{k!} $$
+    $$ C(n,k) = {n\choose k} = \frac{n!}{k!(n-k)!} $$
 
 ## With Replacement
 Say there are a set of length $n$ and we wish to create subset of length $k$
