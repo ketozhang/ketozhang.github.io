@@ -75,8 +75,10 @@
 <h2 id="without-replacement">Without Replacement</h2>
 <p>A system without replacement can be counted either with permutation or combination,</p>
 <ol type="1">
-<li><p><strong>First Rule of Counting (Ordered Counting)</strong> <span class="math display">\[ C(n,k) = \frac{n!}{(n-k)!} \]</span></p></li>
-<li><p><strong>Second Rule of Counting (Unordered Counting)</strong> <span class="math display">\[ P(n,k) = {n\choose k} = \frac{C(n,k)}{k!} \]</span></p></li>
+<li><p><strong>First Rule of Counting (Ordered Counting)</strong> This counting can be thought of as fixing the position of <span class="math inline">\(k\)</span> slots where the first slot picks out of <span class="math inline">\(n\)</span>, the next slots now have <span class="math inline">\(n-1\)</span> to choose from, and so on; this gives,</p>
+<p><span class="math display">\[ |\text{ordered k out of n possible choices}| = (n)(n-1)\cdots(n-1+k)\]</span></p>
+<p>More commonly, this expression is called <strong>permutation</strong> <span class="math display">\[ P(n,k) = \frac{n!}{(n-k)!} \]</span></p></li>
+<li><p><strong>Second Rule of Counting (Unordered Counting)</strong> <span class="math display">\[ C(n,k) = {n\choose k} = \frac{n!}{k!(n-k)!} \]</span></p></li>
 </ol>
 <h2 id="with-replacement">With Replacement</h2>
 <p>Say there are a set of length <span class="math inline">\(n\)</span> and we wish to create subset of length <span class="math inline">\(k\)</span></p>

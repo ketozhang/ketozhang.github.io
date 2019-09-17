@@ -7,12 +7,12 @@
   margin-right: 1in;
   margin-top: 0.5in;
   margin-bottom: 0.5in;
-  font-size: 12px;
 }
 
 @media print {
   body {
     line-height: 1.2 !important;
+    font-size: 18px;
   }
   .section h1 {
     font-size: 150% !important;
