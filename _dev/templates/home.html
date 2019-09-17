@@ -2,22 +2,38 @@
 {% block content %}
 {% include "header.html" %}
 <main>
-<div class="container-fluid">
+  <div class="container">
+    <div id="intro" class="jumbotron bg-transparent d-flex flex-column">
+      <h2 class="text-nowrap">Astronomer in the making</h2>
+      <div class="d-flex flex-md-nowrap flex-sm-wrap-reverse justify-content-center align-items-center">
+        <blockquote class="blockquote">Welcome, I'm a student undergoing a path to become a professional astronomer. Feel free to
+          checkout my <a href="#showcase">projects</a> and occasional <a href="/posts">blog posts</a> mingled with
+          topics
+          in <em>physics</em>, <em>math</em>, <em>data</em>, and <em>computer science</em>. Also, all my education <a
+            href="/notes">notes</a> are publically web-accessible.</blockquote>
+        <!-- <figure class="figure"> -->
+          <img class="rounded-circle my-sm-2" style="width: 200px; height: 200px;"
+          src="{{site_url}}static/images/headshot_500x500.jpg">
+          <!-- <p class="text-center mt-2">Keto D. Zhang</p> -->
+        <!-- </figure> -->
+      </div>
+    </div>
     <!-- Main Showcase  -->
-    <div id="showcase" class="row justify-content-md-center d-flex align-items-stretch">
+    <h1 class="text-center">Projects</h1>
+    <div id="showcase" class="row justify-content-md-between d-flex align-items-stretch">
       {% for project in projects %}
-      <div class="col-md-3 d-flex flex-column">
+      <div class="col-md-4 d-flex flex-column">
         <h3 class="title">{{project['header']}}</h2>
-        <!-- TODO: Find a better way for equal height -->
-        <p>{{project['description']}}</p>
-        <p class="mt-auto"><a class="btn btn-warning" href="{{parse_url(project['view_details'])}}" role="button" target="_blank">View details »</a></p>
+          <!-- TODO: Find a better way for equal height -->
+          <p>{{project['description']}}</p>
+          <p class="mt-auto"><a class="btn btn-warning" href="{{parse_url(project['view_details'])}}" role="button"
+              target="_blank">View details »</a></p>
       </div>
       {% endfor %}
     </div>
-    <hr>
-</div>
-    <div class="container">
+    <hr class="my-4">
     <!-- Blogpost Cards -->
+    <h1 class="text-center">Posts</h1>
     {% for post_url, post in posts.items() %}
     <div class="card mb-3 box-shadow">
       <div class="row no-gutter">
@@ -27,7 +43,8 @@
         <div class="col-md-7 col-lg-8">
           <div class="card-body">
             <h4 class="card-title mb-0"><a href={{parse_url(post_url)}}>{{post['title']}}</a></h4>
-            <p class="card-text"><small class="text-muted">Last updated <time datetime="{{post['last_updated']}}"></time></small></p>
+            <p class="card-text"><small class="text-muted">Last updated <time
+                  datetime="{{post['last_updated']}}"></time></small></p>
             <p class="mt-2 card-text">{{post['description']}}</p>
           </div>
         </div>

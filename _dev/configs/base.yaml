@@ -48,9 +48,9 @@ social_links:
     url: "https://www.linkedin.com/in/ketozhang/"
     icon: "/static/images/icons8-linkedin.svg"
   email:
-    text: "Email"
+    text: "keto.zhang@gmail.com"
     url: "mailto:keto.zhang@gmail.com"
-    icon: "/static/images/icons8-envelope.svg"
+    icon: "/static/images/icons8-email-30.png"
   github:
     text: "GitHub"
     url: "https://www.github.com/ketozhang"

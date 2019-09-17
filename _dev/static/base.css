@@ -240,9 +240,10 @@ footer {
 
 /* Ids */
 
-/* #note h1, #note h2, #note h3, #note h4, #note h5, #note h6, #post h1, #post h2, #post h3, #post h4, #post h5, #post h6 {
-  line-height: 2.5;
-} */
+#intro {
+  border: 1px solid #dee2e6;
+  border-radius: 1.25rem;
+}
 
 .content h2, .content h3 {
   line-height: 2;

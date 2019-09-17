@@ -9,15 +9,38 @@ P(H \land H) = P(H_1)P(H_2 \mid H_1) = P(H_1)P(H_2) = P(H)^2\\
 <p>The probability of getting <span class="math inline">\(k\)</span> heads with <span class="math inline">\(n\)</span> flips immediately becomes more difficult than consecutive heads.</p>
 <p>We implore the strategy of counting all possible outcomes of a given event (size of the outcome space). The size of <span class="math inline">\(k\)</span> heads is the combination <span class="math inline">\(C(n,k)\)</span></p>
 <p><span class="math display">\[
-|\text{k heads}| = C(n,k) = \frac{n!}{k!(n-k)!}
+|\text{k heads}| = {n \choose k}
 \]</span></p>
-<p>The size of the outcome of all possible flips is given by the binary representation,</p>
+<p>The number of possible sequences can be thought of as coutning unordered without replacement where each of the <span class="math inline">\(n\)</span> flips have 2 choices,</p>
 <p><span class="math display">\[
 |\text{all flips}| = 2^n
 \]</span></p>
 <p>Thus, the probability of <span class="math inline">\(k\)</span> heads from <span class="math inline">\(n\)</span> flips is,</p>
 <p><span class="math display">\[
-\boxed{P(\text{k heads}) = \frac{|\text{k heads}|}{|\text{all flips}|} = \frac{n!}{k!(n-k)! 2^n}}
+\boxed{P(\text{k heads}) = \frac{|\text{k heads}|}{|\text{all flips}|} = {n \choose k} / 2^n}
+\]</span></p>
+<h3 id="probabilistic-proof">Probabilistic Proof</h3>
+<p>An alternative proof is to use probability instead of combinatorics. We rely on the fact that of the <span class="math inline">\(n\)</span> tosses, any <span class="math inline">\(k\)</span> set of tosses have an equally likely chance to land all heads thus we can apply the additive rule.</p>
+<ol type="1">
+<li><p>The <span class="math inline">\(k\)</span> slots that the head can land on is,</p>
+<p><span class="math display">\[
+ |\text{$k$ slots}| = {n \choose k}
+ \]</span></p></li>
+<li><p>Among the <span class="math inline">\(k\)</span> slots, the probability of having <span class="math inline">\(k\)</span> heads is,</p>
+<p><span class="math display">\[
+ P(\text{$k$ heads in $k$ slots}) = 2^{-k}
+ \]</span></p></li>
+<li><p>The remaining tosses must be tail,</p>
+<p><span class="math display">\[
+ P(\text{$n-k$ tails}) = 2^{-(n-k)}
+ \]</span></p></li>
+</ol>
+<p>Thus,</p>
+<p><span class="math display">\[
+\begin{align}
+P(\text{$k$ heads}) &amp;= |\text{$k$ slots}| \cdot P(\text{$k$ heads in $k$ slots}) \cdot P(\text{$n-k$ tails})\\
+&amp;= {n \choose k} / 2^n
+\end{align}
 \]</span></p>
 <h3 id="half-heads-case">Half Heads Case</h3>
 <p>Consider the case where <span class="math inline">\(k = n/2\)</span>. To make the math easier let <span class="math inline">\(n\)</span> be the number of heads and <span class="math inline">\(2n\)</span> be the number of flips:</p>
