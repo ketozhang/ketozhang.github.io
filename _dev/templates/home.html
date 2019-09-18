@@ -42,7 +42,7 @@
     <!-- Blogpost Cards -->
     <h1 class="text-center">Posts</h1>
     {% for post_url, post in posts.items() %}
-    <div class="card mb-3 box-shadow">
+    <div class="card mb-3">
       <div class="row no-gutter">
         <div class="col-md-5 col-lg-4">
           <a href={{parse_url(post_url)}}><img class="card-img" src={{parse_url(post['image'])}}></a>
