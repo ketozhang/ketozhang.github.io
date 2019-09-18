@@ -6,19 +6,21 @@
     <div id="intro" class="jumbotron bg-transparent d-flex flex-column">
       <h2 class="text-nowrap">Astronomer in the making</h2>
       <div class="d-flex flex-md-nowrap flex-sm-wrap-reverse justify-content-center align-items-center">
-        <blockquote class="blockquote">Welcome, I'm a student undergoing a path to become a professional astronomer. Feel free to
-          checkout my <a href="#showcase">projects</a> and occasional <a href="/posts">blog posts</a> mingled with
+        <blockquote class="blockquote">Welcome, I'm a student undergoing a path to become a professional astronomer.
+          Feel free to
+          check out my <a href="#showcase">projects</a> and occasional <a href="/posts">blog posts</a> mingled with
           topics
-          in <em>physics</em>, <em>math</em>, <em>data</em>, and <em>computer science</em>. Also, all my education <a
-            href="/notes">notes</a> are publically web-accessible.</blockquote>
+          in <em>physics</em>, <em>math</em>, <em>data</em>, and <em>computer science</em>. All my educational <a
+            href="/notes">notes</a> are available to the public and web-accessible.</blockquote>
         <!-- <figure class="figure"> -->
-          <img class="rounded-circle my-sm-2" style="width: 200px; height: 200px;"
+        <img class="rounded-circle mb-3 m-md-0" style="width: 200px;"
           src="{{site_url}}static/images/headshot_500x500.jpg">
-          <!-- <p class="text-center mt-2">Keto D. Zhang</p> -->
+        <!-- <p class="text-center mt-2">Keto D. Zhang</p> -->
         <!-- </figure> -->
       </div>
     </div>
     <!-- Main Showcase  -->
+
     <h1 class="text-center">Projects</h1>
     <div id="showcase" class="row justify-content-md-between d-flex align-items-stretch">
       {% for project in projects %}
@@ -31,7 +33,9 @@
       </div>
       {% endfor %}
     </div>
+
     <hr class="my-4">
+
     <!-- Blogpost Cards -->
     <h1 class="text-center">Posts</h1>
     {% for post_url, post in posts.items() %}
@@ -51,33 +55,6 @@
       </div>
     </div>
     {% endfor %}
-
-    <!-- Sitemap Collapsible -->
-    {% if debug %}
-    <div class="row">
-      <div class="col-12">
-        <div id="siteMap">
-          <div class="card">
-            <div class="card-header" id="siteMapHeading">
-              <button class="btn btn-block btn-link collapsed text-left" type="button" data-toggle="collapse"
-                data-target="#siteMapCollapse" aria-expanded="false" aria-controls="siteMapCollapse">
-                Site Map (this only shows up on debug mode)
-              </button>
-            </div>
-            <div id="siteMapCollapse" class="collapse" aria-labelledby="siteMapHeading" data-parent="#siteMap">
-              <div class="card-body">
-                <ul>
-                  {% for page in pages %}
-                  <li><a href={{page}}>{{page}}</a></li>
-                  {% endfor %}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    {% endif %}
   </div>
 </main>
 {% endblock %}

@@ -43,7 +43,7 @@
             <span>Toggle Sidebar</span>
         </button>
     </nav> -->
-    <h1 class="title text-center pt-3">Bernoulli</h1>
+    <h1 class="title text-center pt-3">Expected Value</h1>
     <hr>
     <div class="row">
         <!-- Notebook Sidenav -->
@@ -51,10 +51,10 @@
             <div class="sidenav sticky-top vh-80">
                 <div class="sidenav-title row no-gutters">
                     <div class="col-9">
-                        <strong>Bernoulli</strong>
+                        <strong>Expected Value</strong>
                     </div>
                     <div class="col-2 offset-1">
-                        <a class="go-up" href="https://ketozhang.github.io/notes/Data_Science/Probability/Distributions/" role="button">
+                        <a class="go-up" href="https://ketozhang.github.io/notes/Data_Science/Probability/Summary-Statistics/" role="button">
                             <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
                         </a>
                     </div>
@@ -71,18 +71,22 @@
         <div class="col-xl-8 col-lg-6 col-9 h-100">
             
             <div class="markdown-content">
-                <ul>
-<li><p>Expected Value <span class="math display">\[
-\mathbb E[x] = p
-\]</span></p></li>
-<li><p>Variance: <span class="math display">\[ \text{Var}[X] = p(1-p) \]</span></p></li>
-<li><p>Covariance:</p></li>
-</ul>
-<p><span class="math display">\[ \text{Cov}[X,Y] = r-pq \]</span></p>
-<ul>
-<li>Independent Sampling:</li>
-</ul>
-<p><span class="math display">\[ \sum_i^n{X_i(p)} \sim \text{Binomial}(n,p) \]</span></p>
+                <p><span class="math display">\[
+\mathbb E[X] \equiv \sum_{x \in \Omega_X}xP(x)
+\]</span></p>
+<h2 id="unbiased-estimator">Unbiased Estimator</h2>
+<p>Consider iid random variables <span class="math inline">\(X_1, X_2, \ldots, X_n \sim \text{Uniform}(N)\)</span> where each random variable can take the values <span class="math inline">\(1,2,\ldots,N\)</span>. Notice that</p>
+<p><span class="math display">\[
+\mathbb E[X_k] = \sum_{i=1}^n i = \frac{N+1}{2}
+\]</span></p>
+<p>Let the sample mean be,</p>
+<p><span class="math display">\[
+\bar X \equiv \frac{1}{n}\sum_{i=1}^n X_i
+\]</span></p>
+<p>The expectation value of the sample mean is</p>
+<p><span class="math display">\[
+\mathbb E[\bar X] = \frac{N+1}{2}
+\]</span></p>
 
             </div>
             
@@ -111,7 +115,7 @@
                 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
                 var disqus_config = function () {
                     this.page.url = "";  // Replace PAGE_URL with your page's canonical URL variable
-                    this.page.identifier = "/notes/Data_Science/Probability/Distributions/Bernoulli.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    this.page.identifier = "/notes/Data_Science/Probability/Summary-Statistics/Expected_Value.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
                 };
                 (function () { // DON'T EDIT BELOW THIS LINE
                     var d = document, s = d.createElement('script');
