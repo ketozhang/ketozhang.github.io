@@ -11,7 +11,7 @@
     <hr>
     <div class="row">
         <!-- Notebook Sidenav -->
-        <div class="col-xl-2 col-lg-3 col-3 d-none d-md-block bg-light pt-1">
+        <div class="col col-lg bg-light pt-1">
             <div class="sidenav sticky-top vh-80">
                 <div class="sidenav-title row no-gutters">
                     <div class="col-9">
@@ -34,7 +34,7 @@
         </div>
 
         <!-- Content -->
-        <div class="col-xl-8 col-lg-6 col-9 h-100">
+        <div class="col-9 col-lg-8 h-100">
             {% if page['has_content'] %}
             <div class="markdown-content">
                 {{ include_raw(page['content_path']) }}
@@ -43,7 +43,7 @@
         </div>
 
         <!-- On This Page -->
-        <div class="col-xl-2 col-lg-3 d-none d-lg-block">
+        <div class="col d-none d-lg-block">
             <div class="onthispage sidenav sticky-top vh-80">
                 <strong class="sidenav-title">On This Page</strong>
                 <div class="sidenav-body">
@@ -52,15 +52,15 @@
             </div>
         </div>
 
-    <!-- Disqus Comments -->
+        <!-- Disqus Comments -->
     </div>
     {% if page['has_content'] %}
-    <div class="row  mt-5">
-        <div class="col-xl-8 col-lg-6 col-9 offset-xl-2 offset-lg-3 p-0">
-            <div id="disqus_thread" class="text-center">
+    <div id="disqus_thread" class="mt-5">
+        <div class="w-50 mx-auto">
             <button type="button" class="btn btn-block btn-outline-dark show-comments">Show Comments</button>
-            </div>
-            <!-- <script>
+        </div>
+    </div>
+    <!-- <script>
 
                 /**
                 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -78,8 +78,6 @@
             </script>
             <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
                     by Disqus.</a></noscript> -->
-            {% endif %}
-        </div>
-    </div>
+    {% endif %}
 </div>
 {% endblock %}
