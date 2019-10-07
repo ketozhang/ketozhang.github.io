@@ -7,13 +7,7 @@
 \]</span></p>
 <ul>
 <li><p><strong>Expected Value</strong></p>
-<p><span class="math display">\[ E[X] =\sum_{n=1}^\infty n (1-p)^{n-1}p = \frac{1}{p} \]</span></p>
-<dl>
-<dt>Proof</dt>
-<dd><p>Use</p>
-<p><span class="math display">\[\frac{\mathrm d }{\mathrm d p}(1-p)^n = -n(1-p)^{n-1}\]</span></p>
-</dd>
-</dl></li>
+<p><span class="math display">\[ E[X] =\sum_{n=1}^\infty n (1-p)^{n-1}p = \frac{1}{p} \]</span></p></li>
 <li><p><strong>Variance</strong></p>
 <p><span class="math display">\[E[X^2] = \frac{1-p}{p^2} \]</span></p>
 <dl>
@@ -33,3 +27,24 @@
  \mathbb E\left [\sum{X_i} \right] = n \sum_{k=1}^n \frac{1}{k}
  \]</span></p></li>
 </ol>
+<h2 id="expected-value-proof">Expected Value (Proof)</h2>
+<p>The expected value of first success after <span class="math inline">\(W\)</span> can be done quickly by noticing</p>
+<ul>
+<li>There must be at least one trial.</li>
+<li>If the first trial succeeds (with probability <span class="math inline">\(p\)</span>), <span class="math inline">\(W=1\)</span>.</li>
+<li>If the first trial fails (with probability <span class="math inline">\(q\)</span>), the remaining trials is also distributed equallty to <span class="math inline">\(W\)</span>.</li>
+</ul>
+<p>Let <span class="math inline">\(W = 1 + R\)</span> where <span class="math inline">\(R\)</span> is the random variable for the number of trials after the first. Let <span class="math inline">\(W&#39;\)</span> be distributed equallty to <span class="math inline">\(W\)</span>.</p>
+<p><span class="math display">\[
+W = 1 + R\\
+\]</span></p>
+<p><span class="math display">\[
+\begin{align}
+    \mathbb E[W] &amp;= 1 + \mathbb E[R]\\
+    &amp;= 1 + q\mathbb E[W&#39;]\\
+    &amp;= 1 + q\mathbb E[W]\\
+\end{align}
+\]</span></p>
+<p><span class="math display">\[
+\mathbb E[W] = \frac{1}{q}
+\]</span></p>

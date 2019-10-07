@@ -1,7 +1,7 @@
 # The full url to be hosted (e.g., http://example.com/notes)
 site_url: "https://ketozhang.github.io"
 site_brand: "Keto"
-site_title: "Keto"
+site_title: ""
 author: "Keto"
 # # All paths are relative to project path
 # # Absolute path: `/dir`

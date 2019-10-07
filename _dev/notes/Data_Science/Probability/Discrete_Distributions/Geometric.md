@@ -15,10 +15,6 @@ $$
 
     $$ E[X] =\sum_{n=1}^\infty n (1-p)^{n-1}p = \frac{1}{p} $$
 
-    Proof
-    : Use
-
-        $$\frac{\mathrm d }{\mathrm d p}(1-p)^n = -n(1-p)^{n-1}$$
 
 * **Variance**
 
@@ -41,3 +37,30 @@ Let's say there are $n$ types of coupons and you need all $n$ to win a prize. To
     \mathbb E[X_i] = \frac{1}{p_i} = \frac{n}{n-(i-1)}\\
     \mathbb E\left [\sum{X_i} \right] = n \sum_{k=1}^n \frac{1}{k}
     $$
+
+## Expected Value (Proof)
+
+The expected value of first success after $W$ can be done quickly by noticing
+
+* There must be at least one trial.
+* If the first trial succeeds (with probability $p$), $W=1$.
+* If the first trial fails (with probability $q$), the remaining trials is also distributed equallty to $W$.
+
+
+Let $W = 1 + R$ where $R$ is the random variable for the number of trials after the first. Let $W'$ be distributed equallty to $W$.
+
+$$
+W = 1 + R\\
+$$
+
+$$
+\begin{align}
+    \mathbb E[W] &= 1 + \mathbb E[R]\\
+    &= 1 + q\mathbb E[W']\\
+    &= 1 + q\mathbb E[W]\\
+\end{align}
+$$
+
+$$
+\mathbb E[W] = \frac{1}{q}
+$$

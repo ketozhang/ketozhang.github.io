@@ -12,7 +12,12 @@
         gtag('config', 'UA-145024207-1');
     </script>
     <meta charset="UTF-8">
-    <title>Keto</title>
+    <title>
+        Keto
+        
+            | Geometric Distribution
+        
+    </title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap time -->
@@ -54,7 +59,7 @@
                         <strong>Geometric Distribution</strong>
                     </div>
                     <div class="col-2 offset-1">
-                        <a class="go-up" href="https://ketozhang.github.io/notes/Data_Science/Probability/Distributions/" role="button">
+                        <a class="go-up" href="https://ketozhang.github.io/notes/Data_Science/Probability/Discrete_Distributions/" role="button">
                             <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
                         </a>
                     </div>
@@ -80,13 +85,7 @@
 \]</span></p>
 <ul>
 <li><p><strong>Expected Value</strong></p>
-<p><span class="math display">\[ E[X] =\sum_{n=1}^\infty n (1-p)^{n-1}p = \frac{1}{p} \]</span></p>
-<dl>
-<dt>Proof</dt>
-<dd><p>Use</p>
-<p><span class="math display">\[\frac{\mathrm d }{\mathrm d p}(1-p)^n = -n(1-p)^{n-1}\]</span></p>
-</dd>
-</dl></li>
+<p><span class="math display">\[ E[X] =\sum_{n=1}^\infty n (1-p)^{n-1}p = \frac{1}{p} \]</span></p></li>
 <li><p><strong>Variance</strong></p>
 <p><span class="math display">\[E[X^2] = \frac{1-p}{p^2} \]</span></p>
 <dl>
@@ -106,37 +105,43 @@
  \mathbb E\left [\sum{X_i} \right] = n \sum_{k=1}^n \frac{1}{k}
  \]</span></p></li>
 </ol>
+<h2 id="expected-value-proof">Expected Value (Proof)</h2>
+<p>The expected value of first success after <span class="math inline">\(W\)</span> can be done quickly by noticing</p>
+<ul>
+<li>There must be at least one trial.</li>
+<li>If the first trial succeeds (with probability <span class="math inline">\(p\)</span>), <span class="math inline">\(W=1\)</span>.</li>
+<li>If the first trial fails (with probability <span class="math inline">\(q\)</span>), the remaining trials is also distributed equallty to <span class="math inline">\(W\)</span>.</li>
+</ul>
+<p>Let <span class="math inline">\(W = 1 + R\)</span> where <span class="math inline">\(R\)</span> is the random variable for the number of trials after the first. Let <span class="math inline">\(W&#39;\)</span> be distributed equallty to <span class="math inline">\(W\)</span>.</p>
+<p><span class="math display">\[
+W = 1 + R\\
+\]</span></p>
+<p><span class="math display">\[
+\begin{align}
+    \mathbb E[W] &amp;= 1 + \mathbb E[R]\\
+    &amp;= 1 + q\mathbb E[W&#39;]\\
+    &amp;= 1 + q\mathbb E[W]\\
+\end{align}
+\]</span></p>
+<p><span class="math display">\[
+\mathbb E[W] = \frac{1}{q}
+\]</span></p>
 
             </div>
-            
-        </div>
-
-        <!-- On This Page -->
-        <div class="col-lg-2 d-none d-lg-block">
-            <div class="onthispage sidenav sticky-top vh-80">
-                <strong class="sidenav-title">On This Page</strong>
-                <div class="sidenav-body">
-                    <ul id="onthispage-list" class="no-list-style"></ul>
+            <!-- Disqus Comments -->
+            <div id="disqus_thread" class="mt-5">
+                <div class="w-50 mx-auto">
+                    <button type="button" class="btn btn-block btn-outline-dark show-comments">Show Comments</button>
                 </div>
             </div>
-        </div>
-
-        <!-- Disqus Comments -->
-    </div>
-    
-    <div id="disqus_thread" class="mt-5">
-        <div class="w-50 mx-auto">
-            <button type="button" class="btn btn-block btn-outline-dark show-comments">Show Comments</button>
-        </div>
-    </div>
-    <!-- <script>
-
+            <!--
+                <script>
                 /**
                 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
                 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
                 var disqus_config = function () {
                     this.page.url = "";  // Replace PAGE_URL with your page's canonical URL variable
-                    this.page.identifier = "/notes/Data_Science/Probability/Distributions/Geometric.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    this.page.identifier = "/notes/Data_Science/Probability/Discrete_Distributions/Geometric.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
                 };
                 (function () { // DON'T EDIT BELOW THIS LINE
                     var d = document, s = d.createElement('script');
@@ -146,8 +151,22 @@
                 })();
             </script>
             <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
-                    by Disqus.</a></noscript> -->
-    
+                    by Disqus.</a></noscript>
+            -->
+            
+        </div>
+
+        <!-- On This Page -->
+        <div class="col-lg-3 d-none d-lg-block">
+            <div class="onthispage sidenav sticky-top vh-80">
+                <strong class="sidenav-title">On This Page</strong>
+                <div class="sidenav-body">
+                    <ul class="onthispage-list no-list-style"></ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
 
     <footer class="py-2 bg-white">

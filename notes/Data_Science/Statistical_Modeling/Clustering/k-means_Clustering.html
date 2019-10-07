@@ -12,7 +12,12 @@
         gtag('config', 'UA-145024207-1');
     </script>
     <meta charset="UTF-8">
-    <title>Keto</title>
+    <title>
+        Keto
+        
+            | k-means Clustering
+        
+    </title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap time -->
@@ -100,29 +105,14 @@ y = \mathop{\arg\min}_y \sum_{i=1}^k \frac{1}{n_i}\sum_{y_j=i}\sum_{y_m=i} |X_j 
 <p>The mean is replace with the <strong>medoid</strong> <span class="math inline">\(\mu\)</span> which is the sample point that minimizes the total distance to other points in the same cluster.</p>
 
             </div>
-            
-        </div>
-
-        <!-- On This Page -->
-        <div class="col-lg-2 d-none d-lg-block">
-            <div class="onthispage sidenav sticky-top vh-80">
-                <strong class="sidenav-title">On This Page</strong>
-                <div class="sidenav-body">
-                    <ul id="onthispage-list" class="no-list-style"></ul>
+            <!-- Disqus Comments -->
+            <div id="disqus_thread" class="mt-5">
+                <div class="w-50 mx-auto">
+                    <button type="button" class="btn btn-block btn-outline-dark show-comments">Show Comments</button>
                 </div>
             </div>
-        </div>
-
-        <!-- Disqus Comments -->
-    </div>
-    
-    <div id="disqus_thread" class="mt-5">
-        <div class="w-50 mx-auto">
-            <button type="button" class="btn btn-block btn-outline-dark show-comments">Show Comments</button>
-        </div>
-    </div>
-    <!-- <script>
-
+            <!--
+                <script>
                 /**
                 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
                 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
@@ -138,8 +128,22 @@ y = \mathop{\arg\min}_y \sum_{i=1}^k \frac{1}{n_i}\sum_{y_j=i}\sum_{y_m=i} |X_j 
                 })();
             </script>
             <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
-                    by Disqus.</a></noscript> -->
-    
+                    by Disqus.</a></noscript>
+            -->
+            
+        </div>
+
+        <!-- On This Page -->
+        <div class="col-lg-3 d-none d-lg-block">
+            <div class="onthispage sidenav sticky-top vh-80">
+                <strong class="sidenav-title">On This Page</strong>
+                <div class="sidenav-body">
+                    <ul class="onthispage-list no-list-style"></ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
 
     <footer class="py-2 bg-white">

@@ -23,7 +23,7 @@ $$
 
 2. **Induction Hypothesis**
 
-    Assume $P(n)$ is true from the base case to some value $k$. Say $n-j$ then we assume the theorem is true for $0 \le j \le k$. Alternatively you may just assume true for some single value $k$.
+    Assume $P(n)$ is true from the base case to some value $k$. Then we assume the theorem is true for $0 \le j \le k$. Alternatively you may just assume true for some single value $k$.
 
 3. **Induction Step**
 

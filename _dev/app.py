@@ -11,16 +11,43 @@ from collections import OrderedDict
 # CUSTOM ROUTES
 ########################
 
+def home():
+    """Renders the home page."""
+    config = get_config('home')
+    pages = {}  # TODO: Deprecate sitemap
+
+    posts = config['posts']
+    posts_dict = {}
+    for post in posts:
+        fm = get_frontmatter(post)
+        posts_dict[post] = fm
+
+    projects = config['projects']
+
+    context = dict(
+        pages=pages,
+        posts=posts_dict,
+        projects=projects
+    )
+
+    return render_template(config['template'], **context)
+app.home = home
+
 @app.route('/notes/')
 def notes_home_page():
     """Renders the notes home page located in /notes/index.html ."""
+
+    # Get metadata from context's config
     context = BASE_CONFIG['contexts']['notes']
     source_path = PROJECT_PATH / context['source_path']
     pages = get_subpages(source_path)
 
+    for url, page in pages.items():
+        page['subpages'] = get_subpages(url)
+
     # for category_url in categories.keys():
     #     notebooks = get_subpages(category_url)
-
+    print(pages)
     kwargs = dict(
         pages=pages,
     )

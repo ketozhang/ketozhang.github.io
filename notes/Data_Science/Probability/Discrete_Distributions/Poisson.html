@@ -12,7 +12,12 @@
         gtag('config', 'UA-145024207-1');
     </script>
     <meta charset="UTF-8">
-    <title>Keto</title>
+    <title>
+        Keto
+        
+            | Poisson Distribution
+        
+    </title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap time -->
@@ -43,7 +48,7 @@
             <span>Toggle Sidebar</span>
         </button>
     </nav> -->
-    <h1 class="title text-center pt-3">Binomial</h1>
+    <h1 class="title text-center pt-3">Poisson Distribution</h1>
     <hr>
     <div class="row">
         <!-- Notebook Sidenav -->
@@ -51,10 +56,10 @@
             <div class="sidenav sticky-top vh-80">
                 <div class="sidenav-title row no-gutters">
                     <div class="col-9">
-                        <strong>Binomial</strong>
+                        <strong>Poisson Distribution</strong>
                     </div>
                     <div class="col-2 offset-1">
-                        <a class="go-up" href="https://ketozhang.github.io/notes/Data_Science/Probability/Distributions/" role="button">
+                        <a class="go-up" href="https://ketozhang.github.io/notes/Data_Science/Probability/Discrete_Distributions/" role="button">
                             <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
                         </a>
                     </div>
@@ -71,39 +76,69 @@
         <div class="col col-lg h-100">
             
             <div class="markdown-content">
-                <p>The binomial distribution is given as,</p>
-<p><span class="math display">\[ B(p,n,k) = {n \choose k} p^k(1-p)^k \]</span></p>
+                <p><span class="math display">\[
+P(X=k) = e^{-\lambda} \frac{\lambda^k}{k!}
+\]</span></p>
+<dl>
+<dt>Expected Value</dt>
+<dd><span class="math display">\[\mathbb E[X] = \lambda\]</span>
+</dd>
+<dt>Variance</dt>
+<dd><span class="math display">\[\text{Var}[N] = \lambda\]</span>
+</dd>
+<dt>Sums</dt>
+<dd><span class="math display">\[\sum{X_i} \sim \text{Poisson}\left(\sum \lambda_i\right)\]</span>
+</dd>
+<dt>Mode</dt>
+<dd>The mode of the Poisson is the integer part of <span class="math inline">\(\mu\)</span> only if <span class="math inline">\(\mu\)</span> is not an integer,
+</dd>
+</dl>
+<p><span class="math display">\[
+\text{mode}[\text{Poisson}(\mu)] = \begin{cases}\lfloor \mu \rfloor ~\text{and}~ \lceil \mu \rceil, &amp; \mu \in \mathbb Z^+ \cup \set{0}\\ \lfloor \mu \rfloor, &amp; \text{otherwise.} \end{cases}
+\]</span></p>
+<h2 id="poissonization">Poissonization</h2>
+<p>Poissonization is the process of letting the number of trials <span class="math inline">\(N \sim \text{Poisson}(\lambda)\)</span>. Doing so causes some families of distribution to inherit independence amongst their category. To get a better idea of what this mean let’s take a look at few distributions</p>
+<dl>
+<dt>Binomial</dt>
+<dd>Let <span class="math inline">\(S \sim \text{Binomial}(s; N, p)\)</span>. Because <span class="math inline">\(N\)</span> is a random variable we can calculate for a all <span class="math inline">\(N\)</span> (i.e., the marginal distribution of <span class="math inline">\(S\)</span>) or the joint distribution of <span class="math inline">\(N\)</span> and <span class="math inline">\(P\)</span>,
+</dd>
+</dl>
+<p><span class="math display">\[
+  \boxed{P(S=s) = \text{Poisson}(s; \lambda p)}
+  \]</span></p>
+<p><span class="math display">\[
+  P(S=s, N=n) = \text{Poisson}(s; \lambda p) \text{Poisson}(n-s; \lambda p)
+  \]</span></p>
+<p>Remarkably since <span class="math inline">\(P(S=s, N=n) = P(S=s, F=f)\)</span> for <span class="math inline">\(F\)</span> is the number of failed trials,</p>
+<p><span class="math display">\[
+  \boxed{P(S=s, F=f) = \text{Poisson}(s; \lambda p) \text{Poisson}(f; \lambda p) = P(S=s) P(F=f)}
+  \]</span></p>
+<p>This suggest <span class="math inline">\(S\)</span> and <span class="math inline">\(F\)</span> are independent!</p>
+<dl>
+<dt>Multinomial</dt>
+<dd>The same as the binomial occurs with multionmial. For some category <span class="math inline">\(X\)</span>,
+</dd>
+</dl>
+<p><span class="math display">\[
+  P(X=x) = \text{Poisson}(s; \lambda p_x)
+  \]</span></p>
+<p>All categories are independent from each other and distributed as <span class="math inline">\(\text{Poisson}(x_i; \lambda_{x_i})\)</span>.</p>
 
             </div>
-            
-        </div>
-
-        <!-- On This Page -->
-        <div class="col-lg-2 d-none d-lg-block">
-            <div class="onthispage sidenav sticky-top vh-80">
-                <strong class="sidenav-title">On This Page</strong>
-                <div class="sidenav-body">
-                    <ul id="onthispage-list" class="no-list-style"></ul>
+            <!-- Disqus Comments -->
+            <div id="disqus_thread" class="mt-5">
+                <div class="w-50 mx-auto">
+                    <button type="button" class="btn btn-block btn-outline-dark show-comments">Show Comments</button>
                 </div>
             </div>
-        </div>
-
-        <!-- Disqus Comments -->
-    </div>
-    
-    <div id="disqus_thread" class="mt-5">
-        <div class="w-50 mx-auto">
-            <button type="button" class="btn btn-block btn-outline-dark show-comments">Show Comments</button>
-        </div>
-    </div>
-    <!-- <script>
-
+            <!--
+                <script>
                 /**
                 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
                 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
                 var disqus_config = function () {
                     this.page.url = "";  // Replace PAGE_URL with your page's canonical URL variable
-                    this.page.identifier = "/notes/Data_Science/Probability/Distributions/Binomial.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    this.page.identifier = "/notes/Data_Science/Probability/Discrete_Distributions/Poisson.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
                 };
                 (function () { // DON'T EDIT BELOW THIS LINE
                     var d = document, s = d.createElement('script');
@@ -113,8 +148,22 @@
                 })();
             </script>
             <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
-                    by Disqus.</a></noscript> -->
-    
+                    by Disqus.</a></noscript>
+            -->
+            
+        </div>
+
+        <!-- On This Page -->
+        <div class="col-lg-3 d-none d-lg-block">
+            <div class="onthispage sidenav sticky-top vh-80">
+                <strong class="sidenav-title">On This Page</strong>
+                <div class="sidenav-body">
+                    <ul class="onthispage-list no-list-style"></ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
 
     <footer class="py-2 bg-white">

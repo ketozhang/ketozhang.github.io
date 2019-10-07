@@ -12,7 +12,12 @@
         gtag('config', 'UA-145024207-1');
     </script>
     <meta charset="UTF-8">
-    <title>Keto</title>
+    <title>
+        Keto
+        
+            | Markov&#39;s Inequality
+        
+    </title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap time -->
@@ -43,7 +48,7 @@
             <span>Toggle Sidebar</span>
         </button>
     </nav> -->
-    <h1 class="title text-center pt-3">CS 189 Review</h1>
+    <h1 class="title text-center pt-3">Markov&#39;s Inequality</h1>
     <hr>
     <div class="row">
         <!-- Notebook Sidenav -->
@@ -51,10 +56,10 @@
             <div class="sidenav sticky-top vh-80">
                 <div class="sidenav-title row no-gutters">
                     <div class="col-9">
-                        <strong>CS 189 Review</strong>
+                        <strong>Markov&#39;s Inequality</strong>
                     </div>
                     <div class="col-2 offset-1">
-                        <a class="go-up" href="https://ketozhang.github.io/notes/Data_Science/" role="button">
+                        <a class="go-up" href="https://ketozhang.github.io/notes/Data_Science/Probability/Concentration_Inequality/" role="button">
                             <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
                         </a>
                     </div>
@@ -71,89 +76,50 @@
         <div class="col col-lg h-100">
             
             <div class="markdown-content">
-                <h2 id="statistical-modeling">Statistical Modeling</h2>
-<ul>
-<li>[ ] Probabilistic Models</li>
-<li>[ ] Discriminant Analyisis</li>
-<li>[ ] Regression
-<ul>
-<li>[ ] Least Squares
-<ul>
-<li>Normal Equation (one step less than using gradient)</li>
-</ul></li>
-</ul></li>
-<li>[ ] Decision Trees</li>
-<li>[ ] Kernelization</li>
-<li>[ ] Neural Networks</li>
-<li>[ ] Clustering
-<ul>
-<li>[ ] Spectral Clustering</li>
-<li>[ ] k-Means Clustering</li>
-</ul></li>
-<li>[ ] k-Nearest Neighbor
-<ul>
-<li>Runtime</li>
-</ul></li>
-</ul>
-<h2 id="feature-engineering">Feature Engineering</h2>
-<ul>
-<li>[ ] Feature Selection</li>
-<li>[ ] Dimensionality Reduction</li>
-<li>[ ] Feature Scaling</li>
-</ul>
-<h2 id="optimization">Optimization</h2>
-<ul>
-<li>[ ] Gradient Descent</li>
-<li>[ ] Convexity</li>
-<li>[ ] Loss Functions
-<ul>
-<li>[ ] Cross Entropy</li>
-</ul></li>
-<li>[ ] Line Search Methods
-<ul>
-<li>[ ] Newton-Raphson’s Method</li>
-</ul></li>
-<li>[ ] Quadratic Programs</li>
-</ul>
-<h2 id="linear-algebra">Linear Algebra</h2>
-<ul>
-<li>[ ] Calculus</li>
-</ul>
-<h2 id="others">Others</h2>
-<ul>
-<li>[ ] Rayleigh Quotient</li>
-</ul>
+                <h2 id="first-moment-markovs-inequality">First Moment Markov’s Inequality</h2>
+<p>Markov’s inequality at its simplest deals with the mean or first moment of the distribution. Suppose <span class="math inline">\(X \ge 0\)</span> and <span class="math inline">\(\abs{\mathbb E[X]} &lt; \infty\)</span>, for any constant <span class="math inline">\(c\)</span>,</p>
+<p><span class="math display">\[
+P(X \ge c) \le \frac{\mathbb E[X]}{c}
+\]</span></p>
+<dl>
+<dt>Proof</dt>
+<dd><p>Consider the following lemma:</p>
+<p><span class="math display">\[
+\begin{gather*}
+    X \ge c I \set{X \ge c}
+    \mathbb E[X] \ge c \mathbb E[I \set{X \ge c}]\\
+    \mathbb E[X] \ge c P(X \ge c)\\\\
+    P(X \ge c) \le \frac{\mathbb E[X]}{c}
+\end{gather*}
+\]</span></p>
+</dd>
+</dl>
+<h2 id="markovs-inequality---monotonically-increasing-function">Markov’s Inequality - Monotonically Increasing Function</h2>
+<p>To generalize the simple Markov’s inequality, we allow the first moment to be of any monotonically increasing function <span class="math inline">\(\varphi(X)\)</span>,</p>
+<p><span class="math display">\[
+P(X \ge c) \le \frac{\mathbb E[\varphi(X)]}{\varphi(c)}
+\]</span></p>
+<h3 id="general-moment-markov-inequality">General Moment Markov Inequality</h3>
+<p>Any <span class="math inline">\(k\)</span>-th moment is also a monotonically increasing function thus w e can generalize the moment to any <span class="math inline">\(k\)</span>,</p>
+<p><span class="math display">\[
+P(X \ge c) \le \frac{\mathbb E[X^k]}{c^k}
+\]</span></p>
 
             </div>
-            
-        </div>
-
-        <!-- On This Page -->
-        <div class="col-lg-2 d-none d-lg-block">
-            <div class="onthispage sidenav sticky-top vh-80">
-                <strong class="sidenav-title">On This Page</strong>
-                <div class="sidenav-body">
-                    <ul id="onthispage-list" class="no-list-style"></ul>
+            <!-- Disqus Comments -->
+            <div id="disqus_thread" class="mt-5">
+                <div class="w-50 mx-auto">
+                    <button type="button" class="btn btn-block btn-outline-dark show-comments">Show Comments</button>
                 </div>
             </div>
-        </div>
-
-        <!-- Disqus Comments -->
-    </div>
-    
-    <div id="disqus_thread" class="mt-5">
-        <div class="w-50 mx-auto">
-            <button type="button" class="btn btn-block btn-outline-dark show-comments">Show Comments</button>
-        </div>
-    </div>
-    <!-- <script>
-
+            <!--
+                <script>
                 /**
                 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
                 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
                 var disqus_config = function () {
                     this.page.url = "";  // Replace PAGE_URL with your page's canonical URL variable
-                    this.page.identifier = "/notes/Data_Science/CS189_Review.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    this.page.identifier = "/notes/Data_Science/Probability/Concentration_Inequality/Markov-Inequality.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
                 };
                 (function () { // DON'T EDIT BELOW THIS LINE
                     var d = document, s = d.createElement('script');
@@ -163,8 +129,22 @@
                 })();
             </script>
             <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
-                    by Disqus.</a></noscript> -->
-    
+                    by Disqus.</a></noscript>
+            -->
+            
+        </div>
+
+        <!-- On This Page -->
+        <div class="col-lg-3 d-none d-lg-block">
+            <div class="onthispage sidenav sticky-top vh-80">
+                <strong class="sidenav-title">On This Page</strong>
+                <div class="sidenav-body">
+                    <ul class="onthispage-list no-list-style"></ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
 
     <footer class="py-2 bg-white">

@@ -17,7 +17,7 @@ $(document).ready(function() {
         }
 
     }
-    generateList($("#onthispage-list"), anchors.elements.slice());
+    generateList($(".onthispage-list"), anchors.elements.slice());
     // anchors.elements.forEach(element => {
     //     if (element.nodeName === 'H2') {
     //         let id = $(element).attr('id')
