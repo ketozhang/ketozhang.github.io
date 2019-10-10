@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+<title>What</title>
+{% include 'header.html' %}
+{% block content %}
+<main class="container">
+    {% block header %}
+    <h1 class="title"> {% block title %} Research {% endblock %}</h1>
+    {% endblock %}
+    <!-- <h2> Tools for Astronomy </h2> -->
+    <!-- <h2> High Energy Astrophysics </h2> -->
+    <!-- <h2> Cosmology </h2> -->
+    <!-- <h2> Data Science </h2> -->
+</main>
+{% endblock %}

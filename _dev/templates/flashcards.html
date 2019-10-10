@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% include 'header.html' %}
+{% block content %}
+<main class="container">
+  <div class="flashcard">
+    <div class="flashcard-prev"></div>
+    <div class="flashcard-next"></div>
+    <div class="flashcard-counter"></div>
+    <div class="flashcard-body">
+      {% include 'notes/Physics/GRE_Review/Flashcards.html' %}
+    </div>
+  </div>
+</main>
+{% endblock %}
+{% block scripts %}
+<script>
+  dlist = {}
+  var currIndex = -1;
+  var flashcardLength;
+  var onTerm = false;
+  $(document).ready(function () {
+    // Grab all the terms and definitions
+    dlist['terms'] = $(".flashcard-body dl").children("dt")
+    dlist['defs'] = $(".flashcard-body dl").children("dd")
+    flashcardLength = dlist['terms'].length
+
+    // Shuffle the definition list
+    for (let i = flashcardLength - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+
+      let temp = dlist['terms'][i];
+      dlist['terms'][i] = dlist['terms'][j];
+      dlist['terms'][j] = temp;
+
+      temp = dlist['defs'][i];
+      dlist['defs'][i] = dlist['defs'][j];
+      dlist['defs'][j] = temp;
+    }
+
+    next_term();
+  });
+
+  function next_term() {
+    currTerm = dlist['terms'][currIndex + 1];
+    $(".flashcard-body").html(currTerm);;
+
+    currIndex++;
+    $(".flashcard-counter").html(`${currIndex+1}/${flashcardLength}`)
+    onTerm = true;
+    MathJax.typeset();
+  };
+
+  function prev_term() {
+    if (currIndex < 0) {
+      return;
+    }
+
+    currTerm = dlist['terms'][currIndex];
+    $(".flashcard-body").html(currTerm);
+
+    onTerm = true;
+    MathJax.typeset();
+  };
+
+  function next_definition() {
+    currDef = dlist['defs'][currIndex];
+    $(".flashcard-body").html(currDef);
+
+    onTerm = false;
+    MathJax.typeset();
+  }
+
+  function prev_definition() {
+    if (currIndex - 1 < 0) {
+      return;
+    }
+
+    currTerm = dlist['terms'][currIndex - 1];
+    $(".flashcard-body").html(currDef);
+
+    currIndex--;
+    $(".flashcard-counter").html(`${currIndex+1}/${flashcardLength}`);
+    onTerm = false;
+    MathJax.typeset();
+  };
+
+  $(".flashcard-next").click(function () {
+    if (onTerm) {
+      next_definition();
+      onTerm = false;
+    } else {
+      next_term();
+      onTerm = true;
+    }
+  })
+
+  $(".flashcard-prev").click(function () {
+    if (onTerm) {
+      prev_definition();
+    } else {
+      prev_term();
+    }
+  })
+</script>
+{% endblock %}

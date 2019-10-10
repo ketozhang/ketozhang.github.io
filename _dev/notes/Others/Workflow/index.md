@@ -1,5 +1,5 @@
 ---
-title: Others
+title: Workflow
 ---
 
 The following sub-pages listed on the left are all articles for instructions on how I set up my workflows (e.g., how to setup linux on windows).

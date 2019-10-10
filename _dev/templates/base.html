@@ -13,12 +13,7 @@
     </script>
     <meta charset="UTF-8">
     <title>
-        {{ site_brand }}
-        {% if page %}
-            | {{page['title']}}
-        {% else %}
-            | {{ site_title }}
-        {% endif %}
+        Keto | {% block title %} {% endblock %}
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -86,6 +81,9 @@
             Prism.highlightAll();
         })
     </script>
+
+    {% block scripts %}
+    {% endblock %}
 </body>
 
 </html>

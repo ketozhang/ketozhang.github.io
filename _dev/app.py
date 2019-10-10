@@ -34,7 +34,7 @@ def home():
 app.home = home
 
 @app.route('/notes/')
-def notes_home_page():
+def notes_homepage():
     """Renders the notes home page located in /notes/index.html ."""
 
     # Get metadata from context's config
@@ -55,7 +55,7 @@ def notes_home_page():
 
 
 @app.route('/posts/')
-def posts_home_page():
+def posts_homepage():
     """Renders the posts home page of URL /posts/index.html ."""
     def get_all_posts():
         """Get post urls (path relative to `TEMPLATE_PATH`).
@@ -87,10 +87,16 @@ def posts_home_page():
     return render_template('posts/index.html', **context)
 
 
+@app.route('/flashcards')
+def flashcard_homepage():
+    return render_template('flashcards.html')
+
+
+
 if __name__ == '__main__':
     args = sys.argv[1:]
     if len(args) == 0:
-        app.run(debug=True, port=8080, local=True)
+        app.run(debug=True, host='0.0.0.0', port=8080, local=True)
     elif 'build' in args:
         log.setLevel('INFO')
         elapsed_time = build_all()

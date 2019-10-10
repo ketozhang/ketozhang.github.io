@@ -2,8 +2,10 @@
 {% block content %}
 {% include 'header.html' %}
 <div class="container">
-  <h1 class="title mb-4">Notebooks</h1>
   <!-- page can either be a notebook or a note -->
+  {% block header %}
+  <h1 class="title mb-4"> {% block title %} Notebooks {% endblock %}</h1>
+  {% endblock %}
   <!-- <ul class="list-unstyled"> -->
   <div class="card-columns">
     {% for page_url, page in pages.items() %}

@@ -1,0 +1,151 @@
+<h2 id="mathematics">Mathematics</h2>
+<dl>
+<dt>Cartesian to Spherical Coordinates</dt>
+<dd><span class="math display">\[
+  \begin{gather}
+  z = r \sin \theta\\
+  x = r \cos \phi\\
+  y = r\ sin \phi
+  \end{gather}
+  \]</span>
+</dd>
+<dt><span class="math inline">\(dV\)</span> in Polar Coordinates</dt>
+<dd><span class="math display">\[
+  dV = r^2 \sin\theta ~ dr d\theta d\phi
+  \]</span>
+</dd>
+<dt><span class="math inline">\(dV\)</span> Rotating Circle</dt>
+<dd>Imagine rotating a circle with some area mapping out the sphere <span class="math display">\[
+  dV = 2 \pi r^2 \sin\theta ~ dr d\theta
+  \]</span>
+</dd>
+<dt><span class="math inline">\(dV\)</span> Radial shell</dt>
+<dd>Imagine a spherical shell with some surface area expanding out to a bigger sphere <span class="math display">\[
+  dV = 4\pi r^2 dr
+  \]</span>
+</dd>
+</dl>
+<h2 id="momentum">Momentum</h2>
+<dl>
+<dt>Solving Conservation of Momentum</dt>
+<dd><ol type="1">
+<li>Try dimension analysis</li>
+<li>Try direction conservation</li>
+<li>Otherwise, algebra</li>
+</ol>
+</dd>
+<dt>Angular Momentum (Cartesian)</dt>
+<dd><span class="math display">\[ \vec L = \vec r \times \vec p \]</span>
+</dd>
+<dt>Angular Momentum (Polar)</dt>
+<dd><span class="math display">\[ \vec L = I \vec \omega \]</span>
+</dd>
+<dt>Moment of Inertia (Point Particle)</dt>
+<dd><span class="math display">\[ I = mr^2 \]</span>
+</dd>
+<dt>Moment of Inertia (Continuous Object)</dt>
+<dd><span class="math display">\[ I = \int r^2 dm \]</span>
+</dd>
+<dt>Mass Form Density</dt>
+<dd><span class="math display">\[ M = \int \rho dV \]</span>
+</dd>
+<dt>Parallel Axis Theorem</dt>
+<dd>The moment of inertia at the center of mass can describe any moment of inertia at another parallel axis <span class="math display">\[
+  I_\parallel = I_\text{CM} + Mr_\perp^2
+  \]</span>
+</dd>
+<dt>Torque from Force</dt>
+<dd><span class="math display">\[
+  \vec \tau = \vec r \times \vec F
+  \]</span>
+</dd>
+<dt>Torque from Angular Momentum</dt>
+<dd><span class="math display">\[
+  \vec \tau = \frac{d}{dt} \vec L
+  \]</span>
+</dd>
+<dt>Center of Mass</dt>
+<dd>Think the expectation value of the radius with respect to mass, <span class="math display">\[
+  r_\text{CM} = \avg{r}_m = \frac{1}{M}\int{r ~ dm}
+  \]</span>
+</dd>
+</dl>
+<h2 id="lagrangian-and-hamiltonian">Lagrangian and Hamiltonian</h2>
+<dl>
+<dt>Lagrangian</dt>
+<dd><ol type="1">
+<li>Solve for the kinetic term <span class="math display">\[
+K = \frac{1}{2}m(\dot x^2 + \dot y^2 + \dot z^2)
+\]</span></li>
+<li>Convert the kinetic term and potential term into natural and easier coordinate system (e.g., polar)</li>
+<li>Write the Lagrangian <span class="math display">\[
+\mathcal{L}(q, \dot q, t) = K - U
+\]</span></li>
+</ol>
+</dd>
+<dt>Euler-Lagrange Equation</dt>
+<dd><span class="math display">\[
+  \frac{d}{dt}\frac{\partial \mathcal L}{\partial \dot q} = \frac{\partial \mathcal L}{\partial q}
+  \]</span>
+</dd>
+<dt>Conjuagte Momentum</dt>
+<dd><span class="math display">\[
+  p = \frac{\partial \mathcal L}{\partial \dot q}
+  \]</span>
+</dd>
+<dt>When is the Conjugate Momentum Conserved?</dt>
+<dd>When the Lagrangian or Hamiltonian is independent of <span class="math inline">\(q\)</span> <span class="math display">\[
+  \frac{\partial \mathcal L}{\partial q} = \frac{\partial \mathcal H}{\partial q} = 0
+  \]</span>
+</dd>
+<dt>Hamiltonian</dt>
+<dd><ol type="1">
+<li>Check for time or velocity independence in the potential <span class="math display">\[
+\frac{d}{dt} U = 0 \quad \text{or} \quad \frac{d}{d\dot q} U = 0
+\]</span></li>
+<li>If potential is time-independent, <span class="math display">\[
+H = K + U
+\]</span></li>
+<li>Otherwise use the full definition by first writing the Lagrangian <span class="math display">\[
+\sum_{i}p_i \dot q_i - \mathcal L
+\]</span></li>
+</ol>
+</dd>
+</dl>
+<h2 id="orbits">Orbits</h2>
+<dl>
+<dt>Lagrangian (Polar)</dt>
+<dd>Used heavily in orbital mechanics <span class="math display">\[
+  \mathcal L = \frac{1}{2}m\dot r^2 + \frac{1}{2} mr^2 \dot\theta^2 + \frac{1}{2}mr^2 \sin \theta \dot\phi^2 - U(r, \theta, \phi)
+  \]</span>
+</dd>
+<dt>Effective Lagrangian of Orbits</dt>
+<dd>By conservation of angular momentum, <span class="math inline">\(\dot L=0\)</span> allows us to choose a plane where the motion is only within the plane <span class="math inline">\(\theta = \frac{\pi}{2}\)</span>. <span class="math display">\[
+  \mathcal L = \frac{1}{2}m \dot r^2 + \frac{1}{2} m \dot r^2 \dot \phi^2 - U(r, \phi)
+  \]</span>
+</dd>
+<dt>Orbital Angular Momentum</dt>
+<dd>The conjugate angular momentum <span class="math display">\[
+  \begin{align*}
+  \ell &amp;= \frac{\partial L}{\partial \dot \phi} \\
+  &amp;= mr^2 \dot \phi \\
+  &amp;= mvr
+  \end{align*}
+  \]</span>
+</dd>
+<dt>Effective Force of Orbits</dt>
+<dd>From the Euler-Lagrange equation, <span class="math display">\[
+  F = m \ddot r = \frac{\ell^2}{mr^2} - U&#39;(r)
+  \]</span>
+</dd>
+<dt>Effective Potential of Orbits</dt>
+<dd><span class="math display">\[
+  U_\text{eff}(r) = \frac{\ell^2}{2mr^2} + U(r)
+  \]</span>
+</dd>
+<dt>Reduced Mass</dt>
+<dd>The mass of the barycenter in the reduced mass frame. <span class="math display">\[
+  \mu = \frac{m_1m_2}{m_1 + m_2}
+  \]</span>
+</dd>
+</dl>

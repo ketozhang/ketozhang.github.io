@@ -1,0 +1,150 @@
+<h2 id="mathematics">Mathematics</h2>
+<dl>
+<dt>Cartesian to Spherical Coordinates</dt>
+<dd><br> <br /><span class="math display">$$
+  z = r \sin \theta\\
+  x = r \cos \phi\\
+  y = r\ sin \phi
+  $$</span><br />
+</dd>
+<dt><span class="math inline"><em>d</em><em>V</em></span> in Polar Coordinates</dt>
+<dd><br> <br /><span class="math display"><em>d</em><em>V</em> = <em>r</em><sup>2</sup>sin <em>θ</em> <em>d</em><em>r</em><em>d</em><em>θ</em><em>d</em><em>ϕ</em></span><br />
+</dd>
+<dt><span class="math inline"><em>d</em><em>V</em></span> Rotating Circle</dt>
+<dd>Imagine rotating a circle with some area mapping out the sphere <br /><span class="math display"><em>d</em><em>V</em> = 2<em>π</em><em>r</em><sup>2</sup>sin <em>θ</em> <em>d</em><em>r</em><em>d</em><em>θ</em></span><br />
+</dd>
+<dt><span class="math inline"><em>d</em><em>V</em></span> Radial shell</dt>
+<dd>Imagine a spherical shell with some surface area expanding out to a bigger sphere <br /><span class="math display"><em>d</em><em>V</em> = 4<em>π</em><em>r</em><sup>2</sup><em>d</em><em>r</em></span><br />
+</dd>
+</dl>
+<h2 id="momentum">Momentum</h2>
+<dl>
+<dt>Solving Conservation of Momentum</dt>
+<dd><br> 1. Try dimension analysis 2. Try direction conservation 3. Otherwise, algebra
+</dd>
+<dt>Angular Momentum (Cartesian)</dt>
+<dd><br> <br /><span class="math display"><em>L⃗</em> = <em>r⃗</em> × <em>p⃗</em></span><br />
+</dd>
+<dt>Angular Momentum (Polar)</dt>
+<dd><br> <br /><span class="math display"><em>L⃗</em> = <em>I</em><em>ω⃗</em></span><br />
+</dd>
+<dt>Moment of Inertia (Point Particle)</dt>
+<dd><br> <br /><span class="math display"><em>I</em> = <em>m</em><em>r</em><sup>2</sup></span><br />
+</dd>
+<dt>Moment of Inertia (Continuous Object)</dt>
+<dd><br> <br /><span class="math display"><em>I</em> = ∫<em>r</em><sup>2</sup><em>d</em><em>m</em></span><br />
+</dd>
+<dt>Mass Form Density</dt>
+<dd><br> <br /><span class="math display"><em>M</em> = ∫<em>ρ</em><em>d</em><em>V</em></span><br />
+</dd>
+<dt>Parallel Axis Theorem</dt>
+<dd>The moment of inertia at the center of mass can describe any moment of inertia at another parallel axis <br /><span class="math display"><em>I</em><sub>∥</sub> = <em>I</em><sub>CM</sub> + <em>M</em><em>r</em><sub>⊥</sub><sup>2</sup></span><br />
+</dd>
+<dt>Torque from Force</dt>
+<dd><br> <br /><span class="math display"><em>τ⃗</em> = <em>r⃗</em> × <em>F⃗</em></span><br />
+</dd>
+<dt>Torque from Angular Momentum</dt>
+<dd><br> <br /><span class="math display">$$
+  \vec \tau = \frac{d}{dt} \vec L
+  $$</span><br />
+</dd>
+<dt>Center of Mass</dt>
+<dd>Think the expectation value of the radius with respect to mass, <br /><span class="math display">$$
+  r_\text{CM} = \avg{r}_m = \frac{1}{M}\int{r ~ dm}
+  $$</span><br />
+</dd>
+</dl>
+<h2 id="lagrangian-and-hamiltonian">Lagrangian and Hamiltonian</h2>
+<dl>
+<dt>Lagrangian</dt>
+<dd><br> 1. Solve for the kinetic term <br /><span class="math display">$$
+K = \frac{1}{2}m(\dot x^2 + \dot y^2 + \dot z^2)
+$$</span><br /> 2. Convert the kinetic term and potential term into natural and easier coordinate system (e.g., polar) 3. Write the Lagrangian <br /><span class="math display">ℒ(<em>q</em>, <em>q̇</em>, <em>t</em>) = <em>K</em> − <em>U</em></span><br />
+</dd>
+<dt>Euler-Lagrange Equation</dt>
+<dd><br> <br /><span class="math display">$$
+  \frac{d}{dt}\frac{\partial \mathcal L}{\partial \dot q} = \frac{\partial \mathcal L}{\partial q}
+  $$</span><br />
+</dd>
+<dt>Conjuagte Momentum</dt>
+<dd><br>
+</dd>
+</dl>
+<p><br /><span class="math display">$$
+  p = \frac{\partial \mathcal L}{\partial \dot q}
+  $$</span><br /></p>
+<dl>
+<dt>When is the Conjugate Momentum Conserved?</dt>
+<dd>When the Lagrangian or Hamiltonian is independent of <span class="math inline"><em>q</em></span>
+</dd>
+</dl>
+<p><br /><span class="math display">$$
+  \frac{\partial \mathcal L}{\partial q} = \frac{\partial \mathcal H}{\partial q} = 0
+  $$</span><br /></p>
+<dl>
+<dt>Hamiltonian</dt>
+<dd><br>
+</dd>
+</dl>
+<ol type="1">
+<li><p>Check for time or velocity independence in the potential <br /><span class="math display">$$
+    \frac{d}{dt} U = 0 \quad \text{or} \quad \frac{d}{d\dot q} U = 0
+    $$</span><br /></p></li>
+<li><p>If potential is time-independent, <br /><span class="math display"><em>H</em> = <em>K</em> + <em>U</em></span><br /></p></li>
+<li><p>Otherwise use the full definition by first writing the Lagrangian <br /><span class="math display">∑<sub><em>i</em></sub><em>p</em><sub><em>i</em></sub><em>q̇</em><sub><em>i</em></sub> − ℒ</span><br /></p></li>
+</ol>
+<h2 id="orbits">Orbits</h2>
+<dl>
+<dt>Lagrangian (Polar)</dt>
+<dd>Used heavily in orbital mechanics
+</dd>
+</dl>
+<p><br /><span class="math display">$$
+  \mathcal L = \frac{1}{2}m\dot r^2 + \frac{1}{2} mr^2 \dot\theta^2 + \frac{1}{2}mr^2 \sin \theta \dot\phi^2 - U(r, \theta, \phi)
+  $$</span><br /></p>
+<dl>
+<dt>Effective Lagrangian of Orbits</dt>
+<dd>By conservation of angular momentum, <span class="math inline"><em>L̇</em> = 0</span> allows us to choose a plane where the motion is only within the plane.
+</dd>
+</dl>
+<p><br /><span class="math display">$$
+  \theta = \frac{\pi}{2},\\
+  \mathcal L = \frac{1}{2}m \dot r^2 + \frac{1}{2} m \dot r^2 \dot \phi^2 - U(r, \phi)
+  $$</span><br /></p>
+<dl>
+<dt>Orbital Angular Momentum</dt>
+<dd>The conjugate angular momentum
+</dd>
+</dl>
+<p><br /><span class="math display">$$
+  \begin{align*}
+  \ell &amp;= \frac{\partial L}{\partial \dot \phi} \\
+  &amp;= mr^2 \dot \phi \\
+  &amp;= mvr
+  \end{align*}
+  $$</span><br /></p>
+<dl>
+<dt>Effective Force of Orbits</dt>
+<dd>From the Euler-Lagrange equation,
+</dd>
+</dl>
+<p><br /><span class="math display">$$
+  F = m \ddot r = \frac{\ell^2}{mr^2} - U'(r)
+  $$</span><br /></p>
+<dl>
+<dt>Effective Potential of Orbits</dt>
+<dd><br> <br /><span class="math display">$$
+  U_\text{eff}(r) = \frac{\ell^2}{2mr^2} + U(r)
+  $$</span><br />
+</dd>
+<dt>Reduced Mass</dt>
+<dd>The mass of the barycenter in the reduced mass frame.
+</dd>
+</dl>
+<p><br /><span class="math display">$$
+  \mu = \frac{m_1m_2}{m_1 + m_2}
+  $$</span><br /></p>
+<div id="special" class="sidebar">
+<p>Here is a paragraph.</p>
+<p>And another.</p>
+</div>
