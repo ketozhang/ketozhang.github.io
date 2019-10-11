@@ -1,13 +1,67 @@
-<h2 id="variance">Variance</h2>
+<p>The variance is motivated by wanting to know how far away is <span class="math inline">\(\mathbb E[X] = \mu\)</span> away from some true answer in the random variable <span class="math inline">\(X\)</span>. That is, its the expected value of the squared deviance of <span class="math inline">\(\mu\)</span> or the <strong>root mean square</strong> of <span class="math inline">\(X\)</span>. The variance is defined as,</p>
 <p><span class="math display">\[\text{Var}[X] = \mathbb E\left[ (X-\mu)^2 \right]\]</span></p>
-<ul>
-<li><p>More useful identity:</p>
-<p><span class="math display">\[\text{Var}[X] = \mathbb E[X^2] - \mathbb E[X]^2\]</span></p></li>
-<li><p>Sum</p>
-<p><span class="math display">\[\text{Var}\left[\sum X_i\right] = \sum \text{Var}[X_i] + \sum_{i \neq j} \text{Cov}[X_i,X_j]\]</span></p>
+<dl>
+<dt>Non-negative</dt>
+<dd><p>The variance is alway non-negative because the random variable inside is a squared variable</p>
+<p><span class="math display">\[
+\text{Var}[X] \ge 0
+\]</span></p>
+</dd>
+<dt>Identity</dt>
+<dd><p>A more useful identity derived by expanding the square,</p>
+<p><span class="math display">\[
+\text{Var}[X] = \mathbb E[X^2] - \mathbb E[X]^2
+\]</span></p>
+</dd>
+<dt>Second Moment <span class="math inline">\(\ge\)</span> First Moment</dt>
+<dd><p>In corollary, the squared expected value is always greater or equal to the expected value squared,</p>
+<p><span class="math display">\[
+\mathbb E[X^2] \ge \mathbb E[X]^2
+\]</span></p>
+</dd>
+<dt>Standard Deviation</dt>
+<dd><p>Because the variance is some squared quantity, we’d like to take the square root to get a sense of the untis</p>
+<p><span class="math display">\[
+\text{SD}[X] = \sqrt{\text{Var}[X]}
+\]</span></p>
+</dd>
+<dt>Linearity</dt>
+<dd><p>Like the expected value, the variance has its own linearity rule. The variance is invariant by translation and linear by sretching</p>
+<p><span class="math display">\[
+\text{Var}(aX + b) = \abs{a}\text{Var}[X]
+\]</span></p>
+<p>This is the same exact property as the magnitude of a vector.</p>
+</dd>
+<dt>Variance of Sums Random Variables</dt>
+<dd><p><span class="math display">\[
+\text{Var}\left[\sum X_i\right] = \sum \text{Var}[X_i] + \sum_{i \neq j} \text{Cov}[X_i,X_j]
+\]</span></p>
 <p>If all random variable are independent:</p>
-<p><span class="math display">\[\text{Var}\left[\sum X_i\right] = \sum \text{Var}[X_i] \]</span></p></li>
-</ul>
+<p><span class="math display">\[\text{Var}\left[\sum X_i\right] = \sum \text{Var}[X_i] \]</span></p>
+</dd>
+</dl>
+<h2 id="method-of-indiciators">Method of Indiciators</h2>
+<p>The variance of indicators are nice to use because,</p>
+<p><span class="math display">\[
+\mathbb E[I^2] = \mathbb E[I]
+\]</span></p>
+<p>Therefore we can easily solve for the variance of an indicator,</p>
+<p><span class="math display">\[
+\text{Var}[I] = \mathbb E[I] - \mathbb E[I]^2 = p(1-p)
+\]</span></p>
+<h2 id="mean-squared-error">Mean Squared Error</h2>
+<p>The variance is related to the mean squared error if we replace the prediciton <span class="math inline">\(\mu\)</span> with some arbritrary constant <span class="math inline">\(c\)</span>,</p>
+<p><span class="math display">\[
+\text{MSE}(c) = \mathbb E[(X-c)^2]
+\]</span></p>
+<p>By expanding <span class="math inline">\(\mathbb E[(X-\mu+\mu-c)^2]\)</span> out we get,</p>
+<p><span class="math display">\[
+\boxed{\text{MSE}(c) = \text{Var}[X] + (\mu-c)^2}
+\]</span></p>
+<p>Therefore any prediction <span class="math inline">\(c\)</span> is no better than <span class="math inline">\(\mu\)</span> and the MSE is at least the variance,</p>
+<p><span class="math display">\[
+\text{MSE}(c) \ge \sigma_X^2
+\]</span></p>
 <h2 id="covariance">Covariance</h2>
 <h3 id="properties">Properties</h3>
 <ul>

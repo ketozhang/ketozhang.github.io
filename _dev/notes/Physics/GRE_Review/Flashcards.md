@@ -157,3 +157,111 @@ Reduced Mass
   $$
   \mu = \frac{m_1m_2}{m_1 + m_2}
   $$
+
+## Springs
+
+Hooke's Law
+: $$
+  F = -kx
+  $$
+
+EOM of Hooke's Law
+: $$
+  x(t) = A \cos(\omega t + \phi); \qquad \omega = \sqrt{\frac{k}{m}}
+  $$
+
+Potential Energy of Hooke's Law
+: $$
+  U = \frac{1}{2}kx
+  $$
+
+Springs in Series and Parallel
+: Same rule as capcictors in electricity
+
+Solving System of Springs
+: For a system of springs with mass $m_i$ and $k_i$, the EOM has the LHS depending on the mass diagonal tensor and RHS  on the spring stiffness tensor
+
+  $$
+  M\ddot x = -Ax\\
+  $$
+
+  $$
+  \begin{gather*}
+  x(t) = ae^{i \omega t} \tag{anzatz}\\
+  \Downarrow\\
+  M \omega^2 a = Aa\\
+  \end{gather*}
+  $$
+
+  Solving for $\omega^2$ by taking the determinant of,
+
+  $$
+  \det\left(A - M\omega^2 \right) = 0
+  $$
+
+Synchronous Oscillation Frequency
+: For a system of springs, the lowest frequency mode is the synchronous oscillation.
+
+Force of Dampening
+: $$
+  F_\text{damp} = -b\dot x
+  $$
+
+Dampened Spring Solutions
+: For $\beta = b/2m$ and $\omega_0 = \sqrt{k/m}$,
+  1. Underdamped ($\beta^2 < \omega_0^2$)
+    $$
+    x(t) = Ae^{-\beta t}\cos(\omega t - \delta); \qquad \omega = \omega_0^2 - \beta^2
+    $$
+  2. Critically Damped ($\beta^2 = \omega_0^2$)
+    $$
+    x(t) = Ae^{i \omega_0 t}
+    $$
+  3. Overdamped ($\beta^2 > \omega_0^2$)
+    $$
+    x(t) = Ae^{-i \beta t}
+    $$
+
+Harmonic Driven Spring
+: We can only write the differential equation,
+
+  $$
+  \ddot x + 2\beta \dot x + \omega_0^2 x = A\cos\omega t
+  $$
+
+Harmonic Resonating Frequency
+:$$
+ \omega_R^2 = \omega_0^2 - 2\beta^2
+ $$
+
+Harominc Driven Amplitude
+: We can only write the proportionality
+  $$
+  D \propto \frac{1}{\abs{\omega_0^2 - \omega^2}}
+  $$
+
+## Fluid Mechanics
+
+Bernoulli's Principle
+: $$
+  \frac{v^2}{2} + gz + \frac{P}{\rho} = \text{constant}
+  $$
+
+Fluid Conservation
+: $$
+  \rho v A \Delta t = \text{constant}
+  $$
+
+Pressure Force
+: $$
+  F = PA
+  $$
+
+Buoyant Force
+: $$
+  F_B = \rho V_d g
+  $$
+
+  * $V_d$ : Volume dispersed
+
+## Electrostatics

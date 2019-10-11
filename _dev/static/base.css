@@ -14,7 +14,8 @@ html {
 }
 
 .container-fluid {
-  max-width: 90%;
+  max-width: 95%;
+  padding: 0;
 }
 
 @media (min-width: 1200px) {
@@ -73,10 +74,9 @@ p .navbar-light .navbar-nav .nav-link.active::after {
 /* Body */
 
 body {
-  font-family: 'Quicksand', 'Open Sans', sans-serif;
-  font-size: 1.125rem;
-  /* 1rem is 16px, 1.125rem is 18px*/
-  line-height: 1.7rem;
+  font-family: 'Quicksand', 'Roboto', sans-serif;
+  font-size: 1.1em;
+  /* line-height: 1.5rem; */
   padding-bottom: 80px;
   color: #616161;
 }
@@ -255,11 +255,18 @@ footer {
 
 .sidenav {
   text-overflow: ellipsis;
+  font-family: "Quicksand", "Roboto", san-serif;
   /* white-space: nowrap !important; */
 }
 
+.sidenav a {
+  text-decoration: underline;
+  color: #616161;
+}
+
 .sidenav-body {
-  line-height: 1rem;
+  font-size: 1rem;
+  line-height: 1.15rem;
 }
 
 /* .sidenav::-webkit-scrollbar {
@@ -277,8 +284,9 @@ footer {
   border-radius: 20px;
 } */
 
-.sidenav-title {
-  padding: 1em
+.sidenav-header {
+  padding-top: 1em;
+  padding-bottom: 0.5em;
 }
 
 /* Intro */
@@ -310,7 +318,6 @@ footer {
 }
 
 .onthispage .sidenav-body {
-  font-size: 1rem;
   padding-right: 0px;
   padding-top: 0.5em;
 }
@@ -346,14 +353,15 @@ footer {
 
 /* Markdown Styles */
 
+
 .markdown-content {
-  font-family: 'Open Sans', sans-serif;
+  letter-spacing: -0.01rem;
 }
 
 .markdown-content h1, .markdown-content h2, .markdown-content h3, .markdown-content h4, .markdown-content h5, .markdown-content h6 {
-  font-family: 'Quicksand', 'Open Sans', sans-serif;
+  margin-top: 1em;
   margin-bottom: 0.5em;
-  margin-top: 0.5em;
+  font-family: 'Quicksand', 'Roboto', sans-serif;
 }
 
 .markdown-content h1 {
@@ -410,6 +418,24 @@ footer {
 
 .markdown-content .sourceCode {
   font-size: 0.95em;
+  margin-top: 1em;
+  margin-bottom: 1.5em;
+}
+
+/* Posts */
+
+#note, #post {
+  font-family: 'Roboto', sans-serif;
+}
+
+#post .title, #note .title {
+  font-family: 'Quicksand', 'Roboto', sans-serif;
+}
+
+/* Notes */
+
+#note-body {
+  min-height: 80vh;
 }
 
 /* Flashcards */
@@ -417,9 +443,6 @@ footer {
 .flashcard {
   position: relative;
   height: 40vh;
-  border: 2px solid black;
-  border-radius: 10px;
-  overflow-x: auto;
 }
 
 .flashcard-body {
@@ -429,8 +452,17 @@ footer {
   align-items: center;
   height: 100%;
   padding: 5%;
-  font-size: 2.5vw;
-  line-height: 150%;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.flashcard dt {
+  font-size: 3vw;
+  line-height: 1.5em;
+}
+
+.flashcard dd {
+  font-size: 2vw;
 }
 
 .flashcard-prev {

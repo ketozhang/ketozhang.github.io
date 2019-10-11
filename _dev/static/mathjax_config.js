@@ -1,9 +1,6 @@
 window.MathJax = {
+    loader: { load: ['[tex]/physics'] },
     tex: {
-        macros: {
-            d: "{\\mathrm d}",
-            avg: ["\\left\\langle{#1}\\right\\rangle", 1],
-            abs: ["\\left\\lvert #1 \\right\\rvert", 1],
-        }
+        packages: { '[+]': ['physics'] },
     }
 }

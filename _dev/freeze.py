@@ -8,7 +8,6 @@ from flask_frozen import Freezer
 from app import app
 from staticpy import build_all, log, get_fpath, BASE_CONFIG, PROJECT_PATH
 
-
 freezer = Freezer(app)
 
 
@@ -132,10 +131,14 @@ if __name__ == "__main__":
         app.debug = True
         logging.basicConfig(level=logging.DEBUG)
     if "skip_build" in args:
-        kwargs['skip_build'] = True
+        kwargs["skip_build"] = True
     elapsed_times = freeze(**kwargs)
     if elapsed_times is not None:
         print(f"{'Static convert time:':<30} {elapsed_times[0]:>6.2f} secs")
-        print(f"{'Total time:':<30} {elapsed_times[0] + elapsed_times[1]:>6.2f} secs")
+        print(
+            f"{'Total time:':<30} {elapsed_times[0] + elapsed_times[1]:>6.2f} secs"
+        )
     else:
-        print("Static conversion failed \nTry running `python freeze.py debug`")
+        print(
+            "Static conversion failed \nTry running `python freeze.py debug`"
+        )

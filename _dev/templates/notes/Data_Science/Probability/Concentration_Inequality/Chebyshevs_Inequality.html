@@ -1,0 +1,19 @@
+<p>Corollary of the Markov’s inequality is the Chebyshev’s inequality. Suppose <span class="math inline">\(X\)</span> (not necessarily non-negative) has a finite expected value then its deviation from the mean follows,</p>
+<p><span class="math display">\[
+P(\abs{X-\mathbb E[X]} \ge c) \le \frac{\text{Var}[X]}{c^2}
+\]</span></p>
+<p>In terms of the number of standard deviations (<span class="math inline">\(\sigma\)</span>),</p>
+<p><span class="math display">\[
+P(X - \mathbb E[X] \ge n\sigma) = \frac{1}{n^2}
+\]</span></p>
+<dl>
+<dt>Proof</dt>
+<dd>Taking the advantage that the meaning of the probability is no different if take the square and applying Markov’s inequality,
+</dd>
+</dl>
+<p><span class="math display">\[
+P((X-E[X])^2 \ge c) \le \frac{E[(X-E[X])^2]}{c^2}
+\]</span></p>
+<p><span class="math display">\[
+P(\abs{X-\mathbb E[X]} \ge c) \le \frac{\text{Var}[X]}{c^2}
+\]</span></p>

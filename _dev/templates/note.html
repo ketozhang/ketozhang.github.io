@@ -7,13 +7,11 @@
             <span>Toggle Sidebar</span>
         </button>
     </nav> -->
-    <h1 class="title text-center pt-3">{{page['title']}}</h1>
-    <hr>
-    <div class="row">
+    <div id="note-body" class="row">
         <!-- Notebook Sidenav -->
-        <div class="col-3 bg-light pt-1">
+        <div class="col-3 col-lg bg-light pt-1">
             <div class="sidenav sticky-top vh-80">
-                <div class="sidenav-title row no-gutters">
+                <div class="sidenav-header row no-gutters">
                     <div class="col-9">
                         <strong>{{page['title']}}</strong>
                     </div>
@@ -34,7 +32,8 @@
         </div>
 
         <!-- Content -->
-        <div class="col col-lg h-100">
+        <div class="col col-lg-7">
+            <h1 class="title text-center pt-3">{{page['title']}}</h1>
             {% if page['has_content'] %}
             <div class="markdown-content">
                 {{ include_raw(page['content_path']) }}
@@ -68,9 +67,11 @@
         </div>
 
         <!-- On This Page -->
-        <div class="col-lg-3 d-none d-lg-block">
+        <div class="col-lg d-none d-lg-block">
             <div class="onthispage sidenav sticky-top vh-80">
-                <strong class="sidenav-title">On This Page</strong>
+                <div class="sidenav-header">
+                    <strong>On This Page</strong>
+                </div>
                 <div class="sidenav-body">
                     <ul class="onthispage-list no-list-style"></ul>
                 </div>

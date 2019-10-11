@@ -149,3 +149,103 @@ H = K + U
   \]</span>
 </dd>
 </dl>
+<h2 id="springs">Springs</h2>
+<dl>
+<dt>Hooke’s Law</dt>
+<dd><span class="math display">\[
+  F = -kx
+  \]</span>
+</dd>
+<dt>EOM of Hooke’s Law</dt>
+<dd><span class="math display">\[
+  x(t) = A \cos(\omega t + \phi); \qquad \omega = \sqrt{\frac{k}{m}}
+  \]</span>
+</dd>
+<dt>Potential Energy of Hooke’s Law</dt>
+<dd><span class="math display">\[
+  U = \frac{1}{2}kx
+  \]</span>
+</dd>
+<dt>Springs in Series and Parallel</dt>
+<dd>Same rule as capcictors in electricity
+</dd>
+<dt>Solving System of Springs</dt>
+<dd>For a system of springs with mass <span class="math inline">\(m_i\)</span> and <span class="math inline">\(k_i\)</span>, the EOM has the LHS depending on the mass diagonal tensor and RHS on the spring stiffness tensor
+</dd>
+</dl>
+<p><span class="math display">\[
+  M\ddot x = -Ax\\
+  \]</span></p>
+<p><span class="math display">\[
+  \begin{gather*}
+  x(t) = ae^{i \omega t} \tag{anzatz}\\
+  \Downarrow\\
+  M \omega^2 a = Aa\\
+  \end{gather*}
+  \]</span></p>
+<p>Solving for <span class="math inline">\(\omega^2\)</span> by taking the determinant of,</p>
+<p><span class="math display">\[
+  \det\left(A - M\omega^2 \right) = 0
+  \]</span></p>
+<dl>
+<dt>Synchronous Oscillation Frequency</dt>
+<dd>For a system of springs, the lowest frequency mode is the synchronous oscillation.
+</dd>
+<dt>Force of Dampening</dt>
+<dd><span class="math display">\[
+  F_\text{damp} = -b\dot x
+  \]</span>
+</dd>
+<dt>Dampened Spring Solutions</dt>
+<dd>For <span class="math inline">\(\beta = b/2m\)</span> and <span class="math inline">\(\omega_0 = \sqrt{k/m}\)</span>, 1. Underdamped (<span class="math inline">\(\beta^2 &lt; \omega_0^2\)</span>) <span class="math display">\[
+x(t) = Ae^{-\beta t}\cos(\omega t - \delta); \qquad \omega = \omega_0^2 - \beta^2
+\]</span> 2. Critically Damped (<span class="math inline">\(\beta^2 = \omega_0^2\)</span>) <span class="math display">\[
+x(t) = Ae^{i \omega_0 t}
+\]</span> 3. Overdamped (<span class="math inline">\(\beta^2 &gt; \omega_0^2\)</span>) <span class="math display">\[
+x(t) = Ae^{-i \beta t}
+\]</span>
+</dd>
+<dt>Harmonic Driven Spring</dt>
+<dd>We can only write the differential equation,
+</dd>
+</dl>
+<p><span class="math display">\[
+  \ddot x + 2\beta \dot x + \omega_0^2 x = A\cos\omega t
+  \]</span></p>
+<p>Harmonic Resonating Frequency :<span class="math display">\[
+ \omega_R^2 = \omega_0^2 - 2\beta^2
+ \]</span></p>
+<dl>
+<dt>Harominc Driven Amplitude</dt>
+<dd>We can only write the proportionality <span class="math display">\[
+  D \propto \frac{1}{\abs{\omega_0^2 - \omega^2}}
+  \]</span>
+</dd>
+</dl>
+<h2 id="fluid-mechanics">Fluid Mechanics</h2>
+<dl>
+<dt>Bernoulli’s Principle</dt>
+<dd><span class="math display">\[
+  \frac{v^2}{2} + gz + \frac{P}{\rho} = \text{constant}
+  \]</span>
+</dd>
+<dt>Fluid Conservation</dt>
+<dd><span class="math display">\[
+  \rho v A \Delta t = \text{constant}
+  \]</span>
+</dd>
+<dt>Pressure Force</dt>
+<dd><span class="math display">\[
+  F = PA
+  \]</span>
+</dd>
+<dt>Buoyant Force</dt>
+<dd><span class="math display">\[
+  F_B = \rho V_d g
+  \]</span>
+</dd>
+</dl>
+<ul>
+<li><span class="math inline">\(V_d\)</span> : Volume dispersed</li>
+</ul>
+<h2 id="electrostatics">Electrostatics</h2>
