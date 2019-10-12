@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145024207-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-145024207-1');
+    </script>
+    <meta charset="UTF-8">
+    <title>
+        Keto |  
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap time -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://ketozhang.github.io/static/base.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro|Quicksand" rel="stylesheet">
+    <link href="https://ketozhang.github.io/static/prism.css" rel="stylesheet">
+    <link rel="shortcut icon" href="https://ketozhang.github.io/static/favicon.ico">
+
+    <!-- LaTeX Stylesheet -->
+    
+    <div class="d-none">
+        $$
+        \newcommand{d}{\mathrm d}
+        \newcommand{avg}[1]{\expval{#1}}
+        \renewcommand{vec}[1]{\vectorbold{#1}}
+        $$
+    </div>
+    
+</head>
+
+<body>
+    
+<div class="container-fluid" id="note">
+    <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
+    <div id="note-body" class="row">
+        <!-- Notebook Sidenav -->
+        <div class="col-3 col-lg bg-light pt-1">
+            <div class="sidenav sticky-top vh-80">
+                <div class="sidenav-header row no-gutters">
+                    <div class="col-9">
+                        <strong>Set</strong>
+                    </div>
+                    <div class="col-2 offset-1">
+                        <a class="go-up" href="https://ketozhang.github.io/notes/Mathematics/Discrete_Mathematics/MT1/" role="button">
+                            <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+                        </a>
+                    </div>
+                </div>
+                <div class="sidenav-body no-gutters">
+                    <ul class="no-list-style pl-3">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="col col-lg-7">
+            <h1 class="title text-center pt-3">Set</h1>
+            
+            <div class="markdown-content">
+                <p>A set (notated as a capitalized letter) is a collection of objects called elements or members.</p>
+<h2 id="notation">Notation</h2>
+<ul>
+<li>Element <span class="math inline">\(x\)</span> is in set <span class="math inline">\(A\)</span>:</li>
+</ul>
+<p><span class="math display">\[
+x \in A
+\]</span></p>
+<ul>
+<li>Element <span class="math inline">\(y\)</span> is not in set <span class="math inline">\(A\)</span></li>
+</ul>
+<p><span class="math display">\[
+y \notin A
+\]</span></p>
+<ul>
+<li>Set comprehension are denoted after the vertical line <span class="math inline">\(\{\ \vert\ \}\)</span></li>
+</ul>
+<p><span class="math display">\[
+\set{ab \mid a,b \in \mathbb{Z}}
+\]</span></p>
+<h2 id="special-sets">Special Sets</h2>
+<p>There are some sets denoted as blackboard bold capital letters that are reserved for special sets:</p>
+<ul>
+<li><span class="math inline">\(\mathbb N\)</span> : Natural numbers (alternatively <span class="math inline">\(\mathbb Z^+\)</span>)</li>
+<li><span class="math inline">\(\mathbb Z\)</span> : Integer numbers</li>
+<li><span class="math inline">\(\mathbb Q\)</span> : Rational numbers</li>
+<li><span class="math inline">\(\mathbb R\)</span> : Real numbers</li>
+<li><span class="math inline">\(\mathbb C\)</span> : Complex numbers</li>
+</ul>
+<p>Others:</p>
+<ul>
+<li><span class="math inline">\(\Box ^+\)</span> or <span class="math inline">\(\Box^-\)</span>: Positive/negative set of <span class="math inline">\(\Box\)</span></li>
+<li><span class="math inline">\(\mathbb R \backslash \mathbb Q\)</span> : Irrational numbers</li>
+</ul>
+<h2 id="cardinality">Cardinality</h2>
+<p>The <strong>cardinality</strong> of a set is the length of the set denoted as <span class="math inline">\(\abs{A}\)</span>.</p>
+<ul>
+<li>If <span class="math inline">\(\abs{A} = 0\)</span> then <span class="math inline">\(A\)</span> is an <strong>empty set</strong> (<span class="math inline">\(A = \emptyset\)</span>)</li>
+</ul>
+<h2 id="set-comparison">Set Comparison</h2>
+<p>There are three types of comparison between sets:</p>
+<dl>
+<dt><strong>Intersection</strong></dt>
+<dd><p>An intersection is the set of elements shared between two sets:</p>
+<p><span class="math display">\[
+A \cap B
+\]</span></p>
+<ul>
+<li>If <span class="math inline">\(A \cap B = \emptyset\)</span> then the two set are <strong>disjoint</strong></li>
+</ul>
+</dd>
+<dt><strong>Union</strong>:</dt>
+<dd><p>A union is the set of elements joined by two sets:</p>
+<p><span class="math display">\[
+A \cup B
+\]</span></p>
+</dd>
+<dt><strong>Difference</strong></dt>
+<dd><p>The set <strong>difference</strong> or <strong>relative complement</strong> between two sets:</p>
+<p><span class="math display">\[
+B - A\\
+B \setminus A \\
+\]</span></p>
+</dd>
+</dl>
+<h2 id="subset">Subset</h2>
+<p>If every element in set <span class="math inline">\(A\)</span> is also in set <span class="math inline">\(B\)</span> then we consider <span class="math inline">\(A\)</span> a <strong>subset</strong> of <span class="math inline">\(B\)</span>,</p>
+<p><span class="math display">\[
+A \subseteq B
+\]</span></p>
+<p>A set is <span class="math inline">\(A\)</span> is a <strong>proper subset</strong> of set <span class="math inline">\(B\)</span> if <span class="math inline">\(A \subseteq B\)</span> and <span class="math inline">\(A \ne B\)</span>. This is denoted as,</p>
+<p><span class="math display">\[
+A \subset B
+\]</span></p>
+<h2 id="cartesian-product">Cartesian Product</h2>
+<p>The <strong>Caretesian product</strong> or <strong>cross product</strong> of two set is a set containing the pairs of all elements in one set to another.</p>
+<p><span class="math display">\[
+A \times B = \set{(a,b) \mid a \in A, b \in B}
+\]</span></p>
+<p>For instance if <span class="math inline">\(A = \set{1,2}, B=\set{a,b}\)</span> then:</p>
+<p><span class="math display">\[
+A\times B = \set{(1,a), (1,b), (2,a), (2,b)}
+\]</span></p>
+<h2 id="power-set">Power Set</h2>
+<p>The <strong>power set</strong> is the set of all subsets or defined as,</p>
+<p><span class="math display">\[
+\mathscr{P}(S) = S: \set{T \mid T \subseteq S}
+\]</span></p>
+<ul>
+<li>The length of a power set is <span class="math inline">\(2^k\)</span> where <span class="math inline">\(k\)</span> is the length of the original set or,</li>
+</ul>
+<p><span class="math display">\[
+\abs{\mathscr{P}(S)} = 2^{\abs{S}}
+\]</span></p>
+
+            </div>
+            <!-- Disqus Comments -->
+            <div id="disqus_thread" class="mt-5">
+                <div class="w-50 mx-auto">
+                    <button type="button" class="btn btn-block btn-outline-dark show-comments">Show Comments</button>
+                </div>
+            </div>
+            <!--
+                <script>
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                var disqus_config = function () {
+                    this.page.url = "";  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = "/notes/Mathematics/Discrete_Mathematics/MT1/Sets.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://ketozhang.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
+                    by Disqus.</a></noscript>
+            -->
+            
+        </div>
+
+        <!-- On This Page -->
+        <div class="col-lg d-none d-lg-block">
+            <div class="onthispage sidenav sticky-top vh-80">
+                <div class="sidenav-header">
+                    <strong>On This Page</strong>
+                </div>
+                <div class="sidenav-body">
+                    <ul class="onthispage-list no-list-style"></ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+    <footer class="py-2 bg-white">
+    <div class="container">
+        <p class="text-right m-0"> Generated by <a href="https://github.com/ketozhang/StaticPy">StaticPy</a> |
+            Designed
+            by <a href="https://github.com/ketozhang">Keto Z.</a>
+        </p>
+    </div>
+</footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+
+    <script src="https://ketozhang.github.io/static/datetime.js"></script>
+    <script src="https://ketozhang.github.io/static/disqus.js"></script>
+    <script src="https://ketozhang.github.io/static/sidenav.js"></script>
+    <script src="https://ketozhang.github.io/static/codeHighlight.js"></script>
+    <script src="https://ketozhang.github.io/static/prism.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>
+    <script src="https://ketozhang.github.io/static/onThisPage.js"></script>
+
+    <!-- MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://ketozhang.github.io/static/mathjax_config.js" defer></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+
+    <!-- Bootstrap JS -->
+    <!-- TODO: trim JS if not needed -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <!-- React -->
+    <!-- TODO: do we need React? -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>-->
+
+
+    <script>
+        anchors.add();
+        $(document).ready(function () {
+            Prism.highlightAll();
+        })
+    </script>
+
+    
+    
+</body>
+
+</html>

@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145024207-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-145024207-1');
+    </script>
+    <meta charset="UTF-8">
+    <title>
+        Keto |  
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap time -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://ketozhang.github.io/static/base.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro|Quicksand" rel="stylesheet">
+    <link href="https://ketozhang.github.io/static/prism.css" rel="stylesheet">
+    <link rel="shortcut icon" href="https://ketozhang.github.io/static/favicon.ico">
+
+    <!-- LaTeX Stylesheet -->
+    
+    <div class="d-none">
+        $$
+        \newcommand{d}{\mathrm d}
+        \newcommand{avg}[1]{\expval{#1}}
+        \renewcommand{vec}[1]{\vectorbold{#1}}
+        $$
+    </div>
+    
+</head>
+
+<body>
+    
+<div class="container-fluid" id="note">
+    <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
+    <div id="note-body" class="row">
+        <!-- Notebook Sidenav -->
+        <div class="col-3 col-lg bg-light pt-1">
+            <div class="sidenav sticky-top vh-80">
+                <div class="sidenav-header row no-gutters">
+                    <div class="col-9">
+                        <strong>Least Squares Regression</strong>
+                    </div>
+                    <div class="col-2 offset-1">
+                        <a class="go-up" href="https://ketozhang.github.io/notes/Data_Science/Statistical_Modeling/Regression/" role="button">
+                            <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+                        </a>
+                    </div>
+                </div>
+                <div class="sidenav-body no-gutters">
+                    <ul class="no-list-style pl-3">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="col col-lg-7">
+            <h1 class="title text-center pt-3">Least Squares Regression</h1>
+            
+            <div class="markdown-content">
+                <p>The <strong>linear least squares</strong> is a linear model with <span class="math inline">\(L_2\)</span> lost function and mean error cost function <span class="math inline">\(\mathcal L = \langle L_2(X) \rangle\)</span>. The linear model is given by,</p>
+<p><span class="math display">\[
+\hat y(X) = X \theta
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\hat y\)</span> : Length <span class="math inline">\(n\)</span> vector of dependent values</li>
+<li><span class="math inline">\(X\)</span> : The feature or design matrix of dimension <span class="math inline">\(d+1\)</span> where <span class="math inline">\(d\)</span> is the number of features.</li>
+</ul>
+<p>The optimization problem is then given by</p>
+<p><span class="math display">\[
+\begin{align}
+\theta &amp;= \mathop{\arg\min}_{\theta} \frac{1}{n} \sum_{i=1}^n \left[y_i - X_i^\top\theta\right]^2\\
+&amp;= \mathop{\arg\min}_{\theta} \frac{1}{n} |y-X\theta|^2
+\end{align}
+\]</span></p>
+<h2 id="invertible-solution">Invertible Solution</h2>
+<p>Given the square of the feature matrix <span class="math inline">\(X^\top X\)</span> is invertible,</p>
+<p><span class="math display">\[
+\theta = (X^\top X)^{-1}X^\top y
+\]</span></p>
+<ul>
+<li><p><span class="math inline">\((X^\top X)^{-1}X^\top\)</span> : This is called the <strong>pseudoinverse</strong> of <span class="math inline">\(X\)</span> often notated as <span class="math inline">\(X^+\)</span>. Notice that,</p>
+<p><span class="math display">\[ X^+X = I \]</span></p>
+<p>Hence <span class="math inline">\(X^+\)</span> is also known as the <strong>left inverse</strong></p>
+<p>Additionally also observe that,</p>
+<p><span class="math display">\[ \hat y = X\theta = XX^+ y \]</span></p>
+<p>Where <span class="math inline">\(XX^+\)</span> is called the <strong>hat matrix</strong> often notated as <span class="math inline">\(H\)</span>.</p></li>
+</ul>
+<h3 id="normal-equation">Normal Equation</h3>
+<p>An alternative way for the solution without using optimization is to note that the linear model spans a <span class="math inline">\(n\)</span>-dimensional hyperplane which is also the span of <span class="math inline">\(\hat y\)</span>,</p>
+<p><span class="math display">\[
+\hat y = X \theta
+\]</span></p>
+<p>To minimize the square distance between <span class="math inline">\(y\)</span> and <span class="math inline">\(\hat y\)</span> we wish the hyperplane to be perpendcular to the vector <span class="math inline">\(y\)</span>,</p>
+<p><span class="math display">\[
+X^\top (\hat y - y) = 0
+\]</span></p>
+<p>This is then the <strong>normal equation</strong>.</p>
+<h2 id="polynomial-least-squares">Polynomial Least Squares</h2>
+<p>Let the design matrix be denoted as <span class="math inline">\(\Phi(X)\)</span> that transform add polynomials features to the feature matrix.</p>
+<p>For example, we can do a degree <span class="math inline">\(k\)</span> polynomial transformation with no cross terms. It’s easier to write this consider every row of <span class="math inline">\(X\)</span> as <span class="math inline">\(X_i\)</span>.</p>
+<p><span class="math display">\[
+\Phi(X_i^\top) = \begin{bmatrix}
+    X_{i1} &amp; X_{i1}^2 &amp; \ldots &amp; X_{i1}^k &amp; \ldots &amp; X_{id} &amp; X_{id}^2 &amp; \ldots &amp; X_{id}^k
+\end{bmatrix}
+\]</span></p>
+<h2 id="weighted-least-squares">Weighted Least Squares</h2>
+<p>Sometimes you may want to weigh your data by some sort of importance or confidence metric (e.g., inverse of the data’s error).</p>
+<p>For simplicity we are only going to weigh each row. In this case, the weight can be represented as a diagonal weight matrix <span class="math inline">\(\Omega\)</span> such that <span class="math inline">\(\omega_i\)</span> is the weight the row <span class="math inline">\(X_i\)</span>.</p>
+<p>The optimization becomes,</p>
+<p><span class="math display">\[
+\mathop{\arg\min}_{\theta} \sum_{i=1}^n \omega_i(X_i^\top \theta - y_i)^2 = \mathop{\arg\min}_{\theta} (X\theta - y)^\top \Omega (X\theta - y)
+\]</span></p>
+
+            </div>
+            <!-- Disqus Comments -->
+            <div id="disqus_thread" class="mt-5">
+                <div class="w-50 mx-auto">
+                    <button type="button" class="btn btn-block btn-outline-dark show-comments">Show Comments</button>
+                </div>
+            </div>
+            <!--
+                <script>
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                var disqus_config = function () {
+                    this.page.url = "";  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = "/notes/Data_Science/Statistical_Modeling/Regression/Least-Squares-Regression.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://ketozhang.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
+                    by Disqus.</a></noscript>
+            -->
+            
+        </div>
+
+        <!-- On This Page -->
+        <div class="col-lg d-none d-lg-block">
+            <div class="onthispage sidenav sticky-top vh-80">
+                <div class="sidenav-header">
+                    <strong>On This Page</strong>
+                </div>
+                <div class="sidenav-body">
+                    <ul class="onthispage-list no-list-style"></ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+    <footer class="py-2 bg-white">
+    <div class="container">
+        <p class="text-right m-0"> Generated by <a href="https://github.com/ketozhang/StaticPy">StaticPy</a> |
+            Designed
+            by <a href="https://github.com/ketozhang">Keto Z.</a>
+        </p>
+    </div>
+</footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+
+    <script src="https://ketozhang.github.io/static/datetime.js"></script>
+    <script src="https://ketozhang.github.io/static/disqus.js"></script>
+    <script src="https://ketozhang.github.io/static/sidenav.js"></script>
+    <script src="https://ketozhang.github.io/static/codeHighlight.js"></script>
+    <script src="https://ketozhang.github.io/static/prism.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>
+    <script src="https://ketozhang.github.io/static/onThisPage.js"></script>
+
+    <!-- MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://ketozhang.github.io/static/mathjax_config.js" defer></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+
+    <!-- Bootstrap JS -->
+    <!-- TODO: trim JS if not needed -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <!-- React -->
+    <!-- TODO: do we need React? -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>-->
+
+
+    <script>
+        anchors.add();
+        $(document).ready(function () {
+            Prism.highlightAll();
+        })
+    </script>
+
+    
+    
+</body>
+
+</html>

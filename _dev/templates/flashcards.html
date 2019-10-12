@@ -2,135 +2,32 @@
 {% include 'header.html' %}
 {% block content %}
 <main class="container">
-  <h1 class="title"></h1>
-  <div class="flashcard">
+  <h1 class="title">Flashcards</h1>
+  <div class="flashcard d-none">
     <div class="flashcard-prev"></div>
     <div class="flashcard-next"></div>
-    <div class="flashcard-counter"></div>
     <div class="flashcard-body">
-      {% include 'notes/Physics/GRE_Review/Flashcards.html' %}
+      <div class="flashcard-counter"></div>
+      <div class="flashcard-content">
+        {% include 'notes/Physics/GRE_Review/Flashcards.html' %}
+      </div>
     </div>
   </div>
   <ul id="flashcards" class="no-list-style w-50 mt-3 pl-0"></ul>
+  <button role="button" data-toggle="collapse" href="#dlist" id="show_dlist" class="btn btn-secondary"> Show defintiion
+    list <strong>></strong></button>
+  <div id="dlist" class="collapse">
+    <hr>
+    {% include 'notes/Physics/GRE_Review/Flashcards.html' %}
+  </div>
 </main>
 {% endblock %}
+
 {% block scripts %}
-<script>
-  dlists = {}
-  var currDlist;
-  var currIndex;
-  var onTerm = false;
-  $(document).ready(function () {
-    // Grab all sections
-    $('.flashcard-body h2').each(function () {
-      let section = $(this)
-      let sectionTitle = section.text();
-      $("#flashcards").append(
-        `<li><button class="btn btn-link pl-0" onclick="load_flashcard('${sectionTitle}')">${sectionTitle}</btn></li>`
-      )
-
-      // Grab all the terms and definitions
-      let dl = section.next()
-      console.log(section);
-      let terms = $(dl).children("dt");
-      let defs = $(dl).children("dd");
-
-      dlists[sectionTitle] = {
-        'terms': terms,
-        'defs': defs,
-        'length': terms.length,
-      };
-
-    });
-      $(".flashcard-body").empty();
-  });
-
-  function load_flashcard(sectionTitle) {
-    $(".title").html(sectionTitle)
-    $(".flashcard-body").empty();
-
-    // Get and shuffle the definition list
-    currDlist = dlists[sectionTitle]
-    for (let i = currDlist['length'] - 1; i > 0; i--) {
-      let j = Math.floor(Math.random() * (i + 1));
-
-      let temp = currDlist['terms'][i];
-      currDlist['terms'][i] = currDlist['terms'][j];
-      currDlist['terms'][j] = temp;
-
-      temp = currDlist['defs'][i];
-      currDlist['defs'][i] = currDlist['defs'][j];
-      currDlist['defs'][j] = temp;
-    };
-
-    currIndex = -1;
-    next_term();
-  };
-
-  function next_term() {
-    if (currIndex + 1 >= currDlist['length']) {
-      return;
-    }
-
-    currTerm = currDlist['terms'][currIndex + 1];
-    $(".flashcard-body").html(currTerm);;
-
-    currIndex++;
-    $(".flashcard-counter").html(`${currIndex + 1}/${currDlist['length']}`)
-    onTerm = true;
-    MathJax.typeset();
-  };
-
-  function prev_term() {
-    if (currIndex < 0) {
-      return;
-    }
-
-    currTerm = currDlist['terms'][currIndex];
-    $(".flashcard-body").html(currTerm);
-
-    onTerm = true;
-    MathJax.typeset();
-  };
-
-  function next_definition() {
-    currDef = currDlist['defs'][currIndex];
-    $(".flashcard-body").html(currDef);
-
-    onTerm = false;
-    MathJax.typeset();
-  }
-
-  function prev_definition() {
-    if (currIndex - 1 < 0) {
-      return;
-    }
-
-    currTerm = currDlist['terms'][currIndex - 1];
-    $(".flashcard-body").html(currDef);
-
-    currIndex--;
-    $(".flashcard-counter").html(`${currIndex + 1}/${currDlist['length']}`);
-    onTerm = false;
-    MathJax.typeset();
-  };
-
-  $(".flashcard-next").click(function () {
-    if (onTerm) {
-      next_definition();
-      onTerm = false;
-    } else {
-      next_term();
-      onTerm = true;
-    }
-  })
-
-  $(".flashcard-prev").click(function () {
-    if (onTerm) {
-      prev_definition();
-    } else {
-      prev_term();
-    }
-  })
-</script>
+<script src="{{site_url}}static/flashcard.js"></script>
+<!-- <script>
+$("#show_dlist").click(function () {
+  $("#dlist").removeClass('d-none')
+})
+</script> -->
 {% endblock %}
