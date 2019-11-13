@@ -23,7 +23,7 @@ clean:
 	rm -rf templates/posts/
 
 push:
-	make static
-	git add -A
-	git commit
+	make static && \
+	git add -A && \
+	git commit && \
 	git push origin master
