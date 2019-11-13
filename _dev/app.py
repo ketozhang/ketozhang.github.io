@@ -15,6 +15,7 @@ from staticpy import (
     build_all,
     log,
     get_config,
+    get_page,
     get_subpages,
     get_frontmatter,
     BASE_CONFIG,
@@ -54,21 +55,15 @@ def home():
     config = get_config("home")
     pages = {}  # TODO: Deprecate sitemap
 
-    # Get post for Post Showcase
-    # TODO: Implement get_page by url
-    context = BASE_CONFIG["contexts"]["posts"]
-    source_path = PROJECT_PATH / context["source_path"]
-    all_posts = get_subpages(source_path)
+    # Get post for Post showcase
     posts = []
     for url in config["posts"]:
-        for post in all_posts:
-            if url == post["url"]:
-                posts.append(post)
+        posts.append(get_page(url))
 
+    # Get projects for Project showcase
     projects = config["projects"]
 
     context = {"pages": pages, "posts": posts, "projects": projects}
-
     return render_template(config["template"], **context)
 
 
@@ -99,19 +94,6 @@ def posts_homepage():
     source_path = PROJECT_PATH / context["source_path"]
     posts = get_subpages(source_path)
 
-    # def get_all_posts():
-    #     """Get post urls (path relative to `TEMPLATE_PATH`).
-
-    #     Returns
-    #     -------list[str]
-    #         A list of post urls as strings.
-    #     """
-    #     posts_path = TEMPLATE_PATH / "posts"
-    #     posts = posts_path.glob("**/[!index]*.html")
-    #     posts = [str(post.relative_to(TEMPLATE_PATH).as_posix()) for post in posts]
-
-    #     return posts
-
     modified_times = [post["last_updated"] for post in posts]
     sort_idx = sorted(range(len(modified_times)), key=modified_times.__getitem__)[::-1]
     # posts = OrderedDict((list(posts.items())[i]) for i in sort_idx)
@@ -119,11 +101,6 @@ def posts_homepage():
     context = dict(posts=posts)
 
     return render_template("posts/index.html", **context)
-
-
-@app.route("/flashcards")
-def flashcard_homepage():
-    return render_template("flashcards.html")
 
 
 if __name__ == "__main__":
