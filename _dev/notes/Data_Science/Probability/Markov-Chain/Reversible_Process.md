@@ -37,3 +37,9 @@ This is exactly the balanced equation,
 $$
 \pi(i) P(i,j) = \pi(j)P(j,i)
 $$
+
+## Birth and Death Chain
+
+A birth and death is one that can only go to 3 states: up $i+1$, down $i-1$, and stay $i$.
+
+This simple process makes it not surprising that all birth and death chain are all reversible processes. As we can abritrarily swap out $i$ and $k$ and the process is reversed.

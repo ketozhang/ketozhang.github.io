@@ -9,10 +9,10 @@ from flask import (
     send_from_directory,
     url_for,
 )
+from flask_assets import Environment, Bundle
 from staticpy import (
     app,
     build_all,
-    run,
     log,
     get_config,
     get_subpages,
@@ -23,26 +23,40 @@ from staticpy import (
 )
 from collections import OrderedDict
 
+assets = Environment(app)
+scss = Bundle('main.scss', '_variables.scss', '_base.scss', '_header.scss', '_posts.scss', depends=('/static/_variables.scss'), filters='pyscss', output='main.css')
+assets.register('scss_all', scss)
+
+@app.context_processor
+def get_assets():
+    return {'assets_url': assets['scss_all'].urls()[0]}
+
 
 ########################
 # CUSTOM ROUTES
 ########################
 
-@app.route('/')
+
+@app.route("/")
 def home():
     """Renders the home page."""
     config = get_config("home")
     pages = {}  # TODO: Deprecate sitemap
 
-    posts = config["posts"]
-    posts_dict = {}
-    for post in posts:
-        fm = get_frontmatter(post)
-        posts_dict[post] = fm
+    # Get post for Post Showcase
+    # TODO: Implement get_page by url
+    context = BASE_CONFIG["contexts"]["posts"]
+    source_path = PROJECT_PATH / context["source_path"]
+    all_posts = get_subpages(source_path)
+    posts = []
+    for url in config['posts']:
+        for post in all_posts:
+            if url == post['url']:
+                posts.append(post)
 
     projects = config["projects"]
 
-    context = dict(pages=pages, posts=posts_dict, projects=projects)
+    context = {"pages": pages, "posts": posts, "projects": projects}
 
     return render_template(config["template"], **context)
 
@@ -56,13 +70,12 @@ def notes_homepage():
     source_path = PROJECT_PATH / context["source_path"]
     pages = get_subpages(source_path)
 
-    for url, page in pages.items():
-        page["subpages"] = get_subpages(url)
+    for page in pages:
+        page["subpages"] = get_subpages(page["url"], recursive=False)
 
     # for category_url in categories.keys():
     #     notebooks = get_subpages(category_url)
-    print(pages)
-    kwargs = dict(pages=pages)
+    kwargs = {'pages': pages}
     return render_template(f"notes/index.html", **kwargs)
 
 
@@ -70,30 +83,28 @@ def notes_homepage():
 def posts_homepage():
     """Renders the posts home page of URL /posts/index.html ."""
 
-    def get_all_posts():
-        """Get post urls (path relative to `TEMPLATE_PATH`).
+    # Get metadata from post's config
+    context = BASE_CONFIG["contexts"]["posts"]
+    source_path = PROJECT_PATH / context["source_path"]
+    posts = get_subpages(source_path)
 
-        Returns
-        -------list[str]
-            A list of post urls as strings.
-        """
-        posts_path = TEMPLATE_PATH / "posts"
-        posts = posts_path.glob("**/[!index]*.html")
-        posts = [
-            str(post.relative_to(TEMPLATE_PATH).as_posix()) for post in posts
-        ]
 
-        return posts
+    # def get_all_posts():
+    #     """Get post urls (path relative to `TEMPLATE_PATH`).
 
-    posts = OrderedDict(get_subpages(PROJECT_PATH / "posts"))
+    #     Returns
+    #     -------list[str]
+    #         A list of post urls as strings.
+    #     """
+    #     posts_path = TEMPLATE_PATH / "posts"
+    #     posts = posts_path.glob("**/[!index]*.html")
+    #     posts = [str(post.relative_to(TEMPLATE_PATH).as_posix()) for post in posts]
 
-    modified_times = []
-    for post in posts.values():
-        modified_times.append(post["last_updated"])
-    sort_idx = sorted(
-        range(len(modified_times)), key=modified_times.__getitem__
-    )[::-1]
-    posts = OrderedDict((list(posts.items())[i]) for i in sort_idx)
+    #     return posts
+
+    modified_times = [post["last_updated"] for post in posts]
+    sort_idx = sorted(range(len(modified_times)), key=modified_times.__getitem__)[::-1]
+    # posts = OrderedDict((list(posts.items())[i]) for i in sort_idx)
 
     context = dict(posts=posts)
 
@@ -108,7 +119,7 @@ def flashcard_homepage():
 if __name__ == "__main__":
     args = sys.argv[1:]
     if len(args) == 0:
-        app.run(debug=True, host="0.0.0.0", port=8080, local=True)
+        app.run(debug=True, host="0.0.0.0", port=8080)
     elif "build" in args:
         log.setLevel("INFO")
         elapsed_time = build_all()

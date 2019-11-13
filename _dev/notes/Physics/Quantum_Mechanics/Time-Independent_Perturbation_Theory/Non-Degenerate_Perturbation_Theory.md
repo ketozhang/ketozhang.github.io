@@ -19,11 +19,11 @@ $$ H = H^0 + \lambda H' \tag{Perturbed Hamiltonian} $$
 
 **Perturbation theory** states that the solution to the perturbed hamiltonian is in the form of a geometric series,
 
-$$ 
+$$
 \begin{align}
     \psi_n &= \psi_n^0 + \lambda\psi_n^1 + ...\lambda^k\psi_n^j\\
     E_n &= E_n^0 + \lambda E_n^1 + ... \lambda^k E_n^j
-\end{align} 
+\end{align}
 $$
 
 * $\psi_n^j$ : the $j$-th order correction to the eigenfunction
@@ -38,7 +38,6 @@ $$ \begin{align}
     \boxed{
     H^0\psi_n^0 + \lambda(H^0\psi_n^1+H'\psi_n^0) + \lambda^2(H^0\psi_n^2 + H'\psi_n^1) + ... \\
     = E_n^0\psi_n^0 + \lambda(E_n^0\psi_n^1 + E_n^1\psi_n^0) + \lambda^2(E_n^0\psi_n^2 + E_n^1\psi_n^1 + E_n^2\psi_n^0 )}
-    \label{eq: perturbed-tise}
 \end{align}$$
 
 ## First Order Perturbation
@@ -47,7 +46,6 @@ For very small perturbations where $\lambda \ll 1$ we may approximate first orde
 $$
 \begin{align}
     \boxed{H^0\psi_n^1+H'\psi_n^0 = E_n^0\psi_n^1 + E_n^1\psi_n^0}
-    \label{eq: first-order}
 \end{align}
 $$
 
@@ -56,14 +54,12 @@ The first order correction to the eigenvalue and eigenfunction are the following
 $$
 \begin{align}
      \boxed{E_n^1 = \langle H' \rangle }
-     \label{eq: first-order-eigenvalue}
 \end{align}
 $$
 
 $$
 \begin{equation}
-    \boxed{\psi_n^1 = \sum_{m \neq n}{\frac{\langle \psi_m^0 |H'|\psi_n^0\rangle}{E^0_n - E_m^0} \psi_m^0}} 
-    \label{eq: first-order-eigenfunction}
+    \boxed{\psi_n^1 = \sum_{m \neq n}{\frac{\langle \psi_m^0 |H'|\psi_n^0\rangle}{E^0_n - E_m^0} \psi_m^0}}
 \end{equation}
 $$
 
@@ -73,7 +69,7 @@ Equation \eqref{eq: first-order-eigenfunction} is valid only if the system is no
 
 We wish to find $E_n^1$ by applying $\langle \psi_n^0 |$,
 
-$$ 
+$$
 \begin{align}
     \langle \psi^0_n| H^0\psi_n^1 \rangle+ \langle \psi^0_n | H'\psi_n^0 \rangle &= E_n^0\langle \psi^0_n  |\psi_n^1 \rangle + E_n^1\langle \psi^0_n  |\psi_n^0\rangle\\
     E_n^0 \langle \psi_n^0 | \psi_n^1 \rangle + \langle \psi^0_n | H'\psi_n^0 \rangle &= E_n^0\langle \psi^0_n  |\psi_n^1 \rangle + E_n^1  \\
@@ -98,7 +94,6 @@ We wish to find the first order correction to the wavefunction $\psi_n^1$. To do
 $$
 \begin{align}
     (H^0 - E^0_n)\psi_n^1 = -(H'-E_n^1)\psi_n^0
-    \label{eq: first-order-2}
 \end{align}
 $$
 
@@ -140,7 +135,6 @@ Let's switch the index $l$ back to $m$ since we won't be needing anymore confusi
 $$
 \begin{equation}
     c_m^{(n)} = \frac{\langle \psi_m^0 |H'|\psi_n^0\rangle}{E^0_n - E_m^0}
-    \label{eq: weight}
 \end{equation}
 $$
 
@@ -156,10 +150,10 @@ $$
 ## Second Order Perturbation
 Similar to first order, we will only consider terms with $\lambda^2$ in the Equation \eqref{eq: perturbed-tise},
 
-$$ 
+$$
 \begin{align}
     \boxed{H^0\psi_n^2 + H'\psi_n^1 = E_n^0\psi_n^2 + E_n^1\psi_n^1 + E_n^2\psi_n^0}
-\end{align} 
+\end{align}
 $$
 
 ### Correction to Eigenvalue

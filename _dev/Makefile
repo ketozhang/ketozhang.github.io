@@ -1,5 +1,6 @@
 local:
-	pipenv run python app.py
+	FLASK_ENV=development \
+	pipenv run flask run -p 8080 --host 0.0.0.0
 
 build:
 	pipenv run python app.py build

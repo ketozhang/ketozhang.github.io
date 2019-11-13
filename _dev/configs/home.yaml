@@ -21,4 +21,4 @@ projects:
   #   view_details: "#"
 
 posts:
-  - 'posts/python-simple-package-structure'
+  - '/posts/python-simple-package-structure'

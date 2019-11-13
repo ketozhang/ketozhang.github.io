@@ -9,6 +9,17 @@ $$ P(X=k; p,n) = {n \choose k} p^k(1-p)^k $$
 Expected Value
 : $$ \mathbb E[X] = np $$
 
+Variance
+:   $$
+    \text{Var}(X) = npq
+    $$
+
+Moment Generating Function
+: The product of $n$ Bernoulli MGF,
+    $$
+    M_X(t) = (q+pe^t)^n
+    $$
+
 ## Relations to Bernoulli Trials
 
 The bernoulli distribution is the indicator decomposition of the Binomial distribution by letting $X$ be the binomial random variable that is the number of times the bernoulli trial succeeds:
@@ -18,7 +29,7 @@ I_k \sim \text{Bernoulli}(p)\\
 X = \sum_{k=1}^n I_k
 $$
 
-## Limit of the Binomial Distribution
+## Poisson Limit of the Binomial Distribution
 
 The poisson distribution can be derived by the limit of the binomial distribution as $np$ tends to some constant $\lambda$. Let $np \rightarrow \lambda$ where $n \rightarrow \infty$ and $p \rightarrow 0$.
 
@@ -32,7 +43,7 @@ $$
 $$
 
 $$
-\boxed{P(X=k) \approx \text{Poisson}(k; np)}
+X \sim \text{Poisson}(k; np)
 $$
 
 Hence you may interpret the Poisson distribution as the binomial distribution of a rare event in the limit of large number of trials.
@@ -57,3 +68,5 @@ $$
 $$
 \boxed{P(X=k) \approx \text{Poisson}(n-k;nq)}
 $$
+
+## Normal Limit of the Binomial Distribution

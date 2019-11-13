@@ -1,0 +1,33 @@
+@import "variables";
+
+// Body
+body {
+  font-family: $base-font-family;
+  font-size: 1em;
+  padding-bottom: 80px;
+  color: $base-font-color;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $style-font-family;
+    color: black;
+    line-height: 2.25;
+  }
+}
+
+code {
+  font-family: $code-font-family;
+}
+
+p > code,
+li > code {
+  color: #358ccb;
+  border: 1px solid rgba(97, 97, 97, 0.4);
+  border-radius: 3px;
+  padding: 0px 2px 0px 2px;
+  margin: 0px 1px 0px 0px;
+  /* box-shadow: 0.5px 0.5px 1px rgba(97, 97, 97, 0.5); */
+}

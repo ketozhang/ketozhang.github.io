@@ -31,7 +31,7 @@
         <h3 class="title">{{project['header']}}</h2>
           <!-- TODO: Find a better way for equal height -->
           <p>{{project['description']}}</p>
-          <p class="mt-auto"><a class="btn btn-warning" href="{{parse_url(project['view_details'])}}" role="button"
+          <p class="mt-auto"><a class="btn btn-warning" href="{{url_for(project['view_details'])}}" role="button"
               target="_blank">View details »</a></p>
       </div>
       {% endfor %}
@@ -41,18 +41,17 @@
 
     <!-- Blogpost Cards -->
     <h1 class="text-center">Posts</h1>
-    {% for post_url, post in posts.items() %}
-    <div class="card mb-3">
+    {% for post in posts %}
+    <div id="post-showcase" class="card mb-3 box-shadow">
       <div class="row no-gutter">
-        <div class="col-md-5 col-lg-4">
-          <a href={{parse_url(post_url)}}><img class="card-img d-none d-sm-block" src={{parse_url(post['image'])}}></a>
+        <div class="card-image col-md-5 col-lg-4">
+          <a href="{{ url_for(post['url'] )}}"><img class="card-img" src={{ url_for(post.get('image', '#')) }}></a>
         </div>
         <div class="col-md-7 col-lg-8">
           <div class="card-body">
-            <h4 class="card-title title mb-0"><a href={{parse_url(post_url)}}>{{post['title']}}</a></h4>
-            <p class="card-text"><small>Last updated <time
-                  datetime="{{post['last_updated']}}"></time></small></p>
-            <p class="mt-2 card-text">{{post['description']}}</p>
+            <h4 class="card-title mb-0"><a href="{{ url_for(post['url'] )}}">{{post['title']}}</a></h4>
+            <p class="card-subtitle"><time datetime="{{post['last_updated']}}"></time></p>
+            <p class="card-text">{{post['description']}}</p>
           </div>
         </div>
       </div>

@@ -8,19 +8,19 @@
   {% endblock %}
   <!-- <ul class="list-unstyled"> -->
   <div class="card-columns">
-    {% for page_url, page in pages.items() %}
+    {% for page in pages %}
     <div class="card">
       <div class="card-header">
-        <a class="text-dark" href="{{ parse_url(page_url) }}" target='_blank'>
+        <a class="text-dark" href="{{ url_for(page['url']) }}" target='_blank'>
           <strong>{{ page['title'] }}</strong>
         </a>
       </div>
       <ul class="list-group list-group-flush">
-        {% for page_url, page in page['subpages'].items() %}
+        {% for subpage in page['subpages'] %}
         <li class="list-group-item p-2 pl-4">
-          <a href="{{ parse_url(page_url) }}" target='_blank'>
+          <a href="{{ url_for(subpage['url']) }}" target='_blank'>
             <!-- <img class='pr-2' src="{{site_url}}static/images/icons8-spiral-bound-booklet.png" style="height: 24px"> -->
-            {{ page['title'] }}
+            {{ subpage['title'] }}
           </a>
         </li>
         {% endfor %}

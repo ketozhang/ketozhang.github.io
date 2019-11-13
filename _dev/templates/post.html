@@ -15,7 +15,7 @@
                 </div>
                 <p class="description">{{page['description']}}</p>
                 {% if 'image' in page %}
-                <img id="post-img" class="mx-auto d-block" src={{parse_url(page['image'])}}>
+                <img id="post-img" class="mx-auto d-block" src={{url_for(page['image'])}}>
                 {% endif %}
                 <hr>
             </div>

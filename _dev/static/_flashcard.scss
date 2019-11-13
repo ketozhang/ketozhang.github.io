@@ -1,0 +1,54 @@
+/* Flashcards */
+
+.flashcard {
+  position: sticky;
+  top: 10%;
+  max-height: 80vh;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flashcard-body {
+  position: relative;
+  min-height: 300px;
+  padding: 3em;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.flashcard dt {
+  font-size: calc(30px + 2vw);
+  line-height: 1.5em;
+  text-align: center;
+}
+
+.flashcard dd {
+  font-size: calc(16px + 0.5vw);
+}
+
+.flashcard-prev {
+  position: absolute;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  z-index: 2;
+}
+
+.flashcard-next {
+  position: absolute;
+  right: 10%;
+  width: 50%;
+  height: 100%;
+  z-index: 2;
+}
+
+.flashcard-counter {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin-right: 1em;
+  margin-bottom: 0.5em;
+  font-family: "DejaVu Sans Mono", "Source Code Pro", "Courier New", Courier, monospace;
+  font-size: 1.25rem;
+}

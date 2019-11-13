@@ -1,4 +1,4 @@
---- 
+---
 title: Degenerate Perturbation Theory
 ---
 
@@ -23,7 +23,7 @@ $$
 \begin{gather}
     \langle H' \rangle_{aa} \quad\text{or}\quad \langle H' \rangle_{bb}\\
 \end{gather}
-$$ 
+$$
 
 * $H'_{aa}$, $H'_{bb}$ : Where $H'_{ij} \equiv \langle{\psi_i|H'|\psi_j}\rangle$
 
@@ -31,10 +31,15 @@ $$
 
 Let's first deal with two degenerate states $\psi_a^0$ and $\psi_b^0$ with energy $E^0$. We wish to make corrections to the eigenvalue $E$ and eigenfunction $\psi$ where,
 
-$$\begin{align}
-    \psi^0 = \alpha\psi_a^0 + \beta\psi_b^0 \label{eq: wavefunction}
-\end{align}$$
-$$H^0\psi^0 = E^0$$
+$$
+\begin{align}
+\psi^0 = \alpha\psi_a^0 + \beta\psi_b^0
+\end{align}
+$$
+
+$$
+H^0\psi^0 = E^0
+$$
 
 Such that the perturbed TISE is the same as before,
 
@@ -64,10 +69,9 @@ To simplify, we'll change notation,
 
 $$ \langle H' \rangle_{ij} \equiv  \langle \psi^0_i |H'\psi_j^0\rangle $$
 
-$$ \begin{equation}
-    \boxed{\alpha \langle H' \rangle _{aa} + \beta \langle H' \rangle_{ab} = \alpha E^1}
-    \label{eq: e1}
-\end{equation} $$
+$$
+\boxed{\alpha \langle H' \rangle _{aa} + \beta \langle H' \rangle_{ab} = \alpha E^1}
+$$
 
 Equation \eqref{eq: e1} is an interesting equation because it is a linear combination we'll soon appreciate. What is really important is that if $\avg{H'}_{ab}=0$ then we get the nondegenerate perturbation theory.
 
@@ -80,7 +84,7 @@ $$ \begin{equation}
 
 2. Multiply by $\langle H'\rangle_{ab}$
 
-3. <mark> Eliminate $\beta W_{ab}$ </mark> 
+3. <mark> Eliminate $\beta W_{ab}$ </mark>
 
 $$ \alpha \left[\langle H'\rangle_{ab}\langle H'\rangle_{ba} - (E^1 - \langle H'\rangle_{aa})(E^1-\langle H'\rangle_{bb})\right] = 0$$
 
@@ -100,7 +104,7 @@ This is the same result as the nondegenerate perturbation theory. The next subse
 
 Degenerate perturbation theory equates to the same corrections as nondegenerate perturbation theory if an operator $A$ such that it commutes with both $H^0$ and $H'$ and also satisfies the following condition,
 
-If, 
+If,
 $$\begin{align*}
     [A, H^0] &= [A, H'] = 0\\
     A\psi_a^0 &= \lambda_a\psi_a^0\\
@@ -124,7 +128,7 @@ $$\begin{align*}
 $$ \begin{pmatrix}
     \langle H' \rangle _{aa} & \langle H' \rangle _{ab}\\
     \langle H' \rangle _{ba} & \langle H' \rangle _{bb}
-\end{pmatrix} 
+\end{pmatrix}
 \begin{pmatrix}
     \alpha \\ \beta
 \end{pmatrix} = E^1 \begin{pmatrix}

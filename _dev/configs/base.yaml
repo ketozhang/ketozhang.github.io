@@ -1,5 +1,5 @@
 # The full url to be hosted (e.g., http://example.com/notes)
-site_url: "https://ketozhang.github.io"
+site_url: "https://ketozhang.github.io/"
 site_brand: "Keto"
 site_title: ""
 author: "Keto"
@@ -16,8 +16,9 @@ template_path: "templates/"
 static_path: "static/"
 
 root_pages:
-    research: "research.html"
-    flashcards: "flashcards.html"
+  cv: "CV.html"
+  research: "research.html"
+  flashcards: "flashcards.html"
 
 contexts:
   # keys should be url endpoint (e.g., for mysite.com/notes key is notes)
@@ -39,19 +40,15 @@ navbar:
     url: "/posts"
 
 social_links:
-  cv:
-    text: "CV"
-    url: "/static/CV.html"
+  - name: "CV"
+    url: "/cv"
     icon: "/static/images/icons8-applicant-24.png"
-  linkedin:
-    text: "LinkedIn"
+  - name: "LinkedIn"
     url: "https://www.linkedin.com/in/ketozhang/"
     icon: "/static/images/icons8-linkedin.svg"
-  email:
-    text: "keto.zhang@gmail.com"
+  - name: "keto.zhang@gmail.com"
     url: "mailto:keto.zhang@gmail.com"
     icon: "/static/images/icons8-email-30.png"
-  github:
-    text: "GitHub"
+  - name: "GitHub"
     url: "https://www.github.com/ketozhang"
     icon: "/static/images/icons8-github.svg"

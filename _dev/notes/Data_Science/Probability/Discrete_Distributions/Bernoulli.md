@@ -1,14 +1,18 @@
 ---
 title: Bernoulli
 ---
-* Expected Value
-$$
-\mathbb E[x] = p
-$$
+Expected Value
+:	$$
+	\mathbb E[I] = p
+	$$
 
-* Variance:
-$$ \text{Var}[X] = p(1-p) $$
+Variance
+: $$ \text{Var}[I] = pq $$
 
-* Covariance:
+Covariance
+: $$ \text{Cov}[I_1,I_2] = P(I_1=1, I_2=1) -P(I_1=1)P(I_2=1) $$
 
-$$ \text{Cov}[X,Y] = r-pq $$
+MGF
+: 	$$
+	M_X(t) = 1 + p(e^{t} - 1)
+	$$

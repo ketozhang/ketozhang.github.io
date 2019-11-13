@@ -19,8 +19,8 @@ $$\boxed{ \begin{pmatrix}
 
 ---
 
-Example
-: The population of the data is $N=10$, if you were to group the population into pairs ($k=2$) how many groups can you make?
+::: Example
+The population of the data is $N=10$, if you were to group the population into pairs ($k=2$) how many groups can you make?
 
 $$ \begin{pmatrix}
     N \\ k
@@ -28,16 +28,13 @@ $$ \begin{pmatrix}
     10 \\ 2
 \end{pmatrix} = \frac{10!}{2!8!} = \frac{9\cdot 10}{2}  = \boxed{45 \text{ pairs}}$$
 
----
-
 Back to the sampling problem. Here the number of things are subsets and the the groups are the sample. We wish to ask what is the probability of the sample contain a certain subset. Let's call this particular subset $A$,
 
-$$P(A) = \frac{\text{Samples with A}}{\text{Total Posible Samples}}$$ 
+$$P(A) = \frac{\text{Samples with A}}{\text{Total Posible Samples}}$$
+:::
 
----
-
-Example
-: The sample are once again in pairs, but now my subsets are marked from $A$ to $Z$ ($n=26$), what is the probability of choosing $A$ as part of my sample?
+::: Example
+The sample are once again in pairs, but now my subsets are marked from $A$ to $Z$ ($n=26$), what is the probability of choosing $A$ as part of my sample?
 
 
 $$ C_\text{pairs} = \begin{pmatrix}
@@ -51,6 +48,7 @@ $$ C_A = \begin{pmatrix}
 $$
 P(A) = \frac{C_A}{C_\text{Pairs}} = \frac{2!(n-2)!(n-1)}{n!}
 $$
+:::
 
 ## Probability by Recursion
 
