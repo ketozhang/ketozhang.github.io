@@ -1,0 +1,14 @@
+<p>Let the chain be a set of random variables with element <span class="math inline">\(X_t\)</span> for the step <span class="math inline">\(t \ge 0\)</span> (or link) of the chain. The chain is aid to be a Markov chain if <span class="math inline">\(X_{t+1}\)</span> is only dependent on <span class="math inline">\(X_t\)</span> for all <span class="math inline">\(t &gt; 0\)</span></p>
+<h2 id="stationary-transition">Stationary Transition</h2>
+<p>A transition in a Markov-chain is a step from <span class="math inline">\(X_t\)</span> to <span class="math inline">\(X_{t+1}\)</span>. A <strong>stationary transition</strong> has the probability of transition that is independent on the step <span class="math inline">\(t\)</span>. That must mean there is no difference between transition probability at any step,</p>
+<p><span class="math display">\[
+P(X_{t+1}=j \mid X_t=i) = P(X_1=j \mid X_0=i)
+\]</span></p>
+<p>A more compact way to write a transition probability is,</p>
+<p><span class="math display">\[
+P(x_t \rightarrow x_{t+1}) := P(X_t=x_t \mid X_{t+1} = x_{t+1})
+\]</span></p>
+<p>This simplify the probability of any Markov chain,</p>
+<p><span class="math display">\[
+P(X_0=x_0, X_1=x_1, \ldots X_N=x_N) = P(x_0)P(x_0 \rightarrow x_1)\cdots P(x_{n-1} \rightarrow x_n)
+\]</span></p>

@@ -28,19 +28,13 @@
         </div>
         <!-- On This Page -->
         <div class="col-xl-3 col-lg-4 d-lg-block d-none">
-            <div class="sticky-top vh-80 sidenav onthispage">
-                <strong>On This Page</strong>
-                <div class="sidenav-body">
-                    <ul class="onthispage-list no-list-style"></ul>
-                </div>
-            </div>
+            {% include "onthispage.html" %}
         </div>
-    </div>
 
-    <!-- Disqus Comments -->
-    <div id="disqus_thread" class="mt-5 text-center">
+        <!-- Disqus Comments -->
+        <div id="disqus_thread" class="mt-5 text-center">
             <button type="button" class="btn btn-block btn-outline-dark show-comments">Show Comments</button>
-            </div>
+        </div>
 
-</div>
-{% endblock %}
+    </div>
+    {% endblock %}

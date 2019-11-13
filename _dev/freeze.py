@@ -82,9 +82,9 @@ def get_root_page():
     args: dict
        The arguments of app.py::get_page.
     """
-    for root_page_path in BASE_CONFIG["root_pages"].values():
-        log.info(f"Freezing root page: {root_page_path}.")
-        yield {"file": root_page_path}
+    for root_page in BASE_CONFIG["root_pages"]:
+        log.info(f"Freezing root page: {root_page}.")
+        yield {"file": root_page}
 
 
 def freeze(skip_build=False):

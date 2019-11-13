@@ -1,0 +1,92 @@
+<p>The <strong>expected value</strong> (aka <strong>expectation</strong>) is defined as,</p>
+<p><span class="math display">\[
+\mathbb E[X] \equiv \sum_{x \in \Omega_X}xP(x)
+\]</span></p>
+<h2 id="method-of-indicators">Method of Indicators</h2>
+<p>If a random variable <span class="math inline">\(X\)</span> can be expressed as a sum of indicators then its expected value also follows by linearity.</p>
+<p><span class="math display">\[
+\mathbb E[X] = \sum_{k=1}^N \mathbb E[I_k]
+\]</span></p>
+<h2 id="function-rule">Function Rule</h2>
+<p>If the random variable at interest is a function of another random variable <span class="math inline">\(X = f(Y)\)</span> then the function rule applies as following to the range of <span class="math inline">\(Y\)</span></p>
+<p><span class="math display">\[
+\mathbb E[X] = \sum_{y \in \Omega_Y} f(y) P(Y=y)
+\]</span></p>
+<dl>
+<dt>Moments of <span class="math inline">\(X\)</span> (Corollary)</dt>
+<dd><p>All powers of <span class="math inline">\(X\)</span> has the expected value called the <strong><span class="math inline">\(k\)</span>-th moment</strong> of <span class="math inline">\(X\)</span> is given by,</p>
+<p><span class="math display">\[
+\mathbb E[X^k] = \sum_{x \in \Omega_X}X^k P(X=x)
+\]</span></p>
+</dd>
+</dl>
+<h2 id="tail-sum-formula">Tail Sum Formula</h2>
+<p>The expected value can be expressed equivalently as the sum of the right tail of the distribution,</p>
+<p><span class="math display">\[
+\mathbb E[X] = \sum_{x \in \Omega_X} P(X &gt; x)
+\]</span></p>
+<h2 id="expectation-and-conditioning">Expectation and Conditioning</h2>
+<p>The expected value can be expressed in conditional probabilities. Consider the random variable <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, the expected value can be expressed using both random variable</p>
+<p><span class="math display">\[
+\mathbb E[X] = \sum_{x \in \Omega_X} xP(Y \mid X=x) P(X=x)\\
+\mathbb E[X] = \sum_{y \in \Omega_y} xP(X \mid Y=y) P(Y=y)
+\]</span></p>
+<p>Motivated by this we define the <strong>conditional expectation</strong> as,</p>
+<p><span class="math display">\[
+\boxed{\mathbb E[X \mid Y=y] = \sum_{x \in \Omega_X} x P(X=x \mid Y=y)}
+\]</span></p>
+<p>The conditional expectation is a random variable because the conditional expectaiton is a function of the random variable <span class="math inline">\(Y\)</span>.</p>
+<p>Most useful is the fact that the conditional expectation has the expected value,</p>
+<p>[ <span class="math display">\[\begin{align}
+    \mathbb E \Big[\mathbb E[X \mid Y] \Big] &amp;= \sum_{x \in \Omega_X}\left[\sum_{y \in \Omega_Y} y P(Y=y \mid X=x)\right]P(X=x)\\
+    &amp;= \sum_{x \in \Omega_X} \mathbb E[Y \mid X=x] P(X=x)
+\end{align}\]</span> ]</p>
+<p>[  ]</p>
+<h3 id="expectation-by-condition-of-known-expectations">Expectation by Condition of Known Expectations</h3>
+<p>The expected value of <span class="math inline">\(X\)</span> conditioned on <span class="math inline">\(Y\)</span> can be determined if we know exactly the conditional expectation as some function of the range of <span class="math inline">\(f(Y=y)\)</span>,</p>
+<p><span class="math display">\[
+\begin{gather*}
+\mathbb E[X \mid Y=y] = f(Y=y)\\
+\big\Downarrow\\
+\mathbb E[X \mid Y] = f(Y)
+\end{gather*}
+\]</span></p>
+<p>If <span class="math inline">\(f(Y)\)</span> is a linear function, solving for <span class="math inline">\(\mathbb E[X]\)</span> is simpy applying the linearity rule,</p>
+<p><span class="math display">\[
+\mathbb E[X] = \mathbb E\big[f(Y)\big]
+\]</span></p>
+<p>This makes more sense if we do a few examples:</p>
+<dl>
+<dt>Conditional Expectation of Binomial</dt>
+<dd><p>Take for instance the conditional expectation is found to be the expectation of binomial,</p>
+<p><span class="math display">\[
+\mathbb E[X \mid Y=y] = (n-y)p
+\]</span></p>
+<p>That is to say the events <span class="math inline">\(\set{X \mid Y = y}\)</span> are distributed as binomial of <span class="math inline">\(n&#39; = n-y\)</span> trials with <span class="math inline">\(p&#39;\)</span> chance of trial succeed.</p>
+<p>Then, it’s simple to determine <span class="math inline">\(E[Y]\)</span>, after replacing <span class="math inline">\(y\)</span> with <span class="math inline">\(Y\)</span></p>
+<p><span class="math display">\[
+\begin{align*}
+    \mathbb E[X \mid Y] &amp;= \mathbb E \big[(n-Y)p\big]\\
+    &amp;= (n-\mathbb E[Y])p
+\end{align*}
+\]</span></p>
+</dd>
+<dt>Conditional Expectation of Sums</dt>
+<dd><p>Let the sum of some event be <span class="math inline">\(S = X_1 + X_2 + \ldots X_N\)</span> for iid <span class="math inline">\(X_k\)</span>. <span class="math inline">\(N\)</span> is the random variable independent from <span class="math inline">\(X\)</span> representing the count of sampling with <span class="math inline">\(\mathbb E[N]\)</span>.</p>
+<p>Notice that the conditional expectation is can be easily written as,</p>
+<p><span class="math display">\[
+\begin{gather*}
+\mathbb E[S \mid N = n] = n \cdot \mathbb E[S]\\
+\mathbb E[S \mid N] = N \cdot \mathbb E[S]
+\end{gather*}
+\]</span></p>
+<p>then it follows that</p>
+<p><span class="math display">\[
+\begin{gather*}
+\mathbb E[S] = \mathbb E(\mathbb E[S \mid N])\\
+\mathbb E[S] = \mathbb E[S]\mathbb E[N]
+\end{gather*}
+\]</span></p>
+<p>Let’s call this the <strong>separation of expectation by conditioning</strong>.</p>
+</dd>
+</dl>

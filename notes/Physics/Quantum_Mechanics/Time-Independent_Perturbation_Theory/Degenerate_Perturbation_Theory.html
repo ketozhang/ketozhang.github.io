@@ -20,7 +20,8 @@
     <!-- Bootstrap time -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://ketozhang.github.io/static/base.css" rel="stylesheet">
+    <!-- <link href="https://ketozhang.github.io/static/base.css" rel="stylesheet"> -->
+    <link href="/static/main.css?80631208" rel="stylesheet"">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro|Quicksand" rel="stylesheet">
     <link href="https://ketozhang.github.io/static/prism.css" rel="stylesheet">
     <link rel="shortcut icon" href="https://ketozhang.github.io/static/favicon.ico">
@@ -40,40 +41,40 @@
 <body>
     
 <div class="container-fluid" id="note">
-    <!-- <nav class="navbar navbar-expand-lg">
+  <!-- <nav class="navbar navbar-expand-lg">
         <button id="sidenavCollapse" class="btn btn-info" type="button">
             <i class="fas fa-align-left"></i>
             <span>Toggle Sidebar</span>
         </button>
     </nav> -->
-    <div id="note-body" class="row">
-        <!-- Notebook Sidenav -->
-        <div class="col-3 col-lg bg-light pt-1">
-            <div class="sidenav sticky-top vh-80">
-                <div class="sidenav-header row no-gutters">
-                    <div class="col-9">
-                        <strong>Degenerate Perturbation Theory</strong>
-                    </div>
-                    <div class="col-2 offset-1">
-                        <a class="go-up" href="https://ketozhang.github.io/notes/Physics/Quantum_Mechanics/Time-Independent_Perturbation_Theory/" role="button">
-                            <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
-                        </a>
-                    </div>
-                </div>
-                <div class="sidenav-body no-gutters">
-                    <ul class="no-list-style pl-3">
-                        
-                    </ul>
-                </div>
-            </div>
+  <div id="note-body" class="row">
+    <!-- Notebook Sidenav -->
+    <div class="col-3 bg-light pt-1">
+      <div class="sidenav sticky-top vh-80">
+        <div class="sidenav-header row no-gutters">
+          <div class="col-9">
+            <strong>Degenerate Perturbation Theory</strong>
+          </div>
+          <div class="col-2 offset-1">
+            <a class="go-up" href="https://ketozhang.github.io/notes/Physics/Quantum_Mechanics/Time-Independent_Perturbation_Theory/" role="button">
+              <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+            </a>
+          </div>
         </div>
-
-        <!-- Content -->
-        <div class="col col-lg-7">
-            <h1 class="title text-center pt-3">Degenerate Perturbation Theory</h1>
+        <div class="sidenav-body no-gutters">
+          <ul class="no-list-style pl-3">
             
-            <div class="markdown-content">
-                <p>For the perturbed Hamiltonian <span class="math inline">\(H = H^0 + H&#39;\)</span>. If the eigenstates of <span class="math inline">\(H^0\)</span> are degenerate then there is a case where non-degenerate perturbation theory does not apply.</p>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="col-7 col-md-6">
+      <h1 class="title text-center pt-3">Degenerate Perturbation Theory</h1>
+      
+      <div class="markdown-content">
+        <p>For the perturbed Hamiltonian <span class="math inline">\(H = H^0 + H&#39;\)</span>. If the eigenstates of <span class="math inline">\(H^0\)</span> are degenerate then there is a case where non-degenerate perturbation theory does not apply.</p>
 <p>Recall the definition of degenerate states which the eigenstate and its linear combination both share the same eigenvalue <span class="math inline">\(E^0\)</span>.</p>
 <p><span class="math display">\[ H^0\psi^0_n = E^0\psi_n^0 \]</span> <span class="math display">\[ H^0\sum_n{c_n\psi_n^0} = E^0\sum_n{c_n\psi_n^0} \]</span></p>
 <h2 id="two-fold-degenerate-state">Two-Fold Degenerate State</h2>
@@ -93,9 +94,14 @@
 </ul>
 <h3 id="proof">Proof</h3>
 <p>Let’s first deal with two degenerate states <span class="math inline">\(\psi_a^0\)</span> and <span class="math inline">\(\psi_b^0\)</span> with energy <span class="math inline">\(E^0\)</span>. We wish to make corrections to the eigenvalue <span class="math inline">\(E\)</span> and eigenfunction <span class="math inline">\(\psi\)</span> where,</p>
-<p><span class="math display">\[\begin{align}
-    \psi^0 = \alpha\psi_a^0 + \beta\psi_b^0 \label{eq: wavefunction}
-\end{align}\]</span> <span class="math display">\[H^0\psi^0 = E^0\]</span></p>
+<p><span class="math display">\[
+\begin{align}
+\psi^0 = \alpha\psi_a^0 + \beta\psi_b^0
+\end{align}
+\]</span></p>
+<p><span class="math display">\[
+H^0\psi^0 = E^0
+\]</span></p>
 <p>Such that the perturbed TISE is the same as before,</p>
 <p><span class="math display">\[ \begin{gather*}
     (H^0+H&#39;)\psi = E\psi
@@ -112,10 +118,9 @@
 <p><span class="math display">\[\alpha\langle \psi^0_a |H&#39;\psi_a^0\rangle + \beta\langle \psi^0_a |H&#39;\psi_b^0\rangle = \alpha E^1\]</span></p>
 <p>To simplify, we’ll change notation,</p>
 <p><span class="math display">\[ \langle H&#39; \rangle_{ij} \equiv  \langle \psi^0_i |H&#39;\psi_j^0\rangle \]</span></p>
-<p><span class="math display">\[ \begin{equation}
-    \boxed{\alpha \langle H&#39; \rangle _{aa} + \beta \langle H&#39; \rangle_{ab} = \alpha E^1}
-    \label{eq: e1}
-\end{equation} \]</span></p>
+<p><span class="math display">\[
+\boxed{\alpha \langle H&#39; \rangle _{aa} + \beta \langle H&#39; \rangle_{ab} = \alpha E^1}
+\]</span></p>
 <p>Equation  is an interesting equation because it is a linear combination we’ll soon appreciate. What is really important is that if <span class="math inline">\(\avg{H&#39;}_{ab}=0\)</span> then we get the nondegenerate perturbation theory.</p>
 <ol type="1">
 <li>Take the inner product with <span class="math inline">\(\psi_b^0\)</span> to get another linear combination</li>
@@ -153,7 +158,7 @@
 <p><span class="math display">\[ \begin{pmatrix}
     \langle H&#39; \rangle _{aa} &amp; \langle H&#39; \rangle _{ab}\\
     \langle H&#39; \rangle _{ba} &amp; \langle H&#39; \rangle _{bb}
-\end{pmatrix} 
+\end{pmatrix}
 \begin{pmatrix}
     \alpha \\ \beta
 \end{pmatrix} = E^1 \begin{pmatrix}
@@ -171,14 +176,14 @@
 </ol>
 </section>
 
-            </div>
-            <!-- Disqus Comments -->
-            <div id="disqus_thread" class="mt-5">
-                <div class="w-50 mx-auto">
-                    <button type="button" class="btn btn-block btn-outline-dark show-comments">Show Comments</button>
-                </div>
-            </div>
-            <!--
+      </div>
+      <!-- Disqus Comments -->
+      <div id="disqus_thread" class="mt-5">
+        <div class="w-50 mx-auto">
+          <button type="button" class="btn btn-block btn-outline-dark show-comments">Show Comments</button>
+        </div>
+      </div>
+      <!--
                 <script>
                 /**
                 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -197,22 +202,24 @@
             <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
                     by Disqus.</a></noscript>
             -->
-            
-        </div>
-
-        <!-- On This Page -->
-        <div class="col-lg d-none d-lg-block">
-            <div class="onthispage sidenav sticky-top vh-80">
-                <div class="sidenav-header">
-                    <strong>On This Page</strong>
-                </div>
-                <div class="sidenav-body">
-                    <ul class="onthispage-list no-list-style"></ul>
-                </div>
-            </div>
-        </div>
-
+      
     </div>
+
+    <!-- On This Page -->
+    <div class="col-md-3 d-none d-md-block">
+      <div class="onthispage sidenav small">
+    <div class="sidenav-header">
+        <strong>&#9776; On This Page</strong>
+    </div>
+    <div class="onthispage-collapse">
+        <div class="sidenav-body bg-light">
+            <ul class="onthispage-list no-list-style"></ul>
+        </div>
+    </div>
+</div>
+    </div>
+
+  </div>
 </div>
 
     <footer class="py-2 bg-white">
@@ -229,17 +236,18 @@
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
     crossorigin="anonymous"></script>
 
-    <script src="https://ketozhang.github.io/static/datetime.js"></script>
-    <script src="https://ketozhang.github.io/static/disqus.js"></script>
-    <script src="https://ketozhang.github.io/static/sidenav.js"></script>
-    <script src="https://ketozhang.github.io/static/codeHighlight.js"></script>
-    <script src="https://ketozhang.github.io/static/prism.js"></script>
+    <script src="https://ketozhang.github.io/static/js/datetime.js"></script>
+    <script src="https://ketozhang.github.io/static/js/disqus.js"></script>
+    <script src="https://ketozhang.github.io/static/js/sidenav.js"></script>
+    <script src="https://ketozhang.github.io/static/js/codeHighlight.js"></script>
+    <script src="https://ketozhang.github.io/static/js/prism.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>
-    <script src="https://ketozhang.github.io/static/onThisPage.js"></script>
+    <script src="https://ketozhang.github.io/static/js/onThisPage.js"></script>
+    <script src="https://ketozhang.github.io/static/js/markdown.js"></script>
 
     <!-- MathJax -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script src="https://ketozhang.github.io/static/mathjax_config.js" defer></script>
+    <script src="https://ketozhang.github.io/static/js/mathjax_config.js" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
 
     <!-- Bootstrap JS -->

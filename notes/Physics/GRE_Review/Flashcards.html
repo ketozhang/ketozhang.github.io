@@ -20,7 +20,8 @@
     <!-- Bootstrap time -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://ketozhang.github.io/static/base.css" rel="stylesheet">
+    <!-- <link href="https://ketozhang.github.io/static/base.css" rel="stylesheet"> -->
+    <link href="/static/main.css?80631208" rel="stylesheet"">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro|Quicksand" rel="stylesheet">
     <link href="https://ketozhang.github.io/static/prism.css" rel="stylesheet">
     <link rel="shortcut icon" href="https://ketozhang.github.io/static/favicon.ico">
@@ -40,40 +41,40 @@
 <body>
     
 <div class="container-fluid" id="note">
-    <!-- <nav class="navbar navbar-expand-lg">
+  <!-- <nav class="navbar navbar-expand-lg">
         <button id="sidenavCollapse" class="btn btn-info" type="button">
             <i class="fas fa-align-left"></i>
             <span>Toggle Sidebar</span>
         </button>
     </nav> -->
-    <div id="note-body" class="row">
-        <!-- Notebook Sidenav -->
-        <div class="col-3 col-lg bg-light pt-1">
-            <div class="sidenav sticky-top vh-80">
-                <div class="sidenav-header row no-gutters">
-                    <div class="col-9">
-                        <strong>Flashcards</strong>
-                    </div>
-                    <div class="col-2 offset-1">
-                        <a class="go-up" href="https://ketozhang.github.io/notes/Physics/GRE_Review/" role="button">
-                            <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
-                        </a>
-                    </div>
-                </div>
-                <div class="sidenav-body no-gutters">
-                    <ul class="no-list-style pl-3">
-                        
-                    </ul>
-                </div>
-            </div>
+  <div id="note-body" class="row">
+    <!-- Notebook Sidenav -->
+    <div class="col-3 bg-light pt-1">
+      <div class="sidenav sticky-top vh-80">
+        <div class="sidenav-header row no-gutters">
+          <div class="col-9">
+            <strong>Flashcards</strong>
+          </div>
+          <div class="col-2 offset-1">
+            <a class="go-up" href="https://ketozhang.github.io/notes/Physics/GRE_Review/" role="button">
+              <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+            </a>
+          </div>
         </div>
-
-        <!-- Content -->
-        <div class="col col-lg-7">
-            <h1 class="title text-center pt-3">Flashcards</h1>
+        <div class="sidenav-body no-gutters">
+          <ul class="no-list-style pl-3">
             
-            <div class="markdown-content">
-                <h2 id="mathematics">Mathematics</h2>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="col-7 col-md-6">
+      <h1 class="title text-center pt-3">Flashcards</h1>
+      
+      <div class="markdown-content">
+        <h2 id="mathematics">Mathematics</h2>
 <dl>
 <dt>Cartesian to Spherical Coordinates</dt>
 <dd><span class="math display">\[
@@ -98,6 +99,38 @@ dV = 2 \pi r^2 \sin\theta ~ dr d\theta
 <dd>Imagine a spherical shell with some surface area expanding out to a bigger sphere <span class="math display">\[
 dV = 4\pi r^2 dr
 \]</span>
+</dd>
+<dt><span class="math inline">\(dV\)</span> Cylindrical Coordinates</dt>
+<dd><span class="math display">\[
+dV = r ~dzdrd\theta
+\]</span>
+</dd>
+<dt>Sine-Cosine Relative Phase</dt>
+<dd><p>Sine and Cosine are off by <span class="math inline">\(\pi/2\)</span> phase,</p>
+<p><span class="math display">\[
+\cos(x) = \sin(\pi/2 - x)
+\]</span></p>
+</dd>
+<dt>Derivative of Logarithm</dt>
+<dd><span class="math display">\[
+\frac{\partial }{\partial x}\Big[\ln f(x)\Big] = \frac{f&#39;(x)}{f(x)}
+\]</span>
+</dd>
+<dt>Hyperbolic Sine to Exponential</dt>
+<dd><span class="math display">\[
+\sinh x = \frac{e^x - e^{-x}}{2}
+\]</span>
+</dd>
+<dt>Hyperbolic Cosine to Exponential</dt>
+<dd><span class="math display">\[
+\cosh x = \frac{e^x + e^{-x}}{2}
+\]</span>
+</dd>
+<dt>Stirling Formula</dt>
+<dd><p>The factorial as <span class="math inline">\(n \rightarrow \infty\)</span> goes as,</p>
+<p><span class="math display">\[
+\log(n!) \sim n \log n - n
+\]</span></p>
 </dd>
 </dl>
 <h2 id="rotational-mechanics">Rotational Mechanics</h2>
@@ -237,7 +270,7 @@ x(t) = A \cos(\omega t + \phi); \qquad \omega = \sqrt{\frac{k}{m}}
 </dd>
 <dt>Potential Energy of Hooke’s Law</dt>
 <dd><span class="math display">\[
-U = \frac{1}{2}kx
+U = \frac{1}{2}kx^2
 \]</span>
 </dd>
 <dt>Springs in Series and Parallel</dt>
@@ -270,12 +303,11 @@ F_\text{damp} = -b\dot x
 </dd>
 <dt>Dampened Spring Solutions</dt>
 <dd>For <span class="math inline">\(\beta = b/2m\)</span> and <span class="math inline">\(\omega_0 = \sqrt{k/m}\)</span>, 1. Underdamped (<span class="math inline">\(\beta^2 &lt; \omega_0^2\)</span>) <span class="math display">\[
-x(t) = Ae^{-\beta t}\cos(\omega t - \delta); \qquad \omega = \omega_0^2 - \beta^2
-\]</span> 2. Critically Damped (<span class="math inline">\(\beta^2 = \omega_0^2\)</span>) <span class="math display">\[
-x(t) = Ae^{i \omega_0 t}
-\]</span> 3. Overdamped (<span class="math inline">\(\beta^2 &gt; \omega_0^2\)</span>) <span class="math display">\[
-x(t) = Ae^{-i \beta t}
-\]</span>
+\begin{gather*}
+x(t) = Ae^{-\beta t}\cos(\omega t - \delta)\\
+\omega = \omega_0^2 - \beta^2
+\end{gather*}
+\]</span> 2. Critically Damped (<span class="math inline">\(\beta^2 = \omega_0^2\)</span>) 3. Overdamped (<span class="math inline">\(\beta^2 &gt; \omega_0^2\)</span>)
 </dd>
 <dt>Harmonic Driven Spring</dt>
 <dd><p>We can only write the differential equation,</p>
@@ -384,24 +416,28 @@ V_{ab} = \int_a^b \vec E \cdot d \vec l
 </ul>
 </dd>
 <dt>Electric Work</dt>
-<dd><span class="math display">\[
-W = \frac{1}{2} \int V(\vec r) ~ dQ
-\]</span>
+<dd><p>For a single charge <span class="math inline">\(Q\)</span>,</p>
+<p><span class="math display">\[
+W = Q \int_a^b E \cdot dr = QV_{ab}
+\]</span></p>
+<p>For multiple charges, a double counting factor is corrected. It is much easier and intuitive to write this for the discrete case</p>
+<p><span class="math display">\[
+W = \frac{1}{2} \sum q_i V(r_i)
+\]</span></p>
 </dd>
 <dt>Electric Field Energy</dt>
 <dd><span class="math display">\[
-\begin{align*}
-U_E &amp;= \frac{\epsilon_0}{2} \int \abs{E}^2 ~ d^3r\\
-&amp;= qV
-\end{align*}
+U_E = \frac{\epsilon_0}{2} \int \abs{E}^2 ~ d^3r
 \]</span>
 </dd>
 <dt>Electric Power</dt>
 <dd><span class="math display">\[
-\begin{align*}
-P &amp;= IV\\
-&amp;= I^2 R
-\end{align*}
+P = IV
+\]</span>
+</dd>
+<dt>Ohm’s Law</dt>
+<dd><span class="math display">\[
+V = IR
 \]</span>
 </dd>
 <dt>Capacitance</dt>
@@ -424,8 +460,10 @@ U_C = \frac{1}{2}CV^2
 <dl>
 <dt>Maxwell Equations for Magnetostatics</dt>
 <dd><span class="math display">\[
+\begin{gather*}
 \nabla \cdot \vec B = 0\\
 \nabla \times \vec B = \mu_0 \vec J
+\end{gather*}
 \]</span>
 </dd>
 <dt>Ampere’s Law</dt>
@@ -477,7 +515,7 @@ B(r) = \frac{\mu_0 N I}{2\pi r}; \qquad R_\text{in} &lt; r &lt; R_\text{out}
 \]</span>
 </dd>
 <dt>Boundary Condition</dt>
-<dd><p>Opposite of the magnetic field, so only the parallel component exists. For a surface current <span class="math inline">\(\vec K\)</span> adjacent to the surface <span class="math inline">\(\hat n\)</span>,</p>
+<dd><p>Opposite of the electric field, so only the parallel component exists. For a surface current <span class="math inline">\(\vec K\)</span> adjacent to the surface <span class="math inline">\(\hat n\)</span>,</p>
 <p><span class="math display">\[
 \Delta B_\parallel = \mu_0 \vec K \times \hat n
 \]</span></p>
@@ -490,21 +528,19 @@ B(r) = \frac{\mu_0 N I}{2\pi r}; \qquad R_\text{in} &lt; r &lt; R_\text{out}
 \vec F = qvB(\hat y \times \hat z) = qvB\hat x
 \end{gather*}
 \]</span></p>
-</dd>
-<dt>Cyclotron Radius</dt>
-<dd><span class="math display">\[
-R = \frac{mv}{qB}
-\]</span>
-</dd>
-<dt>Cyclotron Angular Frequency</dt>
-<dd><span class="math display">\[
-\omega = \frac{qB}{m}
-\]</span>
+<p>The last equation is very useful relating to circular force</p>
+<p><span class="math display">\[
+\begin{gather*}
+qvB = m\frac{v^2}{r}\\
+B = \left(\frac{m}{q}\right)\frac{v}{r}
+\end{gather*}
+\]</span></p>
+<p>With the RHS, you can solve for the cyclotron radius <span class="math inline">\(r\)</span> and the angular frequency <span class="math inline">\(v/r\)</span>.</p>
 </dd>
 </dl>
 <h2 id="electrodynamics">Electrodynamics</h2>
 <dl>
-<dt>Maxwell Equations Correctoins</dt>
+<dt>Maxwell Equations Corrections</dt>
 <dd><span class="math display">\[
 \begin{align*}
 \nabla \times \vec E &amp;= -\frac{\partial \vec B}{\partial t}\\
@@ -671,15 +707,695 @@ P \propto q^2 \ddot x^2
 \]</span>
 </dd>
 </dl>
+<h2 id="circuits">Circuits</h2>
+<h2 id="waves">Waves</h2>
+<dl>
+<dt>Wave Equation</dt>
+<dd><span class="math display">\[
+\ddot f = \dot x^2 f&#39;&#39;
+\]</span>
+</dd>
+<dt>Wave Solutions</dt>
+<dd><p>The solution of the wave equation is either traverse waves or standing waves:</p>
+<ol type="1">
+<li><p>Traverse Waves <span class="math display">\[
+ f(x,t) = A\cos(kx - \omega t + \delta)
+ \]</span></p></li>
+<li><p>Standing Waves <span class="math display">\[
+ g(x,t) = \frac{1}{2}\Big[f(x+vt) + f(x-vt)\Big]
+ \]</span></p></li>
+</ol>
+</dd>
+<dt>Wavenumber and Wavelength Relation</dt>
+<dd>The wavenumber is the number of waves in the length of <span class="math inline">\(2\pi\)</span> <span class="math display">\[
+k = \frac{2\pi}{\lambda}
+\]</span>
+</dd>
+<dt>Frequency and Angular Frequency Relation</dt>
+<dd>The angular frequency is the number rotations in <span class="math inline">\(2\pi\)</span> per second. <span class="math display">\[
+\omega = 2\pi f
+\]</span>
+</dd>
+<dt>Dispersion Relation</dt>
+<dd><p>The dispersion relation is the relation between <span class="math inline">\(k\)</span> and <span class="math inline">\(\omega\)</span></p>
+<p><span class="math display">\[
+\omega(k) = vk
+\]</span></p>
+</dd>
+<dt>Phase Velocity</dt>
+<dd><p>The dispersion relation for a single wavenumber</p>
+<p><span class="math display">\[
+v_\text{phase} = \frac{\omega}{k}
+\]</span></p>
+</dd>
+<dt>Group Velocity</dt>
+<dd><p>The dispersion relation for each wavenumber</p>
+<p><span class="math display">\[
+v_\text{group} = \frac{d\omega}{dk}
+\]</span></p>
+</dd>
+<dt>Index of Refraction</dt>
+<dd><p>By the dispersion relation,</p>
+<p><span class="math display">\[
+\frac{\omega}{k} = \frac{c}{n}
+\]</span></p>
+<p>The index of refraction is the amount at which light is slowed down to a velocity at some medium <span class="math inline">\(v\)</span> with index of refraction <span class="math inline">\(n\)</span>.</p>
+<p><span class="math display">\[
+n = \frac{c}{v}
+\]</span></p>
+</dd>
+<dt>Malus’ Law</dt>
+<dd><p>Light is comes out a polarizer in one direction giving the intensity a cosine relation due to the dot product</p>
+<p><span class="math display">\[
+I = I_0 \cos^2\theta
+\]</span></p>
+</dd>
+<dt>Brewster’s Angle</dt>
+<dd><p>The angle at which incident light is split into a polarized reflected light and the refracted light is perpendicular to the reflected light</p>
+<p><span class="math display">\[
+\theta_B = \arctan\left(\frac{n_2}{n_1}\right)
+\]</span></p>
+</dd>
+<dt>Phase Difference from Path Length Differnce</dt>
+<dd><p>Two idendical waves in frequency emitted at the same time but end up travelling a different path length of difference <span class="math inline">\(\Delta x\)</span> has a phase difference of</p>
+<p><span class="math display">\[
+\Delta \delta = k \Delta x
+\]</span></p>
+</dd>
+<dt>Interference Phase and Path Length</dt>
+<dd><p>Two identical waves on collision will constructively or destructively intefere with each other at the even or odd <span class="math inline">\(\pi\)</span> phase difference respectively.</p>
+<p><span class="math display">\[
+\begin{gather*}
+\Delta \delta = 2m \pi \tag{constructive}\\
+\Delta \delta = (2m + 1)\pi \tag{destructive}\\
+\Big\Downarrow \\
+\Delta x = \lambda m \tag{constructive}\\
+\Delta x = \lambda \left(m + \tfrac{1}{2}\right) \tag{destructive}\\
+m \ge 0;
+\end{gather*}
+\]</span></p>
+</dd>
+<dt>Double Slit Interference</dt>
+<dd><p>The path length for Young’s double slit experiment is</p>
+<p><span class="math display">\[
+\Delta x = d\sin\theta
+\]</span></p>
+<p>It’s interference maxima and minima are whole and halve factors of the wavelength respectively</p>
+</dd>
+<dt>Single Slit Interference Minima</dt>
+<dd><p>It’s interference maxima and minima are opposite of the classical rule. This time the minima is at whole wavelengths</p>
+<p><span class="math display">\[
+\begin{gather*}
+a \sin \theta = m\lambda \tag{minima}\\
+m \ge 1;
+\end{gather*}
+\]</span></p>
+</dd>
+<dt>Optical Path Length</dt>
+<dd><p>Wave going through a mediums of index of refraction <span class="math inline">\(n\)</span> has a phase shift depending on <span class="math inline">\(n\)</span> and how far its traveled in the medium <span class="math inline">\(d\)</span>,</p>
+<p><span class="math display">\[
+\Delta \delta = knd
+\]</span></p>
+<p>This implies an effective or optical path length of,</p>
+<p><span class="math display">\[
+\Delta x = nd
+\]</span></p>
+</dd>
+<dt>Thin-Film Phase Shift</dt>
+<dd><p>In addition to optical path length, a wave traveling from a mediums <span class="math inline">\(n_1\)</span> to a thin film of <span class="math inline">\(n=n_2\)</span> can experience a <span class="math inline">\(\pi\)</span> phase shift if,</p>
+<p><span class="math display">\[
+\begin{gather*}
+n_2 &gt; n_1 \tag{phase shift}\\
+n_2 &lt; n_1 \tag{$\pi$ phase shift}
+\end{gather*}
+\]</span></p>
+<p>Thus the total phase shift for a wave through <span class="math inline">\(n_2 &gt; n_1\)</span> of thickness <span class="math inline">\(d\)</span> and exitting is,</p>
+<p><span class="math display">\[
+\Delta \delta = 2kn_2d + \pi
+\]</span></p>
+</dd>
+<dt>Rayleigh Criterion (Circular Aperture)</dt>
+<dd><p>An emitter of two light sources of wavelength <span class="math inline">\(\lambda\)</span> separated at some distance <span class="math inline">\(D\)</span> is separable only if the angle follows,</p>
+<p><span class="math display">\[
+\sin\theta = 1.22 \frac{\lambda}{D}
+\]</span></p>
+<p>More often seen the time reversal of the setup, how close <span class="math inline">\(d\)</span> does two light sources separated by <span class="math inline">\(\Delta x\)</span> has to be for an aperature of diameter <span class="math inline">\(D\)</span>.</p>
+<p><span class="math display">\[
+\tan \theta = \frac{\Delta x}{d} = 1.22 \frac{\lambda}{D}
+\]</span></p>
+</dd>
+<dt>Braggs Diffraction</dt>
+<dd><p>A crystal lattice with each node separated by distance <span class="math inline">\(d\)</span> has a index of refraction <span class="math inline">\(n\)</span> and experiences interference maxima at,</p>
+<p><span class="math display">\[
+d\sin\theta = \frac{n\lambda}{2}
+\]</span></p>
+</dd>
+<dt>Angle of Reflection</dt>
+<dd><p>The angle of incident is also the angle of reflection</p>
+<p><span class="math display">\[
+\theta_i = \theta_r
+\]</span></p>
+</dd>
+<dt>Angle of Refraction (Snell’s Law)</dt>
+<dd><p><span class="math display">\[
+\frac{n_1}{n_2} = \frac{v_1}{v_2} = \frac{\sin \theta_2}{\sin \theta_1}
+\]</span></p>
+<p>Often time used is use angles from the horizon <span class="math inline">\(\alpha = \frac{\pi}{2} - \theta\)</span>,</p>
+<p><span class="math display">\[
+\frac{n_1}{n_2} = \frac{v_1}{v_2} = \frac{\cos \alpha_2}{\cos \alpha_1}
+\]</span></p>
+</dd>
+<dt>Focal Length</dt>
+<dd><span class="math display">\[
+\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}
+\]</span>
+</dd>
+<dt>Lensmaker Equation</dt>
+<dd><span class="math display">\[
+(n-1)\left(\frac{1}{R_1} - \frac{1}{R_2}\right)
+\]</span>
+</dd>
+<dt>Magnitifcation</dt>
+<dd><span class="math display">\[
+m = -\frac{d_i}{d_o}; \qquad \begin{cases}m &gt; 0 &amp; \text{upright}\\ m &lt; 0 &amp; \text{inverted}\end{cases}
+\]</span>
+</dd>
+<dt>Rayleigh Scattering</dt>
+<dd><span class="math display">\[
+I \propto I_0 \lambda^{-4}
+\]</span>
+</dd>
+<dt>Doppler Effect</dt>
+<dd><p><span class="math display">\[
+\frac{f}{f_0} = \frac{\Delta v_r}{\Delta v_s} = \frac{c+v_r}{c-v_s}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\Delta v_r\)</span>: Relative velocity of the wave to the receiver</li>
+<li><span class="math inline">\(\Delta v_s\)</span>: Relative velocity of the wave to the source</li>
+</ul>
+</dd>
+</dl>
+<h2 id="thermodynamics">Thermodynamics</h2>
+<dl>
+<dt>Canonical Ensemble</dt>
+<dd><p>The set of all possible states (or outcome space) of an esemble of particles or microsystems given the following is fixed:</p>
+<ul>
+<li>Number of particles</li>
+<li>Volume</li>
+<li>Temperature</li>
+</ul>
+</dd>
+<dt>Grand Canonical Ensemble</dt>
+<dd>Same as canonical ensemble but the number of particles can change.
+</dd>
+<dt>Maxwell-Boltzmann Statistics</dt>
+<dd><p>The probability that a particle is in energy level <span class="math inline">\(E_i\)</span> is given by the Maxwell-Boltzmann distribution</p>
+<p><span class="math display">\[
+P(E_i) = \frac{e^{-\beta E_i}}{\sum_{i=1}^N e^{-\beta E_i}}
+\]</span></p>
+<p>Although inaccurate and prone to statistical errors, the LHS is often expressed as the expected proportion of particles in energy level <span class="math inline">\(E_i\)</span> or <span class="math inline">\(P(E_i) = \avg{N_i}/{N}\)</span></p>
+</dd>
+<dt>Boltzmann Factor</dt>
+<dd><p>The numerator in the Maxwell-Boltzmann distribution. It’s the unormalized likelihood that a particle is in some energy level <span class="math inline">\(E_i\)</span></p>
+<p><span class="math display">\[
+P(E_i) \propto e^{-\beta E_i}
+\]</span></p>
+</dd>
+<dt>Partition Function</dt>
+<dd><p>Initially it’s a tool to normalize the Maxwell-Boltzmann distribution, but it’s found to be extremely useful in determining other quantities. The partition function is the sum of all Boltzmann factors</p>
+<p><span class="math display">\[
+Z = \sum e^{-\beta E_i}
+\]</span></p>
+</dd>
+<dt>Continuous Partition Function</dt>
+<dd><span class="math display">\[
+Z = \frac{1}{N!h^{3N}}\int{\exp\Big[-\beta H(\Sigma p_i, \Sigma x_i)\Big]~\sum d^3p_id^3x_i}
+\]</span>
+</dd>
+<dt>Relativistic Non-Interacting Partition Function</dt>
+<dd><p>Without potential energy, the Hamiltonian is just <span class="math inline">\(E=\abs{\vec p}c\)</span> which gives the partition function for one particle is</p>
+<p><span class="math display">\[
+\begin{align*}
+Z   &amp;=  \frac{V}{h^3N}\int{e^{-\beta \abs{\vec p} c} ~ d^3 p}\\
+    &amp;\propto VT^3
+\end{align*}
+\]</span></p>
+<p>In general the power rule is <span class="math inline">\(T^{\dim \vec p}\)</span> thus average energy is</p>
+<p><span class="math display">\[
+\avg{E} = (\dim \vec x) k_B T
+\]</span></p>
+</dd>
+<dt>Expectation of Energy from Partition Function</dt>
+<dd><p>The expectation of energy can be determined from the partition function.</p>
+<p><span class="math display">\[
+\avg{E} = \frac{\partial}{\partial \beta} \ln Z
+\]</span></p>
+</dd>
+<dt>Entropy</dt>
+<dd><p>Entropy is simply defined as the of the number of possible states <span class="math inline">\(\Omega\)</span> with the factor of Boltzmann constant:</p>
+<p><span class="math display">\[
+S = k_B \ln \Omega
+\]</span></p>
+</dd>
+<dt>Entropy from Partition Function</dt>
+<dd><p>The entropy can be determined form the partition function.</p>
+<p><span class="math display">\[
+S = \frac{\partial}{\partial T}\left(k_B T \ln Z\right)
+\]</span></p>
+</dd>
+<dt>Equipartition Theorem</dt>
+<dd><p>The internal energy of a system is contributed by a factor of <span class="math inline">\(\frac{1}{2}k_B T\)</span> for each degrees of freedom</p>
+<p><span class="math display">\[
+E_i = \frac{D}{2}k_B T
+\]</span></p>
+<p>A degree of freedom can be determined by the number of quadratic terms in the Hamiltonian</p>
+</dd>
+<dt>First Law of Thermodynamic</dt>
+<dd><p>Internal energy of a system is increased by heat and decreased from the system doing work. Energy is not created or destroyed instead transfered from an external large resevoir</p>
+<p><span class="math display">\[
+\Delta U = Q - W
+\]</span></p>
+</dd>
+<dt>Second Law of Thermodynamic</dt>
+<dd><p>Entropy cannot be decreased and obeys</p>
+<p><span class="math display">\[
+\Delta S \ge \int \frac{\delta Q}{T}
+\]</span></p>
+</dd>
+<dt>Third Law of Thermodynamic</dt>
+<dd>At absolute zero <span class="math inline">\(T=0\)</span>, the entropy is zero so the all particles collpase into one microstate.
+</dd>
+<dt>Ideal Gas Law</dt>
+<dd><p>The equation of state for non-interacting monoatomic particles of gas</p>
+<p><span class="math display">\[
+PV = Nk_B T
+\]</span></p>
+</dd>
+<dt>Van der Waals’ Improvement of Ideal Gas</dt>
+<dd>The equation of state adding particle interaction <span class="math inline">\(b\)</span> and size <span class="math inline">\(a\)</span> to the ideal gas.
+</dd>
+<dt>Reversible Process</dt>
+<dd><p>A quasistatic process which at first the system slowly does work into the system by slowly changing volume,</p>
+<p><span class="math display">\[
+\delta W = P d V
+\]</span></p>
+<p>In consequence,</p>
+<p><span class="math display">\[
+\delta Q = T \delta S
+\]</span></p>
+<p>The take away is that the entropy in the system changes at minimal</p>
+<p><span class="math display">\[
+\Delta S = \int  \frac{\delta Q}{T}
+\]</span></p>
+</dd>
+<dt>Quasistatic Process</dt>
+<dd>A process that change very slowly that on every step it’s in thermodynamic equilibrium
+</dd>
+<dt>Adiabatic Process</dt>
+<dd><p>A process that does not transfer heat</p>
+<p><span class="math display">\[
+\delta Q = 0
+\]</span></p>
+</dd>
+<dt>Isentropic Process</dt>
+<dd><p>A process that is both reversible and adiabatic so that entropy does not change</p>
+<p><span class="math display">\[
+\delta S = 0
+\]</span></p>
+</dd>
+<dt>Isentropic Ideal Gas</dt>
+<dd><p>The ideal gas in an isentropic process follows</p>
+<p><span class="math display">\[
+\begin{gather*}
+PV^\gamma = \text{constant}\\
+\gamma = \frac{C_P}{C_V}
+\end{gather*}
+\]</span></p>
+</dd>
+<dt>Iso-Processes</dt>
+<dd><p>Any problem with iso-something process often ask for work. To do this,</p>
+<ol type="1">
+<li>Solve for work <span class="math inline">\(\delta W = P d V\)</span> in terms of <span class="math inline">\(P\)</span></li>
+<li>Use <span class="math inline">\(P\)</span> from the equation of state.</li>
+</ol>
+</dd>
+<dt>Free Expansion of Ideal Gas</dt>
+<dd><p>An adiabatic process at which the ideal gas eventually occupy the whole volume</p>
+<p><span class="math display">\[
+PV = \text{const}
+\]</span></p>
+<p>Additionally since <span class="math inline">\(PV\)</span> doesn’t change, adiabatic ideal gas is also isothermal.</p>
+</dd>
+<dt>Fundamental Thermodynamic Identity</dt>
+<dd><p>The differential form of the second law of thermodyanmic,</p>
+<p><span class="math display">\[
+dU = TdS - PdV
+\]</span></p>
+</dd>
+<dt>State Variables</dt>
+<dd><p>The state variable can be dtermined from the thermodyanmic identity if you know the internal energy</p>
+<p><span class="math display">\[
+T = \frac{\partial U}{\partial S}\bigg\rvert_V
+\]</span></p>
+<p><span class="math display">\[
+P = -\frac{\partial U}{\partial V}\bigg\rvert_T
+\]</span></p>
+</dd>
+<dt>Heat Capacity</dt>
+<dd><p>A material constant that is the amount of heat to change the temperature of the material.</p>
+<p><span class="math display">\[
+\begin{align*}
+C_V = \left(\frac{\partial Q}{\partial T}\right)_V \\
+C_P = \left(\frac{\partial Q}{\partial T}\right)_P
+\end{align*}
+\]</span></p>
+</dd>
+<dt>Heat Capcity from Equipartition Theorem</dt>
+<dd><p>The equipartition theorem gives the internal energy as a function of temperature. This is useful to calculate heat capacity at constant volume</p>
+<p><span class="math display">\[
+C_V = \frac{\partial U}{\partial T}
+\]</span></p>
+</dd>
+<dt>Ideal Gas Heat Capacity</dt>
+<dd><span class="math display">\[
+\begin{gather*}
+C_P - C_V = Nk_B\\
+\big\Downarrow\\
+\gamma = \frac{D+2}{D}
+\end{gather*}
+\]</span>
+</dd>
+<dt>Specific Heat</dt>
+<dd><p>The heat capacity per mass <span class="math display">\[
+c = \frac{C}{M}
+\]</span></p>
+<p>Useful for determining energy</p>
+<p><span class="math display">\[
+Q = mc\Delta T
+\]</span></p>
+</dd>
+<dt>Efficiency of Heat Engine</dt>
+<dd><span class="math display">\[
+e = \frac{W}{Q_\text{in}} = 1 - \abs{\frac{Q_\text{out}}{Q_\text{in}}}
+\]</span>
+</dd>
+<dt>Carnot Efficiency</dt>
+<dd><span class="math display">\[
+e = 1 - \frac{T_\text{out}}{T_\text{in}}
+\]</span>
+</dd>
+<dt>Carnot Cycle</dt>
+<dd><p>Two isothermal process interleaved by two isentropic process. The internal energy at the beginning and end of the cycle is the same thus the work is</p>
+<p><span class="math display">\[
+\Delta W = \Delta T \Delta S
+\]</span></p>
+</dd>
+<dt>Ideal Gas Hamiltonian</dt>
+<dd><span class="math display">\[
+H = \frac{p^2}{2m}
+\]</span>
+</dd>
+<dt>Ideal Gas Partition Function</dt>
+<dd><span class="math display">\[
+\ln Z_N \propto N\ln\left(VT^{3/2}\right)
+\]</span>
+</dd>
+<dt>Ideal Gas Internal Energy</dt>
+<dd><span class="math display">\[
+U = \avg{E} = \frac{3}{2}Nk_BT
+\]</span>
+</dd>
+<dt>Ideal Gas RMS Velocity</dt>
+<dd><span class="math display">\[
+v_\text{rms} = \sqrt{\frac{(\dim \vec x) k_B T}{m}}
+\]</span>
+</dd>
+<dt>Ideal Gas Entropy</dt>
+<dd><span class="math display">\[
+S = Nk_B \ln \frac{VT^{3/2}}{N} + \text{constants}
+\]</span>
+</dd>
+<dt>Speed of Sound in Ideal Gas</dt>
+<dd><span class="math display">\[
+\begin{align*}
+c_s &amp;= \sqrt{\gamma\frac{P}{\rho}}\\
+    &amp;= \sqrt{\gamma \frac{k_B T}{m}}
+\end{align*}
+\]</span>
+</dd>
+<dt>Occupation Number Distribution</dt>
+<dd><p>The distribution of occupation number for an energy level <span class="math inline">\(N_i\)</span> is different depending on if the particles are bosons or fermions.</p>
+<p><span class="math display">\[
+F = \avg{N_i} = \frac{1}{\exp[\beta (E_i-\mu)] + 1} \qquad
+\begin{cases}
+    + &amp; \text{Fermion} \\
+    - &amp; \text{Boson}
+\end{cases}
+\]</span></p>
+<p>The total average occupancy number sums across all possible energy level and all possible ways a particle can be at the energy level (i.e., the degeneracy)</p>
+<p><span class="math display">\[
+\avg{N} = \sum g(E_i)\avg{N_i}
+\]</span></p>
+</dd>
+<dt>Continuous Occupancy Number Distribution</dt>
+<dd><p>The continuous distribution changes the degeneracy function to be the density of state function</p>
+<p><span class="math display">\[
+\begin{gather*}
+\rho = \frac{dg}{dE}\\
+\avg{N} = \int \rho(E)F(E)~dE
+\end{gather*}
+\]</span></p>
+</dd>
+<dt>Fermi Energy</dt>
+<dd><span class="math display">\[
+E_F \propto \left(\frac{N}{V}\right)^{2/3}m^{-1}
+\]</span>
+</dd>
+</dl>
+<h2 id="special-relativity">Special Relativity</h2>
+<dl>
+<dt>Coordinate Tranform</dt>
+<dd>For the person the S frame, the person sees the S’ frame is moving away at velocity <span class="math inline">\(v\)</span>. <span class="math display">\[
+\begin{align*}
+t = \gamma (t&#39; + \frac{v}{c^2}x)\\
+x = \gamma (x&#39; + vt&#39;)\\
+\gamma = \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}}
+\end{align*}
+\]</span>
+</dd>
+<dt>Simultaneity</dt>
+<dd>Two events occuring at the same time for one frame, occurs at different times for the other
+</dd>
+<dt>Time Dilation</dt>
+<dd><p>Measuring time with fixed position <span class="math inline">\(x&#39;\)</span></p>
+<p><span class="math display">\[
+\Delta t = \gamma \Delta t&#39;
+\]</span></p>
+</dd>
+<dt>Length Contraction</dt>
+<dd>Measure two points of an object with fixed time <span class="math inline">\(t\)</span> <span class="math display">\[
+L = \frac{L&#39;}{\gamma}
+\]</span>
+</dd>
+<dt>Velocity Addition</dt>
+<dd><span class="math display">\[
+\frac{v+u}{1 + \frac{vu}{c^2}}
+\]</span>
+</dd>
+<dt>Position Four-Vector</dt>
+<dd><span class="math display">\[
+x^\mu = (ct, x, y, z)
+\]</span>
+</dd>
+<dt>Energy-Momentum Four-Vector</dt>
+<dd><span class="math display">\[
+p^\mu = (E/c, p_x, p_y, p_z)
+\]</span>
+</dd>
+<dt>Lorentz Transform</dt>
+<dd><span class="math display">\[
+\begin{pmatrix}
+\gamma &amp; -\gamma \beta &amp; 0 &amp; 0\\
+-\gamma \beta &amp; \gamma &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 1 &amp; 0\\
+0 &amp; 0 &amp; 0 &amp; 1\\
+\end{pmatrix}
+\]</span>
+</dd>
+<dt>Four-Vector Dot Products</dt>
+<dd><p>The four-vector dot product is given by</p>
+<p><span class="math display">\[
+a \cdot b = a^0b^0 - a^1b^1 - a^2b^2 - a^3b^3
+\]</span></p>
+<p>Note that all four-vector dot product is Lorentz invariant</p>
+</dd>
+<dt>Energy-Momentum Formula</dt>
+<dd>From expanding <span class="math inline">\(p^2\)</span> and taking the rest frame (the dot product is invariant) <span class="math display">\[
+\begin{gather*}
+p^2 = m^2c^2\\
+E^2 = \abs{\vec p}^2 c^2 + m^2c^4
+\end{gather*}
+\]</span>
+</dd>
+<dt>Relativistic Doppler Shift</dt>
+<dd>The doppler shift only depends on the relative velocity between the source and the observer <span class="math display">\[
+\begin{gather*}
+\beta = \frac{v}{c}\\
+\frac{\lambda&#39;}{\lambda} = \sqrt{\frac{1 + \beta}{1 - \beta}}
+\end{gather*}
+\]</span>
+</dd>
+<dt>Pythagorean Triples and Relativity</dt>
+<dd><p>The pythagorean triples are useful for relativity to solve for <span class="math inline">\(\gamma\)</span> given <span class="math inline">\(\beta\)</span>,</p>
+<p><span class="math display">\[
+(A,B,C) \to \left(\beta_1, \beta_2, 1 \right) \to (\gamma_2^{-1}, \gamma_1^{-1}, 1)
+\]</span></p>
+<p>A common one is <span class="math inline">\((3, 4, 5)\)</span> such that,</p>
+<p><span class="math display">\[
+(\beta_1 = \tfrac{3}{5}, \beta_2=\tfrac{4}{5}, 1) \to (\gamma_2=\tfrac{5}{3}, \gamma_1=\tfrac{5}{4}, 1)
+\]</span></p>
+</dd>
+</dl>
+<h2 id="statistics">Statistics</h2>
+<dl>
+<dt>Error</dt>
+<dd><p>Error often mean the sample variance of some data sample <span class="math inline">\(S = \set{X_1=x_1, X_2=x_2, \ldots, X_n=x_n}\)</span>. The error is whats known as the unbiased estimator of the underlying variance of the distribution <span class="math inline">\(X_i\)</span></p>
+<p><span class="math display">\[
+\sigma_S^2 = \frac{1}{n-1} \sum_{i=1}^n(x_i - \bar x)^2
+\]</span></p>
+<p>The unbiased estimator changes the normalization factor from <span class="math inline">\(n \rightarrow n-1\)</span>. This effect disappears as the sample size reaches the population size <span class="math inline">\(n \rightarrow N\)</span>.</p>
+<p>Errors are interpreted as Gaussian deviations from the true mean <span class="math inline">\(x^*\)</span> interpreted as the underlying true value.</p>
+<p><span class="math display">\[
+x^* = \bar x \pm \sigma_S
+\]</span></p>
+</dd>
+<dt>Error Propogation</dt>
+<dd><p>Two measurements of the distribution <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> has an effective error governed by error progation. If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent,</p>
+<p><span class="math display">\[
+\sigma = \sqrt{\sigma_X^2 + \sigma_Y^2}
+\]</span></p>
+<p>Given the measurements are multivariate (i.e., the data points depends on more than one variable <span class="math inline">\(z(x_1,x_2,\ldots x_n)\)</span>), the distributions are then multivariate.</p>
+<p><span class="math display">\[
+\sigma_z^2 = \sum_{i=1}^n \left(\frac{\partial z}{\partial x_i}\right)^2 \sigma_{x_i}^2
+\]</span></p>
+<p>Other rules of propgation for two measurements <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are as follow</p>
+<p><span class="math display">\[
+\begin{gather*}
+\sigma(\alpha A) = \alpha \sigma_A\\
+\sigma(AB) = AB\sqrt{\left(\frac{\sigma_A}{A}\right)^2 + \left(\frac{\sigma_B}{B}\right)^2}\\
+\sigma(A/B) = \frac{A}{B}\sqrt{\left(\frac{\sigma_A}{A}\right)^2 + \left(\frac{\sigma_B}{B}\right)^2}
+\end{gather*}
+\]</span></p>
+</dd>
+<dt>Error of Poisson Process</dt>
+<dd><p>The error (sample variance) in a sampling of a Poisson distribution is,</p>
+<p><span class="math display">\[
+\sigma_S = \sqrt{x}
+\]</span></p>
+<p>Where <span class="math inline">\(x\)</span> is the count of events occured within the sample period.</p>
+</dd>
+<dt>Poisson Waiting Time</dt>
+<dd><p>The waiting time to observe a Poisson count or more mathematically the time between two Poisson count is distributed as the exponential part of Poisson.</p>
+<p><span class="math display">\[
+P(t) = \lambda e^{-\lambda t}
+\]</span></p>
+</dd>
+</dl>
+<h2 id="electronics">Electronics</h2>
+<dl>
+<dt>Impedence</dt>
+<dd><p>The impedence <span class="math inline">\(Z\)</span> is the phase and magnitude of a current given the source is AC of angular frequency <span class="math inline">\(\omega\)</span>. The impedence ties into many classical E&amp;M circuits.</p>
+<p><span class="math display">\[
+\begin{gather*}
+\text{Ohm&#39;s Law:} &amp; V = IZ\\
+\text{Capcitor:} &amp; Z = \frac{1}{i \omega C}\\
+\text{Inudctor:} &amp; Z = i\omega L \\
+\text{Resistor:} &amp; Z = R
+\end{gather*}
+\]</span></p>
+</dd>
+<dt>De-Morgan’s Law</dt>
+<dd><p>NAND and NOR gates and be disected as their individual OR and AND gates respectively</p>
+<p><span class="math display">\[
+\overline{A \cdot B} = \overline A + \overline B\\
+\overline{A + B} = \overline A \cdot \overline B
+\]</span></p>
+</dd>
+</dl>
+<h2 id="particle-interactions">Particle Interactions</h2>
+<dl>
+<dt>Nuclei</dt>
+<dd><p>Facts about nuclei interactions</p>
+<ul>
+<li>Are bigger than electrons thus gets stopped faster upon collision of particle field</li>
+<li>Travel in straight lines because nuclei are heavier</li>
+<li>Interact mostly with atomic electrons</li>
+</ul>
+</dd>
+<dt>Photons</dt>
+<dd><p>Facts about photon interactions</p>
+<ul>
+<li><p>Photoabsorption is when photon is absorbed by the atom causing an electron to be emitted with energy,</p>
+<p><span class="math display">\[
+  E_\text{max} = E_\gamma - \phi
+  \]</span></p></li>
+</ul>
+<p>Where <span class="math inline">\(\phi\)</span> is the work function or more commonly the binding energy.</p>
+<ul>
+<li><p>Compton Scattering is when photons elastically collide with an electron and both particles scatter. The scattered photon has the Compton wavelength</p>
+<p><span class="math display">\[
+  \lambda = \frac{h}{m_ec}
+  \]</span></p></li>
+<li><p>At <span class="math inline">\(E_\gamma \ge 2m_e c^2 \sim 10 \text{MeV}\)</span>, the nuclei’s electric field can induce a photon to produce an electron-positron pair</p></li>
+</ul>
+</dd>
+<dt>Radioactive Decay</dt>
+<dd><p>A substance of <span class="math inline">\(N_0\)</span> particles under radioactive decay, loses particles at the rate of exponential decay</p>
+<p><span class="math display">\[
+N = N_0 e^{-t / \tau}
+\]</span></p>
+<p>Where <span class="math inline">\(\tau\)</span> is the mean lifetime. Given multiple channels of decay the effective mean lifetime is</p>
+<p><span class="math display">\[
+\tau^{-1} = \sum_i\tau_i^{-1}
+\]</span></p>
+</dd>
+</dl>
+<h2 id="numbers-to-remember">Numbers to Remember</h2>
+<dl>
+<dt>Hydrogen Ground State Energy</dt>
+<dd><span class="math inline">\(13.6\)</span> eV
+</dd>
+<dt>Electron Rest Mass Energy</dt>
+<dd><span class="math inline">\(511\)</span> eV
+</dd>
+<dt>Rayleigh Criterion Circular Coefficient</dt>
+<dd><span class="math inline">\(1.22\)</span>
+</dd>
+<dt>Wein Displacement Constant</dt>
+<dd><span class="math inline">\(3 \times 10^{-3}\)</span>
+</dd>
+<dt>CMB Temperature</dt>
+<dd><span class="math inline">\(2.7\)</span> K
+</dd>
+</dl>
+<h2 id="astrophysics">Astrophysics</h2>
+<dl>
+<dt>Redshift</dt>
+<dd><p>The Doppler redshift is the factor that the observed wavelength expanded setting no expansion at <span class="math inline">\(z=0\)</span></p>
+<p><span class="math display">\[
+\frac{\lambda&#39;}{\lambda} = 1 + z
+\]</span></p>
+</dd>
+</dl>
 
-            </div>
-            <!-- Disqus Comments -->
-            <div id="disqus_thread" class="mt-5">
-                <div class="w-50 mx-auto">
-                    <button type="button" class="btn btn-block btn-outline-dark show-comments">Show Comments</button>
-                </div>
-            </div>
-            <!--
+      </div>
+      <!-- Disqus Comments -->
+      <div id="disqus_thread" class="mt-5">
+        <div class="w-50 mx-auto">
+          <button type="button" class="btn btn-block btn-outline-dark show-comments">Show Comments</button>
+        </div>
+      </div>
+      <!--
                 <script>
                 /**
                 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -698,22 +1414,24 @@ P \propto q^2 \ddot x^2
             <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
                     by Disqus.</a></noscript>
             -->
-            
-        </div>
-
-        <!-- On This Page -->
-        <div class="col-lg d-none d-lg-block">
-            <div class="onthispage sidenav sticky-top vh-80">
-                <div class="sidenav-header">
-                    <strong>On This Page</strong>
-                </div>
-                <div class="sidenav-body">
-                    <ul class="onthispage-list no-list-style"></ul>
-                </div>
-            </div>
-        </div>
-
+      
     </div>
+
+    <!-- On This Page -->
+    <div class="col-md-3 d-none d-md-block">
+      <div class="onthispage sidenav small">
+    <div class="sidenav-header">
+        <strong>&#9776; On This Page</strong>
+    </div>
+    <div class="onthispage-collapse">
+        <div class="sidenav-body bg-light">
+            <ul class="onthispage-list no-list-style"></ul>
+        </div>
+    </div>
+</div>
+    </div>
+
+  </div>
 </div>
 
     <footer class="py-2 bg-white">
@@ -730,17 +1448,18 @@ P \propto q^2 \ddot x^2
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
     crossorigin="anonymous"></script>
 
-    <script src="https://ketozhang.github.io/static/datetime.js"></script>
-    <script src="https://ketozhang.github.io/static/disqus.js"></script>
-    <script src="https://ketozhang.github.io/static/sidenav.js"></script>
-    <script src="https://ketozhang.github.io/static/codeHighlight.js"></script>
-    <script src="https://ketozhang.github.io/static/prism.js"></script>
+    <script src="https://ketozhang.github.io/static/js/datetime.js"></script>
+    <script src="https://ketozhang.github.io/static/js/disqus.js"></script>
+    <script src="https://ketozhang.github.io/static/js/sidenav.js"></script>
+    <script src="https://ketozhang.github.io/static/js/codeHighlight.js"></script>
+    <script src="https://ketozhang.github.io/static/js/prism.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>
-    <script src="https://ketozhang.github.io/static/onThisPage.js"></script>
+    <script src="https://ketozhang.github.io/static/js/onThisPage.js"></script>
+    <script src="https://ketozhang.github.io/static/js/markdown.js"></script>
 
     <!-- MathJax -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script src="https://ketozhang.github.io/static/mathjax_config.js" defer></script>
+    <script src="https://ketozhang.github.io/static/js/mathjax_config.js" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
 
     <!-- Bootstrap JS -->

@@ -20,7 +20,8 @@
     <!-- Bootstrap time -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://ketozhang.github.io/static/base.css" rel="stylesheet">
+    <!-- <link href="https://ketozhang.github.io/static/base.css" rel="stylesheet"> -->
+    <link href="/static/main.css?80631208" rel="stylesheet"">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro|Quicksand" rel="stylesheet">
     <link href="https://ketozhang.github.io/static/prism.css" rel="stylesheet">
     <link rel="shortcut icon" href="https://ketozhang.github.io/static/favicon.ico">
@@ -40,40 +41,40 @@
 <body>
     
 <div class="container-fluid" id="note">
-    <!-- <nav class="navbar navbar-expand-lg">
+  <!-- <nav class="navbar navbar-expand-lg">
         <button id="sidenavCollapse" class="btn btn-info" type="button">
             <i class="fas fa-align-left"></i>
             <span>Toggle Sidebar</span>
         </button>
     </nav> -->
-    <div id="note-body" class="row">
-        <!-- Notebook Sidenav -->
-        <div class="col-3 col-lg bg-light pt-1">
-            <div class="sidenav sticky-top vh-80">
-                <div class="sidenav-header row no-gutters">
-                    <div class="col-9">
-                        <strong>Non-Degenerate Perturbation Theory</strong>
-                    </div>
-                    <div class="col-2 offset-1">
-                        <a class="go-up" href="https://ketozhang.github.io/notes/Physics/Quantum_Mechanics/Time-Independent_Perturbation_Theory/" role="button">
-                            <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
-                        </a>
-                    </div>
-                </div>
-                <div class="sidenav-body no-gutters">
-                    <ul class="no-list-style pl-3">
-                        
-                    </ul>
-                </div>
-            </div>
+  <div id="note-body" class="row">
+    <!-- Notebook Sidenav -->
+    <div class="col-3 bg-light pt-1">
+      <div class="sidenav sticky-top vh-80">
+        <div class="sidenav-header row no-gutters">
+          <div class="col-9">
+            <strong>Non-Degenerate Perturbation Theory</strong>
+          </div>
+          <div class="col-2 offset-1">
+            <a class="go-up" href="https://ketozhang.github.io/notes/Physics/Quantum_Mechanics/Time-Independent_Perturbation_Theory/" role="button">
+              <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+            </a>
+          </div>
         </div>
-
-        <!-- Content -->
-        <div class="col col-lg-7">
-            <h1 class="title text-center pt-3">Non-Degenerate Perturbation Theory</h1>
+        <div class="sidenav-body no-gutters">
+          <ul class="no-list-style pl-3">
             
-            <div class="markdown-content">
-                <p>Given a easily solvable solution to the Schrodinger equation denoted as,</p>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="col-7 col-md-6">
+      <h1 class="title text-center pt-3">Non-Degenerate Perturbation Theory</h1>
+      
+      <div class="markdown-content">
+        <p>Given a easily solvable solution to the Schrodinger equation denoted as,</p>
 <p><span class="math display">\[ H^0 \psi_n^0 = E_n^0 \psi_n^0\]</span></p>
 <ul>
 <li><span class="math inline">\(H^0\)</span> : simple solvable Hamiltonian</li>
@@ -87,11 +88,11 @@
 <li><span class="math inline">\(\lambda\)</span> : strength of the perturbation, it’s arbitrary and assume to be very small.</li>
 </ul>
 <p><strong>Perturbation theory</strong> states that the solution to the perturbed hamiltonian is in the form of a geometric series,</p>
-<p><span class="math display">\[ 
+<p><span class="math display">\[
 \begin{align}
     \psi_n &amp;= \psi_n^0 + \lambda\psi_n^1 + ...\lambda^k\psi_n^j\\
     E_n &amp;= E_n^0 + \lambda E_n^1 + ... \lambda^k E_n^j
-\end{align} 
+\end{align}
 \]</span></p>
 <ul>
 <li><span class="math inline">\(\psi_n^j\)</span> : the <span class="math inline">\(j\)</span>-th order correction to the eigenfunction</li>
@@ -104,33 +105,29 @@
     \boxed{
     H^0\psi_n^0 + \lambda(H^0\psi_n^1+H&#39;\psi_n^0) + \lambda^2(H^0\psi_n^2 + H&#39;\psi_n^1) + ... \\
     = E_n^0\psi_n^0 + \lambda(E_n^0\psi_n^1 + E_n^1\psi_n^0) + \lambda^2(E_n^0\psi_n^2 + E_n^1\psi_n^1 + E_n^2\psi_n^0 )}
-    \label{eq: perturbed-tise}
 \end{align}\]</span></p>
 <h2 id="first-order-perturbation">First Order Perturbation</h2>
 <p>For very small perturbations where <span class="math inline">\(\lambda \ll 1\)</span> we may approximate first order by considering terms in the Equation  with <span class="math inline">\(\lambda^1\)</span>,</p>
 <p><span class="math display">\[
 \begin{align}
     \boxed{H^0\psi_n^1+H&#39;\psi_n^0 = E_n^0\psi_n^1 + E_n^1\psi_n^0}
-    \label{eq: first-order}
 \end{align}
 \]</span></p>
 <p>The first order correction to the eigenvalue and eigenfunction are the following,</p>
 <p><span class="math display">\[
 \begin{align}
      \boxed{E_n^1 = \langle H&#39; \rangle }
-     \label{eq: first-order-eigenvalue}
 \end{align}
 \]</span></p>
 <p><span class="math display">\[
 \begin{equation}
-    \boxed{\psi_n^1 = \sum_{m \neq n}{\frac{\langle \psi_m^0 |H&#39;|\psi_n^0\rangle}{E^0_n - E_m^0} \psi_m^0}} 
-    \label{eq: first-order-eigenfunction}
+    \boxed{\psi_n^1 = \sum_{m \neq n}{\frac{\langle \psi_m^0 |H&#39;|\psi_n^0\rangle}{E^0_n - E_m^0} \psi_m^0}}
 \end{equation}
 \]</span></p>
 <p>Equation  is valid only if the system is non-degenerate hence the name of the theory.</p>
 <h3 id="correction-to-eigenvalue">Correction to Eigenvalue</h3>
 <p>We wish to find <span class="math inline">\(E_n^1\)</span> by applying <span class="math inline">\(\langle \psi_n^0 |\)</span>,</p>
-<p><span class="math display">\[ 
+<p><span class="math display">\[
 \begin{align}
     \langle \psi^0_n| H^0\psi_n^1 \rangle+ \langle \psi^0_n | H&#39;\psi_n^0 \rangle &amp;= E_n^0\langle \psi^0_n  |\psi_n^1 \rangle + E_n^1\langle \psi^0_n  |\psi_n^0\rangle\\
     E_n^0 \langle \psi_n^0 | \psi_n^1 \rangle + \langle \psi^0_n | H&#39;\psi_n^0 \rangle &amp;= E_n^0\langle \psi^0_n  |\psi_n^1 \rangle + E_n^1  \\
@@ -149,7 +146,6 @@
 <p><span class="math display">\[
 \begin{align}
     (H^0 - E^0_n)\psi_n^1 = -(H&#39;-E_n^1)\psi_n^0
-    \label{eq: first-order-2}
 \end{align}
 \]</span></p>
 <p>Recall that the <span class="math inline">\(\psi_n^1\)</span> is a wavefunction that can definitely be built by a linear combination of the complete set of the unperturbed wavefunctions <span class="math inline">\(\psi_n^0\)</span>. We will use the subscript <span class="math inline">\(m\)</span> to preventing you from assuming <span class="math inline">\(n=m\)</span>,</p>
@@ -179,7 +175,6 @@
 <p><span class="math display">\[
 \begin{equation}
     c_m^{(n)} = \frac{\langle \psi_m^0 |H&#39;|\psi_n^0\rangle}{E^0_n - E_m^0}
-    \label{eq: weight}
 \end{equation}
 \]</span></p>
 <p>Thus the first order correction to the eigenfunction <span class="math inline">\(\psi_n^1\)</span> is ,</p>
@@ -191,22 +186,22 @@
 \]</span></p>
 <h2 id="second-order-perturbation">Second Order Perturbation</h2>
 <p>Similar to first order, we will only consider terms with <span class="math inline">\(\lambda^2\)</span> in the Equation ,</p>
-<p><span class="math display">\[ 
+<p><span class="math display">\[
 \begin{align}
     \boxed{H^0\psi_n^2 + H&#39;\psi_n^1 = E_n^0\psi_n^2 + E_n^1\psi_n^1 + E_n^2\psi_n^0}
-\end{align} 
+\end{align}
 \]</span></p>
 <h3 id="correction-to-eigenvalue-1">Correction to Eigenvalue</h3>
 <h3 id="correction-to-eigenfunction-1">Correction to Eigenfunction</h3>
 
-            </div>
-            <!-- Disqus Comments -->
-            <div id="disqus_thread" class="mt-5">
-                <div class="w-50 mx-auto">
-                    <button type="button" class="btn btn-block btn-outline-dark show-comments">Show Comments</button>
-                </div>
-            </div>
-            <!--
+      </div>
+      <!-- Disqus Comments -->
+      <div id="disqus_thread" class="mt-5">
+        <div class="w-50 mx-auto">
+          <button type="button" class="btn btn-block btn-outline-dark show-comments">Show Comments</button>
+        </div>
+      </div>
+      <!--
                 <script>
                 /**
                 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -225,22 +220,24 @@
             <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
                     by Disqus.</a></noscript>
             -->
-            
-        </div>
-
-        <!-- On This Page -->
-        <div class="col-lg d-none d-lg-block">
-            <div class="onthispage sidenav sticky-top vh-80">
-                <div class="sidenav-header">
-                    <strong>On This Page</strong>
-                </div>
-                <div class="sidenav-body">
-                    <ul class="onthispage-list no-list-style"></ul>
-                </div>
-            </div>
-        </div>
-
+      
     </div>
+
+    <!-- On This Page -->
+    <div class="col-md-3 d-none d-md-block">
+      <div class="onthispage sidenav small">
+    <div class="sidenav-header">
+        <strong>&#9776; On This Page</strong>
+    </div>
+    <div class="onthispage-collapse">
+        <div class="sidenav-body bg-light">
+            <ul class="onthispage-list no-list-style"></ul>
+        </div>
+    </div>
+</div>
+    </div>
+
+  </div>
 </div>
 
     <footer class="py-2 bg-white">
@@ -257,17 +254,18 @@
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
     crossorigin="anonymous"></script>
 
-    <script src="https://ketozhang.github.io/static/datetime.js"></script>
-    <script src="https://ketozhang.github.io/static/disqus.js"></script>
-    <script src="https://ketozhang.github.io/static/sidenav.js"></script>
-    <script src="https://ketozhang.github.io/static/codeHighlight.js"></script>
-    <script src="https://ketozhang.github.io/static/prism.js"></script>
+    <script src="https://ketozhang.github.io/static/js/datetime.js"></script>
+    <script src="https://ketozhang.github.io/static/js/disqus.js"></script>
+    <script src="https://ketozhang.github.io/static/js/sidenav.js"></script>
+    <script src="https://ketozhang.github.io/static/js/codeHighlight.js"></script>
+    <script src="https://ketozhang.github.io/static/js/prism.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>
-    <script src="https://ketozhang.github.io/static/onThisPage.js"></script>
+    <script src="https://ketozhang.github.io/static/js/onThisPage.js"></script>
+    <script src="https://ketozhang.github.io/static/js/markdown.js"></script>
 
     <!-- MathJax -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script src="https://ketozhang.github.io/static/mathjax_config.js" defer></script>
+    <script src="https://ketozhang.github.io/static/js/mathjax_config.js" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
 
     <!-- Bootstrap JS -->

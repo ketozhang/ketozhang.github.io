@@ -32,7 +32,7 @@
     </div>
 
     <!-- Content -->
-    <div class="col-9">
+    <div class="col-7 col-md-6">
       <h1 class="title text-center pt-3">{{page['title']}}</h1>
       {% if page['has_content'] %}
       <div class="markdown-content">
@@ -67,15 +67,8 @@
     </div>
 
     <!-- On This Page -->
-    <div class="onthispage sidenav small sticky-top vh-80">
-      <div class="sidenav-header">
-        <strong>&#9776; On This Page</strong>
-      </div>
-      <div class="onthispage-collapse">
-        <div class="sidenav-body bg-light">
-          <ul class="onthispage-list no-list-style"></ul>
-        </div>
-      </div>
+    <div class="col-md-3 d-none d-md-block">
+      {% include "onthispage.html" %}
     </div>
 
   </div>

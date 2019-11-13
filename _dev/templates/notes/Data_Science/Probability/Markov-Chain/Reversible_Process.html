@@ -1,0 +1,28 @@
+<p>A Markov chain is considered a reversible chain if its reverse sequence <span class="math inline">\(Y_0, Y_1, \ldots, Y_n\)</span> has the same one-step transition probability as the forward sequence <span class="math inline">\(X_0, X_1, \ldots, X_n\)</span>. This implies, a chain is reversible if the chain is in detailed balance with positive solution <span class="math inline">\(\pi(i)\)</span> for all states <span class="math inline">\(i\)</span>,</p>
+<p><span class="math display">\[
+\pi(i) P(i,j) = \pi(j)P(j,i)
+\]</span></p>
+<h2 id="proof">Proof</h2>
+<p>Given a sequence, the probability of the next step in the reverse sequence can be related to the foward sequence</p>
+<p><span class="math display">\[
+P(Y_{m+1} = j \mid Y_{m &lt; i}, Y_i = i) = \frac{\pi(j)}{\pi(i)}P(j,i)
+\]</span></p>
+<p>Since the RHS does not depend on the intermediate states <span class="math inline">\(m &lt; i\)</span>,</p>
+<p><span class="math display">\[
+P(Y_{m+1} = j \mid Y_i = i) = \frac{\pi(j)}{\pi(i)}P(j,i)
+\]</span></p>
+<p>Thus, the Markov chain is reversible if the probability of the foward step <span class="math inline">\(P(i, j)\)</span> is the same as the probability of stepping backward from <span class="math inline">\(i\)</span> back to <span class="math inline">\(j\)</span> or <span class="math inline">\(P(Y_{m+1} = j \mid Y_i = i)\)</span>,</p>
+<p><span class="math display">\[
+\begin{gather*}
+    P(Y_{m+1} = j \mid Y_i = i) = P(i,j)\\
+    \Downarrow\\
+    \frac{\pi(j)}{\pi(i)}P(j,i) = P(i,j)
+\end{gather*}
+\]</span></p>
+<p>This is exactly the balanced equation,</p>
+<p><span class="math display">\[
+\pi(i) P(i,j) = \pi(j)P(j,i)
+\]</span></p>
+<h2 id="birth-and-death-chain">Birth and Death Chain</h2>
+<p>A birth and death is one that can only go to 3 states: up <span class="math inline">\(i+1\)</span>, down <span class="math inline">\(i-1\)</span>, and stay <span class="math inline">\(i\)</span>.</p>
+<p>This simple process makes it not surprising that all birth and death chain are all reversible processes. As we can abritrarily swap out <span class="math inline">\(i\)</span> and <span class="math inline">\(k\)</span> and the process is reversed.</p>

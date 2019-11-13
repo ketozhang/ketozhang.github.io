@@ -1,0 +1,51 @@
+<p>A probability density function (PDF) defines the continuous probability distribution. The PDF follows two basic rules,</p>
+<ol type="1">
+<li><p><span class="math display">\[
+\int_{-\infty}^{\infty} f(x) ~dx = 1
+\]</span></p></li>
+<li><p><span class="math display">\[
+P(a &lt; X \le b) = \int_a^b f(x)~ dx
+\]</span></p></li>
+</ol>
+<p>Where <span class="math inline">\(f(x)\)</span> is the conventional syntax for PDF.</p>
+<h2 id="cumulative-distribution-function">Cumulative Distribution Function</h2>
+<p>The cumulative distribution function (CDF) is defined the left limit to negative infinity,</p>
+<p><span class="math display">\[
+F(x) = P(X \le b) = \int_{-\infty}^b f(x)~ dx
+\]</span></p>
+<p>Where <span class="math inline">\(F(x)\)</span> is the conventional syntax for CDF.</p>
+<dl>
+<dt>Relation to PDF</dt>
+<dd><p>By the fundamental theorem of calculus,</p>
+<p><span class="math display">\[
+\begin{gather*}
+P(a &lt; X \le b) = \int_a^b f(x)~ dx = F(b) - F(a)\\
+\Big\Downarrow\\
+f = \frac{dF}{dx}
+\end{gather*}
+\]</span></p>
+</dd>
+</dl>
+<h2 id="infinitestimal-interpretation">Infinitestimal Interpretation</h2>
+<p>Treating integrals as Rienmann integrations, we can treat <span class="math inline">\(dx\)</span> as a infinitesimal (very tiny) interval around <span class="math inline">\(x\)</span>. Using this we can now treat an event as <span class="math inline">\(\set{X \in dx}\)</span>. The Reinmann trapezoid allows,</p>
+<p><span class="math display">\[
+P(X \in dx) = f(x) dx, \quad\text{as } dx \to 0
+\]</span></p>
+<p>Thus we define,</p>
+<p><span class="math display">\[
+f(x) = \frac{P(X \in dx)}{dx}, \quad\text{as } dx \to 0
+\]</span></p>
+<h2 id="expectation">Expectation</h2>
+<p>Analgous to discrete case, the expectation is,</p>
+<p><span class="math display">\[
+E(g(X)) = \int_{-\infty}^\infty g(x)f(x)~dx
+\]</span></p>
+<dl>
+<dt>Existence</dt>
+<dd><p>The expectation exists only if the integral exists. A useful theorem is if,</p>
+<p><span class="math display">\[
+E(g(X)) = \int_{-\infty}^\infty \abs{g(x)}f(x)~dx &lt; \infty
+\]</span></p>
+<p>then the expectation exists.</p>
+</dd>
+</dl>

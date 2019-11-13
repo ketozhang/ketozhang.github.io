@@ -1,0 +1,72 @@
+<p>The MCMC is a sampling algorithm to determine some underlying probability distribution often the posterior distribution representing the outcome or sample space <span class="math inline">\(S\)</span>. In terms of the Markov chain, the desired probability distribution is the long-run proportion of state distribution <span class="math inline">\(\pi\)</span> of some stationary Markov chain of sample space <span class="math inline">\(S\)</span> (e.g., some paramter space) satisfying the balance equation:</p>
+<p><span class="math display">\[
+\pi \mathbb P  = \pi
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\mathbb P\)</span>: the transition matrix of the Markov chain.</li>
+<li><span class="math inline">\(\pi\)</span>: A vector of size <span class="math inline">\(\abs{S}\)</span> representing the proportion of time at long-run the chain spent on each state <span class="math inline">\(i \in S\)</span></li>
+</ul>
+<p>Recall that, the balance equation satisfies for as <span class="math inline">\(t \rightarrow \infty\)</span>, stepping from <span class="math inline">\(i\)</span> to <span class="math inline">\(j\)</span> is the long-run proportion of state distribution completely independent from the initial state <span class="math inline">\(i\)</span>.</p>
+<p><span class="math display">\[
+P(X_{t+1} = j \mid X_t = i) = \pi(j)
+\]</span></p>
+<h2 id="metropolis-hastings-algorithm">Metropolis-Hastings Algorithm</h2>
+<p>Known as the classical and easiest to understand algorithm of MCMC, the <strong>Metroplis-Hastings Algorithm</strong> takes advantage of detailed balance in Markov chains.</p>
+<p>Recall a Markov chain is in detailed balance if at the long wrong for all states in the state space <span class="math inline">\((i,j \in S)\)</span>, the long-run proportion of steps in state <span class="math inline">\(i\)</span> entering state <span class="math inline">\(j\)</span> is equivalent to the long-run proportion of steps in state <span class="math inline">\(j\)</span> entering state <span class="math inline">\(i\)</span>:</p>
+<p><span class="math display">\[
+\pi(j)P(j, i) = \pi(i)P(i,j)
+\]</span></p>
+<p>An equivalent expression is,</p>
+<p><span class="math display">\[
+\frac{\pi(j)}{\pi(i)} = \frac{P(i,j)}{P(j,i)}
+\]</span></p>
+<p>This condition will come up many times throughout the algorithm so let’s give it a name called the <strong>acceptance ratio</strong>:</p>
+<p><span class="math display">\[
+r(i,j) := \frac{\pi(j)}{\pi(i)}
+\]</span></p>
+<p>The transition matrix for the Markov chain in question is called the <strong>proposal matrix</strong> <span class="math inline">\(\mathbb Q\)</span> which is a transition matrix that is symmetric and irreducible. It is called a proposal matrix because its job is to propose the next step (i.e., its next guess for what you want to sample). For each guess it makes, we need to somehow decide if it’s a good guess or not. The Metropolis-Hastings algorithm thus defines the rules of what to do for every guess (formally from here on a guess is called a proposal).</p>
+<dl>
+<dt>Algorithm</dt>
+<dd><p>The Metropolis-Hastings algorithm goes as so:</p>
+<p>For every step <span class="math inline">\(t\)</span> of the algorithm, <span class="math inline">\(\mathbb Q\)</span> proposes <span class="math inline">\(X_{t+1} = j\)</span> where the previous step is <span class="math inline">\(X_{t}=i\)</span>. This proposal occurs at chance <span class="math inline">\(\mathbb Q_{ij}\)</span> (the matrix element <span class="math inline">\(i,j\)</span> of <span class="math inline">\(\mathbb Q\)</span>)</p>
+<ul>
+<li>If <span class="math inline">\(r(i,j) \ge 1\)</span>, accept the proposal <span class="math inline">\(X_{t+1} = j\)</span></li>
+<li><p>If <span class="math inline">\(r(i,j) &lt; 1\)</span>, toss a p-coin with chance <span class="math inline">\(p=r(i,j)\)</span></p>
+<ul>
+<li>On head, accept the proposal <span class="math inline">\(X_{t+1}=j\)</span>.</li>
+<li>On tails, reject the proposal <span class="math inline">\(X_{t+1}=i\)</span>.</li>
+</ul></li>
+<li><p>Repeat until you’re satisfied (in some cases this is when the chain converges; in many others it’s when your deadline is coming or you run out of patience).</p></li>
+</ul>
+</dd>
+</dl>
+<h3 id="proof-of-metropolis-algorithm-gives-detailed-balance">Proof of Metropolis-Algorithm Gives Detailed Balance</h3>
+<p>Now, does this algorithm develop a Markov chain that satisfy detailed balance:</p>
+<p><span class="math display">\[r(i,j) = \frac{P(i,j)}{P(j,i)} ~?\]</span></p>
+<p>Let’s take a look at all the possible states at step <span class="math inline">\(t\)</span> assuming we’ve ran the algorithm for long enough <span class="math inline">\(t \rightarrow \infty\)</span>,</p>
+<ul>
+<li><p><span class="math inline">\(r(i,j)=1 \implies \pi(i) = \pi(j)\)</span>. The probability of transition is</p>
+<p><span class="math display">\[
+  \begin{align*}
+  P(i,j) &amp;= \mathbb Q_{ij}\\
+  P(j,i) &amp;= \mathbb Q_{ji}
+  \end{align*}
+  \]</span></p>
+<p>Since <span class="math inline">\(\mathbb Q\)</span> is symmetric, the RHS is <span class="math inline">\(1\)</span> thus the ratio of transition probabilities is <span class="math inline">\(r(i,j)\)</span>:</p>
+<p><span class="math display">\[
+  r(i,j) = \frac{P(i,j)}{P(j,i)} = 1
+  \]</span></p>
+<p>This satisfies the detailed balance condiiton since <span class="math inline">\(r(i,j) = 1\)</span></p></li>
+<li><p><span class="math inline">\(r(i,j) &lt; 1 \implies \pi(j) &lt; \pi(i)\)</span>, the transition probabilities are</p>
+<p><span class="math display">\[
+  \begin{align*}
+  P(i,j) &amp;= \mathbb Q_{ij}r(i,j) \tag{accept after flipping coin}\\
+  P(j,i) &amp;= \mathbb Q_{ji} \tag{accept since $\pi(i) &gt; \pi(j)$}
+  \end{align*}
+  \]</span></p>
+<p>The ratio of transition probabilities is <span class="math inline">\(r(i,j)\)</span> since <span class="math inline">\(\mathbb Q\)</span> is symmetric</p>
+<p><span class="math display">\[
+  r(i,j) = \frac{P(i,j)}{P(j,i)}
+  \]</span></p></li>
+<li><p><span class="math inline">\(r(i,j) \ge 1 \implies \pi(j) \ge \pi(i)\)</span>, equivalent to the previous case if you swap <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>.</p></li>
+</ul>

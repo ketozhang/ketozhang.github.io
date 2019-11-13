@@ -24,12 +24,23 @@ from staticpy import (
 from collections import OrderedDict
 
 assets = Environment(app)
-scss = Bundle('main.scss', '_variables.scss', '_base.scss', '_header.scss', '_posts.scss', depends=('/static/_variables.scss'), filters='pyscss', output='main.css')
-assets.register('scss_all', scss)
+scss = Bundle(
+    "main.scss",
+    "_variables.scss",
+    "_base.scss",
+    "_header.scss",
+    "_note.scss",
+    "_post.scss",
+    "_markdown.scss",
+    filters="pyscss",
+    output="main.css",
+)
+assets.register("scss_all", scss)
+
 
 @app.context_processor
 def get_assets():
-    return {'assets_url': assets['scss_all'].urls()[0]}
+    return {"assets_url": assets["scss_all"].urls()[0]}
 
 
 ########################
@@ -49,9 +60,9 @@ def home():
     source_path = PROJECT_PATH / context["source_path"]
     all_posts = get_subpages(source_path)
     posts = []
-    for url in config['posts']:
+    for url in config["posts"]:
         for post in all_posts:
-            if url == post['url']:
+            if url == post["url"]:
                 posts.append(post)
 
     projects = config["projects"]
@@ -75,7 +86,7 @@ def notes_homepage():
 
     # for category_url in categories.keys():
     #     notebooks = get_subpages(category_url)
-    kwargs = {'pages': pages}
+    kwargs = {"pages": pages}
     return render_template(f"notes/index.html", **kwargs)
 
 
@@ -87,7 +98,6 @@ def posts_homepage():
     context = BASE_CONFIG["contexts"]["posts"]
     source_path = PROJECT_PATH / context["source_path"]
     posts = get_subpages(source_path)
-
 
     # def get_all_posts():
     #     """Get post urls (path relative to `TEMPLATE_PATH`).

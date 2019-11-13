@@ -1,0 +1,18 @@
+{% for post in posts %}
+<div id="post-showcase">
+  <div class="card">
+    <div class="row">
+      <div class="card-image col-md-5 col-lg-4">
+        <a href="{{ url_for(post['url'] )}}"><img class="card-img" src={{ url_for(post.get('image', '#')) }}></a>
+      </div>
+      <div class="col-md-7 col-lg-8">
+        <div class="card-body">
+          <h5 class="card-title"><a href="{{ url_for(post['url'] )}}">{{post['title']}}</a></h5>
+          <p class="card-subtitle"><time datetime="{{post['last_updated']}}"></time></p>
+          <p class="card-text">{{post['description']}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}

@@ -20,7 +20,8 @@
     <!-- Bootstrap time -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://ketozhang.github.io/static/base.css" rel="stylesheet">
+    <!-- <link href="https://ketozhang.github.io/static/base.css" rel="stylesheet"> -->
+    <link href="/static/main.css?80631208" rel="stylesheet"">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro|Quicksand" rel="stylesheet">
     <link href="https://ketozhang.github.io/static/prism.css" rel="stylesheet">
     <link rel="shortcut icon" href="https://ketozhang.github.io/static/favicon.ico">
@@ -40,40 +41,40 @@
 <body>
     
 <div class="container-fluid" id="note">
-    <!-- <nav class="navbar navbar-expand-lg">
+  <!-- <nav class="navbar navbar-expand-lg">
         <button id="sidenavCollapse" class="btn btn-info" type="button">
             <i class="fas fa-align-left"></i>
             <span>Toggle Sidebar</span>
         </button>
     </nav> -->
-    <div id="note-body" class="row">
-        <!-- Notebook Sidenav -->
-        <div class="col-3 col-lg bg-light pt-1">
-            <div class="sidenav sticky-top vh-80">
-                <div class="sidenav-header row no-gutters">
-                    <div class="col-9">
-                        <strong>Sampling Probability</strong>
-                    </div>
-                    <div class="col-2 offset-1">
-                        <a class="go-up" href="https://ketozhang.github.io/notes/Data_Science/Statistical_Modeling/Probabilistic_Models/" role="button">
-                            <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
-                        </a>
-                    </div>
-                </div>
-                <div class="sidenav-body no-gutters">
-                    <ul class="no-list-style pl-3">
-                        
-                    </ul>
-                </div>
-            </div>
+  <div id="note-body" class="row">
+    <!-- Notebook Sidenav -->
+    <div class="col-3 bg-light pt-1">
+      <div class="sidenav sticky-top vh-80">
+        <div class="sidenav-header row no-gutters">
+          <div class="col-9">
+            <strong>Sampling Probability</strong>
+          </div>
+          <div class="col-2 offset-1">
+            <a class="go-up" href="https://ketozhang.github.io/notes/Data_Science/Statistical_Modeling/Probabilistic_Models/" role="button">
+              <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+            </a>
+          </div>
         </div>
-
-        <!-- Content -->
-        <div class="col col-lg-7">
-            <h1 class="title text-center pt-3">Sampling Probability</h1>
+        <div class="sidenav-body no-gutters">
+          <ul class="no-list-style pl-3">
             
-            <div class="markdown-content">
-                <p>A sampling probability is often one at which follows these sampling rules. For <span class="math inline">\(N\)</span> individuals we wish gather the individuals into <span class="math inline">\(n\)</span> subsets:</p>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="col-7 col-md-6">
+      <h1 class="title text-center pt-3">Sampling Probability</h1>
+      
+      <div class="markdown-content">
+        <p>A sampling probability is often one at which follows these sampling rules. For <span class="math inline">\(N\)</span> individuals we wish gather the individuals into <span class="math inline">\(n\)</span> subsets:</p>
 <ol type="1">
 <li>Each sample cannot be picked more than once (no replacement)</li>
 <li>Order does not matter</li>
@@ -85,25 +86,18 @@
     n \\ k
 \end{pmatrix} = \frac{n!}{k!(n-k)!}}\]</span></p>
 <hr />
-<dl>
-<dt>Example</dt>
-<dd>The population of the data is <span class="math inline">\(N=10\)</span>, if you were to group the population into pairs (<span class="math inline">\(k=2\)</span>) how many groups can you make?
-</dd>
-</dl>
+<div class="Example">
+<p>The population of the data is <span class="math inline">\(N=10\)</span>, if you were to group the population into pairs (<span class="math inline">\(k=2\)</span>) how many groups can you make?</p>
 <p><span class="math display">\[ \begin{pmatrix}
     N \\ k
 \end{pmatrix} = \begin{pmatrix}
     10 \\ 2
 \end{pmatrix} = \frac{10!}{2!8!} = \frac{9\cdot 10}{2}  = \boxed{45 \text{ pairs}}\]</span></p>
-<hr />
 <p>Back to the sampling problem. Here the number of things are subsets and the the groups are the sample. We wish to ask what is the probability of the sample contain a certain subset. Let’s call this particular subset <span class="math inline">\(A\)</span>,</p>
 <p><span class="math display">\[P(A) = \frac{\text{Samples with A}}{\text{Total Posible Samples}}\]</span></p>
-<hr />
-<dl>
-<dt>Example</dt>
-<dd>The sample are once again in pairs, but now my subsets are marked from <span class="math inline">\(A\)</span> to <span class="math inline">\(Z\)</span> (<span class="math inline">\(n=26\)</span>), what is the probability of choosing <span class="math inline">\(A\)</span> as part of my sample?
-</dd>
-</dl>
+</div>
+<div class="Example">
+<p>The sample are once again in pairs, but now my subsets are marked from <span class="math inline">\(A\)</span> to <span class="math inline">\(Z\)</span> (<span class="math inline">\(n=26\)</span>), what is the probability of choosing <span class="math inline">\(A\)</span> as part of my sample?</p>
 <p><span class="math display">\[ C_\text{pairs} = \begin{pmatrix}
     n \\ 2
 \end{pmatrix} = \frac{n!}{2!(n-2)!}\]</span></p>
@@ -113,18 +107,19 @@
 <p><span class="math display">\[
 P(A) = \frac{C_A}{C_\text{Pairs}} = \frac{2!(n-2)!(n-1)}{n!}
 \]</span></p>
+</div>
 <h2 id="probability-by-recursion">Probability by Recursion</h2>
 <p>You may also find the probability by multiplying</p>
 <p><span class="math display">\[ \mathcal{P}(A) = P(A) \cdot P(\neg A) \]</span></p>
 
-            </div>
-            <!-- Disqus Comments -->
-            <div id="disqus_thread" class="mt-5">
-                <div class="w-50 mx-auto">
-                    <button type="button" class="btn btn-block btn-outline-dark show-comments">Show Comments</button>
-                </div>
-            </div>
-            <!--
+      </div>
+      <!-- Disqus Comments -->
+      <div id="disqus_thread" class="mt-5">
+        <div class="w-50 mx-auto">
+          <button type="button" class="btn btn-block btn-outline-dark show-comments">Show Comments</button>
+        </div>
+      </div>
+      <!--
                 <script>
                 /**
                 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -143,22 +138,24 @@ P(A) = \frac{C_A}{C_\text{Pairs}} = \frac{2!(n-2)!(n-1)}{n!}
             <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
                     by Disqus.</a></noscript>
             -->
-            
-        </div>
-
-        <!-- On This Page -->
-        <div class="col-lg d-none d-lg-block">
-            <div class="onthispage sidenav sticky-top vh-80">
-                <div class="sidenav-header">
-                    <strong>On This Page</strong>
-                </div>
-                <div class="sidenav-body">
-                    <ul class="onthispage-list no-list-style"></ul>
-                </div>
-            </div>
-        </div>
-
+      
     </div>
+
+    <!-- On This Page -->
+    <div class="col-md-3 d-none d-md-block">
+      <div class="onthispage sidenav small">
+    <div class="sidenav-header">
+        <strong>&#9776; On This Page</strong>
+    </div>
+    <div class="onthispage-collapse">
+        <div class="sidenav-body bg-light">
+            <ul class="onthispage-list no-list-style"></ul>
+        </div>
+    </div>
+</div>
+    </div>
+
+  </div>
 </div>
 
     <footer class="py-2 bg-white">
@@ -175,17 +172,18 @@ P(A) = \frac{C_A}{C_\text{Pairs}} = \frac{2!(n-2)!(n-1)}{n!}
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
     crossorigin="anonymous"></script>
 
-    <script src="https://ketozhang.github.io/static/datetime.js"></script>
-    <script src="https://ketozhang.github.io/static/disqus.js"></script>
-    <script src="https://ketozhang.github.io/static/sidenav.js"></script>
-    <script src="https://ketozhang.github.io/static/codeHighlight.js"></script>
-    <script src="https://ketozhang.github.io/static/prism.js"></script>
+    <script src="https://ketozhang.github.io/static/js/datetime.js"></script>
+    <script src="https://ketozhang.github.io/static/js/disqus.js"></script>
+    <script src="https://ketozhang.github.io/static/js/sidenav.js"></script>
+    <script src="https://ketozhang.github.io/static/js/codeHighlight.js"></script>
+    <script src="https://ketozhang.github.io/static/js/prism.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>
-    <script src="https://ketozhang.github.io/static/onThisPage.js"></script>
+    <script src="https://ketozhang.github.io/static/js/onThisPage.js"></script>
+    <script src="https://ketozhang.github.io/static/js/markdown.js"></script>
 
     <!-- MathJax -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script src="https://ketozhang.github.io/static/mathjax_config.js" defer></script>
+    <script src="https://ketozhang.github.io/static/js/mathjax_config.js" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
 
     <!-- Bootstrap JS -->

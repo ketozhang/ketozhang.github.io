@@ -20,7 +20,8 @@
     <!-- Bootstrap time -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://ketozhang.github.io/static/base.css" rel="stylesheet">
+    <!-- <link href="https://ketozhang.github.io/static/base.css" rel="stylesheet"> -->
+    <link href="/static/main.css?80631208" rel="stylesheet"">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro|Quicksand" rel="stylesheet">
     <link href="https://ketozhang.github.io/static/prism.css" rel="stylesheet">
     <link rel="shortcut icon" href="https://ketozhang.github.io/static/favicon.ico">
@@ -40,63 +41,65 @@
 <body>
     
 <div class="container-fluid" id="note">
-    <!-- <nav class="navbar navbar-expand-lg">
+  <!-- <nav class="navbar navbar-expand-lg">
         <button id="sidenavCollapse" class="btn btn-info" type="button">
             <i class="fas fa-align-left"></i>
             <span>Toggle Sidebar</span>
         </button>
     </nav> -->
-    <div id="note-body" class="row">
-        <!-- Notebook Sidenav -->
-        <div class="col-3 col-lg bg-light pt-1">
-            <div class="sidenav sticky-top vh-80">
-                <div class="sidenav-header row no-gutters">
-                    <div class="col-9">
-                        <strong>Parallel Query</strong>
-                    </div>
-                    <div class="col-2 offset-1">
-                        <a class="go-up" href="https://ketozhang.github.io/notes/Computer_Science/Database_Systems/" role="button">
-                            <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
-                        </a>
-                    </div>
-                </div>
-                <div class="sidenav-body no-gutters">
-                    <ul class="no-list-style pl-3">
-                        
-                        <li class='pb-3'><a href="https://ketozhang.github.io/notes/Computer_Science/Database_Systems/Parallel_Query/Distributed-Transaction">Distributed Transaction</a></li>
-                        
-                        <li class='pb-3'><a href="https://ketozhang.github.io/notes/Computer_Science/Database_Systems/Parallel_Query/Inter-Operator-Parallelism">Inter-Operator Parallelism</a></li>
-                        
-                        <li class='pb-3'><a href="https://ketozhang.github.io/notes/Computer_Science/Database_Systems/Parallel_Query/Introduction">Introduction</a></li>
-                        
-                        <li class='pb-3'><a href="https://ketozhang.github.io/notes/Computer_Science/Database_Systems/Parallel_Query/Parallel-Hashing-Sorting">Parallel Hashing and Sorting</a></li>
-                        
-                        <li class='pb-3'><a href="https://ketozhang.github.io/notes/Computer_Science/Database_Systems/Parallel_Query/Shuffling">Shuffling</a></li>
-                        
-                    </ul>
-                </div>
-            </div>
+  <div id="note-body" class="row">
+    <!-- Notebook Sidenav -->
+    <div class="col-3 bg-light pt-1">
+      <div class="sidenav sticky-top vh-80">
+        <div class="sidenav-header row no-gutters">
+          <div class="col-9">
+            <strong>Parallel Query</strong>
+          </div>
+          <div class="col-2 offset-1">
+            <a class="go-up" href="https://ketozhang.github.io/notes/Computer_Science/Database_Systems/" role="button">
+              <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+            </a>
+          </div>
         </div>
-
-        <!-- Content -->
-        <div class="col col-lg-7">
-            <h1 class="title text-center pt-3">Parallel Query</h1>
+        <div class="sidenav-body no-gutters">
+          <ul class="no-list-style pl-3">
             
+            <li class='pb-3'><a href="https://ketozhang.github.io/notes/Computer_Science/Database_Systems/Parallel_Query/Distributed-Transaction">Distributed Transaction</a></li>
+            
+            <li class='pb-3'><a href="https://ketozhang.github.io/notes/Computer_Science/Database_Systems/Parallel_Query/Inter-Operator-Parallelism">Inter-Operator Parallelism</a></li>
+            
+            <li class='pb-3'><a href="https://ketozhang.github.io/notes/Computer_Science/Database_Systems/Parallel_Query/Introduction">Introduction</a></li>
+            
+            <li class='pb-3'><a href="https://ketozhang.github.io/notes/Computer_Science/Database_Systems/Parallel_Query/Parallel-Hashing-Sorting">Parallel Hashing and Sorting</a></li>
+            
+            <li class='pb-3'><a href="https://ketozhang.github.io/notes/Computer_Science/Database_Systems/Parallel_Query/Shuffling">Shuffling</a></li>
+            
+          </ul>
         </div>
-
-        <!-- On This Page -->
-        <div class="col-lg d-none d-lg-block">
-            <div class="onthispage sidenav sticky-top vh-80">
-                <div class="sidenav-header">
-                    <strong>On This Page</strong>
-                </div>
-                <div class="sidenav-body">
-                    <ul class="onthispage-list no-list-style"></ul>
-                </div>
-            </div>
-        </div>
-
+      </div>
     </div>
+
+    <!-- Content -->
+    <div class="col-7 col-md-6">
+      <h1 class="title text-center pt-3">Parallel Query</h1>
+      
+    </div>
+
+    <!-- On This Page -->
+    <div class="col-md-3 d-none d-md-block">
+      <div class="onthispage sidenav small">
+    <div class="sidenav-header">
+        <strong>&#9776; On This Page</strong>
+    </div>
+    <div class="onthispage-collapse">
+        <div class="sidenav-body bg-light">
+            <ul class="onthispage-list no-list-style"></ul>
+        </div>
+    </div>
+</div>
+    </div>
+
+  </div>
 </div>
 
     <footer class="py-2 bg-white">
@@ -113,17 +116,18 @@
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
     crossorigin="anonymous"></script>
 
-    <script src="https://ketozhang.github.io/static/datetime.js"></script>
-    <script src="https://ketozhang.github.io/static/disqus.js"></script>
-    <script src="https://ketozhang.github.io/static/sidenav.js"></script>
-    <script src="https://ketozhang.github.io/static/codeHighlight.js"></script>
-    <script src="https://ketozhang.github.io/static/prism.js"></script>
+    <script src="https://ketozhang.github.io/static/js/datetime.js"></script>
+    <script src="https://ketozhang.github.io/static/js/disqus.js"></script>
+    <script src="https://ketozhang.github.io/static/js/sidenav.js"></script>
+    <script src="https://ketozhang.github.io/static/js/codeHighlight.js"></script>
+    <script src="https://ketozhang.github.io/static/js/prism.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>
-    <script src="https://ketozhang.github.io/static/onThisPage.js"></script>
+    <script src="https://ketozhang.github.io/static/js/onThisPage.js"></script>
+    <script src="https://ketozhang.github.io/static/js/markdown.js"></script>
 
     <!-- MathJax -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script src="https://ketozhang.github.io/static/mathjax_config.js" defer></script>
+    <script src="https://ketozhang.github.io/static/js/mathjax_config.js" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
 
     <!-- Bootstrap JS -->

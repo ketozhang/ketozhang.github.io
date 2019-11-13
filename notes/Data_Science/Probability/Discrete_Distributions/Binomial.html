@@ -20,7 +20,8 @@
     <!-- Bootstrap time -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://ketozhang.github.io/static/base.css" rel="stylesheet">
+    <!-- <link href="https://ketozhang.github.io/static/base.css" rel="stylesheet"> -->
+    <link href="/static/main.css?80631208" rel="stylesheet"">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro|Quicksand" rel="stylesheet">
     <link href="https://ketozhang.github.io/static/prism.css" rel="stylesheet">
     <link rel="shortcut icon" href="https://ketozhang.github.io/static/favicon.ico">
@@ -40,44 +41,54 @@
 <body>
     
 <div class="container-fluid" id="note">
-    <!-- <nav class="navbar navbar-expand-lg">
+  <!-- <nav class="navbar navbar-expand-lg">
         <button id="sidenavCollapse" class="btn btn-info" type="button">
             <i class="fas fa-align-left"></i>
             <span>Toggle Sidebar</span>
         </button>
     </nav> -->
-    <div id="note-body" class="row">
-        <!-- Notebook Sidenav -->
-        <div class="col-3 col-lg bg-light pt-1">
-            <div class="sidenav sticky-top vh-80">
-                <div class="sidenav-header row no-gutters">
-                    <div class="col-9">
-                        <strong>Binomial</strong>
-                    </div>
-                    <div class="col-2 offset-1">
-                        <a class="go-up" href="https://ketozhang.github.io/notes/Data_Science/Probability/Discrete_Distributions/" role="button">
-                            <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
-                        </a>
-                    </div>
-                </div>
-                <div class="sidenav-body no-gutters">
-                    <ul class="no-list-style pl-3">
-                        
-                    </ul>
-                </div>
-            </div>
+  <div id="note-body" class="row">
+    <!-- Notebook Sidenav -->
+    <div class="col-3 bg-light pt-1">
+      <div class="sidenav sticky-top vh-80">
+        <div class="sidenav-header row no-gutters">
+          <div class="col-9">
+            <strong>Binomial</strong>
+          </div>
+          <div class="col-2 offset-1">
+            <a class="go-up" href="https://ketozhang.github.io/notes/Data_Science/Probability/Discrete_Distributions/" role="button">
+              <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+            </a>
+          </div>
         </div>
-
-        <!-- Content -->
-        <div class="col col-lg-7">
-            <h1 class="title text-center pt-3">Binomial</h1>
+        <div class="sidenav-body no-gutters">
+          <ul class="no-list-style pl-3">
             
-            <div class="markdown-content">
-                <p>The binomial distribution is given as,</p>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="col-7 col-md-6">
+      <h1 class="title text-center pt-3">Binomial</h1>
+      
+      <div class="markdown-content">
+        <p>The binomial distribution is given as,</p>
 <p><span class="math display">\[ P(X=k; p,n) = {n \choose k} p^k(1-p)^k \]</span></p>
 <dl>
 <dt>Expected Value</dt>
 <dd><span class="math display">\[ \mathbb E[X] = np \]</span>
+</dd>
+<dt>Variance</dt>
+<dd><span class="math display">\[
+\text{Var}(X) = npq
+\]</span>
+</dd>
+<dt>Moment Generating Function</dt>
+<dd>The product of <span class="math inline">\(n\)</span> Bernoulli MGF, <span class="math display">\[
+M_X(t) = (q+pe^t)^n
+\]</span>
 </dd>
 </dl>
 <h2 id="relations-to-bernoulli-trials">Relations to Bernoulli Trials</h2>
@@ -86,7 +97,7 @@
 I_k \sim \text{Bernoulli}(p)\\
 X = \sum_{k=1}^n I_k
 \]</span></p>
-<h2 id="limit-of-the-binomial-distribution">Limit of the Binomial Distribution</h2>
+<h2 id="poisson-limit-of-the-binomial-distribution">Poisson Limit of the Binomial Distribution</h2>
 <p>The poisson distribution can be derived by the limit of the binomial distribution as <span class="math inline">\(np\)</span> tends to some constant <span class="math inline">\(\lambda\)</span>. Let <span class="math inline">\(np \rightarrow \lambda\)</span> where <span class="math inline">\(n \rightarrow \infty\)</span> and <span class="math inline">\(p \rightarrow 0\)</span>.</p>
 <p><span class="math display">\[
 \begin{gather*}
@@ -97,7 +108,7 @@ X = \sum_{k=1}^n I_k
 \end{gather*}
 \]</span></p>
 <p><span class="math display">\[
-\boxed{P(X=k) \approx \text{Poisson}(k; np)}
+X \sim \text{Poisson}(k; np)
 \]</span></p>
 <p>Hence you may interpret the Poisson distribution as the binomial distribution of a rare event in the limit of large number of trials.</p>
 <p>Now there’s another limit where <span class="math inline">\(n \rightarrow \infty\)</span> and <span class="math inline">\(p \rightarrow 1\)</span> such that <span class="math inline">\(n(1-p) \rightarrow n-\lambda\)</span>. In this case, the proof is easier by solving “<span class="math inline">\(q\)</span> failures from <span class="math inline">\(n\)</span> trials”,</p>
@@ -116,15 +127,16 @@ p_k = e^{-(n-\lambda)}\frac{(n-\lambda)^{(n-k)}}{(n-k)!}
 <p><span class="math display">\[
 \boxed{P(X=k) \approx \text{Poisson}(n-k;nq)}
 \]</span></p>
+<h2 id="normal-limit-of-the-binomial-distribution">Normal Limit of the Binomial Distribution</h2>
 
-            </div>
-            <!-- Disqus Comments -->
-            <div id="disqus_thread" class="mt-5">
-                <div class="w-50 mx-auto">
-                    <button type="button" class="btn btn-block btn-outline-dark show-comments">Show Comments</button>
-                </div>
-            </div>
-            <!--
+      </div>
+      <!-- Disqus Comments -->
+      <div id="disqus_thread" class="mt-5">
+        <div class="w-50 mx-auto">
+          <button type="button" class="btn btn-block btn-outline-dark show-comments">Show Comments</button>
+        </div>
+      </div>
+      <!--
                 <script>
                 /**
                 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -143,22 +155,24 @@ p_k = e^{-(n-\lambda)}\frac{(n-\lambda)^{(n-k)}}{(n-k)!}
             <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
                     by Disqus.</a></noscript>
             -->
-            
-        </div>
-
-        <!-- On This Page -->
-        <div class="col-lg d-none d-lg-block">
-            <div class="onthispage sidenav sticky-top vh-80">
-                <div class="sidenav-header">
-                    <strong>On This Page</strong>
-                </div>
-                <div class="sidenav-body">
-                    <ul class="onthispage-list no-list-style"></ul>
-                </div>
-            </div>
-        </div>
-
+      
     </div>
+
+    <!-- On This Page -->
+    <div class="col-md-3 d-none d-md-block">
+      <div class="onthispage sidenav small">
+    <div class="sidenav-header">
+        <strong>&#9776; On This Page</strong>
+    </div>
+    <div class="onthispage-collapse">
+        <div class="sidenav-body bg-light">
+            <ul class="onthispage-list no-list-style"></ul>
+        </div>
+    </div>
+</div>
+    </div>
+
+  </div>
 </div>
 
     <footer class="py-2 bg-white">
@@ -175,17 +189,18 @@ p_k = e^{-(n-\lambda)}\frac{(n-\lambda)^{(n-k)}}{(n-k)!}
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
     crossorigin="anonymous"></script>
 
-    <script src="https://ketozhang.github.io/static/datetime.js"></script>
-    <script src="https://ketozhang.github.io/static/disqus.js"></script>
-    <script src="https://ketozhang.github.io/static/sidenav.js"></script>
-    <script src="https://ketozhang.github.io/static/codeHighlight.js"></script>
-    <script src="https://ketozhang.github.io/static/prism.js"></script>
+    <script src="https://ketozhang.github.io/static/js/datetime.js"></script>
+    <script src="https://ketozhang.github.io/static/js/disqus.js"></script>
+    <script src="https://ketozhang.github.io/static/js/sidenav.js"></script>
+    <script src="https://ketozhang.github.io/static/js/codeHighlight.js"></script>
+    <script src="https://ketozhang.github.io/static/js/prism.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>
-    <script src="https://ketozhang.github.io/static/onThisPage.js"></script>
+    <script src="https://ketozhang.github.io/static/js/onThisPage.js"></script>
+    <script src="https://ketozhang.github.io/static/js/markdown.js"></script>
 
     <!-- MathJax -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script src="https://ketozhang.github.io/static/mathjax_config.js" defer></script>
+    <script src="https://ketozhang.github.io/static/js/mathjax_config.js" defer></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
 
     <!-- Bootstrap JS -->
