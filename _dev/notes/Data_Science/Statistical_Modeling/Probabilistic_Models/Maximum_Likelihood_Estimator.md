@@ -73,11 +73,14 @@ $$
 \mathcal L(p) = \prod_{X_i = 1} p\prod_{X_i = 0} (1-p)
 $$
 
+
 This function can be simplified by noticing there if there are $s$ successes with chance $p^s$ then there are $n-s$ failures with chance $(1-p)^{n-s}$. This motivate us to define the random variable $S = \sum_{i=1}^n X_i$.
 
 $$
 \mathcal L(p) = p^{S}(1-p)^{n-S}
 $$
+
+Noticeably, this is the binomial distribution (if $p$ was fixed) without the binomial coefficient. This is because our observed data is one sequence of $n$ Bernoulli trials. However this technical detail is not necessary because the binomial coefficient dissapears when maximizing the likelihood.
 
 $$
 L(p) = S \log p +  (n-S) \log(1-p)

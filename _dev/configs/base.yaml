@@ -42,7 +42,7 @@ navbar:
 social_links:
   - name: "CV"
     url: "/CV"
-    icon: "/static/images/icons8-applicant-24.png"
+    icon: "/static/images/CV-32.png"
   - name: "LinkedIn"
     url: "https://www.linkedin.com/in/ketozhang/"
     icon: "/static/images/icons8-linkedin.svg"
