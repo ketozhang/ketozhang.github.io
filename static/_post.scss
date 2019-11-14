@@ -2,6 +2,8 @@
 // Post Showcase
 
 #post-showcase {
+  font-family: $style-font-family;
+
   .card {
     margin-bottom: 2em;
     padding: 2em;
@@ -11,7 +13,6 @@
   }
 
   .card-img {
-    width: 100%;
     height: 170px;
     object-fit: cover;
   }

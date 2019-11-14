@@ -274,12 +274,6 @@ footer {
   padding-top: 0em;
 }
 
-/* Showcase */
-
-#showcase .title {
-  margin-bottom: 0.5em;
-}
-
 /* Context */
 
 /* .sidenav.active {
@@ -383,6 +377,7 @@ footer {
   border: 1px solid $light-border-color;
   border-radius: $base-border-radius;
   box-shadow: inset 0px 0px 1px 0px #616161;
+  font-family: $style-font-family;
 
   blockquote {
     font-family: $style-font-family;
@@ -396,5 +391,15 @@ footer {
   .title {
     margin-bottom: 0;
     font-size: $large-font-size;
+  }
+}
+
+/* Project Showcase */
+
+#project-showcase {
+  font-family: $style-font-family;
+
+  .title {
+    margin-bottom: 0.5em;
   }
 }

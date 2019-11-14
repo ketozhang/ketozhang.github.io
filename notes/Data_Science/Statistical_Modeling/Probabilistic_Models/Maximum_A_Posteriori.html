@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145024207-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-145024207-1');
+    </script>
+    <meta charset="UTF-8">
+    <title>
+        Keto |  
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap time -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link href="https://ketozhang.github.io/static/base.css" rel="stylesheet"> -->
+    <link href="/static/main.css?adbefc42" rel="stylesheet"">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro|Quicksand" rel="stylesheet">
+    <link href="https://ketozhang.github.io/static/prism.css" rel="stylesheet">
+    <link rel="shortcut icon" href="https://ketozhang.github.io/static/favicon.ico">
+
+    <!-- LaTeX Stylesheet -->
+    
+    <div class="d-none">
+        $$
+        \newcommand{d}{\mathrm d}
+        \newcommand{avg}[1]{\expval{#1}}
+        \renewcommand{vec}[1]{\vectorbold{#1}}
+        $$
+    </div>
+    
+</head>
+
+<body>
+    
+<div class="container-fluid" id="note">
+  <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
+  <div id="note-body" class="row">
+    <!-- Notebook Sidenav -->
+    <div class="col-3 bg-light pt-1">
+      <div class="sidenav sticky-top vh-80">
+        <div class="sidenav-header row no-gutters">
+          <div class="col-9">
+            <strong>Maximum A Posteriori</strong>
+          </div>
+          <div class="col-2 offset-1">
+            <a class="go-up" href="https://ketozhang.github.io/notes/Data_Science/Statistical_Modeling/Probabilistic_Models/" role="button">
+              <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+            </a>
+          </div>
+        </div>
+        <div class="sidenav-body no-gutters">
+          <ul class="no-list-style pl-3">
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="col-7 col-md-6">
+      <h1 class="title text-center pt-3">Maximum A Posteriori</h1>
+      
+      <div class="markdown-content">
+        <h2 id="uniform-prior">Uniform Prior</h2>
+<p>Using a uniform prior, the MAP becomes the MLE</p>
+<div class="Example">
+<p>Suppose we want to find the chance of head <span class="math inline">\(p\)</span> of a possibly unfair coin. However we have no reason to expect the coin to be unfair as most coin tosses are fair-ish. We take the uniform prior.</p>
+<p><span class="math display">\[
+p  \sim \text{Uniform}(0,1)
+\]</span></p>
+<p>We perform <span class="math inline">\(n\)</span> trials with the coin and got <span class="math inline">\(H=k\)</span> heads. The likelihood is binomial. The posterior distribution is then,</p>
+<p><span class="math display">\[
+\begin{align*}
+    P(p \mid H = k)  &amp;= \frac{1 \cdot P(H=k \mid p)}{P(H=k)}\\
+                     &amp;\propto P(H=k \mid p) \\
+    P(p \mid H = k)  &amp;\propto p^{k}(1-p)^{n-k}
+\end{align*}
+\]</span></p>
+<p>Since <span class="math inline">\(p\)</span> is a random variable the posterior distribution is,</p>
+<p><span class="math display">\[
+(p \mid H=k) \sim \text{Beta}(k+1, n-k+1)
+\]</span></p>
+<p>With expectation and MAP,</p>
+<p><span class="math display">\[
+E(p \mid H=k) = \frac{k+1}{n+2}
+\]</span></p>
+<p><span class="math display">\[
+\text{mode} (p \mid H=k) = \frac{k}{n}
+\]</span></p>
+<p>At large <span class="math inline">\(n\)</span>, these two are nearly equal. We have found that the observed propotion of heads is the MAP.</p>
+</div>
+<h2 id="disproportionate-prior">Disproportionate Prior</h2>
+<p>Suppose you want to determine the chance of an event <span class="math inline">\(p\)</span>. If you believe the event is disproportionate, that is, you believe on average there is <span class="math inline">\(x\)</span> events out of <span class="math inline">\(n\)</span>.</p>
+<p><span class="math display">\[
+E(p) = \frac{x}{n}
+\]</span></p>
+<p>In general the proposed <span class="math inline">\(E(p)\)</span> does not have to be a rational number.</p>
+<p><span class="math display">\[
+p \sim \text{Beta}(x, n-x)
+\]</span></p>
+<div class="Example">
+<p>Using the unfair coin example above, suppose in life, we have experience a lot of cheating so we think that the coin is unfair. Our prior knowledge motivates us to propose the coin lands head at chance <span class="math inline">\(70\%\)</span>,</p>
+<p><span class="math display">\[
+E(p) = \frac{7}{10}
+\]</span></p>
+<p>We take the prior distribution to be <span class="math inline">\(p \sim \text{Beta}(7, 3)\)</span>.</p>
+</div>
+
+      </div>
+      <!-- Disqus Comments -->
+      <div id="disqus_thread" class="mt-5">
+        <div class="w-50 mx-auto">
+          <button type="button" class="btn btn-block btn-outline-dark show-comments">Show Comments</button>
+        </div>
+      </div>
+      <!--
+                <script>
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                var disqus_config = function () {
+                    this.page.url = "";  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = "/notes/Data_Science/Statistical_Modeling/Probabilistic_Models/Maximum_A_Posteriori.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://ketozhang.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
+                    by Disqus.</a></noscript>
+            -->
+      
+    </div>
+
+    <!-- On This Page -->
+    <div class="col-md-3 d-none d-md-block">
+      <div class="onthispage sidenav small">
+    <div class="sidenav-header">
+        <strong>&#9776; On This Page</strong>
+    </div>
+    <div class="onthispage-collapse">
+        <div class="sidenav-body bg-light">
+            <ul class="onthispage-list no-list-style"></ul>
+        </div>
+    </div>
+</div>
+    </div>
+
+  </div>
+</div>
+
+    <footer class="py-2 bg-white">
+    <div class="container">
+        <p class="text-right m-0"> Generated by <a href="https://github.com/ketozhang/StaticPy">StaticPy</a> |
+            Designed
+            by <a href="https://github.com/ketozhang">Keto Z.</a>
+        </p>
+    </div>
+</footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+
+    <script src="https://ketozhang.github.io/static/js/datetime.js"></script>
+    <script src="https://ketozhang.github.io/static/js/disqus.js"></script>
+    <script src="https://ketozhang.github.io/static/js/codeHighlight.js"></script>
+    <script src="https://ketozhang.github.io/static/js/prism.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>
+    <script src="https://ketozhang.github.io/static/js/onthispage.js"></script>
+    <script src="https://ketozhang.github.io/static/js/markdown.js"></script>
+
+    <!-- MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://ketozhang.github.io/static/js/mathjax_config.js" defer></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+
+    <!-- Bootstrap JS -->
+    <!-- TODO: trim JS if not needed -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <!-- React -->
+    <!-- TODO: do we need React? -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>-->
+
+
+    <script>
+        anchors.add();
+        $(document).ready(function () {
+            Prism.highlightAll();
+        })
+    </script>
+
+    
+    
+</body>
+
+</html>

@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- <link href="https://ketozhang.github.io/static/base.css" rel="stylesheet"> -->
-    <link href="/static/main.css?afc5f66d" rel="stylesheet"">
+    <link href="/static/main.css?adbefc42" rel="stylesheet"">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro|Quicksand" rel="stylesheet">
     <link href="https://ketozhang.github.io/static/prism.css" rel="stylesheet">
     <link rel="shortcut icon" href="https://ketozhang.github.io/static/favicon.ico">
@@ -129,6 +129,7 @@ L(\mu) \propto -\frac{1}{2\sigma}\sum_{i=1}^{n} \left(X_i-\mu\right)^2
 <p><span class="math display">\[
 \mathcal L(p) = p^{S}(1-p)^{n-S}
 \]</span></p>
+<p>Noticeably, this is the binomial distribution (if <span class="math inline">\(p\)</span> was fixed) without the binomial coefficient. This is because our observed data is one sequence of <span class="math inline">\(n\)</span> Bernoulli trials. However this technical detail is not necessary because the binomial coefficient dissapears when maximizing the likelihood.</p>
 <p><span class="math display">\[
 L(p) = S \log p +  (n-S) \log(1-p)
 \]</span></p>
