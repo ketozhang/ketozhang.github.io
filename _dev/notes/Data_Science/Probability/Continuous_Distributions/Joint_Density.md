@@ -5,7 +5,7 @@ title: Joint Density
 Consider two random variables $X$ and $Y$. The probability of some event $A$ that lies in the domain of both $X$ and $Y$ can be expressed as,
 
 $$
-P((X,Y) \in A) = \iint_A f(x,y)~ dxy
+P((X,Y) \in A) = \iint_A f(x,y)~ dxdy
 $$
 
 Where $f(x,y)$ is the joint probability density function

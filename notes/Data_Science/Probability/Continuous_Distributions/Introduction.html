@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- <link href="https://ketozhang.github.io/static/base.css" rel="stylesheet"> -->
-    <link href="/static/main.css?adbefc42" rel="stylesheet"">
+    <link href="/static/main.css?c5c57fa3" rel="stylesheet"">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro|Quicksand" rel="stylesheet">
     <link href="https://ketozhang.github.io/static/prism.css" rel="stylesheet">
     <link rel="shortcut icon" href="https://ketozhang.github.io/static/favicon.ico">
@@ -84,6 +84,25 @@ P(a &lt; X \le b) = \int_a^b f(x)~ dx
 \]</span></p></li>
 </ol>
 <p>Where <span class="math inline">\(f(x)\)</span> is the conventional syntax for PDF.</p>
+<h2 id="formalism">Formalism</h2>
+<p>To deal with the existential crisis that the chance of a single-value event <span class="math inline">\(\set{X=x}\)</span> is,</p>
+<p><span class="math display">\[
+P(X = x) = 0
+\]</span></p>
+<p>because the area for at <span class="math inline">\(X=x\)</span> is zero (rather poorly defined), we develop the Reynmann interpretation of integrals to the formalism of continuous probability. Take <span class="math inline">\(dx\)</span> as some small infinitestimal width for some interval <span class="math inline">\((x-dx, x+dx)\)</span> and define <span class="math inline">\(dx\)</span> to be an event such that,</p>
+<p><span class="math display">\[
+P(X \in dx) \equiv P(x-dx &lt; X \le x+dx) = \int_{x - dx}^{x+dx} f(x) dx
+\]</span></p>
+<p>Asymptotically, as <span class="math inline">\(dx \to 0\)</span> the integral dissapears to become the Reinman integral,</p>
+<p><span class="math display">\[
+\boxed{P(X \in dx) \sim f(x) dx}
+\]</span></p>
+<div class="Note">
+<p>A physics formality defines the differential form of the probability ,</p>
+<p><span class="math display">\[
+dP = fdx
+\]</span></p>
+</div>
 <h2 id="cumulative-distribution-function">Cumulative Distribution Function</h2>
 <p>The cumulative distribution function (CDF) is defined the left limit to negative infinity,</p>
 <p><span class="math display">\[
@@ -102,15 +121,6 @@ f = \frac{dF}{dx}
 \]</span></p>
 </dd>
 </dl>
-<h2 id="infinitestimal-interpretation">Infinitestimal Interpretation</h2>
-<p>Treating integrals as Rienmann integrations, we can treat <span class="math inline">\(dx\)</span> as a infinitesimal (very tiny) interval around <span class="math inline">\(x\)</span>. Using this we can now treat an event as <span class="math inline">\(\set{X \in dx}\)</span>. The Reinmann trapezoid allows,</p>
-<p><span class="math display">\[
-P(X \in dx) = f(x) dx, \quad\text{as } dx \to 0
-\]</span></p>
-<p>Thus we define,</p>
-<p><span class="math display">\[
-f(x) = \frac{P(X \in dx)}{dx}, \quad\text{as } dx \to 0
-\]</span></p>
 <h2 id="expectation">Expectation</h2>
 <p>Analgous to discrete case, the expectation is,</p>
 <p><span class="math display">\[

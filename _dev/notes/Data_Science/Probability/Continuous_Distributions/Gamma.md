@@ -14,10 +14,6 @@ $$
 \Gamma(r) = \int_0^\infty x^{r-1}e^{-x} ~dx
 $$
 
-$$
-f_X(x) = \frac{\Gamma\big{(}\frac{n}{2} + \frac{d}{2}\big{)}}{\Gamma\big{(}\frac{n}{2}\big{)}\Gamma\big{(}\frac{d}{2}\big{)}} \big{(} \frac{n}{d} \big{)}^{\frac{n}{2}} x^{\frac{n}{2} -1}\left(1 + \frac{n}{d}x \right)^{-\frac{n+d}{2}} ~, \qquad x > 0
-$$
-
 Expectation
 : The expected value is given by,
     $$

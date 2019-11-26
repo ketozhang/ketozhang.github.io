@@ -1,3 +1,9 @@
+---
+title: Bayesian Update
+---
+
+The posterior distribution
+
 ## Motivating Example
 
 Consider a coin where we do not know the chance of heads $p$. Let's take the prior that $p$ is uniformally any value between 0 and 1. That is,
@@ -58,3 +64,55 @@ Thus,
 $$
 P(H_2 \mid H_1) = \int_0^1 P(H_2 \mid p) \cdot f(p \mid H_1) ~dp = \frac{2}{3}
 $$
+
+## Beta and Binomial Update
+We are interested in $n$ IID Bernoulli trials where we define the sum as $S = \sum{I_k}$.
+
+The Bayesian update rule is,
+
+$$(p \mid S=k) \sim \text{Beta}(r+k, s+n-k)$$
+
+::: Proof
+Let the prior for the parameter $p$ be distributed as,
+
+$$
+\begin{gather*}
+p \sim \text{Beta}(r,s)\\
+f(p) = C(r,s) \cdot p^{r-1}(1-p)^{s-1}
+\end{gather*}
+$$
+
+the likelihood  for $S$ is then the binomial distribution,
+
+$$
+P(S=k \mid p) = {n \choose s} p^k (1-p)^{n-k}
+$$
+
+Hence, the posterior distribution is,
+
+$$
+f(p \mid S=k) = C(r+k, s+n-k) p^{r+k-1} (1-p)^{n+s-k-1}
+$$
+
+Thus, the Bayesian update adds the number of successes $k$ and the number of failures $n-k$.
+
+$$
+\boxed{(p \mid S=k) \sim \text{Beta}(r+k, s+n-k)}
+$$
+:::
+
+Expectation
+: $$E(p \mid S=k) = \frac{r+k}{r+s+n}$$
+
+MAP
+: $$\text{mode}(p \mid S=k) = \frac{r+k-1}{r+k+n-2}$$
+
+Transition Rule
+: $$ P(S_{n+1} = k+1 \mid S_n = k) = E(p \mid S_n=k) $$
+
+Evidence
+:	The chance of $k$ heads after $n$ tosses using the beta prior is the beta-binomial distribution.
+
+	$$
+	P(S_n = k) = {n \choose k}\frac{C(r,s)}{C(r+k, s+n-k)}
+	$$

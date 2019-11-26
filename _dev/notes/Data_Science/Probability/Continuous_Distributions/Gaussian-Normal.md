@@ -119,3 +119,6 @@ Then $R$ is a the Rayleigh distribution of scale $\sigma = 1$,
 $$
 f_R(r) = re^{-\frac{1}{2}r^2}, \quad \text{for } r>0
 $$
+
+## Relation to Chi-Square Distribution
+See [Chi-Square](./Chi-Square#Relation_to_Normal_Distribution).

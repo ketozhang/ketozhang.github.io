@@ -16,14 +16,30 @@ $$
     $$ E[X] =\sum_{n=1}^\infty n (1-p)^{n-1}p = \frac{1}{p} $$
 
 
-* **Variance**
+Variance
+:    $$E[X^2] = \frac{1-p}{p^2} $$
 
-    $$E[X^2] = \frac{1-p}{p^2} $$
+    ::: Proof
+    We can prove this using conditional variance. Notice that $X$ can be expressed as a mixture of two distributions: a constant with chance $p$, and IID $1 + X^*$ with chance $q$
 
-    Proof
-    : Use
+    $$
+    \begin{gather*}
+    P(X=1) = p \\
+    P(X = 1 + X^*) = q
+    \end{gather*}
+    $$
 
-        $$\frac{\mathrm d}{\mathrm d p}\left[(1-p)\frac{\mathrm d }{\mathrm d p}(1-p)^n\right] = n^2(1-p)^{n-1}$$
+    The variance by conditioning is then,
+
+    $$
+    \begin{align*}
+    \text{Var}(X) &= [\text{Var}(1) + E(1)^2]p + [\text{Var}(1+X^*) + E(1 + X^*)^2]q - E(X)^2\\
+    &= p + \left[\text{Var(X)} + \frac{1}{p^2} + 1 \right]q - \frac{1}{p^2}\\
+    &= \frac{p(1-p)}{p^2}\\
+    &= \frac{q}{p^2}
+    \end{align*}
+    $$
+    :::
 
 ## Coupon Collection Problem
 

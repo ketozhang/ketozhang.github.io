@@ -8,15 +8,30 @@
 <ul>
 <li><p><strong>Expected Value</strong></p>
 <p><span class="math display">\[ E[X] =\sum_{n=1}^\infty n (1-p)^{n-1}p = \frac{1}{p} \]</span></p></li>
-<li><p><strong>Variance</strong></p>
-<p><span class="math display">\[E[X^2] = \frac{1-p}{p^2} \]</span></p>
-<dl>
-<dt>Proof</dt>
-<dd><p>Use</p>
-<p><span class="math display">\[\frac{\mathrm d}{\mathrm d p}\left[(1-p)\frac{\mathrm d }{\mathrm d p}(1-p)^n\right] = n^2(1-p)^{n-1}\]</span></p>
-</dd>
-</dl></li>
 </ul>
+<dl>
+<dt>Variance</dt>
+<dd><p><span class="math display">\[E[X^2] = \frac{1-p}{p^2} \]</span></p>
+<div class="Proof">
+<p>We can prove this using conditional variance. Notice that <span class="math inline">\(X\)</span> can be expressed as a mixture of two distributions: a constant with chance <span class="math inline">\(p\)</span>, and IID <span class="math inline">\(1 + X^*\)</span> with chance <span class="math inline">\(q\)</span></p>
+<p><span class="math display">\[
+\begin{gather*}
+P(X=1) = p \\
+P(X = 1 + X^*) = q
+\end{gather*}
+\]</span></p>
+<p>The variance by conditioning is then,</p>
+<p><span class="math display">\[
+\begin{align*}
+\text{Var}(X) &amp;= [\text{Var}(1) + E(1)^2]p + [\text{Var}(1+X^*) + E(1 + X^*)^2]q - E(X)^2\\
+&amp;= p + \left[\text{Var(X)} + \frac{1}{p^2} + 1 \right]q - \frac{1}{p^2}\\
+&amp;= \frac{p(1-p)}{p^2}\\
+&amp;= \frac{q}{p^2}
+\end{align*}
+\]</span></p>
+</div>
+</dd>
+</dl>
 <h2 id="coupon-collection-problem">Coupon Collection Problem</h2>
 <p>Let’s say there are <span class="math inline">\(n\)</span> types of coupons and you need all <span class="math inline">\(n\)</span> to win a prize. To get a coupon you must buy some product.</p>
 <ol type="1">

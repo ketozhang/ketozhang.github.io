@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- <link href="https://ketozhang.github.io/static/base.css" rel="stylesheet"> -->
-    <link href="/static/main.css?adbefc42" rel="stylesheet"">
+    <link href="/static/main.css?c5c57fa3" rel="stylesheet"">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro|Quicksand" rel="stylesheet">
     <link href="https://ketozhang.github.io/static/prism.css" rel="stylesheet">
     <link rel="shortcut icon" href="https://ketozhang.github.io/static/favicon.ico">
@@ -74,7 +74,8 @@
       <h1 class="title text-center pt-3">Bayesian Update</h1>
       
       <div class="markdown-content">
-        <h2 id="motivating-example">Motivating Example</h2>
+        <p>The posterior distribution</p>
+<h2 id="motivating-example">Motivating Example</h2>
 <p>Consider a coin where we do not know the chance of heads <span class="math inline">\(p\)</span>. Let’s take the prior that <span class="math inline">\(p\)</span> is uniformally any value between 0 and 1. That is,</p>
 <p><span class="math display">\[
 p \sim \text{Uniform}(0, 1)
@@ -114,6 +115,48 @@ f(p \mid H_1) = 2p
 <p><span class="math display">\[
 P(H_2 \mid H_1) = \int_0^1 P(H_2 \mid p) \cdot f(p \mid H_1) ~dp = \frac{2}{3}
 \]</span></p>
+<h2 id="beta-and-binomial-update">Beta and Binomial Update</h2>
+<p>We are interested in <span class="math inline">\(n\)</span> IID Bernoulli trials where we define the sum as <span class="math inline">\(S = \sum{I_k}\)</span>.</p>
+<p>The Bayesian update rule is,</p>
+<p><span class="math display">\[(p \mid S=k) \sim \text{Beta}(r+k, s+n-k)\]</span></p>
+<div class="Proof">
+<p>Let the prior for the parameter <span class="math inline">\(p\)</span> be distributed as,</p>
+<p><span class="math display">\[
+\begin{gather*}
+p \sim \text{Beta}(r,s)\\
+f(p) = C(r,s) \cdot p^{r-1}(1-p)^{s-1}
+\end{gather*}
+\]</span></p>
+<p>the likelihood for <span class="math inline">\(S\)</span> is then the binomial distribution,</p>
+<p><span class="math display">\[
+P(S=k \mid p) = {n \choose s} p^k (1-p)^{n-k}
+\]</span></p>
+<p>Hence, the posterior distribution is,</p>
+<p><span class="math display">\[
+f(p \mid S=k) = C(r+k, s+n-k) p^{r+k-1} (1-p)^{n+s-k-1}
+\]</span></p>
+<p>Thus, the Bayesian update adds the number of successes <span class="math inline">\(k\)</span> and the number of failures <span class="math inline">\(n-k\)</span>.</p>
+<p><span class="math display">\[
+\boxed{(p \mid S=k) \sim \text{Beta}(r+k, s+n-k)}
+\]</span></p>
+</div>
+<dl>
+<dt>Expectation</dt>
+<dd><span class="math display">\[E(p \mid S=k) = \frac{r+k}{r+s+n}\]</span>
+</dd>
+<dt>MAP</dt>
+<dd><span class="math display">\[\text{mode}(p \mid S=k) = \frac{r+k-1}{r+k+n-2}\]</span>
+</dd>
+<dt>Transition Rule</dt>
+<dd><span class="math display">\[ P(S_{n+1} = k+1 \mid S_n = k) = E(p \mid S_n=k) \]</span>
+</dd>
+<dt>Evidence</dt>
+<dd><p>The chance of <span class="math inline">\(k\)</span> heads after <span class="math inline">\(n\)</span> tosses using the beta prior is the beta-binomial distribution.</p>
+<p><span class="math display">\[
+P(S_n = k) = {n \choose k}\frac{C(r,s)}{C(r+k, s+n-k)}
+\]</span></p>
+</dd>
+</dl>
 
       </div>
       <!-- Disqus Comments -->

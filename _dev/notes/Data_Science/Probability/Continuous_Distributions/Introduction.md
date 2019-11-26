@@ -14,6 +14,34 @@ A probability density function (PDF) defines the continuous probability distribu
 
 Where $f(x)$ is the conventional syntax for PDF.
 
+## Formalism
+
+To deal with the existential crisis that the chance of a single-value event $\set{X=x}$ is,
+
+$$
+P(X = x) = 0
+$$
+
+because the area for at $X=x$ is zero (rather poorly defined), we develop the Reynmann interpretation of integrals to the formalism of continuous probability. Take $dx$ as some small infinitestimal width for some interval $(x-dx, x+dx)$ and define $dx$ to be an event such that,
+
+$$
+P(X \in dx) \equiv P(x-dx < X \le x+dx) = \int_{x - dx}^{x+dx} f(x) dx
+$$
+
+Asymptotically, as $dx \to 0$ the integral dissapears to become the Reinman integral,
+
+$$
+\boxed{P(X \in dx) \sim f(x) dx}
+$$
+
+::: Note
+A physics formality defines the differential form of the probability ,
+
+$$
+dP = fdx
+$$
+:::
+
 ## Cumulative Distribution Function
 
 The cumulative distribution function (CDF) is defined the left limit to negative infinity,
@@ -34,20 +62,6 @@ Relation to PDF
 	f = \frac{dF}{dx}
 	\end{gather*}
 	$$
-
-## Infinitestimal Interpretation
-
-Treating integrals as Rienmann integrations, we can treat $dx$ as a infinitesimal (very tiny) interval around $x$. Using this we can now treat an event as $\set{X \in dx}$. The Reinmann trapezoid allows,
-
-$$
-P(X \in dx) = f(x) dx, \quad\text{as } dx \to 0
-$$
-
-Thus we define,
-
-$$
-f(x) = \frac{P(X \in dx)}{dx}, \quad\text{as } dx \to 0
-$$
 
 ## Expectation
 

@@ -54,7 +54,7 @@ Proof (for $a<0$)
 	U = (b-a)U_1 + a
 	$$
 
-## Monotonically Increasing Transformation
+## Monotonic Transformation
 
 Let's begin by witha motivating example. Given uniform function $U \sim \text{Uniform}(0,1)$. and a monotonically increasing function $F$, we define $U$ to be the monotonically increasing trasnformation of $X$,
 
@@ -94,7 +94,7 @@ f_Y(y) &= \frac{dF_Y}{dy}\\
 \end{align*}
 $$
 
-## Bitonic Increasing Transformation
+## Bitonic Transformation
 
 The name Bitonic isn't convention name so let's define it. A **bitonically increasing function** a function $g(x)$ that the absolute value of $g(x)$ increase as $x$ increases for the function $g(x_0 + x)$ where $g(x_0)$ is some global minima.
 

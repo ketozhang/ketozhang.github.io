@@ -88,7 +88,6 @@ code {
     border-radius: 0.25em;
     box-shadow: inset 0px 0px 1px 0px #616161; }
     #post-showcase .card-img {
-      width: 100%;
       height: 170px;
       object-fit: cover; }
       #post-showcase .card-body {
@@ -267,90 +266,93 @@ html {
                                                                   .onthispage ul {
                                                                     padding-left: 1em; }
 
-                                                                    .onthispage-list li {
-                                                                      padding-top: 1em; }
+                                                                    .onthispage-list {
+                                                                      padding-bottom: 1em !important; }
 
-                                                                      .onthispage-list li:first-child {
-                                                                        padding-top: 0em; }
+                                                                      .onthispage-list li {
+                                                                        padding-top: 1em; }
 
-                                                                        .markdown-content {
-                                                                          font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
-                                                                          line-height: 1.6em; }
+                                                                        .onthispage-list li:first-child {
+                                                                          padding-top: 0em; }
 
-                                                                          .markdown-content h1, .markdown-content h2, .markdown-content h3,
-                                                                          .markdown-content h4, .markdown-content h5, .markdown-content h6 {
-                                                                            margin-top: 1em;
-                                                                            margin-bottom: 0.5em;
-                                                                            font-family: "Quicksand", "Open Sans", "Helvetica", "Arial", sans-serif; }
+                                                                          .markdown-content {
+                                                                            font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
+                                                                            line-height: 1.6em; }
 
-                                                                            .markdown-content h1 {
-                                                                              font-size: 2.5rem; }
+                                                                            .markdown-content h1, .markdown-content h2, .markdown-content h3,
+                                                                            .markdown-content h4, .markdown-content h5, .markdown-content h6 {
+                                                                              margin-top: 1em;
+                                                                              margin-bottom: 0.5em;
+                                                                              font-family: "Quicksand", "Open Sans", "Helvetica", "Arial", sans-serif; }
 
-                                                                              .markdown-content h2 {
-                                                                                font-size: 2rem; }
+                                                                              .markdown-content h1 {
+                                                                                font-size: 2.5rem; }
 
-                                                                                .markdown-content h3 {
-                                                                                  font-size: 1.75rem; }
+                                                                                .markdown-content h2 {
+                                                                                  font-size: 2rem; }
 
-                                                                                  .markdown-content h4, .markdown-content h5, .markdown-content h6 {
-                                                                                    font-size: 1rem;
-                                                                                    font-weight: bold; }
+                                                                                  .markdown-content h3 {
+                                                                                    font-size: 1.75rem; }
 
-                                                                                    .markdown-content h2:first-child, .markdown-content h3:first-child,
-                                                                                    .markdown-content h4:first-child {
-                                                                                      margin-top: 0; }
+                                                                                    .markdown-content h4, .markdown-content h5, .markdown-content h6 {
+                                                                                      font-size: 1rem;
+                                                                                      font-weight: bold; }
 
-                                                                                      .markdown-content table .markdown-content dl {
-                                                                                        margin-bottom: 16px;
+                                                                                      .markdown-content h2:first-child, .markdown-content h3:first-child,
+                                                                                      .markdown-content h4:first-child {
                                                                                         margin-top: 0; }
 
-                                                                                        .markdown-content th {
-                                                                                          border: 1px solid #dfe2e5;
-                                                                                          border-bottom: 2px solid #dfe2e5;
-                                                                                          padding: 6px 13px; }
+                                                                                        .markdown-content table .markdown-content dl {
+                                                                                          margin-bottom: 16px;
+                                                                                          margin-top: 0; }
 
-                                                                                          .markdown-content td {
+                                                                                          .markdown-content th {
                                                                                             border: 1px solid #dfe2e5;
+                                                                                            border-bottom: 2px solid #dfe2e5;
                                                                                             padding: 6px 13px; }
 
-                                                                                            .markdown-content table tr.even {
-                                                                                              background-color: #f6f8fa; }
+                                                                                            .markdown-content td {
+                                                                                              border: 1px solid #dfe2e5;
+                                                                                              padding: 6px 13px; }
 
-                                                                                              .markdown-content dd {
-                                                                                                padding-left: 16px; }
+                                                                                              .markdown-content table tr.even {
+                                                                                                background-color: #f6f8fa; }
 
-                                                                                                .markdown-content dt {
-                                                                                                  font-size: 1em;
-                                                                                                  font-style: italic;
-                                                                                                  font-weight: 600;
-                                                                                                  margin-top: 16px; }
+                                                                                                .markdown-content dd {
+                                                                                                  padding-left: 16px; }
 
-                                                                                                  .markdown-content .sourceCode {
-                                                                                                    font-size: 0.95em;
-                                                                                                    margin-top: 1em;
-                                                                                                    margin-bottom: 1.5em; }
+                                                                                                  .markdown-content dt {
+                                                                                                    font-size: 1em;
+                                                                                                    font-style: italic;
+                                                                                                    font-weight: 600;
+                                                                                                    margin-top: 16px; }
 
-                                                                                                    #note-body {
-                                                                                                      min-height: 80vh; }
+                                                                                                    .markdown-content .sourceCode {
+                                                                                                      font-size: 0.95em;
+                                                                                                      margin-top: 1em;
+                                                                                                      margin-bottom: 1.5em; }
 
-                                                                                                      #intro {
-                                                                                                        max-width: 800px;
-                                                                                                        margin: auto;
-                                                                                                        margin-bottom: 1.5em;
-                                                                                                        border: 1px solid rgba(0, 0, 0, 0.25);
-                                                                                                        border-radius: 0.25em;
-                                                                                                        box-shadow: inset 0px 0px 1px 0px #616161;
-                                                                                                        font-family: "Quicksand", "Helvetica", "Arial", sans-serif; }
-                                                                                                        #intro blockquote {
-                                                                                                          font-family: "Quicksand", "Helvetica", "Arial", sans-serif;
-                                                                                                          font-size: 1.32812rem;
-                                                                                                          line-height: 2rem;
-                                                                                                          color: #616161;
-                                                                                                          padding-right: 0;
-                                                                                                          margin: 0; }
-                                                                                                          #intro .title {
-                                                                                                            margin-bottom: 0;
-                                                                                                            font-size: 1.59375rem; }
+                                                                                                      #note-body {
+                                                                                                        min-height: 80vh; }
+
+                                                                                                        #intro {
+                                                                                                          max-width: 800px;
+                                                                                                          margin: auto;
+                                                                                                          margin-bottom: 1.5em;
+                                                                                                          border: 1px solid rgba(0, 0, 0, 0.25);
+                                                                                                          border-radius: 0.25em;
+                                                                                                          box-shadow: inset 0px 0px 1px 0px #616161;
+                                                                                                          font-family: "Quicksand", "Helvetica", "Arial", sans-serif; }
+                                                                                                          #intro blockquote {
+                                                                                                            font-family: "Quicksand", "Helvetica", "Arial", sans-serif;
+                                                                                                            font-size: 1.32812rem;
+                                                                                                            line-height: 2rem;
+                                                                                                            color: #616161;
+                                                                                                            padding-right: 0;
+                                                                                                            margin: 0; }
+                                                                                                            #intro .title {
+                                                                                                              margin-bottom: 0;
+                                                                                                              font-size: 1.59375rem; }
 
 #project-showcase {
   font-family: "Quicksand", "Helvetica", "Arial", sans-serif; }

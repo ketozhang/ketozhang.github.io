@@ -75,7 +75,7 @@ Memoryless Property
 	P(T > t_1 + t_2 \mid T > t_1) = P(T > t_2)
 	$$
 
-	This is because
+	::: Proof
 
 	$$
 	\begin{align*}
@@ -85,5 +85,7 @@ Memoryless Property
 	&= P(T > t_2)
 	\end{align*}
 	$$
+	:::
 
-## Relationship to Poisson Process
+## Relationship to Poisson Distribution
+See [Poisson Process](../Discrete_Distributions/Poisson#Poisson_Process).
