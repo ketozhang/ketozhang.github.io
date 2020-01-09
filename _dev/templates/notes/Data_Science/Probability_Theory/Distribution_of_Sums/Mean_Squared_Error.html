@@ -1,0 +1,21 @@
+<p>The <strong>mean squared error</strong> or more appropriately <strong>mean squared deviance</strong> of random variables <span class="math inline">\(X = [X_1, X_2, \ldots, X_n]\)</span> is a type of sums notably for an array of random variables,</p>
+<p><span class="math display">\[
+\text{MSE}(X) = \frac{1}{n} \sum_{k=1}^n (X_k - \mu_k)^2
+\]</span></p>
+<h2 id="unbiased-estimator-of-variance">Unbiased Estimator of Variance</h2>
+<p>: For iid random variables in <span class="math inline">\(X\)</span> with expectation <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>, we’d like to estimator the variance without knowing the expectation thus replacing <span class="math inline">\(\mu_k\)</span> with <span class="math inline">\(\bar X\)</span>. This estimator is the biased estimator of variance denoted as <span class="math inline">\(\hat \sigma^2\)</span>:</p>
+<p><span class="math display">\[
+\begin{align*}
+E(\hat \sigma^2) &amp;= \frac{1}{n} \sum_{k=1}^n (X_k - \bar X)^2\\
+&amp;= \frac{n-1}{n}\sigma^2
+\end{align*}
+\]</span></p>
+<p>Correcting for the factor, the unbiased estimator <span class="math inline">\(S^2\)</span> of variance is,</p>
+<p><span class="math display">\[
+\boxed{S^2 = \frac{1}{n-1} \sum_{k=1}^n (X_k - \bar X)^2}
+\]</span></p>
+<h3 id="relation-to-chi-square">Relation to Chi-Square</h3>
+<p>The unbiased estimator <span class="math inline">\(S^2\)</span> is related the Chi-Square distribution with <span class="math inline">\(n-1\)</span> degrees of freedom. In fact, it is just a constant multiple of the Chi-Square random variable.</p>
+<p><span class="math display">\[
+\left(\frac{n-1}{\sigma^2}\right)S^2 \sim \chi^2_{n-1}
+\]</span></p>

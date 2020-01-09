@@ -1,0 +1,22 @@
+<p>We begin with introducing probability theory by thinking about how do we think the world works — or at least a part of it. In probability theory, we assume there’s <strong>a world that has outcomes occurring by chance</strong>. It is said that in this world, random processes exists.</p>
+<h2 id="outcome-space">Outcome Space</h2>
+<p>For a system or process in this world, there exist all possible outcomes that can occur from the system. We denote this a distinct set of outcomes <span class="math inline">\(\Omega = \set{\omega_1, \omega_2, \ldots, \omega_n}\)</span> known as the <strong>set of outcomes</strong>, <strong>sampling space</strong>, or <strong>outcome space</strong>.</p>
+<ul>
+<li>A distinct set of outcomes means there cannot be two outcomes that can both occur at the same time (e.g., a coin is either lands heads or tails, it is either past 5:00 PM or before 5:00 PM).</li>
+</ul>
+<h2 id="event">Event</h2>
+<p>We need a way to describe joint outcomes (e.g., a dice rolls even can occur from three possible outcomes: 2, 3, 4). We call these joint outcomes <strong>events</strong>, although no strictly since any one outcome can also be an event.</p>
+<p>Thus, we define an event <span class="math inline">\(A\)</span> to be a subset of the outcome space:</p>
+<p><span class="math display">\[A \subseteq \Omega \]</span></p>
+<h2 id="probability">Probability</h2>
+<p>What is the chance that an event occurred? Well, using the foundation we’ve just built, the chance of an event occurring must depend on the chance that each outcome occurs. The probability of one outcome is denoted as,</p>
+<p><span class="math display">\[
+P(\omega)
+\]</span></p>
+<p>Because each outcome is distinct from one another The probability of event <span class="math inline">\(A\)</span> is the sum of each outcome probability of <span class="math inline">\(A\)</span>,</p>
+<p><span class="math display">\[P(A) = \sum_{\omega \in A} P(\omega)\]</span></p>
+<div class="Example">
+<p><strong>Outcomes with Equal Chance</strong></p>
+<p>If it so happens that the probability of <span class="math inline">\(P(\omega)\)</span> is equal for all <span class="math inline">\(\omega\)</span> then the outcome space is said to have a uniform distribution. This simplifies the probability of an event which is the number of outcomes in <span class="math inline">\(A\)</span> out of the total number of possible outcomes.,</p>
+<p><span class="math display">\[ P(A) = \frac{\abs{A}}{\abs{\Omega}} \]</span></p>
+</div>

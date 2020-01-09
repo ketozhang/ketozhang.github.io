@@ -1,5 +1,5 @@
 ---
-title: Probability
+title: Probability Theory
 ---
 
 * Combinatorics
