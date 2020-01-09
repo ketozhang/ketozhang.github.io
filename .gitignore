@@ -3,6 +3,7 @@ node_modules/
 *.egg-info/
 *.vscode/
 *.webassets-cache/
+*.venv/
 _dev/docs/
 
 *.code-workspace
