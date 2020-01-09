@@ -1,4 +1,4 @@
-/* Style for printing */
+/* Print Style */
 
 @page {
   width: 8.5in;
@@ -19,20 +19,27 @@
   }
 }
 
+/* Container */
+
 .container-fluid {
   max-width: 80%;
 }
 
-@media (min-width: 1200px)  {
+@media (min-width: 992px) {
+  #publication-list {
+    width: 80%;
+  }
+}
+
+@media (min-width: 1200px) {
   .container-fluid {
     max-width: 60%;
   }
 }
 
-
 body {
   color: #4e4e4e;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   margin-top: 0.5in;
   margin-bottom: 0.5in;
 }
@@ -44,7 +51,7 @@ header {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Quicksand', 'Open Sans', sans-serif;
+  font-family: 'Quicksand', 'Roboto', sans-serif;
 }
 
 hr {
@@ -101,10 +108,4 @@ hr {
   padding-left: 0;
   text-indent: -1em;
   margin-left: 1em
-}
-
-@media (min-width: 992px) {
-  #publication-list {
-    width: 80%;
-  }
 }
