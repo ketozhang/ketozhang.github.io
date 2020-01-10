@@ -1,11 +1,9 @@
 ---
 title: Design and Bias
 ---
-# Lecture 2 - Data Design and Sources of Bias
-
 ## Types of Data Sets
 
-The best data may be an exhaustive data set full of everything you need. This ideal data set is called a **census**. 
+The best data may be an exhaustive data set full of everything you need. This ideal data set is called a **census**.
 
 More commonly one often would uses a **subset** or **sample** of a census. There are many types depending on how they were collection and who participated:
 
@@ -44,7 +42,7 @@ $$P_2 = P_4 = ... = P_E = 0$$
 * $E$ : Number of even participant
 * $O$ : Number of odd participant
 
-**Example in a Sentence**: 
+**Example in a Sentence**:
 
 > Grouping everyone by states and randomly choosing a state.
 
@@ -54,6 +52,6 @@ Similar to cluster sample, **stratified sample** groups participants however ins
 
 From here we may decide to choose one from each sample
 
-**Example in a Sentence**: 
+**Example in a Sentence**:
 
 > Grouping everyone by states and randomly choosing a participant from each state.
