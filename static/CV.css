@@ -11,7 +11,6 @@
 
 @media print {
   body {
-    line-height: 1.2 !important;
     font-size: 18px;
   }
   .section h1 {
@@ -42,6 +41,7 @@ body {
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   margin-top: 0.5in;
   margin-bottom: 0.5in;
+  line-height: 1.2;
 }
 
 header {
@@ -79,9 +79,21 @@ hr {
   padding-left: 1em;
 }
 
+.row-description {
+  margin-bottom: 1em;
+}
+
+.row-description ul {
+  margin-bottom: 0;
+  padding-left: 1em;
+}
+
+.row-description li {
+  margin-bottom: 0.5em;
+}
+
 .row-header {
   font-weight: bold;
-  margin-bottom: 0.5em;
   margin-top: 1em
 }
 
@@ -90,8 +102,8 @@ hr {
 }
 
 .row-subtitle {
-  margin-top: -0.5em;
   margin-bottom: 0.5em;
+  font-style: italic;
 }
 
 #name {
