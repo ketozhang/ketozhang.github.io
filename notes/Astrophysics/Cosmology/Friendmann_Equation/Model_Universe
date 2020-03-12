@@ -50,8 +50,23 @@
   <div id="note-body" class="row">
     <!-- Notebook Sidenav -->
     <div class="col-3 bg-light pt-1">
-      
-      []
+      <div class="sidenav sticky-top vh-80">
+        <div class="sidenav-header row no-gutters">
+          <div class="col-9">
+            <strong>Model Universe</strong>
+          </div>
+          <div class="col-2 offset-1">
+            <a class="go-up" href="Friedmann Equation" role="button">
+              <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+            </a>
+          </div>
+        </div>
+        <div class="sidenav-body no-gutters">
+          <ul class="no-list-style pl-3">
+            
+          </ul>
+        </div>
+      </div>
     </div>
 
     <!-- Content -->
