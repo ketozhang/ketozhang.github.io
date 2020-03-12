@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145024207-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-145024207-1');
+    </script>
+    <meta charset="UTF-8">
+    <title>
+        Keto |  
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap time -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link href="https://ketozhang.github.io/static/base.css" rel="stylesheet"> -->
+    <link href="/static/main.css?031baeda" rel="stylesheet"">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro|Quicksand" rel="stylesheet">
+    <link href="https://ketozhang.github.io/static/prism.css" rel="stylesheet">
+    <link rel="shortcut icon" href="https://ketozhang.github.io/static/favicon.ico">
+
+    <!-- LaTeX Stylesheet -->
+    
+    <div class="d-none">
+        $$
+        \newcommand{d}{\mathrm d}
+        \newcommand{avg}[1]{\expval{#1}}
+        \renewcommand{vec}[1]{\vectorbold{#1}}
+        $$
+    </div>
+    
+</head>
+
+<body>
+    
+<div class="container-fluid" id="note">
+  <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
+  <div id="note-body" class="row">
+    <!-- Notebook Sidenav -->
+    <div class="col-3 bg-light pt-1">
+      
+      []
+    </div>
+
+    <!-- Content -->
+    <div class="col-7 col-md-6">
+      <h1 class="title text-center pt-3">Properties</h1>
+      
+      <div class="markdown-content">
+        <h2 id="communication">Communication</h2>
+<ul>
+<li><p>A state <span class="math inline">\(i\)</span> <strong>leads</strong> to state <span class="math inline">\(j\)</span> denoted as <span class="math inline">\(i \to j\)</span> if one state can get to another. Formally if <span class="math inline">\(i\)</span> leads to <span class="math inline">\(j\)</span> then there exist a time <span class="math inline">\(t\)</span> where,</p>
+<p><span class="math display">\[
+  P_{i,j}(t) &gt; 0;
+  \]</span></p></li>
+<li><p>Two states <strong>communicates</strong> if <span class="math inline">\(i \to j \land j \to i\)</span> compactly denoted as $ i j$.</p></li>
+<li><p>The chain is irreducible if all <span class="math inline">\(i,j\)</span> communicates.</p></li>
+</ul>
+<h2 id="period">Period</h2>
+<p>The <strong>period</strong> <span class="math inline">\(T\)</span> of a state <span class="math inline">\(i\)</span> exists if the chain can only start and end at the same state at the interval of <span class="math inline">\(T\)</span>.</p>
+<ul>
+<li>Slicing out any subset of communicating states in the transition matrix helps you determine its periodicity</li>
+<li>If <span class="math inline">\(P_{ii} \neq 0\)</span>, then the state <span class="math inline">\(i\)</span> is aperiodic.</li>
+<li>All states of irreducible transition matrix must be all share the same period.</li>
+</ul>
+<h2 id="stationarity">Stationarity</h2>
+<p>A chain of <span class="math inline">\(N\)</span> individual states is considered to be in stationarity if for all states <span class="math inline">\(j\)</span>, the transition to state <span class="math inline">\(j\)</span> is independent of the previous state <span class="math inline">\(i\)</span>.</p>
+<p><span class="math display">\[
+P_{ij}(n) = \text{const}, \quad \text{for fixed $i$ and all $j$}
+\]</span></p>
+<p>We express this formally as a state has stationarity as the number of steps <span class="math inline">\(n \to \infty\)</span></p>
+<p><span class="math display">\[
+\begin{gather*}
+P_{i,j}(n) \rightarrow \pi(j), \quad \text{as }n \to \infty\\
+\sum_{j \in S} \pi(j) = 1
+\end{gather*}
+\]</span></p>
+<dl>
+<dt>Stationarity of Irreducible Aperiodioc Markov Chain</dt>
+<dd>All irreducible and aperiodic Markov chain converges to stationarity
+</dd>
+<dt>Stationarity States are Positive</dt>
+<dd><span class="math display">\[
+\pi(j) &gt; 0
+\]</span>
+</dd>
+<dt>Balance Equation</dt>
+<dd><p>Satisfies the balance equation for <span class="math inline">\(\vec \pi\)</span> the probability row vector for all states <span class="math inline">\(j\)</span>:</p>
+<p><span class="math display">\[
+\pi(j) = \sum_{i \in S} P(i,j)\pi(i)
+\]</span></p>
+<p><span class="math display">\[
+\vec \pi P = \vec \pi
+\]</span></p>
+<p>Any constant factor of the RHS also satisfies the balance equation.</p>
+</dd>
+<dt>Steady/Stationary State Distribution</dt>
+<dd><p>If <span class="math inline">\(X_n\)</span> is distributed as <span class="math inline">\(\pi(j)\)</span> then <span class="math inline">\(X_m\)</span>, for <span class="math inline">\(m &gt; n\)</span>, is also distributed as <span class="math inline">\(\pi(j)\)</span>.</p>
+<p><span class="math display">\[
+\begin{gather*}
+P_{ij}(n+1) = P_{ij}(n) = \pi(j)\\
+\big\Downarrow\\
+P_{ij}(m) = \pi(j); \quad m &gt; n
+\end{gather*}
+\]</span></p>
+</dd>
+<dt>Long Run Expected Proportion of Time in State</dt>
+<dd><p>Let <span class="math inline">\(I_t(j)\)</span> be the indicator of the event <span class="math inline">\(\set{X_m = j}\)</span>, for some time until <span class="math inline">\(t_f\)</span>, the total proportion of time spent on state <span class="math inline">\(j\)</span> is given by,</p>
+<p><span class="math display">\[
+\frac{1}{t_f} \sum_{t=1}^{t_f} I_m(j)
+\]</span></p>
+<p>The expected proportion of time the chain spent on <span class="math inline">\(j\)</span> is then,</p>
+<p><span class="math display">\[
+\mathbb E\left[\frac{1}{t_f} \sum_{t=1}^{t_f} I_m(j) \right] = \frac{1}{t_f}\sum_{t=1}^{t_f} P_{ij}(t)
+\]</span></p>
+<p>As <span class="math inline">\(t_f = n \to \infty\)</span>,</p>
+<p><span class="math display">\[
+\frac{1}{n}\sum_{t=1}^n P_{ij}(t) = \pi(j)
+\]</span></p>
+<p>Thus the expected value of the proportion of time spent on state <span class="math inline">\(j\)</span> in the long run is given by the steady state proportion <span class="math inline">\(\pi(j)\)</span>.</p>
+</dd>
+</dl>
+
+      </div>
+      <!-- Disqus Comments -->
+      <div id="disqus_thread" class="mt-5">
+        <div class="w-50 mx-auto">
+          <button type="button" class="btn btn-block btn-outline-dark show-comments">Show Comments</button>
+        </div>
+      </div>
+      <!--
+                <script>
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                var disqus_config = function () {
+                    this.page.url = "";  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = "/notes/Data_Science/Probability_Theory/Markov-Chain/Properties"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://ketozhang.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
+                    by Disqus.</a></noscript>
+            -->
+      
+    </div>
+
+    <!-- On This Page -->
+    <div class="col-md-3 d-none d-md-block">
+      <div class="onthispage sidenav small">
+    <div class="sidenav-header">
+        <strong>&#9776; On This Page</strong>
+    </div>
+    <div class="onthispage-collapse">
+        <div class="sidenav-body bg-light">
+            <ul class="onthispage-list no-list-style"></ul>
+        </div>
+    </div>
+</div>
+    </div>
+
+  </div>
+</div>
+
+    <footer class="py-2 bg-white">
+    <div class="container">
+        <p class="text-right m-0"> Generated by <a href="https://github.com/ketozhang/StaticPy">StaticPy</a> |
+            Designed
+            by <a href="https://github.com/ketozhang">Keto Z.</a>
+        </p>
+    </div>
+</footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+
+    <script src="https://ketozhang.github.io/static/js/datetime.js"></script>
+    <script src="https://ketozhang.github.io/static/js/disqus.js"></script>
+    <script src="https://ketozhang.github.io/static/js/codeHighlight.js"></script>
+    <script src="https://ketozhang.github.io/static/js/prism.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>
+    <script src="https://ketozhang.github.io/static/js/onthispage.js"></script>
+    <script src="https://ketozhang.github.io/static/js/markdown.js"></script>
+
+    <!-- MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://ketozhang.github.io/static/js/mathjax_config.js" defer></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+
+    <!-- Bootstrap JS -->
+    <!-- TODO: trim JS if not needed -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <!-- React -->
+    <!-- TODO: do we need React? -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>-->
+
+
+    <script>
+        anchors.add();
+        $(document).ready(function () {
+            Prism.highlightAll();
+        })
+    </script>
+
+    
+    
+</body>
+
+</html>

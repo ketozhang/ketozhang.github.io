@@ -19,3 +19,17 @@ R(\hat y) = P(\hat y(x)\text{ is wrong})
 $$
 
 This suggest that the decision boundary is the set of all points where $\set{x : P(A \mid x) = 0.5}$
+
+## Gaussian Decision Rule
+
+For the case of two classes $Y \in \set{1,2}$ such that each class has a $\text{Normal}(\mu_y, \sigma_y^2)$ distribution and a possible prior for the chance that a sample comes from a class $P(Y=y)$ called the mixing parameter, the probability of a sample $x$ is,
+
+$$
+P(X=x) = P(X=x \mid Y=1)P(Y=1) + P(X=x \mid Y=1)P(Y=2)
+$$
+
+Thus the decision rule follows,
+
+$$
+\hat y(x) = \mathop{\arg\max}_y P(X=x\mid Y=y) P(Y=y)
+$$

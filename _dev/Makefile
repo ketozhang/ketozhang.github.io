@@ -1,20 +1,23 @@
 local:
+	.venv/bin/flask run -p 8080
+
+debug:
 	FLASK_ENV=development \
-	pipenv run flask run -p 8080 --host 0.0.0.0
+	.venv/bin/flask run -p 8080
 
 build:
-	pipenv run python app.py build
+	.venv/bin/python app.py build
 
 .PHONY: static
 static:
-	pipenv run python freeze.py
+	make freeze && \
 	find ../ -maxdepth 1 \
 		! \( -name ".*" -o -name "_*" \) -exec rm -r {} \; && \
 	rsync -a --remove-source-files docs/ ../  && \
 	rm -rf docs
 
 freeze:
-	make static
+	.venv/bin/python freeze.py
 
 clean:
 	rm -rf docs/ && \

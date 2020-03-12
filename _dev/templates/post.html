@@ -2,39 +2,43 @@
 {% block content %}
 {% include 'header.html' %}
 <div class="container" id="post">
-    <div class="row">
-        <!-- Content -->
-        <div class="col-xl-9 col-lg-8 col-12 h-100">
-            <div class="title-header">
-                <h1 class="title">{{page['title']}}</h1>
-                <div class="metadata">
-                    <p class="m-0">By {{author}} <span class="mx-1 align-middle" style="font-size: 30px">&#183</span>
-                        Last
-                        updated
-                        <time datetime="{{page['last_updated']}}"></time></p>
-                </div>
-                <p class="description">{{page['description']}}</p>
-                {% if 'image' in page %}
-                <img id="post-img" class="mx-auto d-block" src={{url_for(page['image'])}}>
-                {% endif %}
-                <hr>
-            </div>
-
-            <div class="markdown-content">
-                {% if page['has_content'] %}
-                {{ include_raw(page['content_path']) }}
-                {% endif %}
-            </div>
+  <div class="row">
+    <!-- Content -->
+    <div class="col-xl-9 col-lg-8 col-12 h-100">
+      <div class="title-header">
+        <h1 class="title">{{page['title']}}</h1>
+        <div class="metadata">
+          <p class="m-0">By {{author}} <span class="mx-1 align-middle" style="font-size: 30px">&#183</span>
+            Last
+            updated
+            <time datetime="{{page['last_updated']}}"></time></p>
         </div>
-        <!-- On This Page -->
-        <div class="col-xl-3 col-lg-4 d-lg-block d-none">
-            {% include "onthispage.html" %}
-        </div>
+        {% if page.description %}
+        <p class="description">{{page['description']}}</p>
+        {% endif %}
 
-        <!-- Disqus Comments -->
-        <div id="disqus_thread" class="mt-5 text-center">
-            <button type="button" class="btn btn-block btn-outline-dark show-comments">Show Comments</button>
-        </div>
+        {% if page.image %}
+        <img id="post-img" class="mx-auto d-block" src={{url_for(page['image'])}}>
+        {% endif %}
+        <hr>
+      </div>
 
+      <div class="markdown-content">
+        {% if page['has_content'] %}
+        {{ include_raw(page['content_path']) }}
+        {% endif %}
+      </div>
     </div>
-    {% endblock %}
+    <!-- On This Page -->
+    <div class="col-xl-3 col-lg-4 d-lg-block d-none">
+      {% include "onthispage.html" %}
+    </div>
+
+
+  </div>
+  <!-- Disqus Comments -->
+  <div id="disqus_thread" class="row justify-content-center">
+    <button type=" button" class="col-6 col-align-self-center btn btn-block btn-outline-dark show-comments">Show
+      Comments</button>
+  </div>
+  {% endblock %}

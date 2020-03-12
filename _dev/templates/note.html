@@ -10,6 +10,7 @@
   <div id="note-body" class="row">
     <!-- Notebook Sidenav -->
     <div class="col-3 bg-light pt-1">
+      {#
       <div class="sidenav sticky-top vh-80">
         <div class="sidenav-header row no-gutters">
           <div class="col-9">
@@ -23,12 +24,14 @@
         </div>
         <div class="sidenav-body no-gutters">
           <ul class="no-list-style pl-3">
-            {% for subpage in page['subpages'] %}
-            <li class='pb-3'><a href="{{url_for(subpage['url'])}}">{{subpage['title']}}</a></li>
+            {% for subpage in page.subpages %}
+            <li class='pb-3'><a href="{{url_for(subpage.url)}}">{{subpage.title}}</a></li>
             {% endfor %}
           </ul>
         </div>
       </div>
+      #}
+      {{ page.subpages }}
     </div>
 
     <!-- Content -->

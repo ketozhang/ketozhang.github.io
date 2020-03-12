@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145024207-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-145024207-1');
+    </script>
+    <meta charset="UTF-8">
+    <title>
+        Keto |  
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap time -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link href="https://ketozhang.github.io/static/base.css" rel="stylesheet"> -->
+    <link href="/static/main.css?031baeda" rel="stylesheet"">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro|Quicksand" rel="stylesheet">
+    <link href="https://ketozhang.github.io/static/prism.css" rel="stylesheet">
+    <link rel="shortcut icon" href="https://ketozhang.github.io/static/favicon.ico">
+
+    <!-- LaTeX Stylesheet -->
+    
+    <div class="d-none">
+        $$
+        \newcommand{d}{\mathrm d}
+        \newcommand{avg}[1]{\expval{#1}}
+        \renewcommand{vec}[1]{\vectorbold{#1}}
+        $$
+    </div>
+    
+</head>
+
+<body>
+    
+<div class="container-fluid" id="note">
+  <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
+  <div id="note-body" class="row">
+    <!-- Notebook Sidenav -->
+    <div class="col-3 bg-light pt-1">
+      
+      []
+    </div>
+
+    <!-- Content -->
+    <div class="col-7 col-md-6">
+      <h1 class="title text-center pt-3">Posterior Estimator</h1>
+      
+      <div class="markdown-content">
+        <p>With an assumption of the likelihood function (i.e., the distribution of the data), we can determine the distribution of the parameters which is the posterior distribution. Using Bayes rule we find that,</p>
+<p><span class="math display">\[
+P(\theta \mid X) = \frac{P(X \mid \theta) P(\theta)}{P(X)}
+\]</span></p>
+<ul>
+<li>$ P(X ) $ : the likelihood function</li>
+<li>$ P(X) $ : the normalization distribution called the evidence.</li>
+</ul>
+<h2 id="expectation-of-posterior">Expectation of Posterior</h2>
+<p>If there must be one value instead of a distribution, the expectation is one natural choice</p>
+<h2 id="maximum-a-posterior">Maximum a Posterior</h2>
+<p>If there must be one value, then the mode or <strong>maximum a posteriori</strong> (<strong>MAP</strong>) is a another natural choice.</p>
+<h2 id="bayesian-update">Bayesian Update</h2>
+<h2 id="motivating-example">Motivating Example</h2>
+<p>Consider a coin where we do not know the chance of heads <span class="math inline">\(p\)</span>. Let’s take the prior that <span class="math inline">\(p\)</span> is uniformally any value between 0 and 1. That is,</p>
+<p><span class="math display">\[
+p \sim \text{Uniform}(0, 1)
+\]</span></p>
+<p>The chance that the coin lands head depends on the value of <span class="math inline">\(p\)</span> which is random. We can marginalize over all possible values of <span class="math inline">\(p\)</span>,</p>
+<p><span class="math display">\[
+P(H) = \int_0^1 P(H, p) ~dp = \int_0^1 P(H \mid p) f(p) ~dp
+\]</span></p>
+<p>In fact this looks like an expected value as a function of <span class="math inline">\(p\)</span>,</p>
+<p><span class="math display">\[
+P(H) = E(P(H \mid p))
+\]</span></p>
+<p>The chance of head given <span class="math inline">\(p\)</span> is of course <span class="math inline">\(p\)</span> itself so,</p>
+<p><span class="math display">\[
+\boxed{P(H) = E(p) = \frac{1}{2}}
+\]</span></p>
+<p>This is not so surprising since <span class="math inline">\(p\)</span> is uniform, a large sample of <span class="math inline">\(p\)</span> would neither be advantageous to getting heads or tails.</p>
+<p>However, what’s the chance of getting two heads <span class="math inline">\(P(HH)\)</span> out of two tosses?</p>
+<p>We know that <span class="math inline">\(P(HH \mid p) = p^2\)</span> therefore,</p>
+<p><span class="math display">\[
+\boxed{P(HH) = E(p^2) = \int_0^1 p^2 ~dp = \frac{1}{3}}
+\]</span></p>
+<p>The answer is <strong>not</strong> <span class="math inline">\(1/4\)</span> as we should expect. That must mean the two tosses of coins are not independent when <span class="math inline">\(p\)</span> is random. To see why we need to look at the conditional probability that the second coin lands head if we know the first one lands heads for a random <span class="math inline">\(p\)</span></p>
+<p><span class="math display">\[
+P(H_2 \mid H_1) = \frac{P(H_1, H_2)}{P(H_1)} = \frac{2}{3}
+\]</span></p>
+<p>Where did the <span class="math inline">\(2/3\)</span> come from? Let’s take a look at what happens to the chance of <span class="math inline">\(p\)</span> given we know the first coin lands head. We would need to apply Bayes rule,</p>
+<p><span class="math display">\[
+f(p \mid H_1) = \frac{P(H_1 \mid p) f(p)}{P(H_1)} \propto p
+\]</span></p>
+<p>Normalizing we find that,</p>
+<p><span class="math display">\[
+f(p \mid H_1) = 2p
+\]</span></p>
+<p>Thus,</p>
+<!-- TODO: WHAT? -->
+<p><span class="math display">\[
+P(H_2 \mid H_1) = \int_0^1 P(H_2 \mid p) \cdot f(p \mid H_1) ~dp = \frac{2}{3}
+\]</span></p>
+<h2 id="beta-and-binomial-update">Beta and Binomial Update</h2>
+<p>We are interested in <span class="math inline">\(n\)</span> IID Bernoulli trials where we define the sum as <span class="math inline">\(S = \sum{I_k}\)</span>.</p>
+<p>The Bayesian update rule is,</p>
+<p><span class="math display">\[(p \mid S=k) \sim \text{Beta}(r+k, s+n-k)\]</span></p>
+<div class="Proof">
+<p>Let the prior for the parameter <span class="math inline">\(p\)</span> be distributed as,</p>
+<p><span class="math display">\[
+\begin{gather*}
+p \sim \text{Beta}(r,s)\\
+f(p) = C(r,s) \cdot p^{r-1}(1-p)^{s-1}
+\end{gather*}
+\]</span></p>
+<p>the likelihood for <span class="math inline">\(S\)</span> is then the binomial distribution,</p>
+<p><span class="math display">\[
+P(S=k \mid p) = {n \choose s} p^k (1-p)^{n-k}
+\]</span></p>
+<p>Hence, the posterior distribution is,</p>
+<p><span class="math display">\[
+f(p \mid S=k) = C(r+k, s+n-k) p^{r+k-1} (1-p)^{n+s-k-1}
+\]</span></p>
+<p>Thus, the Bayesian update adds the number of successes <span class="math inline">\(k\)</span> and the number of failures <span class="math inline">\(n-k\)</span>.</p>
+<p><span class="math display">\[
+\boxed{(p \mid S=k) \sim \text{Beta}(r+k, s+n-k)}
+\]</span></p>
+</div>
+<dl>
+<dt>Expectation</dt>
+<dd><span class="math display">\[E(p \mid S=k) = \frac{r+k}{r+s+n}\]</span>
+</dd>
+<dt>MAP</dt>
+<dd><span class="math display">\[\text{mode}(p \mid S=k) = \frac{r+k-1}{r+k+n-2}\]</span>
+</dd>
+<dt>Transition Rule</dt>
+<dd><span class="math display">\[ P(S_{n+1} = k+1 \mid S_n = k) = E(p \mid S_n=k) \]</span>
+</dd>
+<dt>Evidence</dt>
+<dd><p>The chance of <span class="math inline">\(k\)</span> heads after <span class="math inline">\(n\)</span> tosses using the beta prior is the beta-binomial distribution.</p>
+<p><span class="math display">\[
+P(S_n = k) = {n \choose k}\frac{C(r,s)}{C(r+k, s+n-k)}
+\]</span></p>
+</dd>
+</dl>
+
+      </div>
+      <!-- Disqus Comments -->
+      <div id="disqus_thread" class="mt-5">
+        <div class="w-50 mx-auto">
+          <button type="button" class="btn btn-block btn-outline-dark show-comments">Show Comments</button>
+        </div>
+      </div>
+      <!--
+                <script>
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                var disqus_config = function () {
+                    this.page.url = "";  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = "/notes/Data_Science/Statistical_Modeling/Probabilistic_Models/Posterior_Estimator"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://ketozhang.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
+                    by Disqus.</a></noscript>
+            -->
+      
+    </div>
+
+    <!-- On This Page -->
+    <div class="col-md-3 d-none d-md-block">
+      <div class="onthispage sidenav small">
+    <div class="sidenav-header">
+        <strong>&#9776; On This Page</strong>
+    </div>
+    <div class="onthispage-collapse">
+        <div class="sidenav-body bg-light">
+            <ul class="onthispage-list no-list-style"></ul>
+        </div>
+    </div>
+</div>
+    </div>
+
+  </div>
+</div>
+
+    <footer class="py-2 bg-white">
+    <div class="container">
+        <p class="text-right m-0"> Generated by <a href="https://github.com/ketozhang/StaticPy">StaticPy</a> |
+            Designed
+            by <a href="https://github.com/ketozhang">Keto Z.</a>
+        </p>
+    </div>
+</footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+
+    <script src="https://ketozhang.github.io/static/js/datetime.js"></script>
+    <script src="https://ketozhang.github.io/static/js/disqus.js"></script>
+    <script src="https://ketozhang.github.io/static/js/codeHighlight.js"></script>
+    <script src="https://ketozhang.github.io/static/js/prism.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>
+    <script src="https://ketozhang.github.io/static/js/onthispage.js"></script>
+    <script src="https://ketozhang.github.io/static/js/markdown.js"></script>
+
+    <!-- MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://ketozhang.github.io/static/js/mathjax_config.js" defer></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+
+    <!-- Bootstrap JS -->
+    <!-- TODO: trim JS if not needed -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <!-- React -->
+    <!-- TODO: do we need React? -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>-->
+
+
+    <script>
+        anchors.add();
+        $(document).ready(function () {
+            Prism.highlightAll();
+        })
+    </script>
+
+    
+    
+</body>
+
+</html>
