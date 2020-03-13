@@ -44,7 +44,7 @@ home:
     #   view_details: "#"
 
   posts:
-    - '/posts/python-simple-package-structure'
+    - '/posts/python-simple-package-structure/'
     # - '/posts/astronomers-scribble-2/'
     # - '/posts/astronomers-scribble-1/'
 

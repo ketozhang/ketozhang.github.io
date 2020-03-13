@@ -7,5 +7,6 @@ node_modules/
 _dev/docs/
 
 *.code-workspace
+*.whl
 docker*
 Docker*

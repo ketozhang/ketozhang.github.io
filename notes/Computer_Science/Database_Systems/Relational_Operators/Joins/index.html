@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145024207-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-145024207-1');
+    </script>
+    <meta charset="UTF-8">
+    <title>
+        Keto |  
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap time -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link href="https://ketozhang.github.io/static/base.css" rel="stylesheet"> -->
+    <link href="/static/main.css?031baeda" rel="stylesheet"">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro|Quicksand" rel="stylesheet">
+    <link href="https://ketozhang.github.io/static/prism.css" rel="stylesheet">
+    <link rel="shortcut icon" href="https://ketozhang.github.io/static/favicon.ico">
+
+    <!-- LaTeX Stylesheet -->
+    
+    <div class="d-none">
+        $$
+        \newcommand{d}{\mathrm d}
+        \newcommand{avg}[1]{\expval{#1}}
+        \renewcommand{vec}[1]{\vectorbold{#1}}
+        $$
+    </div>
+    
+</head>
+
+<body>
+    
+<div class="container-fluid" id="note">
+  <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
+  <div id="note-body" class="row">
+    <!-- Notebook Sidenav -->
+    <div class="col-3 bg-light pt-1">
+      <div class="sidenav sticky-top vh-80">
+        <div class="sidenav-header row no-gutters">
+          <div class="col-9">
+            <strong>Join Operators</strong>
+          </div>
+          <div class="col-2 offset-1">
+            <a class="go-up" href="" role="button">
+              <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+            </a>
+          </div>
+        </div>
+        <div class="sidenav-body no-gutters">
+          <ul class="no-list-style pl-3">
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="col-7 col-md-6">
+      <h1 class="title text-center pt-3">Join Operators</h1>
+      
+      <div class="markdown-content">
+        <p>A single I/O in the operator model includes:</p>
+<ul>
+<li>Accessing the page or record (whichever highest)</li>
+</ul>
+<p>Exclude:</p>
+<ul>
+<li>Predicate comparison</li>
+</ul>
+<h2 id="syntax">Syntax</h2>
+<ul>
+<li><span class="math inline">\([L]\)</span>: Number of pages to store <span class="math inline">\(R\)</span></li>
+<li><span class="math inline">\(p_R\)</span>: Number of records per page of <span class="math inline">\(R\)</span></li>
+<li><p><span class="math inline">\(|R|\)</span>: The number of records in <span class="math inline">\(R\)</span></p>
+<p><span class="math inline">\(|R| = p_R [L]\)</span></p></li>
+</ul>
+<h2 id="theta-join">Theta Join</h2>
+<ul>
+<li><p><strong>Simple Nested Loops Join</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="cf">for</span> r <span class="kw">in</span> R.records:</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">    <span class="cf">for</span> s <span class="kw">in</span> S.records:</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">        <span class="op">&lt;</span>pred<span class="op">&gt;</span></a></code></pre></div>
+<p>Consider joining two table with records labeled <span class="math inline">\(R\)</span> and <span class="math inline">\(S\)</span> respectively with an on clause. The cost is,</p>
+<p><span class="math display">\[ [L] + |R|[R] \]</span></p></li>
+<li><p><strong>Order of Join</strong></p>
+<p>Take note of the order you join. It may be cheaper doing <span class="math inline">\(S\)</span> join <span class="math inline">\(R\)</span> than <span class="math inline">\(R\)</span> join <span class="math inline">\(S\)</span>.</p></li>
+<li><p><strong>Page Nested Loop Join</strong></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="cf">for</span> r <span class="kw">in</span> R.pages:</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">    <span class="cf">for</span> s <span class="kw">in</span> S.pages:</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">        <span class="cf">for</span> records_r <span class="kw">in</span> r:</a>
+<a class="sourceLine" id="cb2-4" data-line-number="4">            <span class="cf">for</span> records_s <span class="kw">in</span> s:</a>
+<a class="sourceLine" id="cb2-5" data-line-number="5">                <span class="op">&lt;</span>pred<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb2-6" data-line-number="6">        <span class="op">&lt;</span>pred<span class="op">&gt;</span></a></code></pre></div>
+<p>Instead of scanning each record of <span class="math inline">\(R\)</span> to a page of <span class="math inline">\(S\)</span> we yse page of <span class="math inline">\(R\)</span></p>
+<p><span class="math display">\[ [L] + [L][R] \]</span></p></li>
+<li><p><strong>Chunk Nested Loop Join</strong></p>
+<p>We will chunk the records into <span class="math inline">\(B-2\)</span> pages.</p>
+<p><span class="math display">\[ [L] + \left\lceil{\frac{[L]}{B-2}}\right\rceil \cdot [R] \]</span></p></li>
+<li><p><strong>Index Nested Loop Join</strong></p>
+<ul>
+<li>Unclustered <span class="math display">\[ [L] + |R| * (\texttt{Search} + \texttt{HeapAccess}) \]</span></li>
+<li>Clustered <span class="math display">\[ [L] + |R| * \texttt{Search} + \texttt{HeapAccess} \cdot \texttt{distinct_vals(R)} \]</span></li>
+</ul></li>
+</ul>
+<h2 id="sort-merge-join">Sort-Merge Join</h2>
+<p>A sort-merge join is a join using lexographical ranges which has an equality join with less cost than purely doing a cartesian join.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode py"><code class="sourceCode python"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="cf">if</span> (<span class="kw">not</span> mark):</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2">    <span class="cf">while</span> (r<span class="op">&lt;</span>s): r<span class="op">++</span></a>
+<a class="sourceLine" id="cb3-3" data-line-number="3">    <span class="cf">while</span> (r<span class="op">&gt;</span>s): s<span class="op">++</span></a>
+<a class="sourceLine" id="cb3-4" data-line-number="4">    mark <span class="op">=</span> s</a>
+<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="cf">if</span> (r<span class="op">==</span>s):</a>
+<a class="sourceLine" id="cb3-6" data-line-number="6">    result <span class="op">=</span> (r,s)</a>
+<a class="sourceLine" id="cb3-7" data-line-number="7">    s<span class="op">++</span></a>
+<a class="sourceLine" id="cb3-8" data-line-number="8">    <span class="cf">return</span> result</a>
+<a class="sourceLine" id="cb3-9" data-line-number="9"><span class="cf">else</span>:</a>
+<a class="sourceLine" id="cb3-10" data-line-number="10">    s <span class="op">=</span> mark</a>
+<a class="sourceLine" id="cb3-11" data-line-number="11">    r<span class="op">++</span></a>
+<a class="sourceLine" id="cb3-12" data-line-number="12">    mark <span class="op">=</span> NULL</a></code></pre></div>
+<p>The cost using <span class="math inline">\(B = \sqrt{\max{[L],[R]}}\)</span> is,</p>
+<p><span class="math display">\[\texttt{Sort}(R) + \texttt{Sort}(S) + ([L] +[R])\]</span></p>
+<h3 id="improvement">Improvement</h3>
+<p>We can increase the buffer to <span class="math inline">\(B = \sqrt{[L]} + \sqrt{[R]}\)</span> and first sort both <span class="math inline">\(R\)</span> and <span class="math inline">\(S\)</span> simultaneously then at the last pass merge while finding pairs. The cost for this is,</p>
+<p><span class="math display">\[ (\#\text{passes} - 1)([L] + [R]) \]</span></p>
+<h2 id="hash-join">Hash Join</h2>
+<p>We wish to join two tables <span class="math inline">\(R\)</span> and <span class="math inline">\(S\)</span> by comparing their hash.</p>
+<h3 id="naive-hash-join">Naive Hash Join</h3>
+<p>Assuming <span class="math inline">\(B &lt; [L]\)</span>, we can create a big enough buffer to compare the hashes between <span class="math inline">\(R\)</span> and <span class="math inline">\(S\)</span> by creating a hash table of size <span class="math inline">\(B-2\)</span> (the remaining 2 is taken up by storing <span class="math inline">\(R\)</span> and <span class="math inline">\(S\)</span>).</p>
+<ul>
+<li><p><strong>Cost</strong></p>
+<p><span class="math display">\[[L] + [R]\]</span></p></li>
+<li><p><strong>Buffer Management</strong> <span class="math display">\[B\]</span></p></li>
+</ul>
+<h3 id="grace-hash-join">Grace Hash Join</h3>
+<p>Using external hashing, for every pass we can take the partition and do <strong>Build &amp; Probe</strong> which is a pass that uses naive hash join on the partition</p>
+<p>For each partiton:</p>
+<ol type="1">
+<li>Load pages of <span class="math inline">\(R\)</span> into the input buffer</li>
+<li>Store input buffer to hash table</li>
+<li>Repeat steps 1-2 until no more <span class="math inline">\(R\)</span> pages</li>
+<li>Store pages of <span class="math inline">\(S\)</span> into the input buffer</li>
+<li>Search the hash table for match. Write matches to output</li>
+<li>Continue until no more <span class="math inline">\(S\)</span>. Remember to flush out the output if full.</li>
+</ol>
+<ul>
+<li><strong>Cost</strong>: <span class="math display">\[ 3([L] + [R])\]</span></li>
+<li><strong>Buffer (2-Pass)</strong> <span class="math display">\[ [L] = (B-1)(B-2) \]</span></li>
+</ul>
+
+      </div>
+      <!-- Disqus Comments -->
+      <div id="disqus_thread" class="mt-5">
+        <div class="w-50 mx-auto">
+          <button type="button" class="btn btn-block btn-outline-dark show-comments">Show Comments</button>
+        </div>
+      </div>
+      <!--
+                <script>
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                var disqus_config = function () {
+                    this.page.url = "";  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = "/notes/Computer_Science/Database_Systems/Relational_Operators/Joins/"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://ketozhang.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
+                    by Disqus.</a></noscript>
+            -->
+      
+    </div>
+
+    <!-- On This Page -->
+    <div class="col-md-3 d-none d-md-block">
+      <div class="onthispage sidenav small">
+    <div class="sidenav-header">
+        <strong>&#9776; On This Page</strong>
+    </div>
+    <div class="onthispage-collapse">
+        <div class="sidenav-body bg-light">
+            <ul class="onthispage-list no-list-style"></ul>
+        </div>
+    </div>
+</div>
+    </div>
+
+  </div>
+</div>
+
+    <footer class="py-2 bg-white">
+    <div class="container">
+        <p class="text-right m-0"> Generated by <a href="https://github.com/ketozhang/StaticPy">StaticPy</a> |
+            Designed
+            by <a href="https://github.com/ketozhang">Keto Z.</a>
+        </p>
+    </div>
+</footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+
+    <script src="https://ketozhang.github.io/static/js/datetime.js"></script>
+    <script src="https://ketozhang.github.io/static/js/disqus.js"></script>
+    <script src="https://ketozhang.github.io/static/js/codeHighlight.js"></script>
+    <script src="https://ketozhang.github.io/static/js/prism.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>
+    <script src="https://ketozhang.github.io/static/js/onthispage.js"></script>
+    <script src="https://ketozhang.github.io/static/js/markdown.js"></script>
+
+    <!-- MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://ketozhang.github.io/static/js/mathjax_config.js" defer></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+
+    <!-- Bootstrap JS -->
+    <!-- TODO: trim JS if not needed -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <!-- React -->
+    <!-- TODO: do we need React? -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>-->
+
+
+    <script>
+        anchors.add();
+        $(document).ready(function () {
+            Prism.highlightAll();
+        })
+    </script>
+
+    
+    
+</body>
+
+</html>
