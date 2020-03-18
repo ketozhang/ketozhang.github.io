@@ -270,7 +270,7 @@ six = [
     {file = "six-1.14.0.tar.gz", hash = "sha256:236bdbdce46e6e6a3d61a337c0f8b763ca1e8717c03b369e87a7ec7ce1319c0a"},
 ]
 staticpy = [
-    {file = "staticpy-0.0.4-py3-none-any.whl", hash = "sha256:da9cbbd3eb747a63b4f774228a1986570492ecf55748cc23b16fe0a229308a44"},
+    {file = "staticpy-0.0.4-py3-none-any.whl", hash = "sha256:72bd390baec90457d8661a97f0a51a612f68d00ab9044a2f291204517356a8b1"},
 ]
 webassets = [
     {file = "webassets-2.0-py3-none-any.whl", hash = "sha256:a31a55147752ba1b3dc07dee0ad8c8efff274464e08bbdb88c1fd59ffd552724"},

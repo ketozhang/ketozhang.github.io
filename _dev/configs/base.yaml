@@ -55,10 +55,14 @@ contexts:
     source_path: "notes"
     url: "/notes"
     template: "note.html"
+    ignore_paths:
+      - "Archive/"
   posts:
     source_path: "posts"
     url: "/posts"
     template: "post.html"
+    ignore_paths:
+      - "drafts/"
 
 navbar:
   notes:
