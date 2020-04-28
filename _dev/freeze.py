@@ -7,7 +7,6 @@ from pathlib import Path
 from flask_frozen import Freezer
 from app import app
 from staticpy import build_all, BASE_CONFIG, PROJECT_PATH
-from staticpy.source_handler import get_fpath
 from staticpy.context import Context
 
 freezer = Freezer(app)

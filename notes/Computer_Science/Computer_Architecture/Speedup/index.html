@@ -57,7 +57,10 @@
           </div>
           <div class="col-2 offset-1">
             <a class="go-up" href="" role="button">
-              <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+              <img
+                src="https://img.icons8.com/dotty/80/000000/up.png"
+                style="width: 25px; height: 25px"
+              />
             </a>
           </div>
         </div>
@@ -83,12 +86,12 @@
 <p>There are many ways to speedup a program. We’ll use matrix operations as the classical example. This section will not cover parallel processing.</p>
 <h1 id="unrolling">Unrolling</h1>
 <p>Optimize the use of independent instruction to accumulate as much binary size (registers) as possible.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" data-line-number="1">result <span class="op">=</span> <span class="dv">0</span></a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(arr), <span class="dv">4</span>):</a>
-<a class="sourceLine" id="cb1-3" data-line-number="3">    result <span class="op">+=</span> arr[i]  </a>
-<a class="sourceLine" id="cb1-4" data-line-number="4">    result <span class="op">+=</span> arr[i<span class="op">+</span><span class="dv">1</span>]</a>
-<a class="sourceLine" id="cb1-5" data-line-number="5">    result <span class="op">+=</span> arr[i<span class="op">+</span><span class="dv">2</span>]</a>
-<a class="sourceLine" id="cb1-6" data-line-number="6">    result <span class="op">+=</span> arr[i<span class="op">+</span><span class="dv">3</span>]</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>result <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(arr), <span class="dv">4</span>):</span>
+<span id="cb1-3"><a href="#cb1-3"></a>    result <span class="op">+=</span> arr[i]  </span>
+<span id="cb1-4"><a href="#cb1-4"></a>    result <span class="op">+=</span> arr[i<span class="op">+</span><span class="dv">1</span>]</span>
+<span id="cb1-5"><a href="#cb1-5"></a>    result <span class="op">+=</span> arr[i<span class="op">+</span><span class="dv">2</span>]</span>
+<span id="cb1-6"><a href="#cb1-6"></a>    result <span class="op">+=</span> arr[i<span class="op">+</span><span class="dv">3</span>]</span></code></pre></div>
 <h1 id="cache-blocking">Cache Blocking</h1>
 <p>Optimize temporal locality of cache by changing the way we access data.</p>
 <ul>
@@ -99,7 +102,12 @@
       <!-- Disqus Comments -->
       <div id="disqus_thread" class="mt-5">
         <div class="w-50 mx-auto">
-          <button type="button" class="btn btn-block btn-outline-dark show-comments">Show Comments</button>
+          <button
+            type="button"
+            class="btn btn-block btn-outline-dark show-comments"
+          >
+            Show Comments
+          </button>
         </div>
       </div>
       <!--
@@ -137,7 +145,6 @@
     </div>
 </div>
     </div>
-
   </div>
 </div>
 

@@ -57,7 +57,10 @@
           </div>
           <div class="col-2 offset-1">
             <a class="go-up" href="" role="button">
-              <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+              <img
+                src="https://img.icons8.com/dotty/80/000000/up.png"
+                style="width: 25px; height: 25px"
+              />
             </a>
           </div>
         </div>
@@ -91,20 +94,20 @@
 <ul>
 <li>Slotted Page as Record ID
 <ul>
-<li>The first pointer (index 0) of Record ID starts from the right of the footer</li>
-<li>Each pointer in the footer carries the length of the reference record</li>
-<li>One pointer points to the free space immediately after the last record</li>
-<li>Record ID = Length + Pointer</li>
-<li>Deletion changes length to null</li>
-<li>Insertions are appended after the last record, the footer then changes a null pointer to point to the record recording its size.</li>
-<li>Fragmentation can occur since deletion may be made in the middle while insertions are always after the last record
+<li><p>The first pointer (index 0) of Record ID starts from the right of the footer</p></li>
+<li><p>Each pointer in the footer carries the length of the reference record</p></li>
+<li><p>One pointer points to the free space immediately after the last record</p></li>
+<li><p>Record ID = Length + Pointer</p></li>
+<li><p>Deletion changes length to null</p></li>
+<li><p>Insertions are appended after the last record, the footer then changes a null pointer to point to the record recording its size.</p></li>
+<li><p>Fragmentation can occur since deletion may be made in the middle while insertions are always after the last record</p>
 <ul>
 <li>Solution, defragmentation by reorganizing and update pointers back to sequential order</li>
 <li>Defragmentation can be done either every deletion (eager) or when the page is full (lazy)</li>
 </ul></li>
-<li>Footer size is also variable which grows right to left</li>
-<li>Once a footer and a record meet, the page is considered full</li>
-<li>May be used for fixed length records but its costly</li>
+<li><p>Footer size is also variable which grows right to left</p></li>
+<li><p>Once a footer and a record meet, the page is considered full</p></li>
+<li><p>May be used for fixed length records but its costly</p></li>
 <li><p><strong>Size</strong> is computed knowing the number of records <span class="math inline">\(n\)</span>, the footer size (with pointer size, size to store offset, and a free space pointer), and the record size (with size of a single record)</p>
 <p><span class="math display">\[
   \begin{gather*}
@@ -120,7 +123,12 @@
       <!-- Disqus Comments -->
       <div id="disqus_thread" class="mt-5">
         <div class="w-50 mx-auto">
-          <button type="button" class="btn btn-block btn-outline-dark show-comments">Show Comments</button>
+          <button
+            type="button"
+            class="btn btn-block btn-outline-dark show-comments"
+          >
+            Show Comments
+          </button>
         </div>
       </div>
       <!--
@@ -158,7 +166,6 @@
     </div>
 </div>
     </div>
-
   </div>
 </div>
 

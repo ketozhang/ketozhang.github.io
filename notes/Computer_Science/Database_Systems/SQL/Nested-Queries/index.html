@@ -57,7 +57,10 @@
           </div>
           <div class="col-2 offset-1">
             <a class="go-up" href="" role="button">
-              <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+              <img
+                src="https://img.icons8.com/dotty/80/000000/up.png"
+                style="width: 25px; height: 25px"
+              />
             </a>
           </div>
         </div>
@@ -81,8 +84,8 @@
 <dd>Return the column entires that intersects with the column output of subquery
 </dd>
 </dl>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">WHERE</span> &lt;col&gt; &lt;keyword&gt;</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2">    (&lt;subquery&gt;)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">WHERE</span> <span class="op">&lt;</span>col<span class="op">&gt;</span> <span class="op">&lt;</span>keyword<span class="op">&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>    (<span class="op">&lt;</span>subquery<span class="op">&gt;</span>)</span></code></pre></div>
 <dl>
 <dt><code>NOT IN</code></dt>
 <dd>Return the column entires that doesn’t intersect with the column output of subquery
@@ -93,22 +96,22 @@
 </center>
 <p>For each row in the table, plug it into the subquery. If the subquery returns true, return that row.</p>
 <p>The format of <code>EXISTS</code> does not need require a column, however must have a correlation (i.e., outer table is referenced inside inner table) in the subquery where predicate:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">WHERE</span> <span class="kw">EXISTS</span></a>
-<a class="sourceLine" id="cb2-2" data-line-number="2">    (</a>
-<a class="sourceLine" id="cb2-3" data-line-number="3">        ...</a>
-<a class="sourceLine" id="cb2-4" data-line-number="4">        <span class="kw">WHERE</span> &lt;correlation-prediate&gt;</a>
-<a class="sourceLine" id="cb2-5" data-line-number="5">    )</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">WHERE</span> <span class="kw">EXISTS</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>    (</span>
+<span id="cb2-3"><a href="#cb2-3"></a>        <span class="op">..</span>.</span>
+<span id="cb2-4"><a href="#cb2-4"></a>        <span class="kw">WHERE</span> <span class="op">&lt;</span>correlation<span class="op">-</span>prediate<span class="op">&gt;</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a>    )</span></code></pre></div>
 </dd>
 </dl>
 <ul>
 <li><p><code>NOT EXISTS</code></p></li>
-<li><code>ANY</code>
+<li><p><code>ANY</code></p>
 <center>
-<strong>Return if predicate satisfies any subquery</strong>
+<p><strong>Return if predicate satisfies any subquery</strong></p>
 </center></li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">WHERE</span> &lt;col&gt; &lt;condition&gt; &lt;ANY|ALL&gt;</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2">    (&lt;subquery&gt;)</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">WHERE</span> <span class="op">&lt;</span>col<span class="op">&gt;</span> <span class="op">&lt;</span>condition<span class="op">&gt;</span> <span class="op">&lt;</span><span class="kw">ANY</span>|<span class="kw">ALL</span><span class="op">&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>    (<span class="op">&lt;</span>subquery<span class="op">&gt;</span>)</span></code></pre></div>
 <ul>
 <li><code>ALL</code>
 <center>
@@ -120,7 +123,12 @@
       <!-- Disqus Comments -->
       <div id="disqus_thread" class="mt-5">
         <div class="w-50 mx-auto">
-          <button type="button" class="btn btn-block btn-outline-dark show-comments">Show Comments</button>
+          <button
+            type="button"
+            class="btn btn-block btn-outline-dark show-comments"
+          >
+            Show Comments
+          </button>
         </div>
       </div>
       <!--
@@ -158,7 +166,6 @@
     </div>
 </div>
     </div>
-
   </div>
 </div>
 

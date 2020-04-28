@@ -53,11 +53,14 @@
       <div class="sidenav sticky-top vh-80">
         <div class="sidenav-header row no-gutters">
           <div class="col-9">
-            <strong>Package Dependencies</strong>
+            <strong>Lecture Notes15</strong>
           </div>
           <div class="col-2 offset-1">
             <a class="go-up" href="" role="button">
-              <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+              <img
+                src="https://img.icons8.com/dotty/80/000000/up.png"
+                style="width: 25px; height: 25px"
+              />
             </a>
           </div>
         </div>
@@ -71,40 +74,97 @@
 
     <!-- Content -->
     <div class="col-7 col-md-6">
-      <h1 class="title text-center pt-3">Package Dependencies</h1>
+      <h1 class="title text-center pt-3">Lecture Notes15</h1>
       
       <div class="markdown-content">
-        <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="ex">.project/</span></a>
-<a class="sourceLine" id="cb1-2" data-line-number="2">├── <span class="ex">mypkg</span></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3">│   ├── <span class="ex">app.py</span></a>
-<a class="sourceLine" id="cb1-4" data-line-number="4">│   └── <span class="ex">helper.py</span></a>
-<a class="sourceLine" id="cb1-5" data-line-number="5">└── <span class="ex">run.py</span></a></code></pre></div>
-<dl>
-<dt>Incorrect</dt>
-<dd><p>A common mistake is to have modules use ambiguous imports.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="co"># project/mkpkg/app.py</span></a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="im">import</span> helper</a>
-<a class="sourceLine" id="cb2-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="kw">def</span> foo():</a>
-<a class="sourceLine" id="cb2-5" data-line-number="5">    <span class="cf">return</span> helper.bar()</a></code></pre></div>
-</dd>
-<dt>Solution</dt>
-<dd><p>Instead use relative imports, because you always means the <code>helper</code> module in the current directory of <code>project/mpkg/app.py</code></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode py"><code class="sourceCode python"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="co"># project/mkpkg/app.py</span></a>
-<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="im">import</span> .helper</a>
-<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="co"># or the more verbose but more semantically intuitive way</span></a>
-<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="im">from</span> . <span class="im">import</span> helper</a>
-<a class="sourceLine" id="cb3-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="kw">def</span> foo():</a>
-<a class="sourceLine" id="cb3-7" data-line-number="7">    <span class="cf">return</span> helper.bar()</a></code></pre></div>
-</dd>
-</dl>
+        <h1 id="lecture-notes-15">Lecture Notes 15</h1>
+<h2 id="modeling-and-estimation">Modeling and Estimation</h2>
+<p>The steps of modeling is summarized to:</p>
+<ol type="1">
+<li>Define the Model
+<ul>
+<li>Simplified representation of the world</li>
+</ul></li>
+<li>Define the Loss Function
+<ul>
+<li>Measures how well a particular instance of the model “fits” the data.</li>
+</ul></li>
+<li>Minimize the Loss Function
+<ul>
+<li>Analytically using calculus</li>
+<li>Numerically using gradient descent</li>
+</ul></li>
+</ol>
+<h3 id="loss-function">Loss Function</h3>
+<ul>
+<li>Absolute Loss <span class="math inline">\(\mathbb{L}^1\)</span>
+<ul>
+<li>Not Sensitive to outliers</li>
+<li>Difficult to differentiate</li>
+<li>Minimizes at the <strong>median</strong> <span class="math display">\[ \mathbb{L}^1(\theta) = \frac{1}{n}\sum_{i=1}^{n}\abs{y_i - \theta}\]</span></li>
+</ul></li>
+<li>Square Loss <span class="math inline">\(\mathbb{L}^2\)</span>
+<ul>
+<li>Sensitive to outliers</li>
+<li>Easily differentiable</li>
+<li>Average square loss minimizes at the <strong>mean</strong> <span class="math display">\[ \mathbb{L}^2(\theta) = \frac{1}{n}\sum_{i=1}^{n}(y_i - \theta)^2 \]</span></li>
+</ul></li>
+<li>Huber Loss
+<ul>
+<li>Not Sensitive to outliers</li>
+<li>Numerically differentiable</li>
+</ul></li>
+</ul>
+<h3 id="gradient-descent">Gradient Descent</h3>
+<p><span class="math display">\[\boxed{ \theta^{(t+1)} = \theta^{(t)} - \alpha\nabla \ell(\theta^{(t)}) }\]</span></p>
+<p><span class="math display">\[\boxed{ \mathbf x^{(n)} =  \mathbf x^{(0)} - a_1 \nabla f(\mathbf x^{(0)}) - a_2 \nabla f(\mathbf x^{(1)}) - \ldots - a_n\nabla f(\mathbf x^{(n-1)})}\]</span></p>
+<h2 id="coding">Coding</h2>
+<ul>
+<li>Python (basics)</li>
+<li>Matplotlib (<code>plt.plot</code>, <code>plt.xlabel</code>, <code>plt.ylabel</code>)</li>
+<li>Numpy</li>
+<li>Pandas (Dataframe, Series)
+<ul>
+<li>Indexing</li>
+<li>Groupby</li>
+<li>Joins, Merge</li>
+</ul></li>
+<li>SQL</li>
+<li>Regex</li>
+</ul>
+<h2 id="data-visualization">Data Visualization</h2>
+<ul>
+<li>Differentiate quantitative, nominal, ordinal</li>
+<li>Histogram, rug/scatter plot, smoothed density estimator</li>
+<li>Example of bad plots
+<ul>
+<li>Pie charts</li>
+<li>stacking (placing data on top of data)</li>
+<li>jiggling (data’s y-value is consistent across each data plot)</li>
+<li>overplotting</li>
+</ul></li>
+</ul>
+<h2 id="web-technology">Web Technology</h2>
+<ul>
+<li>GET - get information</li>
+<li>POST - send information</li>
+<li>Languages
+<ul>
+<li>XML, HTML, JSON</li>
+</ul></li>
+</ul>
+<h2 id="string-manipulation-and-regular-expression">String Manipulation and Regular Expression</h2>
 
       </div>
       <!-- Disqus Comments -->
       <div id="disqus_thread" class="mt-5">
         <div class="w-50 mx-auto">
-          <button type="button" class="btn btn-block btn-outline-dark show-comments">Show Comments</button>
+          <button
+            type="button"
+            class="btn btn-block btn-outline-dark show-comments"
+          >
+            Show Comments
+          </button>
         </div>
       </div>
       <!--
@@ -114,7 +174,7 @@
                 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
                 var disqus_config = function () {
                     this.page.url = "";  // Replace PAGE_URL with your page's canonical URL variable
-                    this.page.identifier = "/notes/Computer_Science/Python/Development/Package_Dependencies/"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    this.page.identifier = "/notes/Archive/DS100_Lecture_Notes/Lecture-Notes-15/"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
                 };
                 (function () { // DON'T EDIT BELOW THIS LINE
                     var d = document, s = d.createElement('script');
@@ -142,7 +202,6 @@
     </div>
 </div>
     </div>
-
   </div>
 </div>
 

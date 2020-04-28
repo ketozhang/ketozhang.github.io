@@ -57,7 +57,10 @@
           </div>
           <div class="col-2 offset-1">
             <a class="go-up" href="" role="button">
-              <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+              <img
+                src="https://img.icons8.com/dotty/80/000000/up.png"
+                style="width: 25px; height: 25px"
+              />
             </a>
           </div>
         </div>
@@ -75,24 +78,24 @@
       
       <div class="markdown-content">
         <h2 id="table-creation">Table Creation</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">CREATE</span> <span class="kw">TABLE</span> &lt;table_name&gt; (</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2">    &lt;column_name&gt; &lt;type&gt;,</a>
-<a class="sourceLine" id="cb1-3" data-line-number="3">    ...</a>
-<a class="sourceLine" id="cb1-4" data-line-number="4">    <span class="kw">PRIMARY</span> <span class="kw">KEY</span> (&lt;columns&gt;)</a>
-<a class="sourceLine" id="cb1-5" data-line-number="5">    <span class="kw">FOREIGN</span> <span class="kw">KEY</span> (&lt;column&gt;) <span class="kw">REFERENCES</span> &lt;table&gt;</a>
-<a class="sourceLine" id="cb1-6" data-line-number="6">);</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> <span class="op">&lt;</span>table_name<span class="op">&gt;</span> (</span>
+<span id="cb1-2"><a href="#cb1-2"></a>    <span class="op">&lt;</span>column_name<span class="op">&gt;</span> <span class="op">&lt;</span><span class="kw">type</span><span class="op">&gt;</span>,</span>
+<span id="cb1-3"><a href="#cb1-3"></a>    <span class="op">..</span>.</span>
+<span id="cb1-4"><a href="#cb1-4"></a>    <span class="kw">PRIMARY</span> <span class="kw">KEY</span> (<span class="op">&lt;</span><span class="kw">columns</span><span class="op">&gt;</span>)</span>
+<span id="cb1-5"><a href="#cb1-5"></a>    <span class="kw">FOREIGN</span> <span class="kw">KEY</span> (<span class="op">&lt;</span><span class="kw">column</span><span class="op">&gt;</span>) <span class="kw">REFERENCES</span> <span class="op">&lt;</span><span class="kw">table</span><span class="op">&gt;</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a>);</span></code></pre></div>
 <h2 id="update-delete">Update, Delete</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb2-1" data-line-number="1">&lt;UPDATE|DELETE FROM&gt; &lt;table&gt;</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw">SET</span> &lt;column&gt; = &lt;value&gt;</a>
-<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="kw">WHERE</span> &lt;pred&gt;;</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1"></a><span class="op">&lt;</span><span class="kw">UPDATE</span>|<span class="kw">DELETE</span> <span class="kw">FROM</span><span class="op">&gt;</span> <span class="op">&lt;</span><span class="kw">table</span><span class="op">&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="kw">SET</span> <span class="op">&lt;</span><span class="kw">column</span><span class="op">&gt;</span> <span class="op">=</span> <span class="op">&lt;</span><span class="fu">value</span><span class="op">&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="kw">WHERE</span> <span class="op">&lt;</span>pred<span class="op">&gt;</span>;</span></code></pre></div>
 <h2 id="retrieval-queries">Retrieval Queries</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">SELECT</span> [<span class="kw">DISTINCT</span>] &lt;column expr&gt;</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="kw">FROM</span> &lt;table&gt;</a>
-<a class="sourceLine" id="cb3-3" data-line-number="3">[<span class="kw">WHERE</span> &lt;pred&gt;]</a>
-<a class="sourceLine" id="cb3-4" data-line-number="4">[<span class="kw">GROUP</span> <span class="kw">BY</span> &lt;columns&gt;]</a>
-<a class="sourceLine" id="cb3-5" data-line-number="5">[<span class="kw">HAVING</span> &lt;pred&gt;]</a>
-<a class="sourceLine" id="cb3-6" data-line-number="6">[<span class="kw">ORDER</span> <span class="kw">BY</span> &lt;column expr&gt; [DESC|ASC]]</a>
-<a class="sourceLine" id="cb3-7" data-line-number="7">[<span class="kw">LIMIT</span> &lt;int&gt;];</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">SELECT</span> [<span class="kw">DISTINCT</span>] <span class="op">&lt;</span><span class="kw">column</span> expr<span class="op">&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="kw">FROM</span> <span class="op">&lt;</span><span class="kw">table</span><span class="op">&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a>[<span class="kw">WHERE</span> <span class="op">&lt;</span>pred<span class="op">&gt;</span>]</span>
+<span id="cb3-4"><a href="#cb3-4"></a>[<span class="kw">GROUP</span> <span class="kw">BY</span> <span class="op">&lt;</span><span class="kw">columns</span><span class="op">&gt;</span>]</span>
+<span id="cb3-5"><a href="#cb3-5"></a>[<span class="kw">HAVING</span> <span class="op">&lt;</span>pred<span class="op">&gt;</span>]</span>
+<span id="cb3-6"><a href="#cb3-6"></a>[<span class="kw">ORDER</span> <span class="kw">BY</span> <span class="op">&lt;</span><span class="kw">column</span> expr<span class="op">&gt;</span> [<span class="kw">DESC</span>|<span class="kw">ASC</span>]]</span>
+<span id="cb3-7"><a href="#cb3-7"></a>[<span class="kw">LIMIT</span> <span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;</span>];</span></code></pre></div>
 <h2 id="order-of-operation">Order of Operation</h2>
 <ol type="1">
 <li><code>FROM</code></li>
@@ -110,7 +113,12 @@
       <!-- Disqus Comments -->
       <div id="disqus_thread" class="mt-5">
         <div class="w-50 mx-auto">
-          <button type="button" class="btn btn-block btn-outline-dark show-comments">Show Comments</button>
+          <button
+            type="button"
+            class="btn btn-block btn-outline-dark show-comments"
+          >
+            Show Comments
+          </button>
         </div>
       </div>
       <!--
@@ -148,7 +156,6 @@
     </div>
 </div>
     </div>
-
   </div>
 </div>
 

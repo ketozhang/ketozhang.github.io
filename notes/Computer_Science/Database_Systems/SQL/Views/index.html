@@ -57,7 +57,10 @@
           </div>
           <div class="col-2 offset-1">
             <a class="go-up" href="" role="button">
-              <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+              <img
+                src="https://img.icons8.com/dotty/80/000000/up.png"
+                style="width: 25px; height: 25px"
+              />
             </a>
           </div>
         </div>
@@ -75,23 +78,28 @@
       
       <div class="markdown-content">
         <p>A view is a namespace for sql query similar to how functions are namespaces for code. This is syntaxed as,</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">CREATE</span> <span class="kw">VIEW</span> &lt;view_name&gt;(&lt;columns&gt;)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw">AS</span></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3">    &lt;query&gt;;</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">CREATE</span> <span class="kw">VIEW</span> <span class="op">&lt;</span>view_name<span class="op">&gt;</span>(<span class="op">&lt;</span><span class="kw">columns</span><span class="op">&gt;</span>)</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="kw">AS</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>    <span class="op">&lt;</span><span class="kw">query</span><span class="op">&gt;</span>;</span></code></pre></div>
 <h2 id="temporary-view">Temporary View</h2>
 <p>A temporary view can be made inside a <code>FROM</code> clause.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb2-1" data-line-number="1">...</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw">FROM</span> (&lt;query&gt;) <span class="kw">as</span> &lt;view_name&gt;;</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1"></a><span class="op">..</span>.</span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="kw">FROM</span> (<span class="op">&lt;</span><span class="kw">query</span><span class="op">&gt;</span>) <span class="kw">as</span> <span class="op">&lt;</span>view_name<span class="op">&gt;</span>;</span></code></pre></div>
 <p>Another way is with the <code>WITH</code> clause</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sql"><code class="sourceCode sql"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">WITH</span> &lt;view_name&gt;(&lt;columns&gt;) <span class="kw">AS</span></a>
-<a class="sourceLine" id="cb3-2" data-line-number="2">    &lt;query_for_view&gt;</a>
-<a class="sourceLine" id="cb3-3" data-line-number="3">&lt;query&gt;;</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">WITH</span> <span class="op">&lt;</span>view_name<span class="op">&gt;</span>(<span class="op">&lt;</span><span class="kw">columns</span><span class="op">&gt;</span>) <span class="kw">AS</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>    <span class="op">&lt;</span>query_for_view<span class="op">&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="op">&lt;</span><span class="kw">query</span><span class="op">&gt;</span>;</span></code></pre></div>
 
       </div>
       <!-- Disqus Comments -->
       <div id="disqus_thread" class="mt-5">
         <div class="w-50 mx-auto">
-          <button type="button" class="btn btn-block btn-outline-dark show-comments">Show Comments</button>
+          <button
+            type="button"
+            class="btn btn-block btn-outline-dark show-comments"
+          >
+            Show Comments
+          </button>
         </div>
       </div>
       <!--
@@ -129,7 +137,6 @@
     </div>
 </div>
     </div>
-
   </div>
 </div>
 
