@@ -14,6 +14,7 @@ from staticpy import (
     app,
     build_all,
     log,
+    CONTEXTS,
     BASE_CONFIG,
     PROJECT_PATH,
     TEMPLATE_PATH,
@@ -45,19 +46,19 @@ def get_assets():
 # CUSTOM ROUTES
 ########################
 
-CONTEXTS = {k: Context(**v) for k, v in BASE_CONFIG["contexts"].items()}
-
 
 @app.route("/")
 def home():
     """Renders the home page."""
     config = BASE_CONFIG["home"]
+    return render_template(config["template"])
 
     # Get post for Post showcase
-    context = CONTEXTS["posts"]
+    post_context = CONTEXTS["posts"]
     posts = []
     for url in config["posts"]:
-        page = context.get_page(url)
+        print(url, post_context.page_content_map)
+        page = post_context.get_page(url)
         posts.append(page)
 
     # Get projects for Project showcase

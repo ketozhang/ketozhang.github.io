@@ -1,0 +1,332 @@
+{% extends "CV/base.html" %}
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='Resume.css') }}" />
+{% endblock %}
+
+{% block content %}
+
+{% set all_fields = ["cs", "ds", "science"] %}
+{% set field=request.args.get("field", False) %}
+{% set all= not field %}
+
+<!-- EDUCATION -->
+<div id="education" class="section">
+  <h1>Education</h1>
+  <hr>
+  <div class="section-body">
+    <div class="row row-header">
+      <div class="col-7">University of California, Berkeley</div>
+      <div class="col-5 text-right">December, 2019</div>
+    </div>
+    <div class="row row-subtitle">
+      <div class="col-7">
+        B.A. double in <strong>Astrophysics</strong> and
+        <strong>Data Science</strong>
+      </div>
+      <div class="col-5 text-right">Berkeley, CA</div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILLS-->
+<div id="skills" class="section">
+  <h1>Skills</h1>
+  <hr>
+  <div class="section-body">
+    <div class="row row-description compact">
+      <div class="col">
+        <p class="m-0"><strong style="font-weight:700">Programming Language</strong></p>
+        <ul class="multicol noindent">
+          <li>Python</li>
+          <li>Java</li>
+          <li>C/C++</li>
+          <li>LaTeX</li>
+          <li>HTML, CSS, JS/JQuery</li>
+          <li style="white-space:cut">SQL (MySQL, PostgreSQL)</li>
+        </ul>
+      </div>
+
+      <div class="col-6">
+        <p class="m-0"><strong style="font-weight:700">Technology</strong></p>
+        <ul class="multicol noindent">
+          <li>Linux (Ubuntu/WSL)</li>
+          <li>Shell (bash/zsh)</li>
+          <li>Flask</li>
+          <li>Jupyter</li>
+          <li>Git (GitHub)</li>
+          <li>Docker</li>
+          <li>Google Cloud Computing</li>
+          <li>Excel</li>
+        </ul>
+      </div>
+
+      <!-- <div class="col-6">
+        <p class="m-0"><strong>Information Technology</strong></p>
+        <ul class="multicol">
+          <li>Google Suite Admin</li>
+          <li>Spiceworks</li>
+        </ul> -->
+
+      {% if all or field in ["science", "ds"] %}
+      <div class="col-12">
+        <strong style="font-weight:700">Science</strong>
+        <ul class="multicol noindent">
+          <!-- <li> Supernovae (Ia, II), transient discovery, cosmology</li>
+            <li> Optical observation (BVRI)</li> -->
+          <li> Probabilistic regression, Bayesian inference, MCMC, decision tree, CNN, ARIMA</li>
+          <li> Matplotlib, seaborn </li>
+          <li> NumPy, SciPy</li>
+          <li> scikit-learn, Tensorflow/Keras, emcee </li>
+        </ul>
+      </div>
+    </div>
+    {% endif %}
+
+  </div>
+</div>
+
+<!-- EXPERIENCES -->
+<div id="experiences" class="section">
+  <h1>Experiences</h1>
+  <hr>
+  <div class="section-body">
+    <!-- Alex Filippenko Group -->
+    <div class="item">
+      <div class="row row-header">
+        <div class="col">Google Lick Predoctoral Fellow</div>
+        <div class="col-5 text-right">May 2017 - Present</div>
+      </div>
+      <div class="row row-subtitle">
+        <div class="col-7">Alex Filippenko Research Group</div>
+        <div class="col-5 text-right">Berkeley, CA</div>
+      </div>
+      <div class="row row-description">
+        <div class="col-12">
+          {% if all or field in ["cs", "ds"] %}
+          <strong>Full Stack Developer</strong>
+          <ul>
+            <li>
+              Administered the team's MySQL database and built various database
+              APIs: CLI, Python package, RESTful API server, and Flask web
+              interface; for over 4 million photometric-calibrated images. The database and
+              interfaces were used in multimessenger astronomy (Ligo-Virgo O3),
+              published data releases, and replaces the team's data-retrieval
+              process (previously done manually from a file server).
+            </li>
+          </ul>
+          {% endif %}
+          <strong>Lead of Undergrad Reasearch Telescope Observers</strong>
+          <ul>
+            <li>
+              Led an undergrad team to observe on the 40" Nickel Telescope (Lick
+              Observatory) 7 nights per month to take BVRI band images of recent
+              supernovae and targets of opportunities.
+            </li>
+          </ul>
+          <strong>Supernovae Researcher</strong>
+          <ul>
+            <li>
+              Manually confirmed plausible supernovae and gravitational wave EM
+              counterpart candidates using images from the 30" Katzman Automatic
+              Imaging Telescope (KAIT).
+            <li>
+              Currently writing a research paper to
+              explain possible multimodal features in the SNe Ia velocity (Si II
+              λ6355) distribution may be due to asymmetries in its photospheric
+              velocity. A report is available as a Jupyter notebook.
+            </li>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SERIS -->
+    <div class="item">
+      <div class="row row-header">
+        <div class="col-7">
+          Summer Research Intern
+        </div>
+        <div class="col-5 text-right">Jun 2018 - Aug 2018</div>
+      </div>
+
+      <div class="row row-subtitle">
+        <div class="col">
+          Solar Energy Research Institute of Singapore
+        </div>
+        <div class="col-5 text-right">Singapore</div>
+      </div>
+      <div class="row row-description">
+        <div class="col">
+          <ul>
+            <li>
+              Developed models relating CCD measurements to solar irradiance and
+              used ARIMA to then forecast solar irradiance. The models provided
+              a working product to further expand the installation of all-sky
+              cameras across Singapore.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ALS LBNL -->
+    {% if all or field in ["science"] %}
+    <div class="item">
+      <div class="row row-header">
+        <div class="col-7">Research Intern</div>
+        <div class="col-5 text-right">Aug 2016 - Dec 2017</div>
+      </div>
+      <div class="row row-subtitle">
+        <div class="col">
+          Lawrence Berkeley National Lab - ALS
+        </div>
+        <div class="col-5 text-right">Berkeley, CA</div>
+      </div>
+      <div class="row row-description">
+        <div class="col">
+          <ul>
+            <li>
+              Participated in a few Resonant Inelastic X-Ray Scattering (RIXS) experiments using synchrotron radiation
+              from the Advanced Light Source beamline. I developed the CCD peak finding program and help set up the
+              experiment before beamtime. The experiment results produced a Nature publication.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+
+    <!-- Cal Alumni -->
+    {% if all or field in ["cs", "ds"] %}
+    <div class="item">
+      <div class="row row-header">
+        <div class="col-7">Desktop Support Technician</div>
+        <div class="col-5 text-right">Mar 2015 - May 2017</div>
+      </div>
+      <div class="row row-subtitle">
+        <div class="col">
+          Cal Alumni Association
+        </div>
+        <div class="col-5 text-right">Berkeley, CA</div>
+      </div>
+      <div class="row row-description">
+        <div class="col">
+          <ul>
+            <li>
+              Various IT works includes using Spiceworks to manage and solve support tickets, manage user relations with
+              Windows Server and Google Suite, flashed OS
+              images (Windows and MacOS) in batches of desktops
+            </li>
+            <li>
+              Mapped office hierarchy onto excel pivot tables to better visualize, create, and standardize email
+              listserves (Google groups) which prevented missing members and emailing sensitive info to wrong user.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+
+    <!-- Media Production -->
+    <!-- <div class="item">
+    <div class="row row-header">
+      <div class="col-7">Media News Broadcast Production</div>
+      <div class="col-5 text-right"> Aug 2014 - Aug 2015 </div>
+    </div>
+    <div class="row row-subtitle">
+      <div class="col-7"> </div>
+      <div class="col-5 text-right"> Rancho Cordova, CA</div>
+    </div>
+  </div> -->
+
+    <!-- Culinary Production -->
+    <!-- <div class="item">
+    <div class="row row-header">
+      <div class="col-7">Culinary Catering Production</div>
+      <div class="col-5 text-right"> Aug 2013 - Aug 2015 </div>
+    </div>
+    <div class="row row-subtitle">
+      <div class="col-7"> </div>
+      <div class="col-5 text-right"> Rancho Cordova, CA</div>
+    </div>
+  </div> -->
+  </div>
+</div>
+
+<!-- PROJECTS -->
+{# <div id="projects" class="section">
+  <h1>Projects</h1>
+  <hr>
+  <div class="section-body">
+    <div class="item">
+      <div class="row row-header">
+        <div class="col">LIGO-Virgo O3</div>
+      </div>
+      <div class="row row-subtitle">
+        <div class="col">
+          <!-- <a
+          href="https://ui.adsabs.harvard.edu/search/p_=0&q=(author%3A%22Zhang%2C%20K.%22%20OR%20author%3A%22Zhang%2C%20Keto%22)%20AND%20(title%3A%22KAIT%22%20OR%20title%3A%22Nickel%22)%20AND%20bibstem%3A%22GCN%22%20&sort=date%20desc%2C%20bibcode%20desc">
+          ADS of GCN Circulars
+        </a> -->
+        </div>
+      </div>
+      <div class="row row-description">
+        <div class="col">
+          A multi-messenger astronomy collaboration to detect electromagnetic
+          counterpart following up the third observation run of LIGO-Virgo. Sent
+          out 23 reports publically to NASA GCN Circulars.
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="row row-header">
+        <div class="col">StaticPy</div>
+      </div>
+      <div class="row row-subtitle">
+        <div class="col">
+          <a href="https://github.com/ketozhang/StaticPy">https://github.com/ketozhang/StaticPy</a>
+        </div>
+      </div>
+      <div class="row row-description">
+        <div class="col">
+          StaticPy is a static website generator built with Python Flask. Its
+          purpose is to widely support archiving notebooks and writing blogposts
+          using Markdown and supports LaTeX notation through the use of Pandoc
+          and MathJax. My own web portfolio (<a href="https://ketozhang.github.io/">ketozhang.github.io</a>) was built with StaticPy.
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="row row-header">
+        <div class="col">AstroAPIServer</div>
+      </div>
+      <div class="row row-subtitle">
+        <div class="col">
+          <a href="https://github.com/ketozhang/astroAPIServer">https://github.com/ketozhang/astroAPIServer</a>
+        </div>
+      </div>
+      <div class="row row-description">
+        <div class="col">
+          The astronomer's API Server is a boilerplate and toolkit to build API
+          server for web data access and data releases fit for astronomy
+          research. Its purpose is to have astronomers data be easily be web
+          accessible and follow the data interface guidelines specified by the
+          <a href="http://www.ivoa.net/documents/">International Virtual Observatory Alliance (IVOA)</a>, particularly following Simple Image Access and Data Access Layer
+          Interface standards.
+        </div>
+      </div>
+    </div>
+  </div>
+</div> #}
+
+<!-- PUBLICATIONS -->
+{% if all or field in ["science"] %}
+{% include 'CV/publications.html' %}
+{% endif %}
+
+{% endblock %}

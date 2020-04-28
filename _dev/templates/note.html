@@ -1,5 +1,4 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} {% block content %}
 <div class="container-fluid" id="note">
   <!-- <nav class="navbar navbar-expand-lg">
         <button id="sidenavCollapse" class="btn btn-info" type="button">
@@ -17,14 +16,19 @@
           </div>
           <div class="col-2 offset-1">
             <a class="go-up" href="{{url_for(page['parent'])}}" role="button">
-              <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px">
+              <img
+                src="https://img.icons8.com/dotty/80/000000/up.png"
+                style="width: 25px; height: 25px"
+              />
             </a>
           </div>
         </div>
         <div class="sidenav-body no-gutters">
           <ul class="no-list-style pl-3">
             {% for subpage in page.subpages %}
-            <li class='pb-3'><a href="{{url_for(subpage.url)}}">{{subpage.title}}</a></li>
+            <li class="pb-3">
+              <a href="{{url_for(subpage.url)}}">{{subpage.title}}</a>
+            </li>
             {% endfor %}
           </ul>
         </div>
@@ -41,7 +45,12 @@
       <!-- Disqus Comments -->
       <div id="disqus_thread" class="mt-5">
         <div class="w-50 mx-auto">
-          <button type="button" class="btn btn-block btn-outline-dark show-comments">Show Comments</button>
+          <button
+            type="button"
+            class="btn btn-block btn-outline-dark show-comments"
+          >
+            Show Comments
+          </button>
         </div>
       </div>
       <!--
@@ -70,7 +79,6 @@
     <div class="col-md-3 d-none d-md-block">
       {% include "onthispage.html" %}
     </div>
-
   </div>
 </div>
 {% endblock %}
