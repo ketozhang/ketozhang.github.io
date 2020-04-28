@@ -1,5 +1,5 @@
 ---
-title: "Calculating the Hubble Discrepancy"
+title: "Astrostatistics — Calculating the Hubble Discrepancy"
 tag: ["astronomy", "statistics"]
 description: "With hopes that my readers understood the N-sigma significance covered previously, we continue to dive into the metric astronomers use to famously compare the Hubble constant aptly named the Hubble discrepancy."
 ---

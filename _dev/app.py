@@ -107,11 +107,26 @@ def home():
 
 if __name__ == "__main__":
     args = sys.argv[1:]
-    if len(args) == 0:
-        app.run(debug=True, host="0.0.0.0", port=8080)
-    elif "build" in args:
-        log.setLevel("INFO")
-        elapsed_time = build_all()
-        print(f"Building templates finished in {elapsed_time:.2f}secs")
-    else:
-        raise ValueError("Invalid command. Use `python app.py [build]`")
+    times = []
+
+    if "build" in args:
+        build_time = build_all()
+
+        if build_time is not None:
+            print(f"{'Build time:':<30} {build_time:.2f} secs")
+            times.append(build_time)
+
+    if "freeze" in args:
+        freeze_time = freezer.freeze()
+        if freeze_time is not None:
+            print(f"{'Static convert time:':<30} {freeze_time:.2f} secs")
+            times.append(build_time)
+
+        else:
+            print(
+                "Static conversion failed \nTry setting `FLASK_ENV=development` for debugging"
+            )
+
+    if times:
+        print(f"\n{'':=^80}")
+        print(f"{'Total time:':<30} {sum(times) :.2f} secs\n")
