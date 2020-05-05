@@ -1,0 +1,49 @@
+<h2 id="moment-generating-function">Moment Generating Function</h2>
+<p>The <strong>moment generating function (MGF)</strong> is some function that defines for some random variable <span class="math inline">\(X\)</span>,</p>
+<p><span class="math display">\[
+M_X(t) = E(e^{tX})
+\]</span></p>
+<p>The Taylor expansion of <span class="math inline">\(e^{tX}\)</span> gives us each expected value of the powers of <span class="math inline">\(X\)</span>,</p>
+<p><span class="math display">\[
+M_X(t) = 1 + t\frac{E(X)}{1!} + t^2\frac{E(X^2)}{2!} + t^3\frac{E(X^3)}{3!} + \ldots
+\]</span></p>
+<p><span class="math inline">\(E(X^k)\)</span> is called the <span class="math inline">\(k\)</span>th <strong>moment</strong> of <span class="math inline">\(X\)</span>. Given a MGF, it is not easy to use the above to extract out a moment. Instead, notice, the <span class="math inline">\(k\)</span>th derivative evaluted at zero gives</p>
+<p><span class="math display">\[
+M_X^{(k)}(0) = E(X^k)
+\]</span></p>
+<dl>
+<dt>Uniqueness</dt>
+<dd>Two distributions with the same MGF have the same distribution.
+</dd>
+<dt>Independent Sums</dt>
+<dd><p>The sum of two independent random variables has the MGF that is separable,</p>
+<p><span class="math display">\[
+\begin{align*}
+M_{X + Y}(t) &amp;= E(e^{tX}e^{tY})\\
+&amp;= E(e^{tX})E(e^{tY}) \tag{independence}
+\end{align*}
+\]</span></p>
+<p><span class="math display">\[
+M_{X + Y}(t) = M_X(t)M_Y(t)
+\]</span></p>
+</dd>
+</dl>
+<h3 id="central-limit-theorem">Central Limit Theorem</h3>
+<p>If two distribution are the same if they have the same MGF, it is natural to think if one MGF tends towards another at some asymptotic limit, the the distribution tends towards the other. This is the basis for using MGF with CLT.</p>
+<p>Consider a sum <span class="math inline">\(S\)</span> of iid random variables <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span>. The standardized form is,</p>
+<p><span class="math display">\[
+S^* = \frac{S - n\mu}{\sqrt{n}\sigma} = \sum_{i=1}^n \frac{1}{\sqrt{n}}\left(\frac{X_i - \mu}{\sigma}\right) = \sum_{i=1}^n \frac{X_i^*}{\sqrt{n}}
+\]</span></p>
+<p>Solving for the MGF</p>
+<p><span class="math display">\[
+\begin{align*}
+M_{S^*}(t) &amp;= \left[ M_{X^*}(t/\sqrt{n}) \right]^n\\
+&amp; = \left(1 + \frac{t}{\sqrt{n}}\frac{E(X^*)}{1!} + \frac{t^2}{n}\frac{E(X^{*2})}{2!} + \ldots\right)^n\\
+&amp;= \left(1 + \frac{t^2}{n} + \mathcal O(t^3)\right)^n
+\end{align*}
+\]</span></p>
+<p><span class="math inline">\(\mathcal O(t^3)\)</span> is taken to be small as <span class="math inline">\(n\)</span> grows large.</p>
+<p><span class="math display">\[
+M_{S^*}(t) \approx \left(1 + \frac{t^2}{n} + \right)^n \rightarrow e^{t^2 / 2}, \quad \text{as } n \to \infty
+\]</span></p>
+<p>Thus the sums of iid random variables has the MGF that tends towards the MGF of normal as <span class="math inline">\(n\)</span> grows large.</p>

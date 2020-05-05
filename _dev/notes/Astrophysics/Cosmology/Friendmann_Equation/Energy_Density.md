@@ -1,6 +1,5 @@
 ---
 title: Energy Density
-parent: = Friedmann Equation
 ---
 
 ## Critical Density
@@ -54,6 +53,6 @@ $$ \frac{\mu_\text{starlight}}{\mu_\text{CMB}} \approx 0.1 $$
 
 In total we only include CMB and neutrino background into the radiation density which is found to be:
 
-$$ 
+$$
 \Omega_{r,0} = \frac{\mu_\text{CMB,0} + \mu_{v,0}}{\mu_c} \approx 9 \times 10^{-5}
 $$

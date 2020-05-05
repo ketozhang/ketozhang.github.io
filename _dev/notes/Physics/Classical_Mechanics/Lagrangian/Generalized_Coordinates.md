@@ -1,6 +1,5 @@
 ---
 title: Generalized Coordinates
-parent: Lagrangian
 ---
 
 ## Reducing Coordinates

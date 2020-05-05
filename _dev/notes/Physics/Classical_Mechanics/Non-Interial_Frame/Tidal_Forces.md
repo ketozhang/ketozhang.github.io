@@ -1,6 +1,5 @@
 ---
 title: Tidal Forces
-parent: Linear_Acceleration
 ---
 
 ![](2018-03-05-15-22-03.png)

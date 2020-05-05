@@ -1,6 +1,5 @@
 ---
 title: N-Body Problem
-parent: Lagrangian
 ---
 
 ## Two Body Problem
@@ -93,12 +92,12 @@ The Lagrangian is independent of $\phi$ so angular momentum along $\phi$ is cons
 $$
 \begin{align}
     \mu r^2 \dot \phi = L_z\\
-    \phi(r,t) = \frac{L_z}{\mu r^2}t + \phi_0 
+    \phi(r,t) = \frac{L_z}{\mu r^2}t + \phi_0
 \end{align}
 $$
 
 * $L_z$ : A constant angular momentum along $z$ which is equivalent to the angular momentum along $\phi$
-* It's important to notice that $\phi$ is dependent on $r$ not only $t$. We definitely wish to find $\phi(t)$ or $\phi(r)$ but first we need the radial equation. 
+* It's important to notice that $\phi$ is dependent on $r$ not only $t$. We definitely wish to find $\phi(t)$ or $\phi(r)$ but first we need the radial equation.
 
 
 The $r$ equation (**radial equation**) is then,
@@ -110,7 +109,7 @@ $$
 $$
 
 ### One-Dimensional Reduction
-Notice that the radial equation is a sum of two potentials where $F_r = \mu \ddot r$ 
+Notice that the radial equation is a sum of two potentials where $F_r = \mu \ddot r$
 
 $$
 \begin{gather}

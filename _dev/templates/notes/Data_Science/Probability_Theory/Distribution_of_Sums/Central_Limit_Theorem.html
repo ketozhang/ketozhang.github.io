@@ -1,0 +1,29 @@
+<p>The Central Limit Theorem (CLT) states that given a sum distribution <span class="math inline">\(S_n\)</span> as a sum of <span class="math inline">\(n\)</span> iid random variables <span class="math inline">\(X\)</span> of mean <span class="math inline">\(\mu\)</span> and standard deviation <span class="math inline">\(\sigma\)</span>,</p>
+<p><span class="math display">\[
+\begin{gather*}
+S_n = X_1 + X_2 + \ldots + X_n\\
+E(X_n) = n\mu\\
+\text{SD}(X_n) = \sqrt{n}\sigma
+\end{gather*}
+\]</span></p>
+<p>As <span class="math inline">\(n \to \infty\)</span>, <span class="math inline">\(S_n\)</span> approaches normal distribution.</p>
+<p><span class="math display">\[
+S_n \to \text{Normal}(N\mu, N\sigma^2)
+\]</span></p>
+<dl>
+<dt>Concentration Corollary</dt>
+<dd><p>Since the distribution of the sum tends to normal at large <span class="math inline">\(N\)</span>, its CDF as well,</p>
+<p><span class="math display">\[
+\begin{gather*}
+P(S_n \le s) \approx \Phi\left(\frac{s-N\mu}{\sqrt{N}\sigma}\right)
+\end{gather*}
+\]</span></p>
+<p>More used is the central bulk concentration,</p>
+<p><span class="math display">\[
+\begin{align*}
+P(\abs{S_n - N\mu} \le c) &amp;= P(S_n \le N\mu + c) - P(S_n \le N\mu - c)\\
+&amp;\approx \Phi\left(\frac{c}{\sqrt{N}\sigma}\right) - \Phi\left(\frac{c-2N\mu}{\sqrt{N}\sigma}\right)
+\end{align*}
+\]</span></p>
+</dd>
+</dl>

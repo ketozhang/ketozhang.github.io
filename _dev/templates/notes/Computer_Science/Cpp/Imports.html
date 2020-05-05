@@ -1,0 +1,20 @@
+<h2 id="header-file">Header File</h2>
+<p>The header file is the file to be imported. In general, the header file defines all able imported. For instance, the class <code>Vector</code> has its functions defined in <code>Vector.cpp</code> but its declaration in the header file <code>Vector.h</code>.</p>
+<h2 id="modules">Modules</h2>
+<p>Due to various problems and limitations of header files, C++20 adopted modules where the interface declaration and definiton are in the same <code>.cpp</code> file.</p>
+<h2 id="namespaces">Namespaces</h2>
+<p>A namespace (<code>namespace</code>) can be defined to isolate code so that their names don’t conflict with the global namespace.</p>
+<p>Here, <code>ns</code> is a namespace so that <code>int</code> are not in conflict by requiring the double colon syntax <code>ns::int</code>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">namespace</span> ns {</span>
+<span id="cb1-2"><a href="#cb1-2"></a>  <span class="kw">class</span> <span class="dt">int</span> {</span>
+<span id="cb1-3"><a href="#cb1-3"></a>    ...</span>
+<span id="cb1-4"><a href="#cb1-4"></a>  };</span>
+<span id="cb1-5"><a href="#cb1-5"></a>}</span>
+<span id="cb1-6"><a href="#cb1-6"></a></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="dt">int</span> main() {</span>
+<span id="cb1-8"><a href="#cb1-8"></a>  ns::<span class="dt">int</span> var;</span>
+<span id="cb1-9"><a href="#cb1-9"></a>}</span></code></pre></div>
+<h3 id="global-namespace">Global Namespace</h3>
+<p>A namespace is imported into the global namespace by the <code>using</code> statement,</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">using</span> std <span class="co">// Use all of std</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="kw">using</span> <span class="bu">std::</span>cout <span class="co">// Use only std::cout</span></span></code></pre></div>

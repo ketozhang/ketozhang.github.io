@@ -1,0 +1,53 @@
+<h2 id="wrt-vector">WRT Vector</h2>
+<p>Let <span class="math inline">\(x\)</span> be a vector.</p>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(f\)</span></th>
+<th><span class="math inline">\(\nabla_x f\)</span></th>
+<th>Common Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(Ax\)</span></td>
+<td><span class="math inline">\(A\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\lvert Ax-y \rvert^2\)</span></td>
+<td><span class="math inline">\(2A^\top(Ax-y)\)</span></td>
+<td>Ordinary Least Squares</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(x^\top A x\)</span></td>
+<td><span class="math inline">\((A + A^\top)x\)</span></td>
+<td>Squared length of <span class="math inline">\(Bx;~A:=B^TB\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="gradient-chain-rule">Gradient Chain Rule</h3>
+<p>The <strong>gradient chain rule</strong> or the <strong>reverse chain rule</strong> follows from the original chain rule:</p>
+<p><span class="math display">\[
+f = g \circ x
+\]</span></p>
+<p><span class="math display">\[
+\nabla_x f = \left[ \frac{\partial f }{\partial x} \right]^\top = \left[ \frac{\partial f }{\partial g}\frac{\partial g }{\partial x} \right]^\top = \left(\frac{\partial g }{\partial x}\right)^\top \left(\frac{\partial f }{\partial g}\right)^\top
+\]</span></p>
+<h3 id="motivating-derivations">Motivating Derivations</h3>
+<ul>
+<li><p>Squared length of <span class="math inline">\(Bx\)</span></p>
+<p><span class="math display">\[
+  f(x) = |Bx|^2 = xB^\top B x
+  \]</span></p>
+<p><span class="math display">\[
+  A := B^\top B
+  \]</span></p>
+<p><span class="math display">\[
+  \begin{align}
+  \nabla_x f &amp;= \left[ \frac{\partial}{\partial x} x^\top Ax + x^\top \frac{\partial}{\partial x} (Ax) \right]^\top\\
+  &amp;= \bigg[\underbrace{\hat T (Ax)}_{x^\top A^\top} + x^\top A \bigg]^\top\\
+  &amp;= (A + A^\top)x
+  \end{align}
+  \]</span></p></li>
+</ul>

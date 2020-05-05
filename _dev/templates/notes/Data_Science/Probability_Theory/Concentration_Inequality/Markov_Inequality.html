@@ -1,0 +1,41 @@
+<p>Markov’s inequality at its simplest deals with the expected value (or first moment) of the distribution. For a non-negative random variable <span class="math inline">\(X\)</span> with a finite expected value <span class="math inline">\(\mathbb E[X]\)</span>, the probability that its at least the constant constant <span class="math inline">\(c\)</span> is,</p>
+<p><span class="math display">\[
+\boxed{P(X \ge c) \le \frac{\mathbb E[X]}{c}}
+\]</span></p>
+<p>In terms of the expected value,</p>
+<p><span class="math display">\[
+P(X \ge n\mu) \le \frac{1}{n}
+\]</span></p>
+<dl>
+<dt>Proof</dt>
+<dd>Let <span class="math inline">\(I\)</span> be the indicator that <span class="math inline">\(X \ge c\)</span>. The expected value is also its probability,
+</dd>
+</dl>
+<p><span class="math display">\[
+  \mathbb E[I(X\ge c)] = P(X \ge c)
+  \]</span></p>
+<p>Consider the function <span class="math inline">\(f(X) = X/c\)</span> which is always bigger than <span class="math inline">\(I(X \ge c)\)</span>. Because the expected value of a linear function is linear, the larger function has the higher expected value,</p>
+<p><span class="math display">\[
+  E[f(X)] \ge E[I(X \ge c)]
+  \]</span></p>
+<p><span class="math display">\[
+  \frac{E[X]}{c} \ge P(X \ge c)
+  \]</span></p>
+<p>Thus we’ve proven Markov’s inequality,</p>
+<p><span class="math display">\[
+  P(X \ge c) \le \frac{E[X]}{c}
+  \]</span></p>
+<h2 id="markovs-inequality---monotonically-increasing-function">Markov’s Inequality - Monotonically Increasing Function</h2>
+<p>To generalize the simple Markov’s inequality, we allow the first moment to be of any monotonically increasing function <span class="math inline">\(\varphi(X)\)</span>,</p>
+<p><span class="math display">\[
+P(X \ge c) \le \frac{\mathbb E[\varphi(X)]}{\varphi(c)}
+\]</span></p>
+<h2 id="general-moment-markov-inequality">General Moment Markov Inequality</h2>
+<p>Any <span class="math inline">\(k\)</span>-th moment is also a monotonically increasing function thus w e can generalize the moment to any <span class="math inline">\(k\)</span>,</p>
+<p><span class="math display">\[
+P(X \ge c) \le \frac{\mathbb E[X^k]}{c^k}
+\]</span></p>
+<p>Bound on random variable deviates from some value.</p>
+<p><span class="math display">\[
+P(\abs{Y} \ge c) \le \frac{\mathbb E[\abs{Y}^k]}{c^k}
+\]</span></p>

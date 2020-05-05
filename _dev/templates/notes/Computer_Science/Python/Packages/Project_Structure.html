@@ -1,0 +1,168 @@
+<h2 id="single-file-project-structure">Single-File Project Structure</h2>
+<p>At its minimum a Python package can just be one main Python file:</p>
+<pre><code>/Project/
+   package.py
+   setup.py
+   README</code></pre>
+<h2 id="minimal-project-structure">Minimal Project Structure</h2>
+<pre><code>/Project/
+    package/
+       __init__.py
+       main.py
+       helpers.py
+       ...
+    test/
+        main_test.py
+        helpers_test.py
+        ...
+    requirements.txt
+    setup.py
+    LICENSE
+    README</code></pre>
+<h2 id="practical-project-structure">Practical Project Structure</h2>
+<p>Everyone has their own twist on project structure, so here is my very opinonated practical project structure.</p>
+<pre><code>/Project/
+   .venv/
+   package/
+        __init__.py
+        main.py
+        helpers.py
+        ...
+    test/
+        main_test.py
+        helpers_test.py
+        ...
+   pyproject.toml
+   README
+   LICENSE
+   Makefile</code></pre>
+<p><strong>Changes</strong></p>
+<ul>
+<li><p>Make for macros</p>
+<pre><code>make [command]</code></pre></li>
+<li><p>Replaces <code>setup.py</code> and <code>requirements.txt</code> with <code>pyrpoject.toml</code> in anticipation for <a href="https://www.python.org/dev/peps/pep-0517/">PEP 517</a> and <a href="https://www.python.org/dev/peps/pep-0518/">PEP 518</a>.</p></li>
+</ul>
+<p><strong>Things not covered</strong></p>
+<ul>
+<li>Documentation The choice yours (e.g., GitHub wiki, readthedocs, sphinx, etc). However you must always have a README! Lost for words? Add a title, usage, and/or link to your full documentation.</li>
+</ul>
+<h2 id="virtual-environment">Virtual Environment</h2>
+<table>
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 78%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><code>./package/.venv/</code></td>
+<td>The virtual environment. This does not have to be in the project</td>
+</tr>
+</tbody>
+</table>
+<p>It has not been said enough that for every project, you should have a reserved virtual environment for that project. This prevents the headache of having to make sure your Python’s base environment plays well with all the other projects you may have.</p>
+<p>There are various tools to create and manage virtual environments (e.g., <a href="https://docs.python.org/3/library/venv.html">venv</a>, <a href="https://pipenv.pypa.io/en/latest/">pipenv</a>, <a href="https://python-poetry.org/">poetry</a>).</p>
+<p>The virtual environment does not have to be in your project folder (recommended for organization and easy access). Another common place is <code>~/.local/share/virtualenvs/PROJECT_NAME</code>. Most virtual environment tools have options to change this.</p>
+<h2 id="the-init-file">The init file</h2>
+<table>
+<tbody>
+<tr class="odd">
+<td><code>./package/__init__.py</code></td>
+<td>Init file</td>
+</tr>
+</tbody>
+</table>
+<p>Quick review, the init file (<code>__init__.py</code>) is always ran whenever you import the package. Depending on your experience with Python, you may or may not have the used the init file (<code>__init__.py</code>). It is perfectly fine to keep it empty. However if you were to take a look at any package, this file is quite heavily used in many ways:</p>
+<ol type="1">
+<li><p><strong>Indicate Package</strong> An empty init file is widely used by many program to indicate the direction is a Python package.</p></li>
+<li><p><strong>Forward Variables</strong> Arguably the most important purpose of the init file, it is very common to see variables from the package modules forwarded to the init file.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># __init__.py</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="im">from</span> main <span class="im">import</span> ClassA</span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="im">from</span> helpers <span class="im">import</span> helper_func</span></code></pre></div>
+<p>That way you can designate the “main things” your user should be accessing. For instance,</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="im">from</span> project <span class="im">import</span> ClassA, helper_func</span></code></pre></div></li>
+<li><p><strong>Store Global Variables</strong> Becauses the init file is always ran whenever you import the package, the variables inside the init file are also accessible by the package modules</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># main.py</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="im">from</span> . <span class="im">import</span> GLOBAL_VAR</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># __init__.py</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>GLOBAL_VAR <span class="op">=</span> ...</span>
+<span id="cb8-3"><a href="#cb8-3"></a></span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="im">from</span> main <span class="im">import</span> ClassA</span></code></pre></div>
+<p>Do be careful about circular dependency. The example above has <code>main.py</code> depending on the init file and the init file imports <code>main.py</code>. This example is not in conflict because of its sequential procedure and the init file is always first called: (1) <code>GLOBAL_VAR</code> is defined; (2) <code>main</code> is imported; (3) <code>main</code> imports <code>GLOBAL_VAR</code>; (4) <code>ClassA</code> is imported.</p></li>
+</ol>
+<h2 id="setup-file">Setup File</h2>
+<table>
+<tbody>
+<tr class="odd">
+<td><code>./setup.py</code></td>
+<td>The package specification file</td>
+</tr>
+</tbody>
+</table>
+<h2 id="testing">Testing</h2>
+<table>
+<tbody>
+<tr class="odd">
+<td><code>./tests/</code></td>
+<td>The folder of test(s)</td>
+</tr>
+</tbody>
+</table>
+<p>Unfortunately because the test files are inside a directory different than your package, the test file not be able to directly import your package as a local package. Before I delve into the methods, it’s best to establish the workflow we want to have.</p>
+<p>It’s would also be nice to run it at <code>./test/</code> in case we need to quickly modify the test directory. Most intuitively, we like to run our test in the project folder.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># Run in project folder</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="ex">python</span> tests/main_test.py</span>
+<span id="cb9-3"><a href="#cb9-3"></a></span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="co"># Run in test folder</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a><span class="ex">python</span> main_test.py</span></code></pre></div>
+<p>We also like to have the most intuitive package imports inside our test files:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># main_test.py</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="im">import</span> package</span>
+<span id="cb10-3"><a href="#cb10-3"></a><span class="im">from</span> package <span class="im">import</span> main</span></code></pre></div>
+<p>There’s aboslutely no reason you need to fuss around with relative imports (e.g., <code>from . import package</code>) because that should only be used in package files.</p>
+<h3 id="solutions-to-test-and-python-path-dependencies">Solutions to Test and Python Path Dependencies</h3>
+<p>Now, there are various ways to solve this issue and achieve this workflow floating around in the Python community:</p>
+<ul>
+<li><p><strong>Modify Python’s Module Path (NOT RECOMMENDED)</strong> There is also a few ways of doing this:</p>
+<ol type="1">
+<li><p>Modify Python’s <code>sys.path</code> on top of your test files</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># main_test.py</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="im">import</span> sys</span>
+<span id="cb11-3"><a href="#cb11-3"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb11-4"><a href="#cb11-4"></a></span>
+<span id="cb11-5"><a href="#cb11-5"></a><span class="co"># Highly recommended keeping this global variable almost everywhere</span></span>
+<span id="cb11-6"><a href="#cb11-6"></a>PROJECT_PATH <span class="op">=</span> Path(<span class="va">__file__</span>).resolve().parents[<span class="dv">1</span>]</span>
+<span id="cb11-7"><a href="#cb11-7"></a><span class="co"># Inserting to the beginning of `sys.path` list to give overwriting priority</span></span>
+<span id="cb11-8"><a href="#cb11-8"></a>sys.path.insert(<span class="dv">0</span>, <span class="bu">str</span>(PROJECT_PATH))</span>
+<span id="cb11-9"><a href="#cb11-9"></a></span>
+<span id="cb11-10"><a href="#cb11-10"></a><span class="co"># Everything else</span></span>
+<span id="cb11-11"><a href="#cb11-11"></a><span class="im">import</span> package</span>
+<span id="cb11-12"><a href="#cb11-12"></a></span>
+<span id="cb11-13"><a href="#cb11-13"></a><span class="kw">def</span> main_test():</span>
+<span id="cb11-14"><a href="#cb11-14"></a>      ...</span></code></pre></div>
+<p>Another implementation using <code>os</code> instead of <code>pathlib</code> is found in <a href="https://github.com/navdeep-G/samplemod/tree/master/tests">samplemod from Kenneth Reitz et al.</a></p></li>
+<li><p>Set <code>PYTHONPATH</code> environment variable</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1"></a><span class="bu">export</span> <span class="va">PYTHONPATH=</span><span class="st">&quot;/path/to/Project/&quot;</span></span></code></pre></div>
+<p>Alternatively,</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1"></a><span class="va">PYTHONPATH=</span><span class="st">&quot;/path/to/Project/&quot;</span> <span class="ex">python</span> test/test.py</span></code></pre></div></li>
+</ol>
+<p>While this method is widely suggested (e.g., <a href="https://docs.python-guide.org/writing/structure/#test-suite">Hitchiker’s Guide</a>, <a href="https://stackoverflow.com/questions/1896918/running-unittest-with-typical-test-directory-structure">StackOverflow</a>), I do not recommend this because (1) is quite tedious or complex to incorporate onto all your test files and (2) again very tedious to incorporate everywhere. This method seems to be a hotfix and inspire a bad habit of being ignorant of how Python should find packages.</p></li>
+<li><p><strong>Test Directory inside Package (NOT RECOMMENDED)</strong> Instead of having the test directory on the root level, some prefer to place it inside the package</p>
+<pre><code>/Project/
+   /project/
+      __init__.py
+      ...
+      /test/
+         main_test.py
+         ...
+    ...</code></pre>
+<p>This is a matter of your own preference. To me, the test do not belong to the package as it will also be included in the bundled Python package for your users to install. When projects become very complex, it’s best to have all primary components of the project to be clearly displayed on the root level.</p></li>
+<li><p><strong>Installing the Local Package (RECOMMENDED)</strong> Most natural way of having your package available to you is to install it. Make sure your have a proper <code>setup.py</code> and you’re installing it into your virtual environment.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1"></a><span class="ex">pip</span> install -e .</span></code></pre></div>
+<p>The <code>-e</code> flag or <code>--editable</code> is meant for installing local packages. Any changes to your local package will reflect onto your python environment. If you really want a snapshot of your package instead, remove this flag.</p></li>
+<li><p><strong>Using Test Tools (RECOMMENDED)</strong> The recommended solution along with the need to adopt a test framework is to use the available testing packages out there. There are various testing packages out there like the official Python’s <a href="https://docs.python.org/3/library/unittest.html">unittest</a> and <a href="https://docs.pytest.org/en/latest/">pytest</a>. These testing packages automatically resolve local package dependencies</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># unittest</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="ex">python</span> -m unittest test.main_test</span>
+<span id="cb16-3"><a href="#cb16-3"></a></span>
+<span id="cb16-4"><a href="#cb16-4"></a><span class="co"># pytest</span></span>
+<span id="cb16-5"><a href="#cb16-5"></a><span class="ex">pytest</span> test/main_test</span></code></pre></div></li>
+</ul>

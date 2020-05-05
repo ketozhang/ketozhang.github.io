@@ -3,15 +3,17 @@
 @page {
     width: 8.5in;
     height: 11in;
-    margin-left: 0.5in;
-    margin-right: 0.5in;
+    margin-left: 1in;
+    margin-right: 1in;
     margin-top: 0;
     margin-bottom: 0.5in;
 }
 
 @media print {
     body {
-        font-size: 18px !important;
+        font-size: 19px !important;
+        font-family: "Arial", sans-serif !important;
+        line-height: 1.3 !important;
     }
     /* .section {
         margin-top: 1em !important;
@@ -37,10 +39,10 @@
 
 body {
     color: #4e4e4e;
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-family: "Open Sans", "Roboto", "Helvetica", "Arial", sans-serif;
     margin-top: 0.5in;
     margin-bottom: 0.5in;
-    line-height: 1.3;
+    line-height: 1.4;
 }
 
 header {

@@ -1,0 +1,41 @@
+<h2 id="where-predicate">Where Predicate</h2>
+<p>A nested query in a where precdicate can be used after a nested query keyword</p>
+<dl>
+<dt><code>IN</code></dt>
+<dd>Return the column entires that intersects with the column output of subquery
+</dd>
+</dl>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">WHERE</span> <span class="op">&lt;</span>col<span class="op">&gt;</span> <span class="op">&lt;</span>keyword<span class="op">&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>    (<span class="op">&lt;</span>subquery<span class="op">&gt;</span>)</span></code></pre></div>
+<dl>
+<dt><code>NOT IN</code></dt>
+<dd>Return the column entires that doesn’t intersect with the column output of subquery
+</dd>
+<dt><code>EXISTS</code></dt>
+<dd><center>
+<strong>Return if true for each row</strong>
+</center>
+<p>For each row in the table, plug it into the subquery. If the subquery returns true, return that row.</p>
+<p>The format of <code>EXISTS</code> does not need require a column, however must have a correlation (i.e., outer table is referenced inside inner table) in the subquery where predicate:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">WHERE</span> <span class="kw">EXISTS</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>    (</span>
+<span id="cb2-3"><a href="#cb2-3"></a>        <span class="op">..</span>.</span>
+<span id="cb2-4"><a href="#cb2-4"></a>        <span class="kw">WHERE</span> <span class="op">&lt;</span>correlation<span class="op">-</span>prediate<span class="op">&gt;</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a>    )</span></code></pre></div>
+</dd>
+</dl>
+<ul>
+<li><p><code>NOT EXISTS</code></p></li>
+<li><p><code>ANY</code></p>
+<center>
+<p><strong>Return if predicate satisfies any subquery</strong></p>
+</center></li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">WHERE</span> <span class="op">&lt;</span>col<span class="op">&gt;</span> <span class="op">&lt;</span>condition<span class="op">&gt;</span> <span class="op">&lt;</span><span class="kw">ANY</span>|<span class="kw">ALL</span><span class="op">&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>    (<span class="op">&lt;</span>subquery<span class="op">&gt;</span>)</span></code></pre></div>
+<ul>
+<li><code>ALL</code>
+<center>
+<strong>Return if predicate satisfies all subquery</strong>
+</center></li>
+</ul>

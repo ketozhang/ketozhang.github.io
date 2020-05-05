@@ -21,9 +21,7 @@ freeze:
 
 clean:
 	rm -rf docs/ && \
-	rm -rf templates/*.bak && \
-	rm -rf templates/notes/ && \
-	rm -rf templates/posts/
+	rm -rf templates/*.bak 
 
 push:
 	make static && \

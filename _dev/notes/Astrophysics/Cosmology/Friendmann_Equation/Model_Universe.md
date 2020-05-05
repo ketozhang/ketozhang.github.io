@@ -1,22 +1,21 @@
 ---
 title: Model Universe
-parent: Friedmann Equation
 ---
 
 <!-- TOC -->
 
-- [Derivation](#derivation)
-- [Empty Universe - Curvature Only](#empty-universe---curvature-only)
-- [Flat Universe - No Curvature](#flat-universe---no-curvature)
-- [Single Component Universe](#single-component-universe)
-    - [Matter or Radiation Dominated Universe](#matter-or-radiation-dominated-universe)
-    - [Cosmological Constant Dominated Universe](#cosmological-constant-dominated-universe)
-- [Multiple Component Universe](#multiple-component-universe)
-    - [Two-Component Equilibrium](#two-component-equilibrium)
-    - [Matter + Curvature](#matter--curvature)
-    - [Matter + Cosmological Constant](#matter--cosmological-constant)
-    - [Matter + Curvature + Cosmological Constant](#matter--curvature--cosmological-constant)
-    - [Radiation + Matter](#radiation--matter)
+1. Derivation
+2. Empty Universe - Curvature Only
+3. Flat Universe - No Curvature
+4. Single Component Universe
+  1. Matter or Radiation Dominated Universe
+  2. Cosmological Constant Dominated Universe
+5. Multiple Component Universe
+  1. Two-Component Equilibrium
+  2. Matter + Curvature
+  3. Matter + Cosmological Constant
+  4. Matter + Curvature + Cosmological Constant
+  5. Radiation + Matter
 
 <!-- /TOC -->
 
@@ -29,6 +28,7 @@ $$
 \end{equation}
 $$
 
+<a id="markdown-derivation" name="derivation"></a>
 ## Derivation
 
 We define the total density parameter to be $\Omega$,
@@ -43,7 +43,7 @@ $$
 
 The Friedmann equation can be isolated from the curvature term,
 
-$$ 
+$$
 \begin{gather}
     H^2(t) - \frac{8\pi G}{3}\mu = -\frac{k}{a^2}\\
     \boxed{H^2(t) \left[1 - \Omega(t) \right]= -\frac{k}{a^2}}
@@ -69,6 +69,7 @@ $$
 $$
 
 
+<a id="markdown-empty-universe---curvature-only" name="empty-universe---curvature-only"></a>
 ## Empty Universe - Curvature Only
 In the empty universe, all energy densities are set to zero $\Omega = 0$ and the curvature constant only exist. This is one of the rare times we will use the full definition of $k = \kappa c^2/R_0^2$. The Friedmann equation goes as (remember to set $c = 1$),
 
@@ -90,6 +91,7 @@ $$ \begin{gather}
 
 This is the case where **Hubble's time** $H_0^{-1}$ is the age of the universe $t_0$!
 
+<a id="markdown-flat-universe---no-curvature" name="flat-universe---no-curvature"></a>
 ## Flat Universe - No Curvature
 A flat universe is one at which the curvature constant $k = 0$. The Friedmann equation is then:
 
@@ -114,17 +116,19 @@ $$
 
 Before we begin dwelling into this universe, we begin with the next few sections seeing how each individual components and subsets of these components affect the universe.
 
+<a id="markdown-single-component-universe" name="single-component-universe"></a>
 ## Single Component Universe
 
 The single component universe is a flat universe (we've already covered empty universe universe in the previous section which is a curvature-only) with either matter, radiation, or cosmological constant.
 
 The Friedmann equation for the single component universe is,
 
-$$ 
+$$
 H(t) = H_0 \sqrt{\frac{\Omega}{a^{3(w+1)}}} \qquad \Omega = 1\\
 \dot a = H_0a^{-(1+3w)/2}
 $$
 
+<a id="markdown-matter-or-radiation-dominated-universe" name="matter-or-radiation-dominated-universe"></a>
 ### Matter or Radiation Dominated Universe
 In the matter or radiation dominated universe, the $w \ne 1$ therefore the differential equation goes as the power law.
 
@@ -132,7 +136,7 @@ $$ H_0 t =  \int{a^{b/2} \d a} \qquad b = 1+3w$$
 
 The scale factor and redshift is then,
 
-$$ 
+$$
 \boxed{a(t) = \left(\frac{t}{t_0}\right)^{2/3(w+1)}}\\
 \boxed{1 + z = \left(\frac{t_0}{t_e}\right)^{2/3(w+1)}}\\
 \boxed{t_0 \equiv \frac{2}{3(1+w)}H_0^{-1}}\\
@@ -140,22 +144,26 @@ $$
 
 * $t_0$ : This can be interpretted as the age of the universe when the universe was single component dominated
 * $t_e$ : The age of the universe when the observed light was emitted. Of course $t_e = t_0$ when $z=0$ by definition.
-    
+
     $$\boxed{ t_e = t_0\left(1 + z\right)^{-3(w+1)/2} }$$
 
+<a id="markdown-cosmological-constant-dominated-universe" name="cosmological-constant-dominated-universe"></a>
 ### Cosmological Constant Dominated Universe
 
 <!-- TODO: -->
 
+<a id="markdown-multiple-component-universe" name="multiple-component-universe"></a>
 ## Multiple Component Universe
 
 
+<a id="markdown-two-component-equilibrium" name="two-component-equilibrium"></a>
 ### Two-Component Equilibrium
 $$
 \frac{\Omega_{i,0}}{\Omega_{j,0}} = a^{(w_i+1)/(w_j+1)}\\
 \boxed{a_{ij} = \left(\frac{\Omega_{i,0}}{\Omega_{j,0}}\right)^{(w_j+1)/(w_i+1)}}
 $$
 
+<a id="markdown-matter--curvature" name="matter--curvature"></a>
 ### Matter + Curvature
 
 The Friedmann equation for matter and curvature dominated universe is,
@@ -180,11 +188,11 @@ Let's take a look at what happen when $\Omega_0$ is great, less than, or equal t
 | $\Omega_0 > 1$ | $\kappa = +1$ | Big Crunch                           |
 
 
-* If $\Omega_0 > 1$ 
-    * then $k = 1$ and the extrema scale factor is positive $a>0$. 
-    * that means there exist an extrema for both cases of initially expanding or contracting universe. 
-    * for the initially expanding universe $H_0 > 0$ an extrema will be reached at some time where $a(t_\max) = a_\max$ and then begin to contract $H(t) < 0$ for $t > t_\max$. 
-    * so say a universe that began with a Big Bang will eventually contract itself into its hot dense "ball" of matter. This contraction is known as the **Big Crunch** 
+* If $\Omega_0 > 1$
+    * then $k = 1$ and the extrema scale factor is positive $a>0$.
+    * that means there exist an extrema for both cases of initially expanding or contracting universe.
+    * for the initially expanding universe $H_0 > 0$ an extrema will be reached at some time where $a(t_\max) = a_\max$ and then begin to contract $H(t) < 0$ for $t > t_\max$.
+    * so say a universe that began with a Big Bang will eventually contract itself into its hot dense "ball" of matter. This contraction is known as the **Big Crunch**
 * If $\Omega_0 = 1$
     * this is the matter dominated universe
     * then $k = 0$ and the extrema scale factor goes to infinity $a \rightarrow \infty$ at the rate $\alpha \propto t^{2/3}$
@@ -198,21 +206,24 @@ Let's take a look at what happen when $\Omega_0$ is great, less than, or equal t
 Let's solve for $a(t)$,
 
 Case $\Omega_0 \ne 1$
-: 
+:
 
 $$ H_0 t = \int{ \frac{da}{\sqrt{\Omega_0/a + (1-\Omega_0)}} } $$
 
 The solution to this is the cycloid,
 
-$$ 
+$$
 a(\theta) \equiv \frac{1}{2}\frac{\Omega_0}{\Omega_0 - 1}\left(1 - \cos\theta\right)\\
 \boxed{t(\theta) = \frac{1}{2H_0}\frac{\Omega_0}{\left(\Omega_0 - 1\right)^{3/2}}(\theta - \sin\theta)}
 $$
 
 * $\theta$ : Ranges from the beginning of the universe $\theta=0$ to the Big Crunch $\theta = 2\pi$
 
+<a id="markdown-matter--cosmological-constant" name="matter--cosmological-constant"></a>
 ### Matter + Cosmological Constant
 
+<a id="markdown-matter--curvature--cosmological-constant" name="matter--curvature--cosmological-constant"></a>
 ### Matter + Curvature + Cosmological Constant
 
+<a id="markdown-radiation--matter" name="radiation--matter"></a>
 ### Radiation + Matter

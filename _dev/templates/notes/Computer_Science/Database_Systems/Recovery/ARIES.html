@@ -1,0 +1,90 @@
+<p>The <strong>Algorithms for Recovery and Isolation Exploiting Semantics (ARIES)</strong> is a recovery algorithm began by preparing the logs using <strong>Write Ahead Logging</strong>. During recovery we perform the following phases:</p>
+<ol type="1">
+<li><strong>Analysis Phase</strong></li>
+<li><strong>REDO Phase</strong></li>
+<li><strong>UNDO Phase</strong></li>
+</ol>
+<h3 id="write-ahead-logging-wal">Write Ahead Logging (WAL)</h3>
+<p>At all times we must:</p>
+<ol type="1">
+<li>Flush &amp; update log record before the data page gets to the disk.</li>
+<li>Flush all log records of a transaction before commit.</li>
+</ol>
+<p>The following condition must be met:</p>
+<ul>
+<li><p>In the buffer,</p>
+<ul>
+<li>Disk keeps the log ordered by its <strong>Log Sequence Number (LSN)</strong></li>
+<li>Buffer keep track of the <code>flushedLSN</code> which points to the position in the disk that was latest LSN flushed so far.</li>
+<li>In the database, each page holds the <code>pageLSN</code> that points the the latest LSN used to update the page.</li>
+</ul></li>
+<li><p>When flushing we require,</p>
+<p><code>pageLSN &lt; flushedLSN</code></p></li>
+</ul>
+<h2 id="analysis-phase">Analysis Phase</h2>
+<p>At the time of crash, the transaction table and dirty page table (DPT) read from the disk stores the state at latest <code>BEGIN CHECKPOINT</code>. The analysis phase rebuilds the transaction table and DPT that was erased during the crash.</p>
+<p>Begin at the latest <code>BEGIN CHECKPOINT</code>:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>For each LSN <span class="im">from</span> BEGIN CHECKPOINT LSN to CRASH:</span>
+<span id="cb1-2"><a href="#cb1-2"></a>    <span class="cf">if</span> END:</span>
+<span id="cb1-3"><a href="#cb1-3"></a>        Remove Xact <span class="im">from</span> Xact table</span>
+<span id="cb1-4"><a href="#cb1-4"></a>    <span class="cf">else</span> <span class="cf">if</span> UPDATE:</span>
+<span id="cb1-5"><a href="#cb1-5"></a>        If (page <span class="kw">not</span> <span class="kw">in</span> DPT) ADD TO DPT</span>
+<span id="cb1-6"><a href="#cb1-6"></a>        page.recLSN <span class="op">=</span> LSN</span>
+<span id="cb1-7"><a href="#cb1-7"></a>    <span class="cf">else</span>:</span>
+<span id="cb1-8"><a href="#cb1-8"></a>        If (Xact <span class="kw">not</span> <span class="kw">in</span> Xact table) Add Xact to Xact table</span>
+<span id="cb1-9"><a href="#cb1-9"></a>        Xact.lastLSN <span class="op">=</span> LSN</span>
+<span id="cb1-10"><a href="#cb1-10"></a>        IF COMMIT:</span>
+<span id="cb1-11"><a href="#cb1-11"></a>            Xact.status <span class="op">=</span> <span class="st">&#39;committing&#39;</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a></span>
+<span id="cb1-13"><a href="#cb1-13"></a><span class="co"># At the end of Analysis Phase end committing Xact</span></span>
+<span id="cb1-14"><a href="#cb1-14"></a>For each Xact <span class="cf">with</span> Xact.status <span class="op">==</span> <span class="st">&#39;committing&#39;</span>:</span>
+<span id="cb1-15"><a href="#cb1-15"></a>    ADD END(Xact) to log</span>
+<span id="cb1-16"><a href="#cb1-16"></a>    Remove Xact <span class="im">from</span> Xact table</span></code></pre></div>
+<p>The information we have now is:</p>
+<ol type="1">
+<li>Which transaction were active during the time of crash.</li>
+<li>Which dirty page that might not been flushed to disk.</li>
+</ol>
+<h2 id="redo-phase">REDO Phase</h2>
+<p>The analysis phase gives us the state of the table at crash (ideally), we have information to decide which LSN to redo. We begin with the smallest LSN that dirtied a page in the DPT (i.e., smallest <code>recLSN</code>)</p>
+<p>We do not redo if the page was already flushed to disk. Unfortunately the DPT isn’t enough to guarantee this so the REDO algorithm goes as:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>toREDO <span class="op">=</span> []</span>
+<span id="cb2-2"><a href="#cb2-2"></a>For each LSN <span class="im">from</span> smallest recLSN <span class="kw">in</span> DPT:</span>
+<span id="cb2-3"><a href="#cb2-3"></a>    <span class="cf">if</span> (LSN corresponds to UPDATE <span class="kw">or</span> CLR):</span>
+<span id="cb2-4"><a href="#cb2-4"></a>        <span class="cf">if</span> (page <span class="kw">not</span> <span class="kw">in</span> DPT) <span class="kw">or</span> (recLSN <span class="op">&gt;</span> LSN) <span class="kw">or</span> (pageLSN <span class="op">&gt;=</span> LSN):</span>
+<span id="cb2-5"><a href="#cb2-5"></a>            <span class="cf">continue</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a>        <span class="cf">else</span>:</span>
+<span id="cb2-7"><a href="#cb2-7"></a>            toREDO.append(LSN)</span>
+<span id="cb2-8"><a href="#cb2-8"></a></span>
+<span id="cb2-9"><a href="#cb2-9"></a>For each redoLSN <span class="kw">in</span> toREDO:</span>
+<span id="cb2-10"><a href="#cb2-10"></a>    redo logged action</span>
+<span id="cb2-11"><a href="#cb2-11"></a>    Xact.pageLSN <span class="op">=</span> redoLSN</span></code></pre></div>
+<p>Why do we have these 3 conditions?</p>
+<ul>
+<li><p>Page is not in DPT</p>
+<p>Page was flushed to DB before checkpoint.</p></li>
+<li><p>Page is in DPT but has DPT <code>recLSN &gt; LSN</code></p>
+<p>Page was flushed before checkpoint, then reused before checkpoint</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">UPDATE</span> P1</span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="kw">COMMIT</span> P1</span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="cf">END</span> P1</span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="kw">UPDATE</span> P1</span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="cf">BEGIN</span> <span class="kw">CHECKPOINT</span></span></code></pre></div></li>
+<li><p><code>pageLSN &gt;= LSN</code></p>
+<p>Page was updated again and flushed to DB after the log record.</p></li>
+</ul>
+<h2 id="undo-phase">UNDO Phase</h2>
+<p>At this point everything in the buffer is at the state of the crash.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>toUndo <span class="op">=</span> [lastLSNs <span class="cf">for</span> <span class="bu">all</span> Xacts <span class="kw">in</span> Xact table]</span>
+<span id="cb4-2"><a href="#cb4-2"></a></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="cf">while</span> toUndo <span class="kw">is</span> <span class="kw">not</span> empty:</span>
+<span id="cb4-4"><a href="#cb4-4"></a>    logRecord <span class="op">=</span> toUndo.find_and_remove_largest_LSN()</span>
+<span id="cb4-5"><a href="#cb4-5"></a>    <span class="cf">if</span> logRecord <span class="kw">is</span> CLR:</span>
+<span id="cb4-6"><a href="#cb4-6"></a>        <span class="cf">if</span> (logRecord.prevLSN <span class="op">!=</span> null):</span>
+<span id="cb4-7"><a href="#cb4-7"></a>            Add logRecord.prevLSN to toUndo</span>
+<span id="cb4-8"><a href="#cb4-8"></a>        <span class="cf">else</span>:</span>
+<span id="cb4-9"><a href="#cb4-9"></a>            END logRecord.Xact</span>
+<span id="cb4-10"><a href="#cb4-10"></a>    <span class="cf">else</span>:</span>
+<span id="cb4-11"><a href="#cb4-11"></a>        Write a CLR <span class="cf">for</span> this logRecord</span>
+<span id="cb4-12"><a href="#cb4-12"></a>        Undo the update <span class="kw">in</span> the database</span>
+<span id="cb4-13"><a href="#cb4-13"></a>        Add logRecord.prevLSN to toUndo</span></code></pre></div>

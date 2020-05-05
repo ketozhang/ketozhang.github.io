@@ -1,0 +1,25 @@
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="ex">.project/</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>├── <span class="ex">mypkg</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>│   ├── <span class="ex">app.py</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a>│   └── <span class="ex">helper.py</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a>└── <span class="ex">run.py</span></span></code></pre></div>
+<dl>
+<dt>Incorrect</dt>
+<dd><p>A common mistake is to have modules use ambiguous imports.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># project/mkpkg/app.py</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="im">import</span> helper</span>
+<span id="cb2-3"><a href="#cb2-3"></a></span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="kw">def</span> foo():</span>
+<span id="cb2-5"><a href="#cb2-5"></a>    <span class="cf">return</span> helper.bar()</span></code></pre></div>
+</dd>
+<dt>Solution</dt>
+<dd><p>Instead use relative imports, because you always means the <code>helper</code> module in the current directory of <code>project/mpkg/app.py</code></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># project/mkpkg/app.py</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="im">import</span> .helper</span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="co"># or the more verbose but more semantically intuitive way</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="im">from</span> . <span class="im">import</span> helper</span>
+<span id="cb3-5"><a href="#cb3-5"></a></span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="kw">def</span> foo():</span>
+<span id="cb3-7"><a href="#cb3-7"></a>    <span class="cf">return</span> helper.bar()</span></code></pre></div>
+</dd>
+</dl>

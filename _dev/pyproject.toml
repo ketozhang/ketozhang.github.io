@@ -6,8 +6,8 @@ authors = ["Keto Zhang <keto.zhang@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
+staticpy = {path = "/home/keto/Projects/staticpy/"}
 pyscss = "^1.3.5"
-staticpy = {path = "staticpy-0.0.4-py3-none-any.whl"}
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.4.1"

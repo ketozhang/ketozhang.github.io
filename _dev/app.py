@@ -22,6 +22,10 @@ from staticpy import (
 from staticpy.context import Context
 from staticpy.source_handler import Page
 
+"""
+app = Staticpy()
+"""
+
 assets = Environment(app)
 scss = Bundle(
     "main.scss",
@@ -51,13 +55,11 @@ def get_assets():
 def home():
     """Renders the home page."""
     config = BASE_CONFIG["home"]
-    return render_template(config["template"])
 
     # Get post for Post showcase
     post_context = CONTEXTS["posts"]
     posts = []
     for url in config["posts"]:
-        print(url, post_context.page_content_map)
         page = post_context.get_page(url)
         posts.append(page)
 

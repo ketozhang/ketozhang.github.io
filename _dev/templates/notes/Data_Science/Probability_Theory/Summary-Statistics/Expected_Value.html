@@ -1,0 +1,113 @@
+<p>The <strong>expected value</strong> (aka <strong>expectation</strong>) is defined as,</p>
+<p><span class="math display">\[
+E[X] \equiv \sum_{x \in \Omega_X}xP(X=x)
+\]</span></p>
+<dl>
+<dt>Existence</dt>
+<dd><p>The expected value exists only if,</p>
+<p><span class="math display">\[
+E[\abs{X}] = \sum_{x \in \Omega_X}\abs{x} P(X=x) \lt \infty
+\]</span></p>
+</dd>
+<dt>Linearity of Expectation</dt>
+<dd><p>The linear transformation of <span class="math inline">\(X\)</span> has the expectation,</p>
+<p><span class="math display">\[
+E(aX + b) = aE(X) + b
+\]</span></p>
+</dd>
+</dl>
+<h2 id="method-of-indicators">Method of Indicators</h2>
+<p>If a random variable <span class="math inline">\(X\)</span> can be expressed as a sum of indicators then its expected value also follows by linearity.</p>
+<p><span class="math display">\[
+E[X] = \sum_{k=1}^N E[I_k]
+\]</span></p>
+<h2 id="function-rule">Function Rule</h2>
+<p>If the random variable at interest is a function of another random variable <span class="math inline">\(X = f(Y)\)</span> then the function rule applies as following to the range of <span class="math inline">\(Y\)</span></p>
+<p><span class="math display">\[
+E[X] = \sum_{y \in \Omega_Y} f(y) P(Y=y)
+\]</span></p>
+<dl>
+<dt>Moments of <span class="math inline">\(X\)</span> (Corollary)</dt>
+<dd><p>All powers of <span class="math inline">\(X\)</span> has the expected value called the <strong><span class="math inline">\(k\)</span>-th moment</strong> of <span class="math inline">\(X\)</span> is given by,</p>
+<p><span class="math display">\[
+E[X^k] = \sum_{x \in \Omega_X}X^k P(X=x)
+\]</span></p>
+</dd>
+</dl>
+<h2 id="tail-sum-formula">Tail Sum Formula</h2>
+<p>If the random variables <span class="math inline">\(X\)</span> is non-negative, then the expected value can be expressed as the sum of the right tail of the distribution,</p>
+<p><span class="math display">\[
+E[X] = \sum_{x \in \Omega_X} P(X &gt; x)
+\]</span></p>
+<h2 id="expectation-by-conditioning">Expectation by Conditioning</h2>
+<p>The expected value can be expressed in conditional probabilities. Consider the random variable <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, the expected value can be expressed using both random variable using the marginal probability</p>
+<p><span class="math display">\[
+E[X] = \sum_{x \in \Omega_X} x \left[\sum_{y \in \Omega_Y} P(X=x \mid Y=y)P(Y=y)\right]
+\]</span></p>
+<p>Motivated by this we define the <strong>conditional expectation</strong> as,</p>
+<p><span class="math display">\[
+\boxed{E[X \mid Y=y] = \sum_{x \in \Omega_X} x P(X=x \mid Y=y)}
+\]</span></p>
+<p>The conditional expectation is a random variable because the conditional expectaiton is a function of the random variable <span class="math inline">\(Y\)</span>.</p>
+<p>Most useful is the fact that the conditional expectation has the expected value,</p>
+<p>[ <span class="math display">\[\begin{align}
+    E \Big[E[X \mid Y] \Big] &amp;= \sum_{y \in \Omega_Y} E[X \mid Y=y] P(Y=y)\\
+    &amp;= \sum_{x \in \Omega_X}x \left[\sum_{x \in \Omega_Y} P(Y=y \mid X=x)P(Y=y)\right]\\
+\end{align}\]</span> ]</p>
+<p>[  ]</p>
+<h3 id="expectation-with-known-conditional-expectation">Expectation with Known Conditional Expectation</h3>
+<p>The expected value of <span class="math inline">\(X\)</span> conditioned on <span class="math inline">\(Y\)</span> can be determined if we know exactly the conditional expectation as some function of the range of <span class="math inline">\(g(y)\)</span>,</p>
+<p><span class="math display">\[
+\begin{gather*}
+E[X \mid Y=y] = g(y)\\
+\big\Downarrow\\
+E[X \mid Y] = g(Y)
+\end{gather*}
+\]</span></p>
+<p>Then the expectation of <span class="math inline">\(X\)</span> is,</p>
+<p><span class="math display">\[
+E[X] = E\big[g(Y)\big]
+\]</span></p>
+<p>This makes more sense if we do a few examples:</p>
+<dl>
+<dt>Conditional Expectation of Binomial</dt>
+<dd><p>Take for instance the conditional expectation is found to be the expectation of binomial,</p>
+<p><span class="math display">\[
+E[X \mid Y=y] = (n-y)p
+\]</span></p>
+<p>That is to say the events <span class="math inline">\(\set{X \mid Y = y}\)</span> are distributed as binomial of <span class="math inline">\(n&#39; = n-y\)</span> trials with <span class="math inline">\(p&#39;\)</span> chance of trial succeed.</p>
+<p>Then, it’s simple to determine <span class="math inline">\(E[Y]\)</span>, after replacing <span class="math inline">\(y\)</span> with <span class="math inline">\(Y\)</span></p>
+<p><span class="math display">\[
+\begin{align*}
+    E[E(X \mid Y)] &amp;= E \big[(n-Y)p\big]\\
+    &amp;= (n-E[Y])p
+\end{align*}
+\]</span></p>
+</dd>
+<dt>Conditional Expectation of Sums</dt>
+<dd><p>Let the sum of some event be <span class="math inline">\(S = X_1 + X_2 + \ldots X_N\)</span> for iid <span class="math inline">\(X_k\)</span> with mean <span class="math inline">\(\mu_X\)</span>. <span class="math inline">\(N\)</span> is the random variable independent from <span class="math inline">\(X\)</span> representing the count of sampling with <span class="math inline">\(\mu_N\)</span>.</p>
+<p>The expected value of the sum is more easily written first as the conditional expectation</p>
+<p><span class="math display">\[
+\begin{gather*}
+E(S \mid N=n) = n\mu_X\\
+E(S \mid N) = N\mu_X\\
+\end{gather*}
+\]</span></p>
+<p>The expectation of <span class="math inline">\(S\)</span> is then,</p>
+<p><span class="math display">\[
+E(S) = E[E(S \mid N)] = \mu_N \mu_X
+\]</span></p>
+</dd>
+</dl>
+<h2 id="expectation-of-random-vectors">Expectation of Random Vectors</h2>
+<p>For a random vector <span class="math inline">\(X\)</span> the expectation is applied element-wise,</p>
+<p><span class="math display">\[
+\mu = E(X) \equiv [E(X_1), E(X_2),\ldots, E(X_n)]^\top
+\]</span></p>
+<dl>
+<dt>Linear Transformation</dt>
+<dd>For a random vector <span class="math inline">\(Y = AX + b\)</span> where <span class="math inline">\(A\)</span> is a <span class="math inline">\(m \times n\)</span> matrix and <span class="math inline">\(b\)</span> is <span class="math inline">\(m \times 1\)</span> vector, <span class="math display">\[
+E(Y) = A\mu_X + b
+\]</span>
+</dd>
+</dl>
