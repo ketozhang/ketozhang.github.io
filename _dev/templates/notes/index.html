@@ -5,9 +5,10 @@
   <!-- page can either be a notebook or a note -->
   {% block header %}
   <h1 class="title mb-4"> {% block title %} Notebooks {% endblock %}</h1>
+  {% endblock %}
   <div class="form-group"><input id="dummy_search_notes" class="form-control" placeholder="Search""></input>
-  </div>
-  <div class=" modal fade" id="search_modal">
+    </div>
+    <div class=" modal fade" id="search_modal">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
@@ -15,13 +16,11 @@
               oninput="search_notes()"></div>
         </div>
         <div class="modal-body">
-          <ul id="search_results">
+          <div id="search_results" class="list-group"> </div>
         </div>
       </div>
     </div>
   </div>
-  {% endblock %}
-  <!-- <ul class="list-unstyled"> -->
   <div class="card-columns">
     {% for collection in page.subpages %}
     <div class="card">
