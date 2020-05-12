@@ -1,9 +1,8 @@
 @import "variables";
+$card-height: 170px;
 // Post Showcase
 
 #post-showcase {
-  font-family: $style-font-family;
-
   .card {
     margin-bottom: 2em;
     padding: 2em;
@@ -13,11 +12,13 @@
   }
 
   .card-img {
-    height: 170px;
+    height: $card-height;
     object-fit: cover;
   }
 
   .card-body {
+    height: $card-height;
+    overflow-y: hidden;
     padding: 0;
 
     .card-title {
@@ -40,6 +41,10 @@
 }
 
 #post {
+  #post-img {
+    margin-top: -0.5em;
+    margin-bottom: 0.5em;
+  }
   // On This Page
   .onthispage {
     position: sticky;

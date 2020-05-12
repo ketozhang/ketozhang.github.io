@@ -1,0 +1,25 @@
+lines.linewidth: 3
+patch.linewidth: 2.2
+hatch.linewidth: 2
+xtick.direction: in
+ytick.direction: in
+xtick.minor.visible: True
+ytick.minor.visible: True
+xtick.minor.size: 7
+ytick.minor.size: 7
+
+# FIGURE
+figure.figsize: 10, 6
+# figure.subplot.wspace : 0
+# figure.subplot.hspace : 0
+# figure.constrained_layout.use: True
+# figure.constrained_layout.h_pad: 0.04167 # 3pt
+# figure.constrained_layout.w_pad: 0
+# figure.constrained_layout.hspace: 0
+# figure.constrained_layout.wspace: 0
+
+# SUBPLOTS
+
+# LEGEND
+legend.fontsize: 22
+legend.frameon: False

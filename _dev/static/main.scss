@@ -72,9 +72,12 @@ h6 a:hover {
   margin-bottom: 1em;
 }
 
-.metadata {
-  margin-top: -2em;
-  margin-bottom: 2em;
+.title-header {
+  hr {
+    border: none;
+    height: 1px;
+    background-color: $base-font-color;
+  }
 }
 
 .card-title {
@@ -83,6 +86,7 @@ h6 a:hover {
 
 a.brand {
   font-size: 2.25em;
+  font-weight: 500;
   text-decoration: none;
   color: black;
 }
@@ -93,8 +97,15 @@ a.brand {
 
 hr.gradient {
   border: 0;
-  height: 1px;
-  background-image: linear-gradient(to right, rgba(253, 181, 21, 0), rgb(253, 181, 21), rgba(253, 181, 21, 0));
+  height: 2px;
+  background-image: linear-gradient(
+    to right,
+    rgba(253, 181, 21, 0),
+    rgba(253, 181, 21, 15),
+    rgb(253, 181, 21),
+    rgba(253, 181, 21, 15),
+    rgba(253, 181, 21, 0)
+  );
 }
 
 .social-link img:hover {
@@ -403,8 +414,6 @@ footer {
 /* Project Showcase */
 
 #project-showcase {
-  font-family: $style-font-family;
-
   .title {
     margin-bottom: 0.5em;
   }

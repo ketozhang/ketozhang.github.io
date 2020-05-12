@@ -10,14 +10,14 @@ build:
 
 .PHONY: static
 static:
-	make freeze && \
+	.venv/bin/python app.py build freeze
 	find ../ -maxdepth 1 \
 		! \( -name ".*" -o -name "_*" \) -exec rm -r {} \; && \
 	rsync -a --remove-source-files docs/ ../  && \
 	make clean
 
 freeze:
-	.venv/bin/python freeze.py
+	.venv/bin/python app.py freeze
 
 clean:
 	rm -rf docs/ && \

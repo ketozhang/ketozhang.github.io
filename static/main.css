@@ -7,6 +7,8 @@ body {
     font-family: "Quicksand", "Helvetica", "Arial", sans-serif;
     color: black;
     line-height: 2.25; }
+    body header {
+      margin-bottom: 2em; }
 
 code {
   font-family: "Source Code Pro", "Courier New", Courier, monospace; }
@@ -79,28 +81,28 @@ code {
   position: fixed;
   width: 200px; }
 
-#post-showcase {
-  font-family: "Quicksand", "Helvetica", "Arial", sans-serif; }
-  #post-showcase .card {
-    margin-bottom: 2em;
-    padding: 2em;
-    border: 1px solid rgba(0, 0, 0, 0.25);
-    border-radius: 0.25em;
-    box-shadow: inset 0px 0px 1px 0px #616161; }
-    #post-showcase .card-img {
+#post-showcase .card {
+  margin-bottom: 2em;
+  padding: 2em;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 0.25em;
+  box-shadow: inset 0px 0px 1px 0px #616161; }
+  #post-showcase .card-img {
+    height: 170px;
+    object-fit: cover; }
+    #post-showcase .card-body {
       height: 170px;
-      object-fit: cover; }
-      #post-showcase .card-body {
-        padding: 0; }
-        #post-showcase .card-body .card-title {
-          font-size: 1.59375rem;
-          line-height: 1.2; }
-          #post-showcase .card-body .card-title a {
-            color: #007bff; }
-            #post-showcase .card-body .card-title a:hover {
-              text-decoration: underline; }
-        #post-showcase .card-body .card-text, #post-showcase .card-body .card-subtitle {
-          font-size: 1.0625rem; }
+      overflow-y: hidden;
+      padding: 0; }
+      #post-showcase .card-body .card-title {
+        font-size: 1.59375rem;
+        line-height: 1.2; }
+        #post-showcase .card-body .card-title a {
+          color: #007bff; }
+          #post-showcase .card-body .card-title a:hover {
+            text-decoration: underline; }
+      #post-showcase .card-body .card-text, #post-showcase .card-body .card-subtitle {
+        font-size: 1.0625rem; }
 
 #post .onthispage {
   position: sticky;
@@ -138,216 +140,216 @@ html {
         line-height: 1;
         margin-bottom: 1em; }
 
-        .metadata {
-          margin-top: -2em;
-          margin-bottom: 2em; }
+        .title-header hr {
+          border: none;
+          height: 1px;
+          background-color: #595959; }
 
-          .card-title {
-            color: black; }
+.card-title {
+  color: black; }
 
-            a.brand {
-              font-size: 2.25em;
-              text-decoration: none;
-              color: black; }
+  a.brand {
+    font-size: 2.25em;
+    font-weight: 500;
+    text-decoration: none;
+    color: black; }
 
-              .navbar-light .navbar-nav .nav-link {
-                color: black; }
+    .navbar-light .navbar-nav .nav-link {
+      color: black; }
 
-                hr.gradient {
-                  border: 0;
-                  height: 1px;
-                  background-image: linear-gradient(to right, rgba(253, 181, 21, 0), #fdb515 50%, rgba(253,
-                                    181, 21, 0)); }
+      hr.gradient {
+        border: 0;
+        height: 2px;
+        background-image: linear-gradient(to right, rgba(253, 181, 21, 0), #fdb515 25%, #fdb515 50%,
+                #fdb515 75%, rgba(253, 181, 21, 0)); }
 
-                  .social-link img:hover {
-                    opacity: 0.7; }
+        .social-link img:hover {
+          opacity: 0.7; }
 
-                    blockquote {
-                      border-left: 0.25em solid #dfe2e5;
-                      color: #6a737d;
-                      padding: 0 1em;
-                      margin-bottom: 16px;
-                      margin-top: 0; }
+          blockquote {
+            border-left: 0.25em solid #dfe2e5;
+            color: #6a737d;
+            padding: 0 1em;
+            margin-bottom: 16px;
+            margin-top: 0; }
 
-                      footer {
-                        display: flex;
-                        position: absolute;
-                        bottom: 0;
-                        width: 100%;
-                        height: 60px;
-                        font-size: 1rem;
-                        align-items: center;
-                        border-top: 1px solid rgba(0, 0, 0, 0.1); }
+            footer {
+              display: flex;
+              position: absolute;
+              bottom: 0;
+              width: 100%;
+              height: 60px;
+              font-size: 1rem;
+              align-items: center;
+              border-top: 1px solid rgba(0, 0, 0, 0.1); }
 
-                        .bg-warning {
-                          background-color: #fdb515; }
+              .bg-warning {
+                background-color: #fdb515; }
 
-                          .btn-link {
-                            text-decoration: none;
-                            font-weight: inherit;
-                            color: inherit; }
+                .btn-link {
+                  text-decoration: none;
+                  font-weight: inherit;
+                  color: inherit; }
 
-                            .btn-link:hover {
-                              text-decoration: none; }
+                  .btn-link:hover {
+                    text-decoration: none; }
 
-                              .btn-warning {
-                                background-color: #fdb515; }
+                    .btn-warning {
+                      background-color: #fdb515; }
 
-                                .icon {
-                                  height: 1em; }
+                      .icon {
+                        height: 1em; }
 
-                                  .limit-2-lines {
+                        .limit-2-lines {
+                          text-overflow: ellipsis;
+                          word-wrap: break-word;
+                          max-height: 3em; }
+
+                          .limit-2-lines::before {
+                            content: "";
+                            width: 100%;
+                            height: 100%;
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            background: linear-gradient(transparent 150px, white); }
+
+                            .no-list-style {
+                              list-style-type: none; }
+
+                              .sticky-top {
+                                z-index: auto; }
+
+                                #post-img {
+                                  width: 100%;
+                                  height: 360px;
+                                  object-fit: cover; }
+
+                                  .sidenav {
                                     text-overflow: ellipsis;
-                                    word-wrap: break-word;
-                                    max-height: 3em; }
+                                    font-family: "Open Sans", "Roboto", san-serif; }
 
-                                    .limit-2-lines::before {
-                                      content: "";
-                                      width: 100%;
-                                      height: 100%;
-                                      position: absolute;
-                                      left: 0;
-                                      top: 0;
-                                      background: linear-gradient(transparent 150px, white); }
+                                    .sidenav a {
+                                      color: #616161; }
 
-                                      .no-list-style {
-                                        list-style-type: none; }
+                                      .sidenav-body {
+                                        font-size: 1rem;
+                                        line-height: 1.15rem; }
 
-                                        .sticky-top {
-                                          z-index: auto; }
+                                        .sidenav-header {
+                                          padding-top: 1em;
+                                          padding-bottom: 0.5em; }
 
-                                          #post-img {
-                                            width: 100%;
-                                            height: 360px;
-                                            object-fit: cover; }
+                                          .onthispage {
+                                            position: sticky;
+                                            top: 0;
+                                            height: 20vh;
+                                            padding-right: 1em; }
 
-                                            .sidenav {
-                                              text-overflow: ellipsis;
-                                              font-family: "Open Sans", "Roboto", san-serif; }
+                                            .onthispage .sidenav-body, .onthispage .sidenav {
+                                              height: inherit;
+                                              direction: ltr; }
 
-                                              .sidenav a {
-                                                color: #616161; }
+                                              .onthispage .sidenav-body {
+                                                padding-right: 0px;
+                                                padding-top: 0.5em; }
 
-                                                .sidenav-body {
-                                                  font-size: 1rem;
-                                                  line-height: 1.15rem; }
+                                                .onthispage .sidenav-body ul {
+                                                  padding: 0;
+                                                  padding-left: 0.5em; }
 
-                                                  .sidenav-header {
-                                                    padding-top: 1em;
-                                                    padding-bottom: 0.5em; }
+                                                  .onthispage .onthispage-collapse {
+                                                    display: none; }
 
-                                                    .onthispage {
-                                                      position: sticky;
-                                                      top: 0;
-                                                      height: 20vh;
-                                                      padding-right: 1em; }
+                                                    .onthispage:hover .onthispage-collapse {
+                                                      display: block; }
 
-                                                      .onthispage .sidenav-body, .onthispage .sidenav {
-                                                        height: inherit;
-                                                        direction: ltr; }
+                                                      .onthispage > ul {
+                                                        padding-left: 0; }
 
-                                                        .onthispage .sidenav-body {
-                                                          padding-right: 0px;
-                                                          padding-top: 0.5em; }
+                                                        .onthispage ul {
+                                                          padding-left: 1em; }
 
-                                                          .onthispage .sidenav-body ul {
-                                                            padding: 0;
-                                                            padding-left: 0.5em; }
+                                                          .onthispage-list {
+                                                            padding-bottom: 1em !important; }
 
-                                                            .onthispage .onthispage-collapse {
-                                                              display: none; }
+                                                            .onthispage-list li {
+                                                              padding-top: 1em; }
 
-                                                              .onthispage:hover .onthispage-collapse {
-                                                                display: block; }
+                                                              .onthispage-list li:first-child {
+                                                                padding-top: 0em; }
 
-                                                                .onthispage > ul {
-                                                                  padding-left: 0; }
+                                                                .markdown-content {
+                                                                  font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
+                                                                  line-height: 1.6em; }
 
-                                                                  .onthispage ul {
-                                                                    padding-left: 1em; }
+                                                                  .markdown-content h1, .markdown-content h2, .markdown-content h3,
+                                                                  .markdown-content h4, .markdown-content h5, .markdown-content h6 {
+                                                                    margin-top: 1em;
+                                                                    margin-bottom: 0.5em;
+                                                                    font-family: "Quicksand", "Open Sans", "Helvetica", "Arial", sans-serif; }
 
-                                                                    .onthispage-list {
-                                                                      padding-bottom: 1em !important; }
+                                                                    .markdown-content h1 {
+                                                                      font-size: 2.5rem; }
 
-                                                                      .onthispage-list li {
-                                                                        padding-top: 1em; }
+                                                                      .markdown-content h2 {
+                                                                        font-size: 2rem; }
 
-                                                                        .onthispage-list li:first-child {
-                                                                          padding-top: 0em; }
+                                                                        .markdown-content h3 {
+                                                                          font-size: 1.75rem; }
 
-                                                                          .markdown-content {
-                                                                            font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
-                                                                            line-height: 1.6em; }
+                                                                          .markdown-content h4, .markdown-content h5, .markdown-content h6 {
+                                                                            font-size: 1rem;
+                                                                            font-weight: bold; }
 
-                                                                            .markdown-content h1, .markdown-content h2, .markdown-content h3,
-                                                                            .markdown-content h4, .markdown-content h5, .markdown-content h6 {
-                                                                              margin-top: 1em;
-                                                                              margin-bottom: 0.5em;
-                                                                              font-family: "Quicksand", "Open Sans", "Helvetica", "Arial", sans-serif; }
+                                                                            .markdown-content h2:first-child, .markdown-content h3:first-child,
+                                                                            .markdown-content h4:first-child {
+                                                                              margin-top: 0; }
 
-                                                                              .markdown-content h1 {
-                                                                                font-size: 2.5rem; }
+                                                                              .markdown-content table .markdown-content dl {
+                                                                                margin-bottom: 16px;
+                                                                                margin-top: 0; }
 
-                                                                                .markdown-content h2 {
-                                                                                  font-size: 2rem; }
+                                                                                .markdown-content th {
+                                                                                  border: 1px solid #dfe2e5;
+                                                                                  border-bottom: 2px solid #dfe2e5;
+                                                                                  padding: 6px 13px; }
 
-                                                                                  .markdown-content h3 {
-                                                                                    font-size: 1.75rem; }
+                                                                                  .markdown-content td {
+                                                                                    border: 1px solid #dfe2e5;
+                                                                                    padding: 6px 13px; }
 
-                                                                                    .markdown-content h4, .markdown-content h5, .markdown-content h6 {
-                                                                                      font-size: 1rem;
-                                                                                      font-weight: bold; }
+                                                                                    .markdown-content table tr.even {
+                                                                                      background-color: #f6f8fa; }
 
-                                                                                      .markdown-content h2:first-child, .markdown-content h3:first-child,
-                                                                                      .markdown-content h4:first-child {
-                                                                                        margin-top: 0; }
+                                                                                      .markdown-content dd {
+                                                                                        padding-left: 16px; }
 
-                                                                                        .markdown-content table .markdown-content dl {
-                                                                                          margin-bottom: 16px;
-                                                                                          margin-top: 0; }
+                                                                                        .markdown-content dt {
+                                                                                          font-size: 1em;
+                                                                                          font-style: italic;
+                                                                                          font-weight: 600;
+                                                                                          margin-top: 16px; }
 
-                                                                                          .markdown-content th {
-                                                                                            border: 1px solid #dfe2e5;
-                                                                                            border-bottom: 2px solid #dfe2e5;
-                                                                                            padding: 6px 13px; }
+                                                                                          .markdown-content .sourceCode {
+                                                                                            font-size: 0.95em;
+                                                                                            margin-top: 1em;
+                                                                                            margin-bottom: 1.5em; }
 
-                                                                                            .markdown-content td {
-                                                                                              border: 1px solid #dfe2e5;
-                                                                                              padding: 6px 13px; }
+                                                                                            #note-body {
+                                                                                              min-height: 80vh; }
 
-                                                                                              .markdown-content table tr.even {
-                                                                                                background-color: #f6f8fa; }
+                                                                                              #intro {
+                                                                                                border: 1px solid rgba(0, 0, 0, 0.25);
+                                                                                                border-radius: 0.25em;
+                                                                                                box-shadow: inset 0px 0px 1px 0px #616161;
+                                                                                                font-family: "Quicksand", "Helvetica", "Arial", sans-serif; }
+                                                                                                #intro img {
+                                                                                                  margin: auto;
+                                                                                                  display: block; }
 
-                                                                                                .markdown-content dd {
-                                                                                                  padding-left: 16px; }
-
-                                                                                                  .markdown-content dt {
-                                                                                                    font-size: 1em;
-                                                                                                    font-style: italic;
-                                                                                                    font-weight: 600;
-                                                                                                    margin-top: 16px; }
-
-                                                                                                    .markdown-content .sourceCode {
-                                                                                                      font-size: 0.95em;
-                                                                                                      margin-top: 1em;
-                                                                                                      margin-bottom: 1.5em; }
-
-                                                                                                      #note-body {
-                                                                                                        min-height: 80vh; }
-
-                                                                                                        #intro {
-                                                                                                          border: 1px solid rgba(0, 0, 0, 0.25);
-                                                                                                          border-radius: 0.25em;
-                                                                                                          box-shadow: inset 0px 0px 1px 0px #616161;
-                                                                                                          font-family: "Quicksand", "Helvetica", "Arial", sans-serif; }
-                                                                                                          #intro img {
-                                                                                                            margin: auto;
-                                                                                                            display: block; }
-
-#project-showcase {
-  font-family: "Quicksand", "Helvetica", "Arial", sans-serif; }
-  #project-showcase .title {
-    margin-bottom: 0.5em; }
+#project-showcase .title {
+  margin-bottom: 0.5em; }
 
 
 
@@ -360,6 +362,8 @@ body {
     font-family: "Quicksand", "Helvetica", "Arial", sans-serif;
     color: black;
     line-height: 2.25; }
+    body header {
+      margin-bottom: 2em; }
 
 code {
   font-family: "Source Code Pro", "Courier New", Courier, monospace; }
@@ -399,32 +403,39 @@ code {
   position: fixed;
   width: 200px; }
 
-#post-showcase {
-  font-family: "Quicksand", "Helvetica", "Arial", sans-serif; }
-  #post-showcase .card {
-    margin-bottom: 2em;
-    padding: 2em;
-    border: 1px solid rgba(0, 0, 0, 0.25);
-    border-radius: 0.25em;
-    box-shadow: inset 0px 0px 1px 0px #616161; }
-    #post-showcase .card-img {
+#post-showcase .card {
+  margin-bottom: 2em;
+  padding: 2em;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 0.25em;
+  box-shadow: inset 0px 0px 1px 0px #616161; }
+  #post-showcase .card-img {
+    height: 170px;
+    object-fit: cover; }
+    #post-showcase .card-body {
       height: 170px;
-      object-fit: cover; }
-      #post-showcase .card-body {
-        padding: 0; }
-        #post-showcase .card-body .card-title {
-          font-size: 1.59375rem;
-          line-height: 1.2; }
-          #post-showcase .card-body .card-title a {
-            color: #007bff; }
-            #post-showcase .card-body .card-title a:hover {
-              text-decoration: underline; }
-        #post-showcase .card-body .card-text, #post-showcase .card-body .card-subtitle {
-          font-size: 1.0625rem; }
+      overflow-y: hidden;
+      padding: 0; }
+      #post-showcase .card-body .card-title {
+        font-size: 1.59375rem;
+        line-height: 1.2; }
+        #post-showcase .card-body .card-title a {
+          color: #007bff; }
+          #post-showcase .card-body .card-title a:hover {
+            text-decoration: underline; }
+      #post-showcase .card-body .card-text, #post-showcase .card-body .card-subtitle {
+        font-size: 1.0625rem; }
 
-#post .onthispage {
-  position: sticky;
-  width: unset; }
+#post #post-img {
+  margin-top: -0.5em;
+  margin-bottom: 0.5em; }
+  #post .onthispage {
+    position: sticky;
+    width: unset; }
+
+.markdown-content img {
+  width: 100%;
+  object-fit: contain; }
 
 .Proof, .Example {
   border: 1px solid black;

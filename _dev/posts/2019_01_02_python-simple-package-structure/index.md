@@ -1,8 +1,8 @@
 ---
 title: Python Simple Package Structure
 description: Let me show you a simple workflow for structuring your package.
-image: /posts/python-simple-package-structure.png
-# toc: true
+image: /posts/2019_01_02_python-simple-package-structure/background.png
+last_updated: 2020-04-01
 ---
 
 ## Motivation

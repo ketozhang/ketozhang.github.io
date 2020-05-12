@@ -7,22 +7,22 @@
     <div class="col-xl-9 col-lg-8 col-12 h-100">
       <div class="title-header">
         <h1 class="title">{{page['title']}}</h1>
-        <div class="metadata">
-          <p class="m-0">By {{author}} <span class="mx-1 align-middle" style="font-size: 30px">&#183</span>
-            Last
-            updated
-            <time datetime="{{page['last_updated']}}"></time></p>
-        </div>
-        {% if page.description %}
-        <p class="description">{{page['description']}}</p>
-        {% endif %}
+        <img id="post-img" class="mx-auto d-block" src={{ url_for(page.get('image', '/static/images/default.jpg')) }}>
 
-        {% if page.image %}
-        <img id="post-img" class="mx-auto d-block" src={{url_for(page['image'])}}>
-        {% endif %}
+        <div class="metadata">
+          <p class="m-0">
+            By: {{author}}
+            <span class="mx-2">&#9679;</span>
+            Last Updated:
+            <time datetime="{{ page.last_updated }}"></time>
+          </p>
+        </div>
         <hr>
       </div>
 
+      {% if page.description %}
+      {{page.description}}
+      {% endif %}
       <div class="markdown-content">
         {% if page['has_content'] %}
         {{ include_raw(page['content_path']) }}
@@ -41,4 +41,5 @@
     <button type=" button" class="col-6 col-align-self-center btn btn-block btn-outline-dark show-comments">Show
       Comments</button>
   </div>
-  {% endblock %}
+</div>
+{% endblock %}

@@ -6,14 +6,15 @@
   {% block header %}
   <h1 class="title mb-4"> {% block title %} Notebooks {% endblock %}</h1>
   {% endblock %}
-  <div class="form-group"><input id="dummy_search_notes" class="form-control" placeholder="Search""></input>
-    </div>
-    <div class=" modal fade" id="search_modal">
+  <div class="form-group"><input id="dummy_search_notes" class="form-control" placeholder="Search"></input>
+  </div>
+  <div class=" modal fade" id="search_modal">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-          <div class="w-100"><input id="search_notes" class="form-control" type="text" placeholder="Search"
-              oninput="search_notes()"></div>
+          <div class="w-100">
+            <input id="search_notes" class="form-control" type="text" placeholder="Search" oninput="search_notes()">
+          </div>
         </div>
         <div class="modal-body">
           <div id="search_results" class="list-group"> </div>
@@ -21,6 +22,7 @@
       </div>
     </div>
   </div>
+
   <div class="card-columns">
     {% for collection in page.subpages %}
     <div class="card">

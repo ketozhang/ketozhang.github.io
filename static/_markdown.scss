@@ -1,3 +1,10 @@
+.markdown-content {
+  img {
+    width: 100%;
+    object-fit: contain;
+  }
+}
+
 .Proof,
 .Example {
   border: 1px solid black;

@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145024207-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-145024207-1');
+  </script>
+  <meta charset="UTF-8">
+  <title>
+    
+    Keto | Matplotlib Cookbook
+    
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap time -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- <link href="https://ketozhang.github.io/static/base.css" rel="stylesheet"> -->
+  <link href="/static/main.css?3ea8c582" rel="stylesheet"">
+  <link href=" https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link href=" https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  <link href="https://ketozhang.github.io/static/prism.css" rel="stylesheet">
+  <link rel="shortcut icon" href="https://ketozhang.github.io/static/favicon.ico">
+
+  <!-- LaTeX Stylesheet -->
+  
+  <div class="d-none">
+    $$
+    \newcommand{d}{\mathrm d}
+    \newcommand{avg}[1]{\expval{#1}}
+        \renewcommand{vec}[1]{\vectorbold{#1}}
+        $$
+    </div>
+    
+</head>
+
+<body>
+    
+<header id="pagenav" class="flex-md-row flex-column">
+  <div class="pt-5 text-center"><a class="brand" href="https://ketozhang.github.io/">Keto</a></div>
+  <nav class="navbar navbar-expand navbar-light">
+    <div class="d-flex mx-auto">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link active" href="https://ketozhang.github.io/">Home</a>
+        </li>
+        
+        <li class="nav-item"><a class="nav-link" href="https://ketozhang.github.io/notes/">Notes</a></li>
+        
+        <li class="nav-item"><a class="nav-link" href="https://ketozhang.github.io/posts/">Posts</a></li>
+        
+        <!-- <li class="nav-item"><a class="nav-link" href="https://ketozhang.github.io/posts">Posts</a></li> -->
+        <!-- <li class="nav-item"><a class="nav-link" href="https://ketozhang.github.io/notes">Notes</a></li> -->
+        <!-- <li class="nav-item"><a class="nav-link" href="https://ketozhang.github.io/docs">Documentation</a></li> -->
+      </ul>
+    </div>
+  </nav>
+  <div id="pagenav-socials">
+    <ul class="nav justify-content-center">
+      
+      <li class="nav-item mx-2">
+        <a class="social-link" href="https://ketozhang.github.io/CV" title="CV" target="_blank">
+          <img class="header-icon" src="/static/images/CV-32.png">
+        </a>
+      </li>
+      
+      <li class="nav-item mx-2">
+        <a class="social-link" href="https://www.linkedin.com/in/ketozhang/" title="LinkedIn" target="_blank">
+          <img class="header-icon" src="/static/images/icons8-linkedin.svg">
+        </a>
+      </li>
+      
+      <li class="nav-item mx-2">
+        <a class="social-link" href="mailto:keto.zhang@gmail.com" title="keto.zhang@gmail.com" target="_blank">
+          <img class="header-icon" src="/static/images/icons8-email-30.png">
+        </a>
+      </li>
+      
+      <li class="nav-item mx-2">
+        <a class="social-link" href="https://www.github.com/ketozhang" title="GitHub" target="_blank">
+          <img class="header-icon" src="/static/images/icons8-github.svg">
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+  <hr class="gradient">
+</header>
+<div class="container" id="post">
+  <div class="row">
+    <!-- Content -->
+    <div class="col-xl-9 col-lg-8 col-12 h-100">
+      <div class="title-header">
+        <h1 class="title">Matplotlib Cookbook</h1>
+        <img id="post-img" class="mx-auto d-block" src=https://ketozhang.github.io/posts/2020_05_14_matplotlib_cookbook/line_plot.png>
+
+        <div class="metadata">
+          <p class="m-0">
+            By: Keto
+            <span class="mx-2">&#9679;</span>
+            Last Updated:
+            <time datetime="2020-05-12 13:12:34.061408"></time>
+          </p>
+        </div>
+        <hr>
+      </div>
+
+      
+      A matplotlib cookbook stylized for publication in astronomy journals.
+      
+      <div class="markdown-content">
+        
+        <h2 id="line-plots">Line Plots</h2>
+<h3 id="single">Single</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>xdata <span class="op">=</span> np.arange(<span class="dv">100</span>)</span>
+<span id="cb1-2"><a href="#cb1-2"></a>ydata <span class="op">=</span> stats.norm.rvs(loc<span class="op">=</span><span class="dv">0</span>, size<span class="op">=</span><span class="dv">100</span>)</span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a>plt.plot(xdata, ydata)</span>
+<span id="cb1-5"><a href="#cb1-5"></a></span>
+<span id="cb1-6"><a href="#cb1-6"></a>plt.xlabel(<span class="st">&#39;x-value&#39;</span>)</span>
+<span id="cb1-7"><a href="#cb1-7"></a>plt.ylabel(<span class="st">&#39;y-value&#39;</span>)</span></code></pre></div>
+<p><img src="./line_plot.png" /></p>
+<h3 id="multiple">Multiple</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>xdata <span class="op">=</span> np.arange(<span class="dv">100</span>)</span>
+<span id="cb2-2"><a href="#cb2-2"></a>ydata_1 <span class="op">=</span> stats.norm.rvs(loc<span class="op">=</span><span class="dv">0</span>, size<span class="op">=</span><span class="dv">100</span>)</span>
+<span id="cb2-3"><a href="#cb2-3"></a>ydata_2 <span class="op">=</span> stats.norm.rvs(loc<span class="op">=</span><span class="dv">3</span>, size<span class="op">=</span><span class="dv">100</span>)</span>
+<span id="cb2-4"><a href="#cb2-4"></a></span>
+<span id="cb2-5"><a href="#cb2-5"></a>plt.plot(xdata, ydata_1, label<span class="op">=</span><span class="st">&#39;y1&#39;</span>)</span>
+<span id="cb2-6"><a href="#cb2-6"></a>plt.plot(xdata, ydata_2, label<span class="op">=</span><span class="st">&#39;y2&#39;</span>)</span>
+<span id="cb2-7"><a href="#cb2-7"></a></span>
+<span id="cb2-8"><a href="#cb2-8"></a>plt.yticks(va<span class="op">=</span><span class="st">&#39;top&#39;</span>)</span>
+<span id="cb2-9"><a href="#cb2-9"></a>plt.xlabel(<span class="st">&#39;x-value&#39;</span>)</span>
+<span id="cb2-10"><a href="#cb2-10"></a>plt.ylabel(<span class="st">&#39;y-value&#39;</span>)</span>
+<span id="cb2-11"><a href="#cb2-11"></a>plt.legend(frameon<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
+<p><img src="./line_plot_multiple.png" /></p>
+<h2 id="subplots">Subplots</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode py"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>xdata <span class="op">=</span> np.arange(<span class="dv">100</span>)</span>
+<span id="cb3-2"><a href="#cb3-2"></a>ydata_1 <span class="op">=</span> stats.norm.rvs(loc<span class="op">=</span><span class="dv">0</span>, size<span class="op">=</span>(<span class="dv">4</span>, <span class="dv">100</span>))</span>
+<span id="cb3-3"><a href="#cb3-3"></a>ydata_2 <span class="op">=</span> stats.norm.rvs(loc<span class="op">=</span><span class="dv">3</span>, size<span class="op">=</span>(<span class="dv">4</span>, <span class="dv">100</span>))</span>
+<span id="cb3-4"><a href="#cb3-4"></a></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="co"># Inner Element</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a>nrows, ncols <span class="op">=</span> <span class="dv">2</span>, <span class="dv">2</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a>fig, axs <span class="op">=</span> plt.subplots(nrows, ncols, figsize<span class="op">=</span>(<span class="dv">5</span><span class="op">*</span><span class="fl">1.2</span><span class="op">*</span>ncols, <span class="dv">3</span><span class="op">*</span><span class="fl">1.2</span><span class="op">*</span>nrows), sharex<span class="op">=</span><span class="va">True</span>, sharey<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb3-8"><a href="#cb3-8"></a></span>
+<span id="cb3-9"><a href="#cb3-9"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(nrows<span class="op">*</span>ncols):</span>
+<span id="cb3-10"><a href="#cb3-10"></a>    ax <span class="op">=</span> axs[i<span class="op">//</span>ncols, i<span class="op">%</span>ncols]</span>
+<span id="cb3-11"><a href="#cb3-11"></a>    ax.plot(xdata, ydata_1[i], label<span class="op">=</span><span class="ss">f&quot;y1&quot;</span>)</span>
+<span id="cb3-12"><a href="#cb3-12"></a>    ax.plot(xdata, ydata_2[i], label<span class="op">=</span><span class="ss">f&quot;y2&quot;</span>)</span>
+<span id="cb3-13"><a href="#cb3-13"></a></span>
+<span id="cb3-14"><a href="#cb3-14"></a><span class="co"># Common legend</span></span>
+<span id="cb3-15"><a href="#cb3-15"></a>handles, labels <span class="op">=</span> ax.get_legend_handles_labels()</span>
+<span id="cb3-16"><a href="#cb3-16"></a>fig.legend(handles, labels, frameon<span class="op">=</span><span class="va">False</span>, loc<span class="op">=</span><span class="st">&#39;upper right&#39;</span>, ncol<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb3-17"><a href="#cb3-17"></a></span>
+<span id="cb3-18"><a href="#cb3-18"></a>plt.tight_layout(pad<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb3-19"><a href="#cb3-19"></a>plt.subplots_adjust(top<span class="op">=</span><span class="fl">0.90</span>, right<span class="op">=</span><span class="dv">1</span>, wspace<span class="op">=</span><span class="dv">0</span>, hspace<span class="op">=</span><span class="dv">0</span>)</span></code></pre></div>
+<p><img src="./line_plot_subplots.png" /></p>
+
+        
+      </div>
+    </div>
+    <!-- On This Page -->
+    <div class="col-xl-3 col-lg-4 d-lg-block d-none">
+      <div class="onthispage sidenav small">
+    <div class="sidenav-header">
+        <strong>&#9776; On This Page</strong>
+    </div>
+    <div class="onthispage-collapse">
+        <div class="sidenav-body bg-light">
+            <ul class="onthispage-list no-list-style"></ul>
+        </div>
+    </div>
+</div>
+    </div>
+
+
+  </div>
+  <!-- Disqus Comments -->
+  <div id="disqus_thread" class="row justify-content-center">
+    <button type=" button" class="col-6 col-align-self-center btn btn-block btn-outline-dark show-comments">Show
+      Comments</button>
+  </div>
+</div>
+
+    <footer class="py-2 bg-white">
+    <div class="container">
+        <p class="text-right m-0"> Generated by <a href="https://github.com/ketozhang/StaticPy">StaticPy</a> |
+            Designed
+            by <a href="https://github.com/ketozhang">Keto Z.</a>
+        </p>
+    </div>
+</footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+
+    <script src="https://ketozhang.github.io/static/js/datetime.js"></script>
+    <script src="https://ketozhang.github.io/static/js/disqus.js"></script>
+    <script src="https://ketozhang.github.io/static/js/codeHighlight.js"></script>
+    <script src="https://ketozhang.github.io/static/js/prism.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>
+    <script src="https://ketozhang.github.io/static/js/onthispage.js"></script>
+    <script src="https://ketozhang.github.io/static/js/markdown.js"></script>
+
+    <!-- MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://ketozhang.github.io/static/js/mathjax_config.js" defer></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+
+    <!-- Bootstrap JS -->
+    <!-- TODO: trim JS if not needed -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
+    <!-- Custom Global scripts -->
+    <script>
+      anchors.add();
+      $(document).ready(function () {
+        Prism.highlightAll();
+      })
+    </script>
+
+    <!-- Local scripts -->
+    
+    
+</body>
+
+</html>

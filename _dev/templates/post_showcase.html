@@ -1,19 +1,17 @@
 <div id="post-showcase">
-  {% for post in page.subpages %}
+  {% for post in posts %}
   <div class="card">
     <div class="row">
       <div class="card-img col-md-5 col-lg-4">
         <a href="{{ url_for(post.url )}}">
-          {% if post['image'] %}
-          <img class="card-img" src={{ url_for(post['image']) }}>
-          {% endif %}
+          <img class="card-img" src={{ url_for(post.get('image', '/static/images/default.jpg')) }}>
         </a>
       </div>
       <div class="col-md-7 col-lg-8">
         <div class="card-body">
-          <h5 class="card-title"><a href="{{ url_for(post.url )}}">{{post['title']}}</a></h5>
-          <p class="card-subtitle"><time datetime="{{post['last_updated']}}"></time></p>
-          <p class="card-text">{{post['description']}}</p>
+          <h5 class="card-title"><a href="{{ url_for(post.url )}}">{{post.title}}</a></h5>
+          <p class="card-subtitle"><time datetime="{{ post.last_updated }}"></time></p>
+          <p class="card-text">{{post.get('description', '')}}</p>
         </div>
       </div>
     </div>
