@@ -71,6 +71,16 @@ def home():
     return render_template(config["template"], **context)
 
 
+@app.route("/sitemap.xml")
+def sitemap():
+    from flask import make_response
+
+    template = render_template("sitemap.xml", contexts=CONTEXTS.values())
+    response = make_response(template)
+    response.headers["Content-Type"] = "application/xml"
+    return response
+
+
 if __name__ == "__main__":
     args = sys.argv[1:]
     times = []
