@@ -44,7 +44,7 @@ $$
 
 The z-score or discrepancy is the number of SDs that the difference under the null hypothesis (i.e., $\Delta = 0$ the two experiment fully agrees) is away from the observed distribution of $\Delta$.
 
-> *A little caveat, we only care about the absolute value of the z-score which ignores how we defined $\Delta$ (e.g., should it be experiment A minus B or B minus A).
+> *We only care about the absolute value of the z-score as the negative signs do not matter.
 
 <!-- ### Misconception: Discrepancy is Relative
 A common misconception that authors contributed to is not directly stating the reference hypothesis.

@@ -27,24 +27,25 @@ from staticpy.source_handler import Page
 app = Staticpy()
 """
 
-assets = Environment(app)
-scss = Bundle(
-    "main.scss",
-    "_variables.scss",
-    "_base.scss",
-    "_header.scss",
-    "_note.scss",
-    "_post.scss",
-    "_markdown.scss",
-    filters="pyscss",
-    output="main.css",
-)
-assets.register("scss_all", scss)
+# assets = Environment(app)
+# app.config["ASSETS_DEBUG"] = True
+# assets.url = app.static_url_path
+# scss = Bundle(
+#     "_variables.scss",
+#     "_base.scss",
+#     "_header.scss",
+#     "_note.scss",
+#     "_post.scss",
+#     "_markdown.scss",
+#     "main.scss",
+#     filters="pyscss",
+#     output="main.css",
+# )
 
 
-@app.context_processor
-def get_assets():
-    return {"assets_url": assets["scss_all"].urls()[0]}
+# @app.context_processor
+# def get_assets():
+#     return {"assets_url": assets["scss_all"].urls()[0]}
 
 
 ########################

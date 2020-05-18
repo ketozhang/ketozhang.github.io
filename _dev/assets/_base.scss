@@ -3,7 +3,7 @@
 // Body
 body {
   font-family: $base-font-family;
-  font-size: 1em;
+  font-size: $base-font-size;
   padding-bottom: 80px;
   color: $base-font-color;
   h1,

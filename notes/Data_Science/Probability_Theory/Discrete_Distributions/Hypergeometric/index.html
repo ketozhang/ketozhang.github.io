@@ -23,7 +23,8 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <!-- <link href="https://ketozhang.github.io/static/base.css" rel="stylesheet"> -->
-  <link href="/static/main.css?3ea8c582" rel="stylesheet"">
+  
+  <link rel="stylesheet" href="https://ketozhang.github.io/static/main.css">
   <link href=" https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
   <link href=" https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
@@ -91,14 +92,14 @@ P(X=g; n, G, N) = \frac{{G \choose G}{N-G \choose n-g}}{N \choose n}
 </dd>
 </dl>
 <h2 id="sums-of-dependent-bernoulli-trials">Sums of Dependent Bernoulli Trials</h2>
-<p>The hypergeometric is the sum of <span class="math inline">\(n\)</span> <strong>dependent</strong> identical <span class="math inline">\(\text{Bernoulli}(G/N)\)</span> trials,</p>
+<p>The hypergeometric is the sum of <span class="math inline">\(n\)</span> non-identical <span class="math inline">\(\text{Bernoulli}(G/N)\)</span> trials,</p>
 <p><span class="math display">\[
 X = \sum I_k
 \]</span></p>
 <p><span class="math display">\[
-I_k \sim \text{Bernoulli}(G/N)\\
+I_k \sim \text{Bernoulli}(G_k/N_k)\\
 \]</span></p>
-<p>The dependency comes from the fact that the hypergeometric process samples with replacement. On the other hand, its cousin is the binomial process that samples without replacement hence the independency.</p>
+<p>The dependency comes from the fact that the hypergeometric process samples without replacement. On the other hand, its cousin is the binomial process that samples with replacement hence the independency.</p>
 
       </div>
       <!-- Disqus Comments -->

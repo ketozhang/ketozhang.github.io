@@ -1,6 +1,19 @@
 @import "variables";
 $card-height: 170px;
-// Post Showcase
+#post {
+  #post-img {
+    object-fit: contain;
+    margin-top: -0.5em;
+    margin-bottom: 1em;
+    height: 360px;
+    width: 100%;
+  }
+  // On This Page
+  .onthispage {
+    position: sticky;
+    width: unset;
+  }
+}
 
 #post-showcase {
   .card {
@@ -37,17 +50,5 @@ $card-height: 170px;
     .card-subtitle {
       font-size: $base-font-size;
     }
-  }
-}
-
-#post {
-  #post-img {
-    margin-top: -0.5em;
-    margin-bottom: 0.5em;
-  }
-  // On This Page
-  .onthispage {
-    position: sticky;
-    width: unset;
   }
 }

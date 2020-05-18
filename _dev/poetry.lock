@@ -71,6 +71,18 @@ webassets = ">=2.0"
 
 [[package]]
 category = "main"
+description = "Adds support for scss files to Flask applications"
+name = "flask-scss"
+optional = false
+python-versions = "*"
+version = "0.5"
+
+[package.dependencies]
+Flask = "*"
+pyScss = "*"
+
+[[package]]
+category = "main"
 description = "Freezes a Flask application into a set of static files."
 name = "frozen-flask"
 optional = false
@@ -332,7 +344,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "9cec9e0a7e62380747e60ad761b6a366959657f6515281b5561a36520271187c"
+content-hash = "955b8daf7bee66648ed94de5c1e762b8d7bf158afae0c41ea174125e3d141ac9"
 python-versions = "^3.7"
 
 [metadata.files]
@@ -359,6 +371,10 @@ flask = [
 flask-assets = [
     {file = "Flask-Assets-2.0.tar.gz", hash = "sha256:1dfdea35e40744d46aada72831f7613d67bf38e8b20ccaaa9e91fdc37aa3b8c2"},
     {file = "Flask_Assets-2.0-py3-none-any.whl", hash = "sha256:2845bd3b479be9db8556801e7ebc2746ce2d9edb4e7b64a1c786ecbfc1e5867b"},
+]
+flask-scss = [
+    {file = "Flask-Scss-0.5.tar.gz", hash = "sha256:21e28c3b03fd5905c909085578a4a3c0b250ddb061214eb3775037fd78f74782"},
+    {file = "Flask_Scss-0.5-py3-none-any.whl", hash = "sha256:6155657a6b48630585a00666b69d7f443b4432ab9e4fe87f27e1583abe047125"},
 ]
 frozen-flask = [
     {file = "Frozen-Flask-0.15.tar.gz", hash = "sha256:83858d6ed8b9d3fa7fc9523e415e65fb86b99352798d7695f63cffbd59a56269"},

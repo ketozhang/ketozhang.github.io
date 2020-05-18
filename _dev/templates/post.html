@@ -4,15 +4,16 @@
 <div class="container" id="post">
   <div class="row">
     <!-- Content -->
-    <div class="col-xl-9 col-lg-8 col-12 h-100">
+    <div class="col h-100">
       <div class="title-header">
         <h1 class="title">{{page['title']}}</h1>
-        <img id="post-img" class="mx-auto d-block" src={{ url_for(page.get('image', '/static/images/default.jpg')) }}>
+        <img id="post-img" class="mx-auto d-block img-fluid"
+          src={{ url_for(page.get('image', '/static/images/default.jpg')) }}>
 
         <div class="metadata">
           <p class="m-0">
             By: {{author}}
-            <span class="mx-2">&#9679;</span>
+            <span class="mx-1">&bull;</span>
             Last Updated:
             <time datetime="{{ page.last_updated }}"></time>
           </p>
@@ -28,10 +29,6 @@
         {{ include_raw(page['content_path']) }}
         {% endif %}
       </div>
-    </div>
-    <!-- On This Page -->
-    <div class="col-xl-3 col-lg-4 d-lg-block d-none">
-      {% include "onthispage.html" %}
     </div>
 
 
