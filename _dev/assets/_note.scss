@@ -6,4 +6,20 @@
     position: fixed;
     width: 200px;
   }
+
+  article {
+    min-height: 80vh;
+  }
+}
+
+.search {
+  margin-top: 2em;
+}
+
+#notes-card-columns {
+  .card-header {
+    a {
+      text-decoration: none;
+    }
+  }
 }

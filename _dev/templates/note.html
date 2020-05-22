@@ -6,7 +6,7 @@
             <span>Toggle Sidebar</span>
         </button>
     </nav> -->
-  <div id="note-body" class="row">
+  <article class="row">
     <!-- Notebook Sidenav -->
     <div class="col-3 bg-light pt-1">
       <div class="sidenav sticky-top vh-80">
@@ -68,11 +68,10 @@
             -->
       {% endif %}
     </div>
-
     <!-- On This Page -->
     <div class="col-md-3 d-none d-md-block">
       {% include "onthispage.html" %}
     </div>
-  </div>
+  </article>
 </div>
 {% endblock %}

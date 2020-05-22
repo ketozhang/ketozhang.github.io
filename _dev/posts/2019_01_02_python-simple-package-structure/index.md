@@ -40,13 +40,13 @@ Project
 │   ├── math.py
 │   └── stats.py
 └── test
-    └── test.py
+└── test.py
 ```
 
 * Inside the `mystats` package:
-    * `stats.py`: The main file, the heart of the package.
-    * `math.py`: A helper module separated from `stats` to promote modularity (often a good idea to separate your programs into components)
-    * `__init__.py`: The file that allows `mystats/` be a Python package and runs everytime we import `mystats`.
+* `stats.py`: The main file, the heart of the package.
+* `math.py`: A helper module separated from `stats` to promote modularity (often a good idea to separate your programs into components)
+* `__init__.py`: The file that allows `mystats/` be a Python package and runs everytime we import `mystats`.
 * You guessed it `test` folder is for our test environment.
 * Let's not worry about the other files, those will be explained later.
 
@@ -57,11 +57,11 @@ In `mystats/math.py` let's implement a simple function that sums all element of 
 ```python
 # mystats/math.py
 def sum(arr):
-    sum = 0
-    for x in arr:
-        sum += x
+sum = 0
+for x in arr:
+    sum += x
 
-    return sum
+return sum
 ```
 
 In `mystats/stats.py` let's implement the average function,
@@ -71,8 +71,8 @@ In `mystats/stats.py` let's implement the average function,
 from mystats import math
 
 def avg(data):
-    """ Take the average of an array `data`. """
-    return math.sum(data) / len(data)d
+""" Take the average of an array `data`. """
+return math.sum(data) / len(data)
 ```
 
 Pay attention to the first line. You may be tempted to use `import math` or even `from . import math`. Don't, because those statements relies on relative path (i.e., relative to the package folder) which errors out when your working directory is outside of this package folder. We'd like our program to work on every working directory and on every computer (that has Python 3.x).
@@ -136,9 +136,9 @@ expected = 2.0
 actual = st.avg(data)
 
 if actual == expected:
-    print("SUCCESS: The average is {}".format(actual))
+print("SUCCESS: The average is {}".format(actual))
 else:
-    print("FAIL: Oh no, your average is {} but it should be {}.".format(actual, expected))
+print("FAIL: Oh no, your average is {} but it should be {}.".format(actual, expected))
 ```
 
 Running this file anywhere you will get an error,
@@ -148,8 +148,8 @@ Running this file anywhere you will get an error,
 $ python test/test.py
 
 Traceback (most recent call last):
-  File "test/test.py", line 1, in <module>
-    import mystats as st
+File "test/test.py", line 1, in <module>
+import mystats as st
 ModuleNotFoundError: No module named 'mystats'
 
 
@@ -157,8 +157,8 @@ ModuleNotFoundError: No module named 'mystats'
 $ python test.py
 
 Traceback (most recent call last):
-  File "test.py", line 1, in <module>
-    import mystats as st
+File "test.py", line 1, in <module>
+import mystats as st
 ModuleNotFoundError: No module named 'mystats'
 ```
 
@@ -174,7 +174,7 @@ To fix this error you have 3 options:
 
 1. **Not recommended:** Place your package into one of the `sys.path`
 
-    I do not recommend this because these paths are often managed by your system.
+I do not recommend this because these paths are often managed by your system.
 2. Set PYTHONPATH variable to your project directory. I will not make the instructions because the method differs on your operating system and terminal environment. So Google away or use step 3.
 3. **Recommended:** Add the following lines to the very top of all your test files,
 ```python
@@ -233,11 +233,11 @@ I will describe three common options in distributing your program.
 Your project folder is already compiled in a Python sense so just place the whole project folder (or zip it up) and send them to your users.
 
 * **Pros**
-    * No extra step to distribute or compile
-    * Easily accessible and editable
+* No extra step to distribute or compile
+* Easily accessible and editable
 * **Cons**
-    * Users must edit PYTHONPATH or append `sys.path` to use it.
-    * Users must install any Python dependencies.
+* Users must edit PYTHONPATH or append `sys.path` to use it.
+* Users must install any Python dependencies.
 
 This is great for distributing development code to your team, but not optimal for users especially if they are beginners at Python.
 
@@ -250,15 +250,15 @@ To create a setup file on the go we need `setup.py` and the Python module `setup
 from setuptools import setup
 
 setup(name='mystats',
-      version='0.1.0',
-      description='Easily calculate some statistics',
-      url='http://github.com/ketozhang/mystats',
-      author='Keto Zhang',
-      author_email='keto.zhang@gmail.com',
-      packages=['mystats'],
-      python_requires='>=3',
-      install_requires=[] # any packages you want your users to automatically install goes here, I'll leave this blank
-      )
+    version='0.1.0',
+    description='Easily calculate some statistics',
+    url='http://github.com/ketozhang/mystats',
+    author='Keto Zhang',
+    author_email='keto.zhang@gmail.com',
+    packages=['mystats'],
+    python_requires='>=3',
+    install_requires=[] # any packages you want your users to automatically install goes here, I'll leave this blank
+    )
 ```
 
 See [Setuptools documentation](https://setuptools.readthedocs.io/en/latest/setuptools.html#basic-use) for more instructions and fields.
@@ -275,9 +275,9 @@ pip install . # popular package management system often installed by default
 Your package folder (`mystats`) is usually installed into on of the default paths in `sys.path` which is `'/path/to/python3.x/site-packages'`
 
 * **Pros**
-    * Users don't need to deal with the Python paths.
+* Users don't need to deal with the Python paths.
 * **Cons**
-    * Requires manually downloading and installation.
+* Requires manually downloading and installation.
 
 ### Setup Anywhere - Upload Your Package to PyPI
 

@@ -18,6 +18,14 @@ body header {
   margin-bottom: 2em;
 }
 
+a {
+  color: #fdb515;
+}
+
+a:hover {
+  color: #fdb515;
+}
+
 code {
   font-family: "Source Code Pro", "Courier New", Courier, monospace;
 }
@@ -121,6 +129,17 @@ blockquote {
   position: fixed;
   width: 200px;
 }
+#note article {
+  min-height: 80vh;
+}
+
+.search {
+  margin-top: 2em;
+}
+
+#notes-card-columns .card-header a {
+  text-decoration: none;
+}
 
 #post #post-img {
   object-fit: contain;
@@ -137,7 +156,7 @@ blockquote {
 #post-showcase .card {
   margin-bottom: 2em;
   padding: 2em;
-  border: 1px solid rgba(0, 0, 0, 0.25);
+  border: 2px solid rgba(0, 0, 0, 0.25);
   border-radius: 0.25em;
   box-shadow: inset 0px 0px 1px 0px #616161;
 }
@@ -153,12 +172,6 @@ blockquote {
 #post-showcase .card-body .card-title {
   font-size: 1.59375rem;
   line-height: 1.2;
-}
-#post-showcase .card-body .card-title a {
-  color: #007bff;
-}
-#post-showcase .card-body .card-title a:hover {
-  text-decoration: underline;
 }
 #post-showcase .card-body .card-text,
 #post-showcase .card-body .card-subtitle {
@@ -331,8 +344,7 @@ footer {
 /* Sidenav */
 .sidenav {
   text-overflow: ellipsis;
-  font-family: "Open Sans", "Roboto", san-serif;
-  /* white-space: nowrap !important; */
+  font-family: "Quicksand", "Helvetica", "Arial", sans-serif;
 }
 
 .sidenav a {
@@ -344,23 +356,10 @@ footer {
   line-height: 1.15rem;
 }
 
-/* .sidenav::-webkit-scrollbar {
-  width: 3px;
-  height: 3px;
-}
-
-.sidenav::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, .2);
-  border-radius: 20px;
-}
-
-.sidenav::-webkit-scrollbar-thumb {
-  background: #555;
-  border-radius: 20px;
-} */
 .sidenav-header {
   padding-top: 1em;
   padding-bottom: 0.5em;
+  font-family: "Quicksand", "Helvetica", "Arial", sans-serif;
 }
 
 /* On This Page */
@@ -368,7 +367,7 @@ footer {
   position: sticky;
   top: 0;
   height: 20vh;
-  padding-right: 1em;
+  padding-right: 2em;
 }
 
 .onthispage .sidenav-body,
@@ -430,36 +429,25 @@ footer {
 } */
 /* Markdown Styles */
 .markdown-content {
-  font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
+  font-family: #595959;
   line-height: 1.6em;
 }
-
-.markdown-content h1,
-.markdown-content h2,
-.markdown-content h3,
-.markdown-content h4,
-.markdown-content h5,
-.markdown-content h6 {
-  margin-top: 1em;
-  margin-bottom: 0.5em;
-  font-family: "Quicksand", "Open Sans", "Helvetica", "Arial", sans-serif;
-}
-
 .markdown-content h1 {
+  font-family: "Quicksand", "Helvetica", "Arial", sans-serif;
   font-size: 2.5rem;
 }
-
 .markdown-content h2 {
+  font-family: "Quicksand", "Helvetica", "Arial", sans-serif;
   font-size: 2rem;
 }
-
 .markdown-content h3 {
+  font-family: "Quicksand", "Helvetica", "Arial", sans-serif;
   font-size: 1.75rem;
 }
-
 .markdown-content h4,
 .markdown-content h5,
 .markdown-content h6 {
+  font-family: "Quicksand", "Helvetica", "Arial", sans-serif;
   font-size: 1rem;
   font-weight: bold;
 }
@@ -507,14 +495,8 @@ footer {
   margin-bottom: 1.5em;
 }
 
-/* Posts */
-/* Notes */
-#note-body {
-  min-height: 80vh;
-}
-
 #intro {
-  font-family: "Quicksand", "Helvetica", "Arial", sans-serif;
+  margin-bottom: 1em;
 }
 #intro img {
   margin: auto;

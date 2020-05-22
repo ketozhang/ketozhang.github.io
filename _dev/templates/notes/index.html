@@ -6,7 +6,7 @@
   {% block header %}
   <h1 class="title mb-4"> {% block title %} Notebooks {% endblock %}</h1>
   {% endblock %}
-  <div class="form-group"><input id="dummy_search_notes" class="form-control" placeholder="Search"></input>
+  <div class="search form-group"><input id="dummy_search_notes" class="form-control" placeholder="Search"></input>
   </div>
   <div class=" modal fade" id="search_modal">
     <div class="modal-dialog modal-lg">
@@ -23,7 +23,7 @@
     </div>
   </div>
 
-  <div class="card-columns">
+  <div id="notes-card-columns" class="card-columns">
     {% for collection in page.subpages %}
     <div class="card">
       <div class="card-header">
@@ -31,16 +31,14 @@
           <strong>{{ collection.title }}</strong>
         </a>
       </div>
-      <ul class="list-group list-group-flush">
+      <div class="list-group list-group-flush">
         {% for notebook in collection.subpages %}
-        <li class="list-group-item p-2 pl-4">
-          <a href="{{ url_for(notebook.url) }}" target='_blank'>
-            <!-- <img class='pr-2' src="{{site_url}}static/images/icons8-spiral-bound-booklet.png" style="height: 24px"> -->
-            {{ notebook.title }}
-          </a>
-        </li>
+        <a class="list-group-item list-group-item-action" href="{{ url_for(notebook.url) }}" target='_blank'>
+          <!-- <img class='pr-2' src="{{site_url}}static/images/icons8-spiral-bound-booklet.png" style="height: 24px"> -->
+          {{ notebook.title }}
+        </a>
         {% endfor %}
-      </ul>
+      </div>
     </div>
     {% endfor %}
   </div>

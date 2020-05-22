@@ -5,33 +5,31 @@
   <div class="container">
     <!-- Jumbotron -->
     <div id="intro" class="d-flex flex-column">
-      <h2 class="title">Astronomer in the making</h2>
-      <div>
-        <div class="row justify-content-center">
-          <div class="col-md-8 order-last order-md-first">
-            <blockquote class="blockquote">Welcome, I'm a student undergoing a path to become a professional astronomer.
-              Feel free to
-              check out my <a href="#project-showcase">projects</a> and occasional <a href="/posts">blog posts</a>
-              mingled
-              with
-              topics
-              in <em>physics</em>, <em>math</em>, <em>data</em>, and <em>computer science</em>. All my educational <a
-                href="/notes">notes</a> are available to the public and web-accessible.</blockquote>
-            <ul>
-              <li>(2019) &mdash; Awarded B.A. Astrophysics and B.A. Data Science</li>
-              <li>(2017) &mdash; Alex Filippenko Research Group (Present) </li>
-              <li>(2015) &mdash; Entered Undergraduate at Unviersity of California, Berkeley</li>
-              <a href="/CV">More on CV</a>
-            </ul>
-          </div>
-          <div class="col-md-4 order-first order-md-last">
-            <img class="rounded-circle" style="width: 200px;" src="{{site_url}}static/images/headshot_500x500.jpg">
-          </div>
-        </div>
-        <!-- <figure class="figure"> -->
-        <!-- <p class="text-center mt-2">Keto D. Zhang</p> -->
-        <!-- </figure> -->
+      <div id="intro-header">
+        <h2 class="title">Astronomer in the Making</h2>
       </div>
+      <div class="row justify-content-center">
+        <blockquote class="col-md-8 order-last order-md-first">
+          <p>Welcome, I'm a professional astronomer in the making.
+            Feel free to check out my <a href="#project-showcase">projects</a> and occasional <a href="/posts">blog
+              posts</a> mingled with topics in <em>physics</em>, <em>math</em>, <em>data</em>, and <em>computer
+              science</em>. All my educational <a href="/notes">notes</a> are available to the public and
+            web-accessible.
+          </p>
+          <ul>
+            <li>2019 &mdash; Awarded B.A. Astrophysics and B.A. Data Science 🎓</li>
+            <li>2017 &mdash; Alex Filippenko Research Group (Present) </li>
+            <li>2015 &mdash; Entered Undergraduate at Unviersity of California, Berkeley</li>
+            <p><a href="/CV" style="margin-left: -1em">More on CV</a></p>
+          </ul>
+        </blockquote>
+        <div class="col-md-4 order-first order-md-last">
+          <img class="rounded-circle" style="width: 200px;" src="{{site_url}}static/images/headshot_500x500.jpg">
+        </div>
+      </div>
+      <!-- <figure class="figure"> -->
+      <!-- <p class="text-center mt-2">Keto D. Zhang</p> -->
+      <!-- </figure> -->
     </div>
 
     <!-- Project Showcase  -->
@@ -43,7 +41,7 @@
           <!-- TODO: Find a better way for equal height -->
           <p>{{project['description']}}</p>
           <p class="mt-auto"><a class="btn btn-warning" href="{{url_for(project['view_details'])}}" role="button"
-              target="_blank">View details »</a></p>
+              target="_blank">View Details</a></p>
       </div>
       {% endfor %}
     </div>

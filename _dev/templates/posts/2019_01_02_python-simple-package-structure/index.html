@@ -22,14 +22,12 @@
 <span id="cb2-8"><a href="#cb2-8"></a>│   ├── <span class="ex">math.py</span></span>
 <span id="cb2-9"><a href="#cb2-9"></a>│   └── <span class="ex">stats.py</span></span>
 <span id="cb2-10"><a href="#cb2-10"></a>└── <span class="bu">test</span></span>
-<span id="cb2-11"><a href="#cb2-11"></a>    └── <span class="ex">test.py</span></span></code></pre></div>
+<span id="cb2-11"><a href="#cb2-11"></a>└── <span class="ex">test.py</span></span></code></pre></div>
 <ul>
-<li>Inside the <code>mystats</code> package:
-<ul>
+<li>Inside the <code>mystats</code> package:</li>
 <li><code>stats.py</code>: The main file, the heart of the package.</li>
 <li><code>math.py</code>: A helper module separated from <code>stats</code> to promote modularity (often a good idea to separate your programs into components)</li>
 <li><code>__init__.py</code>: The file that allows <code>mystats/</code> be a Python package and runs everytime we import <code>mystats</code>.</li>
-</ul></li>
 <li>You guessed it <code>test</code> folder is for our test environment.</li>
 <li>Let’s not worry about the other files, those will be explained later.</li>
 </ul>
@@ -37,18 +35,18 @@
 <p>In <code>mystats/math.py</code> let’s implement a simple function that sums all element of an array,</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># mystats/math.py</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a><span class="kw">def</span> <span class="bu">sum</span>(arr):</span>
-<span id="cb3-3"><a href="#cb3-3"></a>    <span class="bu">sum</span> <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb3-4"><a href="#cb3-4"></a>    <span class="cf">for</span> x <span class="kw">in</span> arr:</span>
-<span id="cb3-5"><a href="#cb3-5"></a>        <span class="bu">sum</span> <span class="op">+=</span> x</span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="bu">sum</span> <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="cf">for</span> x <span class="kw">in</span> arr:</span>
+<span id="cb3-5"><a href="#cb3-5"></a>    <span class="bu">sum</span> <span class="op">+=</span> x</span>
 <span id="cb3-6"><a href="#cb3-6"></a></span>
-<span id="cb3-7"><a href="#cb3-7"></a>    <span class="cf">return</span> <span class="bu">sum</span></span></code></pre></div>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="cf">return</span> <span class="bu">sum</span></span></code></pre></div>
 <p>In <code>mystats/stats.py</code> let’s implement the average function,</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># mystats/stats.py</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a><span class="im">from</span> mystats <span class="im">import</span> math</span>
 <span id="cb4-3"><a href="#cb4-3"></a></span>
 <span id="cb4-4"><a href="#cb4-4"></a><span class="kw">def</span> avg(data):</span>
-<span id="cb4-5"><a href="#cb4-5"></a>    <span class="co">&quot;&quot;&quot; Take the average of an array `data`. &quot;&quot;&quot;</span></span>
-<span id="cb4-6"><a href="#cb4-6"></a>    <span class="cf">return</span> math.<span class="bu">sum</span>(data) <span class="op">/</span> <span class="bu">len</span>(data)d</span></code></pre></div>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="co">&quot;&quot;&quot; Take the average of an array `data`. &quot;&quot;&quot;</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="cf">return</span> math.<span class="bu">sum</span>(data) <span class="op">/</span> <span class="bu">len</span>(data)</span></code></pre></div>
 <p>Pay attention to the first line. You may be tempted to use <code>import math</code> or even <code>from . import math</code>. Don’t, because those statements relies on relative path (i.e., relative to the package folder) which errors out when your working directory is outside of this package folder. We’d like our program to work on every working directory and on every computer (that has Python 3.x).</p>
 <p>Now for the <code>__init__.py</code> <strong>we do not leave it empty</strong>,</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="im">from</span> .stats <span class="im">import</span> <span class="op">*</span></span></code></pre></div>
@@ -86,16 +84,16 @@
 <span id="cb9-7"><a href="#cb9-7"></a>actual <span class="op">=</span> st.avg(data)</span>
 <span id="cb9-8"><a href="#cb9-8"></a></span>
 <span id="cb9-9"><a href="#cb9-9"></a><span class="cf">if</span> actual <span class="op">==</span> expected:</span>
-<span id="cb9-10"><a href="#cb9-10"></a>    <span class="bu">print</span>(<span class="st">&quot;SUCCESS: The average is </span><span class="sc">{}</span><span class="st">&quot;</span>.<span class="bu">format</span>(actual))</span>
+<span id="cb9-10"><a href="#cb9-10"></a><span class="bu">print</span>(<span class="st">&quot;SUCCESS: The average is </span><span class="sc">{}</span><span class="st">&quot;</span>.<span class="bu">format</span>(actual))</span>
 <span id="cb9-11"><a href="#cb9-11"></a><span class="cf">else</span>:</span>
-<span id="cb9-12"><a href="#cb9-12"></a>    <span class="bu">print</span>(<span class="st">&quot;FAIL: Oh no, your average is </span><span class="sc">{}</span><span class="st"> but it should be </span><span class="sc">{}</span><span class="st">.&quot;</span>.<span class="bu">format</span>(actual, expected))</span></code></pre></div>
+<span id="cb9-12"><a href="#cb9-12"></a><span class="bu">print</span>(<span class="st">&quot;FAIL: Oh no, your average is </span><span class="sc">{}</span><span class="st"> but it should be </span><span class="sc">{}</span><span class="st">.&quot;</span>.<span class="bu">format</span>(actual, expected))</span></code></pre></div>
 <p>Running this file anywhere you will get an error,</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1"></a>[<span class="ex">.../Project</span>/]</span>
 <span id="cb10-2"><a href="#cb10-2"></a>$ <span class="ex">python</span> test/test.py</span>
 <span id="cb10-3"><a href="#cb10-3"></a></span>
 <span id="cb10-4"><a href="#cb10-4"></a><span class="ex">Traceback</span> (most recent call last)<span class="bu">:</span></span>
-<span id="cb10-5"><a href="#cb10-5"></a>  <span class="ex">File</span> <span class="st">&quot;test/test.py&quot;</span>, line 1, in <span class="op">&lt;</span>module<span class="op">&gt;</span></span>
-<span id="cb10-6"><a href="#cb10-6"></a>    <span class="ex">import</span> mystats as st</span>
+<span id="cb10-5"><a href="#cb10-5"></a><span class="ex">File</span> <span class="st">&quot;test/test.py&quot;</span>, line 1, in <span class="op">&lt;</span>module<span class="op">&gt;</span></span>
+<span id="cb10-6"><a href="#cb10-6"></a><span class="ex">import</span> mystats as st</span>
 <span id="cb10-7"><a href="#cb10-7"></a><span class="ex">ModuleNotFoundError</span>: No module named <span class="st">&#39;mystats&#39;</span></span>
 <span id="cb10-8"><a href="#cb10-8"></a></span>
 <span id="cb10-9"><a href="#cb10-9"></a></span>
@@ -103,8 +101,8 @@
 <span id="cb10-11"><a href="#cb10-11"></a>$ <span class="ex">python</span> test.py</span>
 <span id="cb10-12"><a href="#cb10-12"></a></span>
 <span id="cb10-13"><a href="#cb10-13"></a><span class="ex">Traceback</span> (most recent call last)<span class="bu">:</span></span>
-<span id="cb10-14"><a href="#cb10-14"></a>  <span class="ex">File</span> <span class="st">&quot;test.py&quot;</span>, line 1, in <span class="op">&lt;</span>module<span class="op">&gt;</span></span>
-<span id="cb10-15"><a href="#cb10-15"></a>    <span class="ex">import</span> mystats as st</span>
+<span id="cb10-14"><a href="#cb10-14"></a><span class="ex">File</span> <span class="st">&quot;test.py&quot;</span>, line 1, in <span class="op">&lt;</span>module<span class="op">&gt;</span></span>
+<span id="cb10-15"><a href="#cb10-15"></a><span class="ex">import</span> mystats as st</span>
 <span id="cb10-16"><a href="#cb10-16"></a><span class="ex">ModuleNotFoundError</span>: No module named <span class="st">&#39;mystats&#39;</span></span></code></pre></div>
 <p>This error occurs because Python cannot find <code>mystats</code> anywhere inside your terminal’s environment variable <code>PYTHONPATH</code> or inside Python’s environment <code>sys.path</code> (both variables are shared, Python imports <code>PYTHONPATH</code> and default paths to <code>sys.path</code> everytime you run Python). Open up Python and run. You’ll see where Python are reading its packages:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> sys</span>
@@ -112,11 +110,9 @@
 <span id="cb11-3"><a href="#cb11-3"></a>[..., <span class="st">&#39;/path/to/python3.x/site-packages&#39;</span>]</span></code></pre></div>
 <p>To fix this error you have 3 options:</p>
 <ol type="1">
-<li><p><strong>Not recommended:</strong> Place your package into one of the <code>sys.path</code></p>
-<p>I do not recommend this because these paths are often managed by your system.</p></li>
-<li><p>Set PYTHONPATH variable to your project directory. I will not make the instructions because the method differs on your operating system and terminal environment. So Google away or use step 3.</p></li>
-<li><p><strong>Recommended:</strong> Add the following lines to the very top of all your test files,</p></li>
+<li><strong>Not recommended:</strong> Place your package into one of the <code>sys.path</code></li>
 </ol>
+<p>I do not recommend this because these paths are often managed by your system. 2. Set PYTHONPATH variable to your project directory. I will not make the instructions because the method differs on your operating system and terminal environment. So Google away or use step 3. 3. <strong>Recommended:</strong> Add the following lines to the very top of all your test files,</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="im">import</span> sys</span>
 <span id="cb12-2"><a href="#cb12-2"></a><span class="im">from</span> pathlib <span class="im">import</span> Path <span class="co"># installed by default by Python 3.x</span></span>
 <span id="cb12-3"><a href="#cb12-3"></a>PROJECT_PATH <span class="op">=</span> Path(<span class="va">__file__</span>).resolve().parents[<span class="dv">1</span>]</span>
@@ -160,16 +156,12 @@
 <h3 id="compiled-package-on-the-go">Compiled Package on the Go</h3>
 <p>Your project folder is already compiled in a Python sense so just place the whole project folder (or zip it up) and send them to your users.</p>
 <ul>
-<li><strong>Pros</strong>
-<ul>
+<li><strong>Pros</strong></li>
 <li>No extra step to distribute or compile</li>
 <li>Easily accessible and editable</li>
-</ul></li>
-<li><strong>Cons</strong>
-<ul>
+<li><strong>Cons</strong></li>
 <li>Users must edit PYTHONPATH or append <code>sys.path</code> to use it.</li>
 <li>Users must install any Python dependencies.</li>
-</ul></li>
 </ul>
 <p>This is great for distributing development code to your team, but not optimal for users especially if they are beginners at Python.</p>
 <h3 id="setup-on-the-go">Setup on the Go</h3>
@@ -177,15 +169,15 @@
 <div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a><span class="im">from</span> setuptools <span class="im">import</span> setup</span>
 <span id="cb16-2"><a href="#cb16-2"></a></span>
 <span id="cb16-3"><a href="#cb16-3"></a>setup(name<span class="op">=</span><span class="st">&#39;mystats&#39;</span>,</span>
-<span id="cb16-4"><a href="#cb16-4"></a>      version<span class="op">=</span><span class="st">&#39;0.1.0&#39;</span>,</span>
-<span id="cb16-5"><a href="#cb16-5"></a>      description<span class="op">=</span><span class="st">&#39;Easily calculate some statistics&#39;</span>,</span>
-<span id="cb16-6"><a href="#cb16-6"></a>      url<span class="op">=</span><span class="st">&#39;http://github.com/ketozhang/mystats&#39;</span>,</span>
-<span id="cb16-7"><a href="#cb16-7"></a>      author<span class="op">=</span><span class="st">&#39;Keto Zhang&#39;</span>,</span>
-<span id="cb16-8"><a href="#cb16-8"></a>      author_email<span class="op">=</span><span class="st">&#39;keto.zhang@gmail.com&#39;</span>,</span>
-<span id="cb16-9"><a href="#cb16-9"></a>      packages<span class="op">=</span>[<span class="st">&#39;mystats&#39;</span>],</span>
-<span id="cb16-10"><a href="#cb16-10"></a>      python_requires<span class="op">=</span><span class="st">&#39;&gt;=3&#39;</span>,</span>
-<span id="cb16-11"><a href="#cb16-11"></a>      install_requires<span class="op">=</span>[] <span class="co"># any packages you want your users to automatically install goes here, I&#39;ll leave this blank</span></span>
-<span id="cb16-12"><a href="#cb16-12"></a>      )</span></code></pre></div>
+<span id="cb16-4"><a href="#cb16-4"></a>    version<span class="op">=</span><span class="st">&#39;0.1.0&#39;</span>,</span>
+<span id="cb16-5"><a href="#cb16-5"></a>    description<span class="op">=</span><span class="st">&#39;Easily calculate some statistics&#39;</span>,</span>
+<span id="cb16-6"><a href="#cb16-6"></a>    url<span class="op">=</span><span class="st">&#39;http://github.com/ketozhang/mystats&#39;</span>,</span>
+<span id="cb16-7"><a href="#cb16-7"></a>    author<span class="op">=</span><span class="st">&#39;Keto Zhang&#39;</span>,</span>
+<span id="cb16-8"><a href="#cb16-8"></a>    author_email<span class="op">=</span><span class="st">&#39;keto.zhang@gmail.com&#39;</span>,</span>
+<span id="cb16-9"><a href="#cb16-9"></a>    packages<span class="op">=</span>[<span class="st">&#39;mystats&#39;</span>],</span>
+<span id="cb16-10"><a href="#cb16-10"></a>    python_requires<span class="op">=</span><span class="st">&#39;&gt;=3&#39;</span>,</span>
+<span id="cb16-11"><a href="#cb16-11"></a>    install_requires<span class="op">=</span>[] <span class="co"># any packages you want your users to automatically install goes here, I&#39;ll leave this blank</span></span>
+<span id="cb16-12"><a href="#cb16-12"></a>    )</span></code></pre></div>
 <p>See <a href="https://setuptools.readthedocs.io/en/latest/setuptools.html#basic-use">Setuptools documentation</a> for more instructions and fields.</p>
 <p>You are now done, you can send your whole project folder or zip it up to your users. They must run the following command to install,</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># In the project folder</span></span>
@@ -194,14 +186,10 @@
 <span id="cb17-4"><a href="#cb17-4"></a>pip install . <span class="co"># popular package management system often installed by default</span></span></code></pre></div>
 <p>Your package folder (<code>mystats</code>) is usually installed into on of the default paths in <code>sys.path</code> which is <code>'/path/to/python3.x/site-packages'</code></p>
 <ul>
-<li><strong>Pros</strong>
-<ul>
+<li><strong>Pros</strong></li>
 <li>Users don’t need to deal with the Python paths.</li>
-</ul></li>
-<li><strong>Cons</strong>
-<ul>
+<li><strong>Cons</strong></li>
 <li>Requires manually downloading and installation.</li>
-</ul></li>
 </ul>
 <h3 id="setup-anywhere---upload-your-package-to-pypi">Setup Anywhere - Upload Your Package to PyPI</h3>
 <p><a href="https://pypi.org/">PyPI</a> is the default Package Index where you can host your packages on their servers for free. This allows your users to simply install your packages simply by knowing the name of your package:</p>
