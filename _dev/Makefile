@@ -25,6 +25,5 @@ clean:
 
 push:
 	make static && \
-	git add -A && \
-	git commit && \
+	git commit -a && \
 	git push origin master

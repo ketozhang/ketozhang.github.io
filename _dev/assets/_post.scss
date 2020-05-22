@@ -1,5 +1,5 @@
 @import "variables";
-$card-height: 170px;
+$card-height: 190px;
 #post {
   #post-img {
     object-fit: contain;
@@ -31,7 +31,8 @@ $card-height: 170px;
 
   .card-body {
     height: $card-height;
-    overflow-y: hidden;
+    overflow: hidden;
+    text-overflow: ellipsis;
     padding: 0;
 
     .card-title {

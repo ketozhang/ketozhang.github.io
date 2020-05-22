@@ -161,12 +161,13 @@ blockquote {
   box-shadow: inset 0px 0px 1px 0px #616161;
 }
 #post-showcase .card-img {
-  height: 170px;
+  height: 190px;
   object-fit: cover;
 }
 #post-showcase .card-body {
-  height: 170px;
-  overflow-y: hidden;
+  height: 190px;
+  overflow: hidden;
+  text-overflow: ellipsis;
   padding: 0;
 }
 #post-showcase .card-body .card-title {

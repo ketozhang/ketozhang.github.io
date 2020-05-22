@@ -46,7 +46,7 @@ app = Staticpy()
 # @app.context_processor
 # def get_assets():
 #     return {"assets_url": assets["scss_all"].urls()[0]}
-
+app.jinja_env.add_extension("jinja2.ext.do")
 
 ########################
 # CUSTOM ROUTES
