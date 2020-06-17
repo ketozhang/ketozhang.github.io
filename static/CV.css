@@ -3,9 +3,9 @@
 @page {
     width: 8.5in;
     height: 11in;
-    margin-left: 1in;
-    margin-right: 1in;
-    margin-top: 0;
+    margin-left: 0.5in;
+    margin-right: 0.5in;
+    margin-top: 50px;
     margin-bottom: 0.5in;
 }
 
@@ -19,8 +19,6 @@
         position: relative;
         display: table;
         table-layout: fixed;
-        padding-top: 0.5in;
-        padding-bottom: 0.5in;
         /* width: 94%; */
         height: auto;
     }
@@ -47,7 +45,7 @@
 /* Tags */
 
 body {
-    color: #4e4e4e;
+    color: #3D3D3D;
     font-family: "Open Sans", "Roboto", "Helvetica", "Arial", sans-serif;
     margin-top: 0.5in;
     margin-bottom: 0.5in;
@@ -55,8 +53,6 @@ body {
 }
 
 header {
-    /* padding-top: 1em; */
-    /* padding-bottom: 1em; */
     margin-bottom: 2em;
 }
 
@@ -96,12 +92,17 @@ hr {
     padding-bottom: 0.5em;
 }
 
-.item-title, .position {
-    font-weight: bold;
+.item ul {
+    padding-left: 2em;
+    margin-bottom: 0em;
 }
 
-.position::after {
-    content: ",";
+.item .row {
+    margin-bottom: 0;
+}
+
+.item-title, .position {
+    font-weight: bold;
 }
 
 .company {
@@ -112,6 +113,27 @@ hr {
     column-count: 2;
 }
 
+.name {
+    font-weight: bold;
+}
+
+.contacts {
+    padding: 0 !important;
+    list-style-type: none !important;
+}
+
+.contacts li {
+    display: inline;
+}
+
+.contacts li::after {
+    content: ";";
+}
+
+.relation::before {
+    content: "Relation: ";
+}
+
 /* Ids */
 
 #publication-list {
@@ -120,4 +142,9 @@ hr {
 
 #publication-list li {
     padding-bottom: 0.5em;
+}
+
+#skills ul {
+    padding-left: 0;
+    list-style: none;
 }
