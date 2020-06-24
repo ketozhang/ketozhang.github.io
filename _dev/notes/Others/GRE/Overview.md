@@ -27,6 +27,10 @@ title: GRE Overview
 **Strategies**
 
 * **Vocabularies (1, 2)**
+
+  1. Common Words 1-5
+  1. Basic Words 1-6
+
 * **Posterior Elimination**
   Eliminating answer choices after reading the question.
 
