@@ -1,124 +1,21 @@
-<!-- SKILLS-->
-<div class="section">
-  <h1>Skills</h1>
+<div id="research-experiences" class="section">
+  <h1>Research Experiences</h1>
   <hr>
   <div class="section-body">
-    <ul class="multicol mb-0">
-      <li>Python, Java, Objective-C, C++, HTML, CSS, Javascript</li>
-      <li>SQL, MySQL, PostgreSQL</li>
-      <li>Linux, Ubuntu, WSL, Shell, bash, zsh</li>
-      <li>Git, GitHub, Docker, Apache, Nginx</li>
-      <li>Flask, Django, JQuery, Bootstrap 4 CSS</li>
-      <!-- <li>Excel</li> -->
-      <li>Jupyter, Matplotlib, Seaborn</li>
-      <li>numpy, scipy, astropy, scikit-learn, Tensorflow, Keras, PyMC </li>
-      <!-- <li> Probabilistic regression, Bayesian inference, MCMC, decision tree, CNN, ARIMA</li> -->
-    </ul>
+    {% include "CV/experiences/leadership.html" %}
+    {% include "CV/experiences/scientist.html" %}
   </div>
 </div>
 
-<!-- Related Experiences -->
-<div class="section">
-  <h1>Related Experiences</h1>
+<div id="software-experiences" class="section">
+  <h1>Software Experiences</h1>
   <hr>
   <div class="section-body">
-
-    <div class="row item">
-      <div class="col-12">
-        <span class="item-title">
-          System Database Administration (<em>3 years</em>)
-        </span>
-      </div>
-      <ul class="mb-0">
-        <!-- <li>
-          Flexibility to develop in Windows or Linux machine which is especially simple with Visual Studio Code. Have
-          always
-          considered compatibility on any OS when
-          developing. Testing on OS include using multiple machines but preferably Docker when multiple machines are not
-          available.
-          .
-        </li> -->
-        <li>Designed and administered astronomy research MySQL database storing over 4 million
-          photometrically calibrated decades worth of supernovae images and developed CLI, RESTful API, and Flask web
-          interface for more accessible data-retrieval. These data interfaces replaces the research team's tedious and
-          time-consuming data-retrieval method
-          from 1-2 days to minutes.
-        </li>
-        <li>
-          Deployed and administrated research pipelines and softwares in Linux production server using Git for version
-          control, gunicorn + apache + systemd for Python web services (Flask framework with AJAX and Bootstrap CSS),
-          Python virtual envrionment setup for
-          multiple
-          server users, and bash/Python/Make for deploy, debug,
-          and test scripts.
-        </li>
-        <!-- <li>Aid in debugging and development of remote telescope observation from home (script of SSH, VPN, and VNC for
-          multiple instrument ports and telescope servers)
-          during COVID-19 pandemic for Lick
-          Observatory.</li> -->
-      </ul>
-    </div>
-
-    <div class="row item">
-      <div class="col-12">
-        <span class="item-title">
-          Statistics and Machine Learning Application (<em>2 years</em>)
-        </span>
-      </div>
-      <ul class="mb-0">
-        <li>
-          Research publication-class work on applying Monte Carlo Markov chain simulations for parmaeter estimation on
-          both statistical distributions and theoretical physics models .
-        </li>
-        <li> Developed industrial regression models relating CCD measurements to solar irradiance and used ARIMA to then
-          forecast solar irradiance. The models provided a minimal working product to further expand the installation of
-          all-sky cameras across
-          Singapore. </li>
-        <li> College education on upper division Machine Learning techniques over three semesters (probabilistic
-          regression, bayesian inference, decision trees, DNN, CNN, ARIMA, SVM, dimensionality reduction) </li>
-      </ul>
-    </div>
-
-    {#
-    <div class="row item">
-      <div class="col-12">
-        <span class="item-title">
-          Python Development (<em>5 years</em>)
-        </span>
-      </div>
-      <ul class="mb-0">
-        <li>AstroAPIServer, sole developer of a Flask backend web API toolkit intended for astronomy research data
-          releases and team data access from various SQL database. Features include an admin console built
-          from its OpenAPI specification, login authentication (JWT, CSRF and XSS security), user authorization
-          (user-role
-          schema) and supports astronomy's IVOA data conventions (SIA and DALI).
-          <!-- <li>AstroSQL, developer of a Python data interface for astronomy research SQL database following astronomy's
-        IVOA data
-        conventions (SIA and DALI). This was motivated to easily allow conventional astronomy databases be easily
-        accessed through API interfaces like the widely used in the field, Python astroquery package.</li> -->
-        <li>StaticPy, sole developer of a Python Flask static website generator built intended for public use. It
-          supports
-          writing Markdown files and LaTex support to be rendered into notebooks and blogposts. General HTML content
-          is supported through the Flask framework.
-        </li>
-      </ul>
-    </div>
-    #}
-
-    <div class="row item">
-      <div class="col-12">
-        <span class="item-title">
-          Leadership Experience (2 years)
-        </span>
-      </div>
-      <ul class="mb-0">
-        <li>Led a team of of undergraduate research observers. I trained, managed, and scheduled the team to
-          observed on the Nickel 1-m telescope at Lick Observatory</li>
-      </ul>
-    </div>
+    {% include "CV/experiences/fullstack_developer.html" %}
+    {% include "CV/experiences/python_developer.html" %}
   </div>
 </div>
 
-<!-- <div style="page-break-before: always;"></div> -->
 <!-- PUBLICATIONS -->
-{% include 'CV/publications.html' %}
+{% include "CV/publications.html" %}
+{% include "CV/references.html" %}

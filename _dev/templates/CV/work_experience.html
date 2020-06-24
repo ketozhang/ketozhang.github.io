@@ -1,0 +1,103 @@
+<div id="experiences" class="section">
+  <h1>Related Experiences</h1>
+  <hr>
+  <div class="section-body">
+
+    <!-- Postbac Researcher -->
+    <div class="row item">
+      <div class="col-8">
+        <div class="position">Astronomy Researcher</div>
+        <div class="company">Alex Filippenko Research Group</div>
+      </div>
+      <div class="col-4 text-right">June 2019 &ndash; May 2020 <br><em>Berkeley, CA</em></div>
+      <ul>
+        <li>
+          Analyzed a large set of type Ia supernovae to study the implications of geometric asymmetries in its
+          morphology from it's peak-time velocity distribution. This analysis is done by statistical clustering with
+          Gaussian mixtures and inference through Monte Carlo simulations comparing toy simulations to literature
+          numerical models. Results are pending for publication as a first author paper.
+        </li>
+      </ul>
+    </div>
+
+    <!-- Alex Filippenko Full Stack Developer -->
+    <div class="item">
+      <div class="row">
+        <div class="col-8">
+          <div class="position">Full Stack Developer</div>
+          <div class="company">Alex Filippenko Research Group</div>
+        </div>
+        <div class="col-4 text-right">May 2017 &ndash; May 2020 <br><em>Berkeley, CA</em></div>
+
+      </div>
+      Backend:
+      <ul>
+        <li>Designed and administered astronomy research MySQL database storing over 4 million calibrated supernovae
+          images and metadata to replace the old method of searching for supernovae images using a file server.
+        </li>
+        <li>
+          Designed and developed API web service (Python Flask framework) to interface the mentioned database. This will
+          be used in the frontend to access the database.
+        </li>
+        <li>Developed an XML parser for astronomy's VOEvent convention. This was used in multimessenger astronomy to
+          parse NASA's Gamma-ray Coordinates Network alerts (e.g., gravitational wave alerts). This was the first step
+          in the process that enrolled our team into an exciting field of multimessenger astronomy.</li>
+      </ul>
+      Frontend:
+      <ul>
+        <li> Developed an web app to interface the image database replacing the team's tedious and time-consuming
+          data-retrieval method from 1-2 days to minutes. The web app uses Python Flask for routing, JQuery (Javascript) for AJAX calls to the backend API server, and HTML5 & CSS3 (Bootstrap) for the web page.
+        </li>
+        <li> Developed a multimessenger astronomy web app to display gravitational wave alerts from Ligo-Virgo and the images from our telescope that was taken in the region of the gravitational wave candidate.</li>
+      </ul>
+      System Administration:
+      <ul>
+        <li>
+          Deployed and administrated research pipelines and softwares in Linux production server using Git for version control, gunicorn + apache + systemd for deploying and monitoring web services.
+        </li>
+        <li>
+          Maintained python virtual envrionment hierarchy so that users' development, teams' development, and server's production enviornment are not in conflict. and test scripts.
+        </li>
+      </ul>
+    </div>
+
+
+    <!-- SERIS -->
+    <div class="item">
+      <div class="row">
+        <div class="col-8">
+          <div class="position">Machine Learning Intern</div>
+          <div class="company">Solar Energy Research Institute of Singapore</div>
+        </div>
+        <div class="col-4 text-right">Jun 2018 &ndash; Aug 2018 <br><em>Singapore</em></div>
+
+      </div>
+      <ul>
+        <li>
+          Developed regression models relating CCD measurements to solar irradiance. This relation is then used in an ARIMA model to forecast solar irradiance which is important for PV grid management. The models provided a minimal working product to further assess the potential of all-sky cameras as a useful imaging tool for solar irradiance forecasting.
+        </li>
+      </ul>
+    </div>
+
+    <!-- ALS LBNL -->
+    <div class="row item">
+      <div class="col-8">
+        <div class="position">Research Intern</div>
+        <div class="company">Lawrence Berkeley National Lab &ndash; ALS</div>
+      </div>
+      <div class="col-4 text-right">Aug 2016 &ndash; Dec 2017 <br><em>Berkeley, CA</em></div>
+    </div>
+
+    <!-- Cal Alumni -->
+    <div class="row item">
+      <div class="col-8">
+        <div class="position">Desktop Support Technician</div>
+        <div class="company">Cal Alumni Association</div>
+      </div>
+      <div class="col-4 text-right">Mar 2015 &ndash; May 2017 <br><em>Berkeley, CA</em></div>
+    </div>
+
+  </div>
+</div>
+
+{% include "CV/experiences/leadership.html" %}
