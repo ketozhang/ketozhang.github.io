@@ -1,0 +1,46 @@
+<p>A logarithmic search algorithm to find a value in a sorted array.</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>Best</th>
+<th>Worst</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Time</td>
+<td><span class="math inline">\(\mathcal O(1)\)</span></td>
+<td><span class="math inline">\(\mathcal O(\log n)\)</span></td>
+</tr>
+<tr class="even">
+<td>Space</td>
+<td><span class="math inline">\(\mathcal O(1)\)</span></td>
+<td><span class="math inline">\(\mathcal O(1)\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Usage</strong> * Search a sorted array</p>
+<h2 id="algorithm">Algorithm</h2>
+<p>For the search key <span class="math inline">\(k\)</span> and a sorted array <span class="math inline">\(v = [v_1, v_2, \ldots, v_n]\)</span> where <span class="math inline">\(v_1 \le v_2 \le \ldots v_n\)</span>, the following algorithm returns the index where <span class="math inline">\(k\)</span> exists otherwise fails.</p>
+<ol type="1">
+<li>Let <span class="math inline">\(L = 0\)</span> and <span class="math inline">\(R = n-1\)</span>.</li>
+<li>If <span class="math inline">\(L &gt; R\)</span>, the algorithm terminates unsuccessfully.</li>
+<li>Set the current position to the floored midpoint of <span class="math inline">\([L, R]\)</span></li>
+</ol>
+<p><span class="math display">\[
+  i = \left\lfloor \frac{L + R}{2} \right\rfloor
+  \]</span></p>
+<ol type="1">
+<li><p>If <span class="math inline">\(v_i = k\)</span>. If value matches found, return the index <span class="math inline">\(i\)</span>.</p></li>
+<li><p>Else if the <span class="math inline">\(v_i &lt; k\)</span> move to left bound above the current index</p>
+<p><span class="math display">\[
+ L = i + 1
+ \]</span></p>
+<p>Repeat step 2.</p></li>
+<li><p>Else if the <span class="math inline">\(v_i &gt; k\)</span> move to right bound below the current index</p>
+<p><span class="math display">\[
+ R = i - 1
+ \]</span></p>
+<p>Repeat step 2.</p></li>
+</ol>

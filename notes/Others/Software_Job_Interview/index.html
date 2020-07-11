@@ -169,8 +169,8 @@ Trie</li>
 <li><a href="https://www.youtube.com/watch?v=mjZpZ_wcYFg">Amazon Code Sampling (SIP)</a></li>
 <li><a href="https://www.youtube.com/watch?v=RzlUQCy84rQ">Two examples for each of Amazon’s 14 Leadership Principles</a></li>
 <li><a href="https://docs.google.com/document/d/188JrZmqv7Nm7EULXItESSLmSEr7vBziqRUPew2oyWKY/edit">Amazon Assessment Debugging</a></li>
-<li><a href="https://aonecode.com/amazon-online-assessment">Amazon Asessment Questions AC</a></li>
-<li><a href="https://leetcode.com/discuss/interview-question/344650/Amazon-Online-Assessment-Questions">Amazon Asessment Questions LC</a></li>
+<li><a href="https://aonecode.com/amazon-online-assessment">Amazon Assessment Questions AC</a></li>
+<li><a href="https://leetcode.com/discuss/interview-question/344650/Amazon-Online-Assessment-Questions">Amazon Assessment Questions LC</a></li>
 <li><a href="https://leetcode.com/discuss/career/216554/from-0-to-clearing-uberappleamazonlinkedingoogle">LeetCoder Advice on 0 to Clearing all Interviews</a></li>
 <li><a href="https://github.com/donnemartin/system-design-primer">Scalable Systems Primer</a></li>
 </ul>
@@ -179,10 +179,11 @@ Trie</li>
 <li>Don’t jump into solving problems</li>
 <li>Ask questions!
 <ol type="1">
+<li>Ask about the product (usually given)</li>
 <li>Ask about content</li>
-<li>Ask about users</li>
-<li>Ask about performance (concurrency)</li>
-<li>Ask about what API is needed</li>
+<li>Ask about users (size, usage)</li>
+<li>Ask about performance (throughput, concurrency)</li>
+<li>Ask about what action/API is needed</li>
 </ol></li>
 <li>Start focusing on your expertise (backend, frontend, production server)</li>
 </ul>
@@ -190,6 +191,7 @@ Trie</li>
 <p>Defining the schema, just field names are fine</p>
 <ul>
 <li>Highlight possibly special fields to that particular product (e.g., multiple payment methods)</li>
+<li>Identify high-usage queries to determine schema indices/keys.</li>
 </ul>
 <h3 id="web-server">Web Server</h3>
 <p>Defining the API</p>
@@ -201,9 +203,20 @@ Trie</li>
 </ul>
 <h3 id="frontend">Frontend</h3>
 <ul>
-<li>Start with the frontpage with basic services (e.g., search box)</li>
+<li>Start with the front page with basic services (e.g., search box)</li>
 <li>Keep asking if they expect any other services (e.g., recommendations)</li>
 <li>Head to the next page by following a service action (e.g., clicking the search bar)</li>
+</ul>
+<h3 id="improvements-for-performance">Improvements for Performance</h3>
+<ul>
+<li><p><strong>Load Balancer</strong></p>
+<p>The idea of having a router to route requests to specific computers in attempt to reduce the traffic/load of a single computer. The added benefit is redundancy of servers which if one goes down there exist other possible routes.</p></li>
+<li><p><strong>Cached Database</strong></p>
+<p>A copy of the database whether it’s a full copy (rare) or a usage-base copy (more common) to both increase the data-access speed and create a layer of redundancy if the database goes down.</p></li>
+<li><p><strong>Database Load Balancing</strong></p>
+<p>Similar to having multiple servers for web requests, multiple copies of a database on separate resources (often read-only copies) can not only solve load issues but also provide redundancy.</p></li>
+<li><p><strong>Content Delivery Network</strong></p>
+<p>A network of servers (often intelligently geographically placed) to server web assets (images, videos, CSS, etc).</p></li>
 </ul>
 
       </div>
