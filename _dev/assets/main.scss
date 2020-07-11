@@ -114,7 +114,7 @@ hr.gradient {
 }
 
 blockquote {
-  border-left: 0.25em solid #dfe2e5;
+  border-left: 0.5em solid #dfe2e5;
   color: #6a737d;
   padding: 0 1em;
   margin-bottom: 16px;
@@ -365,4 +365,68 @@ footer {
   .title {
     margin-bottom: 0.5em;
   }
+}
+
+// About Me
+
+#about-me {
+  > div {
+    padding: 2em 2em 2em 2em;
+    border: 1px solid white;
+    border-radius: $base-border-radius;
+  }
+
+  > div:not(:last-child) {
+    margin-bottom: 1em;
+  }
+}
+
+#research-astronomer {
+  background-color: #dfe2e5;
+}
+
+#software-developer {
+  background-color: #313440;
+}
+
+.terminal-blinker {
+  color: green;
+  font-weight: bold;
+  text-align: left;
+  margin: auto;
+  font-size: 3vh;
+}
+
+.terminal-blinker::after {
+  content: "|";
+  white-space: pre;
+  width: 1em;
+  color: white;
+  background-color: white;
+  animation: blinker 1s step-start infinite;
+  animation-iteration-count: 6;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+.tech-stack {
+  div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  div:not(:last-child) {
+    margin-bottom: 2em;
+  }
+}
+
+.tech-logo {
+  flex: 1;
+  width: 100%;
+  height: 10vh;
+  min-height: 50px;
 }
