@@ -54,8 +54,8 @@ For every structure understand the Big-O time and space complexity for the follo
 * [Amazon Code Sampling (SIP)](https://www.youtube.com/watch?v=mjZpZ_wcYFg)
 * [Two examples for each of Amazon’s 14 Leadership Principles](https://www.youtube.com/watch?v=RzlUQCy84rQ)
 * [Amazon Assessment Debugging](https://docs.google.com/document/d/188JrZmqv7Nm7EULXItESSLmSEr7vBziqRUPew2oyWKY/edit)
-* [Amazon Asessment Questions AC](https://aonecode.com/amazon-online-assessment)
-* [Amazon Asessment Questions LC](https://leetcode.com/discuss/interview-question/344650/Amazon-Online-Assessment-Questions)
+* [Amazon Assessment Questions AC](https://aonecode.com/amazon-online-assessment)
+* [Amazon Assessment Questions LC](https://leetcode.com/discuss/interview-question/344650/Amazon-Online-Assessment-Questions)
 * [LeetCoder Advice on 0 to Clearing all Interviews](https://leetcode.com/discuss/career/216554/from-0-to-clearing-uberappleamazonlinkedingoogle)
 * [Scalable Systems Primer](https://github.com/donnemartin/system-design-primer)
 
@@ -63,16 +63,18 @@ For every structure understand the Big-O time and space complexity for the follo
 
 * Don't jump into solving problems
 * Ask questions!
+  1. Ask about the product (usually given)
   1. Ask about content
-  1. Ask about users
-  1. Ask about performance (concurrency)
-  1. Ask about what API is needed
+  1. Ask about users (size, usage)
+  1. Ask about performance (throughput, concurrency)
+  1. Ask about what action/API is needed
 * Start focusing on your expertise (backend, frontend, production server)
 
 ### Backend
 Defining the schema, just field names are fine
 
 * Highlight possibly special fields to that particular product (e.g., multiple payment methods)
+* Identify high-usage queries to determine schema indices/keys.
 
 ### Web Server
 Defining the API
@@ -84,6 +86,25 @@ Defining the API
 
 ### Frontend
 
-* Start with the frontpage with basic services (e.g., search box)
+* Start with the front page with basic services (e.g., search box)
 * Keep asking if they expect any other services (e.g., recommendations)
-* Head to the next page by following a service action (e.g., clicking the search bar)
+* Head to the next page  by following a service action (e.g., clicking the search bar)
+
+
+### Improvements for Performance
+
+* **Load Balancer**
+
+  The idea of having a router to route requests to specific computers in attempt to reduce the traffic/load of a single computer. The added benefit is redundancy of servers which if one goes down there exist other possible routes.
+
+* **Cached Database**
+
+  A copy of the database whether it's a full copy (rare) or a usage-base copy (more common) to both increase the data-access speed and create a layer of redundancy if the database goes down.
+
+* **Database Load Balancing**
+
+  Similar to having multiple servers for web requests, multiple copies of a database on separate resources (often read-only copies) can not only solve load issues but also provide redundancy.
+
+* **Content Delivery Network**
+
+  A network of servers (often intelligently geographically placed) to server web assets (images, videos, CSS, etc).
