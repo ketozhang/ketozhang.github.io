@@ -14,7 +14,7 @@
   <meta charset="UTF-8">
   <title>
     
-    Keto | Computer Science
+    Keto | Linked List
     
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -57,48 +57,16 @@
       <div class="sidenav sticky-top vh-80">
         <div class="sidenav-header row no-gutters">
           <div class="col-9">
-            <strong>Computer Science</strong>
+            <strong>Linked List</strong>
           </div>
           <div class="col-2 offset-1">
-            <a class="go-up" href="https://ketozhang.github.io/notes/" role="button">
+            <a class="go-up" href="https://ketozhang.github.io/notes/Computer_Science/Data_Structure/" role="button">
               <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px" />
             </a>
           </div>
         </div>
         <div class="sidenav-body no-gutters">
           <ul class="no-list-style pl-3">
-            
-            <li class="pb-3">
-              <a href="https://ketozhang.github.io/notes/Computer_Science/Algorithms/">Algorithms</a>
-            </li>
-            
-            <li class="pb-3">
-              <a href="https://ketozhang.github.io/notes/Computer_Science/Computer_Architecture/">Computer Architecture</a>
-            </li>
-            
-            <li class="pb-3">
-              <a href="https://ketozhang.github.io/notes/Computer_Science/Cpp/">Cpp</a>
-            </li>
-            
-            <li class="pb-3">
-              <a href="https://ketozhang.github.io/notes/Computer_Science/Data_Structure/">Data Structure</a>
-            </li>
-            
-            <li class="pb-3">
-              <a href="https://ketozhang.github.io/notes/Computer_Science/Database_Systems/">Database Systems</a>
-            </li>
-            
-            <li class="pb-3">
-              <a href="https://ketozhang.github.io/notes/Computer_Science/JavaScript/">JavaScript</a>
-            </li>
-            
-            <li class="pb-3">
-              <a href="https://ketozhang.github.io/notes/Computer_Science/Python/">Python</a>
-            </li>
-            
-            <li class="pb-3">
-              <a href="https://ketozhang.github.io/notes/Computer_Science/Web_Development/">Web Development</a>
-            </li>
             
           </ul>
         </div>
@@ -107,7 +75,65 @@
 
     <!-- Content -->
     <div class="col-7 col-md-6">
-      <h1 class="title text-center pt-3">Computer Science</h1>
+      <h1 class="title text-center pt-3">Linked List</h1>
+      
+      <div class="markdown-content">
+        <p>A sequential collection of elements where each element contains a value and a pointer.</p>
+<ul>
+<li>The pointer points to the next item in te list.</li>
+<li>The last pointer points to the null terminator used to signify the end of a list.</li>
+</ul>
+<p><strong>Pros:</strong></p>
+<ul>
+<li>Easy insertion and deletion without allocation as the data does not need to be stored contiguously in memory due to pointers.</li>
+</ul>
+<p><strong>Cons:</strong></p>
+<ul>
+<li>Access any particular index requires traversing.</li>
+</ul>
+<p><strong>Examples:</strong></p>
+<ul>
+<li>Java’s LinkedList and ArrayList</li>
+</ul>
+<h2 id="singly-linked-list">Singly Linked List</h2>
+<h2 id="doubly-linked-list">Doubly Linked List</h2>
+<p>The doubly linked list adds two pointers to each element: a next and a prev pointer. The first element’s next pointer and last element’s prev pointer points to the null terminator.</p>
+<h2 id="sentinel-node">Sentinel Node</h2>
+<p>A <strong>sentinel node</strong> is a node that points to the first and last element.</p>
+<ul>
+<li>Sentinel node provides a easy way to append to the ends of the list.</li>
+</ul>
+<h2 id="circular-linked-list">Circular Linked List</h2>
+<p>Instead of the last pointer pointing to the null terminator, the last pointer points to the first first element.</p>
+
+      </div>
+      <!-- Disqus Comments -->
+      <div id="disqus_thread" class="mt-5">
+        <div class="w-50 mx-auto">
+          <button type="button" class="btn btn-block btn-outline-dark show-comments">
+            Show Comments
+          </button>
+        </div>
+      </div>
+      <!--
+                <script>
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                var disqus_config = function () {
+                    this.page.url = "";  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = "/notes/Computer_Science/Data_Structure/Linked_List/"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://ketozhang.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
+                    by Disqus.</a></noscript>
+            -->
       
     </div>
     <!-- On This Page -->

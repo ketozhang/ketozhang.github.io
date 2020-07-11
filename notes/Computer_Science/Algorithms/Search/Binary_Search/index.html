@@ -14,7 +14,7 @@
   <meta charset="UTF-8">
   <title>
     
-    Keto | Computer Science
+    Keto | Binary Search
     
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -57,48 +57,16 @@
       <div class="sidenav sticky-top vh-80">
         <div class="sidenav-header row no-gutters">
           <div class="col-9">
-            <strong>Computer Science</strong>
+            <strong>Binary Search</strong>
           </div>
           <div class="col-2 offset-1">
-            <a class="go-up" href="https://ketozhang.github.io/notes/" role="button">
+            <a class="go-up" href="https://ketozhang.github.io/notes/Computer_Science/Algorithms/Search/" role="button">
               <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px" />
             </a>
           </div>
         </div>
         <div class="sidenav-body no-gutters">
           <ul class="no-list-style pl-3">
-            
-            <li class="pb-3">
-              <a href="https://ketozhang.github.io/notes/Computer_Science/Algorithms/">Algorithms</a>
-            </li>
-            
-            <li class="pb-3">
-              <a href="https://ketozhang.github.io/notes/Computer_Science/Computer_Architecture/">Computer Architecture</a>
-            </li>
-            
-            <li class="pb-3">
-              <a href="https://ketozhang.github.io/notes/Computer_Science/Cpp/">Cpp</a>
-            </li>
-            
-            <li class="pb-3">
-              <a href="https://ketozhang.github.io/notes/Computer_Science/Data_Structure/">Data Structure</a>
-            </li>
-            
-            <li class="pb-3">
-              <a href="https://ketozhang.github.io/notes/Computer_Science/Database_Systems/">Database Systems</a>
-            </li>
-            
-            <li class="pb-3">
-              <a href="https://ketozhang.github.io/notes/Computer_Science/JavaScript/">JavaScript</a>
-            </li>
-            
-            <li class="pb-3">
-              <a href="https://ketozhang.github.io/notes/Computer_Science/Python/">Python</a>
-            </li>
-            
-            <li class="pb-3">
-              <a href="https://ketozhang.github.io/notes/Computer_Science/Web_Development/">Web Development</a>
-            </li>
             
           </ul>
         </div>
@@ -107,7 +75,84 @@
 
     <!-- Content -->
     <div class="col-7 col-md-6">
-      <h1 class="title text-center pt-3">Computer Science</h1>
+      <h1 class="title text-center pt-3">Binary Search</h1>
+      
+      <div class="markdown-content">
+        <p>A logarithmic search algorithm to find a value in a sorted array.</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>Best</th>
+<th>Worst</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Time</td>
+<td><span class="math inline">\(\mathcal O(1)\)</span></td>
+<td><span class="math inline">\(\mathcal O(\log n)\)</span></td>
+</tr>
+<tr class="even">
+<td>Space</td>
+<td><span class="math inline">\(\mathcal O(1)\)</span></td>
+<td><span class="math inline">\(\mathcal O(1)\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Usage</strong> * Search a sorted array</p>
+<h2 id="algorithm">Algorithm</h2>
+<p>For the search key <span class="math inline">\(k\)</span> and a sorted array <span class="math inline">\(v = [v_1, v_2, \ldots, v_n]\)</span> where <span class="math inline">\(v_1 \le v_2 \le \ldots v_n\)</span>, the following algorithm returns the index where <span class="math inline">\(k\)</span> exists otherwise fails.</p>
+<ol type="1">
+<li>Let <span class="math inline">\(L = 0\)</span> and <span class="math inline">\(R = n-1\)</span>.</li>
+<li>If <span class="math inline">\(L &gt; R\)</span>, the algorithm terminates unsuccessfully.</li>
+<li>Set the current position to the floored midpoint of <span class="math inline">\([L, R]\)</span></li>
+</ol>
+<p><span class="math display">\[
+  i = \left\lfloor \frac{L + R}{2} \right\rfloor
+  \]</span></p>
+<ol type="1">
+<li><p>If <span class="math inline">\(v_i = k\)</span>. If value matches found, return the index <span class="math inline">\(i\)</span>.</p></li>
+<li><p>Else if the <span class="math inline">\(v_i &lt; k\)</span> move to left bound above the current index</p>
+<p><span class="math display">\[
+ L = i + 1
+ \]</span></p>
+<p>Repeat step 2.</p></li>
+<li><p>Else if the <span class="math inline">\(v_i &gt; k\)</span> move to right bound below the current index</p>
+<p><span class="math display">\[
+ R = i - 1
+ \]</span></p>
+<p>Repeat step 2.</p></li>
+</ol>
+
+      </div>
+      <!-- Disqus Comments -->
+      <div id="disqus_thread" class="mt-5">
+        <div class="w-50 mx-auto">
+          <button type="button" class="btn btn-block btn-outline-dark show-comments">
+            Show Comments
+          </button>
+        </div>
+      </div>
+      <!--
+                <script>
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                var disqus_config = function () {
+                    this.page.url = "";  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = "/notes/Computer_Science/Algorithms/Search/Binary_Search/"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://ketozhang.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
+                    by Disqus.</a></noscript>
+            -->
       
     </div>
     <!-- On This Page -->
