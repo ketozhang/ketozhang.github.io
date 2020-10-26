@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145024207-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-145024207-1');
+  </script>
+  <meta charset="UTF-8">
+  <title>
+    
+    Keto | Matrix Formalism
+    
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap time -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://ketozhang.github.io/static/main.css" rel="stylesheet">
+  <link href=" https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link href=" https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  <link href="https://ketozhang.github.io/static/prism.css" rel="stylesheet">
+  <link href="https://ketozhang.github.io/static/prism-atom-dark.css" rel="stylesheet">
+  <link href="https://ketozhang.github.io/static/favicon.ico" rel="shortcut icon">
+
+  <!-- LaTeX Stylesheet -->
+  
+  <div class="d-none">
+    $$
+    \newcommand{d}{\mathrm d}
+    \newcommand{avg}[1]{\expval{#1}}
+        \renewcommand{vec}[1]{\vectorbold{#1}}
+        $$
+    </div>
+    
+</head>
+
+<body>
+    
+<div class="container-fluid" id="note">
+  <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
+  <article class="row">
+    <!-- Notebook Sidenav -->
+    <div class="col-3 bg-light pt-1">
+      <div class="sidenav sticky-top vh-80">
+        <div class="sidenav-header row no-gutters">
+          <div class="col-9">
+            <strong>Matrix Formalism</strong>
+          </div>
+          <div class="col-2 offset-1">
+            <a class="go-up" href="https://ketozhang.github.io/notes/Data_Science/Probability_Theory/Markov-Chain/" role="button">
+              <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px" />
+            </a>
+          </div>
+        </div>
+        <div class="sidenav-body no-gutters">
+          <ul class="no-list-style pl-3">
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="col-7 col-md-6">
+      <h1 class="title text-center pt-3">Matrix Formalism</h1>
+      
+      <div class="markdown-content">
+        <h2 id="transition-matrix">Transition Matrix</h2>
+<p>For simplicity, consider that <span class="math inline">\(X_t:\set{1,2,3}\)</span> for all <span class="math inline">\(t \ge 0\)</span> composes a stationary Markov chain. We can repesent a transition from <span class="math inline">\(X_t\)</span> to <span class="math inline">\(X_{t+1}\)</span> as a matrix with entries as probability <span class="math inline">\(P_{ij} = P(i \to j)\)</span> of changing from state <span class="math inline">\(i\)</span> to <span class="math inline">\(j\)</span>,</p>
+<p><span class="math display">\[
+P =
+\begin{bmatrix}
+P_{11} &amp; P_{12} &amp; P_{12}\\
+P_{21} &amp; P_{22} &amp; P_{22}\\
+P_{31} &amp; P_{32} &amp; P_{32}
+\end{bmatrix}
+\]</span></p>
+<p>The transition matrix is simple to use just by multiplying the corresponding entries of every link in the chain.</p>
+<p>For <span class="math inline">\(n\)</span>-steps, we define the probability as ending up at some state <span class="math inline">\(j\)</span> given the initial state <span class="math inline">\(i\)</span>,</p>
+<p><span class="math display">\[
+P_{i,j}(n) = P(X_n = j \mid X_0 = i)
+\]</span></p>
+<p>Because <span class="math inline">\(P_{i,j}(n)\)</span> can be represented as entries <span class="math inline">\((i,j)\)</span> of a matrix, again we can create a transition matrix <span class="math inline">\(P(n)\)</span>. We can express this transition matrix as a function of the initial transition matrix <span class="math inline">\(P(1) = P\)</span>. Let’s start with <span class="math inline">\(n=2\)</span>,</p>
+<p><span class="math display">\[
+\begin{align}
+    P_{ij}(2) &amp;= P(X_2 = j \mid X_0 = i)\\
+    &amp;= \sum_{k} P(X_1 = k, X_2 = j \mid X_0 = i)\\
+    &amp;= \sum_{k} P(X_1=k \mid X_0 = i)P(X_2=j \mid X_1k)\\
+    &amp;= \sum_{k} P_{ik}P_{kj}
+\end{align}
+\]</span></p>
+<p><span class="math display">\[
+P_{ij}(2) = P_i^\top P_j
+\]</span></p>
+<p>Thus for all entries <span class="math inline">\(i,j\)</span>,</p>
+<p><span class="math display">\[
+P(2) = P^2
+\]</span></p>
+<p>You can prove by induction,</p>
+<p><span class="math display">\[
+P(n) = P^n
+\]</span></p>
+<h2 id="probability-of-state">Probability of State</h2>
+<p>The probability of a state in some iteration <span class="math inline">\(t\)</span> is the state <span class="math inline">\(i_n\)</span>,</p>
+<p><span class="math display">\[ \mathbb P(X_t = i) = \mathbb P_i(t) = \left[\vec P(0)  P^t\right]_{i} \]</span> <span class="math display">\[\vec P(t) = \vec P(0) P^t\]</span></p>
+<ul>
+<li><span class="math inline">\(\vec P(0)\)</span> : Initial state vector</li>
+<li><span class="math inline">\(P\)</span> : Transition Probability matrix (constant throughout iteration)</li>
+</ul>
+<h2 id="first-step-equation">First Step Equation</h2>
+<p>The average time <span class="math inline">\(\tau = \avg{t}\)</span> it takes for some state in all the possible states (<span class="math inline">\(i \in \Omega\)</span>) to end up in some subset of that state (<span class="math inline">\(\Omega_f \subset \Omega\)</span>) is given by the <strong>first step equation</strong>:</p>
+<p><span class="math display">\[ \tau(f) = 0 \qquad f \in \Omega_f\]</span> <span class="math display">\[ \tau(i) = 1 + \sum_{j \in \Omega} P_{ij}\tau(j) \]</span></p>
+<ul>
+<li>The problem of average time to reach some state <span class="math inline">\(f\)</span> in Markov chain is called the <strong>Hitting Time</strong> problem.</li>
+</ul>
+<h2 id="probability-of-hitting-one-before-the-other">Probability of Hitting One Before the Other</h2>
+<p>Let <span class="math inline">\(\Omega_A\)</span> and <span class="math inline">\(\Omega_B\)</span> be two disjoint subsets of <span class="math inline">\(\Omega\)</span>. The probability <span class="math inline">\(\alpha(i)\)</span> that starting at the initial state <span class="math inline">\(i \in \Omega\)</span>, we reach a state in <span class="math inline">\(\Omega_A\)</span> before <span class="math inline">\(\Omega_B\)</span> is:</p>
+<p><span class="math display">\[
+\begin{align*}
+    \alpha(a) = 1 \quad &amp;a \in \Omega_A\\
+    \alpha(b) = 0 \quad &amp;b \in \Omega_B\\
+    \alpha(i) = \sum_{j\in\Omega} P_{ij}\alpha(j) \quad &amp;i \not\in \Omega_A \cup \Omega_B
+\end{align*}
+\]</span></p>
+<h2 id="stationary-distribution">Stationary Distribution</h2>
+<p>When running the Markov chain we can end up at some state <span class="math inline">\(i\)</span> at some iteration <span class="math inline">\(t\)</span> such that the distribution <span class="math inline">\(P_i(t)\)</span> is stationary meaning it’s invariant under the transition probability matrix <span class="math inline">\(P\)</span>:</p>
+<p><span class="math display">\[
+P_i(t) = P_i(t)P
+\]</span></p>
+<p>Formally we have the <strong>theorem:</strong></p>
+<p><span class="math inline">\(P(t_0)\)</span> is invariant if and only if the distribution,</p>
+<p><span class="math display">\[
+\vec P(t) = \vec P(t_0) \qquad t \ge t_0\\
+\]</span></p>
+
+      </div>
+      <!-- Disqus Comments -->
+      <div id="disqus_thread" class="mt-5">
+        <div class="w-50 mx-auto">
+          <button type="button" class="btn btn-block btn-outline-dark show-comments">
+            Show Comments
+          </button>
+        </div>
+      </div>
+      <!--
+                <script>
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                var disqus_config = function () {
+                    this.page.url = "";  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = "/notes/Data_Science/Probability_Theory/Markov-Chain/Matrix_Formulation/"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://ketozhang.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
+                    by Disqus.</a></noscript>
+            -->
+      
+    </div>
+    <!-- On This Page -->
+    <div class="col-md-3 d-none d-md-block">
+      <div class="onthispage sidenav small">
+    <div class="sidenav-header">
+        <strong>&#9776; On This Page</strong>
+    </div>
+    <div class="onthispage-collapse">
+        <div class="sidenav-body bg-light">
+            <ul class="onthispage-list no-list-style"></ul>
+        </div>
+    </div>
+</div>
+    </div>
+  </article>
+</div>
+
+    <footer class="py-2 bg-white">
+    <div class="container">
+        <p class="text-right m-0"> Generated by <a href="https://github.com/ketozhang/StaticPy">StaticPy</a> |
+            Designed
+            by <a href="https://github.com/ketozhang">Keto Zhang</a>
+        </p>
+    </div>
+</footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+
+    <script src="https://ketozhang.github.io/static/js/datetime.js"></script>
+    <script src="https://ketozhang.github.io/static/js/disqus.js"></script>
+    <script src="https://ketozhang.github.io/static/js/codeHighlight.js"></script>
+    <script src="https://ketozhang.github.io/static/js/prism.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>
+    <script src="https://ketozhang.github.io/static/js/onthispage.js"></script>
+    <script src="https://ketozhang.github.io/static/js/markdown.js"></script>
+
+    <!-- MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://ketozhang.github.io/static/js/mathjax_config.js" defer></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+
+    <!-- Bootstrap JS -->
+    <!-- TODO: trim JS if not needed -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
+    <!-- Custom Global scripts -->
+    <script>
+      anchors.add();
+      $(document).ready(function () {
+        Prism.highlightAll();
+      })
+    </script>
+
+    <!-- Local scripts -->
+    
+    
+</body>
+
+</html>

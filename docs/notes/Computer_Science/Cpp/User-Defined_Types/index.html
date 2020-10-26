@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145024207-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-145024207-1');
+  </script>
+  <meta charset="UTF-8">
+  <title>
+    
+    Keto | User-Defined Types
+    
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap time -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://ketozhang.github.io/static/main.css" rel="stylesheet">
+  <link href=" https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link href=" https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  <link href="https://ketozhang.github.io/static/prism.css" rel="stylesheet">
+  <link href="https://ketozhang.github.io/static/prism-atom-dark.css" rel="stylesheet">
+  <link href="https://ketozhang.github.io/static/favicon.ico" rel="shortcut icon">
+
+  <!-- LaTeX Stylesheet -->
+  
+  <div class="d-none">
+    $$
+    \newcommand{d}{\mathrm d}
+    \newcommand{avg}[1]{\expval{#1}}
+        \renewcommand{vec}[1]{\vectorbold{#1}}
+        $$
+    </div>
+    
+</head>
+
+<body>
+    
+<div class="container-fluid" id="note">
+  <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
+  <article class="row">
+    <!-- Notebook Sidenav -->
+    <div class="col-3 bg-light pt-1">
+      <div class="sidenav sticky-top vh-80">
+        <div class="sidenav-header row no-gutters">
+          <div class="col-9">
+            <strong>User-Defined Types</strong>
+          </div>
+          <div class="col-2 offset-1">
+            <a class="go-up" href="https://ketozhang.github.io/notes/Computer_Science/Cpp/" role="button">
+              <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px" />
+            </a>
+          </div>
+        </div>
+        <div class="sidenav-body no-gutters">
+          <ul class="no-list-style pl-3">
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="col-7 col-md-6">
+      <h1 class="title text-center pt-3">User-Defined Types</h1>
+      
+      <div class="markdown-content">
+        <h2 id="structure">Structure</h2>
+<p>Adopted from C, the structure (<code>struct</code>) is a data structure that allow attributes or members.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">struct</span> Structure {</a>
+<a class="sourceLine" id="cb1-2" title="2">  <span class="dt">int</span> attr</a>
+<a class="sourceLine" id="cb1-3" title="3">}</a></code></pre></div>
+<p>This is often used to creator collection structures,</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">struct</span> Vector {</a>
+<a class="sourceLine" id="cb2-2" title="2">  <span class="dt">int</span> size; <span class="co">// number of items</span></a>
+<a class="sourceLine" id="cb2-3" title="3">  <span class="dt">double</span>* item; <span class="co">//  pointer to item</span></a>
+<a class="sourceLine" id="cb2-4" title="4">}</a></code></pre></div>
+<p>However, we need a initialization function to point <code>item</code> to an array,</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb3-1" title="1">...</a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="dt">void</span> vector_init(Vector&amp; v, <span class="dt">int</span> size) {</a>
+<a class="sourceLine" id="cb3-3" title="3">  <span class="co">// v is Vector&amp; because we want to mutate the input</span></a>
+<a class="sourceLine" id="cb3-4" title="4">  v.item = <span class="kw">new</span> <span class="dt">double</span>[size]; <span class="co">// allocate an array of size doubles</span></a>
+<a class="sourceLine" id="cb3-5" title="5">  v.size = size;</a>
+<a class="sourceLine" id="cb3-6" title="6">}</a></code></pre></div>
+<p>We can now use <code>Vector</code> as so,</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb4-1" title="1">Vector v;</a>
+<a class="sourceLine" id="cb4-2" title="2">vector_init(v, <span class="dv">10</span>); <span class="co">// mutate v</span></a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="co">// Alternatively, we could&#39;ve created a function vector_new to return a new vector</span></a>
+<a class="sourceLine" id="cb4-4" title="4"><span class="co">// so that it looks like `Vector v = vector_new(10)`, however this is not the best syntax</span></a>
+<a class="sourceLine" id="cb4-5" title="5"></a>
+<a class="sourceLine" id="cb4-6" title="6"><span class="co">// Write to each element</span></a>
+<a class="sourceLine" id="cb4-7" title="7"><span class="cf">for</span> (<span class="dt">int</span> i=<span class="dv">0</span>; i!=<span class="dv">10</span>; ++i) {</a>
+<a class="sourceLine" id="cb4-8" title="8">  v.elem[i] = i;</a>
+<a class="sourceLine" id="cb4-9" title="9">}</a></code></pre></div>
+<h3 id="access-attributes">Access Attributes</h3>
+<p>Attributes are accessed by either the <code>.</code> dot notation or the <code>-&gt;</code> arrow notation for pointers.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb5-1" title="1"><span class="co">// Normal attribute access</span></a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="dt">int</span> size = v.size;</a>
+<a class="sourceLine" id="cb5-3" title="3"></a>
+<a class="sourceLine" id="cb5-4" title="4"><span class="co">// Access by reference</span></a>
+<a class="sourceLine" id="cb5-5" title="5">Vector&amp; ref = v</a>
+<a class="sourceLine" id="cb5-6" title="6"><span class="dt">int</span> size = v.size;</a>
+<a class="sourceLine" id="cb5-7" title="7"></a>
+<a class="sourceLine" id="cb5-8" title="8"><span class="co">// Access by pointer</span></a>
+<a class="sourceLine" id="cb5-9" title="9">Vector* ptr = &amp;v</a>
+<a class="sourceLine" id="cb5-10" title="10"><span class="dt">int</span> size = ptr-&gt;sizw;</a></code></pre></div>
+<h2 id="classes">Classes</h2>
+<p>A solution to combining both the representation of the object (i.e., its structure with attributes) and the operations it has available (i.e., its functions), the class is used.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb6-1" title="1"><span class="kw">class</span> Vector  {</a>
+<a class="sourceLine" id="cb6-2" title="2">  <span class="kw">public</span>:</a>
+<a class="sourceLine" id="cb6-3" title="3">    <span class="co">// Constructor</span></a>
+<a class="sourceLine" id="cb6-4" title="4">    Vector(<span class="dt">int</span> s) :item{<span class="kw">new</span> <span class="dt">double</span>[s]}, size{s} {}</a>
+<a class="sourceLine" id="cb6-5" title="5"></a>
+<a class="sourceLine" id="cb6-6" title="6">    <span class="co">// Get by index []</span></a>
+<a class="sourceLine" id="cb6-7" title="7">    <span class="dt">double</span>&amp; <span class="kw">operator</span>[](<span class="dt">int</span> i) {</a>
+<a class="sourceLine" id="cb6-8" title="8">      <span class="cf">return</span> item[i];</a>
+<a class="sourceLine" id="cb6-9" title="9">    }</a>
+<a class="sourceLine" id="cb6-10" title="10"></a>
+<a class="sourceLine" id="cb6-11" title="11">    <span class="co">// Get size</span></a>
+<a class="sourceLine" id="cb6-12" title="12">    <span class="dt">int</span> size() {<span class="cf">return</span> _size}</a>
+<a class="sourceLine" id="cb6-13" title="13"></a>
+<a class="sourceLine" id="cb6-14" title="14">  <span class="kw">private</span>:</a>
+<a class="sourceLine" id="cb6-15" title="15">    <span class="dt">double</span>* elem;</a>
+<a class="sourceLine" id="cb6-16" title="16">    <span class="dt">int</span> _size;</a>
+<a class="sourceLine" id="cb6-17" title="17">}</a></code></pre></div>
+<p>This class can now be used like,</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb7-1" title="1">Vector v(<span class="dv">10</span>);</a>
+<a class="sourceLine" id="cb7-2" title="2"></a>
+<a class="sourceLine" id="cb7-3" title="3"><span class="cf">for</span> (<span class="dt">int</span> i=<span class="dv">0</span>; i!=v.size(); ++i) {</a>
+<a class="sourceLine" id="cb7-4" title="4">  v[i] = i;</a>
+<a class="sourceLine" id="cb7-5" title="5">}</a></code></pre></div>
+<h2 id="union">Union</h2>
+<p>A union (<code>union</code>) is a <code>struct</code> which all attributes are allocated at the same address so that a union only occupies as much space as its largest attribute. However, a union can only hold a value for one attribute at a time.</p>
+<ul>
+<li>A usage for union is to return either variable depending on whether the input is a certaint type. For instance, when a variable can hold multiple types and of course its value depends on its type. However, a better solution for this would be to use <code>variant</code>.</li>
+</ul>
+<h2 id="enumerations">Enumerations</h2>
+<p>An enumerator (<code>enum</code>) is a type restricted to a integer size set of possible values. For example, we can have a <code>Color</code> type that only takes in three colors:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">enum</span> Color {red, blue, green}</a>
+<a class="sourceLine" id="cb8-2" title="2">Color col = red; <span class="co">// col = 0</span></a></code></pre></div>
+<p>From C, the <code>enum</code> behavior maps the value to an integer in order (by default). The mapped integer is returned on call.</p>
+<p>Different than C is the <code>enum class</code> which places its possible values in a class scope only accessible by the colon syntax <code>ClassName::Attribute</code>.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">enum</span> <span class="kw">class</span> ColorA {red, blue, green}</a>
+<a class="sourceLine" id="cb9-2" title="2"><span class="kw">enum</span> <span class="kw">class</span> ColorB {red, orange, purple}</a>
+<a class="sourceLine" id="cb9-3" title="3"></a>
+<a class="sourceLine" id="cb9-4" title="4">ColorA a = ColorA::red</a>
+<a class="sourceLine" id="cb9-5" title="5">ColorB b = ColorB::red</a>
+<a class="sourceLine" id="cb9-6" title="6"></a>
+<a class="sourceLine" id="cb9-7" title="7">a != b <span class="co">// true</span></a></code></pre></div>
+
+      </div>
+      <!-- Disqus Comments -->
+      <div id="disqus_thread" class="mt-5">
+        <div class="w-50 mx-auto">
+          <button type="button" class="btn btn-block btn-outline-dark show-comments">
+            Show Comments
+          </button>
+        </div>
+      </div>
+      <!--
+                <script>
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                var disqus_config = function () {
+                    this.page.url = "";  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = "/notes/Computer_Science/Cpp/User-Defined_Types/"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://ketozhang.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
+                    by Disqus.</a></noscript>
+            -->
+      
+    </div>
+    <!-- On This Page -->
+    <div class="col-md-3 d-none d-md-block">
+      <div class="onthispage sidenav small">
+    <div class="sidenav-header">
+        <strong>&#9776; On This Page</strong>
+    </div>
+    <div class="onthispage-collapse">
+        <div class="sidenav-body bg-light">
+            <ul class="onthispage-list no-list-style"></ul>
+        </div>
+    </div>
+</div>
+    </div>
+  </article>
+</div>
+
+    <footer class="py-2 bg-white">
+    <div class="container">
+        <p class="text-right m-0"> Generated by <a href="https://github.com/ketozhang/StaticPy">StaticPy</a> |
+            Designed
+            by <a href="https://github.com/ketozhang">Keto Zhang</a>
+        </p>
+    </div>
+</footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+
+    <script src="https://ketozhang.github.io/static/js/datetime.js"></script>
+    <script src="https://ketozhang.github.io/static/js/disqus.js"></script>
+    <script src="https://ketozhang.github.io/static/js/codeHighlight.js"></script>
+    <script src="https://ketozhang.github.io/static/js/prism.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>
+    <script src="https://ketozhang.github.io/static/js/onthispage.js"></script>
+    <script src="https://ketozhang.github.io/static/js/markdown.js"></script>
+
+    <!-- MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://ketozhang.github.io/static/js/mathjax_config.js" defer></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+
+    <!-- Bootstrap JS -->
+    <!-- TODO: trim JS if not needed -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
+    <!-- Custom Global scripts -->
+    <script>
+      anchors.add();
+      $(document).ready(function () {
+        Prism.highlightAll();
+      })
+    </script>
+
+    <!-- Local scripts -->
+    
+    
+</body>
+
+</html>

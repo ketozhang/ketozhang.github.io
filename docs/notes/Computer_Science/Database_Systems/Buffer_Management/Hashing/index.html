@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145024207-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-145024207-1');
+  </script>
+  <meta charset="UTF-8">
+  <title>
+    
+    Keto | Hashing
+    
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap time -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://ketozhang.github.io/static/main.css" rel="stylesheet">
+  <link href=" https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link href=" https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  <link href="https://ketozhang.github.io/static/prism.css" rel="stylesheet">
+  <link href="https://ketozhang.github.io/static/prism-atom-dark.css" rel="stylesheet">
+  <link href="https://ketozhang.github.io/static/favicon.ico" rel="shortcut icon">
+
+  <!-- LaTeX Stylesheet -->
+  
+  <div class="d-none">
+    $$
+    \newcommand{d}{\mathrm d}
+    \newcommand{avg}[1]{\expval{#1}}
+        \renewcommand{vec}[1]{\vectorbold{#1}}
+        $$
+    </div>
+    
+</head>
+
+<body>
+    
+<div class="container-fluid" id="note">
+  <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
+  <article class="row">
+    <!-- Notebook Sidenav -->
+    <div class="col-3 bg-light pt-1">
+      <div class="sidenav sticky-top vh-80">
+        <div class="sidenav-header row no-gutters">
+          <div class="col-9">
+            <strong>Hashing</strong>
+          </div>
+          <div class="col-2 offset-1">
+            <a class="go-up" href="https://ketozhang.github.io/notes/Computer_Science/Database_Systems/Buffer_Management/" role="button">
+              <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px" />
+            </a>
+          </div>
+        </div>
+        <div class="sidenav-body no-gutters">
+          <ul class="no-list-style pl-3">
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="col-7 col-md-6">
+      <h1 class="title text-center pt-3">Hashing</h1>
+      
+      <div class="markdown-content">
+        <h2 id="divide-and-conquer">Divide and Conquer</h2>
+<p>We assume <span class="math inline">\(N \le B\)</span></p>
+<p>First the divide step:</p>
+<ol type="1">
+<li>Read and store to an input buffer</li>
+<li>Apply hash function <span class="math inline">\(h_p\)</span></li>
+<li>Output to <span class="math inline">\(B-1\)</span> output buffers.</li>
+<li><span class="math inline">\(B-1\)</span> partition generated written to disk.</li>
+</ol>
+<p>Then conquer:</p>
+<ol type="1">
+<li>Read the hashed disk into buffer with another hashing function <span class="math inline">\(h_r\)</span></li>
+<li>Write to another disk.</li>
+</ol>
+<ul>
+<li><p><strong>Cost:</strong> <span class="math display">\[ 2N \cdot \# \text{passes} = 4N \]</span></p></li>
+<li><p><strong>Two-pass Memory Requirement:</strong> <span class="math display">\[ B = \sqrt{N} \]</span></p></li>
+</ul>
+<h2 id="recursive-partitioning.">Recursive Partitioning.</h2>
+<p>For partition that is <span class="math inline">\(&gt; B\)</span></p>
+<ol type="1">
+<li>Follow the same steps as divide</li>
+<li>Continue divide on the disk with a difference hash function <span class="math inline">\(h_p\)</span></li>
+<li>Once each partition is <span class="math inline">\(\le B-1\)</span> then we perform conquer with <span class="math inline">\(h_r\)</span></li>
+</ol>
+<ul>
+<li>If a partition is full of the same keys, then the division hash would be useless. We’re required to identify these cases and stop dividing.</li>
+</ul>
+<h2 id="parallel-hashing">Parallel Hashing</h2>
+<p>For <span class="math inline">\(n\)</span> machines we can take the data of all its disk and partition them into <span class="math inline">\(n\)</span> buffers. Each data is hashed with <span class="math inline">\(h_n\)</span> and the value will decided which machine the data belongs to.</p>
+
+      </div>
+      <!-- Disqus Comments -->
+      <div id="disqus_thread" class="mt-5">
+        <div class="w-50 mx-auto">
+          <button type="button" class="btn btn-block btn-outline-dark show-comments">
+            Show Comments
+          </button>
+        </div>
+      </div>
+      <!--
+                <script>
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                var disqus_config = function () {
+                    this.page.url = "";  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = "/notes/Computer_Science/Database_Systems/Buffer_Management/Hashing/"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://ketozhang.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
+                    by Disqus.</a></noscript>
+            -->
+      
+    </div>
+    <!-- On This Page -->
+    <div class="col-md-3 d-none d-md-block">
+      <div class="onthispage sidenav small">
+    <div class="sidenav-header">
+        <strong>&#9776; On This Page</strong>
+    </div>
+    <div class="onthispage-collapse">
+        <div class="sidenav-body bg-light">
+            <ul class="onthispage-list no-list-style"></ul>
+        </div>
+    </div>
+</div>
+    </div>
+  </article>
+</div>
+
+    <footer class="py-2 bg-white">
+    <div class="container">
+        <p class="text-right m-0"> Generated by <a href="https://github.com/ketozhang/StaticPy">StaticPy</a> |
+            Designed
+            by <a href="https://github.com/ketozhang">Keto Zhang</a>
+        </p>
+    </div>
+</footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+
+    <script src="https://ketozhang.github.io/static/js/datetime.js"></script>
+    <script src="https://ketozhang.github.io/static/js/disqus.js"></script>
+    <script src="https://ketozhang.github.io/static/js/codeHighlight.js"></script>
+    <script src="https://ketozhang.github.io/static/js/prism.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>
+    <script src="https://ketozhang.github.io/static/js/onthispage.js"></script>
+    <script src="https://ketozhang.github.io/static/js/markdown.js"></script>
+
+    <!-- MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://ketozhang.github.io/static/js/mathjax_config.js" defer></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+
+    <!-- Bootstrap JS -->
+    <!-- TODO: trim JS if not needed -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
+    <!-- Custom Global scripts -->
+    <script>
+      anchors.add();
+      $(document).ready(function () {
+        Prism.highlightAll();
+      })
+    </script>
+
+    <!-- Local scripts -->
+    
+    
+</body>
+
+</html>

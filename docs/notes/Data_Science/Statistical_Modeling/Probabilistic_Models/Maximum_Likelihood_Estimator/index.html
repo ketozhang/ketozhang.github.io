@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145024207-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-145024207-1');
+  </script>
+  <meta charset="UTF-8">
+  <title>
+    
+    Keto | Maximum Likelihood Estimator
+    
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap time -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://ketozhang.github.io/static/main.css" rel="stylesheet">
+  <link href=" https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link href=" https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  <link href="https://ketozhang.github.io/static/prism.css" rel="stylesheet">
+  <link href="https://ketozhang.github.io/static/prism-atom-dark.css" rel="stylesheet">
+  <link href="https://ketozhang.github.io/static/favicon.ico" rel="shortcut icon">
+
+  <!-- LaTeX Stylesheet -->
+  
+  <div class="d-none">
+    $$
+    \newcommand{d}{\mathrm d}
+    \newcommand{avg}[1]{\expval{#1}}
+        \renewcommand{vec}[1]{\vectorbold{#1}}
+        $$
+    </div>
+    
+</head>
+
+<body>
+    
+<div class="container-fluid" id="note">
+  <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
+  <article class="row">
+    <!-- Notebook Sidenav -->
+    <div class="col-3 bg-light pt-1">
+      <div class="sidenav sticky-top vh-80">
+        <div class="sidenav-header row no-gutters">
+          <div class="col-9">
+            <strong>Maximum Likelihood Estimator</strong>
+          </div>
+          <div class="col-2 offset-1">
+            <a class="go-up" href="https://ketozhang.github.io/notes/Data_Science/Statistical_Modeling/Probabilistic_Models/" role="button">
+              <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px" />
+            </a>
+          </div>
+        </div>
+        <div class="sidenav-body no-gutters">
+          <ul class="no-list-style pl-3">
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="col-7 col-md-6">
+      <h1 class="title text-center pt-3">Maximum Likelihood Estimator</h1>
+      
+      <div class="markdown-content">
+        <p>The maximum likelihood estimator (MLE)</p>
+<h2 id="motivation-from-probability-theory">Motivation from Probability Theory</h2>
+<p>The MLE often used without proof whether or not the underlying system is probabilistic. To understand why we are allowed to do this we need to first understanda truly probablistic system.</p>
+<p>We assume each point in of our sample comes from an IID sample <span class="math inline">\(X:~X_1, X_2, \ldots, X_n\)</span>. Our goal is to determine the underlying distribution where the sample came from. For simplicity let the distribution only be dependent on one parameter <span class="math inline">\(\theta\)</span> (e.g., Bernoulli, Poisson, Exponential). The objective is stated as:</p>
+<blockquote>
+<p>Of all possible values of the parameter <span class="math inline">\(\theta\)</span>, which value maximizes the likelihood of obtaining the sample?</p>
+</blockquote>
+<p>Mathematically this statement solves the objective:</p>
+<p><span class="math display">\[
+\max_{\theta} \mathcal L(\theta)~, \quad\text{for}~ \mathcal L(\theta) = P( X_1, X_2, \ldots, X_n \mid \theta)
+\]</span></p>
+<p>Where <span class="math inline">\(\mathcal L\)</span> is called the <strong>likelihood function</strong></p>
+<div class="Example">
+<p>Let <span class="math inline">\(X\)</span> be a sample of <span class="math inline">\(n\)</span> IID <span class="math inline">\(\text{Normal}(\mu, \sigma^2)\)</span>. Though the normal has two parameters, we just want to find out what’s the best guess for <span class="math inline">\(\mu\)</span>.</p>
+<p>The likelihood function for this sample is,</p>
+<p><span class="math display">\[
+\begin{align*}
+\mathcal L(\mu) &amp;= \prod_{i=1}^n \frac{1}{\sqrt{2\pi \sigma^2}}\exp\left[-\frac{1}{2}\left(\frac{X_i-\mu}{\sigma}\right)^2\right]\\
+                &amp;= (2\pi \sigma^2)^{n/2} \exp\left[-\frac{1}{2\sigma^2}\sum_{i=1}^{n} \left(X_i-\mu\right)^2\right]
+\end{align*}
+\]</span></p>
+<p>It looks like taking the log of the likelihood would make the objective function easier to solve. Let <span class="math inline">\(L\)</span> be the log likelihood:</p>
+<p><span class="math display">\[
+L(\mu) = \log{\left[(2\pi \sigma^2)^{n/2}\right]} -\frac{1}{2\sigma^2}\sum_{i=1}^{n} \left(X_i-\mu\right)^2
+\]</span></p>
+<p>Because the objective function is only dependent of <span class="math inline">\(\mu\)</span> we can remove all constant terms:</p>
+<p><span class="math display">\[
+L(\mu) \propto -\frac{1}{2\sigma}\sum_{i=1}^{n} \left(X_i-\mu\right)^2
+\]</span></p>
+<p>Let the extremum <span class="math inline">\(\hat \mu\)</span> be the estimator for <span class="math inline">\(\mu\)</span>,</p>
+<p><span class="math display">\[
+\begin{gather*}
+\frac{d}{d\mu} L = \frac{1}{\sigma}\sum_{i=1}^{n} \left(X_i-\mu\right) \\
+\Big\Downarrow\\
+\frac{1}{\sigma}\sum_{i=1}^{n} \left(X_i-\hat \mu\right) = 0\\
+\Big\Downarrow\\
+\boxed{\hat \mu = \frac{1}{n}\sum_{i=1}^n X_i = \bar X}
+\end{gather*}
+\]</span></p>
+<p>We end up with the unbiased estimator for <span class="math inline">\(\mu\)</span>.</p>
+<p>For <span class="math inline">\(\sigma^2\)</span>, keep <span class="math inline">\(\mu=\hat\mu\)</span> fixed and the extremum <span class="math inline">\(\hat \sigma^2\)</span> is the estimator for <span class="math inline">\(\sigma^2\)</span></p>
+<p><span class="math display">\[
+\boxed{\hat \sigma^2 = \frac{1}{n}\sum_{i=1}^n \left(X_i - \bar X\right)^{2}}
+\]</span></p>
+<p>We end up with the biased estimator for <span class="math inline">\(\sigma^2\)</span>.</p>
+</div>
+<div class="Example">
+<p>Now for a coin toss. Let <span class="math inline">\(X\)</span> be a sample of <span class="math inline">\(n\)</span> IID <span class="math inline">\(\text{Bernoulli}(p)\)</span>. The likelihood function is,</p>
+<p><span class="math display">\[
+\mathcal L(p) = \prod_{X_i = 1} p\prod_{X_i = 0} (1-p)
+\]</span></p>
+<p>This function can be simplified by noticing there if there are <span class="math inline">\(s\)</span> successes with chance <span class="math inline">\(p^s\)</span> then there are <span class="math inline">\(n-s\)</span> failures with chance <span class="math inline">\((1-p)^{n-s}\)</span>. This motivate us to define the random variable <span class="math inline">\(S = \sum_{i=1}^n X_i\)</span>.</p>
+<p><span class="math display">\[
+\mathcal L(p) = p^{S}(1-p)^{n-S}
+\]</span></p>
+<p>Noticeably, this is the binomial distribution (if <span class="math inline">\(p\)</span> was fixed) without the binomial coefficient. This is because our observed data is one sequence of <span class="math inline">\(n\)</span> Bernoulli trials. However this technical detail is not necessary because the binomial coefficient dissapears when maximizing the likelihood.</p>
+<p><span class="math display">\[
+L(p) = S \log p +  (n-S) \log(1-p)
+\]</span></p>
+<p>Finding the extremum <span class="math inline">\(\hat p\)</span>,</p>
+<p><span class="math display">\[
+\begin{gather*}
+\frac{d}{dp}L = \frac{S}{p} - \frac{n-S}{1-p}   \\
+\frac{S}{\hat p} - \frac{n-S}{1-\hat p} = 0     \\
+\boxed{\hat p = \frac{S}{n} = \bar X}
+\end{gather*}
+\]</span></p>
+</div>
+
+      </div>
+      <!-- Disqus Comments -->
+      <div id="disqus_thread" class="mt-5">
+        <div class="w-50 mx-auto">
+          <button type="button" class="btn btn-block btn-outline-dark show-comments">
+            Show Comments
+          </button>
+        </div>
+      </div>
+      <!--
+                <script>
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                var disqus_config = function () {
+                    this.page.url = "";  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = "/notes/Data_Science/Statistical_Modeling/Probabilistic_Models/Maximum_Likelihood_Estimator/"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://ketozhang.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
+                    by Disqus.</a></noscript>
+            -->
+      
+    </div>
+    <!-- On This Page -->
+    <div class="col-md-3 d-none d-md-block">
+      <div class="onthispage sidenav small">
+    <div class="sidenav-header">
+        <strong>&#9776; On This Page</strong>
+    </div>
+    <div class="onthispage-collapse">
+        <div class="sidenav-body bg-light">
+            <ul class="onthispage-list no-list-style"></ul>
+        </div>
+    </div>
+</div>
+    </div>
+  </article>
+</div>
+
+    <footer class="py-2 bg-white">
+    <div class="container">
+        <p class="text-right m-0"> Generated by <a href="https://github.com/ketozhang/StaticPy">StaticPy</a> |
+            Designed
+            by <a href="https://github.com/ketozhang">Keto Zhang</a>
+        </p>
+    </div>
+</footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+
+    <script src="https://ketozhang.github.io/static/js/datetime.js"></script>
+    <script src="https://ketozhang.github.io/static/js/disqus.js"></script>
+    <script src="https://ketozhang.github.io/static/js/codeHighlight.js"></script>
+    <script src="https://ketozhang.github.io/static/js/prism.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>
+    <script src="https://ketozhang.github.io/static/js/onthispage.js"></script>
+    <script src="https://ketozhang.github.io/static/js/markdown.js"></script>
+
+    <!-- MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://ketozhang.github.io/static/js/mathjax_config.js" defer></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+
+    <!-- Bootstrap JS -->
+    <!-- TODO: trim JS if not needed -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
+    <!-- Custom Global scripts -->
+    <script>
+      anchors.add();
+      $(document).ready(function () {
+        Prism.highlightAll();
+      })
+    </script>
+
+    <!-- Local scripts -->
+    
+    
+</body>
+
+</html>

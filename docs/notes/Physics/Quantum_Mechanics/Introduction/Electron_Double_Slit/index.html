@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145024207-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-145024207-1');
+  </script>
+  <meta charset="UTF-8">
+  <title>
+    
+    Keto | Young&#39;s Double Slit for Electrons
+    
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap time -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://ketozhang.github.io/static/main.css" rel="stylesheet">
+  <link href=" https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link href=" https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  <link href="https://ketozhang.github.io/static/prism.css" rel="stylesheet">
+  <link href="https://ketozhang.github.io/static/prism-atom-dark.css" rel="stylesheet">
+  <link href="https://ketozhang.github.io/static/favicon.ico" rel="shortcut icon">
+
+  <!-- LaTeX Stylesheet -->
+  
+  <div class="d-none">
+    $$
+    \newcommand{d}{\mathrm d}
+    \newcommand{avg}[1]{\expval{#1}}
+        \renewcommand{vec}[1]{\vectorbold{#1}}
+        $$
+    </div>
+    
+</head>
+
+<body>
+    
+<div class="container-fluid" id="note">
+  <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
+  <article class="row">
+    <!-- Notebook Sidenav -->
+    <div class="col-3 bg-light pt-1">
+      <div class="sidenav sticky-top vh-80">
+        <div class="sidenav-header row no-gutters">
+          <div class="col-9">
+            <strong>Young&#39;s Double Slit for Electrons</strong>
+          </div>
+          <div class="col-2 offset-1">
+            <a class="go-up" href="https://ketozhang.github.io/notes/Physics/Quantum_Mechanics/Introduction/" role="button">
+              <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px" />
+            </a>
+          </div>
+        </div>
+        <div class="sidenav-body no-gutters">
+          <ul class="no-list-style pl-3">
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="col-7 col-md-6">
+      <h1 class="title text-center pt-3">Young&#39;s Double Slit for Electrons</h1>
+      
+      <div class="markdown-content">
+        <p>Using the famous Young’s double slit experiment we can see one of the most interesting properties of quantum particles; for now, let’s focus on the electron.</p>
+<p>The experiment is set up like any Young’s double slit but this time we will use an electron gun (like a cathode ray tube). There’s two version of this gun quoted in literature, one that shoots lumps or electron or one that shoots a single electron at a time. I prefer a single electron for simplicity.</p>
+<h2 id="experiment-1---unobserved">Experiment 1 - Unobserved</h2>
+<p>The first experiment is set up doing 3 tasks with 3 probabilities:</p>
+<ul>
+<li><span class="math inline">\(P_1\)</span> for the probability if we only allow the electron to go through slit 1 by closing slit 2.</li>
+<li><span class="math inline">\(P_2\)</span> for the probability if we only allow the electron to go through slit 2 by closing slit 1.</li>
+<li><span class="math inline">\(P_{12}\)</span> for the probability if we allow both slits to be open</li>
+</ul>
+<p>The result show that the electron follows the property of waves:</p>
+<ul>
+<li><p>The probability distribution of <span class="math inline">\(P_{12}\)</span> is not particle-like such that it’s the sum of <span class="math inline">\(P_1 + P_2\)</span>,</p>
+<p><span class="math display">\[ P_{12} \neq P_1 + P_2\]</span></p>
+<p>Instead the electron is actually wave-like such that we define <span class="math inline">\(P_1 = \lvert \phi_1 \rvert^2\)</span> and <span class="math inline">\(P_2 = \lvert \phi_2 \rvert^2\)</span>,</p>
+<p><span class="math display">\[
+  \begin{equation}
+      P_{12} =  \lvert \phi_1 + \phi_2 \rvert^2
+      %\label{eq:slit probability}
+  \end{equation}
+  \]</span></p></li>
+<li><p>Each electron does not necessrily only have to pass through one slit. It may be pass through multiple or something else. No answer have been agreed upon.</p></li>
+</ul>
+<h2 id="experiment-2---observed">Experiment 2 - Observed</h2>
+<p>In this experiment instead of covering the hole, we place a detector at each hole to determine if the electron that landed at the wall comes from slit 1 or slit 2.</p>
+<p>The results show that the electron follows the property of particles:</p>
+<ul>
+<li>The probability distribution <span class="math inline">\(P_{12}\)</span> is as we expected:</li>
+</ul>
+<p><span class="math display">\[ P_{12} = P_1 + P_2 \]</span></p>
+<ul>
+<li>It is necessary that the electron either pass on to slit 1 or slit 2.</li>
+<li>The difference between this experiement is that the electron interacts with the detector (which emits photons)</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>We have two experiment one shows that the electron is wave-like if we were not to disturb the electron as it travels to the wall and an electron that is particle-like if we do.</p>
+<p>One may wonder if we vary the detector’s emission so that it distrubs the electrons less we find that:</p>
+<ul>
+<li>Decreasing the intensity of the detector only shows the probability that an electron is either wave-like (photon does not hit the electron) or particle-like (photon does hit the electron). This result is trivial to us.</li>
+<li>Decreasing the wavelength of the detector is much more interesting. We see that at a certain lower limit wavelength it is <strong>impossible</strong> to tell whether an electron came from slit 1 or slit 2. If the wavelength is much greater than the distance between slit 1 and slit 2 detectors then we will not be able to tell which detector it comes from (Rayleigh criterion). We consider this experiment inconclusive because it’s an experimental limit we cannot observe.</li>
+</ul>
+<p>The experimental limit above is one of the fundamental properties of not only quantum mechanics but of the universe. This limit is most famously called the <strong>Heisenberg uncertainty principle</strong>.</p>
+
+      </div>
+      <!-- Disqus Comments -->
+      <div id="disqus_thread" class="mt-5">
+        <div class="w-50 mx-auto">
+          <button type="button" class="btn btn-block btn-outline-dark show-comments">
+            Show Comments
+          </button>
+        </div>
+      </div>
+      <!--
+                <script>
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                var disqus_config = function () {
+                    this.page.url = "";  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = "/notes/Physics/Quantum_Mechanics/Introduction/Electron_Double_Slit/"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://ketozhang.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
+                    by Disqus.</a></noscript>
+            -->
+      
+    </div>
+    <!-- On This Page -->
+    <div class="col-md-3 d-none d-md-block">
+      <div class="onthispage sidenav small">
+    <div class="sidenav-header">
+        <strong>&#9776; On This Page</strong>
+    </div>
+    <div class="onthispage-collapse">
+        <div class="sidenav-body bg-light">
+            <ul class="onthispage-list no-list-style"></ul>
+        </div>
+    </div>
+</div>
+    </div>
+  </article>
+</div>
+
+    <footer class="py-2 bg-white">
+    <div class="container">
+        <p class="text-right m-0"> Generated by <a href="https://github.com/ketozhang/StaticPy">StaticPy</a> |
+            Designed
+            by <a href="https://github.com/ketozhang">Keto Zhang</a>
+        </p>
+    </div>
+</footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+
+    <script src="https://ketozhang.github.io/static/js/datetime.js"></script>
+    <script src="https://ketozhang.github.io/static/js/disqus.js"></script>
+    <script src="https://ketozhang.github.io/static/js/codeHighlight.js"></script>
+    <script src="https://ketozhang.github.io/static/js/prism.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>
+    <script src="https://ketozhang.github.io/static/js/onthispage.js"></script>
+    <script src="https://ketozhang.github.io/static/js/markdown.js"></script>
+
+    <!-- MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://ketozhang.github.io/static/js/mathjax_config.js" defer></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+
+    <!-- Bootstrap JS -->
+    <!-- TODO: trim JS if not needed -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
+    <!-- Custom Global scripts -->
+    <script>
+      anchors.add();
+      $(document).ready(function () {
+        Prism.highlightAll();
+      })
+    </script>
+
+    <!-- Local scripts -->
+    
+    
+</body>
+
+</html>

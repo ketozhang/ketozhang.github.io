@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145024207-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-145024207-1');
+  </script>
+  <meta charset="UTF-8">
+  <title>
+    
+    Keto | Software Job Interview
+    
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap time -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://ketozhang.github.io/static/main.css" rel="stylesheet">
+  <link href=" https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link href=" https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  <link href="https://ketozhang.github.io/static/prism.css" rel="stylesheet">
+  <link href="https://ketozhang.github.io/static/prism-atom-dark.css" rel="stylesheet">
+  <link href="https://ketozhang.github.io/static/favicon.ico" rel="shortcut icon">
+
+  <!-- LaTeX Stylesheet -->
+  
+  <div class="d-none">
+    $$
+    \newcommand{d}{\mathrm d}
+    \newcommand{avg}[1]{\expval{#1}}
+        \renewcommand{vec}[1]{\vectorbold{#1}}
+        $$
+    </div>
+    
+</head>
+
+<body>
+    
+<div class="container-fluid" id="note">
+  <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
+  <article class="row">
+    <!-- Notebook Sidenav -->
+    <div class="col-3 bg-light pt-1">
+      <div class="sidenav sticky-top vh-80">
+        <div class="sidenav-header row no-gutters">
+          <div class="col-9">
+            <strong>Software Job Interview</strong>
+          </div>
+          <div class="col-2 offset-1">
+            <a class="go-up" href="https://ketozhang.github.io/notes/Others/" role="button">
+              <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px" />
+            </a>
+          </div>
+        </div>
+        <div class="sidenav-body no-gutters">
+          <ul class="no-list-style pl-3">
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="col-7 col-md-6">
+      <h1 class="title text-center pt-3">Software Job Interview</h1>
+      
+      <div class="markdown-content">
+        <h2 id="data-structure-and-algorithms">Data Structure and Algorithms</h2>
+<p>For every structure understand the Big-O time and space complexity for the following operations:</p>
+<ol type="1">
+<li>Insert</li>
+<li>Delete</li>
+<li>Sort</li>
+<li>Bulk Insert</li>
+</ol>
+<h3 id="basic">Basic</h3>
+<ul>
+<li>List/Array
+<ul>
+<li><a href="https://leetcode.com/problems/copy-list-with-random-pointer/" class="uri">https://leetcode.com/problems/copy-list-with-random-pointer/</a>
+<ul>
+<li>[x] 1: Implementation is slow, very disorganized, plan it out</li>
+<li>[x] 2: Still quite slow O(N), organization is much better. If two array indexes each other, consider mapping them (dict).</li>
+</ul></li>
+<li><a href="https://leetcode.com/problems/merge-two-sorted-lists/" class="uri">https://leetcode.com/problems/merge-two-sorted-lists/</a>
+<ul>
+<li>[x] 1: Failed, too much time generating MaxHeap, next time use standard library. Missed the fact that the list were sorted; could’ve used comparison because of this fact.</li>
+<li>[x] 2: Excellent!</li>
+</ul></li>
+<li>Return the most common values of an array. If there’s a tie, return them all.</li>
+<li><a href="https://leetcode.com/discuss/interview-question/411357/">Zombie in Matrix</a>
+<ul>
+<li>[x] 1: Excellent, only issue is solution required mutation of the input. Requiring a deepcopy of an input is not a good indicator. You should’ve used the idea that only indices need to be iterated not the whole grid.</li>
+</ul></li>
+</ul></li>
+<li>Dictionary/Map
+<ul>
+<li><a href="https://leetcode.com/discuss/interview-question/542597/">Top K Frequently Mentioned Keywords</a>
+<ul>
+<li>[x] 1: Strings possible contain <code>[^a-z0-9]</code>, replace those with whitespace; the review itself doesn’t matter, just make sure to count each word once (set) then store them in a list. Counter returns value and count. Heapq would be easy to get first k.</li>
+</ul></li>
+<li><a href="https://leetcode.com/discuss/interview-question/373006">Favorite Genres</a>
+<ul>
+<li>[x] 1: Excellent, solution is equivalently <span class="math inline">\(\mathcal O(N^2)\)</span></li>
+</ul></li>
+</ul></li>
+<li>Tree (CS 61B)
+<ul>
+<li><a href="https://leetcode.com/problems/subtree-of-another-tree/submissions/">Subtree of Another Tree</a>
+<ul>
+<li>1: Excellent, it did take a while to fix some bugs. Solutions is a bit slow. Note that binary trees can be easily represented by strings.</li>
+</ul></li>
+<li>[x] Min/max heap</li>
+<li>[ ] Binary search tree</li>
+<li>[ ] Trie</li>
+</ul></li>
+</ul>
+<h3 id="intermediate">Intermediate</h3>
+<ul>
+<li>Hashmaps (CS61B)</li>
+<li>Caches (CS 61B and 186)</li>
+<li>Graphs
+<ul>
+<li><a href="https://leetcode.com/discuss/interview-question/436073/">Critical Nodes</a>
+<ul>
+<li>[x] 1: Failed, while a connected graph requires <span class="math inline">\(E &gt;= N-1\)</span>, a disconnected graph can also have <span class="math inline">\(E = N-1\)</span>.</li>
+</ul></li>
+<li><a href="https://leetcode.com/discuss/interview-question/372581">Critical Connections</a>
+<ul>
+<li>[x] 1: Failed to code up bridge algorithm. You need to pseudocode more before trying</li>
+<li>[x] 2: Success to code up brute force algorithm. Works really well and although slow <span class="math inline">\(\mathcal O(E^2 + EV)\)</span> at worst case.</li>
+</ul></li>
+</ul></li>
+</ul>
+<h3 id="exotic">Exotic</h3>
+<ul>
+<li>B+ Trees (CS 186)</li>
+</ul>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="https://docs.google.com/document/d/1f_JZNuSEShzCPORxfSE8cAKR1RiqV7NgygyRtAncxVI/edit">Interview Behavior Question Guide</a></li>
+<li><a href="https://www.youtube.com/watch?v=gNQ9-kgyHfo">Amazon System Design Preparation</a></li>
+<li><a href="https://www.youtube.com/watch?v=mjZpZ_wcYFg">Amazon Code Sampling (SIP)</a></li>
+<li><a href="https://www.youtube.com/watch?v=RzlUQCy84rQ">Two examples for each of Amazon’s 14 Leadership Principles</a></li>
+<li><a href="https://docs.google.com/document/d/188JrZmqv7Nm7EULXItESSLmSEr7vBziqRUPew2oyWKY/edit">Amazon Assessment Debugging</a></li>
+<li><a href="https://aonecode.com/amazon-online-assessment">Amazon Assessment Questions AC</a></li>
+<li><a href="https://leetcode.com/discuss/interview-question/344650/Amazon-Online-Assessment-Questions">Amazon Assessment Questions LC</a></li>
+<li><a href="https://leetcode.com/discuss/career/216554/from-0-to-clearing-uberappleamazonlinkedingoogle">LeetCoder Advice on 0 to Clearing all Interviews</a></li>
+<li><a href="https://github.com/donnemartin/system-design-primer">Scalable Systems Primer</a></li>
+</ul>
+<h2 id="systems-design">Systems Design</h2>
+<ul>
+<li>Don’t jump into solving problems</li>
+<li>Ask questions!
+<ol type="1">
+<li>Ask about the product (usually given)</li>
+<li>Ask about content</li>
+<li>Ask about users (size, usage)</li>
+<li>Ask about performance (throughput, concurrency)</li>
+<li>Ask about what action/API is needed</li>
+</ol></li>
+<li>Start focusing on your expertise (backend, frontend, production server)</li>
+</ul>
+<h3 id="backend">Backend</h3>
+<p>Defining the schema, just field names are fine</p>
+<ul>
+<li>Highlight possibly special fields to that particular product (e.g., multiple payment methods)</li>
+<li>Identify high-usage queries to determine schema indices/keys.</li>
+</ul>
+<h3 id="web-server">Web Server</h3>
+<p>Defining the API</p>
+<ul>
+<li>Go through API URL endpoint structure (<code>domain/resource/params?query_params</code>)</li>
+<li>Speak in HTTP requests</li>
+<li>A POST and PUT would need a JSON input.</li>
+<li>Each definable actions can be grouped into individual services. Each services may belong to a database table, but they should interact.</li>
+</ul>
+<h3 id="frontend">Frontend</h3>
+<ul>
+<li>Start with the front page with basic services (e.g., search box)</li>
+<li>Keep asking if they expect any other services (e.g., recommendations)</li>
+<li>Head to the next page by following a service action (e.g., clicking the search bar)</li>
+</ul>
+<h3 id="improvements-for-performance">Improvements for Performance</h3>
+<ul>
+<li><p><strong>Load Balancer</strong></p>
+<p>The idea of having a router to route requests to specific computers in attempt to reduce the traffic/load of a single computer. The added benefit is redundancy of servers which if one goes down there exist other possible routes.</p></li>
+<li><p><strong>Cached Database</strong></p>
+<p>A copy of the database whether it’s a full copy (rare) or a usage-base copy (more common) to both increase the data-access speed and create a layer of redundancy if the database goes down.</p></li>
+<li><p><strong>Database Load Balancing</strong></p>
+<p>Similar to having multiple servers for web requests, multiple copies of a database on separate resources (often read-only copies) can not only solve load issues but also provide redundancy.</p></li>
+<li><p><strong>Content Delivery Network</strong></p>
+<p>A network of servers (often intelligently geographically placed) to server web assets (images, videos, CSS, etc).</p></li>
+</ul>
+
+      </div>
+      <!-- Disqus Comments -->
+      <div id="disqus_thread" class="mt-5">
+        <div class="w-50 mx-auto">
+          <button type="button" class="btn btn-block btn-outline-dark show-comments">
+            Show Comments
+          </button>
+        </div>
+      </div>
+      <!--
+                <script>
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                var disqus_config = function () {
+                    this.page.url = "";  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = "/notes/Others/Software_Job_Interview/"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://ketozhang.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
+                    by Disqus.</a></noscript>
+            -->
+      
+    </div>
+    <!-- On This Page -->
+    <div class="col-md-3 d-none d-md-block">
+      <div class="onthispage sidenav small">
+    <div class="sidenav-header">
+        <strong>&#9776; On This Page</strong>
+    </div>
+    <div class="onthispage-collapse">
+        <div class="sidenav-body bg-light">
+            <ul class="onthispage-list no-list-style"></ul>
+        </div>
+    </div>
+</div>
+    </div>
+  </article>
+</div>
+
+    <footer class="py-2 bg-white">
+    <div class="container">
+        <p class="text-right m-0"> Generated by <a href="https://github.com/ketozhang/StaticPy">StaticPy</a> |
+            Designed
+            by <a href="https://github.com/ketozhang">Keto Zhang</a>
+        </p>
+    </div>
+</footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+
+    <script src="https://ketozhang.github.io/static/js/datetime.js"></script>
+    <script src="https://ketozhang.github.io/static/js/disqus.js"></script>
+    <script src="https://ketozhang.github.io/static/js/codeHighlight.js"></script>
+    <script src="https://ketozhang.github.io/static/js/prism.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>
+    <script src="https://ketozhang.github.io/static/js/onthispage.js"></script>
+    <script src="https://ketozhang.github.io/static/js/markdown.js"></script>
+
+    <!-- MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://ketozhang.github.io/static/js/mathjax_config.js" defer></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+
+    <!-- Bootstrap JS -->
+    <!-- TODO: trim JS if not needed -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
+    <!-- Custom Global scripts -->
+    <script>
+      anchors.add();
+      $(document).ready(function () {
+        Prism.highlightAll();
+      })
+    </script>
+
+    <!-- Local scripts -->
+    
+    
+</body>
+
+</html>
