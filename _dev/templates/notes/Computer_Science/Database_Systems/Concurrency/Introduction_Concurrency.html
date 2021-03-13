@@ -6,11 +6,11 @@
 <p>We will need to tackle the following problems when allowing concurrency.</p>
 <ul>
 <li><p><strong>Inconsistent Read</strong> User reads in the middle of a transaction</p></li>
-<li><p><strong>Lost Update</strong></p>
+<li><strong>Lost Update</strong>
 <ul>
 <li>A conflict with update where multiple users update the record. Any update may have been rejected.</li>
 </ul></li>
-<li><p><strong>Dirty Read</strong></p>
+<li><strong>Dirty Read</strong>
 <ul>
 <li>Reading transactions to be rejected</li>
 </ul></li>

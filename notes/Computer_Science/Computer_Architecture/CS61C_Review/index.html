@@ -82,22 +82,22 @@
 <h3 id="loop-unrolling">Loop Unrolling</h3>
 <p>Loop unrolling decreases the number of branch instructions and comparators which are the bottlenecks of datapath.</p>
 <h6 id="rolled">Rolled</h6>
-<div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb1-1"><a href="#cb1-1"></a>    <span class="dt">int</span> x;</span>
-<span id="cb1-2"><a href="#cb1-2"></a>    <span class="cf">for</span> (x = <span class="dv">0</span>; x &lt; <span class="dv">100</span>; x++)</span>
-<span id="cb1-3"><a href="#cb1-3"></a>    {</span>
-<span id="cb1-4"><a href="#cb1-4"></a>        delete(x);</span>
-<span id="cb1-5"><a href="#cb1-5"></a>    }</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb1-1" title="1">    <span class="dt">int</span> x;</a>
+<a class="sourceLine" id="cb1-2" title="2">    <span class="cf">for</span> (x = <span class="dv">0</span>; x &lt; <span class="dv">100</span>; x++)</a>
+<a class="sourceLine" id="cb1-3" title="3">    {</a>
+<a class="sourceLine" id="cb1-4" title="4">        delete(x);</a>
+<a class="sourceLine" id="cb1-5" title="5">    }</a></code></pre></div>
 <p>There is 100 sets of branch instrucitons.</p>
 <h6 id="unrolled">Unrolled</h6>
-<div class="sourceCode" id="cb2"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb2-1"><a href="#cb2-1"></a>    <span class="dt">int</span> x; </span>
-<span id="cb2-2"><a href="#cb2-2"></a>    <span class="cf">for</span> (x = <span class="dv">0</span>; x &lt; <span class="dv">20</span>; x += <span class="dv">5</span> )</span>
-<span id="cb2-3"><a href="#cb2-3"></a>    {</span>
-<span id="cb2-4"><a href="#cb2-4"></a>        delete(x); <span class="co">// For loop here?</span></span>
-<span id="cb2-5"><a href="#cb2-5"></a>        delete(x + <span class="dv">1</span>);</span>
-<span id="cb2-6"><a href="#cb2-6"></a>        delete(x + <span class="dv">2</span>);</span>
-<span id="cb2-7"><a href="#cb2-7"></a>        delete(x + <span class="dv">3</span>);</span>
-<span id="cb2-8"><a href="#cb2-8"></a>        delete(x + <span class="dv">4</span>);</span>
-<span id="cb2-9"><a href="#cb2-9"></a>    }</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb2-1" title="1">    <span class="dt">int</span> x; </a>
+<a class="sourceLine" id="cb2-2" title="2">    <span class="cf">for</span> (x = <span class="dv">0</span>; x &lt; <span class="dv">20</span>; x += <span class="dv">5</span> )</a>
+<a class="sourceLine" id="cb2-3" title="3">    {</a>
+<a class="sourceLine" id="cb2-4" title="4">        delete(x); <span class="co">// For loop here?</span></a>
+<a class="sourceLine" id="cb2-5" title="5">        delete(x + <span class="dv">1</span>);</a>
+<a class="sourceLine" id="cb2-6" title="6">        delete(x + <span class="dv">2</span>);</a>
+<a class="sourceLine" id="cb2-7" title="7">        delete(x + <span class="dv">3</span>);</a>
+<a class="sourceLine" id="cb2-8" title="8">        delete(x + <span class="dv">4</span>);</a>
+<a class="sourceLine" id="cb2-9" title="9">    }</a></code></pre></div>
 <p>There is now only 20 sets of branch instrucitons.</p>
 <ul>
 <li>One may make a for loop to do the unrolled statements. Many compilers are able to recognize these kinds of for loops.</li>
@@ -175,27 +175,27 @@
 </tbody>
 </table>
 <h4 id="example-of-sse-code">Example of SSE Code</h4>
-<div class="sourceCode" id="cb3"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb3-1"><a href="#cb3-1"></a>    <span class="dt">float</span> eval_lagrange_fast(<span class="dt">float</span> *X, <span class="dt">float</span> *Y, <span class="dt">float</span> c, <span class="dt">size_t</span> n, <span class="dt">size_t</span> k) {</span>
-<span id="cb3-2"><a href="#cb3-2"></a>        <span class="dt">float</span> retval = <span class="dv">1</span>, m[<span class="dv">4</span>];</span>
-<span id="cb3-3"><a href="#cb3-3"></a>        <span class="dt">size_t</span> i;</span>
-<span id="cb3-4"><a href="#cb3-4"></a>        __m128 ret_vec = _mm_set1_ps(<span class="dv">1</span>); <span class="co">// single precision (sp) floating point vector vector &lt;1, 1, 1, 1&gt; </span></span>
-<span id="cb3-5"><a href="#cb3-5"></a>        <span class="cf">for</span> (i = <span class="dv">0</span>; i &lt; n/<span class="dv">4</span>; i += <span class="dv">1</span>) {</span>
-<span id="cb3-6"><a href="#cb3-6"></a>            <span class="cf">if</span> (i == k/<span class="dv">4</span>)</span>
-<span id="cb3-7"><a href="#cb3-7"></a>                <span class="cf">continue</span>;</span>
-<span id="cb3-8"><a href="#cb3-8"></a>            ret_vec = _mm_mul_ps(ret_vec, _mm_sub_ps(_mm_set1_ps(c),</span>
-<span id="cb3-9"><a href="#cb3-9"></a>            _mm_loadu_ps(X + i*<span class="dv">4</span>)));</span>
-<span id="cb3-10"><a href="#cb3-10"></a>            ret_vec = _mm_div_ps(ret_vec, _mm_sub_ps(_mm_load1_ps(X + k),</span>
-<span id="cb3-11"><a href="#cb3-11"></a>            _mm_loadu_ps(X + i*<span class="dv">4</span>)));</span>
-<span id="cb3-12"><a href="#cb3-12"></a>        }</span>
-<span id="cb3-13"><a href="#cb3-13"></a>        <span class="cf">for</span> (i = k/<span class="dv">4</span>*<span class="dv">4</span>; i &lt; k/<span class="dv">4</span>*<span class="dv">4</span> + <span class="dv">4</span>; i += <span class="dv">1</span>) {</span>
-<span id="cb3-14"><a href="#cb3-14"></a>            <span class="cf">if</span> (i == k)</span>
-<span id="cb3-15"><a href="#cb3-15"></a>                <span class="cf">continue</span>;</span>
-<span id="cb3-16"><a href="#cb3-16"></a>            retval *= c - X[i];</span>
-<span id="cb3-17"><a href="#cb3-17"></a>            retval /= X[k] - X[i];</span>
-<span id="cb3-18"><a href="#cb3-18"></a>        }</span>
-<span id="cb3-19"><a href="#cb3-19"></a>        _mm_storeu_ps(m, ret_vec);</span>
-<span id="cb3-20"><a href="#cb3-20"></a>        <span class="cf">return</span> Y[k] * retval * m[<span class="dv">0</span>] * m[<span class="dv">1</span>] * m[<span class="dv">2</span>] * m[<span class="dv">3</span>];</span>
-<span id="cb3-21"><a href="#cb3-21"></a>    }</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb3-1" title="1">    <span class="dt">float</span> eval_lagrange_fast(<span class="dt">float</span> *X, <span class="dt">float</span> *Y, <span class="dt">float</span> c, <span class="dt">size_t</span> n, <span class="dt">size_t</span> k) {</a>
+<a class="sourceLine" id="cb3-2" title="2">        <span class="dt">float</span> retval = <span class="dv">1</span>, m[<span class="dv">4</span>];</a>
+<a class="sourceLine" id="cb3-3" title="3">        <span class="dt">size_t</span> i;</a>
+<a class="sourceLine" id="cb3-4" title="4">        __m128 ret_vec = _mm_set1_ps(<span class="dv">1</span>); <span class="co">// single precision (sp) floating point vector vector &lt;1, 1, 1, 1&gt; </span></a>
+<a class="sourceLine" id="cb3-5" title="5">        <span class="cf">for</span> (i = <span class="dv">0</span>; i &lt; n/<span class="dv">4</span>; i += <span class="dv">1</span>) {</a>
+<a class="sourceLine" id="cb3-6" title="6">            <span class="cf">if</span> (i == k/<span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb3-7" title="7">                <span class="cf">continue</span>;</a>
+<a class="sourceLine" id="cb3-8" title="8">            ret_vec = _mm_mul_ps(ret_vec, _mm_sub_ps(_mm_set1_ps(c),</a>
+<a class="sourceLine" id="cb3-9" title="9">            _mm_loadu_ps(X + i*<span class="dv">4</span>)));</a>
+<a class="sourceLine" id="cb3-10" title="10">            ret_vec = _mm_div_ps(ret_vec, _mm_sub_ps(_mm_load1_ps(X + k),</a>
+<a class="sourceLine" id="cb3-11" title="11">            _mm_loadu_ps(X + i*<span class="dv">4</span>)));</a>
+<a class="sourceLine" id="cb3-12" title="12">        }</a>
+<a class="sourceLine" id="cb3-13" title="13">        <span class="cf">for</span> (i = k/<span class="dv">4</span>*<span class="dv">4</span>; i &lt; k/<span class="dv">4</span>*<span class="dv">4</span> + <span class="dv">4</span>; i += <span class="dv">1</span>) {</a>
+<a class="sourceLine" id="cb3-14" title="14">            <span class="cf">if</span> (i == k)</a>
+<a class="sourceLine" id="cb3-15" title="15">                <span class="cf">continue</span>;</a>
+<a class="sourceLine" id="cb3-16" title="16">            retval *= c - X[i];</a>
+<a class="sourceLine" id="cb3-17" title="17">            retval /= X[k] - X[i];</a>
+<a class="sourceLine" id="cb3-18" title="18">        }</a>
+<a class="sourceLine" id="cb3-19" title="19">        _mm_storeu_ps(m, ret_vec);</a>
+<a class="sourceLine" id="cb3-20" title="20">        <span class="cf">return</span> Y[k] * retval * m[<span class="dv">0</span>] * m[<span class="dv">1</span>] * m[<span class="dv">2</span>] * m[<span class="dv">3</span>];</a>
+<a class="sourceLine" id="cb3-21" title="21">    }</a></code></pre></div>
 <h3 id="mimd---openmp">MIMD - OpenMP</h3>
 <p>Multiple instruction multiple data (<strong>MIMD</strong>) is a thread-level paralellism design.</p>
 <ul>
@@ -205,60 +205,60 @@
 <p>Let’s use OpenMP as an example.</p>
 <h4 id="openmp-directives">OpenMP Directives</h4>
 <p>Directives are placed in the code to signify which block of code are to be in distributed and what type of multithread process is to be done with those blocks.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb4-1"><a href="#cb4-1"></a><span class="er">##pragma omp [options]</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a>{</span>
-<span id="cb4-3"><a href="#cb4-3"></a>    [body]</span>
-<span id="cb4-4"><a href="#cb4-4"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb4-1" title="1"><span class="er">##pragma omp [options]</span></a>
+<a class="sourceLine" id="cb4-2" title="2">{</a>
+<a class="sourceLine" id="cb4-3" title="3">    [body]</a>
+<a class="sourceLine" id="cb4-4" title="4">}</a></code></pre></div>
 <h6 id="parallel">Parallel</h6>
 <p>The <code>parallel</code> option is used when specific parts of the memory can be assigned to each thread.</p>
 <p>The example below uses 2 threads to compute <span class="math inline">\(2^{100}\)</span>. Logically this should be 2x faster than a single thread (not really since its implementation dependent).</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb5-1"><a href="#cb5-1"></a>    NUM_THREADS = <span class="dv">2</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a>    <span class="dt">double</span> prod[<span class="dv">0</span>] = <span class="dv">2</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a>    <span class="dt">double</span> prod[<span class="dv">1</span>] = <span class="dv">2</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a>    <span class="dt">double</span> result = <span class="dv">1</span></span>
-<span id="cb5-5"><a href="#cb5-5"></a></span>
-<span id="cb5-6"><a href="#cb5-6"></a>    <span class="er">##pragma parallel {</span></span>
-<span id="cb5-7"><a href="#cb5-7"></a>        id = omp_get_thread_num()</span>
-<span id="cb5-8"><a href="#cb5-8"></a>        <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; <span class="dv">100</span>; i += NUM_THREADS) {</span>
-<span id="cb5-9"><a href="#cb5-9"></a>            prod[id] *= <span class="dv">2</span></span>
-<span id="cb5-10"><a href="#cb5-10"></a>        }</span>
-<span id="cb5-11"><a href="#cb5-11"></a>    }</span>
-<span id="cb5-12"><a href="#cb5-12"></a>    result *= prod[<span class="dv">0</span>] * prod[<span class="dv">1</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb5-1" title="1">    NUM_THREADS = <span class="dv">2</span></a>
+<a class="sourceLine" id="cb5-2" title="2">    <span class="dt">double</span> prod[<span class="dv">0</span>] = <span class="dv">2</span></a>
+<a class="sourceLine" id="cb5-3" title="3">    <span class="dt">double</span> prod[<span class="dv">1</span>] = <span class="dv">2</span></a>
+<a class="sourceLine" id="cb5-4" title="4">    <span class="dt">double</span> result = <span class="dv">1</span></a>
+<a class="sourceLine" id="cb5-5" title="5"></a>
+<a class="sourceLine" id="cb5-6" title="6">    <span class="er">##pragma parallel {</span></a>
+<a class="sourceLine" id="cb5-7" title="7">        id = omp_get_thread_num()</a>
+<a class="sourceLine" id="cb5-8" title="8">        <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; <span class="dv">100</span>; i += NUM_THREADS) {</a>
+<a class="sourceLine" id="cb5-9" title="9">            prod[id] *= <span class="dv">2</span></a>
+<a class="sourceLine" id="cb5-10" title="10">        }</a>
+<a class="sourceLine" id="cb5-11" title="11">    }</a>
+<a class="sourceLine" id="cb5-12" title="12">    result *= prod[<span class="dv">0</span>] * prod[<span class="dv">1</span>]</a></code></pre></div>
 <h6 id="critical">Critical</h6>
 <p>The <code>critical</code> option creates a critical section for threads required to access shared memory.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb6-1"><a href="#cb6-1"></a>    NUM_THREADS = <span class="dv">2</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a>    <span class="dt">double</span> prod[<span class="dv">0</span>] = <span class="dv">2</span></span>
-<span id="cb6-3"><a href="#cb6-3"></a>    <span class="dt">double</span> prod[<span class="dv">1</span>] = <span class="dv">2</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a>    <span class="dt">double</span> result = <span class="dv">1</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a></span>
-<span id="cb6-6"><a href="#cb6-6"></a>    <span class="er">##pragma omp parallel {</span></span>
-<span id="cb6-7"><a href="#cb6-7"></a>        id = omp_get_thread_num()</span>
-<span id="cb6-8"><a href="#cb6-8"></a>        <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; <span class="dv">50</span>; i += NUM_THREADS) {</span>
-<span id="cb6-9"><a href="#cb6-9"></a>            prod[id] *= <span class="dv">2</span></span>
-<span id="cb6-10"><a href="#cb6-10"></a>        }</span>
-<span id="cb6-11"><a href="#cb6-11"></a>    <span class="er">##pragma omp critical</span></span>
-<span id="cb6-12"><a href="#cb6-12"></a>        result *= prod[id]</span>
-<span id="cb6-13"><a href="#cb6-13"></a>    }</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb6-1" title="1">    NUM_THREADS = <span class="dv">2</span></a>
+<a class="sourceLine" id="cb6-2" title="2">    <span class="dt">double</span> prod[<span class="dv">0</span>] = <span class="dv">2</span></a>
+<a class="sourceLine" id="cb6-3" title="3">    <span class="dt">double</span> prod[<span class="dv">1</span>] = <span class="dv">2</span></a>
+<a class="sourceLine" id="cb6-4" title="4">    <span class="dt">double</span> result = <span class="dv">1</span></a>
+<a class="sourceLine" id="cb6-5" title="5"></a>
+<a class="sourceLine" id="cb6-6" title="6">    <span class="er">##pragma omp parallel {</span></a>
+<a class="sourceLine" id="cb6-7" title="7">        id = omp_get_thread_num()</a>
+<a class="sourceLine" id="cb6-8" title="8">        <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; <span class="dv">50</span>; i += NUM_THREADS) {</a>
+<a class="sourceLine" id="cb6-9" title="9">            prod[id] *= <span class="dv">2</span></a>
+<a class="sourceLine" id="cb6-10" title="10">        }</a>
+<a class="sourceLine" id="cb6-11" title="11">    <span class="er">##pragma omp critical</span></a>
+<a class="sourceLine" id="cb6-12" title="12">        result *= prod[id]</a>
+<a class="sourceLine" id="cb6-13" title="13">    }</a></code></pre></div>
 <h6 id="parallel-for">Parallel For</h6>
 <p>The <code>parallel for</code> option can be assigned to each thread by consecutive chunks.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb7-1"><a href="#cb7-1"></a><span class="er">##pragma omp parallel for{</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a>    <span class="dt">int</span> a = [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>];</span>
-<span id="cb7-3"><a href="#cb7-3"></a>    <span class="dt">int</span> i;</span>
-<span id="cb7-4"><a href="#cb7-4"></a>    <span class="cf">for</span> (i = <span class="dv">0</span>; i &lt; len(a); i++) {</span>
-<span id="cb7-5"><a href="#cb7-5"></a>        print(a[i])</span>
-<span id="cb7-6"><a href="#cb7-6"></a>    }</span>
-<span id="cb7-7"><a href="#cb7-7"></a>}</span>
-<span id="cb7-8"><a href="#cb7-8"></a><span class="co">// prints 1 2 3 4 in any order depending on which threads finishes first.</span></span>
-<span id="cb7-9"><a href="#cb7-9"></a></span>
-<span id="cb7-10"><a href="#cb7-10"></a><span class="dt">int</span> NUM_THREADS = <span class="dv">0</span>;</span>
-<span id="cb7-11"><a href="#cb7-11"></a><span class="dt">int</span> result;</span>
-<span id="cb7-12"><a href="#cb7-12"></a><span class="dt">int</span> prod[NUM_THREADS]</span>
-<span id="cb7-13"><a href="#cb7-13"></a><span class="er">##pragma omp parallel for{</span></span>
-<span id="cb7-14"><a href="#cb7-14"></a>    <span class="dt">int</span> id = omp_get_thread_num()</span>
-<span id="cb7-15"><a href="#cb7-15"></a>    <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; <span class="dv">100</span>; i++) {</span>
-<span id="cb7-16"><a href="#cb7-16"></a>        prod[id] *= <span class="dv">2</span></span>
-<span id="cb7-17"><a href="#cb7-17"></a>    }</span>
-<span id="cb7-18"><a href="#cb7-18"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode c"><code class="sourceCode c"><a class="sourceLine" id="cb7-1" title="1"><span class="er">##pragma omp parallel for{</span></a>
+<a class="sourceLine" id="cb7-2" title="2">    <span class="dt">int</span> a = [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>];</a>
+<a class="sourceLine" id="cb7-3" title="3">    <span class="dt">int</span> i;</a>
+<a class="sourceLine" id="cb7-4" title="4">    <span class="cf">for</span> (i = <span class="dv">0</span>; i &lt; len(a); i++) {</a>
+<a class="sourceLine" id="cb7-5" title="5">        print(a[i])</a>
+<a class="sourceLine" id="cb7-6" title="6">    }</a>
+<a class="sourceLine" id="cb7-7" title="7">}</a>
+<a class="sourceLine" id="cb7-8" title="8"><span class="co">// prints 1 2 3 4 in any order depending on which threads finishes first.</span></a>
+<a class="sourceLine" id="cb7-9" title="9"></a>
+<a class="sourceLine" id="cb7-10" title="10"><span class="dt">int</span> NUM_THREADS = <span class="dv">0</span>;</a>
+<a class="sourceLine" id="cb7-11" title="11"><span class="dt">int</span> result;</a>
+<a class="sourceLine" id="cb7-12" title="12"><span class="dt">int</span> prod[NUM_THREADS]</a>
+<a class="sourceLine" id="cb7-13" title="13"><span class="er">##pragma omp parallel for{</span></a>
+<a class="sourceLine" id="cb7-14" title="14">    <span class="dt">int</span> id = omp_get_thread_num()</a>
+<a class="sourceLine" id="cb7-15" title="15">    <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; <span class="dv">100</span>; i++) {</a>
+<a class="sourceLine" id="cb7-16" title="16">        prod[id] *= <span class="dv">2</span></a>
+<a class="sourceLine" id="cb7-17" title="17">    }</a>
+<a class="sourceLine" id="cb7-18" title="18">}</a></code></pre></div>
 <h4 id="shared-memory">Shared Memory</h4>
 <p>Because memory between are shared we can get a bug called a <strong>race condition</strong>. A race condition is caused due to the threads accessing the same memory (often when writing).</p>
 <ul>

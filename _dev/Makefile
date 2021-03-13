@@ -1,9 +1,9 @@
 local:
-	.venv/bin/flask run -p 8080 -host=0.0.0.0
+	.venv/bin/flask run -p 8080 --host=0.0.0.0
 
 debug:
 	FLASK_ENV=development \
-	.venv/bin/flask run -p 8080 -host=0.0.0.0
+	.venv/bin/flask run -p 8080 --host=0.0.0.0
 
 build:
 	.venv/bin/python app.py build
@@ -21,7 +21,7 @@ freeze:
 
 clean:
 	rm -rf docs/ && \
-	rm -rf templates/*.bak 
+	rm -rf templates/*.bak
 
 push:
 	make static && \

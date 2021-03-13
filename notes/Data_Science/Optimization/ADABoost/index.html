@@ -87,9 +87,9 @@
 </ul>
 <p>Let’s take the binary classification example <span class="math inline">\(y\)</span> with design matrix <span class="math inline">\(X\)</span>.</p>
 <ul>
-<li><p>Train <span class="math inline">\(T\)</span> classifiers <span class="math inline">\(G_1, \ldots, G_T\)</span></p></li>
-<li><p>The weight for sample point <span class="math inline">\(X_i\)</span> in <span class="math inline">\(G_t\)</span> grows according to how <span class="math inline">\(G_1, \ldots G_{t-1}\)</span> misclassified it and shrinks on correct classification.</p></li>
-<li><p>Train <span class="math inline">\(G_t\)</span> to try harder to correctly classify points with larger weights.</p></li>
+<li>Train <span class="math inline">\(T\)</span> classifiers <span class="math inline">\(G_1, \ldots, G_T\)</span></li>
+<li>The weight for sample point <span class="math inline">\(X_i\)</span> in <span class="math inline">\(G_t\)</span> grows according to how <span class="math inline">\(G_1, \ldots G_{t-1}\)</span> misclassified it and shrinks on correct classification.</li>
+<li>Train <span class="math inline">\(G_t\)</span> to try harder to correctly classify points with larger weights.</li>
 <li><p>The metalearner is a linear combination of the ensemble.</p>
 <p><span class="math display">\[
   M(z) = \sum_{t=1}^T \beta_t G_t(z)

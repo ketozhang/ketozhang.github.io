@@ -85,19 +85,19 @@
 <h2 id="namespaces">Namespaces</h2>
 <p>A namespace (<code>namespace</code>) can be defined to isolate code so that their names don’t conflict with the global namespace.</p>
 <p>Here, <code>ns</code> is a namespace so that <code>int</code> are not in conflict by requiring the double colon syntax <code>ns::int</code>.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">namespace</span> ns {</span>
-<span id="cb1-2"><a href="#cb1-2"></a>  <span class="kw">class</span> <span class="dt">int</span> {</span>
-<span id="cb1-3"><a href="#cb1-3"></a>    ...</span>
-<span id="cb1-4"><a href="#cb1-4"></a>  };</span>
-<span id="cb1-5"><a href="#cb1-5"></a>}</span>
-<span id="cb1-6"><a href="#cb1-6"></a></span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="dt">int</span> main() {</span>
-<span id="cb1-8"><a href="#cb1-8"></a>  ns::<span class="dt">int</span> var;</span>
-<span id="cb1-9"><a href="#cb1-9"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">namespace</span> ns {</a>
+<a class="sourceLine" id="cb1-2" title="2">  <span class="kw">class</span> <span class="dt">int</span> {</a>
+<a class="sourceLine" id="cb1-3" title="3">    ...</a>
+<a class="sourceLine" id="cb1-4" title="4">  };</a>
+<a class="sourceLine" id="cb1-5" title="5">}</a>
+<a class="sourceLine" id="cb1-6" title="6"></a>
+<a class="sourceLine" id="cb1-7" title="7"><span class="dt">int</span> main() {</a>
+<a class="sourceLine" id="cb1-8" title="8">  ns::<span class="dt">int</span> var;</a>
+<a class="sourceLine" id="cb1-9" title="9">}</a></code></pre></div>
 <h3 id="global-namespace">Global Namespace</h3>
 <p>A namespace is imported into the global namespace by the <code>using</code> statement,</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">using</span> std <span class="co">// Use all of std</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="kw">using</span> <span class="bu">std::</span>cout <span class="co">// Use only std::cout</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">using</span> std <span class="co">// Use all of std</span></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="kw">using</span> <span class="bu">std::</span>cout <span class="co">// Use only std::cout</span></a></code></pre></div>
 
       </div>
       <!-- Disqus Comments -->

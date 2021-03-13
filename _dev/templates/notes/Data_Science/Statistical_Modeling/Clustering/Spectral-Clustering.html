@@ -13,14 +13,14 @@
   \end{align*}
   \]</span></p>
 <p>Where the above is the <strong>Laplacian quadratic form</strong> with the <strong>Laplacian matrix</strong>,</p>
-<p><span class="math display">\[
+<span class="math display">\[
   L_{ij} = \begin{cases} -w_{ij}  &amp; i \neq j \\ \sum_{k \neq i} w_{ik} &amp; i=j \end{cases}
-  \]</span></p></li>
+  \]</span></li>
 <li><p><span class="math inline">\(\text{Mass}(G)\)</span> : Number of vertices in <span class="math inline">\(G\)</span> or assign vertex weights.</p></li>
 </ul>
 <h2 id="laplacian-matrix-properties">Laplacian Matrix Properties</h2>
 <ul>
-<li><p>The Laplacian matrix is a positive definite matrix.</p></li>
+<li>The Laplacian matrix is a positive definite matrix.</li>
 <li><p>All Laplacian matrix has the eigenvector <span class="math inline">\(\hat 1\)</span>. Since,</p>
 <p><span class="math display">\[
   \text{Cut}(G_1, G_2; y = \hat 1)  = 0
@@ -56,9 +56,9 @@
 y^\top M y = \mathrm{Tr}(M)
 \]</span></p>
 <ul>
-<li><p>The changes to the Fielder vector solves for the generlized eigensystem <span class="math display">\[
+<li>The changes to the Fielder vector solves for the generlized eigensystem <span class="math display">\[
   Lv = \lambda M v
-  \]</span></p></li>
+  \]</span></li>
 <li><p>In turn the sweep cut changes by including the Cheeger’s Inequality <span class="math display">\[
   \text{sparsity} \le \sqrt{2 \lambda_2 \max_i \frac{L_{ii}}{M_{ii}}}
   \]</span></p>

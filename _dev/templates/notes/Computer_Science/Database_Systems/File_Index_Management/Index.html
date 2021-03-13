@@ -49,9 +49,9 @@
 <dt><strong>Occupancy Invariant</strong></dt>
 <dd><p>Each interior node (excluding the root) is at least partly full:</p>
 <ul>
-<li><p><span class="math inline">\(d \le |\text{node}| \le 2d\)</span> where <span class="math inline">\(d\)</span> is the order of the tree and <span class="math inline">\(|\text{node}|\)</span> is the number of entries on a node.</p></li>
-<li><p>The maximum fanout is <span class="math display">\[ F_\text{max} = 2d+1 \]</span></p></li>
-<li><p>The maximum number of entries in a single node is <span class="math inline">\(2d\)</span></p></li>
+<li><span class="math inline">\(d \le |\text{node}| \le 2d\)</span> where <span class="math inline">\(d\)</span> is the order of the tree and <span class="math inline">\(|\text{node}|\)</span> is the number of entries on a node.</li>
+<li>The maximum fanout is <span class="math display">\[ F_\text{max} = 2d+1 \]</span></li>
+<li>The maximum number of entries in a single node is <span class="math inline">\(2d\)</span></li>
 <li><p>The maximum number of records is given by its height <span class="math inline">\(h\)</span> (<span class="math inline">\(\texttt{depth}-1\)</span>) and maximum number of entires <span class="math inline">\(2d\)</span>,</p>
 <p><span class="math display">\[ |B|_\text{max} =  (2d+1)^{h-1} \cdot 2d\]</span></p></li>
 </ul>
@@ -95,7 +95,7 @@
 <p><span class="math display">\[N_\text{chidren} = F = 2d + 1\]</span></p></li>
 <li><p><strong>Number of Leaf Nodes For Given Height</strong></p>
 <p>The number of leaf nodes for a given height <span class="math inline">\(h\)</span> and fanout <span class="math inline">\(F\)</span> is given by,</p>
-<p><span class="math display">\[N_\text{leaf} = (N_\text{children})^h = F^h\]</span></p></li>
+<span class="math display">\[N_\text{leaf} = (N_\text{children})^h = F^h\]</span></li>
 <li><p><strong>Maximum Occupancy For Given Height</strong></p>
 <p>The maximum occupancy (sum of the number of elements in the leaf node) is,</p>
 <p><span class="math display">\[

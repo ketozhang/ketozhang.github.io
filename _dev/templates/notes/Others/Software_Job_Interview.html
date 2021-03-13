@@ -11,37 +11,30 @@
 <li>List/Array
 <ul>
 <li><a href="https://leetcode.com/problems/copy-list-with-random-pointer/" class="uri">https://leetcode.com/problems/copy-list-with-random-pointer/</a>
-<ul class="task-list">
-<li><input type="checkbox" disabled="" checked="" />
-1: Implementation is slow, very disorganized, plan it out</li>
-<li><input type="checkbox" disabled="" checked="" />
-2: Still quite slow O(N), organization is much better. If two array indexes each other, consider mapping them (dict).</li>
+<ul>
+<li>[x] 1: Implementation is slow, very disorganized, plan it out</li>
+<li>[x] 2: Still quite slow O(N), organization is much better. If two array indexes each other, consider mapping them (dict).</li>
 </ul></li>
 <li><a href="https://leetcode.com/problems/merge-two-sorted-lists/" class="uri">https://leetcode.com/problems/merge-two-sorted-lists/</a>
-<ul class="task-list">
-<li><input type="checkbox" disabled="" checked="" />
-1: Failed, too much time generating MaxHeap, next time use standard library. Missed the fact that the list were sorted; could’ve used comparison because of this fact.</li>
-<li><input type="checkbox" disabled="" checked="" />
-2: Excellent!</li>
+<ul>
+<li>[x] 1: Failed, too much time generating MaxHeap, next time use standard library. Missed the fact that the list were sorted; could’ve used comparison because of this fact.</li>
+<li>[x] 2: Excellent!</li>
 </ul></li>
 <li>Return the most common values of an array. If there’s a tie, return them all.</li>
 <li><a href="https://leetcode.com/discuss/interview-question/411357/">Zombie in Matrix</a>
-<ul class="task-list">
-<li><input type="checkbox" disabled="" checked="" />
-1: Excellent, only issue is solution required mutation of the input. Requiring a deepcopy of an input is not a good indicator. You should’ve used the idea that only indices need to be iterated not the whole grid.</li>
+<ul>
+<li>[x] 1: Excellent, only issue is solution required mutation of the input. Requiring a deepcopy of an input is not a good indicator. You should’ve used the idea that only indices need to be iterated not the whole grid.</li>
 </ul></li>
 </ul></li>
 <li>Dictionary/Map
 <ul>
 <li><a href="https://leetcode.com/discuss/interview-question/542597/">Top K Frequently Mentioned Keywords</a>
-<ul class="task-list">
-<li><input type="checkbox" disabled="" checked="" />
-1: Strings possible contain <code>[^a-z0-9]</code>, replace those with whitespace; the review itself doesn’t matter, just make sure to count each word once (set) then store them in a list. Counter returns value and count. Heapq would be easy to get first k.</li>
+<ul>
+<li>[x] 1: Strings possible contain <code>[^a-z0-9]</code>, replace those with whitespace; the review itself doesn’t matter, just make sure to count each word once (set) then store them in a list. Counter returns value and count. Heapq would be easy to get first k.</li>
 </ul></li>
 <li><a href="https://leetcode.com/discuss/interview-question/373006">Favorite Genres</a>
-<ul class="task-list">
-<li><input type="checkbox" disabled="" checked="" />
-1: Excellent, solution is equivalently <span class="math inline">\(\mathcal O(N^2)\)</span></li>
+<ul>
+<li>[x] 1: Excellent, solution is equivalently <span class="math inline">\(\mathcal O(N^2)\)</span></li>
 </ul></li>
 </ul></li>
 <li>Tree (CS 61B)
@@ -50,12 +43,9 @@
 <ul>
 <li>1: Excellent, it did take a while to fix some bugs. Solutions is a bit slow. Note that binary trees can be easily represented by strings.</li>
 </ul></li>
-<li><input type="checkbox" disabled="" checked="" />
-Min/max heap</li>
-<li><input type="checkbox" disabled="" />
-Binary search tree</li>
-<li><input type="checkbox" disabled="" />
-Trie</li>
+<li>[x] Min/max heap</li>
+<li>[ ] Binary search tree</li>
+<li>[ ] Trie</li>
 </ul></li>
 </ul>
 <h3 id="intermediate">Intermediate</h3>
@@ -65,16 +55,13 @@ Trie</li>
 <li>Graphs
 <ul>
 <li><a href="https://leetcode.com/discuss/interview-question/436073/">Critical Nodes</a>
-<ul class="task-list">
-<li><input type="checkbox" disabled="" checked="" />
-1: Failed, while a connected graph requires <span class="math inline">\(E &gt;= N-1\)</span>, a disconnected graph can also have <span class="math inline">\(E = N-1\)</span>.</li>
+<ul>
+<li>[x] 1: Failed, while a connected graph requires <span class="math inline">\(E &gt;= N-1\)</span>, a disconnected graph can also have <span class="math inline">\(E = N-1\)</span>.</li>
 </ul></li>
 <li><a href="https://leetcode.com/discuss/interview-question/372581">Critical Connections</a>
-<ul class="task-list">
-<li><input type="checkbox" disabled="" checked="" />
-1: Failed to code up bridge algorithm. You need to pseudocode more before trying</li>
-<li><input type="checkbox" disabled="" checked="" />
-2: Success to code up brute force algorithm. Works really well and although slow <span class="math inline">\(\mathcal O(E^2 + EV)\)</span> at worst case.</li>
+<ul>
+<li>[x] 1: Failed to code up bridge algorithm. You need to pseudocode more before trying</li>
+<li>[x] 2: Success to code up brute force algorithm. Works really well and although slow <span class="math inline">\(\mathcal O(E^2 + EV)\)</span> at worst case.</li>
 </ul></li>
 </ul></li>
 </ul>

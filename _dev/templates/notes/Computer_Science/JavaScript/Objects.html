@@ -2,7 +2,7 @@
 <ul>
 <li><dl>
 <dt>Instantiation</dt>
-<dd>Once a gain there are two syntax to instantiate <code>js var obj = new Object(); // legacy var obj = {} // JSON</code>
+<dd>Once a gain there are two syntax to instantiate <code>js   var obj = new Object(); // legacy   var obj = {} // JSON</code>
 </dd>
 </dl></li>
 <li><dl>
@@ -10,15 +10,15 @@
 <dd>To get an attribute you may use the dot-notation or Python-like getter <code>obj[&lt;key&gt;]</code> notation,
 </dd>
 </dl>
-<div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">var</span> obj <span class="op">=</span> <span class="op">{</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a>    <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Carrot&#39;</span><span class="op">,</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a>    <span class="dt">for</span><span class="op">:</span> <span class="st">&#39;Max&#39;</span><span class="op">,</span> <span class="co">// &#39;for&#39; is a reserved word, use &#39;_for&#39; instead.</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a>    <span class="dt">details</span><span class="op">:</span> <span class="op">{</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a>        <span class="dt">color</span><span class="op">:</span> <span class="st">&#39;orange&#39;</span><span class="op">,</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a>        <span class="dt">size</span><span class="op">:</span> <span class="dv">12</span></span>
-<span id="cb1-7"><a href="#cb1-7"></a>    <span class="op">}</span></span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="op">};</span></span>
-<span id="cb1-9"><a href="#cb1-9"></a></span>
-<span id="cb1-10"><a href="#cb1-10"></a><span class="va">obj</span>.<span class="va">details</span>.<span class="at">color</span><span class="op">;</span> <span class="co">// orange</span></span>
-<span id="cb1-11"><a href="#cb1-11"></a>obj[<span class="st">&#39;details&#39;</span>][<span class="st">&#39;size&#39;</span>]<span class="op">;</span> <span class="co">// 12</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">var</span> obj <span class="op">=</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-2" title="2">    <span class="dt">name</span><span class="op">:</span> <span class="st">&#39;Carrot&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb1-3" title="3">    <span class="dt">for</span><span class="op">:</span> <span class="st">&#39;Max&#39;</span><span class="op">,</span> <span class="co">// &#39;for&#39; is a reserved word, use &#39;_for&#39; instead.</span></a>
+<a class="sourceLine" id="cb1-4" title="4">    <span class="dt">details</span><span class="op">:</span> <span class="op">{</span></a>
+<a class="sourceLine" id="cb1-5" title="5">        <span class="dt">color</span><span class="op">:</span> <span class="st">&#39;orange&#39;</span><span class="op">,</span></a>
+<a class="sourceLine" id="cb1-6" title="6">        <span class="dt">size</span><span class="op">:</span> <span class="dv">12</span></a>
+<a class="sourceLine" id="cb1-7" title="7">    <span class="op">}</span></a>
+<a class="sourceLine" id="cb1-8" title="8"><span class="op">};</span></a>
+<a class="sourceLine" id="cb1-9" title="9"></a>
+<a class="sourceLine" id="cb1-10" title="10"><span class="va">obj</span>.<span class="va">details</span>.<span class="at">color</span><span class="op">;</span> <span class="co">// orange</span></a>
+<a class="sourceLine" id="cb1-11" title="11">obj[<span class="st">&#39;details&#39;</span>][<span class="st">&#39;size&#39;</span>]<span class="op">;</span> <span class="co">// 12</span></a></code></pre></div></li>
 </ul>

@@ -16,7 +16,7 @@
 <dd><p>Number of neighbors for some vertex</p>
 <p><span class="math display">\[ \deg(a) = \abs{G(a)} \]</span></p>
 <ul>
-<li><p><span class="math inline">\(G(a)\)</span> : All edges in <span class="math inline">\(G\)</span> that has the vertices <span class="math inline">\(a\)</span></p></li>
+<li><span class="math inline">\(G(a)\)</span> : All edges in <span class="math inline">\(G\)</span> that has the vertices <span class="math inline">\(a\)</span></li>
 <li><p>The sum of the degrees of all vertices (let the set of all vertices be <span class="math inline">\(V\)</span>) is,</p>
 <p><span class="math display">\[ \sum_{v \in V}{\deg(v)}  = 2|G|\]</span></p></li>
 </ul>
@@ -72,7 +72,7 @@
 <h2 id="planar-graph">Planar Graph</h2>
 <p>A graph is planar if it can be drawn in the plane such that none of its edges cross.</p>
 <ul>
-<li><p>The whole graph can be colored with four colors such that no two vertices share the same color and same edge.</p></li>
+<li>The whole graph can be colored with four colors such that no two vertices share the same color and same edge.</li>
 <li><p><strong>Euler’s Formula</strong>: A graph is planar if,</p>
 <p><span class="math display">\[ v- e + f = 2 \]</span></p>
 <ul>
@@ -80,7 +80,7 @@
 <li><span class="math inline">\(e\)</span>: edges</li>
 <li><span class="math inline">\(f\)</span>: faces (inner and outer closed loops with no edges in between)</li>
 </ul>
-<p>Unfortunately, this formula is not so useful because the graph must at first be drawn planar.</p></li>
+Unfortunately, this formula is not so useful because the graph must at first be drawn planar.</li>
 <li><p>For any planar graph <span class="math inline">\(G\)</span> with <span class="math inline">\(e \ge 2\)</span>, we have</p>
 <p><span class="math display">\[\text{Planar} \implies  e \le 3v - 6\]</span></p></li>
 <li><p>A graph is planar <span class="math inline">\(\iff\)</span> G does not contain <span class="math inline">\(K_{3,3}\)</span> or <span class="math inline">\(K_5\)</span></p></li>
@@ -98,7 +98,7 @@
 <li><p>Vertices of a hypercube can be represent as binary bits. Each vertex’s neighbors are on bit away from the vertex (known as hamming distance 1). In other words a hypercube is generated as,</p>
 <p><span class="math display">\[H_n = \set{(v_i, v_j) \mid d(v_i, v_j) = 1}\]</span></p>
 <p>Where <span class="math inline">\(d(v_i,v_j)\)</span> is the hamming distance between two vertices.</p></li>
-<li><p>All hypercubes have a Hamiltonian tour since the cycle <span class="math inline">\((s,s+1,s+2,\ldots,s+2^n,s)\)</span> always exists</p></li>
+<li>All hypercubes have a Hamiltonian tour since the cycle <span class="math inline">\((s,s+1,s+2,\ldots,s+2^n,s)\)</span> always exists</li>
 <li><p>All hypercubes of even <span class="math inline">\(n\)</span> has a Eulerian tour since the all degrees are even.</p></li>
 </ul>
 <h2 id="bipartite-graphs">Bipartite Graphs</h2>

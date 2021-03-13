@@ -44,7 +44,90 @@
     <!-- CUSTOMS -->
     <!-- EXPERIENCE AND SKILLS -->
     
-    <div id="research-experiences" class="section">
+    <div id="software-experiences" class="section">
+  <h1>Software Experiences</h1>
+  <hr>
+  <div class="section-body">
+    <div class="item">
+      <div class="row">
+        <div class="col-8">
+          <div class="position"> Data Engineer </div>
+          <div class="company">WattTime</div>
+        </div>
+        <div class="col-4 text-right">June 2020 &ndash; Present <br><em>Oakland, CA</em></div>
+      </div>
+      Maintained and extended a <strong>Python</strong>-based <strong>ETL data pipeline</strong> for an ML/AI framework
+      that ultimately
+      estimates power
+      plant
+      GHG emissions based on satellite imagery, atmospheric chemistry datasets, and real-time grid operations.
+
+      <ul>
+        <li><strong>Extract</strong>:
+          Built scripts and continuous integration to ingest time series data for power plant
+          generations and emission sources and satellite imagery (Google Earth Engine and Planet) at a rate of 100 GB
+          per day.
+        </li>
+        <li> <strong>Transform</strong>:
+          Developed a data pipeline that transforms data in batch or stream using <strong>Apache Airflow</strong>.
+        </li>
+        <li><strong>Load</strong>:
+          Maintained a ML/AI data warehouse composed of various <strong>Google Cloud</strong> technology: Cloud SQL for
+          raw data storage, Big Query for storing data transformation from Apache Airflow, and Compute Engine Persistent
+          Disk for <strong>instant access to terabytes of training data</strong>.
+        </li>
+      </ul>
+    </div>
+    <div class="item">
+      <div class="row">
+        <div class="col-8">
+          <div class="position"> Software Developer 
+          </div>
+          <div class="company">Alex Filippenko Research Group</div>
+        </div>
+        <div class="col-4 text-right">May 2017 &ndash; May 2020 <br><em>Berkeley, CA</em></div>
+
+      </div>
+      Backend:
+      <ul>
+        <li>Designed and administered astronomy research MySQL database storing over 4 million calibrated supernovae
+          images and metadata to replace the old method of searching for supernovae images using a file server.
+        </li>
+        <li>
+          Designed and developed API web service (<strong>Python</strong> Flask framework) to interface the mentioned
+          database. This will
+          be used in the frontend to access the database.
+        </li>
+        <li>Developed an XML parser for astronomy's VOEvent convention. This was used in multimessenger astronomy to
+          parse NASA's Gamma-ray Coordinates Network alerts (e.g., gravitational wave alerts). This was the first step
+          in the process that enrolled our team into an exciting field of multimessenger astronomy.</li>
+      </ul>
+      <!-- Frontend:
+      <ul>
+        <li> Developed a web app to interface the image database replacing the team's tedious and time-consuming
+          data-retrieval method from 1-2 days to minutes. The web app uses Python Flask for routing,
+          JQuery (<strong>Javascript</strong>) for AJAX calls to the backend API server, and HTML5 & CSS3 (Bootstrap)
+          for the web UI.
+        </li>
+        <li> Developed a multimessenger astronomy web app to display gravitational wave alerts from Ligo-Virgo and the
+          images from our telescope that was taken in the region of the gravitational wave candidate.</li>
+      </ul> -->
+      System Administration:
+      <ul>
+        <li>
+          Deployed, automated, and administrated research pipelines and softwares in Linux production server using Git
+          for version control, <strong>Make + Gunicorn + Apache + systemd for deploying, and automating and monitoring
+            web services.</strong>
+        </li>
+        <!-- <li>
+      Maintained <strong>Python</strong> virtual environment hierarchy so that users' development, teams' development, and server's production environment are not in conflict. and test scripts.
+    </li> -->
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="research-experiences" class="section">
   <h1>Research Experiences</h1>
   <hr>
   <div class="section-body">
@@ -110,52 +193,6 @@
   </div>
 </div>
 
-<div id="software-experiences" class="section">
-  <h1>Software Experiences</h1>
-  <hr>
-  <div class="section-body">
-    <div class="item">
-      <div class="row">
-        <div class="col-8">
-          <div class="position"> Full Stack Developer </div>
-          <div class="company">Alex Filippenko Research Group</div>
-        </div>
-        <div class="col-4 text-right">May 2017 &ndash; May 2020 <br><em>Berkeley, CA</em></div>
-
-      </div>
-      Backend:
-      <ul>
-        <li>Designed and administered astronomy research MySQL database storing over 4 million calibrated supernovae
-          images and metadata to replace the old method of searching for supernovae images using a file server.
-        </li>
-        <li>
-          Designed and developed API web service (<strong>Python</strong> Flask framework) to interface the mentioned database. This will
-          be used in the frontend to access the database.
-        </li>
-        <li>Developed an XML parser for astronomy's VOEvent convention. This was used in multimessenger astronomy to
-          parse NASA's Gamma-ray Coordinates Network alerts (e.g., gravitational wave alerts). This was the first step
-          in the process that enrolled our team into an exciting field of multimessenger astronomy.</li>
-      </ul>
-      Frontend:
-      <ul>
-        <li> Developed a web app to interface the image database replacing the team's tedious and time-consuming
-          data-retrieval method from 1-2 days to minutes. The web app uses <strong>Python</strong> Flask for routing, JQuery (Javascript) for AJAX calls to the backend API server, and HTML5 & CSS3 (Bootstrap) for the web UI.
-        </li>
-        <li> Developed a multimessenger astronomy web app to display gravitational wave alerts from Ligo-Virgo and the images from our telescope that was taken in the region of the gravitational wave candidate.</li>
-      </ul>
-      System Administration:
-      <ul>
-        <li>
-          Deployed, automated, and administrated research pipelines and softwares in Linux production server using Git for version control, <strong>Make + Gunicorn + Apache + systemd for deploying, and automating and monitoring web services.</strong>
-        </li>
-        <!-- <li>
-      Maintained <strong>Python</strong> virtual environment hierarchy so that users' development, teams' development, and server's production environment are not in conflict. and test scripts.
-    </li> -->
-      </ul>
-    </div>
-  </div>
-</div>
-
 <!-- PUBLICATIONS -->
 <div id="publications" class="section">
   <h1>Publications</h1>
@@ -163,17 +200,35 @@
   <div class="section-body">
     <ul id="publication-list" class="no-list-style">
       <li>
-        Stahl B. E., Zheng W., de Jaeger T. et al (2019). MNRAS, 490,
-        3882–3907,
-        <em>Lick Observatory Supernova Search Follow-Up Program: Photometry
-          Data Release of 93 Type Ia Supernovae, </em> <a href="https://doi.org/10.1093/mnras/stz2742">https://doi.org/10.1093/mnras/stz2742</a>
+        Zhang K. D., Murakami Y. S., Stahl B. E. et al (2021).
+        <em>Improving Bayesian posterior correlation analysis on Type Ia supernova luminosity evolution</em>,
+        MNRAS, accepted manuscript,
+        <a href="https://doi.org/10.1093/mnrasl/slab020">https://doi.org/10.1093/mnrasl/slab020</a>
+      </li>
+      <li>
+        Zhang K. D., Zheng W., de Jaeger T. et al (2020).
+        <em>Distribution of Si II λ6355 Velocities of Type Ia Supernovae and Implications for Asymmetric
+          Explosions</em>,
+        MNRAS, 499, 5325-5333,
+        <a href="https://doi.org/10.1093/mnras/staa3191">https://doi.org/10.1093/mnras/staa3191</a>
+      </li>
+      <li>
+        Murakami Y. S., Stahl B. E., Zhang K. D. et al (2020).
+        <em>On the Relationship Between Type Ia Supernova Luminosity and Host-galaxy Properties</em>,
+        (submitted to MNRAS),
+        <a href="https://arxiv.org/abs/2012.06217">https://arxiv.org/abs/2012.06217</a>
+      </li>
+      <li>
+        Stahl B. E., Zheng W., de Jaeger T. et al (2019).
+        <em>Lick Observatory Supernova Search Follow-Up Program: Photometry Data Release of 93 Type Ia Supernovae</em>,
+        MNRAS, 490, 3882–3907,
+        <a href="https://doi.org/10.1093/mnras/stz2742">https://doi.org/10.1093/mnras/stz2742</a>
       </li>
       </li>
       <li>
-        Jaeger T., Zheng W., Stahl B. E. et al. (2019). <em>The Berkeley sample of Type II supernovae: BVRI light
-          curves and
-          spectroscopy of 55 SNe II </em>, MNRAS, 490,
-        2799–2821,
+        Jaeger T., Zheng W., Stahl B. E. et al. (2019). <em>The Berkeley sample of Type II supernovae: BVRI light curves
+          and spectroscopy of 55 SNe II </em>,
+        MNRAS, 490, 2799–2821,
         <a href="https://doi.org/10.1093/mnras/stz2714">https://doi.org/10.1093/mnras/stz2714</a>
       </li>
       <li>
@@ -184,15 +239,14 @@
       </li>
       <li>
         Kang, M., Pelliciari J., Frano A. et al. (2019).
-        <em>Evolution of charge order topology across a magnetic phase
-          transition in cuprate superconductors</em>, Nat. Phys. 15,
-        335–340,
+        <em>Evolution of charge order topology across a magnetic phase transition in cuprate superconductors</em>,
+        Nat. Phys. 15, 335–340,
         <a href="https://doi.org/10.1038/s41567-018-0401-8">https://doi.org/10.1038/s41567-018-0401-8</a>
       </li>
       <li>
         Van Dyk S. D., Zheng W., Brink T. G. et al. (2018).
-        <em>SN 2017ein and the Possible First Identification of a Type Ic
-          Supernova Progenitor</em>, ApJ, 860, 90,
+        <em>SN 2017ein and the Possible First Identification of a Type Ic Supernova Progenitor</em>,
+        ApJ, 860, 90,
         <a href="https://doi.org/10.3847/1538-4357/aac32c">https://doi.org/10.3847/1538-4357/aac32c</a>
     </ul>
   </div>

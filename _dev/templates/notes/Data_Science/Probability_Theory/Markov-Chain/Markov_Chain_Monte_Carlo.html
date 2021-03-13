@@ -30,7 +30,7 @@ r(i,j) := \frac{\pi(j)}{\pi(i)}
 <dd><p>The Metropolis-Hastings algorithm goes as so:</p>
 <p>For every step <span class="math inline">\(t\)</span> of the algorithm, <span class="math inline">\(\mathbb Q\)</span> proposes <span class="math inline">\(X_{t+1} = j\)</span> where the previous step is <span class="math inline">\(X_{t}=i\)</span>. This proposal occurs at chance <span class="math inline">\(\mathbb Q_{ij}\)</span> (the matrix element <span class="math inline">\(i,j\)</span> of <span class="math inline">\(\mathbb Q\)</span>)</p>
 <ul>
-<li><p>If <span class="math inline">\(r(i,j) \ge 1\)</span>, accept the proposal <span class="math inline">\(X_{t+1} = j\)</span></p></li>
+<li>If <span class="math inline">\(r(i,j) \ge 1\)</span>, accept the proposal <span class="math inline">\(X_{t+1} = j\)</span></li>
 <li><p>If <span class="math inline">\(r(i,j) &lt; 1\)</span>, toss a p-coin with chance <span class="math inline">\(p=r(i,j)\)</span></p>
 <ul>
 <li>On head, accept the proposal <span class="math inline">\(X_{t+1}=j\)</span>.</li>

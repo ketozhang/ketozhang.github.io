@@ -87,8 +87,8 @@ P(D \mid \theta) = \prod_{i=1}^n{\frac{1}{\sqrt{2\pi\sigma_i^2}}\exp\left(\frac{
 <p>A method to sample the posterior <span class="math inline">\(P(\theta | D)\)</span>.</p>
 <h3 id="mcmc-hasting">MCMC Hasting</h3>
 <ol type="1">
-<li><p>Begin with starting point <span class="math inline">\(\theta_0\)</span></p></li>
-<li><p>Propose <span class="math inline">\(\theta_{t+1}\)</span> based on sampling a random proposal distribution <span class="math inline">\(J(\theta_{t+1} \mid \theta_t)\)</span>.</p></li>
+<li>Begin with starting point <span class="math inline">\(\theta_0\)</span></li>
+<li>Propose <span class="math inline">\(\theta_{t+1}\)</span> based on sampling a random proposal distribution <span class="math inline">\(J(\theta_{t+1} \mid \theta_t)\)</span>.</li>
 <li><p>Keep it with a probability proportional to if it improves the posterior ratio else try again:</p>
 <p><span class="math display">\[\frac{P(\theta_{t+1} | D)}{P(\theta_{t} | D)}\]</span></p></li>
 </ol>
@@ -97,12 +97,12 @@ P(D \mid \theta) = \prod_{i=1}^n{\frac{1}{\sqrt{2\pi\sigma_i^2}}\exp\left(\frac{
 <h2 id="goodness-of-fit">Goodness of Fit</h2>
 <ul>
 <li><p>Geweke Score:</p>
-<p>Take the end and begining of the chain and computer the score as, <span class="math display">\[
+Take the end and begining of the chain and computer the score as, <span class="math display">\[
   \frac{\bar \theta_e - \bar \theta_b}{\sqrt{\text{Var}[\theta_e]\text{Var}[\theta_b]}}
-  \]</span></p></li>
-<li><p>G-R Statistics</p></li>
-<li><p>Acceptance Fraction</p></li>
-<li><p>Autocorrelation Function</p>
+  \]</span></li>
+<li>G-R Statistics</li>
+<li>Acceptance Fraction</li>
+<li>Autocorrelation Function
 <ul>
 <li>Typicall have burn-in period 5 times larger than the ACF convergence number.</li>
 </ul></li>

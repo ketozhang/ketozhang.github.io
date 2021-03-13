@@ -85,15 +85,15 @@
 <p>Solutions for mitigating this effect includes:</p>
 <ol type="1">
 <li><p>Initialization: Set weights of edges to random with,</p>
-<p><span class="math display">\[
+<span class="math display">\[
  \begin{gather}
  \mu = 0\\
  \sigma = \frac{1}{\sqrt{n}}
  \end{gather}
- \]</span></p></li>
-<li><p>Set the target output values to values with high curvature.</p></li>
-<li><p>Change the gradient by some amount such that the parameter are no longer moving towards steepest descent.</p></li>
-<li><p>Use different loss function like cross-entropy.</p></li>
+ \]</span></li>
+<li>Set the target output values to values with high curvature.</li>
+<li>Change the gradient by some amount such that the parameter are no longer moving towards steepest descent.</li>
+<li>Use different loss function like cross-entropy.</li>
 <li><p>Use a different activation function. A famous replacement for sigmoid is the rectified linear unit (ReLU).</p></li>
 </ol>
 
