@@ -6,6 +6,7 @@ local:
 debug:
 	FLASK_ENV=development make local
 
+.PHONY: static
 static:
 	make build freeze
 
