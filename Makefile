@@ -11,8 +11,8 @@ static:
 	make build freeze
 
 build:
-	poetry run app.py build
+	poetry run python app.py build
 
 freeze:
-	poetry run app.py freeze
+	poetry run python app.py freeze
 
