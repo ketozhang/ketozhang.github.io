@@ -11,8 +11,8 @@ static:
 	make build freeze
 
 build:
-	.venv/bin/python app.py build
+	poetry run app.py build
 
 freeze:
-	.venv/bin/python app.py freeze
+	poetry run app.py freeze
 
