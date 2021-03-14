@@ -1,7 +1,7 @@
 FLASK_HOST ?= 0.0.0.0
 
 local:
-	.venv/bin/flask run -p 8080 --host=${FLASK_HOST}
+	poetry run flask run -p 8080 --host=${FLASK_HOST}
 
 debug:
 	FLASK_ENV=development make local
