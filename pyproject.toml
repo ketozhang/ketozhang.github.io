@@ -6,12 +6,14 @@ authors = ["Keto Zhang <keto.zhang@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
-staticpy = {path = "/home/keto/Projects/staticpy/"}
 pyscss = "^1.3.5"
 Flask-Scss = "^0.5"
+staticpy = {path = "../staticpy", develop = true}
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.4.1"
+flake8 = "^3.8.4"
+black = {version = "^20.8b1", allow-prereleases = true}
 
 [build-system]
 requires = ["poetry>=0.12"]
