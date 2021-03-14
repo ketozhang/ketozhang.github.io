@@ -25,11 +25,11 @@ jobs:
 
     - name: Build website
       run: make static
-       
+
     - name: Push
       run: |
         git config --global user.name 'ketozhang'
         git config --global user.email 'keto.zhang@gmail.com'
         git add docs
-        git commit -m "[CI] Automatic publish website"
+        git commit --allow-empty -m "[CI] Automatic publish website"
         git push
