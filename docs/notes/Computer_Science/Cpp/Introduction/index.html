@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145024207-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-145024207-1');
+  </script>
+  <meta charset="UTF-8">
+  <title>
+    
+    Keto | Introduction
+    
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap time -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://ketozhang.github.io/static/main.css" rel="stylesheet">
+  <link href=" https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link href=" https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
+  <link href="https://ketozhang.github.io/static/prism.css" rel="stylesheet">
+  <link href="https://ketozhang.github.io/static/prism-atom-dark.css" rel="stylesheet">
+  <link href="https://ketozhang.github.io/static/favicon.ico" rel="shortcut icon">
+
+  <!-- LaTeX Stylesheet -->
+  
+  <div class="d-none">
+    $$
+    \newcommand{d}{\mathrm d}
+    \newcommand{avg}[1]{\expval{#1}}
+        \renewcommand{vec}[1]{\vectorbold{#1}}
+        $$
+    </div>
+    
+</head>
+
+<body>
+    
+<div class="container-fluid" id="note">
+  <!-- <nav class="navbar navbar-expand-lg">
+        <button id="sidenavCollapse" class="btn btn-info" type="button">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </nav> -->
+  <article class="row">
+    <!-- Notebook Sidenav -->
+    <div class="col-3 bg-light pt-1">
+      <div class="sidenav sticky-top vh-80">
+        <div class="sidenav-header row no-gutters">
+          <div class="col-9">
+            <strong>Introduction</strong>
+          </div>
+          <div class="col-2 offset-1">
+            <a class="go-up" href="https://ketozhang.github.io/notes/Computer_Science/Cpp/" role="button">
+              <img src="https://img.icons8.com/dotty/80/000000/up.png" style="width: 25px; height: 25px" />
+            </a>
+          </div>
+        </div>
+        <div class="sidenav-body no-gutters">
+          <ul class="no-list-style pl-3">
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="col-7 col-md-6">
+      <h1 class="title text-center pt-3">Introduction</h1>
+      
+      <div class="markdown-content">
+        <h2 id="compile-and-run-structure">Compile and Run Structure</h2>
+<ul>
+<li><code>.cpp</code>: The source file</li>
+<li><code>.o</code>: The compiled file</li>
+<li><code>.[EXECUTABLE]</code>: Executable file</li>
+</ul>
+<h2 id="hello-world">Hello World!</h2>
+<p>As usual with some imports.</p>
+<ul>
+<li>Notice that the return type of the main function is <code>int</code> instead of <code>void</code> (never use <code>void</code> for this).</li>
+<li>Notice the unique print to console syntax</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb1-1" title="1"><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span><span class="pp"> </span><span class="co">// import I/O library</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="kw">using</span> <span class="kw">namespace</span> std; <span class="co">// No need to specify `std`</span></a>
+<a class="sourceLine" id="cb1-3" title="3"></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="dt">int</span> main() {</a>
+<a class="sourceLine" id="cb1-5" title="5">    <span class="co">// prints &quot;Hello World!&quot; to console</span></a>
+<a class="sourceLine" id="cb1-6" title="6">    cout &lt;&lt; <span class="st">&quot;Hello, World!</span><span class="sc">\n</span><span class="st">&quot;</span>; <span class="co">// More verbose, `std::cout`</span></a>
+<a class="sourceLine" id="cb1-7" title="7">}</a></code></pre></div>
+<h2 id="function">Function</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb2-1" title="1">TYPE NAME([TYPE [ARG1], ...]) {</a>
+<a class="sourceLine" id="cb2-2" title="2">    <span class="co">// body</span></a>
+<a class="sourceLine" id="cb2-3" title="3">}</a></code></pre></div>
+<p>For example,</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb3-1" title="1"><span class="dt">double</span> square(<span class="dt">double</span> x) {</a>
+<a class="sourceLine" id="cb3-2" title="2">    <span class="cf">return</span> x * x;</a>
+<a class="sourceLine" id="cb3-3" title="3">}</a>
+<a class="sourceLine" id="cb3-4" title="4"></a></code></pre></div>
+<p>Features</p>
+<ul>
+<li>Function overloading, allow synonyms with different type</li>
+</ul>
+<h2 id="variables">Variables</h2>
+<p>Features</p>
+<ul>
+<li>Type declaration</li>
+<li><p>Various ways of initialization</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb4-1" title="1">type var = value;</a>
+<a class="sourceLine" id="cb4-2" title="2">type var {value};</a>
+<a class="sourceLine" id="cb4-3" title="3">type var = {value};</a>
+<a class="sourceLine" id="cb4-4" title="4"><span class="kw">class</span>&lt;type&gt; var = {values, ...};</a></code></pre></div></li>
+<li>Loss of information through conversion using <code>=</code>. Use the list form <code>{}</code> instead to error out when conversion occurs.</li>
+<li>Implicit type <code>auto</code> (e.g., <code>auto b = true</code>) will automatically use the initialization to determine the type.</li>
+<li><p>Constants supported <code>const</code> (run-time constant) and <code>constexpr</code> (compile-time constant). The latter is used for performance and memory corruption reasons which applies very strict requirements (e.g., immutability) on functions with <code>constexpr</code>.</p></li>
+</ul>
+<h2 id="basic-types">Basic Types</h2>
+<p>There are many basic types for example:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb5-1" title="1"><span class="dt">bool</span></a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="dt">char</span></a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="dt">int</span></a>
+<a class="sourceLine" id="cb5-4" title="4"><span class="dt">double</span></a>
+<a class="sourceLine" id="cb5-5" title="5"><span class="dt">unsigned</span></a></code></pre></div>
+<h2 id="arithmetic">Arithmetic</h2>
+<p>All syntax is similar to Python.</p>
+<p>Features</p>
+<ul>
+<li>Meaningful conversion between types (e.g., addition between int and double is double unless referenced by an int variable) preserves the highest precision.</li>
+<li>Increment (<code>++x</code>) and decrement (<code>--x</code>).</li>
+</ul>
+<h2 id="scope">Scope</h2>
+<p>There are four scopes:</p>
+<ol type="1">
+<li>Local scope</li>
+<li>Class scope</li>
+<li>Namespace scope A namespace is the point where the declaration is called to the end of the namespace (often end of the running file)</li>
+<li>Global scope Everything else</li>
+</ol>
+<h2 id="pointers-references-and-arrays">Pointers, References, and Arrays</h2>
+<p>An array is a collection of data available to all types:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb6-1" title="1"><span class="dt">char</span> s[<span class="dv">3</span>];</a>
+<a class="sourceLine" id="cb6-2" title="2"><span class="dt">int</span> numbers[<span class="dv">2</span>];</a></code></pre></div>
+<p>The pointer-object relation can be established by,</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb7-1" title="1"><span class="dt">char</span> v[] = {<span class="st">&quot;H&quot;</span>, <span class="st">&quot;E&quot;</span>, <span class="st">&quot;L&quot;</span>, <span class="st">&quot;L&quot;</span>, <span class="st">&quot;O&quot;</span>}</a>
+<a class="sourceLine" id="cb7-2" title="2"></a>
+<a class="sourceLine" id="cb7-3" title="3"><span class="dt">char</span>* ptr_h = &amp;v[<span class="dv">0</span>] <span class="co">// ptr_h points to address that is the 0th index of v (i.e., address of &quot;H&quot;)</span></a>
+<a class="sourceLine" id="cb7-4" title="4"><span class="dt">char</span>* ptr_h2 = ptr_h1 <span class="co">// ptr_h2 points to the same address as ptr_h</span></a>
+<a class="sourceLine" id="cb7-5" title="5"><span class="dt">char</span> h = *ptr_h <span class="co">// h is the content of ptr_h (i.e., &quot;H&quot;)</span></a>
+<a class="sourceLine" id="cb7-6" title="6"></a>
+<a class="sourceLine" id="cb7-7" title="7"><span class="dt">char</span>&amp; ref_h = v[<span class="dv">0</span>] <span class="co">// ref_h references to the address that is the 0th index of v (i.e., address of &quot;H&quot;)</span></a>
+<a class="sourceLine" id="cb7-8" title="8"><span class="dt">char</span>&amp; ref_e = v[<span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb7-9" title="9">ref_e = ref_h <span class="co">// v is now has &quot;HHLLO&quot; because reference assignments auomatically dereference</span></a>
+<a class="sourceLine" id="cb7-10" title="10">              <span class="co">// without needing *</span></a>
+<a class="sourceLine" id="cb7-11" title="11"><span class="dt">void</span> func(<span class="dt">char</span>&amp; s) {} <span class="co">// Pass by reference, the argument s will be the object instead of a copy.</span></a></code></pre></div>
+<p>Therefore there is a deep copy of an array is exprsesed as,</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb8-1" title="1"><span class="dt">int</span>[] deepcopy(<span class="dt">int</span>[] arr) {</a>
+<a class="sourceLine" id="cb8-2" title="2">    <span class="dt">int</span>[<span class="kw">sizeof</span>(arr)] copy_arr;</a>
+<a class="sourceLine" id="cb8-3" title="3"></a>
+<a class="sourceLine" id="cb8-4" title="4">    <span class="cf">for</span> (<span class="kw">auto</span> i=<span class="dv">0</span>; i!=<span class="kw">sizeof</span>(arr); ++i) {</a>
+<a class="sourceLine" id="cb8-5" title="5">        copy_arr[i] = arr[i];</a>
+<a class="sourceLine" id="cb8-6" title="6">    }</a>
+<a class="sourceLine" id="cb8-7" title="7"></a>
+<a class="sourceLine" id="cb8-8" title="8">    <span class="cf">return</span> copy_arr;</a>
+<a class="sourceLine" id="cb8-9" title="9">}</a>
+<a class="sourceLine" id="cb8-10" title="10"></a>
+<a class="sourceLine" id="cb8-11" title="11"><span class="dt">int</span>[] shallowcopy(<span class="dt">int</span>[] arr) {</a>
+<a class="sourceLine" id="cb8-12" title="12">    <span class="dt">int</span>[<span class="kw">sizeof</span>(arr)] copy_arr;</a>
+<a class="sourceLine" id="cb8-13" title="13"></a>
+<a class="sourceLine" id="cb8-14" title="14">    <span class="cf">for</span> (<span class="kw">auto</span> i=<span class="dv">0</span>; i!=<span class="kw">sizeof</span>(arr); ++i) {</a>
+<a class="sourceLine" id="cb8-15" title="15">        copy_arr[i] = &amp;arr[i];</a>
+<a class="sourceLine" id="cb8-16" title="16">    }</a>
+<a class="sourceLine" id="cb8-17" title="17">    <span class="cf">return</span> arr</a>
+<a class="sourceLine" id="cb8-18" title="18">}</a></code></pre></div>
+<p><strong>Features</strong></p>
+<ul>
+<li><p>Declaration Operators</p>
+<p>A declaration operator is a suffix unary operator taht determines whether the variable is an object, pointer, or reference:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb9-1" title="1">Type arr[n] <span class="co">// arr is an array of n Type objects</span></a>
+<a class="sourceLine" id="cb9-2" title="2">Type* ptr  <span class="co">// ptr is a pointer to a Type object</span></a>
+<a class="sourceLine" id="cb9-3" title="3">Type&amp; ref <span class="co">// ref is a reference to a Type object</span></a>
+<a class="sourceLine" id="cb9-4" title="4">TypeA func(TypeB) <span class="co">// func is a function taking in TypeB object and returning TypeA object</span></a></code></pre></div></li>
+<li><p>Null Pointer</p>
+<p>All pointers need to point to something so all dereference is valid. A pointer will point to a null pointer whenever initialized as so,</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb10-1" title="1">Type* ptr = <span class="kw">nullptr</span>;</a></code></pre></div></li>
+</ul>
+<h2 id="control-statements">Control Statements</h2>
+<p>Standard if, for, and while are provided.</p>
+<p><strong>Features</strong></p>
+<ul>
+<li>Switch cases, each <code>case</code> is ran until <code>break</code> otherwise <code>default</code> if exists or <code>pass</code>.</li>
+<li><p>Define variables inside statements:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb11-1" title="1"><span class="dt">bool</span> var = <span class="kw">true</span>;</a>
+<a class="sourceLine" id="cb11-2" title="2"><span class="cf">if</span> (<span class="kw">auto</span> cond=var; var) {</a>
+<a class="sourceLine" id="cb11-3" title="3">    ...</a>
+<a class="sourceLine" id="cb11-4" title="4">}</a>
+<a class="sourceLine" id="cb11-5" title="5"></a>
+<a class="sourceLine" id="cb11-6" title="6"><span class="co">// Equivalently</span></a>
+<a class="sourceLine" id="cb11-7" title="7"><span class="cf">if</span> (<span class="kw">auto</span> cond=var) {</a>
+<a class="sourceLine" id="cb11-8" title="8">    ...</a>
+<a class="sourceLine" id="cb11-9" title="9">}</a></code></pre></div></li>
+</ul>
+
+      </div>
+      <!-- Disqus Comments -->
+      <div id="disqus_thread" class="mt-5">
+        <div class="w-50 mx-auto">
+          <button type="button" class="btn btn-block btn-outline-dark show-comments">
+            Show Comments
+          </button>
+        </div>
+      </div>
+      <!--
+                <script>
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                var disqus_config = function () {
+                    this.page.url = "";  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = "/notes/Computer_Science/Cpp/Introduction/"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://ketozhang.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
+                    by Disqus.</a></noscript>
+            -->
+      
+    </div>
+    <!-- On This Page -->
+    <div class="col-md-3 d-none d-md-block">
+      <div class="onthispage sidenav small">
+    <div class="sidenav-header">
+        <strong>&#9776; On This Page</strong>
+    </div>
+    <div class="onthispage-collapse">
+        <div class="sidenav-body bg-light">
+            <ul class="onthispage-list no-list-style"></ul>
+        </div>
+    </div>
+</div>
+    </div>
+  </article>
+</div>
+
+    <footer class="py-2 bg-white">
+    <div class="container">
+        <p class="text-right m-0"> Generated by <a href="https://github.com/ketozhang/StaticPy">StaticPy</a> |
+            Designed
+            by <a href="https://github.com/ketozhang">Keto Zhang</a>
+        </p>
+    </div>
+</footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+
+    <script src="https://ketozhang.github.io/static/js/datetime.js"></script>
+    <script src="https://ketozhang.github.io/static/js/disqus.js"></script>
+    <script src="https://ketozhang.github.io/static/js/codeHighlight.js"></script>
+    <script src="https://ketozhang.github.io/static/js/prism.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>
+    <script src="https://ketozhang.github.io/static/js/onthispage.js"></script>
+    <script src="https://ketozhang.github.io/static/js/markdown.js"></script>
+
+    <!-- MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://ketozhang.github.io/static/js/mathjax_config.js" defer></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+
+    <!-- Bootstrap JS -->
+    <!-- TODO: trim JS if not needed -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
+    <!-- Custom Global scripts -->
+    <script>
+      anchors.add();
+      $(document).ready(function () {
+        Prism.highlightAll();
+      })
+    </script>
+
+    <!-- Local scripts -->
+    
+    
+</body>
+
+</html>
