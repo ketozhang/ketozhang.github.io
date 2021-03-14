@@ -1,60 +1,15 @@
 #!/usr/bin/env python3
 import argparse
-import sys
 
-from flask import (
-    Flask,
-    abort,
-    redirect,
-    render_template,
-    send_file,
-    send_from_directory,
-    url_for,
-)
-from flask_assets import Bundle, Environment
-from staticpy import (
-    BASE_CONFIG,
-    CONTEXTS,
-    PROJECT_PATH,
-    TEMPLATE_PATH,
-    app,
-    build_all,
-    freezer,
-    log,
-)
-from staticpy.context import Context
-from staticpy.source_handler import Page
+from flask import render_template
+from staticpy import BASE_CONFIG, CONTEXTS, app, build_all, freezer
 
-"""
-app = Staticpy()
-"""
-
-# assets = Environment(app)
-# app.config["ASSETS_DEBUG"] = True
-# assets.url = app.static_url_path
-# scss = Bundle(
-#     "_variables.scss",
-#     "_base.scss",
-#     "_header.scss",
-#     "_note.scss",
-#     "_post.scss",
-#     "_markdown.scss",
-#     "main.scss",
-#     filters="pyscss",
-#     output="main.css",
-# )
-
-
-# @app.context_processor
-# def get_assets():
-#     return {"assets_url": assets["scss_all"].urls()[0]}
 app.jinja_env.add_extension("jinja2.ext.do")
+
 
 ########################
 # CUSTOM ROUTES
 ########################
-
-
 @app.route("/")
 def home():
     """Renders the home page."""
