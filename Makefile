@@ -5,7 +5,7 @@ debug:
 	FLASK_ENV=development make local
 
 static:
-	.venv/bin/python app.py build freeze
+	make build freeze
 
 build:
 	.venv/bin/python app.py build

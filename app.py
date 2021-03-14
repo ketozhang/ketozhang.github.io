@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
+import argparse
 import sys
+
 from flask import (
     Flask,
     abort,
@@ -9,16 +11,16 @@ from flask import (
     send_from_directory,
     url_for,
 )
-from flask_assets import Environment, Bundle
+from flask_assets import Bundle, Environment
 from staticpy import (
-    app,
-    build_all,
-    log,
-    freezer,
-    CONTEXTS,
     BASE_CONFIG,
+    CONTEXTS,
     PROJECT_PATH,
     TEMPLATE_PATH,
+    app,
+    build_all,
+    freezer,
+    log,
 )
 from staticpy.context import Context
 from staticpy.source_handler import Page
@@ -83,27 +85,18 @@ def sitemap():
 
 
 if __name__ == "__main__":
-    args = sys.argv[1:]
-    times = []
+    parser = argparse.ArgumentParser()
+    parser.add_argument("command", choices=["build", "freeze"], type=str)
+    args = parser.parse_args()
 
-    if "build" in args:
+    if args.command == "build":
         build_time = build_all()
 
         if build_time is not None:
             print(f"{'Build time:':<30} {build_time:.2f} secs")
-            times.append(build_time)
 
-    if "freeze" in args:
+    elif args.command == "freeze":
         freeze_time = freezer.freeze()
+
         if freeze_time is not None:
-            print(f"{'Static convert time:':<30} {freeze_time:.2f} secs")
-            times.append(build_time)
-
-        else:
-            print(
-                "Static conversion failed \nTry setting `FLASK_ENV=development` for debugging"
-            )
-
-    if times:
-        print(f"\n{'':=^80}")
-        print(f"{'Total time:':<30} {sum(times) :.2f} secs\n")
+            print(f"{'Freeze time:':<30} {freeze_time:.2f} secs")
