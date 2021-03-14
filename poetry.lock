@@ -354,7 +354,6 @@ description = "A static site generator supporting Pandoc and Mathjax for STEM no
 category = "main"
 optional = false
 python-versions = "^3.7"
-develop = true
 
 [package.dependencies]
 flask = "^1.1.1"
@@ -366,8 +365,10 @@ pyyaml = "^5.3"
 werkzeug = "^1.0.0"
 
 [package.source]
-type = "directory"
-url = "../staticpy"
+type = "git"
+url = "https://github.com/ketozhang/StaticPy.git"
+reference = "master"
+resolved_reference = "42c0e5021317f892b75b5e882b7f0e8b3214b92c"
 
 [[package]]
 name = "toml"
@@ -436,7 +437,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pyt
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7"
-content-hash = "0a3ce5aa585f20c68a57f60d5073d5c1d48a1f890a6ca82684770e65b3d53c2c"
+content-hash = "6fbda8cd53228b273b65f9dad4cccf5b5f964c85512ae6212247f926c7b24b0a"
 
 [metadata.files]
 appdirs = [
