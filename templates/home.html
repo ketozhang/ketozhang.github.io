@@ -16,10 +16,12 @@
             web-accessible.
           </p>
           <ul>
-            <li>Present &mdash; Adapting to COVID situation. Should I go into academia or industry?</li>
-            <li>2019 &mdash; Awarded B.A. Astrophysics and B.A. Data Science 🎓</li>
-            <li>2017 &mdash; Alex Filippenko Research Group (Present) </li>
-            <li>2015 &mdash; Entered Undergraduate at Unviersity of California, Berkeley</li>
+            <li>2020 &ndash; Joined non-profit organization <a href="https://www.watttime.org/">WattTime</a>
+              part of the <a href="https://www.climatetrace.org/">Climate TRACE</a> coalition along with Vice President
+              Al Gore </li>
+            <li>2019 &ndash; Awarded B.A. Astrophysics and B.A. Data Science </li>
+            <li>2017 &ndash; Joined Alex Filippenko Research Group </li>
+            <li>2015 &ndash; Entered Undergraduate at Unviersity of California, Berkeley</li>
             <p><a href="/CV" style="margin-left: -1em">More on CV</a></p>
           </ul>
         </blockquote>
@@ -41,7 +43,8 @@
         <h3 class="title">{{project['header']}}</h2>
           <!-- TODO: Find a better way for equal height -->
           <p>{{project['description']}}</p>
-          <p class="mt-auto"><a class="btn btn-warning" href="{{url_for(project['view_details'])}}" role="button" target="_blank">View Details</a></p>
+          <p class="mt-auto"><a class="btn btn-warning" href="{{url_for(project['view_details'])}}" role="button"
+              target="_blank">View Details</a></p>
       </div>
       {% endfor %}
     </div>
@@ -57,14 +60,17 @@
 
       <div id="research-astronomer">
         <h2>I am a Research Astronomer</h2>
-        <p class="text-dark">My specialty is in <strong>Astrostatistics</strong> &mdash; combining astronomy, data science, and statistics</p>
+        <p class="text-dark">My specialty is in <strong>Astrostatistics</strong> &mdash; combining astronomy, data
+          science, and statistics</p>
         <div class="section-body">
+          {#
           <ul id="publication-list">
             <li>
               Stahl B. E., Zheng W., de Jaeger T. et al (2019). MNRAS, 490,
               3882–3907,
               <em>Lick Observatory Supernova Search Follow-Up Program: Photometry
-                Data Release of 93 Type Ia Supernovae, </em> <a href="https://doi.org/10.1093/mnras/stz2742">https://doi.org/10.1093/mnras/stz2742</a>
+                Data Release of 93 Type Ia Supernovae, </em> <a
+                href="https://doi.org/10.1093/mnras/stz2742">https://doi.org/10.1093/mnras/stz2742</a>
             </li>
             </li>
             <li>
@@ -93,6 +99,7 @@
                 Supernova Progenitor</em>, ApJ, 860, 90,
               <a href="https://doi.org/10.3847/1538-4357/aac32c">https://doi.org/10.3847/1538-4357/aac32c</a>
           </ul>
+          #}
         </div>
       </div>
 
