@@ -3,26 +3,18 @@
   <nav class="navbar navbar-expand navbar-light">
     <div class="d-flex mx-auto">
       <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link active" href="{{site_url}}">Home</a>
-        </li>
-        {% for nav in navbar.values() %}
-        <li class="nav-item"><a class="nav-link" href="{{url_for(nav['url'])}}">{{ nav['text'] }}</a></li>
-        {% endfor %}
-        <!-- <li class="nav-item"><a class="nav-link" href="{{site_url}}posts">Posts</a></li> -->
-        <!-- <li class="nav-item"><a class="nav-link" href="{{site_url}}notes">Notes</a></li> -->
-        <!-- <li class="nav-item"><a class="nav-link" href="{{site_url}}docs">Documentation</a></li> -->
+        <li class="nav-item"><a class="nav-link active" href="{{site_url}}">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{site_url}}posts">Posts</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{site_url}}notes">Notes</a></li>
       </ul>
     </div>
   </nav>
   <div id="pagenav-socials">
     <ul class="nav justify-content-center">
-      {% for social in social_links %}
       <li class="nav-item mx-2">
-        <a class="social-link" href="{{url_for(social['url'])}}" title="{{ social['name'] }}" target="_blank">
-          <img class="header-icon" src="{{ social['icon'] }}">
-        </a>
+        <a class="social-link" href="/CV" title="CV" target="_blank"><img class="header-icon"
+            src="/static/images/CV-32.png"></a>
       </li>
-      {% endfor %}
     </ul>
   </div>
   <hr class="gradient">

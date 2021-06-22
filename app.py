@@ -1,8 +1,18 @@
 #!/usr/bin/env python3
 import argparse
 
-from flask import render_template
-from staticpy import BASE_CONFIG, CONTEXTS, app, build_all, freezer
+import yaml
+from flask import Flask, render_template
+from flask_article import FlaskArticleDirectory
+from jinja2 import StrictUndefined
+
+app = Flask(__name__)
+app.jinja_env.undefined = StrictUndefined
+
+with open("config.yaml", "r") as f:
+    config = yaml.safe_load(f)
+notes_directory = FlaskArticleDirectory(app, article_folder="notes/")
+posts_directory = FlaskArticleDirectory(app, article_folder="posts/")
 
 app.jinja_env.add_extension("jinja2.ext.do")
 
@@ -27,6 +37,32 @@ def home():
 
     context = {"posts": posts, "projects": projects}
     return render_template(config["template"], **context)
+
+
+@app.route("/notes/")
+def notes_home():
+    context = {"notes_directory": notes_directory}
+    return render_template("notes_home.html", **context, **config)
+
+
+@app.route("/notes/<path:subpath>")
+def notes(subpath):
+    article = notes_directory.get_article(subpath)
+    context = {"note": article}
+    return render_template("note.html", **context, **config)
+
+
+@app.route("/posts/")
+def posts_home():
+    context = {"posts_directory": posts_directory}
+    return render_template("posts_home.html", **context, **config)
+
+
+@app.route("/posts/<path:subpath>")
+def posts(subpath):
+    article = posts_directory.get_article(subpath)
+    context = {"post": article}
+    return render_template("post.html", **context, **config)
 
 
 @app.route("/sitemap.xml")

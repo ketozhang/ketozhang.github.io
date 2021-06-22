@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block content %}
+{% include 'header.html' %}
+<div class="container">
+  <!-- page can either be a notebook or a note -->
+  {% block header %}
+  <h1 class="title mb-4"> {% block title %} Notebooks {% endblock %}</h1>
+  {% endblock %}
+  <div class="search form-group"><input id="dummy_search_notes" class="form-control" placeholder="Search"></input>
+  </div>
+  <div class=" modal fade" id="search_modal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="w-100">
+            <input id="search_notes" class="form-control" type="text" placeholder="Search" oninput="search_notes()">
+          </div>
+        </div>
+        <div class="modal-body">
+          <div id="search_results" class="list-group"> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="notes-card-columns" class="card-columns">
+    {% for note in notes_directory %}
+    <div class="card">
+      <div class="card-header">
+        <a class="text-dark" href="{{ note.url }}" target='_blank'>
+          <strong>{{ note.title }}</strong>
+        </a>
+      </div>
+      {% raw %}
+      <div class="list-group list-group-flush">
+        {% for notebook in collection.subpages %}
+        <a class="list-group-item list-group-item-action" href="{{ url_for(notebook.url) }}" target='_blank'>
+          <!-- <img class='pr-2' src="{{site_url}}static/images/icons8-spiral-bound-booklet.png" style="height: 24px"> -->
+          {{ notebook.title }}
+        </a>
+        {% endfor %}
+      </div>
+      {% endraw %}
+    </div>
+    {% endfor %}
+  </div>
+  <!-- </ul> -->
+  <!-- {% for url in notebook_urls %}
+    <p><a href={{url}}>{{url}}</a></p>
+    {% endfor %} -->
+</div>
+{% endblock %}
+
+{% block scripts %}
+{% raw %}
+<script>
+  pages = JSON.parse({{ context.json() | tojson | safe }})
+</script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
+<script src="{{site_url}}static/js/search_notes.js"></script>
+{% endraw %}
+{% endblock %}

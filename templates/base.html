@@ -12,13 +12,7 @@
     gtag('config', 'UA-145024207-1');
   </script>
   <meta charset="UTF-8">
-  <title>
-    {% if page %}
-    Keto | {{ page.get('title') }}
-    {% else %}
-    Keto
-    {% endif %}
-  </title>
+  <title> Keto </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap time -->
@@ -38,56 +32,55 @@
     $$
     \newcommand{d}{\mathrm d}
     \newcommand{avg}[1]{\expval{#1}}
-        \renewcommand{vec}[1]{\vectorbold{#1}}
-        $$
-    </div>
-    {% endraw %}
+    \renewcommand{vec}[1]{\vectorbold{#1}}
+    $$
+  </div>
+  {% endraw %}
 </head>
 
 <body>
-    {% block content %}
-    {% endblock %}
-    {% include "footer.html" %}
+  {% block content %}
+  {% endblock %}
+  {% include "footer.html" %}
 
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+  <script src="{{site_url}}static/js/datetime.js"></script>
+  <script src="{{site_url}}static/js/disqus.js"></script>
+  <script src="{{site_url}}static/js/codeHighlight.js"></script>
+  <script src="{{site_url}}static/js/prism.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>
+  <script src="{{site_url}}static/js/onthispage.js"></script>
+  <script src="{{site_url}}static/js/markdown.js"></script>
+
+  <!-- MathJax -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="{{site_url}}static/js/mathjax_config.js" defer></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+
+  <!-- Bootstrap JS -->
+  <!-- TODO: trim JS if not needed -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
 
-    <script src="{{site_url}}static/js/datetime.js"></script>
-    <script src="{{site_url}}static/js/disqus.js"></script>
-    <script src="{{site_url}}static/js/codeHighlight.js"></script>
-    <script src="{{site_url}}static/js/prism.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>
-    <script src="{{site_url}}static/js/onthispage.js"></script>
-    <script src="{{site_url}}static/js/markdown.js"></script>
 
-    <!-- MathJax -->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script src="{{site_url}}static/js/mathjax_config.js" defer></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+  <!-- Custom Global scripts -->
+  <script>
+    anchors.add();
+    $(document).ready(function () {
+      Prism.highlightAll();
+    })
+  </script>
 
-    <!-- Bootstrap JS -->
-    <!-- TODO: trim JS if not needed -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-
-
-    <!-- Custom Global scripts -->
-    <script>
-      anchors.add();
-      $(document).ready(function () {
-        Prism.highlightAll();
-      })
-    </script>
-
-    <!-- Local scripts -->
-    {% block scripts %}
-    {% endblock %}
+  <!-- Local scripts -->
+  {% block scripts %}
+  {% endblock %}
 </body>
 
 </html>
