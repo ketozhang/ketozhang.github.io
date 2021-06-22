@@ -2,21 +2,6 @@
 title: Friedmann Equation
 ---
 
-<!-- TOC -->
-
-- [Hubble's Constant](#hubbles-constant)
-- [Non-Relativistic Form](#non-relativistic-form)
-    - [Proof](#proof)
-- [Density Parameter Form](#density-parameter-form)
-- [Fluid Equation](#fluid-equation)
-    - [Proof - Newtonian](#proof---newtonian)
-- [Acceleration Equation](#acceleration-equation)
-- [Equation of State](#equation-of-state)
-- [Cosmological Constant - Incorrect Version](#cosmological-constant---incorrect-version)
-- [Cosmological Constant - Vacuum Energy](#cosmological-constant---vacuum-energy)
-
-<!-- /TOC -->
-
 The Friedmann equation applies the Friedmann metric,
 
 $$ ds^2 = -dt^2 + a(t)^2\left[dr^2 + S_k(r)^2d\Omega^2\right] $$
@@ -25,14 +10,14 @@ to Einstein's field equation,
 
 $$ G_{\mu\nu} = \frac{8\pi G}{c^4}T_{\mu\nu} $$
 
-The resultant is an equation that describes how the Hubble parameter varies over time $H^2(t)$. You may interpret this as how the universe expands over time. The Friedmann equation is an implicit function of time more explicitly it depends on the energy density $\rho$ of the universe. 
+The resultant is an equation that describes how the Hubble parameter varies over time $H^2(t)$. You may interpret this as how the universe expands over time. The Friedmann equation is an implicit function of time more explicitly it depends on the energy density $\rho$ of the universe.
 
 Often times, we use the definition of the Hubble's parameter,
 
 $$ H(t) \equiv \frac{\dot a}{a} $$
 
 Mass Density Form
-: 
+:
 
 $$
 \begin{equation}
@@ -41,7 +26,7 @@ $$
 $$
 
 Energy Density Form
-: 
+:
 $$
 \begin{equation}
     \left(\frac{\dot a}{a}\right)^2 = \frac{8\pi G}{3c^2}\mu - \frac{\kappa c^2}{R_0^2a^2}
@@ -49,7 +34,7 @@ $$
 $$
 
 Natural Unit Form
-: 
+:
 $$
 \begin{equation}
     \boxed{\left(\frac{\dot a}{a}\right)^2 = \frac{8\pi G}{3}\mu - \frac{k}{a^2}}
@@ -59,7 +44,7 @@ $$
 * $\mu$ : Energy density of the universe
 * $k$ : Curvature constant where $k\equiv \kappa/R_0^2$
 
-We will be using the natural unit form since it's natural. 
+We will be using the natural unit form since it's natural.
 
 ## Hubble's Constant
 Immediately one can infer the Hubble's constant from the Friedmann equation setting $t = t_0$ which is today.
@@ -147,11 +132,11 @@ $$
 
 Now let's apply each type of energy density to the fluid equation:
 
-$$ 
+$$
 \begin{gather*}
     \dot \mu_i + 3 \frac{\dot a}{a}\left(\mu_i + P_i\right) = 0\\
     \frac{d\mu_i}{\mu_i} = -3(1+w_i)\frac{da}{a}\\
-\end{gather*} 
+\end{gather*}
 $$
 
 $$
@@ -205,10 +190,10 @@ $$
 \end{gather}
 $$
 
-Since $\Lambda > 0$, this indicates that the curvature $k > 0$ therefore a open but static universe. This sounds incorrect and it is; in the next section we will explore the more acceptable use of the cosmological constant. 
+Since $\Lambda > 0$, this indicates that the curvature $k > 0$ therefore a open but static universe. This sounds incorrect and it is; in the next section we will explore the more acceptable use of the cosmological constant.
 
 Motivation on the Incorrectness
-: 
+:
 Consider even a slight increase in $\Lambda$ then $\dot a > 0$ which causes $\mu_m \rightarrow 0$ and by the Friedmann equation this feedbacks to $\dot a \rightarrow 0$ even more. We got a non-linear expanding universe
 
 ## Cosmological Constant - Vacuum Energy
