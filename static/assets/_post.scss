@@ -1,0 +1,15 @@
+@import "variables";
+#post {
+  #post-img {
+    object-fit: contain;
+    margin-top: -0.5em;
+    margin-bottom: 1em;
+    height: 360px;
+    width: 100%;
+  }
+  // On This Page
+  .onthispage {
+    position: sticky;
+    width: unset;
+  }
+}

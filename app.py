@@ -2,8 +2,20 @@
 import argparse
 
 from flask import render_template
+from flask_assets import Bundle, Environment
 from staticpy import BASE_CONFIG, CONTEXTS, app, build_all, freezer
 
+assets = Environment(app)
+
+assets.register(
+    "scss",
+    Bundle(
+        "assets/main.scss",
+        "assets/_variables.scss",
+        filters="pyscss",
+        output="main.css",
+    ),
+)
 app.jinja_env.add_extension("jinja2.ext.do")
 
 

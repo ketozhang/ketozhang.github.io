@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+{% block content %}
+{% include "header.html" %}
+<main>
+  <div class="container">
+    <!-- Jumbotron -->
+    <div id="intro" class="d-flex flex-column">
+      <div id="intro-header">
+      </div>
+      <div class="row justify-content-center">
+        <blockquote class="col-md-8 order-last order-md-first">
+          <p>Welcome!
+            Feel free to check out the <a href="#about-me">About Me</a> and occasional <a href="/posts/">blog
+              posts</a> mingled with topics in <em>physics</em>, <em>math</em>, <em>data</em>, and <em>computer
+              science</em>. All my educational <a href="/notes/">notes</a> are available to the public and
+            web-accessible.
+          </p>
+          <ul>
+            <li>2020 &ndash; Joined non-profit organization <a href="https://www.watttime.org/">WattTime</a>
+              part of the <a href="https://www.climatetrace.org/">Climate TRACE</a> coalition along with Vice President
+              Al Gore </li>
+            <li>2019 &ndash; Awarded B.A. Astrophysics and B.A. Data Science </li>
+            <li>2017 &ndash; Joined Alex Filippenko Research Group </li>
+            <li>2015 &ndash; Entered Undergraduate at Unviersity of California, Berkeley</li>
+            <p><a href="/CV" style="margin-left: -1em">More on CV</a></p>
+          </ul>
+        </blockquote>
+        <div class="col-md-4 order-first order-md-last">
+          <img class="rounded-circle" style="width: 200px;" src="{{site_url}}static/images/headshot_500x500.jpg">
+        </div>
+      </div>
+      <!-- <figure class="figure"> -->
+      <!-- <p class="text-center mt-2">Keto D. Zhang</p> -->
+      <!-- </figure> -->
+    </div>
+
+    <!-- Project Showcase  -->
+    {#
+    <h1 class="text-center">Projects</h1>
+    <div id="project-showcase" class="row justify-content-md-between d-flex align-items-stretch">
+      {% for project in projects %}
+      <div class="col-md-4 d-flex flex-column">
+        <h3 class="title">{{project['header']}}</h2>
+          <!-- TODO: Find a better way for equal height -->
+          <p>{{project['description']}}</p>
+          <p class="mt-auto"><a class="btn btn-warning" href="{{url_for(project['view_details'])}}" role="button"
+              target="_blank">View Details</a></p>
+      </div>
+      {% endfor %}
+    </div>
+    #}
+
+    <!-- Blogpost Cards -->
+    <h1 class="text-center">Posts</h1>
+    {% include "post_showcase.html" %}
+
+    <!-- About Me -->
+    <div id="about-me">
+      <h1 class="text-center">About Me</h1>
+
+      <div id="research-astronomer">
+        <h2>I am a Research Astronomer</h2>
+        <p class="text-dark">My specialty is in <strong>Astrostatistics</strong> &mdash; combining astronomy, data
+          science, and statistics</p>
+        <div class="section-body">
+          {#
+          <ul id="publication-list">
+            <li>
+              Stahl B. E., Zheng W., de Jaeger T. et al (2019). MNRAS, 490,
+              3882–3907,
+              <em>Lick Observatory Supernova Search Follow-Up Program: Photometry
+                Data Release of 93 Type Ia Supernovae, </em> <a
+                href="https://doi.org/10.1093/mnras/stz2742">https://doi.org/10.1093/mnras/stz2742</a>
+            </li>
+            </li>
+            <li>
+              Jaeger T., Zheng W., Stahl B. E. et al. (2019). <em>The Berkeley sample of Type II supernovae: BVRI light
+                curves and
+                spectroscopy of 55 SNe II </em>, MNRAS, 490,
+              2799–2821,
+              <a href="https://doi.org/10.1093/mnras/stz2714">https://doi.org/10.1093/mnras/stz2714</a>
+            </li>
+            <li>
+              Van Dyk S. D., Zheng W., Maund J. R. et al. (2019).
+              <em>The Type II-plateau Supernova 2017eaw in NGC 6946 and Its Red
+                Supergiant Progenitor</em>, ApJ, 875, 136,
+              <a href="https://doi.org/10.3847/1538-4357/ab1136">https://doi.org/10.3847/1538-4357/ab1136</a>
+            </li>
+            <li>
+              Kang, M., Pelliciari J., Frano A. et al. (2019).
+              <em>Evolution of charge order topology across a magnetic phase
+                transition in cuprate superconductors</em>, Nat. Phys. 15,
+              335–340,
+              <a href="https://doi.org/10.1038/s41567-018-0401-8">https://doi.org/10.1038/s41567-018-0401-8</a>
+            </li>
+            <li>
+              Van Dyk S. D., Zheng W., Brink T. G. et al. (2018).
+              <em>SN 2017ein and the Possible First Identification of a Type Ic
+                Supernova Progenitor</em>, ApJ, 860, 90,
+              <a href="https://doi.org/10.3847/1538-4357/aac32c">https://doi.org/10.3847/1538-4357/aac32c</a>
+          </ul>
+          #}
+        </div>
+      </div>
+
+      <div id="software-developer">
+        <h2 class="text-light">I am a Software Developer</h2>
+        <p class="terminal-blinker">&#x276f; </p>
+        <div class="tech-stack text-left">
+          <h3 class="text-light">Languages</h3>
+          <div id="languages-stack">
+            <img src="{{site_url}}static/images/logo-python.svg" title="Python" class="tech-logo">
+            <img src="{{site_url}}static/images/logo-java.svg" title="Java" class="tech-logo">
+            <img src="{{site_url}}static/images/logo-javascript.svg" title="JavaScript" class="tech-logo">
+            <!-- <img src="{{site_url}}static/images/logo-cpp.svg" title="C++" class="tech-logo"> -->
+          </div>
+          <h3 class="text-light">Frontend</h3>
+          <div id="frontend">
+            <img src="{{site_url}}static/images/logo-react.svg" title="React" class="tech-logo">
+            <img src="{{site_url}}static/images/logo-bootstrap.svg" title="Bootstrap" class="tech-logo">
+          </div>
+          <h3 class="text-light">Backend</h3>
+          <div id="backend">
+            <img src="{{site_url}}static/images/logo-flask.svg" title="Flask" class="tech-logo">
+            <img src="{{site_url}}static/images/logo-mysql.svg" title="MySQL" class="tech-logo">
+          </div>
+          <h3 class="text-light">Deployment and Tools</h3>
+          <div id="tool-stack">
+            <img src="{{site_url}}static/images/logo-git.svg" title="Git" class="tech-logo">
+            <img src="{{site_url}}static/images/logo-github.svg" title="GitHub" class="tech-logo">
+            <img src="{{site_url}}static/images/logo-docker.svg" title="Docker" class="tech-logo">
+            <img src="{{site_url}}static/images/logo-postgres.svg" title="PostgreSQL" class="tech-logo">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
