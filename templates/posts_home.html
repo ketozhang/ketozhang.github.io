@@ -4,7 +4,7 @@
 <div class="container">
   <h1 class="title">Posts</h1>
   {% set posts=[] %}
-  {% for post in posts_directory | sort(attribute="last_updated", reverse=True) %}
+  {% for post in posts_directory | sort(attribute="time_modified", reverse=True) %}
   {% do posts.append(post) %}
   {% endfor %}
   {% include "post_showcase.html" %}

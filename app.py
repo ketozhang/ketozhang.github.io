@@ -4,10 +4,9 @@ import argparse
 import yaml
 from flask import Flask, render_template
 from flask_article import FlaskArticleDirectory
-from jinja2 import StrictUndefined
 
 app = Flask(__name__)
-app.jinja_env.undefined = StrictUndefined
+# app.jinja_env.undefined = StrictUndefined
 
 with open("config.yaml", "r") as f:
     config = yaml.safe_load(f)
@@ -22,21 +21,8 @@ app.jinja_env.add_extension("jinja2.ext.do")
 ########################
 @app.route("/")
 def home():
-    """Renders the home page."""
-    config = BASE_CONFIG["home"]
-
-    # Get post for Post showcase
-    post_context = CONTEXTS["posts"]
-    posts = []
-    for url in config["posts"]:
-        page = post_context.get_page(url)
-        posts.append(page)
-
-    # Get projects for Project showcase
-    projects = config["projects"]
-
-    context = {"posts": posts, "projects": projects}
-    return render_template(config["template"], **context)
+    context = {"posts_directory": posts_directory}
+    return render_template("home.html", **context)
 
 
 @app.route("/notes/")
@@ -48,7 +34,7 @@ def notes_home():
 @app.route("/notes/<path:subpath>")
 def notes(subpath):
     article = notes_directory.get_article(subpath)
-    context = {"note": article}
+    context = {"page": article}
     return render_template("note.html", **context, **config)
 
 

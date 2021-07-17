@@ -6,28 +6,25 @@
     <!-- Content -->
     <div class="col-10 col-xl-12 h-100">
       <div class="title-header">
-        <h1 class="title">{{page['title']}}</h1>
-        <img id="post-img" class="mx-auto d-block img-fluid"
-          src={{ url_for(page.get('image', '/static/images/default.jpg')) }}>
+        <h1 class="title">{{post.title}}</h1>
+        <img id="post-img" class="mx-auto d-block img-fluid" src="{{ post.image }}">
 
         <div class="metadata">
           <p class="m-0">
             By: {{author}}
             <span class="mx-1">&bull;</span>
             Last Updated:
-            <time datetime="{{ page.last_updated }}"></time>
+            <time datetime="{{ post.time_modified }}"></time>
           </p>
         </div>
         <hr>
       </div>
 
-      {% if page.description %}
-      {{page.description}}
+      {% if post.description %}
+      {{post.description}}
       {% endif %}
       <div class="markdown-content">
-        {% if page['has_content'] %}
-        {{ include_raw(page['content_path']) }}
-        {% endif %}
+        {{ post.content }}
       </div>
     </div>
 
@@ -37,8 +34,9 @@
   </div>
   <!-- Disqus Comments -->
   <div id="disqus_thread" class="row justify-content-center">
-    <button type=" button" class="col-6 col-align-self-center btn btn-block btn-outline-dark show-comments">Show
-      Comments</button>
+    <button type=" button" class="col-6 col-align-self-center btn btn-block btn-outline-dark show-comments">
+      Show Comments
+    </button>
   </div>
 </div>
 {% endblock %}
