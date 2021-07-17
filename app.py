@@ -11,9 +11,9 @@ assets.register(
     "scss",
     Bundle(
         "assets/main.scss",
-        "assets/_variables.scss",
         filters="pyscss",
         output="main.css",
+        depends="assets/_*.scss",
     ),
 )
 app.jinja_env.add_extension("jinja2.ext.do")

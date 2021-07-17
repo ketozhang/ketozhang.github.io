@@ -18,18 +18,25 @@
   </div> -->
 
 
-  <div class="card mb-3">
-    <div class=" row gx-3">
+  <div class="post-card mb-3">
+    <div class=" row gx-4">
+
       <div class="col-4">
-        <img class="card-img img-fluid" src={{ url_for(post.get('image', '/static/images/default.jpg' )) }}>
+        <img class="img-fluid" src={{ url_for(post.get('image', '/static/images/default.jpg' )) }}>
       </div>
+
       <div class="col-8">
-        <div class="card-body">
-          <h5 class="card-title"><a href="{{ url_for(post.url )}}">{{post.title}}</a></h5>
-          <p class="card-text">{{post.get('description', '')}}</p>
-          <p class="card-text"><small class="text-muted">
+        <div class="post-card-body">
+          <div class="post-card-title">
+            <h4><a href="{{ url_for(post.url )}}">{{post.title}}</a></h4>
+          </div>
+
+          <div class="post-card-description">{{post.get('description', '')}}</div>
+          <div class="post-card-footer">
+            <small class="text-muted">
               Last updated <time datetime="{{ post.last_updated }}"></time>
-            </small></p>
+            </small>
+          </div>
         </div>
       </div>
     </div>

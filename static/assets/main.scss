@@ -1,5 +1,6 @@
 @import "variables";
 @import "note";
+@import "post";
 
 // Structure
 body {
@@ -10,7 +11,10 @@ body {
   h1, h2, h3, h4, h5, h6 {
     font-family: $style-font-family;
     color: black;
-    line-height: 2.25;
+  }
+
+  h1 {
+    margin-bottom: 0.5em;
   }
 }
 
@@ -55,11 +59,4 @@ blockquote {
 .header-icon {
   width: 24px;
   height: 24px;
-}
-
-// Post
-#post-showcase {
-  .card {
-    border: none
-  }
 }

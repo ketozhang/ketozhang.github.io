@@ -1,4 +1,5 @@
 @import "variables";
+
 #post {
   #post-img {
     object-fit: contain;
@@ -11,5 +12,29 @@
   .onthispage {
     position: sticky;
     width: unset;
+  }
+}
+
+.post-card {
+
+  .post-card-title {
+    * {
+      line-height: 1.25;
+    }
+
+    a {
+      text-decoration: none;
+      color: $base-font-color;
+    }
+  }
+
+  .post-card-description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 3em;
+  }
+
+  .post-card-footer {
+    margin-top: 0.5em;
   }
 }
