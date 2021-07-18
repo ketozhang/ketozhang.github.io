@@ -25,6 +25,24 @@
     a {
       text-decoration: none;
       color: $base-font-color;
+      transition: color 0.2s ease-in-out;
+    }
+
+  }
+
+  img {
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  :hover {
+    .post-card-title {
+      a {
+        color: $orange-color;
+      }
+
+    }
+    img {
+      opacity: 0.8;
     }
   }
 
