@@ -6,6 +6,7 @@ node_modules/
 *.vscode/
 *.webassets-cache/
 *.venv/
+*.DS_Store/
 _dev/docs/
 
 *.code-workspace
