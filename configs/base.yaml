@@ -83,3 +83,6 @@ social_links:
   - name: "GitHub"
     url: "https://www.github.com/ketozhang"
     icon: "/static/images/icons8-github.svg"
+  - name: "ORCID"
+    url: "https://orcid.org/0000-0002-9955-8797"
+    icon: "/static/images/orcid-bw.svg"
