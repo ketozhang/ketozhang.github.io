@@ -1,0 +1,58 @@
+@import "variables";
+
+#post {
+  #post-img {
+    object-fit: contain;
+    margin-top: -0.5em;
+    margin-bottom: 1em;
+    height: 360px;
+    width: 100%;
+  }
+  // On This Page
+  .onthispage {
+    position: sticky;
+    width: unset;
+  }
+}
+
+.post-card {
+
+  .post-card-title {
+    * {
+      line-height: 1.25;
+    }
+
+    a {
+      text-decoration: none;
+      color: $base-font-color;
+      transition: color 0.2s ease-in-out;
+    }
+
+  }
+
+  img {
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  :hover {
+    .post-card-title {
+      a {
+        color: $link-color;
+      }
+    }
+
+    img {
+      opacity: 0.8;
+    }
+  }
+
+  .post-card-description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 3em;
+  }
+
+  .post-card-footer {
+    margin-top: 0.5em;
+  }
+}

@@ -1,0 +1,62 @@
+@import "variables";
+@import "note";
+@import "post";
+
+// Structure
+body {
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  padding-bottom: 80px;
+  color: $base-font-color;
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $style-font-family;
+    color: black;
+  }
+
+  h1 {
+    margin-bottom: 0.5em;
+  }
+}
+
+header {
+  margin-bottom: 2em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+// Hyperlinks
+a {
+  color: $link-color;
+}
+a:hover {
+  color: $link-color;
+}
+
+a#brand {
+  font-family: $style-font-family;
+  font-size: 2em;
+  font-weight: 500;
+  text-decoration: none;
+  color: black;
+}
+
+// Content
+p > code,
+li > code {
+  color: #358ccb;
+  border: 1px solid rgba(97, 97, 97, 0.4);
+  border-radius: 3px;
+  padding: 0px 2px 0px 2px;
+  margin: 0px 1px 0px 0px;
+  /* box-shadow: 0.5px 0.5px 1px rgba(97, 97, 97, 0.5); */
+}
+
+blockquote {
+  font-size: $base-font-size !important;
+}
+
+// Sidebar
+
+.header-icon {
+  width: 24px;
+  height: 24px;
+}

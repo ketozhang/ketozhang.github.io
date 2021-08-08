@@ -7,8 +7,8 @@
     <div class="col-10 col-xl-12 h-100">
       <div class="title-header">
         <h1 class="title">{{page['title']}}</h1>
-        <img id="post-img" class="mx-auto d-block img-fluid"
-          src={{ url_for(page.get('image', '/static/images/default.jpg')) }}>
+        <img id="post-img" class="mx-auto d-block img-fluid" src={{
+          url_for(page.get('image', '/static/images/default.jpg' )) }}>
 
         <div class="metadata">
           <p class="m-0">
@@ -41,4 +41,11 @@
       Comments</button>
   </div>
 </div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>
+<script>
+  anchors.add();
+</script>
 {% endblock %}

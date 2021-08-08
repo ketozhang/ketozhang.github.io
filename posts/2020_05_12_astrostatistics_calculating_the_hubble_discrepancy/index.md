@@ -2,6 +2,7 @@
 title: "Astrostatistics — Calculating the Hubble Discrepancy"
 tag: ["astronomy", "statistics"]
 description: "We take a look at the famously used metric to compare Hubble constant predictions, the Hubble discrepancy."
+image: /static/default.jpg
 ---
 
 Reiss et al. (2019) stated that their $H_0$ estimate ($74.03 \pm 1.42~\mathrm{km/s/Mpc}$) has a difference of $4.4\sigma$ compared to Planck CMB 2018 estimate ($67.4 \pm 0.5~\mathrm{km/s/Mpc}$).

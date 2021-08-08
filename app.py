@@ -2,8 +2,20 @@
 import argparse
 
 from flask import render_template
+from flask_assets import Bundle, Environment
 from staticpy import BASE_CONFIG, CONTEXTS, app, build_all, freezer
 
+assets = Environment(app)
+
+assets.register(
+    "scss",
+    Bundle(
+        "assets/main.scss",
+        filters="pyscss",
+        output="main.css",
+        depends="assets/_*.scss",
+    ),
+)
 app.jinja_env.add_extension("jinja2.ext.do")
 
 
@@ -18,7 +30,7 @@ def home():
     # Get post for Post showcase
     post_context = CONTEXTS["posts"]
     posts = []
-    for url in config["posts"]:
+    for url in config.get("posts", []):
         page = post_context.get_page(url)
         posts.append(page)
 

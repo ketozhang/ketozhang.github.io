@@ -2,15 +2,6 @@
 <html lang='en'>
 
 <head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145024207-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-145024207-1');
-  </script>
   <meta charset="UTF-8">
   <title>
     
@@ -19,16 +10,20 @@
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- Bootstrap time -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link href="https://ketozhang.github.io/static/main.css" rel="stylesheet">
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link href=" https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
   <link href=" https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
   <link href="https://ketozhang.github.io/static/prism.css" rel="stylesheet">
   <link href="https://ketozhang.github.io/static/prism-atom-dark.css" rel="stylesheet">
+
+  <!-- CSS Stylesheet -->
   <link href="https://ketozhang.github.io/static/favicon.ico" rel="shortcut icon">
+  
+  <link href="/static/main.css?6c17db03" rel="stylesheet">
+  
 
   <!-- LaTeX Stylesheet -->
   
@@ -36,16 +31,15 @@
     $$
     \newcommand{d}{\mathrm d}
     \newcommand{avg}[1]{\expval{#1}}
-        \renewcommand{vec}[1]{\vectorbold{#1}}
-        $$
-    </div>
-    
+    \renewcommand{vec}[1]{\vectorbold{#1}}
+    $$
+  </div>
+  
 </head>
 
 <body>
-    
-<header id="pagenav" class="flex-md-row flex-column">
-  <div class="pt-5 text-center"><a class="brand" href="https://ketozhang.github.io/">Keto</a></div>
+  
+<header>
   <nav class="navbar navbar-expand navbar-light">
     <div class="d-flex mx-auto">
       <ul class="navbar-nav">
@@ -62,190 +56,128 @@
       </ul>
     </div>
   </nav>
-  <div id="pagenav-socials">
-    <ul class="nav justify-content-center">
-      
-      <li class="nav-item mx-2">
-        <a class="social-link" href="https://ketozhang.github.io/CV" title="CV" target="_blank">
-          <img class="header-icon" src="/static/images/CV-32.png">
-        </a>
-      </li>
-      
-      <li class="nav-item mx-2">
-        <a class="social-link" href="https://www.linkedin.com/in/ketozhang/" title="LinkedIn" target="_blank">
-          <img class="header-icon" src="/static/images/icons8-linkedin.svg">
-        </a>
-      </li>
-      
-      <li class="nav-item mx-2">
-        <a class="social-link" href="mailto:keto.zhang@gmail.com" title="keto.zhang@gmail.com" target="_blank">
-          <img class="header-icon" src="/static/images/icons8-email-30.png">
-        </a>
-      </li>
-      
-      <li class="nav-item mx-2">
-        <a class="social-link" href="https://www.github.com/ketozhang" title="GitHub" target="_blank">
-          <img class="header-icon" src="/static/images/icons8-github.svg">
-        </a>
-      </li>
-      
-    </ul>
-  </div>
-  <hr class="gradient">
 </header>
-<main>
-  <div class="container">
-    <!-- Jumbotron -->
-    <div id="intro" class="d-flex flex-column">
-      <div id="intro-header">
-      </div>
-      <div class="row justify-content-center">
-        <blockquote class="col-md-8 order-last order-md-first">
-          <p>Welcome!
-            Feel free to check out the <a href="#about-me">About Me</a> and occasional <a href="/posts/">blog
-              posts</a> mingled with topics in <em>physics</em>, <em>math</em>, <em>data</em>, and <em>computer
-              science</em>. All my educational <a href="/notes/">notes</a> are available to the public and
-            web-accessible.
-          </p>
-          <ul>
-            <li>2020 &ndash; Joined non-profit organization <a href="https://www.watttime.org/">WattTime</a>
-              part of the <a href="https://www.climatetrace.org/">Climate TRACE</a> coalition along with Vice President
-              Al Gore </li>
-            <li>2019 &ndash; Awarded B.A. Astrophysics and B.A. Data Science </li>
-            <li>2017 &ndash; Joined Alex Filippenko Research Group </li>
-            <li>2015 &ndash; Entered Undergraduate at Unviersity of California, Berkeley</li>
-            <p><a href="/CV" style="margin-left: -1em">More on CV</a></p>
-          </ul>
-        </blockquote>
-        <div class="col-md-4 order-first order-md-last">
-          <img class="rounded-circle" style="width: 200px;" src="https://ketozhang.github.io/static/images/headshot_500x500.jpg">
-        </div>
-      </div>
-      <!-- <figure class="figure"> -->
-      <!-- <p class="text-center mt-2">Keto D. Zhang</p> -->
-      <!-- </figure> -->
-    </div>
+<main class="container-lg">
+  <div class="row gx-5">
 
-    <!-- Project Showcase  -->
-    
+    <section id="sidebar" class="col-md-3">
 
-    <!-- Blogpost Cards -->
-    <h1 class="text-center">Posts</h1>
-    <div id="post-showcase">
-  
-  <div class="card">
-    <div class="row">
-      <div class="card-img col-md-5 col-lg-4 mb-sm-2 mb-lg-0">
-        <a href="https://ketozhang.github.io/posts/2020_05_12_astrostatistics_calculating_the_hubble_discrepancy/">
-          <img class="card-img" src=https://ketozhang.github.io/static/images/default.jpg>
-        </a>
+      <div id="namecard" class="mb-3">
+        <div class="mb-3"><img class="d-block rounded-circle shadow-lg" style="width: 200px;"
+            src="/static/images/headshot_500x500.jpg"></div>
+        <a id="brand" href="https://ketozhang.github.io/">Keto</a>
+        <small>(Keto D. Zhang)</small>
+        <p class="d-xs-none d-md-block">BA Astrophysics and Data Science</p>
       </div>
-      <div class="col-md-7 col-lg-8">
-        <div class="card-body">
-          <h5 class="card-title"><a href="https://ketozhang.github.io/posts/2020_05_12_astrostatistics_calculating_the_hubble_discrepancy/">Astrostatistics — Calculating the Hubble Discrepancy</a></h5>
-          <p class="card-subtitle"><time datetime="2021-05-01 20:38:16.345088"></time></p>
-          <p class="card-text">We take a look at the famously used metric to compare Hubble constant predictions, the Hubble discrepancy.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-</div>
 
-    <!-- About Me -->
-    <div id="about-me">
-      <h1 class="text-center">About Me</h1>
-
-      <div id="research-astronomer">
-        <h2>I am a Research Astronomer</h2>
-        <p class="text-dark">My specialty is in <strong>Astrostatistics</strong> &mdash; combining astronomy, data
-          science, and statistics</p>
-        <div class="section-body">
+      <div id="socials">
+        <ul class="nav">
           
-        </div>
+          <li class="me-2">
+            <a class="social-link" href="https://ketozhang.github.io/CV" title="CV" target="_blank">
+              <img class="header-icon" src="/static/images/CV-32.png">
+            </a>
+          </li>
+          
+          <li class="me-2">
+            <a class="social-link" href="mailto:keto.zhang@gmail.com" title="keto.zhang@gmail.com" target="_blank">
+              <img class="header-icon" src="/static/images/icons8-email-30.png">
+            </a>
+          </li>
+          
+          <li class="me-2">
+            <a class="social-link" href="https://www.linkedin.com/in/ketozhang/" title="LinkedIn" target="_blank">
+              <img class="header-icon" src="/static/images/icons8-linkedin.svg">
+            </a>
+          </li>
+          
+          <li class="me-2">
+            <a class="social-link" href="https://www.github.com/ketozhang" title="GitHub" target="_blank">
+              <img class="header-icon" src="/static/images/icons8-github.svg">
+            </a>
+          </li>
+          
+          <li class="me-2">
+            <a class="social-link" href="https://orcid.org/0000-0002-9955-8797" title="ORCID" target="_blank">
+              <img class="header-icon" src="/static/images/orcid-bw.svg">
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+    </section>
+
+    <section id="home-body" class="col mt-5">
+      <div class="mb-4">
+        <h2>Bio</h2>
+        I am (or am working on becoming) an astrophysicist and software engineer. My interest are in statistics research
+        and technical development primarily in the field of astrophysics. My current role is at CalTech IPAC as a
+        software developer working on <a href="https://roman.gsfc.nasa.gov/index.html">Nancy Grace Roman Space
+          Telescope</a>. Specifically, I am responsible for the software that will detect exoplanets through
+        gravitational microlensing events.
       </div>
 
-      <div id="software-developer">
-        <h2 class="text-light">I am a Software Developer</h2>
-        <p class="terminal-blinker">&#x276f; </p>
-        <div class="tech-stack text-left">
-          <h3 class="text-light">Languages</h3>
-          <div id="languages-stack">
-            <img src="https://ketozhang.github.io/static/images/logo-python.svg" title="Python" class="tech-logo">
-            <img src="https://ketozhang.github.io/static/images/logo-java.svg" title="Java" class="tech-logo">
-            <img src="https://ketozhang.github.io/static/images/logo-javascript.svg" title="JavaScript" class="tech-logo">
-            <!-- <img src="https://ketozhang.github.io/static/images/logo-cpp.svg" title="C++" class="tech-logo"> -->
-          </div>
-          <h3 class="text-light">Frontend</h3>
-          <div id="frontend">
-            <img src="https://ketozhang.github.io/static/images/logo-react.svg" title="React" class="tech-logo">
-            <img src="https://ketozhang.github.io/static/images/logo-bootstrap.svg" title="Bootstrap" class="tech-logo">
-          </div>
-          <h3 class="text-light">Backend</h3>
-          <div id="backend">
-            <img src="https://ketozhang.github.io/static/images/logo-flask.svg" title="Flask" class="tech-logo">
-            <img src="https://ketozhang.github.io/static/images/logo-mysql.svg" title="MySQL" class="tech-logo">
-          </div>
-          <h3 class="text-light">Deployment and Tools</h3>
-          <div id="tool-stack">
-            <img src="https://ketozhang.github.io/static/images/logo-git.svg" title="Git" class="tech-logo">
-            <img src="https://ketozhang.github.io/static/images/logo-github.svg" title="GitHub" class="tech-logo">
-            <img src="https://ketozhang.github.io/static/images/logo-docker.svg" title="Docker" class="tech-logo">
-          </div>
-        </div>
+      <div class="mb-4">
+        <h2>Selected Works</h2>
+        <ul>
+          <li class="pb-2">
+            <span class="pe-1"><strong><em>Letter</em></strong></span>
+            <a href="https://ui.adsabs.harvard.edu/abs/2021MNRAS.503L..33Z/abstract">
+              <strong>Improving Bayesian posterior correlation analysis on Type Ia supernova luminosity
+                evolution</strong>
+            </a>
+            <br>
+            Zhang K. D., Murakami Y. S., Stahl B. E. et al (2021). MNRAS, 503, L33-L37
+          </li>
+          <li class="pb-2">
+            <span class="pe-1"><strong><em>Paper</em></strong></span>
+            <a href="https://ui.adsabs.harvard.edu/abs/2020MNRAS.499.5325Z"><strong>Distribution of Si II λ6355
+                Velocities of Type Ia Supernovae and Implications for Asymmetric
+                Explosions</strong></a>
+            <br>
+            Zhang K. D., Zheng W., de Jaeger T. et al (2020). MNRAS, 499, 5325-5333
+          </li>
+        </ul>
       </div>
-    </div>
+
+    </section>
+
   </div>
 </main>
 
-    <footer class="py-2 bg-white">
-    <div class="container">
-        <p class="text-right m-0"> Generated by <a href="https://github.com/ketozhang/StaticPy">StaticPy</a> |
-            Designed
-            by <a href="https://github.com/ketozhang">Keto Zhang</a>
-        </p>
-    </div>
-</footer>
 
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+  <script src="https://ketozhang.github.io/static/js/datetime.js"></script>
+  <script src="https://ketozhang.github.io/static/js/disqus.js"></script>
+  <script src="https://ketozhang.github.io/static/js/codeHighlight.js"></script>
+  <script src="https://ketozhang.github.io/static/js/prism.js"></script>
+  <script src="https://ketozhang.github.io/static/js/onthispage.js"></script>
+  <script src="https://ketozhang.github.io/static/js/markdown.js"></script>
+
+  <!-- MathJax -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://ketozhang.github.io/static/js/mathjax_config.js" defer></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
 
-    <script src="https://ketozhang.github.io/static/js/datetime.js"></script>
-    <script src="https://ketozhang.github.io/static/js/disqus.js"></script>
-    <script src="https://ketozhang.github.io/static/js/codeHighlight.js"></script>
-    <script src="https://ketozhang.github.io/static/js/prism.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>
-    <script src="https://ketozhang.github.io/static/js/onthispage.js"></script>
-    <script src="https://ketozhang.github.io/static/js/markdown.js"></script>
 
-    <!-- MathJax -->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script src="https://ketozhang.github.io/static/js/mathjax_config.js" defer></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+  <!-- Custom Global scripts -->
+  <script>
+    $(document).ready(function () {
+      Prism.highlightAll();
+    })
+  </script>
 
-    <!-- Bootstrap JS -->
-    <!-- TODO: trim JS if not needed -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-
-
-    <!-- Custom Global scripts -->
-    <script>
-      anchors.add();
-      $(document).ready(function () {
-        Prism.highlightAll();
-      })
-    </script>
-
-    <!-- Local scripts -->
-    
-    
+  <!-- Local scripts -->
+  
+  
 </body>
 
 </html>

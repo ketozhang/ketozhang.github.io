@@ -2,15 +2,6 @@
 <html lang='en'>
 
 <head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145024207-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-145024207-1');
-  </script>
   <meta charset="UTF-8">
   <title>
     
@@ -19,16 +10,20 @@
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- Bootstrap time -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link href="https://ketozhang.github.io/static/main.css" rel="stylesheet">
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link href=" https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
   <link href=" https://fonts.googleapis.com/css?family=Roboto|Source+Code+Pro" rel="stylesheet">
   <link href="https://ketozhang.github.io/static/prism.css" rel="stylesheet">
   <link href="https://ketozhang.github.io/static/prism-atom-dark.css" rel="stylesheet">
+
+  <!-- CSS Stylesheet -->
   <link href="https://ketozhang.github.io/static/favicon.ico" rel="shortcut icon">
+  
+  <link href="/static/main.css?6c17db03" rel="stylesheet">
+  
 
   <!-- LaTeX Stylesheet -->
   
@@ -36,14 +31,14 @@
     $$
     \newcommand{d}{\mathrm d}
     \newcommand{avg}[1]{\expval{#1}}
-        \renewcommand{vec}[1]{\vectorbold{#1}}
-        $$
-    </div>
-    
+    \renewcommand{vec}[1]{\vectorbold{#1}}
+    $$
+  </div>
+  
 </head>
 
 <body>
-    
+  
 <div class="container-fluid" id="note">
   <!-- <nav class="navbar navbar-expand-lg">
         <button id="sidenavCollapse" class="btn btn-info" type="button">
@@ -78,57 +73,29 @@
       <h1 class="title text-center pt-3">Friedmann Equation</h1>
       
       <div class="markdown-content">
-        <!-- TOC -->
-<ul>
-<li><a href="#hubbles-constant">Hubble’s Constant</a></li>
-<li><a href="#non-relativistic-form">Non-Relativistic Form</a>
-<ul>
-<li><a href="#proof">Proof</a></li>
-</ul></li>
-<li><a href="#density-parameter-form">Density Parameter Form</a></li>
-<li><a href="#fluid-equation">Fluid Equation</a>
-<ul>
-<li><a href="#proof---newtonian">Proof - Newtonian</a></li>
-</ul></li>
-<li><a href="#acceleration-equation">Acceleration Equation</a></li>
-<li><a href="#equation-of-state">Equation of State</a></li>
-<li><a href="#cosmological-constant---incorrect-version">Cosmological Constant - Incorrect Version</a></li>
-<li><a href="#cosmological-constant---vacuum-energy">Cosmological Constant - Vacuum Energy</a></li>
-</ul>
-<!-- /TOC -->
-<p>The Friedmann equation applies the Friedmann metric,</p>
+        <p>The Friedmann equation applies the Friedmann metric,</p>
 <p><span class="math display">\[ ds^2 = -dt^2 + a(t)^2\left[dr^2 + S_k(r)^2d\Omega^2\right] \]</span></p>
 <p>to Einstein’s field equation,</p>
 <p><span class="math display">\[ G_{\mu\nu} = \frac{8\pi G}{c^4}T_{\mu\nu} \]</span></p>
 <p>The resultant is an equation that describes how the Hubble parameter varies over time <span class="math inline">\(H^2(t)\)</span>. You may interpret this as how the universe expands over time. The Friedmann equation is an implicit function of time more explicitly it depends on the energy density <span class="math inline">\(\rho\)</span> of the universe.</p>
 <p>Often times, we use the definition of the Hubble’s parameter,</p>
 <p><span class="math display">\[ H(t) \equiv \frac{\dot a}{a} \]</span></p>
-<dl>
-<dt>Mass Density Form</dt>
-<dd>
-</dd>
-</dl>
+<p>Mass Density Form :</p>
 <p><span class="math display">\[
 \begin{equation}
     \left(\frac{\dot a}{a}\right)^2 = -\frac{4\pi G}{3}\left(\rho + \frac{3\rho}{c^2}\right) + \frac{\Lambda c^2}{3}
 \end{equation}
 \]</span></p>
-<dl>
-<dt>Energy Density Form</dt>
-<dd><span class="math display">\[
+<p>Energy Density Form : <span class="math display">\[
 \begin{equation}
-\left(\frac{\dot a}{a}\right)^2 = \frac{8\pi G}{3c^2}\mu - \frac{\kappa c^2}{R_0^2a^2}
+    \left(\frac{\dot a}{a}\right)^2 = \frac{8\pi G}{3c^2}\mu - \frac{\kappa c^2}{R_0^2a^2}
 \end{equation}
-\]</span>
-</dd>
-<dt>Natural Unit Form</dt>
-<dd><span class="math display">\[
+\]</span></p>
+<p>Natural Unit Form : <span class="math display">\[
 \begin{equation}
-\boxed{\left(\frac{\dot a}{a}\right)^2 = \frac{8\pi G}{3}\mu - \frac{k}{a^2}}
+    \boxed{\left(\frac{\dot a}{a}\right)^2 = \frac{8\pi G}{3}\mu - \frac{k}{a^2}}
 \end{equation}
-\]</span>
-</dd>
-</dl>
+\]</span></p>
 <ul>
 <li><span class="math inline">\(\mu\)</span> : Energy density of the universe</li>
 <li><span class="math inline">\(k\)</span> : Curvature constant where <span class="math inline">\(k\equiv \kappa/R_0^2\)</span></li>
@@ -200,11 +167,11 @@
 P = \sum_i w_i\mu_i
 \]</span></p>
 <p>Now let’s apply each type of energy density to the fluid equation:</p>
-<p><span class="math display">\[ 
+<p><span class="math display">\[
 \begin{gather*}
     \dot \mu_i + 3 \frac{\dot a}{a}\left(\mu_i + P_i\right) = 0\\
     \frac{d\mu_i}{\mu_i} = -3(1+w_i)\frac{da}{a}\\
-\end{gather*} 
+\end{gather*}
 \]</span></p>
 <p><span class="math display">\[
 \begin{equation}
@@ -248,11 +215,7 @@ P = \sum_i w_i\mu_i
 \end{gather}
 \]</span></p>
 <p>Since <span class="math inline">\(\Lambda &gt; 0\)</span>, this indicates that the curvature <span class="math inline">\(k &gt; 0\)</span> therefore a open but static universe. This sounds incorrect and it is; in the next section we will explore the more acceptable use of the cosmological constant.</p>
-<dl>
-<dt>Motivation on the Incorrectness</dt>
-<dd>Consider even a slight increase in <span class="math inline">\(\Lambda\)</span> then <span class="math inline">\(\dot a &gt; 0\)</span> which causes <span class="math inline">\(\mu_m \rightarrow 0\)</span> and by the Friedmann equation this feedbacks to <span class="math inline">\(\dot a \rightarrow 0\)</span> even more. We got a non-linear expanding universe
-</dd>
-</dl>
+<p>Motivation on the Incorrectness : Consider even a slight increase in <span class="math inline">\(\Lambda\)</span> then <span class="math inline">\(\dot a &gt; 0\)</span> which causes <span class="math inline">\(\mu_m \rightarrow 0\)</span> and by the Friedmann equation this feedbacks to <span class="math inline">\(\dot a \rightarrow 0\)</span> even more. We got a non-linear expanding universe</p>
 <h2 id="cosmological-constant---vacuum-energy">Cosmological Constant - Vacuum Energy</h2>
 <p>The most accepted “correct” way to interpret the cosmological constant is as vacuum energy. Yes, vacuum has energy which many may first have been introduced as the Heinsenberg uncertainty principle,</p>
 <p><span class="math display">\[ \begin{equation}
@@ -278,54 +241,43 @@ P = \sum_i w_i\mu_i
   </article>
 </div>
 
-    <footer class="py-2 bg-white">
-    <div class="container">
-        <p class="text-right m-0"> Generated by <a href="https://github.com/ketozhang/StaticPy">StaticPy</a> |
-            Designed
-            by <a href="https://github.com/ketozhang">Keto Zhang</a>
-        </p>
-    </div>
-</footer>
 
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+  <script src="https://ketozhang.github.io/static/js/datetime.js"></script>
+  <script src="https://ketozhang.github.io/static/js/disqus.js"></script>
+  <script src="https://ketozhang.github.io/static/js/codeHighlight.js"></script>
+  <script src="https://ketozhang.github.io/static/js/prism.js"></script>
+  <script src="https://ketozhang.github.io/static/js/onthispage.js"></script>
+  <script src="https://ketozhang.github.io/static/js/markdown.js"></script>
+
+  <!-- MathJax -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://ketozhang.github.io/static/js/mathjax_config.js" defer></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
 
-    <script src="https://ketozhang.github.io/static/js/datetime.js"></script>
-    <script src="https://ketozhang.github.io/static/js/disqus.js"></script>
-    <script src="https://ketozhang.github.io/static/js/codeHighlight.js"></script>
-    <script src="https://ketozhang.github.io/static/js/prism.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>
-    <script src="https://ketozhang.github.io/static/js/onthispage.js"></script>
-    <script src="https://ketozhang.github.io/static/js/markdown.js"></script>
 
-    <!-- MathJax -->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script src="https://ketozhang.github.io/static/js/mathjax_config.js" defer></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+  <!-- Custom Global scripts -->
+  <script>
+    $(document).ready(function () {
+      Prism.highlightAll();
+    })
+  </script>
 
-    <!-- Bootstrap JS -->
-    <!-- TODO: trim JS if not needed -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+  <!-- Local scripts -->
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.js"></script>
+<script>
+  anchors.add();
+</script>
 
-
-    <!-- Custom Global scripts -->
-    <script>
-      anchors.add();
-      $(document).ready(function () {
-        Prism.highlightAll();
-      })
-    </script>
-
-    <!-- Local scripts -->
-    
-    
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-<p>The <strong>logistic regression</strong> transforms the linear regression problem with the <strong>logistic</strong> or <strong>sigmoid function</strong> <span class="math inline">\(s(z)\)</span> used for posterior distribution estimation and classification<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</p>
+<p>The <strong>logistic regression</strong> transforms the linear regression problem with the <strong>logistic</strong> or <strong>sigmoid function</strong> <span class="math inline">\(s(z)\)</span> used for posterior distribution estimation and classification<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
 <p>We will motivate this with a binary problem where <span class="math inline">\(Y: \{0,1\}\)</span> notice that the logistic function transforms the linear regression to the interval <span class="math inline">\([0,1]\)</span>. <span class="math display">\[
 \begin{gather}
 P(X \mid Y=\hat y) = s(\hat y); \qquad \hat y  = X\theta \\
@@ -78,9 +78,9 @@ P(X \mid \hat y) = \sum_{i=1}^n  \bigg[ \log P(y_i \mid X_i) + \log\Big(1-P(y_i 
 <li>Robust on non-Gaussians. (LDA is better if data is near Gaussian)</li>
 <li>Unstable to new points for well separated classes.</li>
 </ul>
-<section class="footnotes">
+<section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1"><p>It’s unfortunate that it’s called logistics regression, but the fact that logistic regression does estimate a posterior distribution is why it’s justifiable.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn1" role="doc-endnote"><p>It’s unfortunate that it’s called logistics regression, but the fact that logistic regression does estimate a posterior distribution is why it’s justifiable.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>

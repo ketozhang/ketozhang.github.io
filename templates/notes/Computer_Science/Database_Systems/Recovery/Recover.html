@@ -8,7 +8,7 @@
 <li>Cause bad performance taking up buffer</li>
 </ul></li>
 <li><p><strong>Force Policy</strong></p>
-Force all updates onto the disk before commit.
+<p>Force all updates onto the disk before commit.</p>
 <ul>
 <li>No need for REDO logging</li>
 <li>Bad performance (random I/O writes for commits)</li>
@@ -34,20 +34,20 @@ Force all updates onto the disk before commit.
 <h3 id="aries-protocol">ARIES Protocol</h3>
 <p>This log record follows the <strong>ARIES protocol</strong>.</p>
 <ul>
-<li><strong>prevLSN</strong>: LSN of the previous log record written by the specific transaction.</li>
-<li><strong>Transaction Table</strong> A table of active transactions</li>
+<li><p><strong>prevLSN</strong>: LSN of the previous log record written by the specific transaction.</p></li>
+<li><p><strong>Transaction Table</strong> A table of active transactions</p></li>
 <li><p><strong>Dirty Page Table</strong> A table of dirty pages stores information for UNDO.</p>
 <ul>
 <li><strong>recLSN</strong>: LSN of the first action that dirtied the page.</li>
 </ul></li>
-<li><strong>Log record types</strong>:
+<li><p><strong>Log record types</strong>:</p>
 <ul>
 <li>Update, Commit, Abort</li>
 <li>Checkpoint (for log maintenance)</li>
 <li>Componensation Log Records (CLRs, for UNDO actions)</li>
 <li>End (end of commit or abort)</li>
 </ul></li>
-<li><strong>Abort and Checkpoint</strong> When abort and checkpointing we need to implement UNDO. Before we start the UNDO we need
+<li><p><strong>Abort and Checkpoint</strong> When abort and checkpointing we need to implement UNDO. Before we start the UNDO we need</p>
 <ul>
 <li>get lastLSN</li>
 <li>write abort log</li>
@@ -119,7 +119,7 @@ Force all updates onto the disk before commit.
 <li><p><code>BEGIN</code></p>
 <p>Start a transaction that won’t commit until the <code>COMMIT</code> is ran.</p></li>
 <li><p><code>COMMIT</code></p>
-Commit the transaction if all transactions above (until the <code>BEGIN</code>) suceeded.</li>
+<p>Commit the transaction if all transactions above (until the <code>BEGIN</code>) suceeded.</p></li>
 <li><p><code>ROLLBACK</code></p>
 <p>Rollback the transaction.</p></li>
 <li><p><code>SAVEPOINT &lt;name&gt;</code></p>
