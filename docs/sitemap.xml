@@ -48,6 +48,10 @@
     </url>
         
     <url>
+        <loc>https://ketozhang.github.io/notes/Astrophysics/Cosmology/Cosmological_Distances/</loc>
+    </url>
+        
+    <url>
         <loc>https://ketozhang.github.io/notes/Astrophysics/Cosmology/Cosmological_Redshift/</loc>
     </url>
         
@@ -84,6 +88,10 @@
     </url>
         
     <url>
+        <loc>https://ketozhang.github.io/notes/Astrophysics/Cosmology/Hubble_Constant/</loc>
+    </url>
+        
+    <url>
         <loc>https://ketozhang.github.io/notes/Astrophysics/Cosmology/Relativity/</loc>
     </url>
         
@@ -101,6 +109,14 @@
         
     <url>
         <loc>https://ketozhang.github.io/notes/Astrophysics/Cosmology/Relativity/Special_Relativity/</loc>
+    </url>
+        
+    <url>
+        <loc>https://ketozhang.github.io/notes/Astrophysics/Exoplanet/</loc>
+    </url>
+        
+    <url>
+        <loc>https://ketozhang.github.io/notes/Astrophysics/Exoplanet/Microlensing/</loc>
     </url>
         
     <url>
@@ -164,6 +180,18 @@
     </url>
         
     <url>
+        <loc>https://ketozhang.github.io/notes/Astrophysics/Photometry/</loc>
+    </url>
+        
+    <url>
+        <loc>https://ketozhang.github.io/notes/Astrophysics/Photometry/Flux/</loc>
+    </url>
+        
+    <url>
+        <loc>https://ketozhang.github.io/notes/Astrophysics/Photometry/Magnitude/</loc>
+    </url>
+        
+    <url>
         <loc>https://ketozhang.github.io/notes/Astrophysics/Planetary_Science/</loc>
     </url>
         
@@ -189,6 +217,30 @@
         
     <url>
         <loc>https://ketozhang.github.io/notes/Astrophysics/Planetary_Science/planetary-temperature/</loc>
+    </url>
+        
+    <url>
+        <loc>https://ketozhang.github.io/notes/Astrophysics/Supernovae/</loc>
+    </url>
+        
+    <url>
+        <loc>https://ketozhang.github.io/notes/Astrophysics/Supernovae/Type_Ia/</loc>
+    </url>
+        
+    <url>
+        <loc>https://ketozhang.github.io/notes/Astrophysics/Supernovae/Type_Ia/Standardization/</loc>
+    </url>
+        
+    <url>
+        <loc>https://ketozhang.github.io/notes/Astrophysics/Variable_Stars/</loc>
+    </url>
+        
+    <url>
+        <loc>https://ketozhang.github.io/notes/Astrophysics/Variable_Stars/Cepheid/</loc>
+    </url>
+        
+    <url>
+        <loc>https://ketozhang.github.io/notes/Astrophysics/Variable_Stars/Period_Luminosity_Relation/</loc>
     </url>
         
     <url>
@@ -616,6 +668,14 @@
     </url>
         
     <url>
+        <loc>https://ketozhang.github.io/notes/Data_Science/Bayesian_Inference/</loc>
+    </url>
+        
+    <url>
+        <loc>https://ketozhang.github.io/notes/Data_Science/Bayesian_Inference/Introduction/</loc>
+    </url>
+        
+    <url>
         <loc>https://ketozhang.github.io/notes/Data_Science/CS189_Final_Review/</loc>
     </url>
         
@@ -685,10 +745,6 @@
         
     <url>
         <loc>https://ketozhang.github.io/notes/Data_Science/Optimization/Quadratic_Program/</loc>
-    </url>
-        
-    <url>
-        <loc>https://ketozhang.github.io/notes/Data_Science/Pandas/</loc>
     </url>
         
     <url>
@@ -1843,6 +1899,10 @@
         
     <url>
         <loc>https://ketozhang.github.io/posts/2020_05_12_astrostatistics_calculating_the_hubble_discrepancy/.ipynb_checkpoints/demo-checkpoint.ipynb</loc>
+    </url>
+        
+    <url>
+        <loc>https://ketozhang.github.io/posts/2020_05_12_astrostatistics_calculating_the_hubble_discrepancy/background.png</loc>
     </url>
         
     <url>

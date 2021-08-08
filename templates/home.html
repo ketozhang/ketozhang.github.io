@@ -4,14 +4,14 @@
 <main class="container-lg">
   <div class="row gx-5">
 
-    <section id="sidebar" class="col-md-3 mb-4">
+    <section id="sidebar" class="col-md-3">
 
       <div id="namecard" class="mb-3">
         <div class="mb-3"><img class="d-block rounded-circle shadow-lg" style="width: 200px;"
             src="/static/images/headshot_500x500.jpg"></div>
         <a id="brand" href="{{site_url}}">{{ site_brand }}</a>
         <small>(Keto D. Zhang)</small>
-        <p class="d-xs-none d-md-block">Software Engineer<br>BA Astrophysics and Data Science</p>
+        <p class="d-xs-none d-md-block">BA Astrophysics and Data Science</p>
       </div>
 
       <div id="socials">
@@ -27,29 +27,39 @@
       </div>
     </section>
 
-    <section id="home-body" class="col">
-      <section>
+    <section id="home-body" class="col mt-5">
+      <div class="mb-4">
         <h2>Bio</h2>
-        <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </section>
+        I am (or am working on becoming) an astrophysicist and software engineer. My interest are in statistics research
+        and technical development primarily in the field of astrophysics. My current role is at CalTech IPAC as a
+        software developer working on <a href="https://roman.gsfc.nasa.gov/index.html">Nancy Grace Roman Space
+          Telescope</a>. Specifically, I am responsible for the software that will detect exoplanets through
+        gravitational microlensing events.
+      </div>
 
-      <section>
+      <div class="mb-4">
         <h2>Selected Works</h2>
         <ul>
-          <li></li>
-          <li></li>
-          <li></li>
+          <li class="pb-2">
+            <span class="pe-1"><strong><em>Letter</em></strong></span>
+            <a href="https://ui.adsabs.harvard.edu/abs/2021MNRAS.503L..33Z/abstract">
+              <strong>Improving Bayesian posterior correlation analysis on Type Ia supernova luminosity
+                evolution</strong>
+            </a>
+            <br>
+            Zhang K. D., Murakami Y. S., Stahl B. E. et al (2021). MNRAS, 503, L33-L37
+          </li>
+          <li class="pb-2">
+            <span class="pe-1"><strong><em>Paper</em></strong></span>
+            <a href="https://ui.adsabs.harvard.edu/abs/2020MNRAS.499.5325Z"><strong>Distribution of Si II λ6355
+                Velocities of Type Ia Supernovae and Implications for Asymmetric
+                Explosions</strong></a>
+            <br>
+            Zhang K. D., Zheng W., de Jaeger T. et al (2020). MNRAS, 499, 5325-5333
+          </li>
         </ul>
-      </section>
+      </div>
 
-      <section>
-        <h2>Blog</h2>
-        {% include "post_showcase.html" %}
-      </section>
     </section>
 
   </div>

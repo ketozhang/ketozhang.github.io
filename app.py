@@ -30,7 +30,7 @@ def home():
     # Get post for Post showcase
     post_context = CONTEXTS["posts"]
     posts = []
-    for url in config["posts"]:
+    for url in config.get("posts", []):
         page = post_context.get_page(url)
         posts.append(page)
 
