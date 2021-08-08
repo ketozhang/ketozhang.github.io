@@ -9,9 +9,14 @@
 <li>Microlensing events are rare and unpredictable. Events where the planet and background star aligns are even more rare therefore we need high density regions like galactic bulges</li>
 <li>High density regions are susceptible to photometric noise and require high angular resolution to distinguish light signals.</li>
 </ul>
-<h2 id="lens-equation-for-point-mass">Lens Equation for Point Mass</h2>
+<h2 id="gravitational-lensing-review">Gravitational Lensing Review</h2>
+<h3 id="lens-equation-for-point-mass">Lens Equation for Point Mass</h3>
 <p>In the setup where the lens is a point mass, we have the observer (O), lens (L), background source (S), and the observed image (I). The lensing equation relates the angular of separations</p>
 <p>[ = _{IL} -  ]</p>
+<ul>
+<li><span class="math inline">\(\alpha\)</span>, angle between I and S</li>
+<li><span class="math inline">\(\beta\)</span>, angle between S and L</li>
+</ul>
 <p>All angles above is relative to the observer.</p>
 <p>In terms of the actual deflection angle <span class="math inline">\(\hat \alpha\)</span> (i.e., relative to the lens and not the observer), we use the small angle approximation</p>
 <p>[ (D_S - D_L) = D_S\ =   ]</p>
@@ -20,10 +25,11 @@
 <blockquote>
 <p><strong>Note</strong>: Although not stated, this equation seems to assume the source light ray comes in parallel to the line of sight between the observer and lens. This is true if the <span class="math inline">\(D_L\)</span> is sufficiently large.</p>
 </blockquote>
-<h2 id="len-equation-for-multiple-point-masses">Len Equation for Multiple Point Masses</h2>
+<h3 id="len-equation-for-multiple-point-masses">Len Equation for Multiple Point Masses</h3>
 <p>For <span class="math inline">\(N\)</span> lens of mass <span class="math inline">\(m_i\)</span> and angular position <span class="math inline">\(\theta_{m,i}\)</span> all located on a plane (i.e., face-on the observer) at distance <span class="math inline">\(D_L\)</span>, the effective deflection angle is additive</p>
 <p>[ (_{IL}) =  <em>i^N{m_i }\ D</em>^{-1} D_L^{-1} - D_S^{-1} ]</p>
-<h2 id="microlensing-for-a-single-lens">Microlensing for a Single Lens</h2>
+<h2 id="gravitational-microlensing">Gravitational Microlensing</h2>
+<h3 id="single-lens">Single Lens</h3>
 <p>[ = +  ]</p>
 <p>If the lens and source are exactly aligned (<span class="math inline">\(\beta = 0\)</span>) then the image is a ring of the given angular radius known as the Einstein ring radius,</p>
 <p>[ _E  ]</p>
@@ -42,8 +48,15 @@
 <li>If the source-lens separation is much larger than the Einstien radius [u  A  + 2u^{-4}]</li>
 <li>If the source-lens separation approaches infinity, the major image is the unlensed source and the minor image vanishes behind the lens. [ u (y_+ u,, A_+ ); (y_-  ,, A_- ) ]</li>
 </ul>
-<h2 id="adding-time-dependence-to-the-microlensing-equation-paczynski-curve">Adding Time Dependence to the Microlensing Equation — Paczynski curve</h2>
+<h4 id="paczynski-light-curve">Paczynski light curve</h4>
+<p>For the single lens, the light curve is called the <strong>Pacyzynski curve</strong>.</p>
 <p>The observer, source, and lens are all in relative motion. Regardless, of the actual motion in the perspective of the source and lens, what makes affects the image is the angular separation as seen by the observer. In other words we can only have to focus on the proper motion <span class="math inline">\(\mu_\text{rel}\)</span> which can be approximated as a constant.</p>
 <p>[ \ ]</p>
 <p>where <span class="math inline">\(t_E\)</span> is the Einstein ring crossing time at a constant proper motion,</p>
 <p>[ t_E =  ]</p>
+<h3 id="multiple-lens">Multiple Lens</h3>
+<p>For <span class="math inline">\(N\)</span> lens, we define <span class="math inline">\(\boldsymbol{u}\)</span> and <span class="math inline">\(\boldsymbol{y}\)</span> as the angular position vector of the lens-source and lens-image respectively. Like, single lens, these values are normalized by <span class="math inline">\(\theta_E\)</span> which in this case is the Einstein angular radius for the total lens mass <span class="math inline">\(M \equiv \sum M_i\)</span> as if it was a point source.</p>
+<p>The lens equation is given by,</p>
+<p>[  =  - _i^N   ]</p>
+<p>TODO …</p>
+<h3 id="planetary-lens">Planetary Lens</h3>

@@ -69,7 +69,7 @@ navbar:
 social_links:
   - name: "CV"
     url: "/CV"
-    icon: "/static/images/CV-32.png"
+    icon: "/static/images/CV.svg"
   - name: "keto.zhang@gmail.com"
     url: "mailto:keto.zhang@gmail.com"
     icon: "/static/images/icons8-email-30.png"
