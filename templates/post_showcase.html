@@ -19,29 +19,29 @@
 
 
   <div class="post-card mb-3">
-    <div class=" row gx-4">
+    <a href="{{ url_for(post.url )}}">
+      <div class=" row gx-4">
 
-      <div class="col-4">
-        <a href="{{ url_for(post.url )}}">
+        <div class="col-4">
           <img class="img-fluid" src={{ url_for(post.get('image', '/static/images/default.jpg' )) }}>
-        </a>
-      </div>
+        </div>
 
-      <div class="col-8">
-        <div class="post-card-body">
-          <div class="post-card-title">
-            <h4><a href="{{ url_for(post.url )}}">{{post.title}}</a></h4>
-          </div>
+        <div class="col-8">
+          <div class="post-card-body">
+            <div class="post-card-title">
+              <h4>{{post.title}}</h4>
+            </div>
 
-          <div class="post-card-description">{{post.get('description', '')}}</div>
-          <div class="post-card-footer">
-            <small class="text-muted">
-              Last updated <time datetime="{{ post.last_updated }}"></time>
-            </small>
+            <div class="post-card-description">{{post.get('description', '')}}</div>
+            <div class="post-card-footer">
+              <small class="text-muted">
+                <time datetime="{{ post.last_updated }}"></time>
+              </small>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </a>
   </div>
   {% endfor %}
 </div>

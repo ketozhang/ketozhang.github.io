@@ -16,33 +16,26 @@
 }
 
 .post-card {
+  transition: opacity 0.2s ease-in-out;
+
+  :hover {
+    opacity: 0.8;
+  }
+
+  a, a:hover {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .row {
+    border: 2px solid $base-font-color;
+    border-radius: $base-border-radius;
+    padding: 1em;
+  }
 
   .post-card-title {
     * {
       line-height: 1.25;
-    }
-
-    a {
-      text-decoration: none;
-      color: $base-font-color;
-      transition: color 0.2s ease-in-out;
-    }
-
-  }
-
-  img {
-    transition: opacity 0.2s ease-in-out;
-  }
-
-  :hover {
-    .post-card-title {
-      a {
-        color: $link-color;
-      }
-    }
-
-    img {
-      opacity: 0.8;
     }
   }
 
