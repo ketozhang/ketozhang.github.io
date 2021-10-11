@@ -45,7 +45,7 @@ body {
   padding-bottom: 80px;
   color: #595959; }
   body h1, body h2, body h3, body h4, body h5, body h6 {
-    font-family: "Quicksand", "Helvetica", "Arial", sans-serif;
+    font-family: "Poppins", "Helvetica", "Arial", sans-serif;
     color: black; }
     body h1 {
       margin-bottom: 0.5em; }
@@ -61,7 +61,7 @@ header {
       color: #58a6ff; }
 
       a#brand {
-        font-family: "Quicksand", "Helvetica", "Arial", sans-serif;
+        font-family: "Poppins", "Helvetica", "Arial", sans-serif;
         font-size: 2em;
         font-weight: 500;
         text-decoration: none;
