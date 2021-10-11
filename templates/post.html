@@ -4,34 +4,30 @@
 <div class="container" id="post">
   <div class="row">
     <!-- Content -->
-    <div class="col-10 col-xl-12 h-100">
+    <div class="col-9">
       <div class="title-header">
         <h1 class="title">{{page['title']}}</h1>
+        {% if page.description %}
+        <p class="subtitle">{{page.description}}</p>
+        {% endif %}
         <img id="post-img" class="mx-auto d-block img-fluid" src={{
           url_for(page.get('image', '/static/images/default.jpg' )) }}>
 
         <div class="metadata">
-          <p class="m-0">
-            By: {{author}}
-            <span class="mx-1">&bull;</span>
-            Last Updated:
-            <time datetime="{{ page.last_updated }}"></time>
+          {{author}} &bull; <time datetime="{{ page.last_updated }}"></time>
           </p>
         </div>
         <hr>
       </div>
 
-      {% if page.description %}
-      {{page.description}}
-      {% endif %}
-      <div class="markdown-content">
+      <div class="markdown-content mt-4">
         {% if page['has_content'] %}
         {{ include_raw(page['content_path']) }}
         {% endif %}
       </div>
     </div>
 
-    <div class="col-2 d-xl-none"></div>
+    <div class="col"></div>
 
 
   </div>

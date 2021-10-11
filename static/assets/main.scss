@@ -4,13 +4,16 @@
 
 // Structure
 body {
+  background-color: $background-color;
+  line-height: $base-line-height;
   font-family: $base-font-family;
   font-size: $base-font-size;
+  font-weight: $base-font-weight;
   padding-bottom: 80px;
   color: $base-font-color;
   h1, h2, h3, h4, h5, h6 {
     font-family: $style-font-family;
-    color: black;
+    color: $style-font-color;
   }
 
   h1 {
@@ -36,13 +39,13 @@ a#brand {
   font-size: 2em;
   font-weight: 500;
   text-decoration: none;
-  color: black;
+  color: $style-font-color;
 }
 
 // Content
 p > code,
 li > code {
-  color: #358ccb;
+  color: $code-font-color;
   border: 1px solid rgba(97, 97, 97, 0.4);
   border-radius: 3px;
   padding: 0px 2px 0px 2px;
@@ -59,4 +62,20 @@ blockquote {
 .header-icon {
   width: 24px;
   height: 24px;
+}
+
+.sourceCode {
+  border-radius: 10px;
+  font-size: $small-font-size;
+  margin-bottom: 1.75em;
+
+  pre {
+    border-radius: $base-border-radius;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  }
 }
