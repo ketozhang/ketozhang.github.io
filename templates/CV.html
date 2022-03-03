@@ -11,9 +11,7 @@
 
     <!-- CUSTOMS -->
     <!-- EXPERIENCE AND SKILLS -->
-    {% if field == None %}
-    {% include "CV/CV_all.html" %}
-    {% elif field == "general" %}
+    {% if field == "general" %}
     {% include "CV/Resume_general.html" %}
     {% elif field == "fullstack" %}
     {% include "CV/Resume_fullstack.html" %}
@@ -22,7 +20,7 @@
     {% elif field == "research" %}
     {% include "CV/Resume_research.html" %}
     {% else %}
-    {% include "CV/CV_all.html" %}
+    {% include "CV/all.html" %}
     {% endif %}
   </div>
 </main>

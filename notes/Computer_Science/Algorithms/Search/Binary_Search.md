@@ -20,16 +20,16 @@ For the search key $k$ and a sorted array $v = [v_1, v_2, \ldots, v_n]$ where $v
 1. If $L > R$, the algorithm terminates unsuccessfully.
 1. Set the current position to the floored midpoint of $[L, R]$
 
-  $$
-  i = \left\lfloor \frac{L + R}{2} \right\rfloor
-  $$
+    $$
+    i = \left\lfloor \frac{L + R}{2} \right\rfloor
+ $$
 
 1. If $v_i = k$. If value matches found, return the index $i$.
 1. Else if the $v_i < k$ move to left bound above the current index
 
     $$
     L = i + 1
-    $$
+  $$
 
     Repeat step 2.
 
@@ -37,6 +37,6 @@ For the search key $k$ and a sorted array $v = [v_1, v_2, \ldots, v_n]$ where $v
 
     $$
     R = i - 1
-    $$
+  $$
 
     Repeat step 2.
