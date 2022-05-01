@@ -1,21 +1,33 @@
-<p>Coplanar maneuvers are maneuvers that do not change the oribtal plane instead changes the orbit’s size, shape, and location of the apsides.</p>
-<p>For burns tangential to the orbit with the additional constraint that the burn only occur at the apoapsis and periapsis (flight-path angle is zero) we can perform the following maneuvers:</p>
+<p>Coplanar maneuvers are maneuvers that do not change the oribtal plane
+instead changes the orbit’s size, shape, and location of the
+apsides.</p>
+<p>For burns tangential to the orbit with the additional constraint that
+the burn only occur at the apoapsis and periapsis (flight-path angle is
+zero) we can perform the following maneuvers:</p>
 <ul>
 <li>Hohmann Transfers (two tangential burns)</li>
 <li>One-Tangent Burn (one tangential burn)</li>
 <li>General Transfers (two nontangential burns)</li>
 </ul>
 <h2 id="one-tangent-burn">One-Tangent Burn</h2>
-<p>The one-tangent burn changes the velocity of the object by simply:</p>
+<p>The one-tangent burn changes the velocity of the object by
+simply:</p>
 <p><span class="math display">\[
 \Delta v = v_f - v_i
 \]</span></p>
-<p>We assume this burn is instantaneous at the position equal to the periapsis <span class="math inline">\(\vec r = \vec r_\text{per}\)</span>. Note that this means <span class="math inline">\(\vec r\)</span> is constant throughout the burn</p>
-<p>Using the velocity equation as a function of the semi-major axis to replace the velocities we get</p>
+<p>We assume this burn is instantaneous at the position equal to the
+periapsis <span class="math inline">\(\vec r = \vec
+r_\text{per}\)</span>. Note that this means <span
+class="math inline">\(\vec r\)</span> is constant throughout the
+burn</p>
+<p>Using the velocity equation as a function of the semi-major axis to
+replace the velocities we get</p>
 <p><span class="math display">\[
-\Delta v = \sqrt{\frac{2\mu}{r} - \frac{\mu}{a_f}} - \sqrt{\frac{2\mu}{r} - \frac{\mu}{a_i}}
+\Delta v = \sqrt{\frac{2\mu}{r} - \frac{\mu}{a_f}} -
+\sqrt{\frac{2\mu}{r} - \frac{\mu}{a_i}}
 \]</span></p>
-<p>Solving for <span class="math inline">\(a_f\)</span> and setting the constants <span class="math inline">\(\eta = \frac{2\mu}{r}\)</span></p>
+<p>Solving for <span class="math inline">\(a_f\)</span> and setting the
+constants <span class="math inline">\(\eta = \frac{2\mu}{r}\)</span></p>
 <p><span class="math display">\[
 a_f = \frac{\mu a_i}{-2a_i \Delta v \sqrt{\frac{\eta a_i-\mu}{a_i}}}
 \]</span></p>

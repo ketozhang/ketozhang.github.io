@@ -1,37 +1,57 @@
-<p>The energy of an orbit is given by the kinetic energy of the reduced mass <span class="math inline">\(m\)</span> and the gravitational potential energy,</p>
+<p>The energy of an orbit is given by the kinetic energy of the reduced
+mass <span class="math inline">\(m\)</span> and the gravitational
+potential energy,</p>
 <p><span class="math display">\[
-E = \frac{1}{2}mv^2 - \frac{Gm_1m_2}{r} = \frac{1}{2}mv^2 - \frac{Gm(m_1 + m_2)}{r}
+E = \frac{1}{2}mv^2 - \frac{Gm_1m_2}{r} = \frac{1}{2}mv^2 - \frac{Gm(m_1
++ m_2)}{r}
 \]</span></p>
-<p>A more useful vector for orbital mechanics is the <strong>specific mechanical energy</strong> (SME) <span class="math inline">\(\epsilon \equiv E / m\)</span>,</p>
+<p>A more useful vector for orbital mechanics is the <strong>specific
+mechanical energy</strong> (SME) <span class="math inline">\(\epsilon
+\equiv E / m\)</span>,</p>
 <p><span class="math display">\[
 \epsilon = \frac{v^2}{2} - \frac{\mu}{r}
 \]</span></p>
-<p>This SME for the two-body problem is called the <strong>energy integral</strong></p>
-<p>In terms of the semimajor axis <span class="math inline">\(a\)</span>,</p>
+<p>This SME for the two-body problem is called the <strong>energy
+integral</strong></p>
+<p>In terms of the semimajor axis <span
+class="math inline">\(a\)</span>,</p>
 <p><span class="math display">\[
 \epsilon = -\frac{\mu}{2a}
 \]</span></p>
 <dl>
 <dt>Constant SME for the Two Body Problem</dt>
-<dd><p><span class="math inline">\(\epsilon\)</span> is constant which can be shown by first taking the dot product of the two body equation with the velocity vector of the satellite <span class="math inline">\(\vec v\)</span> (note that <span class="math inline">\(\vec v \neq \dot{\vec r}\)</span>)</p>
+<dd>
+<p><span class="math inline">\(\epsilon\)</span> is constant which can
+be shown by first taking the dot product of the two body equation with
+the velocity vector of the satellite <span class="math inline">\(\vec
+v\)</span> (note that <span class="math inline">\(\vec v \neq \dot{\vec
+r}\)</span>)</p>
 <p><span class="math display">\[
 \ddot{\vec r} \cdot \vec v = -\frac{\mu}{r^2} (\hat r \cdot \vec v)
 \]</span></p>
-<p>Note that the dot product is the radial component of the velocity vector <span class="math inline">\(v_r = \hat r \cdot \vec v\)</span>. Equivalently its the magnitude of the velocity of <span class="math inline">\(r\)</span></p>
+<p>Note that the dot product is the radial component of the velocity
+vector <span class="math inline">\(v_r = \hat r \cdot \vec v\)</span>.
+Equivalently its the magnitude of the velocity of <span
+class="math inline">\(r\)</span></p>
 <p><span class="math display">\[
 \dot{r} = v_r = \vec v \cdot \hat r
 \]</span></p>
 <p><span class="math display">\[
 \ddot{\vec r} \cdot \vec v = -\frac{\mu}{r^2} \dot{r}
 \]</span></p>
-<p>Notice that the acceleration vector of the tangential and radial velocity vector is the same <span class="math inline">\(\ddot{\vec r} = \dot{\vec v}\)</span></p>
+<p>Notice that the acceleration vector of the tangential and radial
+velocity vector is the same <span class="math inline">\(\ddot{\vec r} =
+\dot{\vec v}\)</span></p>
 <p><span class="math display">\[
 \dot{\vec v} \cdot \vec v = -\frac{\mu}{r^2} \dot{r}
 \]</span></p>
-<p>The two sides are derivatives of the kinetic energy and potential energy respectively thus we get the energy equivalence,</p>
+<p>The two sides are derivatives of the kinetic energy and potential
+energy respectively thus we get the energy equivalence,</p>
 <p><span class="math display">\[
-\frac{\rm d}{\rm d t} \left(\frac{v^2}{2}\right) = \frac{\rm d}{\rm d t} \left(\frac{\mu}{r}\right)\\
-\frac{\rm d}{\rm d t} \left(\frac{v^2}{2}\right) - \frac{\rm d}{\rm d t} \left(\frac{\mu}{r}\right) = 0\\
+\frac{\rm d}{\rm d t} \left(\frac{v^2}{2}\right) = \frac{\rm d}{\rm d t}
+\left(\frac{\mu}{r}\right)\\
+\frac{\rm d}{\rm d t} \left(\frac{v^2}{2}\right) - \frac{\rm d}{\rm d t}
+\left(\frac{\mu}{r}\right) = 0\\
 \epsilon = \frac{v^2}{2} - \frac{\mu}{r} = \text{constant}
 \]</span></p>
 </dd>
