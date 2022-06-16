@@ -76,15 +76,22 @@
       <h1 class="title text-center pt-3">Quadratic Program</h1>
       
       <div class="markdown-content">
-        <p>A quadratic program is a quadratic optimization convex function (defined by the matrix <span class="math inline">\(Q\)</span>) with a linear inequality constraint. The goal is to find the paramters <span class="math inline">\(\theta\)</span> that minimizes the optimization function:</p>
+        <p>A quadratic program is a quadratic optimization convex function
+(defined by the matrix <span class="math inline">\(Q\)</span>) with a
+linear inequality constraint. The goal is to find the paramters <span
+class="math inline">\(\theta\)</span> that minimizes the optimization
+function:</p>
 <p><span class="math display">\[
-f(\theta) = \theta^T Q \theta + c^T \theta + \alpha, \qquad A\theta \le b
+f(\theta) = \theta^T Q \theta + c^T \theta + \alpha, \qquad A\theta \le
+b
 \]</span></p>
 <ul>
-<li>If <span class="math inline">\(Q\)</span> is positive definite then there exists only one local extrema.</li>
+<li>If <span class="math inline">\(Q\)</span> is positive definite then
+there exists only one local extrema.</li>
 </ul>
 <h2 id="simplex-algorithm">Simplex Algorithm</h2>
-<h2 id="sequential-minimal-optimization-smo">Sequential Minimal Optimization (SMO)</h2>
+<h2 id="sequential-minimal-optimization-smo">Sequential Minimal
+Optimization (SMO)</h2>
 <ul>
 <li>Used by <code>LIBSVM</code></li>
 </ul>

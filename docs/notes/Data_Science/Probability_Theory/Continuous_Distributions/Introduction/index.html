@@ -76,7 +76,8 @@
       <h1 class="title text-center pt-3">Introduction</h1>
       
       <div class="markdown-content">
-        <p>A probability density function (PDF) defines the continuous probability distribution. The PDF follows two basic rules,</p>
+        <p>A probability density function (PDF) defines the continuous
+probability distribution. The PDF follows two basic rules,</p>
 <ol type="1">
 <li><p><span class="math display">\[
 \int_{-\infty}^{\infty} f(x) ~dx = 1
@@ -85,35 +86,50 @@
 P(a &lt; X \le b) = \int_a^b f(x)~ dx
 \]</span></p></li>
 </ol>
-<p>Where <span class="math inline">\(f(x)\)</span> is the conventional syntax for PDF.</p>
+<p>Where <span class="math inline">\(f(x)\)</span> is the conventional
+syntax for PDF.</p>
 <h2 id="formalism">Formalism</h2>
-<p>To deal with the existential crisis that the chance of a single-value event <span class="math inline">\(\set{X=x}\)</span> is,</p>
+<p>To deal with the existential crisis that the chance of a single-value
+event <span class="math inline">\(\set{X=x}\)</span> is,</p>
 <p><span class="math display">\[
 P(X = x) = 0
 \]</span></p>
-<p>because the area for at <span class="math inline">\(X=x\)</span> is zero (rather poorly defined), we develop the Reynmann interpretation of integrals to the formalism of continuous probability. Take <span class="math inline">\(dx\)</span> as some small infinitestimal width for some interval <span class="math inline">\((x-dx, x+dx)\)</span> and define <span class="math inline">\(dx\)</span> to be an event such that,</p>
+<p>because the area for at <span class="math inline">\(X=x\)</span> is
+zero (rather poorly defined), we develop the Reynmann interpretation of
+integrals to the formalism of continuous probability. Take <span
+class="math inline">\(dx\)</span> as some small infinitestimal width for
+some interval <span class="math inline">\((x-dx, x+dx)\)</span> and
+define <span class="math inline">\(dx\)</span> to be an event such
+that,</p>
 <p><span class="math display">\[
-P(X \in dx) \equiv P(x-dx &lt; X \le x+dx) = \int_{x - dx}^{x+dx} f(x) dx
+P(X \in dx) \equiv P(x-dx &lt; X \le x+dx) = \int_{x - dx}^{x+dx} f(x)
+dx
 \]</span></p>
-<p>Asymptotically, as <span class="math inline">\(dx \to 0\)</span> the integral dissapears to become the Reinman integral,</p>
+<p>Asymptotically, as <span class="math inline">\(dx \to 0\)</span> the
+integral dissapears to become the Reinman integral,</p>
 <p><span class="math display">\[
 \boxed{P(X \in dx) \sim f(x) dx}
 \]</span></p>
 <div class="Note">
-<p>A physics formality defines the differential form of the probability ,</p>
+<p>A physics formality defines the differential form of the probability
+,</p>
 <p><span class="math display">\[
 dP = fdx
 \]</span></p>
 </div>
-<h2 id="cumulative-distribution-function">Cumulative Distribution Function</h2>
-<p>The cumulative distribution function (CDF) is defined the left limit to negative infinity,</p>
+<h2 id="cumulative-distribution-function">Cumulative Distribution
+Function</h2>
+<p>The cumulative distribution function (CDF) is defined the left limit
+to negative infinity,</p>
 <p><span class="math display">\[
 F(x) = P(X \le b) = \int_{-\infty}^b f(x)~ dx
 \]</span></p>
-<p>Where <span class="math inline">\(F(x)\)</span> is the conventional syntax for CDF.</p>
+<p>Where <span class="math inline">\(F(x)\)</span> is the conventional
+syntax for CDF.</p>
 <dl>
 <dt>Relation to PDF</dt>
-<dd><p>By the fundamental theorem of calculus,</p>
+<dd>
+<p>By the fundamental theorem of calculus,</p>
 <p><span class="math display">\[
 \begin{gather*}
 P(a &lt; X \le b) = \int_a^b f(x)~ dx = F(b) - F(a)\\
@@ -130,7 +146,9 @@ E(g(X)) = \int_{-\infty}^\infty g(x)f(x)~dx
 \]</span></p>
 <dl>
 <dt>Existence</dt>
-<dd><p>The expectation exists only if the integral exists. A useful theorem is if,</p>
+<dd>
+<p>The expectation exists only if the integral exists. A useful theorem
+is if,</p>
 <p><span class="math display">\[
 E(g(X)) = \int_{-\infty}^\infty \abs{g(x)}f(x)~dx &lt; \infty
 \]</span></p>

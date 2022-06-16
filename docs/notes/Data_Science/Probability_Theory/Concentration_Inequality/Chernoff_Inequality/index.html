@@ -76,12 +76,17 @@
       <h1 class="title text-center pt-3">Chernoff Inequality</h1>
       
       <div class="markdown-content">
-        <p>Because, Markov’s inequality may take any monotonically increasing function, the function <span class="math inline">\(g(X) = e^{tX}\)</span> is a good choice since the RHS has the moment generating function <span class="math inline">\(E(e^{tX}) = M_X(t)\)</span>,</p>
+        <p>Because, Markov’s inequality may take any monotonically increasing
+function, the function <span class="math inline">\(g(X) =
+e^{tX}\)</span> is a good choice since the RHS has the moment generating
+function <span class="math inline">\(E(e^{tX}) = M_X(t)\)</span>,</p>
 <p><span class="math display">\[
 P(X \ge c) \le \frac{M_X(t)}{e^{tc}}
 \]</span></p>
 <h2 id="right-tail-bound">Right Tail Bound</h2>
-<p>Since the MGF is a function of <span class="math inline">\(t\)</span> we can choose any <span class="math inline">\(t\)</span> and preferably the one that minimizes the RHS,</p>
+<p>Since the MGF is a function of <span class="math inline">\(t\)</span>
+we can choose any <span class="math inline">\(t\)</span> and preferably
+the one that minimizes the RHS,</p>
 <p><span class="math display">\[
 \boxed{P(X \ge c) \le \min_{t \gt 0} \frac{M_X(t)}{e^{tc}}}
 \]</span></p>

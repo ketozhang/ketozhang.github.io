@@ -77,18 +77,26 @@
       
       <div class="markdown-content">
         <h2 id="argument-passing">Argument Passing</h2>
-<p>By default, arguments are pass by value copying the input to the argument varaible.</p>
+<p>By default, arguments are pass by value copying the input to the
+argument varaible.</p>
 <h3 id="pass-by-reference">Pass by Reference</h3>
-<p>To not copy the input, use pass-by-reference by modifying the argument to be <code>&amp;arg</code>.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> f<span class="op">(</span>vector<span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;</span> <span class="op">&amp;</span>v<span class="op">)</span> <span class="op">{</span></span>
+<p>To not copy the input, use pass-by-reference by modifying the
+argument to be <code>&amp;arg</code>.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> f<span class="op">(</span>vector<span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;</span> <span class="op">&amp;</span>v<span class="op">)</span> <span class="op">{</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="immutable">Immutable</h3>
-<p>If an argument is mutable but you’d like to indicate that it should be immutable inside the function/local scope, you can modify the argument to be <code>const arg</code>.</p>
-<p>It is very common to see <code>const</code> applied to pass-by-reference rather than pass-by-value.</p>
+<p>If an argument is mutable but you’d like to indicate that it should
+be immutable inside the function/local scope, you can modify the
+argument to be <code>const arg</code>.</p>
+<p>It is very common to see <code>const</code> applied to
+pass-by-reference rather than pass-by-value.</p>
 <h2 id="return-value">Return Value</h2>
-<p>By default, object are return-by-value meaning the object return are copied.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>vector copy<span class="op">(</span><span class="at">const</span> vector<span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;</span> <span class="op">&amp;</span>v<span class="op">)</span> <span class="op">{</span></span>
+<p>By default, object are return-by-value meaning the object return are
+copied.</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>vector copy<span class="op">(</span><span class="at">const</span> vector<span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;</span> <span class="op">&amp;</span>v<span class="op">)</span> <span class="op">{</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    vector p<span class="op">;</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="op">(</span>i<span class="op">=</span><span class="dv">1</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="kw">sizeof</span><span class="op">(</span>v<span class="op">);</span> <span class="op">++</span>i<span class="op">)</span> <span class="op">{</span></span>
@@ -98,8 +106,10 @@
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> p<span class="op">;</span></span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="return-by-pointer">Return by Pointer</h3>
-<p>This is not recommended. To prevent return-by-value, one may have the pointer return instead:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>vector<span class="op">*</span> copy<span class="op">(</span><span class="at">const</span> vector<span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;</span> <span class="op">&amp;</span>v<span class="op">)</span> <span class="op">{</span></span>
+<p>This is not recommended. To prevent return-by-value, one may have the
+pointer return instead:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>vector<span class="op">*</span> copy<span class="op">(</span><span class="at">const</span> vector<span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;</span> <span class="op">&amp;</span>v<span class="op">)</span> <span class="op">{</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    vector<span class="op">*</span> p <span class="op">=</span> <span class="kw">new</span> vector<span class="op">;</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="op">(</span>i<span class="op">=</span><span class="dv">1</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="kw">sizeof</span><span class="op">(</span>v<span class="op">);</span> <span class="op">++</span>i<span class="op">)</span> <span class="op">{</span></span>
@@ -109,8 +119,10 @@
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> p<span class="op">;</span></span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h3 id="return-by-reference">Return by Reference</h3>
-<p><strong>Never do this!</strong> The reference will point to nonsense because the local scope may disappear.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>vector<span class="op">&amp;</span> copy<span class="op">(</span><span class="at">const</span> vector<span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;</span> <span class="op">&amp;</span>v<span class="op">)</span> <span class="op">{</span></span>
+<p><strong>Never do this!</strong> The reference will point to nonsense
+because the local scope may disappear.</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>vector<span class="op">&amp;</span> copy<span class="op">(</span><span class="at">const</span> vector<span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;</span> <span class="op">&amp;</span>v<span class="op">)</span> <span class="op">{</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    vector rv <span class="op">=</span> <span class="kw">new</span> vector<span class="op">;</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="op">(</span>i<span class="op">=</span><span class="dv">1</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="kw">sizeof</span><span class="op">(</span>v<span class="op">);</span> <span class="op">++</span>i<span class="op">)</span> <span class="op">{</span></span>

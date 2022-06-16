@@ -76,8 +76,10 @@
       <h1 class="title text-center pt-3">Software Job Interview</h1>
       
       <div class="markdown-content">
-        <h2 id="data-structure-and-algorithms">Data Structure and Algorithms</h2>
-<p>For every structure understand the Big-O time and space complexity for the following operations:</p>
+        <h2 id="data-structure-and-algorithms">Data Structure and
+Algorithms</h2>
+<p>For every structure understand the Big-O time and space complexity
+for the following operations:</p>
 <ol type="1">
 <li>Insert</li>
 <li>Delete</li>
@@ -88,45 +90,69 @@
 <ul>
 <li>List/Array
 <ul>
-<li><a href="https://leetcode.com/problems/copy-list-with-random-pointer/" class="uri">https://leetcode.com/problems/copy-list-with-random-pointer/</a>
+<li><a
+href="https://leetcode.com/problems/copy-list-with-random-pointer/"
+class="uri">https://leetcode.com/problems/copy-list-with-random-pointer/</a>
 <ul class="task-list">
 <li><input type="checkbox" disabled="" checked="" />
 1: Implementation is slow, very disorganized, plan it out</li>
 <li><input type="checkbox" disabled="" checked="" />
-2: Still quite slow O(N), organization is much better. If two array indexes each other, consider mapping them (dict).</li>
+2: Still quite slow O(N), organization is much better. If two array
+indexes each other, consider mapping them (dict).</li>
 </ul></li>
-<li><a href="https://leetcode.com/problems/merge-two-sorted-lists/" class="uri">https://leetcode.com/problems/merge-two-sorted-lists/</a>
+<li><a href="https://leetcode.com/problems/merge-two-sorted-lists/"
+class="uri">https://leetcode.com/problems/merge-two-sorted-lists/</a>
 <ul class="task-list">
 <li><input type="checkbox" disabled="" checked="" />
-1: Failed, too much time generating MaxHeap, next time use standard library. Missed the fact that the list were sorted; could’ve used comparison because of this fact.</li>
+1: Failed, too much time generating MaxHeap, next time use standard
+library. Missed the fact that the list were sorted; could’ve used
+comparison because of this fact.</li>
 <li><input type="checkbox" disabled="" checked="" />
 2: Excellent!</li>
 </ul></li>
-<li>Return the most common values of an array. If there’s a tie, return them all.</li>
-<li><a href="https://leetcode.com/discuss/interview-question/411357/">Zombie in Matrix</a>
+<li>Return the most common values of an array. If there’s a tie, return
+them all.</li>
+<li><a
+href="https://leetcode.com/discuss/interview-question/411357/">Zombie in
+Matrix</a>
 <ul class="task-list">
 <li><input type="checkbox" disabled="" checked="" />
-1: Excellent, only issue is solution required mutation of the input. Requiring a deepcopy of an input is not a good indicator. You should’ve used the idea that only indices need to be iterated not the whole grid.</li>
+1: Excellent, only issue is solution required mutation of the input.
+Requiring a deepcopy of an input is not a good indicator. You should’ve
+used the idea that only indices need to be iterated not the whole
+grid.</li>
 </ul></li>
 </ul></li>
 <li>Dictionary/Map
 <ul>
-<li><a href="https://leetcode.com/discuss/interview-question/542597/">Top K Frequently Mentioned Keywords</a>
+<li><a
+href="https://leetcode.com/discuss/interview-question/542597/">Top K
+Frequently Mentioned Keywords</a>
 <ul class="task-list">
 <li><input type="checkbox" disabled="" checked="" />
-1: Strings possible contain <code>[^a-z0-9]</code>, replace those with whitespace; the review itself doesn’t matter, just make sure to count each word once (set) then store them in a list. Counter returns value and count. Heapq would be easy to get first k.</li>
+1: Strings possible contain <code>[^a-z0-9]</code>, replace those with
+whitespace; the review itself doesn’t matter, just make sure to count
+each word once (set) then store them in a list. Counter returns value
+and count. Heapq would be easy to get first k.</li>
 </ul></li>
-<li><a href="https://leetcode.com/discuss/interview-question/373006">Favorite Genres</a>
+<li><a
+href="https://leetcode.com/discuss/interview-question/373006">Favorite
+Genres</a>
 <ul class="task-list">
 <li><input type="checkbox" disabled="" checked="" />
-1: Excellent, solution is equivalently <span class="math inline">\(\mathcal O(N^2)\)</span></li>
+1: Excellent, solution is equivalently <span
+class="math inline">\(\mathcal O(N^2)\)</span></li>
 </ul></li>
 </ul></li>
 <li>Tree (CS 61B)
 <ul>
-<li><a href="https://leetcode.com/problems/subtree-of-another-tree/submissions/">Subtree of Another Tree</a>
+<li><a
+href="https://leetcode.com/problems/subtree-of-another-tree/submissions/">Subtree
+of Another Tree</a>
 <ul>
-<li>1: Excellent, it did take a while to fix some bugs. Solutions is a bit slow. Note that binary trees can be easily represented by strings.</li>
+<li>1: Excellent, it did take a while to fix some bugs. Solutions is a
+bit slow. Note that binary trees can be easily represented by
+strings.</li>
 </ul></li>
 <li><input type="checkbox" disabled="" checked="" />
 Min/max heap</li>
@@ -142,17 +168,26 @@ Trie</li>
 <li>Caches (CS 61B and 186)</li>
 <li>Graphs
 <ul>
-<li><a href="https://leetcode.com/discuss/interview-question/436073/">Critical Nodes</a>
+<li><a
+href="https://leetcode.com/discuss/interview-question/436073/">Critical
+Nodes</a>
 <ul class="task-list">
 <li><input type="checkbox" disabled="" checked="" />
-1: Failed, while a connected graph requires <span class="math inline">\(E &gt;= N-1\)</span>, a disconnected graph can also have <span class="math inline">\(E = N-1\)</span>.</li>
+1: Failed, while a connected graph requires <span
+class="math inline">\(E &gt;= N-1\)</span>, a disconnected graph can
+also have <span class="math inline">\(E = N-1\)</span>.</li>
 </ul></li>
-<li><a href="https://leetcode.com/discuss/interview-question/372581">Critical Connections</a>
+<li><a
+href="https://leetcode.com/discuss/interview-question/372581">Critical
+Connections</a>
 <ul class="task-list">
 <li><input type="checkbox" disabled="" checked="" />
-1: Failed to code up bridge algorithm. You need to pseudocode more before trying</li>
+1: Failed to code up bridge algorithm. You need to pseudocode more
+before trying</li>
 <li><input type="checkbox" disabled="" checked="" />
-2: Success to code up brute force algorithm. Works really well and although slow <span class="math inline">\(\mathcal O(E^2 + EV)\)</span> at worst case.</li>
+2: Success to code up brute force algorithm. Works really well and
+although slow <span class="math inline">\(\mathcal O(E^2 + EV)\)</span>
+at worst case.</li>
 </ul></li>
 </ul></li>
 </ul>
@@ -162,15 +197,29 @@ Trie</li>
 </ul>
 <h2 id="resources">Resources</h2>
 <ul>
-<li><a href="https://docs.google.com/document/d/1f_JZNuSEShzCPORxfSE8cAKR1RiqV7NgygyRtAncxVI/edit">Interview Behavior Question Guide</a></li>
-<li><a href="https://www.youtube.com/watch?v=gNQ9-kgyHfo">Amazon System Design Preparation</a></li>
-<li><a href="https://www.youtube.com/watch?v=mjZpZ_wcYFg">Amazon Code Sampling (SIP)</a></li>
-<li><a href="https://www.youtube.com/watch?v=RzlUQCy84rQ">Two examples for each of Amazon’s 14 Leadership Principles</a></li>
-<li><a href="https://docs.google.com/document/d/188JrZmqv7Nm7EULXItESSLmSEr7vBziqRUPew2oyWKY/edit">Amazon Assessment Debugging</a></li>
-<li><a href="https://aonecode.com/amazon-online-assessment">Amazon Assessment Questions AC</a></li>
-<li><a href="https://leetcode.com/discuss/interview-question/344650/Amazon-Online-Assessment-Questions">Amazon Assessment Questions LC</a></li>
-<li><a href="https://leetcode.com/discuss/career/216554/from-0-to-clearing-uberappleamazonlinkedingoogle">LeetCoder Advice on 0 to Clearing all Interviews</a></li>
-<li><a href="https://github.com/donnemartin/system-design-primer">Scalable Systems Primer</a></li>
+<li><a
+href="https://docs.google.com/document/d/1f_JZNuSEShzCPORxfSE8cAKR1RiqV7NgygyRtAncxVI/edit">Interview
+Behavior Question Guide</a></li>
+<li><a href="https://www.youtube.com/watch?v=gNQ9-kgyHfo">Amazon System
+Design Preparation</a></li>
+<li><a href="https://www.youtube.com/watch?v=mjZpZ_wcYFg">Amazon Code
+Sampling (SIP)</a></li>
+<li><a href="https://www.youtube.com/watch?v=RzlUQCy84rQ">Two examples
+for each of Amazon’s 14 Leadership Principles</a></li>
+<li><a
+href="https://docs.google.com/document/d/188JrZmqv7Nm7EULXItESSLmSEr7vBziqRUPew2oyWKY/edit">Amazon
+Assessment Debugging</a></li>
+<li><a href="https://aonecode.com/amazon-online-assessment">Amazon
+Assessment Questions AC</a></li>
+<li><a
+href="https://leetcode.com/discuss/interview-question/344650/Amazon-Online-Assessment-Questions">Amazon
+Assessment Questions LC</a></li>
+<li><a
+href="https://leetcode.com/discuss/career/216554/from-0-to-clearing-uberappleamazonlinkedingoogle">LeetCoder
+Advice on 0 to Clearing all Interviews</a></li>
+<li><a
+href="https://github.com/donnemartin/system-design-primer">Scalable
+Systems Primer</a></li>
 </ul>
 <h2 id="systems-design">Systems Design</h2>
 <ul>
@@ -183,38 +232,53 @@ Trie</li>
 <li>Ask about performance (throughput, concurrency)</li>
 <li>Ask about what action/API is needed</li>
 </ol></li>
-<li>Start focusing on your expertise (backend, frontend, production server)</li>
+<li>Start focusing on your expertise (backend, frontend, production
+server)</li>
 </ul>
 <h3 id="backend">Backend</h3>
 <p>Defining the schema, just field names are fine</p>
 <ul>
-<li>Highlight possibly special fields to that particular product (e.g., multiple payment methods)</li>
+<li>Highlight possibly special fields to that particular product (e.g.,
+multiple payment methods)</li>
 <li>Identify high-usage queries to determine schema indices/keys.</li>
 </ul>
 <h3 id="web-server">Web Server</h3>
 <p>Defining the API</p>
 <ul>
-<li>Go through API URL endpoint structure (<code>domain/resource/params?query_params</code>)</li>
+<li>Go through API URL endpoint structure
+(<code>domain/resource/params?query_params</code>)</li>
 <li>Speak in HTTP requests</li>
 <li>A POST and PUT would need a JSON input.</li>
-<li>Each definable actions can be grouped into individual services. Each services may belong to a database table, but they should interact.</li>
+<li>Each definable actions can be grouped into individual services. Each
+services may belong to a database table, but they should interact.</li>
 </ul>
 <h3 id="frontend">Frontend</h3>
 <ul>
-<li>Start with the front page with basic services (e.g., search box)</li>
-<li>Keep asking if they expect any other services (e.g., recommendations)</li>
-<li>Head to the next page by following a service action (e.g., clicking the search bar)</li>
+<li>Start with the front page with basic services (e.g., search
+box)</li>
+<li>Keep asking if they expect any other services (e.g.,
+recommendations)</li>
+<li>Head to the next page by following a service action (e.g., clicking
+the search bar)</li>
 </ul>
 <h3 id="improvements-for-performance">Improvements for Performance</h3>
 <ul>
 <li><p><strong>Load Balancer</strong></p>
-<p>The idea of having a router to route requests to specific computers in attempt to reduce the traffic/load of a single computer. The added benefit is redundancy of servers which if one goes down there exist other possible routes.</p></li>
+<p>The idea of having a router to route requests to specific computers
+in attempt to reduce the traffic/load of a single computer. The added
+benefit is redundancy of servers which if one goes down there exist
+other possible routes.</p></li>
 <li><p><strong>Cached Database</strong></p>
-<p>A copy of the database whether it’s a full copy (rare) or a usage-base copy (more common) to both increase the data-access speed and create a layer of redundancy if the database goes down.</p></li>
+<p>A copy of the database whether it’s a full copy (rare) or a
+usage-base copy (more common) to both increase the data-access speed and
+create a layer of redundancy if the database goes down.</p></li>
 <li><p><strong>Database Load Balancing</strong></p>
-<p>Similar to having multiple servers for web requests, multiple copies of a database on separate resources (often read-only copies) can not only solve load issues but also provide redundancy.</p></li>
+<p>Similar to having multiple servers for web requests, multiple copies
+of a database on separate resources (often read-only copies) can not
+only solve load issues but also provide redundancy.</p></li>
 <li><p><strong>Content Delivery Network</strong></p>
-<p>A network of servers (often intelligently geographically placed) to server web assets (images, videos, CSS, etc).</p></li>
+<p>A network of servers (often intelligently geographically placed) to
+server web assets (images, videos, CSS, etc).</p></li>
 </ul>
 
       </div>

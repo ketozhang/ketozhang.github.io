@@ -76,8 +76,10 @@
       <h1 class="title text-center pt-3">Entity-Relationship-Model</h1>
       
       <div class="markdown-content">
-        <p><img src="2018-10-28-17-13-02.png" /> <img src="2018-10-28-17-13-59.png" /></p>
-<p>A set of attribute that describes the real world (e.g., employees) with attributes (e.g., employee_id)</p>
+        <p><img src="2018-10-28-17-13-02.png" /> <img
+src="2018-10-28-17-13-59.png" /></p>
+<p>A set of attribute that describes the real world (e.g., employees)
+with attributes (e.g., employee_id)</p>
 <ul>
 <li><strong>Entity set:</strong> A collection of similar entities
 <ul>
@@ -93,22 +95,30 @@
 <ul>
 <li><strong>Key constraint</strong>:
 <ul>
-<li><strong>One to Many</strong>: A key constraint on an entity such that each row of the entity can point to many rows of the other entity.</li>
-<li><strong>Many to Many</strong>: If there are no key constraint on an entity such that any row of the entity can point to any row of the other entity.</li>
-<li><strong>One to one</strong>: If there are key constraint on both entity then each row of each entity can only point to one.</li>
+<li><strong>One to Many</strong>: A key constraint on an entity such
+that each row of the entity can point to many rows of the other
+entity.</li>
+<li><strong>Many to Many</strong>: If there are no key constraint on an
+entity such that any row of the entity can point to any row of the other
+entity.</li>
+<li><strong>One to one</strong>: If there are key constraint on both
+entity then each row of each entity can only point to one.</li>
 <li>One to many and one to one implies <strong>at most one</strong></li>
 </ul></li>
 <li><strong>Participation constraint</strong>:
 <ul>
-<li>A participation constraint on an entity such that every row must be part of the relationship to another entity.</li>
+<li>A participation constraint on an entity such that every row must be
+part of the relationship to another entity.</li>
 <li>This implies <strong>at least one</strong>.</li>
 </ul></li>
 </ul>
 <h2 id="weak-entities">Weak Entities</h2>
-<p>An entity owned by a primary key of the another (owner) entity that isn’t a full entity.</p>
+<p>An entity owned by a primary key of the another (owner) entity that
+isn’t a full entity.</p>
 <ul>
 <li>Must have total participation.</li>
-<li>A weak entity has a partial key which can be a full key once it relates to its owner entity’s primary key.</li>
+<li>A weak entity has a partial key which can be a full key once it
+relates to its owner entity’s primary key.</li>
 </ul>
 <h2 id="entity-to-schema">Entity to Schema</h2>
 <ul>
@@ -122,7 +132,8 @@
 </ul></li>
 <li>Weak entity
 <ul>
-<li>Composite key on id and the foreign key <code>PK(pk, fk), FK(fk)</code></li>
+<li>Composite key on id and the foreign key
+<code>PK(pk, fk), FK(fk)</code></li>
 </ul></li>
 </ul>
 

@@ -27,7 +27,6 @@ $$
 m\ddot{\mathbf{r}} = m\mathbf{g} - \frac{GM_\oplus m}{d^2}\hat{d} + \mathbf{F}_{ng} + \frac{GMm}{d_0^2}\hat{d_0}\\
 $$
 
----
 $$
 \boxed{m\ddot{\mathbf{r}} = m\mathbf{g} + \mathbf{F}_t + \mathbf{F}_{ng}}\\
 \boxed{\mathbf{F}_t = -GMm\left(\frac{\hat d}{d^2} - \frac{\hat{d_0}}{d_0^2}\right)}
@@ -39,7 +38,6 @@ $$
 * **Note**: It is important to note that the tidal force is not trival, one does not expect that if the particle is at a distance farther from the Moon $d > d_0$, the test mass will feel a **push not a pull** from the tidal force since $F_t > 0$.
     * Because of this fact, the tidal bulge is not one sided. There exist one both at $d < d_0$ (trivial) and $d > d_0$ (non-trivial). The two tidal bulge explains why there are two high tides every day (though this requires the Earth to rotate).
 
----
 
 ## Tidal Height
 

@@ -76,48 +76,68 @@
       <h1 class="title text-center pt-3">Introduction</h1>
       
       <div class="markdown-content">
-        <p>Text search is done with a search engine (aka informational retrieval system).</p>
+        <p>Text search is done with a search engine (aka informational retrieval
+system).</p>
 <dl>
 <dt>Document</dt>
-<dd>A file, website, or generally a collection of unstructured data that can be text searched.
+<dd>
+A file, website, or generally a collection of unstructured data that can
+be text searched.
 </dd>
 </dl>
 <h2 id="architecture">Architecture</h2>
-<p>Informational retrieval system (IR) are structured similar to a DBMS however differs in such ways:</p>
+<p>Informational retrieval system (IR) are structured similar to a DBMS
+however differs in such ways:</p>
 <ul>
 <li>No relational operations</li>
-<li>Ranks top result with no need to finish finding all that satisfy the query</li>
+<li>Ranks top result with no need to finish finding all that satisfy the
+query</li>
 <li>A crawler used to import data as it updates</li>
 </ul>
 <p><img src="2018-10-28-15-17-24.png" /></p>
 <h2 id="bag-of-words-model">Bag of Words Model</h2>
-<p>The bag of words model treats a document collection of searchable terms by its words. The bag of words model would implement the following methods:</p>
+<p>The bag of words model treats a document collection of searchable
+terms by its words. The bag of words model would implement the following
+methods:</p>
 <ol type="1">
-<li><strong>Ignore Stop Words</strong>: Filter useless non-informative words.
+<li><strong>Ignore Stop Words</strong>: Filter useless non-informative
+words.
 <ul>
 <li>Common english articles (e.g., the, a, an)</li>
 <li>HTML tags</li>
 </ul></li>
 <li><strong>Stemming</strong>: Converting word to its basic form.
 <ul>
-<li>Tenses to base/present tense (e.g., <code>walked -&gt; walk</code>).</li>
+<li>Tenses to base/present tense (e.g.,
+<code>walked -&gt; walk</code>).</li>
 </ul></li>
 </ol>
 <h2 id="boolean-text-search">Boolean Text Search</h2>
-<p>A simple search algorithm that made up of simple boolean statements.</p>
-<p>For example, <em>find a document with “California” and “school”</em>.</p>
+<p>A simple search algorithm that made up of simple boolean
+statements.</p>
+<p>For example, <em>find a document with “California” and
+“school”</em>.</p>
 <h2 id="postings-list">Postings List</h2>
-<p>For each documents, its words will be extracted and placed into the file system as a postings list. A postings list is a schema of <code>(text term, text docID)</code>. We will call this “table” the <code>InvertedFile</code></p>
+<p>For each documents, its words will be extracted and placed into the
+file system as a postings list. A postings list is a schema of
+<code>(text term, text docID)</code>. We will call this “table” the
+<code>InvertedFile</code></p>
 <h2 id="search-index">Search Index</h2>
-<p>The search engine will have a search index of the <code>InvertedFile</code> ordered by <code>docID</code>.</p>
-<p><strong>Important:</strong> From here on, queries we made must use a single table per keyword.</p>
+<p>The search engine will have a search index of the
+<code>InvertedFile</code> ordered by <code>docID</code>.</p>
+<p><strong>Important:</strong> From here on, queries we made must use a
+single table per keyword.</p>
 <ul>
-<li><strong>Positional data:</strong> We may add the position of the term that would benefit nearby word search.</li>
+<li><strong>Positional data:</strong> We may add the position of the
+term that would benefit nearby word search.</li>
 </ul>
 <h2 id="boolean-text-search-1">Boolean Text Search</h2>
-<p>A simple text operation using boolean that slices the document to match the boolean query.</p>
-<p>For example this query is equivalent of an intersection between the three keywords <code>Berkeley, Database, Research</code>,</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sql"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> IB.docID</span>
+<p>A simple text operation using boolean that slices the document to
+match the boolean query.</p>
+<p>For example this query is equivalent of an intersection between the
+three keywords <code>Berkeley, Database, Research</code>,</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode sql"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> IB.docID</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> InvertedFile IB, InvertedFile <span class="kw">ID</span>, InvertedFile IR</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> IB.term <span class="op">=</span> <span class="ot">&quot;Berkeley&quot;</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">AND</span> <span class="kw">ID</span>.term <span class="op">=</span> <span class="ot">&quot;Database&quot;</span></span>

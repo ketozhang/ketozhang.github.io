@@ -184,6 +184,10 @@
     </url>
         
     <url>
+        <loc>https://ketozhang.github.io/notes/Astrophysics/Photometry/Extinction/</loc>
+    </url>
+        
+    <url>
         <loc>https://ketozhang.github.io/notes/Astrophysics/Photometry/Flux/</loc>
     </url>
         
@@ -600,6 +604,50 @@
     </url>
         
     <url>
+        <loc>https://ketozhang.github.io/notes/Computer_Science/Design_Patterns/</loc>
+    </url>
+        
+    <url>
+        <loc>https://ketozhang.github.io/notes/Computer_Science/Design_Patterns/Behavioral/</loc>
+    </url>
+        
+    <url>
+        <loc>https://ketozhang.github.io/notes/Computer_Science/Design_Patterns/Behavioral/Template_Method/</loc>
+    </url>
+        
+    <url>
+        <loc>https://ketozhang.github.io/notes/Computer_Science/Design_Patterns/Creational/</loc>
+    </url>
+        
+    <url>
+        <loc>https://ketozhang.github.io/notes/Computer_Science/Design_Patterns/Creational/Abstract_Method/</loc>
+    </url>
+        
+    <url>
+        <loc>https://ketozhang.github.io/notes/Computer_Science/Design_Patterns/Creational/Builder/</loc>
+    </url>
+        
+    <url>
+        <loc>https://ketozhang.github.io/notes/Computer_Science/Design_Patterns/Creational/Factory_Method/</loc>
+    </url>
+        
+    <url>
+        <loc>https://ketozhang.github.io/notes/Computer_Science/Design_Patterns/SOLID_Design_Principles/</loc>
+    </url>
+        
+    <url>
+        <loc>https://ketozhang.github.io/notes/Computer_Science/Design_Patterns/Structural/</loc>
+    </url>
+        
+    <url>
+        <loc>https://ketozhang.github.io/notes/Computer_Science/Design_Patterns/Structural/Adapter/</loc>
+    </url>
+        
+    <url>
+        <loc>https://ketozhang.github.io/notes/Computer_Science/Design_Patterns/Structural/Bridge/</loc>
+    </url>
+        
+    <url>
         <loc>https://ketozhang.github.io/notes/Computer_Science/JavaScript/</loc>
     </url>
         
@@ -624,6 +672,14 @@
     </url>
         
     <url>
+        <loc>https://ketozhang.github.io/notes/Computer_Science/Python/Extensions/</loc>
+    </url>
+        
+    <url>
+        <loc>https://ketozhang.github.io/notes/Computer_Science/Python/Extensions/C++_with_Pybind11/</loc>
+    </url>
+        
+    <url>
         <loc>https://ketozhang.github.io/notes/Computer_Science/Python/Installation/</loc>
     </url>
         
@@ -632,15 +688,15 @@
     </url>
         
     <url>
-        <loc>https://ketozhang.github.io/notes/Computer_Science/Python/Packages/</loc>
+        <loc>https://ketozhang.github.io/notes/Computer_Science/Python/Packaging/</loc>
     </url>
         
     <url>
-        <loc>https://ketozhang.github.io/notes/Computer_Science/Python/Packages/Package_Dependencies/</loc>
+        <loc>https://ketozhang.github.io/notes/Computer_Science/Python/Packaging/Package_Dependencies/</loc>
     </url>
         
     <url>
-        <loc>https://ketozhang.github.io/notes/Computer_Science/Python/Packages/Project_Structure/</loc>
+        <loc>https://ketozhang.github.io/notes/Computer_Science/Python/Packaging/Project_Structure/</loc>
     </url>
         
     <url>
@@ -1873,6 +1929,14 @@
         
     <url>
         <loc>https://ketozhang.github.io/notes/Physics/Untitled-2ab97b5b-2dea-4e34-b5d3-26377e233812.png</loc>
+    </url>
+        
+    <url>
+        <loc>https://ketozhang.github.io/notes/Untitled/</loc>
+    </url>
+        
+    <url>
+        <loc>https://ketozhang.github.io/notes/boltzmann-factor/</loc>
     </url>
         
     <url>

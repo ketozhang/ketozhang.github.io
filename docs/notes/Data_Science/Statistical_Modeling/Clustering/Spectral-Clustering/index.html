@@ -76,57 +76,98 @@
       <h1 class="title text-center pt-3">Spectral Graph Clustering</h1>
       
       <div class="markdown-content">
-        <p>Take a weighted, undirected graph <span class="math inline">\(G(V,E)\)</span> that has no self-edges where the weights are <span class="math inline">\(w_{ij}\)</span> of edge <span class="math inline">\((i,j) = (j,i)\)</span>. The weight is zero if there is no edge between the vertices.</p>
-<p>The goal is to cut <span class="math inline">\(G\)</span> into two or more graphs of similar sizes but don’t cut too much edge weight. This is to minimize th sparcity:</p>
+        <p>Take a weighted, undirected graph <span
+class="math inline">\(G(V,E)\)</span> that has no self-edges where the
+weights are <span class="math inline">\(w_{ij}\)</span> of edge <span
+class="math inline">\((i,j) = (j,i)\)</span>. The weight is zero if
+there is no edge between the vertices.</p>
+<p>The goal is to cut <span class="math inline">\(G\)</span> into two or
+more graphs of similar sizes but don’t cut too much edge weight. This is
+to minimize th sparcity:</p>
 <p><span class="math display">\[
 \frac{\text{Cut}(G_1, G_2)}{\text{Mass}(G_1)\text{Mass}(G_2)}
 \]</span></p>
 <ul>
-<li><p><span class="math inline">\(\text{Cut}(G_1, G_2)\)</span> : Total weight of the cut edges For every vertex <span class="math inline">\(y = 1\)</span> or <span class="math inline">\(y = -1\)</span> if it belongs to <span class="math inline">\(G_1\)</span> or <span class="math inline">\(G_2\)</span> respectively. Given <span class="math inline">\(n = |V|\)</span>,</p>
+<li><p><span class="math inline">\(\text{Cut}(G_1, G_2)\)</span> : Total
+weight of the cut edges For every vertex <span class="math inline">\(y =
+1\)</span> or <span class="math inline">\(y = -1\)</span> if it belongs
+to <span class="math inline">\(G_1\)</span> or <span
+class="math inline">\(G_2\)</span> respectively. Given <span
+class="math inline">\(n = |V|\)</span>,</p>
 <p><span class="math display">\[
   \begin{align*}
-  \text{Cut}(G_1, G_2) &amp;= \sum_{(i,j) \in E} w_{ij} \frac{(y_i-y_j)^2}{4}\\
-  &amp;= \frac{1}{4} \sum_{(i,j) \in E} -2w_{ij}y_iy_j + \sum_{i=1}^n y_i^2 \sum_{k\neq i} w+{ik}\\
+  \text{Cut}(G_1, G_2) &amp;= \sum_{(i,j) \in E} w_{ij}
+\frac{(y_i-y_j)^2}{4}\\
+  &amp;= \frac{1}{4} \sum_{(i,j) \in E} -2w_{ij}y_iy_j + \sum_{i=1}^n
+y_i^2 \sum_{k\neq i} w+{ik}\\
   &amp;= \frac{y^\top L y}{4}\\
   \end{align*}
   \]</span></p>
-<p>Where the above is the <strong>Laplacian quadratic form</strong> with the <strong>Laplacian matrix</strong>,</p>
+<p>Where the above is the <strong>Laplacian quadratic form</strong> with
+the <strong>Laplacian matrix</strong>,</p>
 <p><span class="math display">\[
-  L_{ij} = \begin{cases} -w_{ij}  &amp; i \neq j \\ \sum_{k \neq i} w_{ik} &amp; i=j \end{cases}
+  L_{ij} = \begin{cases} -w_{ij}  &amp; i \neq j \\ \sum_{k \neq i}
+w_{ik} &amp; i=j \end{cases}
   \]</span></p></li>
-<li><p><span class="math inline">\(\text{Mass}(G)\)</span> : Number of vertices in <span class="math inline">\(G\)</span> or assign vertex weights.</p></li>
+<li><p><span class="math inline">\(\text{Mass}(G)\)</span> : Number of
+vertices in <span class="math inline">\(G\)</span> or assign vertex
+weights.</p></li>
 </ul>
 <h2 id="laplacian-matrix-properties">Laplacian Matrix Properties</h2>
 <ul>
 <li><p>The Laplacian matrix is a positive definite matrix.</p></li>
-<li><p>All Laplacian matrix has the eigenvector <span class="math inline">\(\hat 1\)</span>. Since,</p>
+<li><p>All Laplacian matrix has the eigenvector <span
+class="math inline">\(\hat 1\)</span>. Since,</p>
 <p><span class="math display">\[
   \text{Cut}(G_1, G_2; y = \hat 1)  = 0
   \]</span></p>
 <p>Thus <span class="math inline">\(y^\top L y = 0\)</span>.</p></li>
 </ul>
 <h2 id="bisection">Bisection</h2>
-<p>A bisection occur when <span class="math inline">\(|G_1| = |G_2| = \frac{n}{2}\)</span>. With the indicator vector <span class="math inline">\(1^\top = 0\)</span> is an equivalent definition.</p>
+<p>A bisection occur when <span class="math inline">\(|G_1| = |G_2| =
+\frac{n}{2}\)</span>. With the indicator vector <span
+class="math inline">\(1^\top = 0\)</span> is an equivalent
+definition.</p>
 <h3 id="bisection-minimization">Bisection Minimization</h3>
-<p>The minimum bisection problem is to find <span class="math inline">\(y\)</span> that minimzes</p>
-<p><span class="math display">\[y^\top L y; \qquad \forall i, (y_i = 1 \lor y_i = -1) \land 1^\top y = 0\]</span></p>
-<p>The problem is NP-hard so an approximation allow <span class="math inline">\(y_i\)</span> to be fractional. However a better approximation is to let <span class="math inline">\(y\)</span> lying on a hypersphere of radius <span class="math inline">\(\sqrt{n}\)</span>. In full</p>
+<p>The minimum bisection problem is to find <span
+class="math inline">\(y\)</span> that minimzes</p>
+<p><span class="math display">\[y^\top L y; \qquad \forall i, (y_i = 1
+\lor y_i = -1) \land 1^\top y = 0\]</span></p>
+<p>The problem is NP-hard so an approximation allow <span
+class="math inline">\(y_i\)</span> to be fractional. However a better
+approximation is to let <span class="math inline">\(y\)</span> lying on
+a hypersphere of radius <span class="math inline">\(\sqrt{n}\)</span>.
+In full</p>
 <p><span class="math display">\[
 \min y^\top L y; \quad y^\top y = n \land \hat 1^\top y = 0
 \]</span></p>
-<p>Equivalently, you can minimize the Rayleigh quotient for <span class="math inline">\(L\)</span> and <span class="math inline">\(y\)</span></p>
+<p>Equivalently, you can minimize the Rayleigh quotient for <span
+class="math inline">\(L\)</span> and <span
+class="math inline">\(y\)</span></p>
 <p><span class="math display">\[
 \min \frac{y^\top L y}{y^\top y}
 \]</span></p>
-<p>The solution is to let <span class="math inline">\(\lambda_2\)</span> be the second smallest eigenvalue of <span class="math inline">\(L\)</span> with eigenvector <span class="math inline">\(v_2\)</span> called the <strong>Fielder vector</strong>.</p>
+<p>The solution is to let <span class="math inline">\(\lambda_2\)</span>
+be the second smallest eigenvalue of <span
+class="math inline">\(L\)</span> with eigenvector <span
+class="math inline">\(v_2\)</span> called the <strong>Fielder
+vector</strong>.</p>
 <h3 id="sweep-cut-alogirhtm">Sweep Cut Alogirhtm</h3>
 <ol type="1">
-<li>Compute the fielder vector <span class="math inline">\(v_2\)</span> of <span class="math inline">\(L\)</span></li>
-<li>Sorting the component of <span class="math inline">\(v_2\)</span></li>
-<li>Choose minimum sparsity cuts for the <span class="math inline">\(n-1\)</span> cuts between successive components. A cut here means choosing any successive coponents all components to the left is <span class="math inline">\(G_1\)</span> and to the right is <span class="math inline">\(G_2\)</span>.</li>
+<li>Compute the fielder vector <span class="math inline">\(v_2\)</span>
+of <span class="math inline">\(L\)</span></li>
+<li>Sorting the component of <span
+class="math inline">\(v_2\)</span></li>
+<li>Choose minimum sparsity cuts for the <span
+class="math inline">\(n-1\)</span> cuts between successive components. A
+cut here means choosing any successive coponents all components to the
+left is <span class="math inline">\(G_1\)</span> and to the right is
+<span class="math inline">\(G_2\)</span>.</li>
 </ol>
 <h2 id="vertex-masses">Vertex Masses</h2>
-<p>Adding a mass to vertices gives <span class="math inline">\(M\)</span> a diagonal matrix. The sparsity minimization constraints changed by adding new constraints:</p>
+<p>Adding a mass to vertices gives <span
+class="math inline">\(M\)</span> a diagonal matrix. The sparsity
+minimization constraints changed by adding new constraints:</p>
 <p><span class="math display">\[
 \hat 1^\top M y = 0
 \]</span></p>
@@ -134,10 +175,12 @@
 y^\top M y = \mathrm{Tr}(M)
 \]</span></p>
 <ul>
-<li><p>The changes to the Fielder vector solves for the generlized eigensystem <span class="math display">\[
+<li><p>The changes to the Fielder vector solves for the generlized
+eigensystem <span class="math display">\[
   Lv = \lambda M v
   \]</span></p></li>
-<li><p>In turn the sweep cut changes by including the Cheeger’s Inequality <span class="math display">\[
+<li><p>In turn the sweep cut changes by including the Cheeger’s
+Inequality <span class="math display">\[
   \text{sparsity} \le \sqrt{2 \lambda_2 \max_i \frac{L_{ii}}{M_{ii}}}
   \]</span></p>
 <p><span class="math display">\[
@@ -145,10 +188,16 @@ y^\top M y = \mathrm{Tr}(M)
   \]</span></p></li>
 </ul>
 <h2 id="normalized-cut">Normalized Cut</h2>
-<p>Set vertix <span class="math inline">\(i\)</span>’s mass <span class="math inline">\(M_{ii} = L_{ii}\)</span>. This is popular for image segmentation (taking out objects or layers from an image).</p>
+<p>Set vertix <span class="math inline">\(i\)</span>’s mass <span
+class="math inline">\(M_{ii} = L_{ii}\)</span>. This is popular for
+image segmentation (taking out objects or layers from an image).</p>
 <h2 id="spectral-vectors">Spectral Vectors</h2>
-<p>Given multiple eigenvectors <span class="math inline">\(V \in \mathbb R^{n,k}\)</span> the <strong>spectral vector</strong> are the row vectors <span class="math inline">\(V_j^\top\)</span>.</p>
-<p>In k-means clustering, the set of spectral vectors for the individual clusters points along similar directions and orthogonal to other cluster’s spectral vectors.</p>
+<p>Given multiple eigenvectors <span class="math inline">\(V \in \mathbb
+R^{n,k}\)</span> the <strong>spectral vector</strong> are the row
+vectors <span class="math inline">\(V_j^\top\)</span>.</p>
+<p>In k-means clustering, the set of spectral vectors for the individual
+clusters points along similar directions and orthogonal to other
+cluster’s spectral vectors.</p>
 
       </div>
       

@@ -76,12 +76,16 @@
       <h1 class="title text-center pt-3">Joint Probability</h1>
       
       <div class="markdown-content">
-        <p>The <strong>joint probability distribution</strong> describes the chance of the values of multiple random variables. The joint distribution is denoted as,</p>
+        <p>The <strong>joint probability distribution</strong> describes the
+chance of the values of multiple random variables. The joint
+distribution is denoted as,</p>
 <p><span class="math display">\[
 P(X_1 = x_1, X_2 = x_2, \ldots, X_n = x_n)
 \]</span></p>
 <ul>
-<li>Equivalently the comma can be replaced with interesection <span class="math inline">\(\cap\)</span> or “logical and” <span class="math inline">\(\land\)</span></li>
+<li>Equivalently the comma can be replaced with interesection <span
+class="math inline">\(\cap\)</span> or “logical and” <span
+class="math inline">\(\land\)</span></li>
 </ul>
 <p>There are many different ways to write joint events:</p>
 <ul>
@@ -93,61 +97,90 @@ P(X_1 = x_1, X_2 = x_2, \ldots, X_n = x_n)
 <p><span class="math display">\[
   P(g(X) \ge h(Y))
   \]</span></p></li>
-<li><p>In general all joint distribution can be described by set of all possible values that makes the event true,</p>
+<li><p>In general all joint distribution can be described by set of all
+possible values that makes the event true,</p>
 <p><span class="math display">\[
   \begin{gather}
   P((X,Y) \in S), S = \set{(x_1,y_1), (x_2,y_2), \ldots}
   \end{gather}
   \]</span></p></li>
 </ul>
-<h2 id="derived-from-conditional-probability">Derived from Conditional Probability</h2>
-<p>Take two random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>. The joint probability for some value <span class="math inline">\(x,y\)</span> can be determined by the relationship with the conditional probability,</p>
+<h2 id="derived-from-conditional-probability">Derived from Conditional
+Probability</h2>
+<p>Take two random variables <span class="math inline">\(X\)</span> and
+<span class="math inline">\(Y\)</span>. The joint probability for some
+value <span class="math inline">\(x,y\)</span> can be determined by the
+relationship with the conditional probability,</p>
 <p><span class="math display">\[
 \boxed{\begin{align*}
 P(X=x,Y=y) &amp;= P(X=x \mid Y=y)P(Y=y)\\
 &amp;= P(Y=y \mid X=x)P(X=x)
 \end{align*}}
 \]</span></p>
-<p>The equality of the two lines comes from the divisoin rule or <strong>Bayes rule</strong>:</p>
+<p>The equality of the two lines comes from the divisoin rule or
+<strong>Bayes rule</strong>:</p>
 <p><span class="math display">\[
 P(X=x \mid Y=y) = \frac{P(X=x, Y=y)}{P(Y=y)}\\
 P(Y=y \mid X=x) = \frac{P(X=x, Y=y)}{P(Y=y)}
 \]</span></p>
-<p>In general the probability of a joint probability is given by the <strong>chain rule</strong>,</p>
-<p><span class="math display">\[ \boxed{P\left(\bigcap_{i=1}^n X_i\right) = \prod_{i=1}^n P\left(X_i \Bigg\lvert \bigcap_{j\neq  i}^{n}X_j \right)}\]</span></p>
-<h2 id="independent-joint-probability">Independent Joint Probability</h2>
-<p>Random variables are considered independent if the their probability distribution are separable. For instance for <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>,</p>
-<p><span class="math display">\[ P_{XY}(x,y) = P_X(x)P_Y(y) \]</span></p>
+<p>In general the probability of a joint probability is given by the
+<strong>chain rule</strong>,</p>
+<p><span class="math display">\[ \boxed{P\left(\bigcap_{i=1}^n
+X_i\right) = \prod_{i=1}^n P\left(X_i \Bigg\lvert
+\bigcap_{j\neq  i}^{n}X_j \right)}\]</span></p>
+<h2 id="independent-joint-probability">Independent Joint
+Probability</h2>
+<p>Random variables are considered independent if the their probability
+distribution are separable. For instance for <span
+class="math inline">\(X\)</span> and <span
+class="math inline">\(Y\)</span>,</p>
+<p><span class="math display">\[ P_{XY}(x,y) = P_X(x)P_Y(y)
+\]</span></p>
 <p>A more compact notation,</p>
 <p><span class="math display">\[ P(x,y) = P(x)P(y) \]</span></p>
-<p>Alternatively two random variables are independent if the conditional probability is the probability of itself,</p>
+<p>Alternatively two random variables are independent if the conditional
+probability is the probability of itself,</p>
 <p><span class="math display">\[
     P(x \mid y) = P(x)
 \]</span></p>
 <h2 id="marginal-probability">Marginal Probability</h2>
-<p>The marginal probability is a posterior probability summing over all joint probability for each prior event. For instance given that <span class="math inline">\(X\)</span> is a random variable of the posterior and <span class="math inline">\(Y\)</span> of the prior</p>
+<p>The marginal probability is a posterior probability summing over all
+joint probability for each prior event. For instance given that <span
+class="math inline">\(X\)</span> is a random variable of the posterior
+and <span class="math inline">\(Y\)</span> of the prior</p>
 <p><span class="math display">\[
-    P_X(x) = \sum_{y \in \Omega_Y} P(x, y) = \sum_{y \in \Omega_Y}{P(x \mid y)P(y)}
+    P_X(x) = \sum_{y \in \Omega_Y} P(x, y) = \sum_{y \in \Omega_Y}{P(x
+\mid y)P(y)}
 \]</span></p>
 <h2 id="expectation-value">Expectation Value</h2>
-<p>The expectation value of a joint probability follows linearity such that,</p>
-<p><span class="math display">\[ \mathbb E[aX+bY+c] = \sum_{x \in X}{\sum_{y \in Y}}{P(x,y)(ax+by+c)} \]</span></p>
+<p>The expectation value of a joint probability follows linearity such
+that,</p>
+<p><span class="math display">\[ \mathbb E[aX+bY+c] = \sum_{x \in
+X}{\sum_{y \in Y}}{P(x,y)(ax+by+c)} \]</span></p>
 <h2 id="union-probability">Union Probability</h2>
 <h3 id="inclusion-exclusion-formula">Inclusion-Exclusion Formula</h3>
-<p>The inclusion exclusion formula defines the probability of the union of two or more events.</p>
+<p>The inclusion exclusion formula defines the probability of the union
+of two or more events.</p>
 <p>Let’s start simply with the union of two events which states:</p>
 <center>
-<strong>“The probability of any event of <span class="math inline">\(A\)</span> or <span class="math inline">\(B\)</span> occuring.”</strong>
+<strong>“The probability of any event of <span
+class="math inline">\(A\)</span> or <span
+class="math inline">\(B\)</span> occuring.”</strong>
 </center>
 <p><span class="math display">\[
     P(A \cup B) = P(A) + P(B) - P(A, B)
 \]</span></p>
 <p>In general,</p>
 <p><span class="math display">\[
-    P\left(\bigcup_{i=1}^n A_i\right) = \sum_i^n P(A_i) - \mathop{\sum\sum}\limits_{1\le i &lt; j \le n}P(A_iA_j) + \ldots + (-1)^{n+1}P(A_1,A_2, \ldots, A_n)
+    P\left(\bigcup_{i=1}^n A_i\right) = \sum_i^n P(A_i) -
+\mathop{\sum\sum}\limits_{1\le i &lt; j \le n}P(A_iA_j) + \ldots +
+(-1)^{n+1}P(A_1,A_2, \ldots, A_n)
 \]</span></p>
 <h3 id="booles-inequality">Boole’s Inequality</h3>
-<p><strong>Boole’s Inequality</strong> is an upper bound for the union of two or more events. It’s simply says that the probability of a collection of event is no greater than the sum of all its probabilities,</p>
+<p><strong>Boole’s Inequality</strong> is an upper bound for the union
+of two or more events. It’s simply says that the probability of a
+collection of event is no greater than the sum of all its
+probabilities,</p>
 <p><span class="math display">\[
     P\left(\bigcup_{i=1}^nA_i\right) \le \sum_{i=1}^{n} P(A_i)
 \]</span></p>

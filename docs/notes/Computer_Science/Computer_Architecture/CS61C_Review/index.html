@@ -78,7 +78,8 @@
       <div class="markdown-content">
         <h2 id="parallel-processing">Parallel Processing</h2>
 <h3 id="loop-unrolling">Loop Unrolling</h3>
-<p>Loop unrolling decreases the number of branch instructions and comparators which are the bottlenecks of datapath.</p>
+<p>Loop unrolling decreases the number of branch instructions and
+comparators which are the bottlenecks of datapath.</p>
 <h6 id="rolled">Rolled</h6>
 <div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> x<span class="op">;</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="op">(</span>x <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> x <span class="op">&lt;</span> <span class="dv">100</span><span class="op">;</span> x<span class="op">++)</span></span>
@@ -98,14 +99,20 @@
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span></code></pre></div>
 <p>There is now only 20 sets of branch instrucitons.</p>
 <ul>
-<li>One may make a for loop to do the unrolled statements. Many compilers are able to recognize these kinds of for loops.</li>
+<li>One may make a for loop to do the unrolled statements. Many
+compilers are able to recognize these kinds of for loops.</li>
 </ul>
 <h3 id="simd---intel-sse-intrinsics">SIMD - Intel SSE Intrinsics</h3>
-<p>Single instrucitons multiple data (<strong>SIMD</strong>) is a <strong>data-level parallelism</strong> design that operates a single instruction onto multiple data. Let’s use the Intel SSE Intrinsics as an example.</p>
+<p>Single instrucitons multiple data (<strong>SIMD</strong>) is a
+<strong>data-level parallelism</strong> design that operates a single
+instruction onto multiple data. Let’s use the Intel SSE Intrinsics as an
+example.</p>
 <ul>
 <li>Implemented by using larger registers called scalar registers.</li>
-<li>SSE scalar registers are named <code>xxm0, xxm1,...xxmN</code> and are <code>128-bit</code> each.</li>
-<li>Often used for <code>int</code> and <code>float</code> thus holding four <code>32 bit</code> elements</li>
+<li>SSE scalar registers are named <code>xxm0, xxm1,...xxmN</code> and
+are <code>128-bit</code> each.</li>
+<li>Often used for <code>int</code> and <code>float</code> thus holding
+four <code>32 bit</code> elements</li>
 </ul>
 <h4 id="syntax">Syntax</h4>
 <table>
@@ -167,7 +174,8 @@
 <tr class="even">
 <td>Store</td>
 <td><code>_mm_storeu_[type](arr, v)</code></td>
-<td>Store the elements of vector <code>v</code> to some array <code>arr</code></td>
+<td>Store the elements of vector <code>v</code> to some array
+<code>arr</code></td>
 <td><code>_mm_storeu_ps(arr, v1)</code></td>
 </tr>
 </tbody>
@@ -195,21 +203,31 @@
 <span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> Y<span class="op">[</span>k<span class="op">]</span> <span class="op">*</span> retval <span class="op">*</span> m<span class="op">[</span><span class="dv">0</span><span class="op">]</span> <span class="op">*</span> m<span class="op">[</span><span class="dv">1</span><span class="op">]</span> <span class="op">*</span> m<span class="op">[</span><span class="dv">2</span><span class="op">]</span> <span class="op">*</span> m<span class="op">[</span><span class="dv">3</span><span class="op">];</span></span>
 <span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span></code></pre></div>
 <h3 id="mimd---openmp">MIMD - OpenMP</h3>
-<p>Multiple instruction multiple data (<strong>MIMD</strong>) is a thread-level paralellism design.</p>
+<p>Multiple instruction multiple data (<strong>MIMD</strong>) is a
+thread-level paralellism design.</p>
 <ul>
-<li>Multithread in a single core allows the illusion of simultaneous multiprocessing. This is done by smart task managing by the operating system.</li>
-<li>Each thread has separate registers and PC but the memory is shared.</li>
+<li>Multithread in a single core allows the illusion of simultaneous
+multiprocessing. This is done by smart task managing by the operating
+system.</li>
+<li>Each thread has separate registers and PC but the memory is
+shared.</li>
 </ul>
 <p>Let’s use OpenMP as an example.</p>
 <h4 id="openmp-directives">OpenMP Directives</h4>
-<p>Directives are placed in the code to signify which block of code are to be in distributed and what type of multithread process is to be done with those blocks.</p>
+<p>Directives are placed in the code to signify which block of code are
+to be in distributed and what type of multithread process is to be done
+with those blocks.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="er">##pragma omp [options]</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">[</span>body<span class="op">]</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h6 id="parallel">Parallel</h6>
-<p>The <code>parallel</code> option is used when specific parts of the memory can be assigned to each thread.</p>
-<p>The example below uses 2 threads to compute <span class="math inline">\(2^{100}\)</span>. Logically this should be 2x faster than a single thread (not really since its implementation dependent).</p>
+<p>The <code>parallel</code> option is used when specific parts of the
+memory can be assigned to each thread.</p>
+<p>The example below uses 2 threads to compute <span
+class="math inline">\(2^{100}\)</span>. Logically this should be 2x
+faster than a single thread (not really since its implementation
+dependent).</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    NUM_THREADS <span class="op">=</span> <span class="dv">2</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">double</span> prod<span class="op">[</span><span class="dv">0</span><span class="op">]</span> <span class="op">=</span> <span class="dv">2</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">double</span> prod<span class="op">[</span><span class="dv">1</span><span class="op">]</span> <span class="op">=</span> <span class="dv">2</span></span>
@@ -223,7 +241,8 @@
 <span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    result <span class="op">*=</span> prod<span class="op">[</span><span class="dv">0</span><span class="op">]</span> <span class="op">*</span> prod<span class="op">[</span><span class="dv">1</span><span class="op">]</span></span></code></pre></div>
 <h6 id="critical">Critical</h6>
-<p>The <code>critical</code> option creates a critical section for threads required to access shared memory.</p>
+<p>The <code>critical</code> option creates a critical section for
+threads required to access shared memory.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    NUM_THREADS <span class="op">=</span> <span class="dv">2</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">double</span> prod<span class="op">[</span><span class="dv">0</span><span class="op">]</span> <span class="op">=</span> <span class="dv">2</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">double</span> prod<span class="op">[</span><span class="dv">1</span><span class="op">]</span> <span class="op">=</span> <span class="dv">2</span></span>
@@ -238,7 +257,8 @@
 <span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>        result <span class="op">*=</span> prod<span class="op">[</span>id<span class="op">]</span></span>
 <span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span></code></pre></div>
 <h6 id="parallel-for">Parallel For</h6>
-<p>The <code>parallel for</code> option can be assigned to each thread by consecutive chunks.</p>
+<p>The <code>parallel for</code> option can be assigned to each thread
+by consecutive chunks.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="er">##pragma omp parallel for{</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> a <span class="op">=</span> <span class="op">[</span><span class="dv">1</span><span class="op">,</span><span class="dv">2</span><span class="op">,</span><span class="dv">3</span><span class="op">,</span><span class="dv">4</span><span class="op">];</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> i<span class="op">;</span></span>
@@ -258,14 +278,20 @@
 <span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <h4 id="shared-memory">Shared Memory</h4>
-<p>Because memory between are shared we can get a bug called a <strong>race condition</strong>. A race condition is caused due to the threads accessing the same memory (often when writing).</p>
+<p>Because memory between are shared we can get a bug called a
+<strong>race condition</strong>. A race condition is caused due to the
+threads accessing the same memory (often when writing).</p>
 <ul>
-<li>If all threads write to a memory then only the latest write is saved.</li>
+<li>If all threads write to a memory then only the latest write is
+saved.</li>
 </ul>
-<p>The solution to this issue is to allow a thread to <strong>lock</strong> the data needed through the process called <strong>atomic memory operatons (AMO)</strong> .</p>
+<p>The solution to this issue is to allow a thread to
+<strong>lock</strong> the data needed through the process called
+<strong>atomic memory operatons (AMO)</strong> .</p>
 <ul>
 <li>The AMO is implemented onto the ISA with specific opcodes</li>
-<li>See <a href="#critical">critical section</a> for an example of OpenMP using AMO.</li>
+<li>See <a href="#critical">critical section</a> for an example of
+OpenMP using AMO.</li>
 </ul>
 <p>A typical AMO does the following:</p>
 <ol type="1">
@@ -274,13 +300,15 @@
 <li>If locked, wait until it’s unlocked.</li>
 <li>If unlocked, lock it and continue to step 2.</li>
 </ul></li>
-<li>Perform the instructions needed (called <strong>critical section</strong>)</li>
+<li>Perform the instructions needed (called <strong>critical
+section</strong>)</li>
 <li>Unlock the data if finished.</li>
 </ol>
 <h2 id="cache-coherency">Cache Coherency</h2>
 <ul>
 <li><strong>Bus</strong> : Connection between each cores.</li>
-<li><strong>Snoop</strong> : A signal asking the bus if anything changes.</li>
+<li><strong>Snoop</strong> : A signal asking the bus if anything
+changes.</li>
 </ul>
 <h3 id="moesi-protocol">MOESI Protocol</h3>
 <p><strong>Reminder:</strong> Dirty means memory is not up to date.</p>

@@ -76,11 +76,13 @@
       <h1 class="title text-center pt-3">Kernel Perceptron</h1>
       
       <div class="markdown-content">
-        <p>Recall the perceptron update rule while there exist an <span class="math inline">\(y_i\)</span> that’s misclassified:</p>
+        <p>Recall the perceptron update rule while there exist an <span
+class="math inline">\(y_i\)</span> that’s misclassified:</p>
 <p><span class="math display">\[
 \theta(t+1) = \theta(t) + \alpha y_i \Phi(X_i)
 \]</span></p>
-<p>The kernel form only deals with a single parameter rather than the whole feature space,</p>
+<p>The kernel form only deals with a single parameter rather than the
+whole feature space,</p>
 <p><span class="math display">\[
 a_i(t+1) = a_i(t) + \epsilon y_i
 \]</span></p>
@@ -90,7 +92,8 @@ a_i(t+1) = a_i(t) + \epsilon y_i
 \]</span></p>
 <p>So,</p>
 <p><span class="math display">\[
-\hat y(z) = \theta^\top \Phi(z) = a^\top \Phi(X)\Phi(z) = \sum_{i=1}^n a_i k(X_i,z)
+\hat y(z) = \theta^\top \Phi(z) = a^\top \Phi(X)\Phi(z) = \sum_{i=1}^n
+a_i k(X_i,z)
 \]</span></p>
 
       </div>

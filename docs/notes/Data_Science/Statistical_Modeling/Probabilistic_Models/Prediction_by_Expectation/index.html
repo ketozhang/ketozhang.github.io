@@ -76,7 +76,12 @@
       <h1 class="title text-center pt-3">Prediction by Expectation</h1>
       
       <div class="markdown-content">
-        <p>We can take advantage of the Law of Averages if what we like to predict, <span class="math inline">\(Y\)</span>, is a random variable. However, if all we have is some data that is a random variable <span class="math inline">\(X\)</span>, then the prediction for <span class="math inline">\(Y\)</span> can be expressed as the conditional expectation on <span class="math inline">\(X\)</span>,</p>
+        <p>We can take advantage of the Law of Averages if what we like to
+predict, <span class="math inline">\(Y\)</span>, is a random variable.
+However, if all we have is some data that is a random variable <span
+class="math inline">\(X\)</span>, then the prediction for <span
+class="math inline">\(Y\)</span> can be expressed as the conditional
+expectation on <span class="math inline">\(X\)</span>,</p>
 <p><span class="math display">\[
 \hat y(x) = E(Y \mid X = x)
 \]</span></p>
@@ -89,11 +94,17 @@
 \]</span></p>
 <p>A few key facts:</p>
 <ul>
-<li>The expectation of the error is zero <span class="math display">\[E(\varepsilon) = 0\]</span></li>
-<li>The expectation of the best estimator and true value is equal <span class="math display">\[E(\hat y(X)) = E(Y)\]</span></li>
-<li>The best estimator and deviance are uncorrelated (not necessarily independent). <span class="math display">\[\text{Cov}\left[ \hat y(X), \varepsilon \right] = 0\]</span></li>
+<li>The expectation of the error is zero <span
+class="math display">\[E(\varepsilon) = 0\]</span></li>
+<li>The expectation of the best estimator and true value is equal <span
+class="math display">\[E(\hat y(X)) = E(Y)\]</span></li>
+<li>The best estimator and deviance are uncorrelated (not necessarily
+independent). <span class="math display">\[\text{Cov}\left[ \hat y(X),
+\varepsilon \right] = 0\]</span></li>
 </ul>
-<p>Let’s take a look at the variance. We define two deviances of <span class="math inline">\(Y\)</span> and <span class="math inline">\(\hat y\)</span> as,</p>
+<p>Let’s take a look at the variance. We define two deviances of <span
+class="math inline">\(Y\)</span> and <span class="math inline">\(\hat
+y\)</span> as,</p>
 <p><span class="math display">\[
 D_Y = Y - E(Y)
 \]</span></p>
@@ -104,17 +115,24 @@ D_{\hat y} = \hat y(X) - E(Y)
 <p><span class="math display">\[
 D_Y = D_{\hat y} + \varepsilon
 \]</span></p>
-<p>The two terms <span class="math inline">\(D_{\hat y}\)</span> and <span class="math inline">\(\varepsilon\)</span> are uncorrelated because <span class="math inline">\(D_{\hat y}\)</span> is a function of <span class="math inline">\(X\)</span>. The variance of <span class="math inline">\(D_Y\)</span> is then,</p>
+<p>The two terms <span class="math inline">\(D_{\hat y}\)</span> and
+<span class="math inline">\(\varepsilon\)</span> are uncorrelated
+because <span class="math inline">\(D_{\hat y}\)</span> is a function of
+<span class="math inline">\(X\)</span>. The variance of <span
+class="math inline">\(D_Y\)</span> is then,</p>
 <p><span class="math display">\[
 \text{Var}(D_Y) = \text{Var}(D_{\hat y}) + \text{Var}(\varepsilon)
 \]</span></p>
 <p>Some facts:</p>
 <ul>
-<li><p>The variance of the deviance of <span class="math inline">\(Y\)</span> is the same as the variance of <span class="math inline">\(Y\)</span></p>
+<li><p>The variance of the deviance of <span
+class="math inline">\(Y\)</span> is the same as the variance of <span
+class="math inline">\(Y\)</span></p>
 <p><span class="math display">\[
 \text{Var}(D_Y) = \text{Var}(Y)
 \]</span></p></li>
-<li><p>The variance of the deviance of <span class="math inline">\(\hat y\)</span> is the same as the variance of the best estimator</p>
+<li><p>The variance of the deviance of <span class="math inline">\(\hat
+y\)</span> is the same as the variance of the best estimator</p>
 <p><span class="math display">\[
 \text{Var}(D_{\hat y}) = \text{Var}(\hat y(X))
 \]</span></p></li>
@@ -135,7 +153,8 @@ D_Y = D_{\hat y} + \varepsilon
   \text{Var}(\varepsilon) = E(\text{Var}(Y \mid X))
   \]</span></p></li>
 </ul>
-<p>We can now fully express <span class="math inline">\(\text{Var}(D_Y)\)</span> as,</p>
+<p>We can now fully express <span
+class="math inline">\(\text{Var}(D_Y)\)</span> as,</p>
 <p><span class="math display">\[
 \text{Var}(D_Y) = E(\text{Var}(Y \mid X)) + \text{Var}(E(Y \mid X))
 \]</span></p>

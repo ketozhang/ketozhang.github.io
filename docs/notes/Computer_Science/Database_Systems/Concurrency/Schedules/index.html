@@ -76,9 +76,15 @@
       <h1 class="title text-center pt-3">Schedules</h1>
       
       <div class="markdown-content">
-        <p>For transactions to satisfy isolaton, we need a scheduler called the <strong>transaction manager</strong>. The transaction manager must schedule actions such that the sequence of actions (or <strong>schedule</strong>) do not conflict with each other.</p>
+        <p>For transactions to satisfy isolaton, we need a scheduler called the
+<strong>transaction manager</strong>. The transaction manager must
+schedule actions such that the sequence of actions (or
+<strong>schedule</strong>) do not conflict with each other.</p>
 <h2 id="serial-schedule">Serial Schedule</h2>
-<p>A naive solution is the <strong>serial schedule</strong>. Here each transaction runs right after another. This issue with this transactions is inefficiency (e.g., the user who called for the last transaction has to wait for the other users before him/her).</p>
+<p>A naive solution is the <strong>serial schedule</strong>. Here each
+transaction runs right after another. This issue with this transactions
+is inefficiency (e.g., the user who called for the last transaction has
+to wait for the other users before him/her).</p>
 <ul>
 <li><strong>Equivalence</strong>: Any two schedule are equivalent if:
 <ol type="1">
@@ -88,9 +94,12 @@
 </ol></li>
 </ul>
 <h2 id="serializable-schedules">Serializable Schedules</h2>
-<p>A serializable schedule is equivalent to a serial schedule however allows interleaved transactions.</p>
+<p>A serializable schedule is equivalent to a serial schedule however
+allows interleaved transactions.</p>
 <ul>
-<li><strong>Serial Schedule</strong> A trivial schedule that lets one transaction run first then the other. There are no intervening intstructions from multiple transactions.
+<li><strong>Serial Schedule</strong> A trivial schedule that lets one
+transaction run first then the other. There are no intervening
+intstructions from multiple transactions.
 <ul>
 <li>Serial schedule are equivalent if:
 <ul>
@@ -99,12 +108,16 @@
 <li>same final state of the database.</li>
 </ul></li>
 </ul></li>
-<li><strong>Serializable</strong> A schedule is serializable if it is equivalent to any of the possible serial schedules.</li>
+<li><strong>Serializable</strong> A schedule is serializable if it is
+equivalent to any of the possible serial schedules.</li>
 </ul>
 <h2 id="conflicts">Conflicts</h2>
-<p>Two actions on the same object (e.g., row, page, table, or databse) of two different transactions are in conflict if at least one of them is a write.</p>
+<p>Two actions on the same object (e.g., row, page, table, or databse)
+of two different transactions are in conflict if at least one of them is
+a write.</p>
 <ul>
-<li><p><strong>Conflict Equivalent</strong> Two schedule are conflict equivalent if all below satisfies:</p>
+<li><p><strong>Conflict Equivalent</strong> Two schedule are conflict
+equivalent if all below satisfies:</p>
 <ul>
 <li>Involve the same actions of the same transactions</li>
 <li>Every pair of conflicting actions is ordered the same way.</li>
@@ -116,16 +129,21 @@
 <li>The schedule is conflict equivalent to some serial schedule</li>
 </ul></li>
 <li><p><strong>Dependency Graphs</strong></p>
-<p>A dependency graph is a directed graph with transactions as nodes and dependency as edges. The edges point are “dependent by” relations. The edge may be labeled with the object names.</p>
-<p><strong>Theorem:</strong> Schedule is conflict serializable if and only if its dependency graph is acyclic.</p>
+<p>A dependency graph is a directed graph with transactions as nodes and
+dependency as edges. The edges point are “dependent by” relations. The
+edge may be labeled with the object names.</p>
+<p><strong>Theorem:</strong> Schedule is conflict serializable if and
+only if its dependency graph is acyclic.</p>
 <ul>
-<li>Topological sorting (order of least from edges) the graph will give a equivalent serial schedule.</li>
+<li>Topological sorting (order of least from edges) the graph will give
+a equivalent serial schedule.</li>
 </ul></li>
 </ul>
 <h2 id="view-serializable">View Serializable</h2>
 <ul>
 <li><p><strong>View Equivalent:</strong></p>
-<p>Two schedules are view equivalent if all of the following satisfies:</p>
+<p>Two schedules are view equivalent if all of the following
+satisfies:</p>
 <ul>
 <li>Same initial reads</li>
 <li>Same dependent reads</li>

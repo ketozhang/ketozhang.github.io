@@ -83,7 +83,9 @@
 <p>Start the service</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> service nginx start</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> service nginx status</span></code></pre></div>
-<p>If the firewall is set up, you can access the server at <code>localhost</code>, your public IP address, or your domain name if your router has forwarded port 80.</p>
+<p>If the firewall is set up, you can access the server at
+<code>localhost</code>, your public IP address, or your domain name if
+your router has forwarded port 80.</p>
 <h2 id="firewall">Firewall</h2>
 <p>Nginx provides the following applications to the firewall,</p>
 <pre><code>Nginx Full
@@ -92,13 +94,21 @@ Nginx HTTPS</code></pre>
 <p>Allow the Nginx application you use through the firewall:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> ufw allow <span class="st">&#39;Nginx HTTP&#39;</span></span></code></pre></div>
 <h2 id="virtual-host-server-block">Virtual Host / Server Block</h2>
-<p>The equivalent of virtual host on Nginx is called server blocks. There already exists one by default at <code>/var/www/html</code>. To support multiple domains you need to have multiple server blocks. Regardless, it’s highly recommended to create another one for each web application (i.e., leave <code>/var/www/html</code> when you want to manually write and serve HTML which is rare).</p>
-<p>Replace <code>example.com</code> with your own domain name (without <code>www</code>).</p>
+<p>The equivalent of virtual host on Nginx is called server blocks.
+There already exists one by default at <code>/var/www/html</code>. To
+support multiple domains you need to have multiple server blocks.
+Regardless, it’s highly recommended to create another one for each web
+application (i.e., leave <code>/var/www/html</code> when you want to
+manually write and serve HTML which is rare).</p>
+<p>Replace <code>example.com</code> with your own domain name (without
+<code>www</code>).</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> mkdir <span class="at">-p</span> /var/www/example.com/html/</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chown <span class="at">-R</span> <span class="va">$USER</span>:<span class="va">$USER</span> /var/www/example.com/html/</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chmod <span class="at">-R</span> 755 /var/www/example.com/</span></code></pre></div>
-<p>For testing, you may add <code>index.html</code> to <code>/var/www/example.com/html/</code>. Here is a boilerplate:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html&gt;</span></span>
+<p>For testing, you may add <code>index.html</code> to
+<code>/var/www/example.com/html/</code>. Here is a boilerplate:</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html&gt;</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;head&gt;</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;title&gt;</span>Hello, World!<span class="kw">&lt;/title&gt;</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/head&gt;</span></span>
@@ -106,9 +116,14 @@ Nginx HTTPS</code></pre>
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;h1&gt;</span>Success! Hello, World!<span class="kw">&lt;/h1&gt;</span></span>
 <span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/body&gt;</span></span>
 <span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
-<p>This particular web page will not be accessible until we register the server block in configurations on the next section.</p>
+<p>This particular web page will not be accessible until we register the
+server block in configurations on the next section.</p>
 <h3 id="configuration">Configuration</h3>
-<p>Server block configuration are located at <code>/etc/nginx/sites-available/</code> and enabled at <code>/etc/nginx/sites-enabled/</code>. We will first add the server block configuration to <code>/etc/nginx/sites-available/example.com</code></p>
+<p>Server block configuration are located at
+<code>/etc/nginx/sites-available/</code> and enabled at
+<code>/etc/nginx/sites-enabled/</code>. We will first add the server
+block configuration to
+<code>/etc/nginx/sites-available/example.com</code></p>
 <pre class="nginx"><code># /etc/nginx/sites-available/example.com
 server {
         listen 80;
@@ -125,7 +140,8 @@ server {
 }</code></pre>
 <p>Then register by symbolic link:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> ln <span class="at">-s</span> /etc/nginx/sites-available/example.com /etc/nginx/sites-enabled/</span></code></pre></div>
-<p>On Nginx configuration file <code>/etc/nginx/nginx.conf</code>, uncomment the hash bucket size</p>
+<p>On Nginx configuration file <code>/etc/nginx/nginx.conf</code>,
+uncomment the hash bucket size</p>
 <pre class="nginx"><code>...
 http {
     ...
@@ -134,13 +150,18 @@ http {
 }
 ...</code></pre>
 <p>Check for syntax error:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> nginx <span class="at">-t</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> nginx <span class="at">-t</span></span></code></pre></div>
 <p>Fix any error and restart Nginx server:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl restart nginx</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl restart nginx</span></code></pre></div>
 <h2 id="nginx-configurations">Nginx Configurations</h2>
 <h3 id="gunicorn">Gunicorn</h3>
-<p>For a gunicorn hosted project with the project folder at <code>/path/to/project</code>, the application program is <code>app.py</code> with WSGI also named <code>app</code>.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gunicorn</span> <span class="at">-b</span> 0.0.0.0:8000 app:app</span></code></pre></div>
+<p>For a gunicorn hosted project with the project folder at
+<code>/path/to/project</code>, the application program is
+<code>app.py</code> with WSGI also named <code>app</code>.</p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode sh"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gunicorn</span> <span class="at">-b</span> 0.0.0.0:8000 app:app</span></code></pre></div>
 <p>the Nginx configuration should look something like this:</p>
 <pre class="nginx"><code>server {
     listen 80;

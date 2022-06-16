@@ -76,35 +76,74 @@
       <h1 class="title text-center pt-3">Intrinsic Value</h1>
       
       <div class="markdown-content">
-        <p>The intrinsic value is an estimate on a company’s worth based on fundamental factors (e.g., cash flows, future growth, risk). Methodology that attempts to estimate the intrinsic value are called <strong>valuation models</strong>.</p>
-<p>The intrinsic value is often compared to the market price to determine undervalued/overvalued stocks. The percentage difference is called the <strong>margin</strong> and the minimum percentage risk you’re willing to take on the margin is more aptly called the <strong>margin of safety</strong>.</p>
+        <p>The intrinsic value is an estimate on a company’s worth based on
+fundamental factors (e.g., cash flows, future growth, risk). Methodology
+that attempts to estimate the intrinsic value are called
+<strong>valuation models</strong>.</p>
+<p>The intrinsic value is often compared to the market price to
+determine undervalued/overvalued stocks. The percentage difference is
+called the <strong>margin</strong> and the minimum percentage risk
+you’re willing to take on the margin is more aptly called the
+<strong>margin of safety</strong>.</p>
 <h2 id="discounted-cash-flow">Discounted Cash Flow</h2>
-<p>The discounted cash flow (DCF) model takes as inputs the current cash flow value, growth rate, and discount rate. The cash flow value is some metric that determine how much money the company is making (often the EPS is used). The growth rate is the extrapolated rate of growth one expects the company is to grow. The discount rate is the allowed margin of error subtracted from the growth rate.</p>
+<p>The discounted cash flow (DCF) model takes as inputs the current cash
+flow value, growth rate, and discount rate. The cash flow value is some
+metric that determine how much money the company is making (often the
+EPS is used). The growth rate is the extrapolated rate of growth one
+expects the company is to grow. The discount rate is the allowed margin
+of error subtracted from the growth rate.</p>
 <p><span class="math display">\[
-[\text{Intrinisc Value}] = \frac{[\text{Year T Terminal Value}]}{\left(1 + [\text{Discount Rate}]\right)^T}
+[\text{Intrinisc Value}] = \frac{[\text{Year T Terminal Value}]}{\left(1
++ [\text{Discount Rate}]\right)^T}
 \]</span></p>
-<p>The idea behind DCF for valuation is to determine the equivalent stock price for the same potential at year <span class="math inline">\(T\)</span> but at a often much lower and safer growth rate called the discount rate.</p>
+<p>The idea behind DCF for valuation is to determine the equivalent
+stock price for the same potential at year <span
+class="math inline">\(T\)</span> but at a often much lower and safer
+growth rate called the discount rate.</p>
 <h3 id="growth-rates">Growth Rates</h3>
-<p>Using the EPS as the cash flow value, there’s a few ways to calculate the growth rate:</p>
+<p>Using the EPS as the cash flow value, there’s a few ways to calculate
+the growth rate:</p>
 <ul>
-<li><strong>Historical Growth Rate</strong> Take the growth rate to be the historical average of the EPS percentage change.</li>
-<li><strong>Industry Average Growth Rate</strong> Instead of the stock, take the industrial historical growth rate. Under the model assumption, over a long run, these two growth rates will eventually converge.</li>
+<li><strong>Historical Growth Rate</strong> Take the growth rate to be
+the historical average of the EPS percentage change.</li>
+<li><strong>Industry Average Growth Rate</strong> Instead of the stock,
+take the industrial historical growth rate. Under the model assumption,
+over a long run, these two growth rates will eventually converge.</li>
 </ul>
 <h3 id="terminal-value">Terminal Value</h3>
-<p>Because the extrapolation using a positive growth rate expands infinitely, the terminal value quantifies the expectation of the stock value after the projection period <span class="math inline">\(T\)</span>. The terminal value is calculated as,</p>
+<p>Because the extrapolation using a positive growth rate expands
+infinitely, the terminal value quantifies the expectation of the stock
+value after the projection period <span
+class="math inline">\(T\)</span>. The terminal value is calculated
+as,</p>
 <p><span class="math display">\[
-[\text{Year T Terminal Value}] = [\mathrm{Year~T~EPS}] \cdot [\text{Exit Multiple}] \,,
+[\text{Year T Terminal Value}] = [\mathrm{Year~T~EPS}] \cdot [\text{Exit
+Multiple}] \,,
 \]</span></p>
-<p>where the exit multiple is some measure often the P/E ratio. Recall the P/E ratio estimates the current price an investor would pay for a share for each dollar amount earning. The terminal value is then the product of projected Year <span class="math inline">\(T\)</span> EPS and P/E ratio giving you the price an investor would pay in <span class="math inline">\(T\)</span> years. The assumption here is the P/E ratio is persistent throughout the projection period.</p>
+<p>where the exit multiple is some measure often the P/E ratio. Recall
+the P/E ratio estimates the current price an investor would pay for a
+share for each dollar amount earning. The terminal value is then the
+product of projected Year <span class="math inline">\(T\)</span> EPS and
+P/E ratio giving you the price an investor would pay in <span
+class="math inline">\(T\)</span> years. The assumption here is the P/E
+ratio is persistent throughout the projection period.</p>
 <h3 id="discount-rate">Discount Rate</h3>
-<p>The discount rate is an negative adjustment to the growth rate to account for risk. One way to calcualte the discount rate is the <strong>capital asset pricing model</strong> (<strong>CAPM</strong>) which calculates the expected rate of return <span class="math inline">\(E[R_i]\)</span>:</p>
+<p>The discount rate is an negative adjustment to the growth rate to
+account for risk. One way to calcualte the discount rate is the
+<strong>capital asset pricing model</strong> (<strong>CAPM</strong>)
+which calculates the expected rate of return <span
+class="math inline">\(E[R_i]\)</span>:</p>
 <p><span class="math display">\[
 E[R_i] = R_f + \beta_i (R_m - R_f)
 \]</span></p>
 <ul>
-<li><span class="math inline">\(R_f\)</span> : Risk free rate, the zeropoint assuming the minimum rate of return from investing. This value is usually the 30-year rate of return from Treasury bond.</li>
-<li><span class="math inline">\(R_m\)</span> : Market rate of return usually taken from the S&amp;P 500 annual return.</li>
-<li><span class="math inline">\(\beta_i\)</span> : The beta volatility value of the stock.</li>
+<li><span class="math inline">\(R_f\)</span> : Risk free rate, the
+zeropoint assuming the minimum rate of return from investing. This value
+is usually the 30-year rate of return from Treasury bond.</li>
+<li><span class="math inline">\(R_m\)</span> : Market rate of return
+usually taken from the S&amp;P 500 annual return.</li>
+<li><span class="math inline">\(\beta_i\)</span> : The beta volatility
+value of the stock.</li>
 </ul>
 
       </div>
