@@ -58,13 +58,7 @@ contexts:
     ignore_paths:
       - "drafts/"
 
-navbar:
-  notes:
-    text: "Notes"
-    url: "/notes/"
-  posts:
-    text: "Posts"
-    url: "/posts/"
+navbar: null
 
 social_links:
   - name: "CV"
