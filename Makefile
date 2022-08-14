@@ -3,7 +3,6 @@ FLASK_PORT ?= 8081
 
 all:
 	make static
-	make clean
 
 local:
 	poetry run flask run -p ${FLASK_PORT} --host=${FLASK_HOST}
