@@ -6,13 +6,13 @@
 
 // Structure
 body {
-  background-color: $background-color;
+  background-color: var(--body-bg);
   line-height: $base-line-height;
   font-family: $base-font-family;
   font-size: $base-font-size;
   font-weight: $base-font-weight;
   padding-bottom: 80px;
-  color: $base-font-color;
+  color: var(--body-color);
 
   h1,
   h2,
@@ -21,7 +21,7 @@ body {
   h5,
   h6 {
     font-family: $style-font-family;
-    color: $style-font-color;
+    color: var(--heading-color);
   }
 
   h1 {
@@ -36,11 +36,11 @@ header {
 
 // Hyperlinks
 a {
-  color: $link-color;
+  color: var(--link-color);
 }
 
 a:hover {
-  color: $link-color;
+  color: var(--link-color);
 }
 
 a#brand {
@@ -54,7 +54,7 @@ a#brand {
 // Content
 p>code,
 li>code {
-  color: $code-font-color;
+  color: var(--code-color);
   border: 1px solid rgba(97, 97, 97, 0.4);
   border-radius: 3px;
   padding: 0px 2px 0px 2px;
