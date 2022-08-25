@@ -1,6 +1,25 @@
-{% extends "base.html" %}
-{% block content %}
-{% include "header.html" %}
+---
+layout: base
+title: Home
+social_links:
+  - name: "CV"
+    url: "/CV"
+    icon: "/static/images/CV.svg"
+  - name: "keto.zhang@gmail.com"
+    url: "mailto:keto.zhang@gmail.com"
+    icon: "/static/images/icons8-email-30.png"
+  - name: "LinkedIn"
+    url: "https://www.linkedin.com/in/ketozhang/"
+    icon: "/static/images/icons8-linkedin.svg"
+  - name: "GitHub"
+    url: "https://www.github.com/ketozhang"
+    icon: "/static/images/icons8-github.svg"
+  - name: "ORCID"
+    url: "https://orcid.org/0000-0002-9955-8797"
+    icon: "/static/images/orcid-bw.svg"
+---
+{% include header.html %}
+
 <main class="container-lg">
   <div class="row gx-5">
 
@@ -9,17 +28,17 @@
       <div id="namecard" class="mb-3">
         <div class="mb-3"><img class="d-block rounded-circle shadow-lg" style="width: 200px;"
             src="/static/images/headshot_500x500.jpg"></div>
-        <a id="brand" href="{{ site_url }}">{{ site_brand }}</a>
+        <a id="brand" href="{{ site.url }}">{{ site.brand }}</a>
         <small>(Keto D. Zhang)</small>
         <p class="d-xs-none d-md-block">BA Astrophysics and Data Science</p>
       </div>
 
       <div id="socials">
         <ul class="nav">
-          {% for social in social_links %}
+          {% for social in page.social_links %}
           <li class="me-2">
-            <a class="social-link" href="{{ social['url'] }}" title="{{ social['name'] }}" target="_blank">
-              <img class="header-icon" src="{{ social['icon'] }}">
+            <a class="social-link" href="{{ social.url }}" title="{{ social.name }}" target="_blank">
+              <img class="header-icon" src="{{ social.icon }}">
             </a>
           </li>
           {% endfor %}
@@ -67,4 +86,3 @@
 
   </div>
 </main>
-{% endblock %}

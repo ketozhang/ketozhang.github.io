@@ -1,0 +1,9 @@
+services:
+  web:
+    build: .
+    ports:
+      - 4000:4000
+    image: ketozhang.github.io
+    volumes:
+      - ${PWD}:/srv/jekyll
+    command: jekyll serve

@@ -1,3 +1,7 @@
+---
+---
+// QUIRK: Jeklly requires frontmatter to read this file
+
 @import "variables";
 @import "note";
 @import "post";
@@ -11,7 +15,13 @@ body {
   font-weight: $base-font-weight;
   padding-bottom: 80px;
   color: $base-font-color;
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: $style-font-family;
     color: $style-font-color;
   }
@@ -30,6 +40,7 @@ header {
 a {
   color: $link-color;
 }
+
 a:hover {
   color: $link-color;
 }
@@ -43,8 +54,8 @@ a#brand {
 }
 
 // Content
-p > code,
-li > code {
+p>code,
+li>code {
   color: $code-font-color;
   border: 1px solid rgba(97, 97, 97, 0.4);
   border-radius: 3px;
@@ -54,7 +65,7 @@ li > code {
 }
 
 blockquote {
-  font-size: $base-font-size !important;
+  font-size: $base-font-size  !important;
 }
 
 // Sidebar
@@ -71,8 +82,10 @@ blockquote {
 
   pre {
     border-radius: $base-border-radius;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 
     ::-webkit-scrollbar {
       display: none;
