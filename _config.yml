@@ -1,3 +1,5 @@
+brand: Keto
+
 exclude:
   - notes.bak
   - templates/
