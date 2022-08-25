@@ -1,0 +1,97 @@
+#note .onthispage {
+  position: fixed;
+  width: 200px; }
+  #note article {
+    min-height: 80vh; }
+
+.search {
+  margin-top: 2em; }
+
+  #notes-card-columns .card-header a {
+    text-decoration: none; }
+
+#post #post-img {
+  object-fit: contain;
+  margin-top: -0.5em;
+  margin-bottom: 1em;
+  height: 360px;
+  width: 100%; }
+  #post .onthispage {
+    position: sticky;
+    width: unset; }
+
+.post-card {
+  transition: opacity 0.2s ease-in-out; }
+  .post-card :hover {
+    opacity: 0.8; }
+    .post-card a, .post-card a:hover {
+      text-decoration: none;
+      color: inherit; }
+      .post-card .row {
+        border: 2px solid #595959;
+        border-radius: 16px;
+        padding: 1em; }
+        .post-card .post-card-title * {
+          line-height: 1.25; }
+  .post-card .post-card-description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 3em; }
+    .post-card .post-card-footer {
+      margin-top: 0.5em; }
+
+body {
+  background-color: white;
+  line-height: 1.75;
+  font-family: "Poppins", "Helvetica", "Arial", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  padding-bottom: 80px;
+  color: #595959; }
+  body h1, body h2, body h3, body h4, body h5, body h6 {
+    font-family: "Poppins", "Helvetica", "Arial", sans-serif;
+    color: #2d2d2d; }
+    body h1 {
+      margin-bottom: 0.5em; }
+
+header {
+  margin-bottom: 4em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25); }
+
+  a {
+    color: #B877DB; }
+
+    a:hover {
+      color: #B877DB; }
+
+      a#brand {
+        font-family: "Poppins", "Helvetica", "Arial", sans-serif;
+        font-size: 2em;
+        font-weight: 500;
+        text-decoration: none;
+        color: #2d2d2d; }
+
+        p > code, li > code {
+          color: #E65577;
+          border: 1px solid rgba(97, 97, 97, 0.4);
+          border-radius: 3px;
+          padding: 0px 2px 0px 2px;
+          margin: 0px 1px 0px 0px; }
+
+          blockquote {
+            font-size: 16px !important; }
+
+            .header-icon {
+              width: 24px;
+              height: 24px; }
+
+              .sourceCode {
+                border-radius: 10px;
+                font-size: 14px;
+                margin-bottom: 1.75em; }
+                .sourceCode pre {
+                  border-radius: 16px;
+                  -ms-overflow-style: none;
+                  scrollbar-width: none; }
+                  .sourceCode pre ::-webkit-scrollbar {
+                    display: none; }
