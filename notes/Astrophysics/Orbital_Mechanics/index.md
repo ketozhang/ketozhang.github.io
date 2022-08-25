@@ -1,4 +1,0 @@
----
-title: Orbital Mechanics
----
-

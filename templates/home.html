@@ -9,7 +9,7 @@
       <div id="namecard" class="mb-3">
         <div class="mb-3"><img class="d-block rounded-circle shadow-lg" style="width: 200px;"
             src="/static/images/headshot_500x500.jpg"></div>
-        <a id="brand" href="{{site_url}}">{{ site_brand }}</a>
+        <a id="brand" href="{{ site_url }}">{{ site_brand }}</a>
         <small>(Keto D. Zhang)</small>
         <p class="d-xs-none d-md-block">BA Astrophysics and Data Science</p>
       </div>
@@ -18,7 +18,7 @@
         <ul class="nav">
           {% for social in social_links %}
           <li class="me-2">
-            <a class="social-link" href="{{url_for(social['url'])}}" title="{{ social['name'] }}" target="_blank">
+            <a class="social-link" href="{{ social['url'] }}" title="{{ social['name'] }}" target="_blank">
               <img class="header-icon" src="{{ social['icon'] }}">
             </a>
           </li>

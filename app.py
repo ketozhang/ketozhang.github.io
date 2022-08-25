@@ -27,17 +27,10 @@ def home():
     """Renders the home page."""
     config = BASE_CONFIG["home"]
 
-    # Get post for Post showcase
-    post_context = CONTEXTS["posts"]
-    posts = []
-    for url in config.get("posts", []):
-        page = post_context.get_page(url)
-        posts.append(page)
-
     # Get projects for Project showcase
     projects = config["projects"]
 
-    context = {"posts": posts, "projects": projects}
+    context = {"projects": projects}
     return render_template(config["template"], **context)
 
 

@@ -21,7 +21,6 @@ pandoc_output: "markdown+implicit_figures"
 root_pages:
   - "CV.html"
   - "research.html"
-  - "flashcards.html"
 
 home:
   template: "home.html"
@@ -45,18 +44,18 @@ home:
     #     Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui."
     #   view_details: "#"
 
-contexts:
+# contexts:
   # keys should be url endpoint (e.g., for mysite.com/notes key is notes)
-  notes:
-    source_folder: "notes"
-    template: "note.html"
-    ignore_paths:
-      - "Archive/"
-  posts:
-    source_folder: "posts"
-    template: "post.html"
-    ignore_paths:
-      - "drafts/"
+  # notes:
+  #   source_folder: "notes"
+  #   template: "note.html"
+  #   ignore_paths:
+  #     - "*/"
+  # posts:
+  #   source_folder: "posts"
+  #   template: "post.html"
+  #   ignore_paths:
+  #     - "drafts/"
 
 navbar: null
 

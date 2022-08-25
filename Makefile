@@ -12,8 +12,7 @@ debug:
 
 clean:
 	-rm -rf templates/*.bak
-	-rm -rf templates/notes
-	-rm -rf templates/posts
+	-rm -rf docs/
 
 ##############
 
