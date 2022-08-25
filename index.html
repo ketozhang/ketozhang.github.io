@@ -1,0 +1,88 @@
+---
+layout: base
+title: Home
+social_links:
+  - name: "CV"
+    url: "/CV"
+    icon: "/static/images/CV.svg"
+  - name: "keto.zhang@gmail.com"
+    url: "mailto:keto.zhang@gmail.com"
+    icon: "/static/images/icons8-email-30.png"
+  - name: "LinkedIn"
+    url: "https://www.linkedin.com/in/ketozhang/"
+    icon: "/static/images/icons8-linkedin.svg"
+  - name: "GitHub"
+    url: "https://www.github.com/ketozhang"
+    icon: "/static/images/icons8-github.svg"
+  - name: "ORCID"
+    url: "https://orcid.org/0000-0002-9955-8797"
+    icon: "/static/images/orcid-bw.svg"
+---
+
+{% include header.html %}
+<main class="container-lg">
+  <div class="row gx-5">
+
+    <section id="sidebar" class="col-md-3">
+
+      <div id="namecard" class="mb-3">
+        <div class="mb-3"><img class="d-block rounded-circle shadow-lg" style="width: 200px;"
+            src="/static/images/headshot_500x500.jpg"></div>
+        <a id="brand" href="{{ site_url }}">{{ site_brand }}</a>
+        <small>(Keto D. Zhang)</small>
+        <p class="d-xs-none d-md-block">BA Astrophysics and Data Science</p>
+      </div>
+
+      <div id="socials">
+        <ul class="nav">
+          {% for social in page.social_links %}
+          <li class="me-2">
+            <a class="social-link" href="{{ social.url }}" title="{{ social.name }}" target="_blank">
+              <img class="header-icon" src="{{ social.icon }}">
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </section>
+
+    <section id="home-body" class="col mt-5">
+      <div class="mb-4">
+        <h2>Bio</h2>
+        Hi, I'm Keto &mdash; someone who's interesed in software development and
+        statistical analysis in the domain of space science. I am currently at
+        Caltech as a software engineer on the <a href="https://roman.gsfc.nasa.gov">Nancy
+          Grace Roman Space
+          Telescope</a>. There, I will be responsible for designing and developing
+        the data processing pipeline that will be used to discover possibly thousands of planets outside our solar
+        system in the Milky Way through <a href="https://roman.gsfc.nasa.gov/exoplanets_microlensing.html">gravitational
+          microlensing</a>.
+      </div>
+
+      <div class="mb-4">
+        <h2>Select Works</h2>
+        <ul>
+          <li class="pb-2">
+            <span class="pe-1"><strong><em>Letter</em></strong></span>
+            <a href="https://ui.adsabs.harvard.edu/abs/2021MNRAS.503L..33Z/abstract">
+              <strong>Improving Bayesian posterior correlation analysis on Type Ia supernova luminosity
+                evolution</strong>
+            </a>
+            <br>
+            Zhang K. D., Murakami Y. S., Stahl B. E. et al (2021). MNRAS, 503, L33-L37
+          </li>
+          <li class="pb-2">
+            <span class="pe-1"><strong><em>Paper</em></strong></span>
+            <a href="https://ui.adsabs.harvard.edu/abs/2020MNRAS.499.5325Z"><strong>Distribution of Si II λ6355
+                Velocities of Type Ia Supernovae and Implications for Asymmetric
+                Explosions</strong></a>
+            <br>
+            Zhang K. D., Zheng W., de Jaeger T. et al (2020). MNRAS, 499, 5325-5333
+          </li>
+        </ul>
+      </div>
+
+    </section>
+
+  </div>
+</main>

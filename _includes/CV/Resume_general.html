@@ -1,0 +1,82 @@
+<div id="experiences" class="section">
+  <h1>Work Experiences</h1>
+  <hr>
+  <div class="section-body">
+    <div class="item">
+      <div class="row">
+        <div class="col-8">
+          <div class="position">{% if position_title %} {{position_title}} {% else %} Full Stack Developer {% endif %}</div>
+          <div class="company">Alex Filippenko Research Group</div>
+        </div>
+        <div class="col-4 text-right">May 2017 &ndash; May 2020 <br><em>Berkeley, CA</em></div>
+
+      </div>
+      Backend:
+      <ul>
+        <li>Designed and administered astronomy research MySQL database storing over 4 million calibrated supernovae
+          images and metadata to replace the old method of searching for supernovae images using a file server.
+        </li>
+        <li>
+          Designed and developed API web service (Python Flask framework) to interface the mentioned database. This will
+          be used in the frontend to access the database.
+        </li>
+        <li>Developed an XML parser for astronomy's VOEvent convention. This was used in multimessenger astronomy to
+          parse NASA's Gamma-ray Coordinates Network alerts (e.g., gravitational wave alerts). This was the first step
+          in the process that enrolled our team into an exciting field of multimessenger astronomy.</li>
+      </ul>
+      System Administration:
+      <ul>
+        <li>
+          Deployed, automated, and administrated research pipelines and softwares in Linux production server using Git for version control, Make + Gunicorn + Apache + systemd for deploying, and automating and monitoring web services.
+        </li>
+        <!-- <li>
+      Maintained <strong>Python</strong> virtual environment hierarchy so that users' development, teams' development, and server's production environment are not in conflict. and test scripts.
+    </li> -->
+      </ul>
+    </div>
+    <div class="item">
+      <div class="row">
+        <div class="col-8">
+          <div class="position">Project &ndash; AstroAPIServer</div>
+          <em>RESTful Web API Toolkit for Astronomy</em>
+        </div>
+        <div class="col-4 text-right">May 2019 <br></div>
+      </div>
+      <ul>
+        <li>Solely developed a Flask backend web API toolkit intended for astronomy research data releases and team data access from various SQL database. Features include an admin web console built from its OpenAPI specification, login authentication (JWT, CSRF and XSS security), user authorization (user-role schema) and supports astronomy's IVOA data conventions (SIA and DALI).
+        </li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="row">
+        <div class="col-8">
+          <div class="position">Project &ndash; StaticPy</div>
+          <em>Static Website Framework using Python Flask</em>
+        </div>
+        <div class="col-4 text-right">Jan 2018 <br></div>
+        <ul>
+          <li>Solely developed a Python Flask static website generator built intended for writing in Markdown and LaTex then rendered a webpage. StaticPy is perfect for personal portfolio containing notebooks and blog posts.
+          </li>
+          <li>
+            Built this resume and my web portfolio (<a href="https://ketozhang.github.io/">ketozhang.github.io</a>) using StaticPy.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- <div class="item">
+      <div class="row">
+        <div class="col-8">
+          <div class="position">Project &ndash; AstroSQL</div>
+          <em>Python Data Interface for Astronomy SQL Database</em>
+        </div>
+        <div class="col-4 text-right">May 2017 <br></div>
+      </div>
+      <ul>
+        <li>Developed a Python data interface for astronomy research SQL database following astronomy's IVOA data conventions (SIA and DALI). This was motivated to easily allow conventional astronomy databases be easily accessed through API interfaces like the widely used in the field, Python astroquery package.</li>
+      </ul>
+    </div>  -->
+    {% include "CV/experiences/scientist.html" %}
+  </div>
+</div>

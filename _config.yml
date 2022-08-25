@@ -1,0 +1,6 @@
+exclude:
+  - notes.bak
+  - templates/
+
+sass:
+  sass_dir: _sass
