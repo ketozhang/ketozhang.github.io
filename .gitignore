@@ -6,10 +6,16 @@ node_modules/
 *.vscode/
 *.webassets-cache/
 *.venv/
-_dev/docs/
+*.bak
 
+# VS Code
 *.code-workspace
-*.whl
+
+# Mac OS
 .DS_Store
-docker*
-Docker*
+
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
