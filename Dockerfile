@@ -5,3 +5,4 @@ COPY Gemfile .
 RUN bundle install && rm Gemfile
 
 WORKDIR /srv/jekyll
+CMD ["jekyll", "serve"]
