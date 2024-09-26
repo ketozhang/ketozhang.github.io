@@ -51,6 +51,7 @@ a#brand {
   color: $style-font-color;
 }
 
+
 // Content
 p>code,
 li>code {
@@ -66,8 +67,12 @@ blockquote {
   font-size: $base-font-size  !important;
 }
 
-// Sidebar
+// Navbar
+.navbar-light .navbar-nav .nav-link {
+  color: var(--body-color);
+}
 
+// Sidebar
 .header-icon {
   max-width: 30px;
 }
