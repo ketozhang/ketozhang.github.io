@@ -78,8 +78,7 @@ hr {
 }
 
 .section h1 {
-    font-size: 1.6em;
-    text-transform: uppercase;
+    font-size: 1.5em;
 }
 
 /* Section Items */
@@ -97,12 +96,16 @@ hr {
     margin-bottom: 0em;
 }
 
+.item .row:first-child {
+    padding-bottom: 0.25rem;
+}
+
 .item .row {
     margin-bottom: 0;
 }
 
 .item-title, .position {
-    font-weight: bold;
+    font-size: 105%;
 }
 
 .company {
